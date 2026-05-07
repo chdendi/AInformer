@@ -1,0 +1,134 @@
+{% extends "base.html.j2" %}
+{% block title %}AI Daily · {{ report.date }} | AInformer{% endblock %}
+{% block description %}{{ report.today_theme or 'AI 每日资讯' }} · 共 {{ report.total }} 条精选{% endblock %}
+
+{% block body %}
+<header class="hero">
+  <div class="date">{{ report.date }} · 周{{ report.weekday_zh }}</div>
+  <h1>每日 AI 简报</h1>
+  <p class="theme">{{ report.today_theme }}</p>
+  <div class="meta">
+    <span>📰 {{ report.total }} 条精选</span>
+    <span>🔥 {{ report.hot_count }} 头条</span>
+    <span>⏱ 生成于 {{ report.generated_at_short }}</span>
+  </div>
+</header>
+
+<nav class="sticky-nav">
+  <div class="nav-inner">
+    <a class="home" href="{{ home_url }}">← 首页</a>
+    <a href="#headlines">今日头条</a>
+    <a href="#takeaway">每日一学</a>
+    <a href="#tutorial">使用姿势</a>
+    <a href="#industry">行业动态</a>
+    <a href="#opinion">领袖观点</a>
+    <a href="#chinese">中文 / 学术</a>
+  </div>
+</nav>
+
+<main class="container">
+
+  {% if report.lede %}
+  <section class="lede">{{ report.lede }}</section>
+  {% endif %}
+
+  <section class="stats-bar">
+    {% set sec = report.sections %}
+    <div class="stat"><div class="num">{{ sec.tutorial|length }}</div><div class="label">使用姿势</div></div>
+    <div class="stat"><div class="num">{{ sec.industry|length }}</div><div class="label">行业新闻</div></div>
+    <div class="stat"><div class="num">{{ sec.opinion|length }}</div><div class="label">领袖观点</div></div>
+    <div class="stat"><div class="num">{{ sec.chinese|length }}</div><div class="label">中文 / 学术</div></div>
+  </section>
+
+  {% if report.headlines %}
+  <section class="section" id="headlines">
+    <div class="section-head"><h2>🔥 今日头条</h2><span class="count">{{ report.headlines|length }} 条</span></div>
+    <div class="headlines">
+      {% for h in report.headlines %}
+      <article class="headline-card">
+        <h3>{{ h.title }}</h3>
+        <p>{{ h.summary }}</p>
+        <div class="meta">
+          {% if h.category %}<span class="tag tag-{{ h.category }}">{{ category_label(h.category) }}</span>{% endif %}
+          {% if h.source_name %}<span>{{ h.source_name }}</span>{% endif %}
+          {% if h.url %}<a class="link-btn" href="{{ h.url }}" target="_blank" rel="noopener noreferrer">原文 ↗</a>{% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if report.daily_takeaway and report.daily_takeaway.title %}
+  <section class="takeaway" id="takeaway">
+    <h3>{{ report.daily_takeaway.title }}</h3>
+    {{ report.daily_takeaway.body_md|md|safe }}
+    {% if report.daily_takeaway.source_url %}
+    <p style="margin-top:12px"><a class="link-btn" href="{{ report.daily_takeaway.source_url }}" target="_blank" rel="noopener noreferrer">查看出处 ↗</a></p>
+    {% endif %}
+  </section>
+  {% endif %}
+
+  <div class="section-divider"></div>
+
+  <section class="section" id="tutorial">
+    <div class="section-head"><h2>🛠 AI 使用姿势与教程</h2><span class="count">{{ sec.tutorial|length }} 条</span></div>
+    {% if sec.tutorial %}
+    <div class="cards">
+      {% for it in sec.tutorial %}
+      {% include "_news_card.html.j2" %}
+      {% endfor %}
+    </div>
+    {% else %}<div class="empty">今日该领域无重大动态</div>{% endif %}
+  </section>
+
+  <section class="section" id="industry">
+    <div class="section-head"><h2>📈 AI 行业新闻与产品动态</h2><span class="count">{{ sec.industry|length }} 条</span></div>
+    {% if sec.industry %}
+    <div class="cards">
+      {% for it in sec.industry %}
+      {% include "_news_card.html.j2" %}
+      {% endfor %}
+    </div>
+    {% else %}<div class="empty">今日该领域无重大动态</div>{% endif %}
+  </section>
+
+  <section class="section" id="opinion">
+    <div class="section-head"><h2>💭 AI 领袖发言与深度观点</h2><span class="count">{{ sec.opinion|length }} 条</span></div>
+    {% if sec.opinion %}
+    <div class="cards">
+      {% for it in sec.opinion %}
+      <article class="quote-card">
+        {% if it.quote_en %}<p class="quote-en">{{ it.quote_en }}</p>{% endif %}
+        {% if it.quote_zh %}<p class="quote-zh">{{ it.quote_zh }}</p>{% endif %}
+        {% if not it.quote_en and not it.quote_zh and it.summary %}<p class="quote-zh">{{ it.summary }}</p>{% endif %}
+        {% if it.title and it.title != it.quote_zh %}<p style="margin-bottom:10px;color:#cfcfd6">{{ it.title }}</p>{% endif %}
+        <div class="person">— {{ it.person or it.source_name or '匿名' }}</div>
+        <div class="meta">
+          {% if it.importance %}<span class="tag tag-{{ it.importance }}">{{ importance_label(it.importance) }}</span>{% endif %}
+          {% if it.value_note %}<span>💡 {{ it.value_note }}</span>{% endif %}
+          {% if it.url %}<a class="link-btn" href="{{ it.url }}" target="_blank" rel="noopener noreferrer">原文 ↗</a>{% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}<div class="empty">今日该领域无重大动态</div>{% endif %}
+  </section>
+
+  <section class="section" id="chinese">
+    <div class="section-head"><h2>🇨🇳 中文 AI 生态与学术动态</h2><span class="count">{{ sec.chinese|length }} 条</span></div>
+    {% if sec.chinese %}
+    <div class="cards">
+      {% for it in sec.chinese %}
+      {% include "_news_card.html.j2" %}
+      {% endfor %}
+    </div>
+    {% else %}<div class="empty">今日该领域无重大动态</div>{% endif %}
+  </section>
+
+</main>
+{% endblock %}
+
+{% block footer_extra %}
+<p style="margin-bottom:8px"><a href="{{ home_url }}">← 回到首页</a> · 历史日报：<a href="{{ home_url }}#archive">归档</a></p>
+{% endblock %}

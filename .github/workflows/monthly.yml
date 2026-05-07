@@ -1,0 +1,67 @@
+name: Monthly AI Summary
+
+on:
+  schedule:
+    # 每月 1 号 北京时间 10:00 = UTC 02:00
+    - cron: '0 2 1 * *'
+  workflow_dispatch:
+    inputs:
+      year:
+        description: 'Year (e.g. 2026), empty = previous month'
+        required: false
+        default: ''
+      month:
+        description: 'Month (1-12), empty = previous month'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: monthly-summary
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      DEEPSEEK_MODEL: ${{ vars.DEEPSEEK_MODEL || 'deepseek-chat' }}
+      DEEPSEEK_BASE_URL: ${{ vars.DEEPSEEK_BASE_URL || 'https://api.deepseek.com/v1' }}
+      SITE_BASE_URL: ${{ vars.SITE_BASE_URL }}
+      TZ: Asia/Shanghai
+      LOG_LEVEL: INFO
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Generate monthly summary
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.year }}" ] && [ -n "${{ github.event.inputs.month }}" ]; then
+            ARGS="--year ${{ github.event.inputs.year }} --month ${{ github.event.inputs.month }}"
+          fi
+          python -m src.main_monthly $ARGS
+
+      - name: Commit and push
+        run: |
+          git config user.name "ainformer-bot"
+          git config user.email "ainformer-bot@users.noreply.github.com"
+          git add docs/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore(monthly): publish monthly summary"
+            git push
+          fi

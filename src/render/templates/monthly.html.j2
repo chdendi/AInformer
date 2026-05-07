@@ -1,0 +1,83 @@
+{% extends "base.html.j2" %}
+{% block title %}{{ summary.label }} 月度回顾 | AInformer{% endblock %}
+{% block description %}{{ summary.tagline or summary.label + ' AI 月度回顾' }}{% endblock %}
+
+{% block body %}
+<header class="hero">
+  <div class="date">{{ summary.label }}</div>
+  <h1>月度 AI 回顾</h1>
+  <p class="theme">{{ summary.tagline }}</p>
+  <div class="meta">
+    <span>📰 汇总 {{ summary.total_items }} 条</span>
+    <span>📅 涵盖 {{ summary.day_count }} 天</span>
+  </div>
+</header>
+
+<nav class="sticky-nav">
+  <div class="nav-inner">
+    <a class="home" href="{{ home_url }}">← 首页</a>
+    <a href="#overview">本月综述</a>
+    <a href="#themes">主题脉络</a>
+    <a href="#milestones">关键里程碑</a>
+    <a href="#daily">逐日索引</a>
+  </div>
+</nav>
+
+<main class="container">
+
+  <section class="lede" id="overview">{{ summary.overview }}</section>
+
+  {% if summary.themes %}
+  <section class="section" id="themes">
+    <div class="section-head"><h2>📌 本月主题脉络</h2></div>
+    <div class="cards">
+      {% for t in summary.themes %}
+      <article class="news-card">
+        <h3>{{ t.title }}</h3>
+        <p class="summary">{{ t.summary }}</p>
+        {% if t.references %}
+        <div class="meta">
+          {% for ref in t.references[:5] %}
+          <a class="link-btn" href="{{ ref.url }}" target="_blank" rel="noopener noreferrer">{{ ref.label }} ↗</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if summary.milestones %}
+  <section class="section" id="milestones">
+    <div class="section-head"><h2>🏁 关键里程碑</h2></div>
+    <div class="cards">
+      {% for m in summary.milestones %}
+      <article class="news-card">
+        <h3>{{ m.title }}</h3>
+        <p class="summary">{{ m.summary }}</p>
+        <div class="meta">
+          {% if m.date %}<span>{{ m.date }}</span>{% endif %}
+          {% if m.url %}<a class="link-btn" href="{{ m.url }}" target="_blank" rel="noopener noreferrer">原文 ↗</a>{% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <section class="section" id="daily">
+    <div class="section-head"><h2>📚 逐日索引</h2><span class="count">{{ summary.daily_links|length }} 期</span></div>
+    <div class="cards three-col">
+      {% for d in summary.daily_links %}
+      <a class="news-card" href="../daily/{{ d.slug }}.html" style="text-decoration:none;color:inherit">
+        <h3>{{ d.date }}</h3>
+        <p class="summary">{{ d.theme or '查看当日日报' }}</p>
+        <div class="meta"><span>📰 {{ d.total }} 条</span><span>🔥 {{ d.hot_count }}</span></div>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+
+</main>
+{% endblock %}

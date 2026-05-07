@@ -1,0 +1,11 @@
+<article class="news-card">
+  <h3>{{ it.title }}</h3>
+  {% if it.summary %}<p class="summary">{{ it.summary }}</p>{% endif %}
+  {% if it.value_note %}<p class="value">💡 {{ it.value_note }}</p>{% endif %}
+  <div class="meta">
+    {% if it.importance %}<span class="tag tag-{{ it.importance }}">{{ importance_label(it.importance) }}</span>{% endif %}
+    {% if it.source_name %}<span>{{ it.source_name }}</span>{% endif %}
+    {% if it.published_at %}<span>· {{ it.published_at[:10] }}</span>{% endif %}
+    {% if it.url %}<a class="link-btn" href="{{ it.url }}" target="_blank" rel="noopener noreferrer">原文 ↗</a>{% endif %}
+  </div>
+</article>

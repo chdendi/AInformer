@@ -1,0 +1,65 @@
+name: Daily AI Report
+
+on:
+  schedule:
+    # 北京时间 09:00 = UTC 01:00
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Override date (YYYY-MM-DD), empty = today'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-report
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      DEEPSEEK_MODEL: ${{ vars.DEEPSEEK_MODEL || 'deepseek-chat' }}
+      DEEPSEEK_BASE_URL: ${{ vars.DEEPSEEK_BASE_URL || 'https://api.deepseek.com/v1' }}
+      TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+      SITE_BASE_URL: ${{ vars.SITE_BASE_URL }}
+      TZ: Asia/Shanghai
+      LOG_LEVEL: INFO
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Generate daily report
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            python -m src.main_daily --date "${{ github.event.inputs.date }}"
+          else
+            python -m src.main_daily
+          fi
+
+      - name: Commit and push
+        run: |
+          git config user.name "ainformer-bot"
+          git config user.email "ainformer-bot@users.noreply.github.com"
+          git add docs/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            DATE=$(date -u +%Y-%m-%d)
+            git commit -m "chore(daily): publish AI report ${DATE}"
+            git push
+          fi

@@ -1,0 +1,117 @@
+{% extends "base.html.j2" %}
+{% block title %}AInformer · 每日 AI 简报{% endblock %}
+{% block description %}由 DeepSeek + Tavily 自动生成的中文 AI 每日资讯日报。{% endblock %}
+
+{% block extra_css %}
+.intro{padding:36px 28px;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;margin:32px 0;line-height:1.85}
+.intro h2{font-size:1.25rem;margin-bottom:12px}
+.intro p{color:#cfcfd6;margin-bottom:8px}
+.intro code{font-size:.86rem}
+.archive-grid{display:grid;gap:14px;margin-top:18px}
+@media(min-width:768px){.archive-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.archive-grid{grid-template-columns:repeat(3,1fr)}}
+.archive-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:18px 20px;transition:all .3s}
+.archive-card:hover{transform:translateY(-3px);background:var(--bg-hover);border-color:#1f3057}
+.archive-card .date{font-size:.92rem;color:var(--text-dim);margin-bottom:8px;font-variant-numeric:tabular-nums}
+.archive-card h3{font-size:1.02rem;line-height:1.5;margin-bottom:10px;font-weight:600}
+.archive-card .stats{display:flex;gap:10px;font-size:.78rem;color:var(--text-mute)}
+.archive-card a{display:block;color:inherit}
+.year-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.year-pill{padding:6px 14px;background:rgba(102,126,234,.12);border:1px solid rgba(102,126,234,.3);border-radius:999px;font-size:.85rem}
+{% endblock %}
+
+{% block body %}
+<header class="hero">
+  <div class="date">{{ today }}</div>
+  <h1>AInformer</h1>
+  <p class="theme">每天早上自动汇总过去 24 小时最值得关注的 AI 资讯：工具教程、行业动态、领袖观点、中文生态。</p>
+  <div class="meta">
+    <span>📅 已发布 {{ daily|length }} 期</span>
+    {% if monthly %}<span>📆 月度总结 {{ monthly|length }} 篇</span>{% endif %}
+    {% if yearly %}<span>🗓 年度总结 {{ yearly|length }} 篇</span>{% endif %}
+  </div>
+</header>
+
+<nav class="sticky-nav">
+  <div class="nav-inner">
+    <a class="home" href="#">AInformer</a>
+    <a href="#latest">最新一期</a>
+    <a href="#archive">日报归档</a>
+    {% if monthly %}<a href="#monthly">月度</a>{% endif %}
+    {% if yearly %}<a href="#yearly">年度</a>{% endif %}
+    <a href="#about">关于</a>
+  </div>
+</nav>
+
+<main class="container">
+
+  {% if daily %}
+  {% set latest = daily[0] %}
+  <section class="section" id="latest">
+    <div class="section-head"><h2>📰 最新一期</h2><span class="count">{{ latest.date }}</span></div>
+    <a href="daily/{{ latest.slug }}.html" style="text-decoration:none;color:inherit">
+      <article class="headline-card">
+        <h3>{{ latest.theme or '查看今日 AI 简报' }}</h3>
+        {% if latest.lede %}<p>{{ latest.lede[:240] }}{% if latest.lede|length > 240 %}…{% endif %}</p>{% endif %}
+        <div class="meta">
+          <span>📰 {{ latest.total }} 条精选</span>
+          <span>🔥 {{ latest.hot_count }} 头条</span>
+          <a class="link-btn" href="daily/{{ latest.slug }}.html">查看完整日报 →</a>
+        </div>
+      </article>
+    </a>
+  </section>
+  {% endif %}
+
+  <section class="section" id="archive">
+    <div class="section-head"><h2>📚 日报归档</h2><span class="count">{{ daily|length }} 期</span></div>
+    {% if daily %}
+    <div class="archive-grid">
+      {% for d in daily[:30] %}
+      <a class="archive-card" href="daily/{{ d.slug }}.html">
+        <div class="date">{{ d.date }} · 周{{ d.weekday_zh }}</div>
+        <h3>{{ d.theme or '当日 AI 简报' }}</h3>
+        <div class="stats"><span>📰 {{ d.total }}</span><span>🔥 {{ d.hot_count }}</span></div>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}<div class="empty">还没有日报，请等待第一次 GitHub Actions 跑通。</div>{% endif %}
+  </section>
+
+  {% if monthly %}
+  <section class="section" id="monthly">
+    <div class="section-head"><h2>📆 月度总结</h2><span class="count">{{ monthly|length }} 篇</span></div>
+    <div class="archive-grid">
+      {% for m in monthly %}
+      <a class="archive-card" href="monthly/{{ m.slug }}.html">
+        <div class="date">{{ m.label }}</div>
+        <h3>{{ m.title or m.label + ' 月度回顾' }}</h3>
+        <div class="stats"><span>📰 {{ m.total }} 条汇总</span></div>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if yearly %}
+  <section class="section" id="yearly">
+    <div class="section-head"><h2>🗓 年度总结</h2><span class="count">{{ yearly|length }} 篇</span></div>
+    <div class="archive-grid">
+      {% for y in yearly %}
+      <a class="archive-card" href="yearly/{{ y.slug }}.html">
+        <div class="date">{{ y.label }}</div>
+        <h3>{{ y.title or y.label + ' 年度回顾' }}</h3>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <section class="intro" id="about">
+    <h2>关于 AInformer</h2>
+    <p>每天早上 9:00（北京时间）由 GitHub Actions 自动触发，4 个并行 Agent 分别负责工具教程、行业新闻、领袖观点、中文生态四大栏目，搜索 RSS 与 Tavily 后由 DeepSeek 综合提炼为一份去重后的中文日报。</p>
+    <p>所有资讯均来自公开渠道，优先保留可追溯的原文链接。源代码：<a href="https://github.com/" target="_blank" rel="noopener">GitHub 仓库</a>。</p>
+  </section>
+
+</main>
+{% endblock %}

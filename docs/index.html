@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AInformer · 每日 AI 简报</title>
+<meta name="description" content="由 DeepSeek + Tavily 自动生成的中文 AI 每日资讯日报。">
+<style>
+:root{
+  --bg:#0f0f0f;--bg-card:#1a1a2e;--bg-hover:#1f1f3a;--border:#16213e;
+  --text:#e8e8e8;--text-dim:#a0a0a0;--text-mute:#6b7280;
+  --grad:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+  --c-headline:#f093fb;--c-tutorial:#4facfe;--c-industry:#43e97b;--c-opinion:#fa709a;--c-chinese:#f8e71c;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB',sans-serif;line-height:1.65;font-size:15px}
+a{color:#9bb6ff;text-decoration:none}
+a:hover{color:#cfd9ff}
+code{background:rgba(255,255,255,.06);padding:1px 6px;border-radius:4px;font-family:'SF Mono',Menlo,Consolas,monospace;font-size:.92em;color:#f5b8d8}
+pre.code{background:#0a0a18;border:1px solid var(--border);border-radius:8px;padding:14px 16px;overflow:auto;margin:10px 0;font-size:13px}
+pre.code code{background:transparent;padding:0;color:#e8e8e8}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+/* Hero */
+.hero{padding:64px 24px 56px;background:var(--grad);background-size:200% 200%;animation:gradient-shift 12s ease infinite;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 30%, rgba(255,255,255,.08), transparent 40%);pointer-events:none}
+.hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.25)}
+.hero .date{font-size:1.05rem;color:rgba(255,255,255,.85);font-variant-numeric:tabular-nums;margin-bottom:18px;letter-spacing:.05em}
+.hero .theme{max-width:680px;margin:0 auto;color:rgba(255,255,255,.92);font-size:1.05rem;line-height:1.7}
+.hero .meta{margin-top:22px;display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center;color:rgba(255,255,255,.85);font-size:.85rem}
+.hero .meta span{padding:5px 12px;background:rgba(0,0,0,.18);border-radius:999px;backdrop-filter:blur(6px)}
+@keyframes gradient-shift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:50;background:rgba(15,15,15,.7);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:12px 24px;display:flex;gap:8px;align-items:center;overflow-x:auto;scrollbar-width:none}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav-inner a{padding:7px 14px;border-radius:8px;color:var(--text-dim);font-size:.9rem;white-space:nowrap;transition:all .2s}
+.nav-inner a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+.nav-inner .home{font-weight:600;color:var(--text);margin-right:8px}
+
+/* Stats */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:36px 0 28px}
+.stat{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:18px 16px;text-align:center;transition:all .3s}
+.stat:hover{transform:translateY(-2px);background:var(--bg-hover)}
+.stat .num{font-size:2rem;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+.stat .label{margin-top:6px;color:var(--text-dim);font-size:.85rem}
+
+/* Lede */
+.lede{margin:24px 0 8px;padding:28px 28px;background:linear-gradient(180deg,rgba(102,126,234,.10),rgba(118,75,162,.05));border:1px solid var(--border);border-left:4px solid #f093fb;border-radius:14px;font-size:1.05rem;line-height:1.85;color:#f0f0f0}
+.lede::before{content:"今日速读";display:block;font-size:.78rem;letter-spacing:.18em;color:#f093fb;font-weight:600;margin-bottom:10px}
+
+/* Section */
+.section{margin:48px 0 8px}
+.section-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.section-head h2{font-size:1.35rem;font-weight:700;letter-spacing:.01em}
+.section-head .count{color:var(--text-mute);font-size:.85rem}
+.section-divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:36px 0}
+
+/* Cards */
+.headlines{display:grid;gap:16px;margin-bottom:8px}
+@media(min-width:1024px){.headlines{grid-template-columns:1fr 1fr}}
+.headline-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:22px 24px;position:relative;transition:all .3s}
+.headline-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--c-headline);border-radius:14px 0 0 14px}
+.headline-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(102,126,234,.15)}
+.headline-card h3{font-size:1.12rem;line-height:1.45;margin-bottom:10px;font-weight:600}
+.headline-card p{color:#d0d0d8;font-size:.95rem;margin-bottom:14px}
+.headline-card .meta{display:flex;flex-wrap:wrap;gap:8px;font-size:.8rem;color:var(--text-mute);align-items:center}
+
+.cards{display:grid;gap:14px}
+@media(min-width:1024px){.cards{grid-template-columns:1fr 1fr}}
+@media(min-width:1280px){.cards.three-col{grid-template-columns:1fr 1fr 1fr}}
+.news-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:18px 20px;transition:all .3s;display:flex;flex-direction:column;gap:10px}
+.news-card:hover{transform:translateY(-3px);background:var(--bg-hover);border-color:#1f3057}
+.news-card h3{font-size:1rem;line-height:1.5;font-weight:600}
+.news-card .summary{font-size:.92rem;color:#cfcfd6;flex-grow:1}
+.news-card .value{font-size:.85rem;color:#a8b3d6;padding-left:10px;border-left:2px solid rgba(102,126,234,.4)}
+.news-card .meta{display:flex;flex-wrap:wrap;gap:6px;font-size:.78rem;color:var(--text-mute);align-items:center;margin-top:auto}
+
+/* Quote (opinion) */
+.quote-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:22px 22px 22px 70px;position:relative;transition:all .3s}
+.quote-card:hover{transform:translateY(-3px);background:var(--bg-hover)}
+.quote-card::before{content:"\201C";position:absolute;left:18px;top:8px;font-size:3.2rem;color:var(--c-opinion);font-family:Georgia,serif;line-height:1;opacity:.65}
+.quote-card .quote-en{font-style:italic;color:#e8e8e8;line-height:1.65;margin-bottom:8px}
+.quote-card .quote-zh{color:#cfcfd6;line-height:1.7;margin-bottom:12px}
+.quote-card .person{font-weight:600;color:#fa709a;font-size:.9rem}
+.quote-card .meta{display:flex;flex-wrap:wrap;gap:6px;font-size:.78rem;color:var(--text-mute);margin-top:8px}
+
+/* Daily takeaway */
+.takeaway{margin:40px 0;padding:28px 30px;background:linear-gradient(135deg,rgba(248,231,28,.08),rgba(250,112,154,.05));border:1px solid rgba(248,231,28,.25);border-radius:16px;position:relative}
+.takeaway::before{content:"📚 每日一学";display:block;font-size:.85rem;letter-spacing:.12em;color:#f8e71c;font-weight:600;margin-bottom:6px}
+.takeaway h3{font-size:1.25rem;font-weight:700;margin-bottom:14px;color:#fff}
+.takeaway p{margin-bottom:10px;line-height:1.78}
+.takeaway ul{margin:8px 0 12px 24px}
+.takeaway li{margin-bottom:6px}
+
+/* Tags */
+.tag{display:inline-flex;align-items:center;padding:2px 9px;border-radius:6px;font-size:.74rem;font-weight:500;letter-spacing:.02em}
+.tag-tutorial{background:rgba(79,172,254,.15);color:#4facfe}
+.tag-industry{background:rgba(67,233,123,.15);color:#43e97b}
+.tag-opinion{background:rgba(250,112,154,.15);color:#fa709a}
+.tag-chinese{background:rgba(248,231,28,.15);color:#f8e71c}
+.tag-headline{background:rgba(240,147,251,.15);color:#f093fb}
+.tag-hot{background:#dc2626;color:#fff;animation:pulse 1.6s ease-in-out infinite}
+.tag-star{background:rgba(251,191,36,.18);color:#fbbf24}
+.tag-pin{background:rgba(148,163,184,.15);color:#94a3b8}
+@keyframes pulse{0%,100%{opacity:.85}50%{opacity:1}}
+
+.link-btn{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:rgba(102,126,234,.1);border:1px solid rgba(102,126,234,.3);border-radius:6px;font-size:.78rem;color:#9bb6ff;transition:all .2s}
+.link-btn:hover{background:rgba(102,126,234,.18);color:#fff}
+
+.empty{padding:24px;text-align:center;color:var(--text-mute);background:var(--bg-card);border:1px dashed var(--border);border-radius:12px}
+
+/* Footer */
+.footer{margin-top:80px;padding:30px 24px;background:#0a0a18;color:var(--text-mute);font-size:.82rem;border-top:1px solid var(--border);text-align:center;line-height:1.8}
+.footer a{color:#9bb6ff}
+
+/* Tablet */
+@media(max-width:1023px){
+  .stats-bar{grid-template-columns:repeat(2,1fr)}
+  .cards{grid-template-columns:1fr}
+}
+/* Phone */
+@media(max-width:639px){
+  .hero{padding:44px 18px 36px}
+  .container{padding:0 16px}
+  .stats-bar{grid-template-columns:repeat(2,1fr);gap:10px}
+  .stat .num{font-size:1.6rem}
+  .lede{padding:20px}
+  .takeaway{padding:22px}
+  .quote-card{padding:22px 20px 22px 56px}
+  .quote-card::before{font-size:2.6rem;left:14px}
+}
+@media print{
+  body{background:#fff;color:#000}
+  .sticky-nav,.footer{display:none}
+  .news-card,.headline-card,.quote-card,.takeaway,.lede{break-inside:avoid;background:#fff;border:1px solid #ddd;color:#000}
+  .hero{background:#fff;color:#000}
+  .hero h1,.hero .date,.hero .theme{color:#000}
+  a{color:#000;text-decoration:underline}
+}
+.intro{padding:36px 28px;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;margin:32px 0;line-height:1.85}
+.intro h2{font-size:1.25rem;margin-bottom:12px}
+.intro p{color:#cfcfd6;margin-bottom:8px}
+.intro code{font-size:.86rem}
+.archive-grid{display:grid;gap:14px;margin-top:18px}
+@media(min-width:768px){.archive-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.archive-grid{grid-template-columns:repeat(3,1fr)}}
+.archive-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:18px 20px;transition:all .3s}
+.archive-card:hover{transform:translateY(-3px);background:var(--bg-hover);border-color:#1f3057}
+.archive-card .date{font-size:.92rem;color:var(--text-dim);margin-bottom:8px;font-variant-numeric:tabular-nums}
+.archive-card h3{font-size:1.02rem;line-height:1.5;margin-bottom:10px;font-weight:600}
+.archive-card .stats{display:flex;gap:10px;font-size:.78rem;color:var(--text-mute)}
+.archive-card a{display:block;color:inherit}
+.year-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.year-pill{padding:6px 14px;background:rgba(102,126,234,.12);border:1px solid rgba(102,126,234,.3);border-radius:999px;font-size:.85rem}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="date">2026-05-07</div>
+  <h1>AInformer</h1>
+  <p class="theme">每天早上自动汇总过去 24 小时最值得关注的 AI 资讯：工具教程、行业动态、领袖观点、中文生态。</p>
+  <div class="meta">
+    <span>📅 已发布 1 期</span>
+  </div>
+</header>
+
+<nav class="sticky-nav">
+  <div class="nav-inner">
+    <a class="home" href="#">AInformer</a>
+    <a href="#latest">最新一期</a>
+    <a href="#archive">日报归档</a>
+    <a href="#about">关于</a>
+  </div>
+</nav>
+
+<main class="container">
+
+  <section class="section" id="latest">
+    <div class="section-head"><h2>📰 最新一期</h2><span class="count">2026-05-07</span></div>
+    <a href="daily/20260507.html" style="text-decoration:none;color:inherit">
+      <article class="headline-card">
+        <h3>Anthropic 发布 Claude Opus 4.7；DeepSeek 推出 V4 Pro 推理模型</h3>
+<p>今日 AI 圈最大事件是 Anthropic 发布 Claude Opus 4.7（1M context）。与此同时，DeepSeek 开源 V4 Pro，OpenAI 在 GPT-5.5 路线图上释放新信号。Andrej Karpathy 撰文讨论 Agent 评测的根本矛盾。</p>        <div class="meta">
+          <span>📰 4 条精选</span>
+          <span>🔥 1 头条</span>
+          <a class="link-btn" href="daily/20260507.html">查看完整日报 →</a>
+        </div>
+      </article>
+    </a>
+  </section>
+
+  <section class="section" id="archive">
+    <div class="section-head"><h2>📚 日报归档</h2><span class="count">1 期</span></div>
+    <div class="archive-grid">
+      <a class="archive-card" href="daily/20260507.html">
+        <div class="date">2026-05-07 · 周四</div>
+        <h3>Anthropic 发布 Claude Opus 4.7；DeepSeek 推出 V4 Pro 推理模型</h3>
+        <div class="stats"><span>📰 4</span><span>🔥 1</span></div>
+      </a>
+    </div>
+  </section>
+
+
+
+  <section class="intro" id="about">
+    <h2>关于 AInformer</h2>
+    <p>每天早上 9:00（北京时间）由 GitHub Actions 自动触发，4 个并行 Agent 分别负责工具教程、行业新闻、领袖观点、中文生态四大栏目，搜索 RSS 与 Tavily 后由 DeepSeek 综合提炼为一份去重后的中文日报。</p>
+    <p>所有资讯均来自公开渠道，优先保留可追溯的原文链接。源代码：<a href="https://github.com/" target="_blank" rel="noopener">GitHub 仓库</a>。</p>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="container">
+    <p>本日报基于公开信息自动搜索整理生成，资讯来源包括 OpenAI / Anthropic / DeepMind 等官方博客、The Verge、TechCrunch、36kr、机器之心、量子位、ArXiv、Hacker News 等公开平台。内容可能存在时效性偏差或不完整，请以原始来源为准。</p>
+    <p style="margin-top:8px">Generated at 2026-05-07 23:29 · Powered by DeepSeek + Tavily · <a href="../index.html">AInformer</a></p>
+  </div>
+</footer>
+</body>
+</html>
