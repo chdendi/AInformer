@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Daily | 2026-05-08</title>
+<style>
+:root{
+    --bg-primary:#0f0f0f;
+    --bg-card:#1a1a2e;
+    --bg-card-hover:#1f1f3a;
+    --bg-elev:#15152b;
+    --border:#16213e;
+    --text-primary:#e8e8e8;
+    --text-secondary:#a0a0a0;
+    --text-muted:#6c6c7e;
+    --accent-gradient:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+    --color-tips:#4facfe;
+    --color-news:#43e97b;
+    --color-opinion:#fa709a;
+    --color-headline:#f093fb;
+    --color-academic:#f8e71c;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+    background:var(--bg-primary);
+    color:var(--text-primary);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB',sans-serif;
+    line-height:1.65;
+    font-size:15px;
+}
+a{color:inherit;text-decoration:none}
+.container{max-width:1280px;margin:0 auto;padding:0 24px}
+
+/* Hero */
+.hero{
+    background:linear-gradient(120deg,#1a1a4e 0%,#3b1f6e 25%,#4d2a7a 50%,#1f3a6f 75%,#0f1f4e 100%);
+    background-size:300% 300%;
+    animation:gradient-shift 12s ease infinite;
+    padding:80px 0 64px;
+    position:relative;
+    overflow:hidden;
+    border-bottom:1px solid var(--border);
+}
+.hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background:radial-gradient(circle at 30% 20%,rgba(102,126,234,.25),transparent 40%),
+               radial-gradient(circle at 80% 60%,rgba(240,147,251,.18),transparent 40%);
+    pointer-events:none;
+}
+@keyframes gradient-shift{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+.hero-content{position:relative;z-index:1}
+.hero-eyebrow{
+    display:inline-block;
+    font-size:.8rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:#cfd2ff;
+    background:rgba(255,255,255,.08);
+    padding:6px 14px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.12);
+    margin-bottom:24px;
+}
+.hero h1{
+    font-size:clamp(2.4rem,5vw,4rem);
+    font-weight:800;
+    letter-spacing:-.02em;
+    background:linear-gradient(135deg,#fff 0%,#cfd2ff 50%,#f093fb 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin-bottom:18px;
+}
+.hero-meta{
+    display:flex;flex-wrap:wrap;gap:24px;align-items:center;
+    color:#dadcf3;font-size:1.05rem;
+}
+.hero-meta strong{color:#fff;font-weight:600}
+.hero-tagline{
+    margin-top:24px;
+    font-size:1.15rem;
+    max-width:760px;
+    color:rgba(255,255,255,.85);
+    line-height:1.7;
+}
+
+/* Sticky Nav */
+.sticky-nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(15,15,15,.7);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav-inner{
+    display:flex;gap:6px;overflow-x:auto;
+    padding:14px 0;
+    scrollbar-width:none;
+}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav-inner a{
+    flex-shrink:0;
+    padding:8px 16px;
+    border-radius:8px;
+    font-size:.92rem;
+    color:var(--text-secondary);
+    transition:all .25s ease;
+    border:1px solid transparent;
+}
+.nav-inner a:hover{
+    color:var(--text-primary);
+    background:rgba(102,126,234,.12);
+    border-color:rgba(102,126,234,.3);
+}
+
+/* Stats Bar */
+.stats-bar{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+    margin:48px 0 64px;
+}
+.stat-card{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:24px 20px;
+    text-align:center;
+    transition:all .3s ease;
+}
+.stat-card:hover{transform:translateY(-2px);border-color:rgba(102,126,234,.4)}
+.stat-num{
+    font-size:2.4rem;font-weight:800;line-height:1;
+    background:var(--accent-gradient);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin-bottom:6px;
+}
+.stat-label{color:var(--text-secondary);font-size:.92rem}
+
+/* Section Common */
+section{margin-bottom:80px;scroll-margin-top:80px}
+.section-head{
+    display:flex;align-items:baseline;justify-content:space-between;
+    margin-bottom:28px;gap:16px;
+}
+.section-title{
+    font-size:1.7rem;font-weight:700;
+    display:flex;align-items:center;gap:12px;
+}
+.section-title .bar{
+    display:inline-block;width:5px;height:24px;border-radius:3px;
+}
+.section-sub{color:var(--text-muted);font-size:.92rem}
+
+/* Headlines */
+.headlines{display:grid;gap:20px}
+.headline-card{
+    background:linear-gradient(135deg,#1a1a3e 0%,#231a3e 100%);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:28px 28px 28px 32px;
+    position:relative;
+    transition:all .3s ease;
+    overflow:hidden;
+}
+.headline-card::before{
+    content:"";
+    position:absolute;left:0;top:0;bottom:0;width:5px;
+    background:linear-gradient(180deg,var(--color-headline),#a06ee0);
+}
+.headline-card:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 28px rgba(102,126,234,.18);
+    border-color:rgba(240,147,251,.3);
+}
+.headline-tag{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:.78rem;font-weight:700;
+    color:#fff;
+    background:linear-gradient(135deg,#f093fb,#f5576c);
+    padding:4px 12px;border-radius:999px;
+    margin-bottom:14px;
+    animation:hot-pulse 2.4s ease-in-out infinite;
+}
+@keyframes hot-pulse{
+    0%,100%{opacity:1}
+    50%{opacity:.78}
+}
+.headline-title{
+    font-size:1.35rem;font-weight:700;line-height:1.4;
+    margin-bottom:12px;
+}
+.headline-summary{color:var(--text-secondary);margin-bottom:18px;line-height:1.7}
+.headline-meta{
+    display:flex;flex-wrap:wrap;gap:10px;align-items:center;
+    font-size:.85rem;color:var(--text-muted);
+}
+.headline-meta a{
+    background:rgba(102,126,234,.15);
+    color:#a8b3ff;
+    padding:5px 12px;border-radius:8px;
+    border:1px solid rgba(102,126,234,.25);
+    transition:all .25s ease;
+}
+.headline-meta a:hover{background:rgba(102,126,234,.3);color:#fff}
+
+/* Daily Takeaway */
+.takeaway{
+    background:linear-gradient(135deg,rgba(102,126,234,.12) 0%,rgba(240,147,251,.08) 100%);
+    border:1px solid transparent;
+    border-radius:18px;
+    padding:36px;
+    position:relative;
+    background-clip:padding-box;
+}
+.takeaway::before{
+    content:"";position:absolute;inset:0;border-radius:18px;padding:1px;
+    background:linear-gradient(135deg,#667eea,#f093fb);
+    -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
+    pointer-events:none;
+}
+.takeaway-eyebrow{
+    color:#f093fb;font-size:.85rem;font-weight:700;letter-spacing:.15em;
+    text-transform:uppercase;margin-bottom:12px;
+}
+.takeaway h3{font-size:1.5rem;margin-bottom:16px;line-height:1.4}
+.takeaway p{color:var(--text-secondary);margin-bottom:16px;font-size:1.02rem;line-height:1.75}
+.takeaway ol{padding-left:22px;color:var(--text-primary);margin-bottom:16px}
+.takeaway ol li{margin-bottom:10px;line-height:1.7}
+.takeaway code{
+    background:rgba(0,0,0,.4);
+    padding:2px 8px;border-radius:5px;
+    color:#a8b3ff;
+    font-family:ui-monospace,'SF Mono',Menlo,monospace;
+    font-size:.92em;
+}
+.takeaway pre{
+    background:#0a0a18;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:18px;
+    overflow-x:auto;
+    margin:16px 0;
+    font-family:ui-monospace,'SF Mono',Menlo,monospace;
+    font-size:.88rem;
+    line-height:1.6;
+    color:#cfd2ff;
+}
+.takeaway-source{font-size:.85rem;color:var(--text-muted);margin-top:8px}
+.takeaway-source a{color:#a8b3ff;border-bottom:1px dashed rgba(168,179,255,.4)}
+
+/* Card Grid */
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+.news-card{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:22px;
+    transition:all .3s ease;
+    display:flex;flex-direction:column;gap:12px;
+    position:relative;
+}
+.news-card:hover{
+    transform:translateY(-4px);
+    background:var(--bg-card-hover);
+    box-shadow:0 8px 24px rgba(0,0,0,.4);
+}
+.news-card.tips{border-left:3px solid var(--color-tips)}
+.news-card.news{border-left:3px solid var(--color-news)}
+.news-card.opinion{border-left:3px solid var(--color-opinion)}
+.news-card.academic{border-left:3px solid var(--color-academic)}
+.card-priority{
+    position:absolute;top:14px;right:16px;
+    font-size:.7rem;font-weight:700;letter-spacing:.05em;
+    padding:3px 8px;border-radius:6px;
+}
+.priority-star{color:#ffd166;background:rgba(255,209,102,.12);border:1px solid rgba(255,209,102,.3)}
+.priority-pin{color:#a8b3ff;background:rgba(168,179,255,.1);border:1px solid rgba(168,179,255,.25)}
+.card-title{font-size:1.05rem;font-weight:700;line-height:1.45;padding-right:60px}
+.card-summary{color:var(--text-secondary);font-size:.92rem;line-height:1.65;flex-grow:1}
+.card-value{
+    color:#cfd2ff;font-size:.85rem;
+    background:rgba(102,126,234,.08);
+    border-left:2px solid rgba(102,126,234,.4);
+    padding:8px 12px;border-radius:0 6px 6px 0;
+}
+.card-value::before{content:"💡 ";opacity:.7}
+.card-meta{
+    display:flex;flex-wrap:wrap;align-items:center;gap:8px;
+    font-size:.8rem;color:var(--text-muted);
+    padding-top:10px;border-top:1px solid rgba(255,255,255,.05);
+}
+.source-tag{
+    padding:3px 9px;border-radius:6px;font-weight:600;
+    background:rgba(255,255,255,.06);color:var(--text-secondary);
+}
+.time-tag{margin-left:auto;font-size:.78rem;color:var(--text-muted)}
+.link-btn{
+    color:#a8b3ff;
+    background:rgba(102,126,234,.12);
+    padding:3px 10px;border-radius:6px;
+    border:1px solid rgba(102,126,234,.2);
+    font-size:.78rem;
+    transition:all .25s ease;
+}
+.link-btn:hover{background:rgba(102,126,234,.25);color:#fff}
+
+/* Quote cards */
+.quote-grid{display:grid;grid-template-columns:1fr;gap:18px}
+.quote-card{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:24px;
+    display:grid;
+    grid-template-columns:64px 1fr;
+    gap:20px;
+    transition:all .3s ease;
+    position:relative;
+}
+.quote-card:hover{transform:translateY(-3px);background:var(--bg-card-hover);box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.quote-avatar{
+    width:56px;height:56px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.4rem;font-weight:700;color:#fff;
+    background:linear-gradient(135deg,#fa709a,#fee140);
+    flex-shrink:0;
+    box-shadow:0 4px 12px rgba(250,112,154,.25);
+}
+.quote-body{display:flex;flex-direction:column;gap:12px}
+.quote-text{
+    font-style:italic;
+    color:var(--text-primary);
+    line-height:1.7;
+    position:relative;
+    padding-left:18px;
+    border-left:3px solid var(--color-opinion);
+}
+.quote-trans{color:var(--text-secondary);font-size:.92rem;line-height:1.7}
+.quote-byline{font-weight:600;color:#fff}
+.quote-byline span{color:var(--text-muted);font-weight:400;margin-left:8px;font-size:.88rem}
+.quote-value{color:#cfd2ff;font-size:.88rem;background:rgba(250,112,154,.08);padding:8px 12px;border-radius:6px;border-left:2px solid rgba(250,112,154,.4)}
+.quote-meta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:.82rem;color:var(--text-muted)}
+
+/* Reading List */
+.reading-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.reading-col{
+    background:var(--bg-elev);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:22px;
+}
+.reading-col h4{font-size:1.05rem;margin-bottom:14px;color:#fff}
+.reading-col ul{list-style:none}
+.reading-col li{padding:10px 0;border-bottom:1px dashed rgba(255,255,255,.05);font-size:.9rem;line-height:1.55}
+.reading-col li:last-child{border-bottom:none}
+.reading-col a{color:#cfd2ff}
+.reading-col a:hover{color:#a8b3ff}
+.reading-meta{color:var(--text-muted);font-size:.8rem;display:block;margin-top:4px}
+
+/* Footer */
+footer{
+    margin-top:80px;padding:40px 0;
+    border-top:1px solid var(--border);
+    color:var(--text-muted);font-size:.88rem;text-align:center;line-height:1.7;
+}
+
+/* Responsive */
+@media (max-width:1023px){
+    .stats-bar{grid-template-columns:repeat(2,1fr)}
+    .reading-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:767px){
+    .container{padding:0 18px}
+    .hero{padding:60px 0 48px}
+    .stats-bar{grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:48px}
+    .stat-num{font-size:2rem}
+    .card-grid{grid-template-columns:1fr}
+    .reading-grid{grid-template-columns:1fr}
+    .quote-card{grid-template-columns:1fr;gap:14px}
+    .quote-avatar{width:48px;height:48px;font-size:1.2rem}
+    .takeaway{padding:24px 22px}
+    .nav-inner{padding:12px 18px}
+}
+@media print{
+    body{background:#fff;color:#000}
+    .sticky-nav,.hero{display:none}
+    .news-card,.headline-card,.quote-card{break-inside:avoid;border:1px solid #ccc}
+}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<header class="hero">
+    <div class="container hero-content">
+        <span class="hero-eyebrow">AI Daily · Issue #20260508</span>
+        <h1>2026 年 5 月 8 日 · AI 资讯日报</h1>
+        <div class="hero-meta">
+            <span><strong>23</strong> 条精选资讯</span>
+            <span>·</span>
+            <span>覆盖 <strong>近 72 小时</strong> 全球动态</span>
+            <span>·</span>
+            <span>发布于 <strong>2026-05-08</strong></span>
+        </div>
+        <p class="hero-tagline">今日主线：Anthropic-SpaceX 30 万兆瓦"算力联姻"刷新行业格局，Claude Code 限速翻倍 + Routines/Outcomes 重构开发者工作流；中国大模型同日双响——DeepSeek 450 亿美元、Moonshot 200 亿美元估值，"诸神之战"进入下半场。</p>
+    </div>
+</header>
+
+<!-- Sticky Nav -->
+<nav class="sticky-nav">
+    <div class="container">
+        <div class="nav-inner">
+            <a href="#headlines">🔥 今日头条</a>
+            <a href="#takeaway">💡 每日一学</a>
+            <a href="#tips">🛠️ AI 使用姿势</a>
+            <a href="#news">📰 行业新闻</a>
+            <a href="#opinion">🎙️ 领袖观点</a>
+            <a href="#academic">🔬 学术动态</a>
+            <a href="#reading">📚 延伸阅读</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+<!-- Stats Bar -->
+<div class="stats-bar">
+    <div class="stat-card">
+        <div class="stat-num">6</div>
+        <div class="stat-label">使用姿势</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-num">7</div>
+        <div class="stat-label">行业新闻</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-num">5</div>
+        <div class="stat-label">人物观点</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-num">5</div>
+        <div class="stat-label">学术动态</div>
+    </div>
+</div>
+
+<!-- Headlines -->
+<section id="headlines">
+    <div class="section-head">
+        <h2 class="section-title"><span class="bar" style="background:linear-gradient(180deg,#f093fb,#f5576c)"></span>今日头条</h2>
+        <span class="section-sub">3 条改变 AI 行业格局的关键事件</span>
+    </div>
+    <div class="headlines">
+
+        <article class="headline-card">
+            <span class="headline-tag">🔥 头条</span>
+            <h3 class="headline-title">Anthropic 与 SpaceX/xAI 签 30 万兆瓦算力大单，Musk 与 Anthropic"破冰和解"</h3>
+            <p class="headline-summary">Anthropic 宣布买断 SpaceX 旗下 Memphis Colossus 1 数据中心全部算力——300+ MW、22 万张 NVIDIA H100/H200/GB200 GPU——并探索"轨道（太空）算力"合作。Musk 公开表态对 Anthropic 团队"印象深刻……没人触发我的邪恶探测器"，但保留单方面"道德裁决权"。Anthropic 同步把 Claude Code 五小时限速对 Pro/Max/Enterprise 用户翻倍，缓解长期投诉。</p>
+            <div class="headline-meta">
+                <span>来源：Anthropic / xAI 官方 · CNBC · Simon Willison Live blog</span>
+                <span>·</span>
+                <span>📅 2026-05-06 / 05-07</span>
+                <a href="https://www.cnbc.com/2026/05/06/anthropic-spacex-data-center-capacity.html" target="_blank" rel="noopener noreferrer">CNBC 报道</a>
+                <a href="https://x.ai/news/anthropic-compute-partnership" target="_blank" rel="noopener noreferrer">xAI 公告</a>
+                <a href="https://simonwillison.net/2026/May/7/xai-anthropic/" target="_blank" rel="noopener noreferrer">Simon Willison 解读</a>
+            </div>
+        </article>
+
+        <article class="headline-card">
+            <span class="headline-tag">🔥 头条</span>
+            <h3 class="headline-title">Code with Claude 2026：Routines、Outcomes、Multi-Agent Orchestration 三件套定义"自主开发"</h3>
+            <p class="headline-summary">Anthropic 在大会上一次性发布：① Routines 按 schedule/GitHub event 触发模板化云端 agent；② Outcomes 让你定义成功标准后 agent 自迭代；③ Multi-Agent Orchestration 编排"专门角色 + 工具"的 AI 团队；④ "Dreams" 长期记忆系统在空闲时自我更新；⑤ Opus 4.7 成为 Max/Team Premium 默认模型；⑥ 原生 CLI 二进制大幅缩短启动；⑦ CI auto-fix 自动给 PR 提交修复 commit。Mercado Libre 已设定 Q3 前 90% 自主编码目标。</p>
+            <div class="headline-meta">
+                <span>来源：Anthropic 官方 · Lenny's Newsletter · Simon Willison</span>
+                <span>·</span>
+                <span>📅 2026-05-06</span>
+                <a href="https://www.lennysnewsletter.com/p/code-with-claude-the-5-biggest-updates" target="_blank" rel="noopener noreferrer">Lenny 总结</a>
+                <a href="https://simonwillison.net/2026/May/6/code-w-claude-2026/" target="_blank" rel="noopener noreferrer">Simon Willison Live blog</a>
+            </div>
+        </article>
+
+        <article class="headline-card">
+            <span class="headline-tag">🔥 头条</span>
+            <h3 class="headline-title">中国大模型"融资双响"：DeepSeek 估值 450 亿美元、Moonshot/Kimi 估值 200 亿美元</h3>
+            <p class="headline-summary">5 月 7 日同日：① 一直零外部融资的 DeepSeek 启动首轮，估值约 <strong>450 亿美元</strong>（约 3000 亿元人民币），梁文锋通过增资将持股从 1% 提升至 34%；② Moonshot AI（Kimi 母公司）完成 ~20 亿美元 D 轮，投后估值 <strong>200 亿美元</strong>，美团龙珠领投，累计融资 44 亿美元，成为中国融资额最高的 LLM 公司。Kimi K2 周调用量 1.85T tokens（OpenRouter 全球第二），4 月 ARR 突破 2 亿美元。</p>
+            <div class="headline-meta">
+                <span>来源：新浪财经 · Bloomberg · TechNode</span>
+                <span>·</span>
+                <span>📅 2026-05-07</span>
+                <a href="https://finance.sina.com.cn/tech/2026-05-07/doc-inhwzmmr2916639.shtml" target="_blank" rel="noopener noreferrer">新浪财经-DeepSeek</a>
+                <a href="https://www.bloomberg.com/news/articles/2026-05-07/kimi-chatbot-maker-moonshot-ai-valued-at-20-billion-in-meituan-led-round" target="_blank" rel="noopener noreferrer">Bloomberg-Moonshot</a>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<!-- Daily Takeaway -->
+<section id="takeaway">
+    <div class="section-head">
+        <h2 class="section-title"><span class="bar" style="background:linear-gradient(180deg,#667eea,#f093fb)"></span>每日一学 · Daily Takeaway</h2>
+        <span class="section-sub">从今日资讯里挑出的、最有实操价值的一招</span>
+    </div>
+    <div class="takeaway">
+        <div class="takeaway-eyebrow">CLAUDE.md 配置：3 条让 Token 消耗砍半的硬规则</div>
+        <h3>把 CLAUDE.md 当作"合同"而不是"百科"</h3>
+        <p>Alex Fraser 综合 12 仓库实战经验，给出 CLAUDE.md 三条立刻见效的硬规则——核心思想是 Claude 对 prompt <strong>首尾内容权重最高</strong>，且文件越长越容易被忽略。</p>
+        <ol>
+            <li><strong>分层结构 · 首尾留给硬规则。</strong>顶部放"绝对不要做什么"的硬约束（删除测试、跳过 lint），中间放上下文规则，底部放参考资料。中间段落容易被模型"读到一半略过"。</li>
+            <li><strong>300 行硬上限。</strong>超过这个长度，Claude 的遵守率会显著下降；与其堆叠不如拆成 <code>docs/</code> 目录中的引用文件，让 Claude 按需 <code>Read</code>。</li>
+            <li><strong>不写 Claude 已知的事情。</strong>"使用 TypeScript""遵守 PEP 8"这种通识浪费上下文；只写项目独有的约定（自定义 lint 规则、特殊命名空间、非典型架构）。</li>
+        </ol>
+        <p>进阶招：维护一个 <code>CORRECTIONS.md</code> 作为"机构记忆"，每次纠正 Claude 后追加一条；下次启动时让 Claude 优先读这份文件，错误率会随时间收敛。</p>
+        <pre>## 硬规则（绝对不可违反）
+- 不修改 migrations/ 下任何文件，除非本任务明确要求
+- 完成前必须跑通 `pnpm test` 与 `pnpm lint`，输出实际结果再宣布完成
+- 单 PR 不超过 400 行 diff；超出则拆分
+
+## 上下文规则
+（项目特有的事情……）
+
+## 参考资料
+- @docs/architecture.md
+- @CORRECTIONS.md</pre>
+        <p class="takeaway-source">改编自 <a href="https://medium.com/ai-systems-lab/claude-md-setup-tips-that-will-10x-your-claude-code-workflow-1d7d23793755" target="_blank" rel="noopener noreferrer">Alex Fraser · CLAUDE.md Setup Tips That Will 10x Your Workflow</a> 与 <a href="https://www.openaitoolshub.org/en/blog/claude-code-workflow-examples" target="_blank" rel="noopener noreferrer">OpenAIToolsHub · Claude Code Workflow Examples</a></p>
+    </div>
+</section>
+
+<!-- AI 使用姿势 -->
+<section id="tips">
+    <div class="section-head">
+        <h2 class="section-title"><span class="bar" style="background:linear-gradient(180deg,#4facfe,#00f2fe)"></span>AI 使用姿势</h2>
+        <span class="section-sub">6 条来自一线的实战技巧与工具更新</span>
+    </div>
+    <div class="card-grid">
+
+        <article class="news-card tips">
+            <span class="card-priority priority-star">⭐ 重要</span>
+            <h3 class="card-title">Codex CLI 0.129.0：原生 Vim 模式 + Hooks 可视化</h3>
+            <p class="card-summary">TUI 新增模态 Vim 编辑（<code>/vim</code> 切换 + Vim 专用 keymap）；resume/fork picker 重设计 + raw scrollback + <code>/ide</code> 上下文注入；状态行支持主题色与 PR/分支摘要；<code>/hooks</code> 可视化浏览与切换；<code>codex exec --json</code> 报告 reasoning-token 用量。</p>
+            <div class="card-value">Vim 用户终于不必离开肌肉记忆；hooks 可视化让自动化调试体验对齐 Claude Code。</div>
+            <div class="card-meta">
+                <span class="source-tag">OpenAI Devs</span>
+                <a class="link-btn" href="https://developers.openai.com/codex/changelog" target="_blank" rel="noopener noreferrer">Changelog</a>
+                <span class="time-tag">2026-05-07</span>
+            </div>
+        </article>
+
+        <article class="news-card tips">
+            <span class="card-priority priority-star">⭐ 重要</span>
+            <h3 class="card-title">Devin 引入 Focus Mode + Agents Tab + PWA</h3>
+            <p class="card-summary">"Preview upcoming features"开关启用流式思考与更快执行；Slack 工具调用进入 worklog（带专属图标）；HTML/PDF/SVG 附件可在会话侧边栏内联渲染；Agents Tab 自动呈现子会话状态/todos/PR；可作为 PWA 安装到桌面与移动端。</p>
+            <div class="card-value">Agents Tab 是对"agent 群"管理体验的重要补强；PWA 化预示 agent 进入移动场景的真正生产级使用。</div>
+            <div class="card-meta">
+                <span class="source-tag">Cognition AI</span>
+                <a class="link-btn" href="https://docs.devin.ai/release-notes/overview" target="_blank" rel="noopener noreferrer">Release Notes</a>
+                <span class="time-tag">2026-05-06</span>
+            </div>
+        </article>
+
+        <article class="news-card tips">
+            <span class="card-priority priority-pin">📎 关注</span>
+            <h3 class="card-title">12 仓库实战：三层 Memory Routing 省 60% Token</h3>
+            <p class="card-summary">在 126 个 memory 文件 800K+ tokens 场景下，采用 intent classification → top-2 file load → on-demand read 的三层路由，可省 60-65% 上下文成本。配合极简 hook 集（仅 SessionStart 加载 index、PreToolUse 拦危险命令、UserPromptSubmit 澄清模糊提问）。</p>
+            <div class="card-value">极少有的"真在跑"的 hook 极简主义参考；memory 路由方案对 token 成本敏感的团队立刻可复用。</div>
+            <div class="card-meta">
+                <span class="source-tag">OpenAIToolsHub</span>
+                <a class="link-btn" href="https://www.openaitoolshub.org/en/blog/claude-code-workflow-examples" target="_blank" rel="noopener noreferrer">原文</a>
+                <span class="time-tag">2026-05 近期</span>
+            </div>
+        </article>
+
+        <article class="news-card tips">
+            <span class="card-priority priority-pin">📎 关注</span>
+            <h3 class="card-title">Vibe Coding 2026：判断"该不该让 AI 干"的 4 条边界</h3>
+            <p class="card-summary">Addy Osmani 直言"vibe coding ≠ AI-assisted engineering"。判断公式：把高 AI 价值（模式匹配、样板代码）任务委派出去，把低 AI 价值（人类判断主导、安全关键、性能关键、新颖问题域）的任务留给自己。务必同时让 AI 生成单元测试 + 严格类型检查 + linter 闭环。</p>
+            <div class="card-value">给"任务委派给 AI"提供清晰判断框架，避免在错的地方滥用 AI 写代码。</div>
+            <div class="card-meta">
+                <span class="source-tag">Addy Osmani</span>
+                <a class="link-btn" href="https://medium.com/@addyosmani/vibe-coding-is-not-the-same-as-ai-assisted-engineering-3f81088d5b98" target="_blank" rel="noopener noreferrer">原文</a>
+                <a class="link-btn" href="https://dev.to/pockit_tools/vibe-coding-in-2026-the-complete-guide-to-ai-pair-programming-that-actually-works-42de" target="_blank" rel="noopener noreferrer">完整指南</a>
+                <span class="time-tag">2026-05 近期</span>
+            </div>
+        </article>
+
+        <article class="news-card tips">
+            <span class="card-priority priority-pin">📎 关注</span>
+            <h3 class="card-title">Cursor vs Copilot 5 月实测：组合用法 ~$30/月最划算</h3>
+            <p class="card-summary">5 月最新基准：Cursor 平均 45ms/建议、88% 准确率；Copilot 平均 38ms/建议、91% 准确率。定价 Copilot Pro $10/月 vs Cursor Pro $20/月。推荐组合：Copilot 做日常补全 + Cursor 做重度重构，约 $30/月覆盖绝大多数场景。</p>
+            <div class="card-value">第一次看到对两款工具延迟和准确率的同期实测数据，团队选型可直接参考。</div>
+            <div class="card-meta">
+                <span class="source-tag">DigitalOcean</span>
+                <a class="link-btn" href="https://www.digitalocean.com/resources/articles/github-copilot-vs-cursor" target="_blank" rel="noopener noreferrer">DigitalOcean</a>
+                <a class="link-btn" href="https://tech-insider.org/github-copilot-vs-cursor-2026/" target="_blank" rel="noopener noreferrer">Tech-Insider</a>
+                <span class="time-tag">2026-05 近期</span>
+            </div>
+        </article>
+
+        <article class="news-card tips">
+            <span class="card-priority priority-pin">📎 关注</span>
+            <h3 class="card-title">Prompt Engineering 5 月新趋势：Negative Prompt + Scaffolding 立刻可用</h3>
+            <p class="card-summary">本月被反复验证的新技巧：① Meta prompting（聚焦逻辑结构以省 token）；② Self-consistency（多路径投票）；③ Adaptive prompting（基于反馈自优化）；④ Scaffolding（强制 JSON/表格输出便于下游消费）；⑤ Negative prompting（明确"不要做什么"）。岗位侧：纯"prompt engineer" 招聘 24→25 下降 40%，能力被并入更广义的 AI workflow 角色。</p>
+            <div class="card-value">Negative prompting 与 Scaffolding 在 agent 编排中立刻可用；岗位趋势提醒只会"调 prompt"已不够。</div>
+            <div class="card-meta">
+                <span class="source-tag">K2view / Lakera</span>
+                <a class="link-btn" href="https://www.k2view.com/blog/prompt-engineering-techniques/" target="_blank" rel="noopener noreferrer">K2view</a>
+                <a class="link-btn" href="https://www.lakera.ai/blog/prompt-engineering-guide" target="_blank" rel="noopener noreferrer">Lakera</a>
+                <span class="time-tag">2026-05 近期</span>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<!-- 行业新闻 -->
+<section id="news">
+    <div class="section-head">
+        <h2 class="section-title"><span class="bar" style="background:linear-gradient(180deg,#43e97b,#38f9d7)"></span>AI 行业新闻</h2>
+        <span class="section-sub">7 条产品发布、融资与监管动态</span>
+    </div>
+    <div class="card-grid">
+
+        <article class="news-card news">
+            <span class="card-priority priority-star">⭐ 重要</span>
+            <h3 class="card-title">Apple 2.5 亿美元和解 Siri AI 虚假宣传集体诉讼</h3>
+            <p class="card-summary">Apple 同意支付 <strong>2.5 亿美元</strong> 和解 Siri Apple Intelligence 延迟交付的集体诉讼，覆盖约 3700 万台 2024-06 至 2025-03 间售出的设备，单台赔付 25-95 美元；最终听证会定于 6 月 17 日。</p>
+            <div class="card-value">科技巨头首次因"AI 能力过度承诺"付出真金白银代价，对未来 AI 营销话术合规将产生示范效应。</div>
+            <div class="card-meta">
+                <span class="source-tag">TechCrunch</span>
+                <a class="link-btn" href="https://techcrunch.com/2026/05/06/apple-to-pay-250m-to-settle-lawsuit-over-siris-delayed-ai-features/" target="_blank" rel="noopener noreferrer">TechCrunch</a>
+                <span class="time-tag">2026-05-06</span>
+            </div>
+        </article>
+
+        <article class="news-card news">
+            <span class="card-priority priority-star">⭐ 重要</span>
+            <h3 class="card-title">Google/Microsoft/xAI 加入 CAISI"AI 模型预审"机制</h3>
+            <p class="card-summary">Google、Microsoft、xAI 加入 OpenAI、Anthropic 行列，向美国商务部 Center for AI Standards and Innovation（CAISI）开放模型预发布安全/国安评估权。Trump 政府从"放任行政命令"实质转向产业级合规审查。</p>
+            <div class="card-value">前沿模型上市流程将被重塑；为后续美中 AI 谈判定下"我先合规、再压你合规"基调。</div>
+            <div class="card-meta">
+                <span class="source-tag">CNBC</span>
+                <a class="link-btn" href="https://www.cnbc.com/2026/05/05/ai-oversight-trump-google-microsoft-xai.html" target="_blank" rel="noopener noreferrer">CNBC</a>
+                <a class="link-btn" href="https://www.cnn.com/2026/05/05/tech/microsoft-google-xai-government-test-ai-models" target="_blank" rel="noopener noreferrer">CNN</a>
+                <span class="time-tag">2026-05-05</span>
+            </div>
+        </article>
+
+        <article class="news-card news">
+            <span class="card-priority priority-star">⭐ 重要</span>
+            <h3 class="card-title">EU AI Act 5/7 政治协议：高风险条款命运 8 月前定</h3>
+            <p class="card-summary">欧洲议会、欧盟理事会、欧盟委员会 5 月 7 日就 AI Act 修正案达成阶段性协议；若 8 月前未最终敲定，原定 <strong>2026-08-02</strong> 的"高风险 AI 合规截止日"仍将生效（Digital Omnibus 提案是延至 2027-12）。</p>
+            <div class="card-value">决定欧洲 GPAI/通用大模型未来 18 个月的合规节奏；跨境运营的美/中 AI 企业必须重新规划部署时间表。</div>
+            <div class="card-meta">
+                <span class="source-tag">Holland & Knight</span>
+                <a class="link-btn" href="https://www.hklaw.com/en/insights/publications/2026/04/us-companies-face-eu-ai-acts-possible-august-2026-compliance-deadline" target="_blank" rel="noopener noreferrer">法律解读</a>
+                <span class="time-tag">2026-05-07</span>
+            </div>
+        </article>
+
+        <article class="news-card news">
+            <span class="card-priority priority-star">⭐ 重要</span>
+            <h3 class="card-title">xAI 实质性"死亡"：11 位联合创始人全数离开</h3>
+            <p class="card-summary">估值曾达 <strong>2300 亿美元</strong> 的 xAI 在 5 月 6 日被宣告"实质性死亡"——11 位联合创始人全数离职，无法留住建模人才；2026 年 2 月已被 SpaceX 收购，并将合并入 SpaceXAI 品牌。</p>
+            <div class="card-value">警示意义重大：光有 GPU 算力堆不出顶级模型，人才与组织文化才是大模型公司的真正护城河。</div>
+            <div class="card-meta">
+                <span class="source-tag">36氪</span>
+                <a class="link-btn" href="https://www.36kr.com/p/3798897391279111" target="_blank" rel="noopener noreferrer">36氪长文</a>
+                <span class="time-tag">2026-05-06</span>
+            </div>
+        </article>
+
+        <article class="news-card news">
+            <span class="card-priority priority-pin">📎 关注</span>
+            <h3 class="card-title">六巨头联合发布 MRC 规范，10 万卡集群成"默认假设"</h3>
+            <p class="card-summary">OpenAI、AMD、Broadcom、Intel、Microsoft、NVIDIA 通过 Open Compute Project（OCP）联合发布 Multipath Reliable Connection（MRC）规范，针对超大规模 GPU 集群训练的链路弹性与性能进行标准化。</p>
+            <div class="card-value">六巨头罕见共同站台基础设施开放标准——10 万卡级集群已成为行业的"默认假设"。</div>
+            <div class="card-meta">
+                <span class="source-tag">OCP / 行业聚合</span>
+                <a class="link-btn" href="https://llm-stats.com/ai-news" target="_blank" rel="noopener noreferrer">汇总</a>
+                <span class="time-tag">2026-05-07</span>
+            </div>
+        </article>
+
+        <article class="news-card news">
+            <span class="card-priority priority-pin">📎 关注</span>
+            <h3 class="card-title">OpenAI 同日双发：实时语音 API + ChatGPT 广告内测</h3>
+            <p class="card-summary">5 月 7 日 OpenAI 一口气推出可推理/翻译/转录的新一代实时语音 API，同时正式启动 ChatGPT 广告内测。GPT-5.5 Instant 同步开始全量推送，替代 GPT-5.3 Instant。</p>
+            <div class="card-value">"广告测试"是 OpenAI 商业化路径的关键转折，预示订阅之外第二条收入曲线启动；语音 API 升级直接挤压 ElevenLabs、Deepgram 生存空间。</div>
+            <div class="card-meta">
+                <span class="source-tag">OpenAI</span>
+                <a class="link-btn" href="https://releasebot.io/updates/openai" target="_blank" rel="noopener noreferrer">Release Notes</a>
+                <span class="time-tag">2026-05-07</span>
+            </div>
+        </article>
+
+        <article class="news-card news">
+            <span class="card-priority priority-pin">📎 关注</span>
+            <h3 class="card-title">国内具身智能融资井喷：年内已超 525 亿元</h3>
+            <p class="card-summary">截至 5 月初，2026 年中国具身智能领域融资事件已达 <strong>191 起、525.34 亿元</strong>，超过 2025 年全年的 444 亿元；阿里、京东、百度集体押注，工业制造场景成为主战场。</p>
+            <div class="card-value">从"展厅 demo"走向"进厂打工"，是 AI Infra 之外当前一级市场最热的赛道。</div>
+            <div class="card-meta">
+                <span class="source-tag">新浪财经</span>
+                <a class="link-btn" href="https://finance.sina.com.cn/roll/2026-05-01/doc-inhwkyic0482742.shtml" target="_blank" rel="noopener noreferrer">新浪财经</a>
+                <span class="time-tag">2026-05 近期</span>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<!-- 领袖观点 -->
+<section id="opinion">
+    <div class="section-head">
+        <h2 class="section-title"><span class="bar" style="background:linear-gradient(180deg,#fa709a,#fee140)"></span>AI 领袖观点</h2>
+        <span class="section-sub">5 条来自一线决策者的最新发声</span>
+    </div>
+    <div class="quote-grid">
+
+        <article class="quote-card">
+            <div class="quote-avatar" style="background:linear-gradient(135deg,#1e3c72,#2a5298)">EM</div>
+            <div class="quote-body">
+                <div class="quote-text">"I spent a lot of time last week with senior members of the Anthropic team... No one set off my evil detector. So long as they engage in critical self-examination, Claude will probably be good. We reserve the right to reclaim the compute if their AI engages in actions that harm humanity."</div>
+                <div class="quote-trans">译：上周我和 Anthropic 的核心成员长聊，没有人触发我的"邪恶探测器"。只要他们继续自我审视，Claude 大概率会是好的。我们保留在其 AI 危害人类时收回算力的权利。</div>
+                <div class="quote-byline">Elon Musk <span>SpaceX/xAI/Tesla CEO</span></div>
+                <div class="quote-value">AI 算力地缘政治标志性反转——Musk 长期起诉 OpenAI、批评 Anthropic，如今却把竞争对手的算力卖给昔日"敌人"，并保留单方面"道德裁决权"。</div>
+                <div class="quote-meta">
+                    <span class="source-tag">SpaceX 公告</span>
+                    <a class="link-btn" href="https://www.anthropic.com/news/higher-limits-spacex" target="_blank" rel="noopener noreferrer">Anthropic 公告</a>
+                    <a class="link-btn" href="https://simonwillison.net/2026/May/7/xai-anthropic/" target="_blank" rel="noopener noreferrer">Simon Willison 解读</a>
+                    <span class="time-tag" style="margin-left:auto">2026-05-07</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="quote-card">
+            <div class="quote-avatar" style="background:linear-gradient(135deg,#d97706,#92400e)">DA</div>
+            <div class="quote-body">
+                <div class="quote-text">"If you automate 90% of the job, then everyone does the 10% of the job. And the 10% kind of expands to be 100% of what people do and kind of 10xs their productivity. AI is moving faster than all these previous technologies, and so when you strain a system more than it's usually strained, it's possible you get these weird behaviors and big disruption."</div>
+                <div class="quote-trans">译：若自动化了 90% 的工作，每个人就去做剩下 10%——而那 10% 会膨胀成新的 100%，并把生产力提升 10 倍。但 AI 进展比以往技术更快，超出系统承受的拉伸就可能产生奇怪行为与巨大颠覆。</div>
+                <div class="quote-byline">Dario Amodei <span>Anthropic CEO · 摩根大通金融服务发布会</span></div>
+                <div class="quote-value">从去年"白领大屠杀"论调转向 Jevons 悖论叙事——监管和公众心理压力倒逼顶级 AI 公司主动"灭火"。</div>
+                <div class="quote-meta">
+                    <span class="source-tag">Fortune</span>
+                    <a class="link-btn" href="https://fortune.com/2026/05/05/dario-amodei-jevons-paradox-will-ai-wipe-out-white-collar-jobs/" target="_blank" rel="noopener noreferrer">Fortune 报道</a>
+                    <span class="time-tag" style="margin-left:auto">2026-05-05</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="quote-card">
+            <div class="quote-avatar" style="background:linear-gradient(135deg,#1565c0,#0d47a1)">YL</div>
+            <div class="quote-body">
+                <div class="quote-text">"Don't listen to CEOs. They have a vested interest in propping up the power of the products they sell. A small proportion of high school students are actually kind of depressed because they've read that AI is not only going to take a job, but basically cause human extinction."</div>
+                <div class="quote-trans">译：别听 CEO 的，他们有动机把自己产品的能力吹得越神越好。一部分高中生现在已经抑郁了，因为他们读到 AI 不仅要抢走工作，还会让人类灭绝。</div>
+                <div class="quote-byline">Yann LeCun <span>Meta AI 前首席科学家 · 图灵奖得主</span></div>
+                <div class="quote-value">罕见地直接把矛头对准 Sam Altman、Dario Amodei 一类同行 CEO，揭示 AI 行业内部叙事撕裂正在加剧。</div>
+                <div class="quote-meta">
+                    <span class="source-tag">Axios</span>
+                    <a class="link-btn" href="https://fortune.com/2026/05/05/ai-job-apocalypse-warnings-destructive-yann-lecun/" target="_blank" rel="noopener noreferrer">Fortune</a>
+                    <a class="link-btn" href="https://www.axios.com/2026/05/04/ai-godfather-survival-guide-hype-doom" target="_blank" rel="noopener noreferrer">Axios</a>
+                    <span class="time-tag" style="margin-left:auto">2026-05-04</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="quote-card">
+            <div class="quote-avatar" style="background:linear-gradient(135deg,#10b981,#059669)">SA</div>
+            <div class="quote-body">
+                <div class="quote-text">"I believe you could get there entirely on synthetic data. Could we train a model with no human data that eventually surpassed human mathematical knowledge? I think we'd say yes. We still don't have a great mechanistic understanding of what happens inside these models."</div>
+                <div class="quote-trans">译：我相信完全用合成数据就能走到那一步。能否在没有任何人类数据的情况下训练出超越人类数学水平的模型？答案是肯定的。但我们对模型内部到底发生什么仍缺乏机制理解。</div>
+                <div class="quote-byline">Sam Altman <span>OpenAI CEO · 与 Nicholas Thompson 对谈</span></div>
+                <div class="quote-value">直接回应"数据墙"焦虑，但同时承认可解释性短板，为安全派提供新弹药。</div>
+                <div class="quote-meta">
+                    <span class="source-tag">MediaPost</span>
+                    <a class="link-btn" href="https://www.mediapost.com/publications/article/414802/sam-altmans-warning-ai-is-starting-to-replace-re.html" target="_blank" rel="noopener noreferrer">原文</a>
+                    <span class="time-tag" style="margin-left:auto">2026-05-04</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="quote-card">
+            <div class="quote-avatar" style="background:linear-gradient(135deg,#f5576c,#f093fb)">DA</div>
+            <div class="quote-body">
+                <div class="quote-text">"We have a 6-12 month window to patch before adversaries can use AI to industrialize zero-day exploitation at scale. Our internal model Mythos has already discovered nearly 300 vulnerabilities in Firefox alone, and tens of thousands in closed testing."</div>
+                <div class="quote-trans">译：在攻击者用 AI 工业化大规模利用 0day 之前，我们只有 6-12 个月的修补窗口期。我们内部的 Mythos 模型仅在 Firefox 中已挖出近 300 个漏洞，闭门测试中已达数万级。</div>
+                <div class="quote-byline">Dario Amodei <span>Anthropic CEO · 摩根大通发布会</span></div>
+                <div class="quote-value">首次有前沿实验室公开承认其内部模型已具备"工业级漏洞挖掘"能力，与"AI 用于防御"的乐观叙事形成尖锐反差。</div>
+                <div class="quote-meta">
+                    <span class="source-tag">CNBC</span>
+                    <a class="link-btn" href="https://www.cnbc.com/2026/05/05/anthropic-ceo-cyber-moment-of-danger-mythos-vulnerabilities.html" target="_blank" rel="noopener noreferrer">CNBC</a>
+                    <a class="link-btn" href="https://fortune.com/2026/05/05/jamie-dimon-dario-amodei-jpmorgan-anthropic-ai-cyber-mythos-freakout-sidestep-question/" target="_blank" rel="noopener noreferrer">Fortune</a>
+                    <span class="time-tag" style="margin-left:auto">2026-05-05</span>
+                </div>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<!-- 学术动态 -->
+<section id="academic">
+    <div class="section-head">
+        <h2 class="section-title"><span class="bar" style="background:linear-gradient(180deg,#f8e71c,#f5af19)"></span>学术动态</h2>
+        <span class="section-sub">5 条本周值得关注的论文与基础设施</span>
+    </div>
+    <div class="card-grid">
+
+        <article class="news-card academic">
+            <span class="card-priority priority-star">⭐ 重要</span>
+            <h3 class="card-title">Anthropic Model Spec Midtraining：对齐效率提升最高 60×</h3>
+            <p class="card-summary">在 pre-training 与 alignment fine-tuning 之间插入"Model Spec Midtraining"阶段，可减少 agentic misalignment，并在低样本场景把对齐微调效率提升 <strong>最高 60 倍</strong>。与 Claude Mythos 内部研究路线呼应。</p>
+            <div class="card-value">为 frontier 模型对齐研究提供新工程范式，特别适用于 agent 安全性提升场景。</div>
+            <div class="card-meta">
+                <span class="source-tag">Anthropic / arXiv</span>
+                <a class="link-btn" href="https://arxiv.org/list/cs.AI/current" target="_blank" rel="noopener noreferrer">arXiv cs.AI</a>
+                <span class="time-tag">2026-05 上旬</span>
+            </div>
+        </article>
+
+        <article class="news-card academic">
+            <span class="card-priority priority-star">⭐ 重要</span>
+            <h3 class="card-title">DeepSeek《Thinking with Visual Primitives》解决多模态参照鸿沟</h3>
+            <p class="card-summary">针对 VLM 在复杂视觉推理中无法把文本概念精确锚定到具体视觉坐标的"Reference Gap"问题，提出"用视觉原语进行思考"的中间表示与训练方法，把"视觉链式思考"从 prompt 技巧推进到训练目标层面。</p>
+            <div class="card-value">可能成为下一代 VLM 的标准组件；与 DeepSeek V4 系列形成生态联动。</div>
+            <div class="card-meta">
+                <span class="source-tag">DeepSeek-AI</span>
+                <a class="link-btn" href="https://arxiv.org/list/cs.AI/current" target="_blank" rel="noopener noreferrer">arXiv</a>
+                <span class="time-tag">2026-05 上旬</span>
+            </div>
+        </article>
+
+        <article class="news-card academic">
+            <span class="card-priority priority-pin">📎 关注</span>
+            <h3 class="card-title">Microsoft × Browserbase：Computer Use Agent 的 Verifier 框架</h3>
+            <p class="card-summary">提出统一评估"计算机使用 agent"是否完成任务的框架，含四原则——非重叠 rubric 标准、过程/结果奖励分离、可控/不可控失败区分、screenshot 上下文 divide-and-conquer。补齐 computer-use agent 长期缺失的评测基础设施。</p>
+            <div class="card-value">为后续 RLHF/RLAIF on agents 提供监督信号，研究者可直接复用。</div>
+            <div class="card-meta">
+                <span class="source-tag">Microsoft Research</span>
+                <a class="link-btn" href="https://www.devflokers.com/blog/ai-news-may-2026-models-papers-open-source" target="_blank" rel="noopener noreferrer">详细</a>
+                <span class="time-tag">2026-05 初</span>
+            </div>
+        </article>
+
+        <article class="news-card academic">
+            <span class="card-priority priority-pin">📎 关注</span>
+            <h3 class="card-title">MIT FTTE：联邦学习速度 +81%、显存 -80%、通信 -69%</h3>
+            <p class="card-summary">MIT 4 月 29 日发布 <strong>FTTE (Federated Training with Tiny Experts)</strong>——联邦学习训练速度提升 <strong>81%</strong>、显存占用下降 <strong>80%</strong>、通信负载下降 <strong>69%</strong>。在隐私合规收紧背景下，让边缘设备/医疗/金融场景的 FL 走向真正可用。</p>
+            <div class="card-value">为国内政企落地大模型提供可借鉴架构。</div>
+            <div class="card-meta">
+                <span class="source-tag">MIT CSAIL</span>
+                <a class="link-btn" href="https://blogs.nvidia.com/blog/national-robotics-week-2026/" target="_blank" rel="noopener noreferrer">NVIDIA Blog</a>
+                <span class="time-tag">2026-04-29</span>
+            </div>
+        </article>
+
+        <article class="news-card academic">
+            <span class="card-priority priority-pin">📎 关注</span>
+            <h3 class="card-title">Hugging Face 开源 ml-intern：端到端 ML 后训练 Agent</h3>
+            <p class="card-summary">基于自家 smolagents 框架推出 ml-intern，可自主完成"文献综述 → 数据集发现 → 训练脚本运行 → 迭代评估"全流程；在科学推理基准上据称超过 Claude Code。</p>
+            <div class="card-value">开源 ML Engineer Agent 代表作，预示"自动化 ML 研究员"是下一个 Agent 落地高地。</div>
+            <div class="card-meta">
+                <span class="source-tag">Hugging Face</span>
+                <a class="link-btn" href="https://github.com/huggingface/ml-intern" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <span class="time-tag">2026-04 末-05 初</span>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<!-- 延伸阅读 -->
+<section id="reading">
+    <div class="section-head">
+        <h2 class="section-title"><span class="bar" style="background:linear-gradient(180deg,#667eea,#764ba2)"></span>延伸阅读</h2>
+        <span class="section-sub">深度长文 · 视频/播客 · 工具资源</span>
+    </div>
+    <div class="reading-grid">
+
+        <div class="reading-col">
+            <h4>📖 深度长文</h4>
+            <ul>
+                <li>
+                    <a href="https://simonwillison.net/2026/May/6/code-w-claude-2026/" target="_blank" rel="noopener noreferrer">Live blog: Code w/ Claude 2026</a>
+                    <span class="reading-meta">Simon Willison · 约 18 分钟</span>
+                </li>
+                <li>
+                    <a href="https://press.airstreet.com/p/state-of-ai-may-2026" target="_blank" rel="noopener noreferrer">State of AI: May 2026</a>
+                    <span class="reading-meta">Air Street Press · 约 35 分钟</span>
+                </li>
+                <li>
+                    <a href="https://medium.com/ai-systems-lab/claude-md-setup-tips-that-will-10x-your-claude-code-workflow-1d7d23793755" target="_blank" rel="noopener noreferrer">CLAUDE.md Setup Tips That Will 10x Your Workflow</a>
+                    <span class="reading-meta">Alex Fraser · 约 12 分钟</span>
+                </li>
+                <li>
+                    <a href="https://medium.com/@addyosmani/vibe-coding-is-not-the-same-as-ai-assisted-engineering-3f81088d5b98" target="_blank" rel="noopener noreferrer">Vibe Coding ≠ AI-Assisted Engineering</a>
+                    <span class="reading-meta">Addy Osmani · 约 10 分钟</span>
+                </li>
+                <li>
+                    <a href="https://blogs.microsoft.com/on-the-issues/2026/05/07/the-state-of-global-ai-diffusion-in-2026/" target="_blank" rel="noopener noreferrer">The State of Global AI Diffusion in 2026</a>
+                    <span class="reading-meta">Microsoft / Juan Lavista Ferres · 约 20 分钟</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="reading-col">
+            <h4>🎧 播客 / 视频</h4>
+            <ul>
+                <li>
+                    <a href="https://www.lennysnewsletter.com/p/code-with-claude-the-5-biggest-updates" target="_blank" rel="noopener noreferrer">Code with Claude: 5 Biggest Updates</a>
+                    <span class="reading-meta">Lenny's Newsletter · 视频回顾</span>
+                </li>
+                <li>
+                    <a href="https://www.axios.com/2026/05/04/ai-godfather-survival-guide-hype-doom" target="_blank" rel="noopener noreferrer">Yann LeCun: AI Godfather Survival Guide</a>
+                    <span class="reading-meta">Axios 对谈视频</span>
+                </li>
+                <li>
+                    <a href="https://www.cnbc.com/2026/05/05/anthropic-ceo-cyber-moment-of-danger-mythos-vulnerabilities.html" target="_blank" rel="noopener noreferrer">Dario Amodei × Jamie Dimon JPMorgan 对谈</a>
+                    <span class="reading-meta">CNBC 视频片段</span>
+                </li>
+                <li>
+                    <a href="https://www.axios.com/2026/05/06/hugging-face-consumer-robot-app-store" target="_blank" rel="noopener noreferrer">Clément Delangue 谈 Reachy Mini App Store</a>
+                    <span class="reading-meta">Axios 视频</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="reading-col">
+            <h4>🔧 工具 / 资源</h4>
+            <ul>
+                <li>
+                    <a href="https://developers.openai.com/codex/changelog" target="_blank" rel="noopener noreferrer">Codex CLI 0.129.0 Changelog</a>
+                    <span class="reading-meta">Vim 模式 + Hooks 可视化</span>
+                </li>
+                <li>
+                    <a href="https://github.com/huggingface/ml-intern" target="_blank" rel="noopener noreferrer">huggingface/ml-intern</a>
+                    <span class="reading-meta">开源 ML Engineer Agent</span>
+                </li>
+                <li>
+                    <a href="https://www.openaitoolshub.org/en/blog/claude-code-workflow-examples" target="_blank" rel="noopener noreferrer">Claude Code Workflow Examples</a>
+                    <span class="reading-meta">12 仓库实战 + memory routing</span>
+                </li>
+                <li>
+                    <a href="https://www.lakera.ai/blog/prompt-engineering-guide" target="_blank" rel="noopener noreferrer">Lakera Prompt Engineering Guide 2026</a>
+                    <span class="reading-meta">最新技巧合集</span>
+                </li>
+                <li>
+                    <a href="https://docs.devin.ai/release-notes/overview" target="_blank" rel="noopener noreferrer">Devin Release Notes</a>
+                    <span class="reading-meta">Focus Mode + Agents Tab + PWA</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>本日报基于公开信息自动搜索整理生成。资讯来源包括但不限于 Anthropic、xAI、OpenAI、Bloomberg、CNBC、TechCrunch、The Verge、Fortune、Axios、36 氪、新浪财经、机器之心、量子位、arXiv 等公开平台。内容可能存在时效性偏差或不完整，请以原始来源为准。</p>
+        <p style="margin-top:12px">生成时间：2026-05-08 · 工具：Claude Code AI Daily News Generator</p>
+    </div>
+</footer>
+
+</body>
+</html>
