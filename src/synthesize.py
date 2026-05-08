@@ -12,7 +12,7 @@ log = logging.getLogger(__name__)
 
 
 SYNTH_SYSTEM = (
-    "你是一份高质量中文 AI 日报的总编辑。基于四个栏目编辑提交的稿件，"
+    "你是一份高质量中文 AI 日报的总编辑。基于六个栏目编辑提交的稿件，"
     "撰写日报的开篇综述、头条精选、每日一学。\n"
     "严格要求：只输出 JSON，所有内容用中文，专有名词保留英文。不允许编造素材外的事实或链接。"
 )
@@ -25,13 +25,16 @@ def _format_sections_for_prompt(sections: dict[str, list[dict[str, Any]]]) -> st
         "industry": "AI 行业新闻与产品动态",
         "opinion": "AI 领袖发言与深度观点",
         "chinese": "中文 AI 生态与学术动态",
+        "academic": "AI 学术论文",
+        "benchmark": "模型评测雷达",
     }
     for key, items in sections.items():
         lines = [f"### {section_zh.get(key, key)}"]
         for i, it in enumerate(items, 1):
+            summary = (it.get("summary") or "")[:80]
             lines.append(
                 f"{i}. [{it.get('importance','pin')}] {it.get('title','')} | {it.get('source_name','')} | {it.get('url','')}\n"
-                f"   摘要：{it.get('summary','')}"
+                f"   摘要：{summary}"
             )
         blocks.append("\n".join(lines))
     return "\n\n".join(blocks)
@@ -46,7 +49,7 @@ async def synthesize_overview(
     user = f"""
 日期：{today}
 
-四栏目稿件如下：
+六栏目稿件如下：
 
 {_format_sections_for_prompt(sections)}
 
@@ -60,7 +63,7 @@ async def synthesize_overview(
       "summary": "2-3 句详细摘要",
       "url": "对应原文 URL（必须来自素材）",
       "source_name": "来源",
-      "category": "tutorial|industry|opinion|chinese"
+      "category": "tutorial|industry|opinion|chinese|academic|benchmark"
     }}
   ],
   "daily_takeaway": {{
@@ -71,7 +74,7 @@ async def synthesize_overview(
 }}
 
 要求：
-- headlines 选 3-5 条（覆盖不同栏目最好），且必须出现在四栏目稿件中。
+- headlines 选 3-5 条（覆盖不同栏目最好），且必须出现在六栏目稿件中。
 - daily_takeaway 必须有可复用的实操内容（具体命令 / prompt / 配置 / 工作流）。
 - 不要编造素材外的事实。
 """.strip()

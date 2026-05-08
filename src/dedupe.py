@@ -35,26 +35,36 @@ def load_recent_reports(days: int = 7, today: date | None = None) -> list[dict[s
     return out
 
 
-def collect_excluded(reports: list[dict[str, Any]]) -> tuple[set[str], set[str], list[str]]:
-    """Return (urls, normalized_titles, raw_titles_for_prompt)."""
+def collect_excluded(
+    reports: list[dict[str, Any]],
+) -> tuple[set[str], set[str], dict[str, list[str]]]:
+    """Return (urls, normalized_titles, raw_titles_by_category).
+
+    raw_titles_by_category groups historical titles by section key so each agent
+    only sees titles relevant to its own category — cuts prompt tokens vs. the
+    old "send everything to everyone" approach. Headlines go under "_headlines"
+    and are shared across all agents (they're cross-category by nature).
+    """
     urls: set[str] = set()
     titles_norm: set[str] = set()
-    raw: list[str] = []
+    raw_by_cat: dict[str, list[str]] = {}
     for r in reports:
-        for section in (r.get("sections") or {}).values():
+        for sec_key, section in (r.get("sections") or {}).items():
+            bucket = raw_by_cat.setdefault(sec_key, [])
             for it in section or []:
                 if it.get("url"):
                     urls.add(it["url"])
                 t = it.get("title", "")
                 if t:
                     titles_norm.add(normalize_title(t))
-                    raw.append(t)
+                    bucket.append(t)
+        head_bucket = raw_by_cat.setdefault("_headlines", [])
         for h in r.get("headlines") or []:
             t = h.get("title", "")
             if t:
                 titles_norm.add(normalize_title(t))
-                raw.append(t)
-    return urls, titles_norm, raw
+                head_bucket.append(t)
+    return urls, titles_norm, raw_by_cat
 
 
 def filter_new(items: list[dict[str, Any]], excluded_urls: set[str], excluded_titles: set[str]) -> list[dict[str, Any]]:

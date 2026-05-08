@@ -2,14 +2,24 @@
 {% block title %}{{ summary.label }} 年度回顾 | AInformer{% endblock %}
 {% block description %}{{ summary.tagline or summary.label + ' AI 年度回顾' }}{% endblock %}
 
+{% block extra_css %}
+.archive-link{display:block;color:inherit;border-bottom:none}
+.archive-link:hover{color:inherit}
+.milestone-num{
+  font-family:'LXGW WenKai','KaiTi',serif;
+  color:var(--ochre);
+  margin-right:0.4rem;
+}
+{% endblock %}
+
 {% block body %}
 <header class="hero">
   <div class="date">{{ summary.label }}</div>
   <h1>年度 AI 回顾</h1>
   <p class="theme">{{ summary.tagline }}</p>
   <div class="meta">
-    <span>📰 {{ summary.total_items }} 条日报资讯</span>
-    <span>📆 {{ summary.month_count }} 月覆盖</span>
+    <span>{{ summary.total_items }} 条日报资讯</span>
+    <span>{{ summary.month_count }} 月覆盖</span>
   </div>
 </header>
 
@@ -29,7 +39,7 @@
 
   {% if summary.themes %}
   <section class="section" id="themes">
-    <div class="section-head"><h2>📌 全年主线脉络</h2></div>
+    <div class="section-head"><h2>全年主线脉络</h2></div>
     <div class="cards">
       {% for t in summary.themes %}
       <article class="headline-card">
@@ -50,11 +60,11 @@
 
   {% if summary.milestones %}
   <section class="section" id="milestones">
-    <div class="section-head"><h2>🏁 年度十大事件</h2></div>
+    <div class="section-head"><h2>年度十大事件</h2></div>
     <div class="cards">
       {% for m in summary.milestones %}
       <article class="news-card">
-        <h3>{{ loop.index }}. {{ m.title }}</h3>
+        <h3><span class="milestone-num">{{ loop.index }}.</span>{{ m.title }}</h3>
         <p class="summary">{{ m.summary }}</p>
         <div class="meta">
           {% if m.date %}<span>{{ m.date }}</span>{% endif %}
@@ -67,13 +77,15 @@
   {% endif %}
 
   <section class="section" id="monthly">
-    <div class="section-head"><h2>📆 月份索引</h2></div>
+    <div class="section-head"><h2>月份索引</h2></div>
     <div class="cards three-col">
       {% for m in summary.monthly_links %}
-      <a class="news-card" href="../monthly/{{ m.slug }}.html" style="text-decoration:none;color:inherit">
-        <h3>{{ m.label }}</h3>
-        <p class="summary">{{ m.tagline or '查看当月回顾' }}</p>
-        <div class="meta"><span>📰 {{ m.total_items }} 条</span></div>
+      <a class="archive-link" href="../monthly/{{ m.slug }}.html">
+        <article class="news-card">
+          <h3>{{ m.label }}</h3>
+          <p class="summary">{{ m.tagline or '查看当月回顾' }}</p>
+          <div class="meta"><span>{{ m.total_items }} 条</span></div>
+        </article>
       </a>
       {% endfor %}
     </div>

@@ -17,6 +17,16 @@ def _queries_with_month(base: list[str], month_token: str) -> list[str]:
     return [f"{q} {month_token}" for q in base]
 
 
+def _queries_mixed_month(base: list[str], month_token: str, skip_month: set[int] | None = None) -> list[str]:
+    """Append month_token to queries, except those whose index is in skip_month.
+
+    Useful for benchmark-style queries where adding a month makes the query miss
+    the canonical leaderboard pages (which use 'latest' rather than dated URLs).
+    """
+    skip = skip_month or set()
+    return [q if i in skip else f"{q} {month_token}" for i, q in enumerate(base)]
+
+
 def build_agent_specs(month_token: str) -> list[AgentSpec]:
     """month_token like '2026-05' for query freshness hints."""
 
@@ -97,7 +107,7 @@ def build_agent_specs(month_token: str) -> list[AgentSpec]:
             ],
             month_token,
         ),
-        rss_categories=[],
+        rss_categories=["opinion"],
         extra_instructions=(
             "必须包含人物姓名 + 原文引用（英文保留原文 + 中文翻译）。"
             "排除营销稿、产品介绍。聚焦观点、判断、争论。"
@@ -132,4 +142,61 @@ def build_agent_specs(month_token: str) -> list[AgentSpec]:
         ),
     )
 
-    return [tutorial, industry, opinion, chinese]
+    academic = AgentSpec(
+        key="academic",
+        name="AI 学术论文",
+        focus="重要 AI 论文与学术突破：arXiv 新论文、HuggingFace papers、SOTA 进展、新 benchmark 论文。",
+        queries=_queries_with_month(
+            [
+                "arXiv LLM breakthrough paper",
+                "arXiv new paper SOTA",
+                "HuggingFace daily papers trending",
+                "machine learning research highlight",
+                "transformer architecture new paper",
+                "RLHF DPO alignment paper",
+                "diffusion model paper new",
+                "multimodal LLM paper",
+                "agent reasoning paper arXiv",
+                "AI 论文 突破 arXiv",
+                "新 benchmark 论文 评测",
+                "scaling law new paper",
+            ],
+            month_token,
+        ),
+        rss_categories=["academic"],
+        extra_instructions=(
+            "聚焦真正有突破或方法创新的论文，给出一句话价值点："
+            "解决了什么问题 / 比 SOTA 高多少 / 对工业界的潜在影响。"
+            "排除综述、二次解读、营销稿。优先有数字、有比较、有代码或权重开源的工作。"
+        ),
+    )
+
+    benchmark = AgentSpec(
+        key="benchmark",
+        name="模型评测雷达",
+        focus="模型评测榜单变化与能力对比：LMSYS Arena、Aider、SWE-bench、Artificial Analysis、Open LLM Leaderboard 等的最新排名变化。",
+        queries=_queries_mixed_month(
+            [
+                "LMSYS Chatbot Arena leaderboard",
+                "Aider leaderboard coding",
+                "SWE-bench verified leaderboard",
+                "Artificial Analysis model comparison",
+                "Open LLM Leaderboard HuggingFace",
+                "MMLU score new model",
+                "GPQA benchmark result new",
+                "HumanEval coding benchmark new",
+                "model benchmark ranking change",
+                "AI 模型 评测 榜单 变化",
+            ],
+            month_token,
+            skip_month={0, 1, 2, 3, 4},
+        ),
+        rss_categories=["benchmark"],
+        extra_instructions=(
+            "必须包含具体数字变化：分数、排名、相对前一版本的提升幅度。"
+            "排除没有数字支撑的笼统评价；优先官方榜单更新与第三方对比报告。"
+            "若同一榜单本期无变化，可省略；不要凑数。"
+        ),
+    )
+
+    return [tutorial, industry, opinion, chinese, academic, benchmark]

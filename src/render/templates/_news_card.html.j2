@@ -1,7 +1,7 @@
 <article class="news-card">
   <h3>{{ it.title }}</h3>
   {% if it.summary %}<p class="summary">{{ it.summary }}</p>{% endif %}
-  {% if it.value_note %}<p class="value">💡 {{ it.value_note }}</p>{% endif %}
+  {% if it.value_note %}<p class="value">{{ it.value_note }}</p>{% endif %}
   <div class="meta">
     {% if it.importance %}<span class="tag tag-{{ it.importance }}">{{ importance_label(it.importance) }}</span>{% endif %}
     {% if it.source_name %}<span>{{ it.source_name }}</span>{% endif %}

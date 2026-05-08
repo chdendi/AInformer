@@ -33,14 +33,14 @@ def _build_user_prompt(
     excluded: list[str],
     today: str,
 ) -> str:
-    excluded_block = "\n".join(f"- {t}" for t in excluded[:80]) if excluded else "（无）"
+    excluded_block = "\n".join(f"- {t}" for t in excluded[:30]) if excluded else "（无）"
     material_lines = []
-    for i, m in enumerate(materials[:80], 1):
+    for i, m in enumerate(materials[:40], 1):
         material_lines.append(
             f"[{i}] 来源={m.get('source','?')} | 时间={m.get('published_at','?')}\n"
             f"    标题：{m.get('title','')}\n"
             f"    链接：{m.get('url','')}\n"
-            f"    摘要：{(m.get('snippet') or '')[:400]}"
+            f"    摘要：{(m.get('snippet') or '')[:200]}"
         )
     materials_block = "\n\n".join(material_lines) if material_lines else "（无素材）"
 
@@ -85,12 +85,13 @@ def _build_user_prompt(
 async def run_agent(
     spec: AgentSpec,
     rss_pool: list[dict[str, Any]],
-    excluded_titles: list[str],
+    excluded_by_cat: dict[str, list[str]],
     today: str,
     client: AsyncOpenAI,
     cfg: LLMConfig,
 ) -> dict[str, Any]:
     log.info("[agent:%s] starting", spec.key)
+    excluded_titles = excluded_by_cat.get(spec.key, []) + excluded_by_cat.get("_headlines", [])
 
     tavily_items: list[dict[str, Any]] = await batch_search(spec.queries, max_results=6, days=2)
     log.info("[agent:%s] tavily=%d", spec.key, len(tavily_items))
@@ -140,11 +141,11 @@ async def run_agent(
 async def run_all_agents(
     specs: list[AgentSpec],
     rss_pool: list[dict[str, Any]],
-    excluded_titles: list[str],
+    excluded_by_cat: dict[str, list[str]],
     today: str,
     client: AsyncOpenAI,
     cfg: LLMConfig,
 ) -> list[dict[str, Any]]:
     return await asyncio.gather(
-        *[run_agent(s, rss_pool, excluded_titles, today, client, cfg) for s in specs]
+        *[run_agent(s, rss_pool, excluded_by_cat, today, client, cfg) for s in specs]
     )

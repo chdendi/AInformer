@@ -3,21 +3,83 @@
 {% block description %}由 DeepSeek + Tavily 自动生成的中文 AI 每日资讯日报。{% endblock %}
 
 {% block extra_css %}
-.intro{padding:36px 28px;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;margin:32px 0;line-height:1.85}
-.intro h2{font-size:1.25rem;margin-bottom:12px}
-.intro p{color:#cfcfd6;margin-bottom:8px}
-.intro code{font-size:.86rem}
-.archive-grid{display:grid;gap:14px;margin-top:18px}
+.intro{
+  padding:2.4rem 2.4rem;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:8px;
+  margin:3rem 0 2rem;
+  line-height:1.85;
+}
+.intro h2{
+  font-size:1.5rem;
+  margin-bottom:1rem;
+  color:var(--text);
+  letter-spacing:0.04em;
+}
+.intro p{color:var(--text2);margin-bottom:0.7rem}
+.intro code{font-size:0.86rem}
+
+.archive-grid{display:grid;gap:1.1rem;margin-top:1rem}
 @media(min-width:768px){.archive-grid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1024px){.archive-grid{grid-template-columns:repeat(3,1fr)}}
-.archive-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:18px 20px;transition:all .3s}
-.archive-card:hover{transform:translateY(-3px);background:var(--bg-hover);border-color:#1f3057}
-.archive-card .date{font-size:.92rem;color:var(--text-dim);margin-bottom:8px;font-variant-numeric:tabular-nums}
-.archive-card h3{font-size:1.02rem;line-height:1.5;margin-bottom:10px;font-weight:600}
-.archive-card .stats{display:flex;gap:10px;font-size:.78rem;color:var(--text-mute)}
-.archive-card a{display:block;color:inherit}
-.year-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-.year-pill{padding:6px 14px;background:rgba(102,126,234,.12);border:1px solid rgba(102,126,234,.3);border-radius:999px;font-size:.85rem}
+
+.archive-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:1.4rem 1.6rem;
+  transition:all 0.25s ease;
+  display:block;
+  color:inherit;
+  border-bottom:1px solid var(--border);
+  position:relative;
+}
+.archive-card::before{
+  content:"";
+  position:absolute;
+  left:0;top:0;bottom:0;
+  width:2px;
+  background:var(--ochre);
+  opacity:0;
+  border-radius:8px 0 0 8px;
+  transition:opacity 0.25s ease;
+}
+.archive-card:hover{
+  border-color:rgba(184,134,11,0.35);
+  transform:translateY(-2px);
+  box-shadow:0 4px 18px rgba(26,26,26,0.06);
+}
+.archive-card:hover::before{opacity:0.7}
+.archive-card .date{
+  font-family:'LXGW WenKai','KaiTi',serif;
+  font-size:0.88rem;
+  color:var(--text3);
+  margin-bottom:0.55rem;
+  font-variant-numeric:tabular-nums;
+  letter-spacing:0.06em;
+}
+.archive-card h3{
+  font-size:1.05rem;
+  line-height:1.55;
+  margin-bottom:0.7rem;
+  color:var(--text);
+}
+.archive-card .stats{
+  display:flex;
+  gap:0.85rem;
+  font-size:0.78rem;
+  color:var(--text3);
+  font-family:'LXGW WenKai','KaiTi',serif;
+  letter-spacing:0.04em;
+}
+
+.latest-link{
+  display:block;
+  color:inherit;
+  border-bottom:none;
+}
+.latest-link:hover{color:inherit}
 {% endblock %}
 
 {% block body %}
@@ -26,9 +88,9 @@
   <h1>AInformer</h1>
   <p class="theme">每天早上自动汇总过去 24 小时最值得关注的 AI 资讯：工具教程、行业动态、领袖观点、中文生态。</p>
   <div class="meta">
-    <span>📅 已发布 {{ daily|length }} 期</span>
-    {% if monthly %}<span>📆 月度总结 {{ monthly|length }} 篇</span>{% endif %}
-    {% if yearly %}<span>🗓 年度总结 {{ yearly|length }} 篇</span>{% endif %}
+    <span>已发布 {{ daily|length }} 期</span>
+    {% if monthly %}<span>月度总结 {{ monthly|length }} 篇</span>{% endif %}
+    {% if yearly %}<span>年度总结 {{ yearly|length }} 篇</span>{% endif %}
   </div>
 </header>
 
@@ -48,14 +110,14 @@
   {% if daily %}
   {% set latest = daily[0] %}
   <section class="section" id="latest">
-    <div class="section-head"><h2>📰 最新一期</h2><span class="count">{{ latest.date }}</span></div>
-    <a href="daily/{{ latest.slug }}.html" style="text-decoration:none;color:inherit">
+    <div class="section-head"><h2>最新一期</h2><span class="count">{{ latest.date }}</span></div>
+    <a class="latest-link" href="daily/{{ latest.slug }}.html">
       <article class="headline-card">
         <h3>{{ latest.theme or '查看今日 AI 简报' }}</h3>
         {% if latest.lede %}<p>{{ latest.lede[:240] }}{% if latest.lede|length > 240 %}…{% endif %}</p>{% endif %}
         <div class="meta">
-          <span>📰 {{ latest.total }} 条精选</span>
-          <span>🔥 {{ latest.hot_count }} 头条</span>
+          <span>精选 {{ latest.total }} 条</span>
+          <span>头条 {{ latest.hot_count }} 则</span>
           <a class="link-btn" href="daily/{{ latest.slug }}.html">查看完整日报 →</a>
         </div>
       </article>
@@ -64,14 +126,14 @@
   {% endif %}
 
   <section class="section" id="archive">
-    <div class="section-head"><h2>📚 日报归档</h2><span class="count">{{ daily|length }} 期</span></div>
+    <div class="section-head"><h2>日报归档</h2><span class="count">{{ daily|length }} 期</span></div>
     {% if daily %}
     <div class="archive-grid">
       {% for d in daily[:30] %}
       <a class="archive-card" href="daily/{{ d.slug }}.html">
         <div class="date">{{ d.date }} · 周{{ d.weekday_zh }}</div>
         <h3>{{ d.theme or '当日 AI 简报' }}</h3>
-        <div class="stats"><span>📰 {{ d.total }}</span><span>🔥 {{ d.hot_count }}</span></div>
+        <div class="stats"><span>共 {{ d.total }} 条</span><span>头条 {{ d.hot_count }}</span></div>
       </a>
       {% endfor %}
     </div>
@@ -80,13 +142,13 @@
 
   {% if monthly %}
   <section class="section" id="monthly">
-    <div class="section-head"><h2>📆 月度总结</h2><span class="count">{{ monthly|length }} 篇</span></div>
+    <div class="section-head"><h2>月度总结</h2><span class="count">{{ monthly|length }} 篇</span></div>
     <div class="archive-grid">
       {% for m in monthly %}
       <a class="archive-card" href="monthly/{{ m.slug }}.html">
         <div class="date">{{ m.label }}</div>
         <h3>{{ m.title or m.label + ' 月度回顾' }}</h3>
-        <div class="stats"><span>📰 {{ m.total }} 条汇总</span></div>
+        <div class="stats"><span>汇总 {{ m.total }} 条</span></div>
       </a>
       {% endfor %}
     </div>
@@ -95,7 +157,7 @@
 
   {% if yearly %}
   <section class="section" id="yearly">
-    <div class="section-head"><h2>🗓 年度总结</h2><span class="count">{{ yearly|length }} 篇</span></div>
+    <div class="section-head"><h2>年度总结</h2><span class="count">{{ yearly|length }} 篇</span></div>
     <div class="archive-grid">
       {% for y in yearly %}
       <a class="archive-card" href="yearly/{{ y.slug }}.html">

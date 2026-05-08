@@ -16,6 +16,8 @@ CATEGORY_LABELS = {
     "industry": "行业新闻",
     "opinion": "领袖观点",
     "chinese": "中文 / 学术",
+    "academic": "学术论文",
+    "benchmark": "评测雷达",
 }
 IMPORTANCE_LABELS = {"hot": "🔥 头条", "star": "⭐ 重要", "pin": "📎 关注"}
 
