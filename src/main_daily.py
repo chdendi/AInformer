@@ -8,11 +8,13 @@ from datetime import date, datetime
 
 from .agents.definitions import build_agent_specs
 from .agents.runner import run_all_agents
+from .agents.trending_filter import filter_trending_with_llm
 from .config import LLMConfig, ensure_dirs, tz
 from .dedupe import collect_excluded, dedupe_within, filter_new, load_recent_reports, normalize_title
 from .llm.client import get_usage_summary, make_client
 from .render.daily import write_daily_html, write_daily_json
 from .render.index_page import write_index
+from .search.github_trending import fetch_trending
 from .search.rss import collect_rss
 from .synthesize import synthesize_overview
 
@@ -32,6 +34,13 @@ SECTION_PRIORITY = {
     "chinese": 5,    # regional bucket
     "industry": 6,   # broadest, fallback bucket
 }
+
+# Per-section visible card cap. Agents are instructed to return 5-6 candidates
+# so cross-section dedup has 1-2 buffer items to absorb before this cap kicks
+# in. Lowering this further is safe; raising it requires loosening the prompt.
+SECTION_CARD_CAP = 4
+TRENDING_FETCH_LIMIT = 20
+TRENDING_KEEP = 4
 
 
 def dedupe_across_sections(sections: dict[str, list[dict]]) -> dict[str, list[dict]]:
@@ -80,6 +89,35 @@ def dedupe_across_sections(sections: dict[str, list[dict]]) -> dict[str, list[di
     return result
 
 
+def cap_sections(sections: dict[str, list[dict]], cap: int = SECTION_CARD_CAP) -> dict[str, list[dict]]:
+    """Trim each section to at most `cap` items. Order is preserved.
+
+    Items kept are sorted by importance (hot → star → pin) within their
+    original ordering so the visible cards skew toward higher-signal entries
+    when the agent returns more than `cap` candidates.
+    """
+    importance_rank = {"hot": 0, "star": 1, "pin": 2}
+    capped: dict[str, list[dict]] = {}
+    dropped_total = 0
+    for key, items in sections.items():
+        if len(items) <= cap:
+            capped[key] = list(items)
+            continue
+        ranked = sorted(
+            enumerate(items),
+            key=lambda pair: (importance_rank.get(pair[1].get("importance", "pin"), 2), pair[0]),
+        )
+        kept = sorted(ranked[:cap], key=lambda pair: pair[0])
+        capped[key] = [it for _, it in kept]
+        dropped_total += len(items) - cap
+
+    if dropped_total:
+        msg = f"Section cap={cap}: dropped {dropped_total} surplus items"
+        log.info(msg)
+        print(msg)
+    return capped
+
+
 def _parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser()
     p.add_argument("--date", type=str, default="", help="YYYY-MM-DD; defaults to today in TZ")
@@ -114,12 +152,17 @@ async def main_async(target_date: date, dedupe_days: int, dry: bool) -> None:
     month_token = target_date.strftime("%Y-%m")
     specs = build_agent_specs(month_token)
 
+    trending: list[dict] = []
+
     if dry:
         sections = {s.key: [] for s in specs}
         synth = {"lede": "（dry-run）", "today_theme": "占位", "headlines": [], "daily_takeaway": {}}
     else:
-        log.info("Running %d agents in parallel...", len(specs))
-        agent_results = await run_all_agents(specs, rss_pool, excluded_by_cat, today_str, client, cfg)
+        log.info("Running %d agents + GitHub trending in parallel...", len(specs))
+        agent_results, trending_raw = await asyncio.gather(
+            run_all_agents(specs, rss_pool, excluded_by_cat, today_str, client, cfg),
+            fetch_trending(limit=TRENDING_FETCH_LIMIT),
+        )
 
         sections: dict[str, list] = {}
         for r in agent_results:
@@ -128,6 +171,13 @@ async def main_async(target_date: date, dedupe_days: int, dry: bool) -> None:
             sections[r["key"]] = items
 
         sections = dedupe_across_sections(sections)
+        sections = cap_sections(sections, cap=SECTION_CARD_CAP)
+
+        if trending_raw:
+            log.info("Filtering %d trending repos via LLM...", len(trending_raw))
+            trending = await filter_trending_with_llm(client, cfg, trending_raw, keep=TRENDING_KEEP)
+        else:
+            log.info("Trending fetch returned empty — skipping trending section")
 
         log.info("Synthesizing overview...")
         synth = await synthesize_overview(client, cfg, today_str, sections)
@@ -140,6 +190,7 @@ async def main_async(target_date: date, dedupe_days: int, dry: bool) -> None:
         "headlines": synth.get("headlines", []),
         "daily_takeaway": synth.get("daily_takeaway", {}),
         "sections": sections,
+        "trending": trending,
     }
 
     json_path = write_daily_json(report)
@@ -150,10 +201,12 @@ async def main_async(target_date: date, dedupe_days: int, dry: bool) -> None:
     print(f"\n✅ Daily report generated for {today_str}")
     print(f"   JSON: {json_path.relative_to(json_path.parents[3])}")
     print(f"   HTML: {html_path.relative_to(html_path.parents[3])}")
-    print(f"   Total: {total} items")
+    print(f"   Total: {total} items + {len(trending)} trending repos")
     for k, v in sections.items():
         hot = sum(1 for it in v if it.get("importance") == "hot")
         print(f"   - {k:>10}: {len(v):>2} items ({hot} hot)")
+    if trending:
+        print(f"   - {'trending':>10}: {len(trending):>2} repos")
 
     usage = get_usage_summary()
     print(

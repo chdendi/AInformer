@@ -11,6 +11,77 @@
   letter-spacing:0.02em;
 }
 .takeaway-source{margin-top:1rem}
+
+/* ===== GitHub Trending ===== */
+.trending-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:1.3rem 1.5rem;
+  position:relative;
+  transition:all 0.25s ease;
+  display:flex;
+  flex-direction:column;
+  gap:0.7rem;
+}
+.trending-card:hover{
+  border-color:rgba(184,134,11,0.4);
+  transform:translateY(-2px);
+  box-shadow:0 4px 16px rgba(26,26,26,0.05);
+}
+.trending-card .repo-line{
+  display:flex;
+  align-items:center;
+  gap:0.6rem;
+  flex-wrap:wrap;
+}
+.trending-card .repo-name{
+  font-family:'LXGW WenKai','KaiTi',serif;
+  font-size:1.15rem;
+  font-weight:700;
+  color:var(--text);
+  border-bottom:none;
+  letter-spacing:0.02em;
+}
+.trending-card .repo-name:hover{color:var(--blue)}
+.trending-card .ai-topic{
+  font-family:'LXGW WenKai','KaiTi',serif;
+  font-size:0.78rem;
+  letter-spacing:0.06em;
+  padding:0.18rem 0.6rem;
+  background:rgba(74,124,89,0.08);
+  border:1px solid rgba(74,124,89,0.2);
+  color:var(--green);
+  border-radius:4px;
+  white-space:nowrap;
+}
+.trending-card .desc{
+  color:var(--text2);
+  font-size:0.92rem;
+  line-height:1.7;
+}
+.trending-card .value{
+  color:var(--text);
+  font-size:0.92rem;
+  line-height:1.7;
+  padding:0.6rem 0.85rem;
+  background:rgba(184,134,11,0.05);
+  border-left:3px solid rgba(184,134,11,0.3);
+  border-radius:0 4px 4px 0;
+}
+.trending-card .meta{
+  display:flex;
+  align-items:center;
+  gap:0.9rem;
+  flex-wrap:wrap;
+  font-size:0.82rem;
+  color:var(--text3);
+  font-family:'LXGW WenKai','KaiTi',serif;
+  padding-top:0.5rem;
+  border-top:1px solid rgba(212,203,184,0.5);
+}
+.trending-card .meta .lang::before{content:"●";margin-right:0.3rem;color:var(--blue)}
+.trending-card .meta .stars-today{color:var(--ochre);font-weight:600}
 {% endblock %}
 
 {% block body %}
@@ -29,6 +100,7 @@
   <div class="nav-inner">
     <a class="home" href="{{ home_url }}">← 首页</a>
     <a href="#headlines">今日头条</a>
+    {% if report.trending %}<a href="#trending">GitHub Trending</a>{% endif %}
     <a href="#takeaway">每日一学</a>
     <a href="#tutorial">使用姿势</a>
     <a href="#industry">行业动态</a>
@@ -67,6 +139,30 @@
           {% if h.category %}<span class="tag tag-{{ h.category }}">{{ category_label(h.category) }}</span>{% endif %}
           {% if h.source_name %}<span>{{ h.source_name }}</span>{% endif %}
           {% if h.url %}<a class="link-btn" href="{{ h.url }}" target="_blank" rel="noopener noreferrer">原文 ↗</a>{% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if report.trending %}
+  <section class="section" id="trending">
+    <div class="section-head"><h2>GitHub Trending · 今日热门 AI 项目</h2><span class="count">{{ report.trending|length }} 个</span></div>
+    <div class="cards">
+      {% for it in report.trending %}
+      <article class="trending-card">
+        <div class="repo-line">
+          <a class="repo-name" href="{{ it.url }}" target="_blank" rel="noopener noreferrer">{{ it.full_name }}</a>
+          {% if it.ai_topic %}<span class="ai-topic">{{ it.ai_topic }}</span>{% endif %}
+        </div>
+        {% if it.description %}<p class="desc">{{ it.description }}</p>{% endif %}
+        {% if it.value_note %}<div class="value">{{ it.value_note }}</div>{% endif %}
+        <div class="meta">
+          {% if it.language %}<span class="lang">{{ it.language }}</span>{% endif %}
+          {% if it.stars_today %}<span class="stars-today">+{{ it.stars_today }} ⭐ 今日</span>{% endif %}
+          {% if it.stars_total %}<span>{{ it.stars_total }} ⭐ 总计</span>{% endif %}
+          <a class="link-btn" href="{{ it.url }}" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
         </div>
       </article>
       {% endfor %}

@@ -1,0 +1,125 @@
+"""LLM-driven AI-relevance filter for GitHub Trending.
+
+Takes the raw daily Top-N from `src.search.github_trending.fetch_trending`
+and asks the model to keep the most AI/ML-related ones, plus write a one-line
+Chinese value note for each. Designed for a single LLM call to keep token
+cost bounded — input is small (~20 short repo descriptions).
+"""
+
+from __future__ import annotations
+
+import logging
+from typing import Any
+
+from openai import AsyncOpenAI
+
+from ..config import LLMConfig
+from ..llm.client import chat_json
+
+log = logging.getLogger(__name__)
+
+
+TRENDING_SYSTEM = (
+    "你是一份中文 AI 日报的栏目编辑，专门挑选 GitHub Trending 中真正与 AI/ML 相关的开源项目。\n"
+    "严格只输出 JSON。所有输出用中文，专有名词、库名、命令保留英文原文。"
+)
+
+
+def _format_repos_for_prompt(repos: list[dict[str, Any]]) -> str:
+    lines = []
+    for i, r in enumerate(repos, 1):
+        desc = (r.get("description") or "").strip() or "（无描述）"
+        lang = r.get("language") or "—"
+        stars_today = r.get("stars_today") or 0
+        lines.append(
+            f"{i}. {r.get('full_name')} · {lang} · 今日 +{stars_today} ⭐\n"
+            f"   {desc}"
+        )
+    return "\n".join(lines)
+
+
+async def filter_trending_with_llm(
+    client: AsyncOpenAI,
+    cfg: LLMConfig,
+    repos: list[dict[str, Any]],
+    keep: int = 4,
+) -> list[dict[str, Any]]:
+    """Pick the top `keep` AI-relevant repos and add a Chinese value note.
+
+    Returns enriched dicts that retain the original scrape fields (`owner`,
+    `repo`, `url`, `description`, `language`, `stars_today`, `stars_total`)
+    plus `value_note` (中文一句话点评) and `ai_topic`（AI 相关子领域标签）.
+
+    If the LLM call fails or returns no valid items, returns an empty list —
+    the daily report will then omit the trending section.
+    """
+    if not repos:
+        return []
+
+    by_full_name = {r["full_name"]: r for r in repos}
+
+    user = f"""
+今日 GitHub Trending（daily, all language）共 {len(repos)} 个仓库：
+
+{_format_repos_for_prompt(repos)}
+
+任务：从中挑选 {keep} 个真正与 AI / 机器学习 / LLM / agent / 多模态 / RAG / 推理框架 强相关的项目。
+
+判定标准（满足任一即视为 AI 相关）：
+- LLM / Agent / RAG / 多模态 / 推理引擎 / 训练或微调框架
+- 模型权重、模型推理服务、prompt 管理、AI workflow 编排
+- AI 应用脚手架、向量数据库、AI 评测/benchmark 工具
+
+反例（这些不算 AI 相关，请排除）：
+- 通用包管理器（uv、pnpm 等），通用编译器、CLI 工具
+- 数据库、缓存、消息队列等纯基础设施
+- 游戏、桌面美化、生产力小工具
+- 仅在描述里提到 "AI-powered" 但本质是 SaaS / 营销页
+
+输出 JSON：
+{{
+  "items": [
+    {{
+      "full_name": "owner/repo",
+      "ai_topic": "子领域标签（如 LLM 推理 / Agent 框架 / 多模态 / RAG / 训练 / Eval / MCP 工具）",
+      "value_note": "一句话中文点评（25-50 字）：它解决了什么、为什么值得开发者关注"
+    }}
+  ]
+}}
+
+要求：
+- items 数量正好 {keep}（如果 AI 相关项目不足 {keep}，按实际数量返回，可少不可多凑）。
+- full_name 必须严格来自上面列表中的项目。
+- value_note 不要复述描述原文，要给"读者价值"判断。
+""".strip()
+
+    try:
+        resp = await chat_json(
+            client,
+            cfg,
+            TRENDING_SYSTEM,
+            user,
+            temperature=0.3,
+            max_tokens=900,
+        )
+    except Exception as exc:  # noqa: BLE001
+        log.warning("Trending LLM filter failed: %s", exc)
+        return []
+
+    picked = resp.get("items") or []
+    enriched: list[dict[str, Any]] = []
+    for it in picked:
+        full_name = (it.get("full_name") or "").strip()
+        base = by_full_name.get(full_name)
+        if not base:
+            continue
+        enriched.append(
+            {
+                **base,
+                "ai_topic": (it.get("ai_topic") or "").strip(),
+                "value_note": (it.get("value_note") or "").strip(),
+            }
+        )
+
+    log.info("Trending LLM filter: kept %d / %d", len(enriched), len(repos))
+    return enriched[:keep]
