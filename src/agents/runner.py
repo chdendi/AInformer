@@ -75,8 +75,8 @@ def _build_user_prompt(
 }}
 
 要求：
-- 输出 5-12 条最高质量的资讯，质量优先于数量。
-- importance：每天最多 2 条 "hot"（重大里程碑），3-5 条 "star"（重要更新），其余 "pin"。
+- 输出 5-6 条最高质量的资讯（栏目最终只展示 4 张卡片，多 1-2 条作为去重 buffer）。质量优先于数量，宁缺毋滥。
+- importance：本栏目最多 1 条 "hot"（重大里程碑），1-2 条 "star"（重要更新），其余 "pin"。
 - 不要输出与"已在最近 7 天日报中出现过的标题"相似的内容。
 - url 必须从候选素材中选取，不要编造。
 """.strip()
@@ -115,7 +115,7 @@ async def run_agent(
 
     user_prompt = _build_user_prompt(spec, materials, excluded_titles, today)
     try:
-        result = await chat_json(client, cfg, AGENT_SYSTEM, user_prompt, temperature=0.3, max_tokens=3500)
+        result = await chat_json(client, cfg, AGENT_SYSTEM, user_prompt, temperature=0.3, max_tokens=1800)
     except Exception as e:
         log.error("[agent:%s] LLM failed: %s", spec.key, e)
         return {"key": spec.key, "name": spec.name, "items": []}

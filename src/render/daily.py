@@ -62,6 +62,7 @@ def render_daily(data: dict[str, Any]) -> str:
         "headlines": headlines,
         "daily_takeaway": data.get("daily_takeaway") or {},
         "sections": sections,
+        "trending": data.get("trending") or [],
         "total": total,
         "hot_count": hot_count,
         "generated_at_short": gen_short,
