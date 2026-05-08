@@ -9,6 +9,7 @@ from datetime import date, datetime
 from .agents.definitions import build_agent_specs
 from .agents.runner import run_all_agents
 from .agents.trending_filter import filter_trending_with_llm
+from .build_api import build_api
 from .config import LLMConfig, ensure_dirs, tz
 from .dedupe import collect_excluded, dedupe_within, filter_new, load_recent_reports, normalize_title
 from .llm.client import get_usage_summary, make_client
@@ -196,6 +197,7 @@ async def main_async(target_date: date, dedupe_days: int, dry: bool) -> None:
     json_path = write_daily_json(report)
     html_path = write_daily_html(report)
     write_index()
+    build_api()
 
     total = sum(len(v) for v in sections.values())
     print(f"\n✅ Daily report generated for {today_str}")
