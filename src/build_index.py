@@ -3,6 +3,7 @@ from __future__ import annotations
 import logging
 import os
 
+from .build_api import build_api
 from .config import ensure_dirs
 from .render.index_page import write_index
 
@@ -14,7 +15,8 @@ def main() -> None:
     )
     ensure_dirs()
     write_index()
-    print("✅ index.html regenerated")
+    build_api()
+    print("✅ index.html + API regenerated")
 
 
 if __name__ == "__main__":

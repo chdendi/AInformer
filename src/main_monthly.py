@@ -6,6 +6,7 @@ import logging
 import os
 from datetime import date
 
+from .build_api import build_api
 from .config import LLMConfig, ensure_dirs, tz
 from .render.index_page import write_index
 from .summarize.monthly import run_monthly
@@ -40,6 +41,7 @@ def main() -> None:
     cfg = LLMConfig.from_env()
     asyncio.run(run_monthly(year, month, cfg))
     write_index()
+    build_api()
     print(f"✅ Monthly report generated for {year}-{month:02d}")
 
 

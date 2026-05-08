@@ -6,6 +6,7 @@ import logging
 import os
 from datetime import datetime
 
+from .build_api import build_api
 from .config import LLMConfig, ensure_dirs, tz
 from .render.index_page import write_index
 from .summarize.yearly import run_yearly
@@ -29,6 +30,7 @@ def main() -> None:
     cfg = LLMConfig.from_env()
     asyncio.run(run_yearly(year, cfg))
     write_index()
+    build_api()
     print(f"✅ Yearly report generated for {year}")
 
 
