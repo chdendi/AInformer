@@ -14,12 +14,15 @@ log = logging.getLogger(__name__)
 RSS_FEEDS: dict[str, dict[str, Any]] = {
     # 厂商官方
     "openai": {"url": "https://openai.com/news/rss.xml", "category": "industry"},
-    "anthropic_news": {"url": "https://www.anthropic.com/news/rss.xml", "category": "industry"},
-    "anthropic_engineering": {"url": "https://www.anthropic.com/engineering/rss.xml", "category": "tutorial"},
+    # Anthropic 已下线官方 RSS（2026-05 实测全部 404），暂依赖 Tavily 兜底
     "deepmind": {"url": "https://deepmind.google/blog/rss.xml", "category": "industry"},
     "huggingface_blog": {"url": "https://huggingface.co/blog/feed.xml", "category": "tutorial"},
-    "meta_ai": {"url": "https://ai.meta.com/blog/rss/", "category": "industry"},
+    # ai.meta.com 已下线 RSS，改用 Meta 工程博客 AI Research 分类
+    "meta_eng_ai": {"url": "https://engineering.fb.com/category/ai-research/feed/", "category": "industry"},
     "google_research": {"url": "https://research.google/blog/rss/", "category": "industry"},
+    "nvidia_blog": {"url": "https://blogs.nvidia.com/feed/", "category": "industry"},
+    "microsoft_ai": {"url": "https://blogs.microsoft.com/ai/feed/", "category": "industry"},
+    "aws_ml": {"url": "https://aws.amazon.com/blogs/machine-learning/feed/", "category": "industry"},
     # 英文媒体
     "verge_ai": {"url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml", "category": "industry"},
     "techcrunch_ai": {"url": "https://techcrunch.com/category/artificial-intelligence/feed/", "category": "industry"},
@@ -30,15 +33,23 @@ RSS_FEEDS: dict[str, dict[str, Any]] = {
         "url": "https://hnrss.org/frontpage?points=150&q=AI+OR+LLM+OR+Claude+OR+OpenAI+OR+GPT+OR+Anthropic+OR+DeepSeek",
         "category": "tutorial",
     },
+    # 教程 / 实践
+    "latent_space": {"url": "https://www.latent.space/feed", "category": "tutorial"},
+    "simon_willison": {"url": "https://simonwillison.net/atom/everything/", "category": "tutorial"},
+    # 观点 / 评论
+    "sam_altman": {"url": "https://blog.samaltman.com/posts.atom", "category": "opinion"},
+    "import_ai": {"url": "https://importai.substack.com/feed", "category": "opinion"},
+    "lesswrong": {"url": "https://www.lesswrong.com/feed.xml?view=curated", "category": "opinion"},
+    # Dwarkesh 暂无可用公开 RSS（dwarkeshpatel.com 跳转后 SSL 失败、官方 Substack ID 未公开），暂依赖 Tavily 兜底
     # 学术
-    "arxiv_ai": {"url": "https://export.arxiv.org/rss/cs.AI", "category": "chinese"},
-    "arxiv_cl": {"url": "https://export.arxiv.org/rss/cs.CL", "category": "chinese"},
-    "arxiv_lg": {"url": "https://export.arxiv.org/rss/cs.LG", "category": "chinese"},
+    "arxiv_ai": {"url": "https://export.arxiv.org/rss/cs.AI", "category": "academic"},
+    "arxiv_cl": {"url": "https://export.arxiv.org/rss/cs.CL", "category": "academic"},
+    "arxiv_lg": {"url": "https://export.arxiv.org/rss/cs.LG", "category": "academic"},
     # 中文
-    "jiqizhixin": {"url": "https://www.jiqizhixin.com/rss", "category": "chinese"},
+    # 机器之心已下线 RSS（站点全部返回 HTML 而非 RSS），暂依赖 qbitai/36kr/Tavily
     "qbitai": {"url": "https://www.qbitai.com/feed", "category": "chinese"},
-    "sspai": {"url": "https://sspai.com/feed", "category": "tutorial"},
     "36kr_newsflash": {"url": "https://36kr.com/feed-newsflash", "category": "chinese"},
+    "qwen_blog": {"url": "https://qwenlm.github.io/blog/index.xml", "category": "chinese"},
 }
 
 UA = "Mozilla/5.0 (compatible; AInformer/1.0; +https://github.com)"
