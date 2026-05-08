@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Daily · 2026-05-08 | AInformer</title>
+<meta name="description" content="OpenAI 与 Google 出新模型，SpaceX 跨界建芯片厂 · 共 8 条精选">
+<style>
+:root{
+  --bg:#0f0f0f;--bg-card:#1a1a2e;--bg-hover:#1f1f3a;--border:#16213e;
+  --text:#e8e8e8;--text-dim:#a0a0a0;--text-mute:#6b7280;
+  --grad:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+  --c-headline:#f093fb;--c-tutorial:#4facfe;--c-industry:#43e97b;--c-opinion:#fa709a;--c-chinese:#f8e71c;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB',sans-serif;line-height:1.65;font-size:15px}
+a{color:#9bb6ff;text-decoration:none}
+a:hover{color:#cfd9ff}
+code{background:rgba(255,255,255,.06);padding:1px 6px;border-radius:4px;font-family:'SF Mono',Menlo,Consolas,monospace;font-size:.92em;color:#f5b8d8}
+pre.code{background:#0a0a18;border:1px solid var(--border);border-radius:8px;padding:14px 16px;overflow:auto;margin:10px 0;font-size:13px}
+pre.code code{background:transparent;padding:0;color:#e8e8e8}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+/* Hero */
+.hero{padding:64px 24px 56px;background:var(--grad);background-size:200% 200%;animation:gradient-shift 12s ease infinite;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 30%, rgba(255,255,255,.08), transparent 40%);pointer-events:none}
+.hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.25)}
+.hero .date{font-size:1.05rem;color:rgba(255,255,255,.85);font-variant-numeric:tabular-nums;margin-bottom:18px;letter-spacing:.05em}
+.hero .theme{max-width:680px;margin:0 auto;color:rgba(255,255,255,.92);font-size:1.05rem;line-height:1.7}
+.hero .meta{margin-top:22px;display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center;color:rgba(255,255,255,.85);font-size:.85rem}
+.hero .meta span{padding:5px 12px;background:rgba(0,0,0,.18);border-radius:999px;backdrop-filter:blur(6px)}
+@keyframes gradient-shift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:50;background:rgba(15,15,15,.7);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:12px 24px;display:flex;gap:8px;align-items:center;overflow-x:auto;scrollbar-width:none}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav-inner a{padding:7px 14px;border-radius:8px;color:var(--text-dim);font-size:.9rem;white-space:nowrap;transition:all .2s}
+.nav-inner a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+.nav-inner .home{font-weight:600;color:var(--text);margin-right:8px}
+
+/* Stats */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:36px 0 28px}
+.stat{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:18px 16px;text-align:center;transition:all .3s}
+.stat:hover{transform:translateY(-2px);background:var(--bg-hover)}
+.stat .num{font-size:2rem;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+.stat .label{margin-top:6px;color:var(--text-dim);font-size:.85rem}
+
+/* Lede */
+.lede{margin:24px 0 8px;padding:28px 28px;background:linear-gradient(180deg,rgba(102,126,234,.10),rgba(118,75,162,.05));border:1px solid var(--border);border-left:4px solid #f093fb;border-radius:14px;font-size:1.05rem;line-height:1.85;color:#f0f0f0}
+.lede::before{content:"今日速读";display:block;font-size:.78rem;letter-spacing:.18em;color:#f093fb;font-weight:600;margin-bottom:10px}
+
+/* Section */
+.section{margin:48px 0 8px}
+.section-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.section-head h2{font-size:1.35rem;font-weight:700;letter-spacing:.01em}
+.section-head .count{color:var(--text-mute);font-size:.85rem}
+.section-divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:36px 0}
+
+/* Cards */
+.headlines{display:grid;gap:16px;margin-bottom:8px}
+@media(min-width:1024px){.headlines{grid-template-columns:1fr 1fr}}
+.headline-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:22px 24px;position:relative;transition:all .3s}
+.headline-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--c-headline);border-radius:14px 0 0 14px}
+.headline-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(102,126,234,.15)}
+.headline-card h3{font-size:1.12rem;line-height:1.45;margin-bottom:10px;font-weight:600}
+.headline-card p{color:#d0d0d8;font-size:.95rem;margin-bottom:14px}
+.headline-card .meta{display:flex;flex-wrap:wrap;gap:8px;font-size:.8rem;color:var(--text-mute);align-items:center}
+
+.cards{display:grid;gap:14px}
+@media(min-width:1024px){.cards{grid-template-columns:1fr 1fr}}
+@media(min-width:1280px){.cards.three-col{grid-template-columns:1fr 1fr 1fr}}
+.news-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:18px 20px;transition:all .3s;display:flex;flex-direction:column;gap:10px}
+.news-card:hover{transform:translateY(-3px);background:var(--bg-hover);border-color:#1f3057}
+.news-card h3{font-size:1rem;line-height:1.5;font-weight:600}
+.news-card .summary{font-size:.92rem;color:#cfcfd6;flex-grow:1}
+.news-card .value{font-size:.85rem;color:#a8b3d6;padding-left:10px;border-left:2px solid rgba(102,126,234,.4)}
+.news-card .meta{display:flex;flex-wrap:wrap;gap:6px;font-size:.78rem;color:var(--text-mute);align-items:center;margin-top:auto}
+
+/* Quote (opinion) */
+.quote-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:22px 22px 22px 70px;position:relative;transition:all .3s}
+.quote-card:hover{transform:translateY(-3px);background:var(--bg-hover)}
+.quote-card::before{content:"\201C";position:absolute;left:18px;top:8px;font-size:3.2rem;color:var(--c-opinion);font-family:Georgia,serif;line-height:1;opacity:.65}
+.quote-card .quote-en{font-style:italic;color:#e8e8e8;line-height:1.65;margin-bottom:8px}
+.quote-card .quote-zh{color:#cfcfd6;line-height:1.7;margin-bottom:12px}
+.quote-card .person{font-weight:600;color:#fa709a;font-size:.9rem}
+.quote-card .meta{display:flex;flex-wrap:wrap;gap:6px;font-size:.78rem;color:var(--text-mute);margin-top:8px}
+
+/* Daily takeaway */
+.takeaway{margin:40px 0;padding:28px 30px;background:linear-gradient(135deg,rgba(248,231,28,.08),rgba(250,112,154,.05));border:1px solid rgba(248,231,28,.25);border-radius:16px;position:relative}
+.takeaway::before{content:"📚 每日一学";display:block;font-size:.85rem;letter-spacing:.12em;color:#f8e71c;font-weight:600;margin-bottom:6px}
+.takeaway h3{font-size:1.25rem;font-weight:700;margin-bottom:14px;color:#fff}
+.takeaway p{margin-bottom:10px;line-height:1.78}
+.takeaway ul{margin:8px 0 12px 24px}
+.takeaway li{margin-bottom:6px}
+
+/* Tags */
+.tag{display:inline-flex;align-items:center;padding:2px 9px;border-radius:6px;font-size:.74rem;font-weight:500;letter-spacing:.02em}
+.tag-tutorial{background:rgba(79,172,254,.15);color:#4facfe}
+.tag-industry{background:rgba(67,233,123,.15);color:#43e97b}
+.tag-opinion{background:rgba(250,112,154,.15);color:#fa709a}
+.tag-chinese{background:rgba(248,231,28,.15);color:#f8e71c}
+.tag-headline{background:rgba(240,147,251,.15);color:#f093fb}
+.tag-hot{background:#dc2626;color:#fff;animation:pulse 1.6s ease-in-out infinite}
+.tag-star{background:rgba(251,191,36,.18);color:#fbbf24}
+.tag-pin{background:rgba(148,163,184,.15);color:#94a3b8}
+@keyframes pulse{0%,100%{opacity:.85}50%{opacity:1}}
+
+.link-btn{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:rgba(102,126,234,.1);border:1px solid rgba(102,126,234,.3);border-radius:6px;font-size:.78rem;color:#9bb6ff;transition:all .2s}
+.link-btn:hover{background:rgba(102,126,234,.18);color:#fff}
+
+.empty{padding:24px;text-align:center;color:var(--text-mute);background:var(--bg-card);border:1px dashed var(--border);border-radius:12px}
+
+/* Footer */
+.footer{margin-top:80px;padding:30px 24px;background:#0a0a18;color:var(--text-mute);font-size:.82rem;border-top:1px solid var(--border);text-align:center;line-height:1.8}
+.footer a{color:#9bb6ff}
+
+/* Tablet */
+@media(max-width:1023px){
+  .stats-bar{grid-template-columns:repeat(2,1fr)}
+  .cards{grid-template-columns:1fr}
+}
+/* Phone */
+@media(max-width:639px){
+  .hero{padding:44px 18px 36px}
+  .container{padding:0 16px}
+  .stats-bar{grid-template-columns:repeat(2,1fr);gap:10px}
+  .stat .num{font-size:1.6rem}
+  .lede{padding:20px}
+  .takeaway{padding:22px}
+  .quote-card{padding:22px 20px 22px 56px}
+  .quote-card::before{font-size:2.6rem;left:14px}
+}
+@media print{
+  body{background:#fff;color:#000}
+  .sticky-nav,.footer{display:none}
+  .news-card,.headline-card,.quote-card,.takeaway,.lede{break-inside:avoid;background:#fff;border:1px solid #ddd;color:#000}
+  .hero{background:#fff;color:#000}
+  .hero h1,.hero .date,.hero .theme{color:#000}
+  a{color:#000;text-decoration:underline}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="date">2026-05-08 · 周五</div>
+  <h1>每日 AI 简报</h1>
+  <p class="theme">OpenAI 与 Google 出新模型，SpaceX 跨界建芯片厂</p>
+  <div class="meta">
+    <span>📰 8 条精选</span>
+    <span>🔥 2 头条</span>
+    <span>⏱ 生成于 2026-05-08 09:40</span>
+  </div>
+</header>
+
+<nav class="sticky-nav">
+  <div class="nav-inner">
+    <a class="home" href="https://chenhao-dendi.github.io/AInformer/index.html">← 首页</a>
+    <a href="#headlines">今日头条</a>
+    <a href="#takeaway">每日一学</a>
+    <a href="#tutorial">使用姿势</a>
+    <a href="#industry">行业动态</a>
+    <a href="#opinion">领袖观点</a>
+    <a href="#chinese">中文 / 学术</a>
+  </div>
+</nav>
+
+<main class="container">
+
+  <section class="lede">今日 AI 圈重磅迭出：OpenAI 发布专为网络安全设计的 GPT-5.5-Cyber 模型，正面迎战 Anthropic 的 Mythos；SpaceX 宣布 550 亿美元 Terafab 芯片工厂计划，高调进军底层硬件；Google 开源 Gemma 4 模型，凭借推测解码实现 3 倍推理提速；Anthropic 则与 SpaceX 达成算力合作，大幅提升 Claude 使用限额。巨头从模型到算力全面角力，产业格局加速分化。</section>
+
+  <section class="stats-bar">
+    <div class="stat"><div class="num">0</div><div class="label">使用姿势</div></div>
+    <div class="stat"><div class="num">8</div><div class="label">行业新闻</div></div>
+    <div class="stat"><div class="num">0</div><div class="label">领袖观点</div></div>
+    <div class="stat"><div class="num">0</div><div class="label">中文 / 学术</div></div>
+  </section>
+
+  <section class="section" id="headlines">
+    <div class="section-head"><h2>🔥 今日头条</h2><span class="count">4 条</span></div>
+    <div class="headlines">
+      <article class="headline-card">
+        <h3>OpenAI 发布 GPT-5.5-Cyber 迎战 Anthropic</h3>
+        <p>OpenAI 推出 GPT-5.5 及 GPT-5.5-Cyber 模型，通过可信访问计划为网络安全团队提供漏洞研究和基础设施保护能力。此举直接对标 Anthropic 的 Mythos 模型，强化 AI 在安全领域的应用。</p>
+        <div class="meta">
+<span class="tag tag-industry">行业新闻</span><span>OpenAI 官方博客</span><a class="link-btn" href="https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="headline-card">
+        <h3>SpaceX 投资 550 亿美元建 Terafab AI 芯片厂</h3>
+        <p>SpaceX 计划在得克萨斯州奥斯汀建设名为 Terafab 的 AI 芯片制造工厂，总投资至少 550 亿美元，正式切入 AI 底层基础设施。该项目将大幅提升 AI 芯片产能，加剧硬件竞争。</p>
+        <div class="meta">
+<span class="tag tag-industry">行业新闻</span><span>The Verge</span><a class="link-btn" href="https://www.theverge.com/ai-artificial-intelligence/926356/spacex-terafab-plant-cost-ai-chips" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="headline-card">
+        <h3>Google 开源 Gemma 4 模型，推测解码提速 3 倍</h3>
+        <p>Google 发布基于 Gemini 同源技术的开源模型 Gemma 4，采用推测解码技术，推理速度最高提升 3 倍，可在单张高性能加速器上全精度运行。该模型降低了高性能推理的门槛。</p>
+        <div class="meta">
+<span class="tag tag-industry">行业新闻</span><span>Ars Technica</span><a class="link-btn" href="https://arstechnica.com/ai/2026/05/googles-gemma-4-open-ai-models-use-speculative-decoding-to-get-up-to-3x-faster/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="headline-card">
+        <h3>Anthropic 联手 SpaceX，Claude 限额大幅提升</h3>
+        <p>Anthropic 宣布与 SpaceX 建立合作，获得其 Colossus 超级计算机的算力支持，从而显著提高 Claude Code 及 API 的使用限额。这一合作缓解了算力瓶颈，优化了开发者体验。</p>
+        <div class="meta">
+<span class="tag tag-industry">行业新闻</span><span>Anthropic 官方博客</span><a class="link-btn" href="https://www.anthropic.com/news/higher-limits-spacex" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="takeaway" id="takeaway">
+    <h3>用 HuggingFace 加载 Gemma 4 并启用推测解码</h3>
+    <p>Google 开源的 Gemma 4 模型支持推测解码，可大幅提升推理速度。以下示例使用 <code>transformers</code> 库加载模型并启用推测解码（需安装 <code>transformers&gt;=4.48</code> 及 <code>accelerate</code>）。</p><pre class="code"><code class="lang-python">from transformers import AutoModelForCausalLM, AutoTokenizer, GenerationConfig
+
+model_name = &quot;google/gemma-4-9b-it&quot;
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForCausalLM.from_pretrained(
+    model_name,
+    device_map=&quot;auto&quot;,
+    torch_dtype=&quot;auto&quot;
+)
+# 配置推测解码参数
+config = GenerationConfig(
+    max_new_tokens=512,
+    do_sample=False,
+    speculation_length=3,       # 推测步数
+    num_beams=1,
+    use_cache=True
+)
+prompt = &quot;解释量子计算的基本原理&quot;
+inputs = tokenizer(prompt, return_tensors=&quot;pt&quot;).to(model.device)
+outputs = model.generate(**inputs, generation_config=config)
+print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+</code></pre><p>调整 <code>speculation_length</code> 可平衡速度与精度，建议从 2~5 开始尝试。`</p>
+    <p style="margin-top:12px"><a class="link-btn" href="https://arstechnica.com/ai/2026/05/googles-gemma-4-open-ai-models-use-speculative-decoding-to-get-up-to-3x-faster/" target="_blank" rel="noopener noreferrer">查看出处 ↗</a></p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="section" id="tutorial">
+    <div class="section-head"><h2>🛠 AI 使用姿势与教程</h2><span class="count">0 条</span></div>
+<div class="empty">今日该领域无重大动态</div>  </section>
+
+  <section class="section" id="industry">
+    <div class="section-head"><h2>📈 AI 行业新闻与产品动态</h2><span class="count">8 条</span></div>
+    <div class="cards">
+<article class="news-card">
+  <h3>OpenAI 发布 GPT-5.5-Cyber ，正面迎战 Anthropic 的 Mythos</h3>
+<p class="summary">OpenAI 正式推出专为网络安全防御者设计的 GPT-5.5 和 GPT-5.5-Cyber 模型，通过可信访问计划帮助验证过的安全团队加速漏洞研究与基础设施保护，直接对标 Anthropic 的 Mythos 模型。</p><p class="value">💡 两大顶级 AI 实验室在网络安全领域展开直接竞争，模型能力与安全策略成为行业焦点。</p>  <div class="meta">
+<span class="tag tag-hot">🔥 头条</span><span>OpenAI 官方博客</span><span>· 2026-05-07</span><a class="link-btn" href="https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>SpaceX 公布 550 亿美元 AI 芯片工厂计划，代号 Terafab</h3>
+<p class="summary">SpaceX 计划在美国得克萨斯州奥斯汀投资至少 550 亿美元建设名为“Terafab”的 AI 芯片制造工厂，正式进军 AI 硬件底层基础设施。</p><p class="value">💡 马斯克旗下公司巨额押注自研 AI 芯片，或将重塑全球 AI 算力供应链格局。</p>  <div class="meta">
+<span class="tag tag-hot">🔥 头条</span><span>The Verge</span><span>· 2026-05-07</span><a class="link-btn" href="https://www.theverge.com/ai-artificial-intelligence/926356/spacex-terafab-plant-cost-ai-chips" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>DeepSeek 首轮融资估值或达 450 亿美元</h3>
+<p class="summary">中国 AI 公司 DeepSeek 正在进行首轮外部融资，由国家级基金领投，估值有望达到 450 亿美元，凸显中国对自主 AI 技术的战略投资。</p><p class="value">💡 巨额估值反映出市场对低成本高性能开源大模型的追捧，也显示地缘政治下的 AI 资本流向。</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>TechCrunch</span><span>· 2026-05-06</span><a class="link-btn" href="https://techcrunch.com/2026/05/06/deepseek-could-hit-45b-valuation-from-its-first-investment-round/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>Kimi 寻求新一轮融资，估值达 200 亿美元</h3>
+<p class="summary">中国 AI 模型开发商 Kimi 正在筹集资金，其前代模型 K2.5 已被 Cursor 等公司采用，最新旗舰模型 K2.6 在 token 用量上已跻身全球前三。</p><p class="value">💡 Kimi 的快速崛起印证了国产大模型在全球开发者生态中的竞争力与商业潜力。</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>Forbes</span><span>· 2026-05-07</span><a class="link-btn" href="https://www.forbes.com/sites/ywang/2026/05/07/chinese-ai-model-developer-kimi-raising-funds-valuing-it-at-20-billion/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>前 OpenAI 研究员创立的 Periodic Labs 拟融资 5 亿美元，估值 75 亿</h3>
+<p class="summary">由前 OpenAI 研究员设立的 AI 科学初创公司 Periodic Labs 正寻求 5 亿美元融资，估值将达 75 亿美元，较八个月前增长近 6 倍。</p><p class="value">💡 科学 AI 赛道受到资本强烈追捧，创业人才从大厂外溢的趋势持续加剧。</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>Forbes</span><span>· 2026-05-07</span><a class="link-btn" href="https://www.forbes.com/sites/iainmartin/2026/05/07/former-openai-researcher-to-raise-500-million-for-ai-science-startup/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>Google 发布 Gemma 4 开源模型，推测解码提速 3 倍</h3>
+<p class="summary">Google 推出基于 Gemini 同源技术的新型开源模型 Gemma 4，采用推测解码技术使推理速度提升多达 3 倍，可在单张高性能加速器上以全精度运行。</p><p class="value">💡 开源领域的又一次重要升级，为本地化部署和开发者社区提供了更强的效率工具。</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>Ars Technica</span><span>· 2026-05-06</span><a class="link-btn" href="https://arstechnica.com/ai/2026/05/googles-gemma-4-open-ai-models-use-speculative-decoding-to-get-up-to-3x-faster/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>欧盟就简化 AI 规则达成临时协议，将禁止深度伪造色情应用</h3>
+<p class="summary">欧盟各国政府和立法者达成临时协议，延迟对高风险 AI 系统的部分监管，并计划禁止使用 AI 生成色情深度伪造和色情化图像的应用。</p><p class="value">💡 全球 AI 监管风向出现缓和，但针对特定滥用行为的立法仍趋严格，合规影响广泛。</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>DW.com</span><span>· 2026-05-07</span><a class="link-btn" href="https://www.dw.com/en/eu-reaches-tentative-deal-on-simpler-ai-rules-plans-ban-on-nudifier-apps/a-77073411" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>Anthropic 与 SpaceX 达成算力合作，Claude 使用限额大幅提升</h3>
+<p class="summary">Anthropic 宣布与 SpaceX 建立合作伙伴关系，获得其 Colossus 超级计算机的算力支持，从而显著提高 Claude Code 及 API 的使用限额。</p><p class="value">💡 通过绑定非传统云厂商的巨量算力，Anthropic 在开发者市场的服务能力得到关键扩展。</p>  <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>Anthropic 官方博客</span><span>· 2026-05-06</span><a class="link-btn" href="https://www.anthropic.com/news/higher-limits-spacex" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article>    </div>
+  </section>
+
+  <section class="section" id="opinion">
+    <div class="section-head"><h2>💭 AI 领袖发言与深度观点</h2><span class="count">0 条</span></div>
+<div class="empty">今日该领域无重大动态</div>  </section>
+
+  <section class="section" id="chinese">
+    <div class="section-head"><h2>🇨🇳 中文 AI 生态与学术动态</h2><span class="count">0 条</span></div>
+<div class="empty">今日该领域无重大动态</div>  </section>
+
+</main>
+<footer class="footer">
+  <div class="container">
+<p style="margin-bottom:8px"><a href="https://chenhao-dendi.github.io/AInformer/index.html">← 回到首页</a> · 历史日报：<a href="https://chenhao-dendi.github.io/AInformer/index.html#archive">归档</a></p>
+    <p>本日报基于公开信息自动搜索整理生成，资讯来源包括 OpenAI / Anthropic / DeepMind 等官方博客、The Verge、TechCrunch、36kr、机器之心、量子位、ArXiv、Hacker News 等公开平台。内容可能存在时效性偏差或不完整，请以原始来源为准。</p>
+    <p style="margin-top:8px">Generated at 2026-05-08 09:40 · Powered by DeepSeek + Tavily · <a href="https://chenhao-dendi.github.io/AInformer/index.html">AInformer</a></p>
+  </div>
+</footer>
+</body>
+</html>
