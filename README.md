@@ -1,6 +1,6 @@
 # AInformer
 
-**🌐 站点**：https://chenhao-dendi.github.io/AInformer
+**🌐 站点**：https://chdendi.github.io/AInformer
 
 ## API
 
