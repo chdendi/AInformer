@@ -144,10 +144,11 @@ def build_agent_specs(month_token: str) -> list[AgentSpec]:
 
     academic = AgentSpec(
         key="academic",
-        name="AI 学术论文",
-        focus="重要 AI 论文与学术突破：arXiv 新论文、HuggingFace papers、SOTA 进展、新 benchmark 论文。",
-        queries=_queries_with_month(
+        name="AI 学术与评测",
+        focus="重要 AI 论文、学术突破与模型评测榜单变化。兼顾 arXiv 新论文和 LMSYS/Aider/SWE-bench 等主流榜单的排名变动。",
+        queries=_queries_mixed_month(
             [
+                # 论文搜索（带月 token 增加时效性）
                 "arXiv LLM breakthrough paper",
                 "arXiv new paper SOTA",
                 "HuggingFace daily papers trending",
@@ -157,26 +158,10 @@ def build_agent_specs(month_token: str) -> list[AgentSpec]:
                 "diffusion model paper new",
                 "multimodal LLM paper",
                 "agent reasoning paper arXiv",
+                "scaling law new paper",
                 "AI 论文 突破 arXiv",
                 "新 benchmark 论文 评测",
-                "scaling law new paper",
-            ],
-            month_token,
-        ),
-        rss_categories=["academic"],
-        extra_instructions=(
-            "聚焦真正有突破或方法创新的论文，给出一句话价值点："
-            "解决了什么问题 / 比 SOTA 高多少 / 对工业界的潜在影响。"
-            "排除综述、二次解读、营销稿。优先有数字、有比较、有代码或权重开源的工作。"
-        ),
-    )
-
-    benchmark = AgentSpec(
-        key="benchmark",
-        name="模型评测雷达",
-        focus="模型评测榜单变化与能力对比：LMSYS Arena、Aider、SWE-bench、Artificial Analysis、Open LLM Leaderboard 等的最新排名变化。",
-        queries=_queries_mixed_month(
-            [
+                # 评测榜单（不加月 token，保留搜索 "latest" leaderboard）
                 "LMSYS Chatbot Arena leaderboard",
                 "Aider leaderboard coding",
                 "SWE-bench verified leaderboard",
@@ -189,14 +174,14 @@ def build_agent_specs(month_token: str) -> list[AgentSpec]:
                 "AI 模型 评测 榜单 变化",
             ],
             month_token,
-            skip_month={0, 1, 2, 3, 4},
+            skip_month={12, 13, 14, 15, 16},
         ),
-        rss_categories=["benchmark"],
+        rss_categories=["academic"],
         extra_instructions=(
-            "必须包含具体数字变化：分数、排名、相对前一版本的提升幅度。"
-            "排除没有数字支撑的笼统评价；优先官方榜单更新与第三方对比报告。"
-            "若同一榜单本期无变化，可省略；不要凑数。"
+            "论文部分：聚焦真正有突破或方法创新的论文，给出一句话价值点（解决了什么 / 比 SOTA 高多少）。"
+            "评测部分：必须包含具体数字变化（分数、排名、提升幅度），无数字支撑的笼统评价跳过。"
+            "排除综述、二次解读、营销稿。若榜单本期无变化可省略。共输出 4-5 条，论文与评测各 2-3 条为宜。"
         ),
     )
 
-    return [tutorial, industry, opinion, chinese, academic, benchmark]
+    return [tutorial, industry, opinion, chinese, academic]
