@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-09T11:32:19.906574+08:00",
+  "updated_at": "2026-05-09T11:34:15.137212+08:00",
   "total_days": 2,
   "latest": {
     "date": "2026-05-09",
@@ -22,7 +22,7 @@
       "date": "2026-05-08",
       "theme": "模型竞赛升级，安全与开源成焦点",
       "generated_at": "2026-05-08T14:14:08.165382+08:00",
-      "total_items": 40,
+      "total_items": 21,
       "data_url": "/data/daily/20260508.json",
       "html_url": "/daily/20260508.html"
     }
