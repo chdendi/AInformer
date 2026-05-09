@@ -29,11 +29,10 @@ log = logging.getLogger("ainformer.daily")
 # likely to absorb stories that genuinely belong elsewhere, so it goes last.
 SECTION_PRIORITY = {
     "opinion": 1,    # quote-driven, most exclusive
-    "academic": 2,   # paper-driven
-    "benchmark": 3,  # eval-number driven
-    "tutorial": 4,   # hands-on tutorials
-    "chinese": 5,    # regional bucket
-    "industry": 6,   # broadest, fallback bucket
+    "academic": 2,   # paper + benchmark driven
+    "tutorial": 3,   # hands-on tutorials
+    "chinese": 4,    # regional bucket
+    "industry": 5,   # broadest, fallback bucket
 }
 
 # Per-section visible card cap. Agents are instructed to return 5-6 candidates

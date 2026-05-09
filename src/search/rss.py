@@ -28,6 +28,8 @@ RSS_FEEDS: dict[str, dict[str, Any]] = {
     "techcrunch_ai": {"url": "https://techcrunch.com/category/artificial-intelligence/feed/", "category": "industry"},
     "venturebeat_ai": {"url": "https://venturebeat.com/category/ai/feed/", "category": "industry"},
     "arstechnica_ai": {"url": "https://feeds.arstechnica.com/arstechnica/index", "category": "industry"},
+    "techreview": {"url": "https://www.technologyreview.com/feed/", "category": "industry"},
+    "marktechpost": {"url": "https://www.marktechpost.com/feed/", "category": "industry"},
     # 社区 / 聚合
     "hn_ai": {
         "url": "https://hnrss.org/frontpage?points=150&q=AI+OR+LLM+OR+Claude+OR+OpenAI+OR+GPT+OR+Anthropic+OR+DeepSeek",
@@ -36,20 +38,26 @@ RSS_FEEDS: dict[str, dict[str, Any]] = {
     # 教程 / 实践
     "latent_space": {"url": "https://www.latent.space/feed", "category": "tutorial"},
     "simon_willison": {"url": "https://simonwillison.net/atom/everything/", "category": "tutorial"},
+    "huyenchip": {"url": "https://huyenchip.com/feed.xml", "category": "tutorial"},
     # 观点 / 评论
     "sam_altman": {"url": "https://blog.samaltman.com/posts.atom", "category": "opinion"},
     "import_ai": {"url": "https://importai.substack.com/feed", "category": "opinion"},
     "lesswrong": {"url": "https://www.lesswrong.com/feed.xml?view=curated", "category": "opinion"},
+    "thegradient": {"url": "https://thegradient.pub/feed/", "category": "opinion"},
+    "interconnects": {"url": "https://www.interconnects.ai/feed", "category": "opinion"},
+    "aisnakeoil": {"url": "https://www.aisnakeoil.com/feed.xml", "category": "opinion"},
     # Dwarkesh 暂无可用公开 RSS（dwarkeshpatel.com 跳转后 SSL 失败、官方 Substack ID 未公开），暂依赖 Tavily 兜底
     # 学术
     "arxiv_ai": {"url": "https://export.arxiv.org/rss/cs.AI", "category": "academic"},
     "arxiv_cl": {"url": "https://export.arxiv.org/rss/cs.CL", "category": "academic"},
     "arxiv_lg": {"url": "https://export.arxiv.org/rss/cs.LG", "category": "academic"},
+    "bair": {"url": "https://bair.berkeley.edu/blog/feed.xml", "category": "academic"},
     # 中文
     # 机器之心已下线 RSS（站点全部返回 HTML 而非 RSS），暂依赖 qbitai/36kr/Tavily
     "qbitai": {"url": "https://www.qbitai.com/feed", "category": "chinese"},
     "36kr_newsflash": {"url": "https://36kr.com/feed-newsflash", "category": "chinese"},
     "qwen_blog": {"url": "https://qwenlm.github.io/blog/index.xml", "category": "chinese"},
+    "leiphone": {"url": "https://www.leiphone.com/feed", "category": "chinese"},
 }
 
 UA = "Mozilla/5.0 (compatible; AInformer/1.0; +https://github.com)"

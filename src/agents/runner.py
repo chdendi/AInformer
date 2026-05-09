@@ -16,15 +16,36 @@ log = logging.getLogger(__name__)
 
 
 AGENT_SYSTEM = (
-    "你是一个资深的 AI 行业研究员。你的任务是从给定的搜索素材中筛选、提炼、结构化最值得关注的 AI 资讯，"
-    "为一份高质量中文 AI 日报供稿。\n\n"
-    "严格要求：\n"
-    "1. 只输出 JSON，禁止任何 markdown 包裹。\n"
-    "2. 不允许编造素材中不存在的链接、引用、人物或事件。\n"
-    "3. 所有内容用中文撰写，专有名词、产品名、人名保留英文原文。\n"
-    "4. 凡引用 AI 领袖原话，必须保留英文原文，并附中文翻译。\n"
-    "5. 对每条资讯都要给出价值点（为什么读者应该看）。\n"
+    "你是 AI 行业研究员，从搜索素材中筛选高质量 AI 资讯为中文日报供稿。\n"
+    "规则：只输出 JSON。禁止编造。中文撰写，专有名词保留英文。每条给出价值点。"
 )
+
+_JSON_FMT_OPINION = """  "items": [
+    {
+      "title": "中文标题（<40字）",
+      "summary": "1-2句摘要（<80字）",
+      "value_note": "一句话价值点（<40字）",
+      "source_name": "媒体或人物名",
+      "url": "原始 URL（必须来自素材）",
+      "published_at": "ISO 时间或空字符串",
+      "importance": "hot|star|pin",
+      "quote_en": "原文引用",
+      "quote_zh": "中文翻译",
+      "person": "发言人姓名"
+    }
+  ]"""
+
+_JSON_FMT_BASE = """  "items": [
+    {
+      "title": "中文标题（<40字）",
+      "summary": "1-2句摘要（<80字）",
+      "value_note": "一句话价值点（<40字）",
+      "source_name": "媒体或人物名",
+      "url": "原始 URL（必须来自素材）",
+      "published_at": "ISO 时间或空字符串",
+      "importance": "hot|star|pin"
+    }
+  ]"""
 
 
 def _build_user_prompt(
@@ -33,52 +54,40 @@ def _build_user_prompt(
     excluded: list[str],
     today: str,
 ) -> str:
-    excluded_block = "\n".join(f"- {t}" for t in excluded[:30]) if excluded else "（无）"
+    excluded_block = "\n".join(f"- {t}" for t in excluded[:20]) if excluded else "（无）"
     material_lines = []
-    for i, m in enumerate(materials[:40], 1):
+    for i, m in enumerate(materials[:25], 1):
+        pub = (m.get("published_at") or "")[:10]
         material_lines.append(
-            f"[{i}] 来源={m.get('source','?')} | 时间={m.get('published_at','?')}\n"
-            f"    标题：{m.get('title','')}\n"
-            f"    链接：{m.get('url','')}\n"
-            f"    摘要：{(m.get('snippet') or '')[:200]}"
+            f"[{i}] {m.get('title','')} | {m.get('url','')} | {m.get('source','?')} | {pub}\n"
+            f"  {(m.get('snippet') or '')[:150]}"
         )
     materials_block = "\n\n".join(material_lines) if material_lines else "（无素材）"
 
+    json_fmt = _JSON_FMT_OPINION if spec.key == "opinion" else _JSON_FMT_BASE
+
     return f"""
 今日日期：{today}
-你负责的栏目：**{spec.name}**
-栏目焦点：{spec.focus}
-额外要求：{spec.extra_instructions}
+栏目：{spec.name}
+焦点：{spec.focus}
+要求：{spec.extra_instructions}
 
-## 已在最近 7 天日报中出现过的标题（务必跳过这些主题，避免重复）
+## 近期已报道过的标题（跳过）：
 {excluded_block}
 
-## 候选搜索素材（共 {len(materials)} 条，已按热度/时效初筛）
+## 候选素材（{len(materials)} 条，已初筛）：
 {materials_block}
 
-## 输出格式（严格 JSON）
+## JSON 输出格式：
 {{
-  "items": [
-    {{
-      "title": "中文标题（< 40 字）",
-      "summary": "1-2 句中文摘要，突出核心信息",
-      "value_note": "1 句话价值点：为什么读者要关心",
-      "source_name": "媒体或人物名",
-      "url": "原始 URL（必须来自素材）",
-      "published_at": "ISO 时间或空字符串",
-      "importance": "hot | star | pin",
-      "quote_en": "（仅 opinion 栏目；无则空字符串）",
-      "quote_zh": "（仅 opinion 栏目；无则空字符串）",
-      "person": "（仅 opinion 栏目；无则空字符串）"
-    }}
-  ]
+{json_fmt}
 }}
 
 要求：
-- 输出 5-6 条最高质量的资讯（栏目最终只展示 4 张卡片，多 1-2 条作为去重 buffer）。质量优先于数量，宁缺毋滥。
-- importance：本栏目最多 1 条 "hot"（重大里程碑），1-2 条 "star"（重要更新），其余 "pin"。
-- 不要输出与"已在最近 7 天日报中出现过的标题"相似的内容。
-- url 必须从候选素材中选取，不要编造。
+- 输出 4-5 条最高质量资讯，宁缺毋滥。
+- importance：最多 1 hot，1-2 star，其余 pin。
+- url 必须来自候选素材，禁止编造。
+- 跳过与"近期已报道标题"相似的内容。
 """.strip()
 
 
@@ -115,7 +124,7 @@ async def run_agent(
 
     user_prompt = _build_user_prompt(spec, materials, excluded_titles, today)
     try:
-        result = await chat_json(client, cfg, AGENT_SYSTEM, user_prompt, temperature=0.3, max_tokens=4096)
+        result = await chat_json(client, cfg, AGENT_SYSTEM, user_prompt, temperature=0.3, max_tokens=3000)
     except Exception as e:
         log.error("[agent:%s] LLM failed: %s", spec.key, e)
         return {"key": spec.key, "name": spec.name, "items": []}

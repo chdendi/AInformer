@@ -106,8 +106,7 @@
     <a href="#industry">行业动态</a>
     <a href="#opinion">领袖观点</a>
     <a href="#chinese">中文 / 学术</a>
-    <a href="#academic">学术论文</a>
-    <a href="#benchmark">评测雷达</a>
+    <a href="#academic">学术与评测</a>
   </div>
 </nav>
 
@@ -123,8 +122,7 @@
     <div class="stat"><div class="num">{{ sec.industry|length }}</div><div class="label">行业新闻</div></div>
     <div class="stat"><div class="num">{{ sec.opinion|length }}</div><div class="label">领袖观点</div></div>
     <div class="stat"><div class="num">{{ sec.chinese|length }}</div><div class="label">中文 / 学术</div></div>
-    <div class="stat"><div class="num">{{ sec.academic|length }}</div><div class="label">学术论文</div></div>
-    <div class="stat"><div class="num">{{ sec.benchmark|length }}</div><div class="label">评测雷达</div></div>
+    <div class="stat"><div class="num">{{ sec.academic|length }}</div><div class="label">学术与评测</div></div>
   </section>
 
   {% if report.headlines %}
@@ -238,21 +236,10 @@
   </section>
 
   <section class="section" id="academic">
-    <div class="section-head"><h2>AI 学术论文精选</h2><span class="count">{{ sec.academic|length }} 条</span></div>
+    <div class="section-head"><h2>学术与评测</h2><span class="count">{{ sec.academic|length }} 条</span></div>
     {% if sec.academic %}
     <div class="cards">
       {% for it in sec.academic %}
-      {% include "_news_card.html.j2" %}
-      {% endfor %}
-    </div>
-    {% else %}<div class="empty">今日该领域无重大动态</div>{% endif %}
-  </section>
-
-  <section class="section" id="benchmark">
-    <div class="section-head"><h2>模型评测雷达</h2><span class="count">{{ sec.benchmark|length }} 条</span></div>
-    {% if sec.benchmark %}
-    <div class="cards">
-      {% for it in sec.benchmark %}
       {% include "_news_card.html.j2" %}
       {% endfor %}
     </div>

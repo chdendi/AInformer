@@ -100,7 +100,7 @@ async def filter_trending_with_llm(
             TRENDING_SYSTEM,
             user,
             temperature=0.3,
-            max_tokens=900,
+            max_tokens=700,
         )
     except Exception as exc:  # noqa: BLE001
         log.warning("Trending LLM filter failed: %s", exc)
