@@ -101,7 +101,11 @@ async def chat_json(
                 cleaned = content.strip().strip("`")
                 if cleaned.startswith("json"):
                     cleaned = cleaned[4:].strip()
-                return json.loads(cleaned)
+                try:
+                    return json.loads(cleaned)
+                except json.JSONDecodeError:
+                    log.warning("JSON parse failed. Raw content (first 500 chars): %s", content[:500])
+                    return {}
     return {}
 
 

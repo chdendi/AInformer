@@ -1,21 +1,345 @@
 {
   "date": "2026-05-09",
-  "generated_at": "2026-05-09T09:36:58.754786+08:00",
-  "today_theme": "",
-  "lede": "今日各栏目稿件均未提交，包括AI使用姿势、行业新闻、领袖观点、中文生态、学术论文、模型评测等六个栏目均为空白，因此无法提炼热点新闻与实操内容。期待明日编辑提供稿件。",
-  "headlines": [],
+  "generated_at": "2026-05-09T13:13:26.139535+08:00",
+  "today_theme": "AI能力跃迁与规则重塑",
+  "lede": "今日AI圈迎来多项重磅进展：Anthropic为Claude推出无限上下文窗口，彻底改变长文档处理工作流；同时其CEO提出AI将走向“组织智能”，并推出“dreaming”系统让AI从错误中学习。月之暗面以200亿美元估值融资20亿美元，成为中文AI生态的焦点。欧盟就简化AI规则达成临时协议，推迟AI Act部分条款。此外，Mozilla利用Anthropic的Mythos工具发现Firefox 271个漏洞，展示了AI在安全领域的巨大潜力。",
+  "headlines": [
+    {
+      "title": "Claude获无限上下文窗口，工作流变革",
+      "summary": "Anthropic为Claude推出无限上下文窗口，允许处理超长文档和对话，显著提升复杂工作流效率。",
+      "url": "https://www.geeky-gadgets.com/claude-s-new-infinite-context-window-model/",
+      "source_name": "Geeky Gadgets",
+      "category": "tutorial"
+    },
+    {
+      "title": "Anthropic CEO：AI将走向“组织智能”",
+      "summary": "Anthropic推出“dreaming”系统让AI智能体从自身错误中学习。CEO Dario Amodei描绘了从单智能体到多智能体再到整个组织智能的演进路径。",
+      "url": "https://venturebeat.com/technology/anthropic-introduces-dreaming-a-system-that-lets-ai-agents-learn-from-their-own-mistakes",
+      "source_name": "VentureBeat",
+      "category": "opinion"
+    },
+    {
+      "title": "月之暗面以200亿美元估值融资20亿",
+      "summary": "据TechCrunch和Forbes报道，月之暗面（Moonshot AI）正以200亿美元估值融资20亿美元，过去六个月累计融资39亿美元。",
+      "url": "https://techcrunch.com/2026/05/07/chinas-moonshot-ai-raises-2b-at-20b-valuation-as-demand-for-open-source-ai-skyrockets/",
+      "source_name": "TechCrunch",
+      "category": "chinese"
+    },
+    {
+      "title": "欧盟达成简化AI规则临时协议",
+      "summary": "欧盟就简化AI规则达成临时协议，将AI Act部分合规期限推迟至2027-2028年，并计划禁止“nudifier”应用。",
+      "url": "https://www.dw.com/en/eu-reaches-tentative-deal-on-simpler-ai-rules-plans-ban-on-nudifier-apps/a-77073411",
+      "source_name": "DW.com",
+      "category": "industry"
+    },
+    {
+      "title": "Mozilla用Anthropic Mythos发现Firefox 271个漏洞",
+      "summary": "Mozilla利用Anthropic的Claude Mythos Preview评估，成功识别并修复了Firefox中的271个安全漏洞。",
+      "url": "https://letsdatascience.com/news/mozilla-uses-mythos-to-find-firefox-vulnerabilities-986b818e",
+      "source_name": "Let's Data Science",
+      "category": "industry"
+    }
+  ],
   "daily_takeaway": {
-    "title": "",
-    "body_md": "",
-    "source_url": ""
+    "title": "用Claude Code自定义hook拦截危险命令",
+    "body_md": "Claude Code支持自定义hook，可在执行命令前进行安全检查。以下是一个拦截危险命令的示例hook配置：\n\n1. 在项目根目录创建 `.claude/hooks/pre-command` 文件，内容如下：\n```bash\n#!/bin/bash\n# 拦截危险命令\nif [[ \"$1\" == \"rm -rf /\" ]] || [[ \"$1\" == \"shutdown\" ]]; then\n  echo \"危险命令被拦截: $1\"\n  exit 1\nfi\n```\n\n2. 赋予执行权限：`chmod +x .claude/hooks/pre-command`\n\n3. 在Claude Code中启用hook：在`.claude/settings.json`中添加：\n```json\n{\n  \"hooks\": {\n    \"pre-command\": \".claude/hooks/pre-command\"\n  }\n}\n```\n\n现在，当Claude尝试执行危险命令时，hook会阻止并提示。你可以根据需要扩展规则列表。",
+    "source_url": "https://www.geeky-gadgets.com/claude-s-new-infinite-context-window-model/"
   },
   "sections": {
-    "tutorial": [],
-    "industry": [],
-    "opinion": [],
-    "chinese": [],
-    "academic": [],
+    "tutorial": [
+      {
+        "title": "Claude 获“无限”上下文窗口，工作流变革",
+        "summary": "Anthropic 为 Claude 推出无限上下文窗口，允许处理超长文档和对话，显著提升复杂工作流效率。",
+        "value_note": "开发者可一次性输入整个代码库或长篇文档，无需分块，简化 AI 辅助编程和研究流程。",
+        "source_name": "Geeky Gadgets",
+        "url": "https://www.geeky-gadgets.com/claude-s-new-infinite-context-window-model/",
+        "published_at": "2026-05-07T09:43:00Z",
+        "importance": "hot",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "tutorial"
+      },
+      {
+        "title": "OpenClaw + Claude 可将 AI 播客一键保存到 Spotify",
+        "summary": "Save to Spotify 命令行工具支持 OpenClaw、Claude Code 等 AI 代理，将研究内容自动生成播客并发布到 Spotify。",
+        "value_note": "开发者可用 AI 代理自动化内容创作与分发，适合知识管理或播客制作工作流。",
+        "source_name": "The Verge",
+        "url": "https://www.theverge.com/entertainment/925916/save-to-spotify-ai-podcasts",
+        "published_at": "2026-05-07T14:15:40Z",
+        "importance": "pin",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "tutorial"
+      },
+      {
+        "title": "Google 计划允许软件工程师在面试中使用 AI 助手",
+        "summary": "Google 正在调整面试流程，允许候选人使用 AI 编码助手，以评估其与 AI 协作解决问题的能力。",
+        "value_note": "开发者应关注 AI 辅助编程在招聘中的角色变化，提前适应人机协作面试模式。",
+        "source_name": "Business Insider",
+        "url": "https://www.businessinsider.com/google-job-interview-software-engineers-ai-assistant-coding-2026-5",
+        "published_at": "2026-05-07T17:47:06Z",
+        "importance": "star",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "tutorial"
+      },
+      {
+        "title": "学区用 AI“氛围编码”预计节省 20 万美元",
+        "summary": "美国一学区通过 AI 驱动的“vibe coding”方法，让非技术人员用自然语言生成代码，预计节省 20 万美元开发成本。",
+        "value_note": "非开发者也可用 AI 快速构建应用，降低技术门槛，适合教育或小型组织。",
+        "source_name": "Education Week",
+        "url": "https://www.edweek.org/technology/a-district-expects-to-save-200k-from-ai-powered-vibe-coding-heres-how/2026/05",
+        "published_at": "2026-05-08T21:40:45Z",
+        "importance": "pin",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "tutorial"
+      }
+    ],
+    "industry": [
+      {
+        "title": "欧盟达成简化AI规则临时协议，推迟AI Act部分条款",
+        "summary": "欧盟就简化AI规则达成临时协议，将AI Act部分合规期限推迟至2027-2028年，并计划禁止“nudifier”应用。",
+        "value_note": "监管松绑信号明确，企业获得更多缓冲时间，但禁止性条款显示欧盟对高风险AI仍持强硬态度。",
+        "source_name": "DW.com",
+        "url": "https://www.dw.com/en/eu-reaches-tentative-deal-on-simpler-ai-rules-plans-ban-on-nudifier-apps/a-77073411",
+        "published_at": "2026-05-07T08:07:55Z",
+        "importance": "pin",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "industry"
+      },
+      {
+        "title": "Mozilla使用Anthropic Mythos发现Firefox 271个漏洞",
+        "summary": "Mozilla利用Anthropic的Claude Mythos Preview评估，成功识别并修复了Firefox中的271个安全漏洞。",
+        "value_note": "AI在安全领域的实际应用案例，展示了LLM在漏洞挖掘中的巨大潜力，可能推动更多企业采用AI安全工具。",
+        "source_name": "Let's Data Science",
+        "url": "https://letsdatascience.com/news/mozilla-uses-mythos-to-find-firefox-vulnerabilities-986b818e",
+        "published_at": "2026-05-08T07:18:06Z",
+        "importance": "pin",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "industry"
+      }
+    ],
+    "opinion": [
+      {
+        "title": "Anthropic CEO Dario Amodei：AI将走向“组织智能”",
+        "summary": "Anthropic推出“dreaming”系统，让AI智能体从自身错误中学习。CEO Dario Amodei描绘了从单智能体到多智能体再到整个组织智能的演进路线。",
+        "value_note": "Amodei对AI演进路径的展望，代表了Anthropic对下一代AI架构的核心判断。",
+        "source_name": "VentureBeat",
+        "url": "https://venturebeat.com/technology/anthropic-introduces-dreaming-a-system-that-lets-ai-agents-learn-from-their-own-mistakes",
+        "published_at": "2026-05-08T00:09:35Z",
+        "importance": "star",
+        "quote_en": "He described a progression from single agents to multiple agents to whole organizational intelligence",
+        "quote_zh": "他描述了一个从单智能体到多智能体再到整个组织智能的演进过程",
+        "person": "Dario Amodei",
+        "category": "opinion"
+      },
+      {
+        "title": "Axios：Anthropic高管谈“智能爆炸”",
+        "summary": "Anthropic高管Jack Clark在采访中探讨AI自我生成想法的可能性，认为当技术能内部产生创意时，人类角色将发生根本转变。",
+        "value_note": "对AI自主创新能力的深度思考，触及AI发展最核心的哲学问题。",
+        "source_name": "Axios",
+        "url": "https://www.axios.com/2026/05/07/anthropic-jack-clark-ai-intelligence-explosion",
+        "published_at": "2026-05-07T10:04:34Z",
+        "importance": "pin",
+        "quote_en": "It's always been the case that humans outside the technology need to come up with the ideas that they then put back into it. What happens if we have a technology that can generate ideas within itself?",
+        "quote_zh": "一直以来都是技术之外的人类提出想法，然后将其注入技术。如果技术本身能内部产生想法，会发生什么？",
+        "person": "Jack Clark",
+        "category": "opinion"
+      },
+      {
+        "title": "Yann LeCun加入TechCrunch圆桌：AI经济“车轮脱落”",
+        "summary": "Meta前首席AI科学家Yann LeCun与ASML CEO等五位AI经济架构师同台，讨论AI行业面临的系统性挑战。",
+        "value_note": "LeCun等顶级专家对AI经济瓶颈的坦率分析，对理解行业现状至关重要。",
+        "source_name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/05/06/five-architects-of-the-ai-economy-explain-where-the-wheels-are-coming-off/",
+        "published_at": "2026-05-07T05:25:10Z",
+        "importance": "star",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "Yann LeCun",
+        "category": "opinion"
+      },
+      {
+        "title": "NVIDIA黄仁勋：AI与康宁合作将“重振美国制造业”",
+        "summary": "NVIDIA CEO黄仁勋表示，AI基础设施投资的规模为将制造业回流美国提供了独特机遇。",
+        "value_note": "黄仁勋对AI与实体经济结合的宏观判断，影响产业投资方向。",
+        "source_name": "CNBC",
+        "url": "https://www.cnbc.com/2026/05/07/nvidia-ceo-ai-partnership-corning-revitalize-american-manufacturing.html",
+        "published_at": "2026-05-07T22:49:28Z",
+        "importance": "pin",
+        "quote_en": "Huang said the scale of AI infrastructure spending is creating a unique opportunity to reinvest in American manufacturing and supply chains after decades of offshoring.",
+        "quote_zh": "黄仁勋表示，AI基础设施支出的规模创造了一个独特的机会，可以在几十年的离岸外包之后，重新投资于美国制造业和供应链。",
+        "person": "Jensen Huang",
+        "category": "opinion"
+      }
+    ],
+    "chinese": [
+      {
+        "title": "月之暗面Kimi以200亿美元估值融资20亿",
+        "summary": "据TechCrunch和Forbes报道，月之暗面（Moonshot AI）正以200亿美元估值融资20亿美元，过去六个月累计融资39亿美元。",
+        "value_note": "Kimi估值半年翻近5倍，反映中国AI市场对开源模型的狂热需求，是观察国内AI资本风向的关键事件。",
+        "source_name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/05/07/chinas-moonshot-ai-raises-2b-at-20b-valuation-as-demand-for-open-source-ai-skyrockets/",
+        "published_at": "2026-05-07T13:44:25Z",
+        "importance": "hot",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "chinese"
+      },
+      {
+        "title": "OpenAI发布三款实时语音模型",
+        "summary": "OpenAI推出GPT-Realtime-2、GPT-Realtime-Translate和GPT-Realtime-Whisper，支持实时对话、翻译和转录，已在开发者沙盒中可用。",
+        "value_note": "实时语音AI进入新阶段，翻译模型支持70种输入语言，对多语言交互和语音应用开发者是重大利好。",
+        "source_name": "Reuters",
+        "url": "https://www.reuters.com/business/media-telecom/openai-unveils-three-audio-models-real-time-voice-tasks-2026-05-07/",
+        "published_at": "2026-05-07T18:09:36Z",
+        "importance": "star",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "chinese"
+      },
+      {
+        "title": "MongoDB推出企业级AI数据平台新功能",
+        "summary": "MongoDB在伦敦大会上宣布新能力，进一步实现统一AI数据平台的愿景，使企业AI生产就绪。",
+        "value_note": "MongoDB作为主流数据库，其AI原生能力升级直接影响大量企业AI应用的开发与部署效率。",
+        "source_name": "Financial Times",
+        "url": "https://markets.ft.com/data/announce/detail?dockey=600-202605070400PR_NEWS_USPRX____NY53610-1",
+        "published_at": "2026-05-07T08:00:00Z",
+        "importance": "pin",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "chinese"
+      },
+      {
+        "title": "Canvas教育平台遭黑客攻击，全美学校受影响",
+        "summary": "广泛使用的教育平台Canvas遭网络攻击，导致全美多地学校教学中断。",
+        "value_note": "AI时代教育基础设施的安全风险凸显，该事件可能推动教育领域AI安全标准的加速制定。",
+        "source_name": "NBC News",
+        "url": "https://www.nbcnews.com/video/canvas-cyberattack-incident-impacts-schools-across-the-country-263032389778",
+        "published_at": "2026-05-09T01:17:07Z",
+        "importance": "pin",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "chinese"
+      }
+    ],
+    "academic": [
+      {
+        "title": "Health-LLM：用大模型预测可穿戴传感器健康指标",
+        "summary": "论文提出Health-LLM，利用大语言模型从可穿戴传感器数据中预测健康状态，在多个健康预测任务上超越传统方法。",
+        "value_note": "将LLM应用于可穿戴健康监测，有望推动个性化医疗和远程健康管理的智能化。",
+        "source_name": "arXiv",
+        "url": "https://www.mddionline.com/artificial-intelligence/how-large-language-models-are-reshaping-health-prediction-clinical-decision-making",
+        "published_at": "2026-05-08T17:42:47Z",
+        "importance": "star",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "academic"
+      },
+      {
+        "title": "轻量级数据驱动方法分割多态布朗运动轨迹",
+        "summary": "提出一种轻量级、数据驱动的分割方法，用于分析多态布朗运动轨迹，无需大量标注数据即可准确识别不同运动状态。",
+        "value_note": "为单粒子追踪等生物物理研究提供高效分析工具，有望加速病毒入侵机制等研究。",
+        "source_name": "Nature",
+        "url": "https://www.nature.com/articles/s44341-026-00037-7",
+        "published_at": "2026-05-08T17:24:42Z",
+        "importance": "pin",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "academic"
+      },
+      {
+        "title": "机器学习驱动的智能系统优化投资组合波动率预测",
+        "summary": "研究提出一种基于机器学习的智能系统，用于新型波动率预测和投资组合优化，在金融数据集上表现优于传统模型。",
+        "value_note": "将AI应用于量化投资，提升波动率预测精度，对金融科技和资产管理有直接应用价值。",
+        "source_name": "Nature",
+        "url": "https://www.nature.com/articles/s41598-026-42813-4",
+        "published_at": "2026-05-08T12:12:38Z",
+        "importance": "pin",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "academic"
+      },
+      {
+        "title": "混合机器学习优化DCO-OFDM Li-Fi系统直流偏置",
+        "summary": "提出混合机器学习方法优化智能DCO-OFDM Li-Fi系统的直流偏置，经硬件验证，显著提升系统性能。",
+        "value_note": "结合AI与硬件验证，为可见光通信系统提供实用优化方案，推动Li-Fi商业化。",
+        "source_name": "Nature",
+        "url": "https://www.nature.com/articles/s41598-026-49732-4",
+        "published_at": "2026-05-08T08:12:26Z",
+        "importance": "pin",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "academic"
+      }
+    ],
     "benchmark": []
   },
-  "trending": []
+  "trending": [
+    {
+      "owner": "addyosmani",
+      "repo": "agent-skills",
+      "full_name": "addyosmani/agent-skills",
+      "url": "https://github.com/addyosmani/agent-skills",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "language": "Shell",
+      "stars_total": "35,972",
+      "stars_today": 1893,
+      "ai_topic": "Agent 工程实践",
+      "value_note": "为 AI 编码智能体提供生产级技能库，提升 agent 代码生成质量和可靠性。"
+    },
+    {
+      "owner": "Hmbown",
+      "repo": "DeepSeek-TUI",
+      "full_name": "Hmbown/DeepSeek-TUI",
+      "url": "https://github.com/Hmbown/DeepSeek-TUI",
+      "description": "Coding agent for DeepSeek models that runs in your terminal",
+      "language": "Rust",
+      "stars_total": "22,215",
+      "stars_today": 3731,
+      "ai_topic": "LLM 推理 / Agent",
+      "value_note": "终端内的 DeepSeek 编码智能体，轻量高效，适合开发者本地使用。"
+    },
+    {
+      "owner": "z-lab",
+      "repo": "dflash",
+      "full_name": "z-lab/dflash",
+      "url": "https://github.com/z-lab/dflash",
+      "description": "DFlash: Block Diffusion for Flash Speculative Decoding",
+      "language": "Python",
+      "stars_total": "3,904",
+      "stars_today": 379,
+      "ai_topic": "LLM 推理加速",
+      "value_note": "块扩散推测解码方法，显著加速 LLM 推理，降低延迟。"
+    },
+    {
+      "owner": "HKUDS",
+      "repo": "AI-Trader",
+      "full_name": "HKUDS/AI-Trader",
+      "url": "https://github.com/HKUDS/AI-Trader",
+      "description": "\"AI-Trader: 100% Fully-Automated Agent-Native Trading\"",
+      "language": "Python",
+      "stars_total": "14,814",
+      "stars_today": 202,
+      "ai_topic": "Agent 应用",
+      "value_note": "全自动智能体交易系统，展示 agent 在金融领域的端到端自动化能力。"
+    }
+  ]
 }
