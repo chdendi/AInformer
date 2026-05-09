@@ -1,6 +1,6 @@
 {% extends "base.html.j2" %}
-{% block title %}AInformer · 每日 AI 简报{% endblock %}
-{% block description %}由 DeepSeek + Tavily 自动生成的中文 AI 每日资讯日报。{% endblock %}
+{% block title %}{% if daily and daily[0].theme %}{{ daily[0].theme }} · {% endif %}AInformer · 每日 AI 简报{% endblock %}
+{% block description %}{% if daily and daily[0].lede %}{{ daily[0].lede[:160] }}{% else %}由 DeepSeek + Tavily 自动生成的中文 AI 每日资讯日报。{% endif %}{% endblock %}
 
 {% block extra_css %}
 .intro{
@@ -74,12 +74,107 @@
   letter-spacing:0.04em;
 }
 
-.latest-link{
-  display:block;
-  color:inherit;
-  border-bottom:none;
+/* daily-specific styles (used by injected content) */
+.quote-title{
+  font-family:'LXGW WenKai','KaiTi',serif;
+  color:var(--text2);
+  font-size:0.95rem;
+  margin-bottom:0.6rem;
+  letter-spacing:0.02em;
 }
-.latest-link:hover{color:inherit}
+.takeaway-source{margin-top:1rem}
+
+/* GitHub Trending cards */
+.trending-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:1.3rem 1.5rem;
+  position:relative;
+  transition:all 0.25s ease;
+  display:flex;
+  flex-direction:column;
+  gap:0.7rem;
+}
+.trending-card:hover{
+  border-color:rgba(184,134,11,0.4);
+  transform:translateY(-2px);
+  box-shadow:0 4px 16px rgba(26,26,26,0.05);
+}
+.trending-card .repo-line{
+  display:flex;
+  align-items:center;
+  gap:0.6rem;
+  flex-wrap:wrap;
+}
+.trending-card .repo-name{
+  font-family:'LXGW WenKai','KaiTi',serif;
+  font-size:1.15rem;
+  font-weight:700;
+  color:var(--text);
+  border-bottom:none;
+  letter-spacing:0.02em;
+}
+.trending-card .repo-name:hover{color:var(--blue)}
+.trending-card .ai-topic{
+  font-family:'LXGW WenKai','KaiTi',serif;
+  font-size:0.78rem;
+  letter-spacing:0.06em;
+  padding:0.18rem 0.6rem;
+  background:rgba(74,124,89,0.08);
+  border:1px solid rgba(74,124,89,0.2);
+  color:var(--green);
+  border-radius:4px;
+  white-space:nowrap;
+}
+.trending-card .desc{
+  color:var(--text2);
+  font-size:0.92rem;
+  line-height:1.7;
+}
+.trending-card .value{
+  color:var(--text);
+  font-size:0.92rem;
+  line-height:1.7;
+  padding:0.6rem 0.85rem;
+  background:rgba(184,134,11,0.05);
+  border-left:3px solid rgba(184,134,11,0.3);
+  border-radius:0 4px 4px 0;
+}
+.trending-card .meta{
+  display:flex;
+  align-items:center;
+  gap:0.9rem;
+  flex-wrap:wrap;
+  font-size:0.82rem;
+  color:var(--text3);
+  font-family:'LXGW WenKai','KaiTi',serif;
+  padding-top:0.5rem;
+  border-top:1px solid rgba(212,203,184,0.5);
+}
+.trending-card .meta .lang::before{content:"●";margin-right:0.3rem;color:var(--blue)}
+.trending-card .meta .stars-today{color:var(--ochre);font-weight:600}
+
+/* Loading skeleton */
+.daily-loading{
+  text-align:center;
+  padding:4rem 2rem;
+  color:var(--text3);
+  font-family:'LXGW WenKai','KaiTi',serif;
+  font-size:1rem;
+  letter-spacing:0.06em;
+}
+.daily-loading .spinner{
+  display:inline-block;
+  width:24px;
+  height:24px;
+  border:2px solid var(--border);
+  border-top-color:var(--blue);
+  border-radius:50%;
+  animation:spin 0.8s linear infinite;
+  margin-bottom:0.8rem;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
 {% endblock %}
 
 {% block body %}
@@ -97,7 +192,6 @@
 <nav class="sticky-nav">
   <div class="nav-inner">
     <a class="home" href="#">AInformer</a>
-    <a href="#latest">最新一期</a>
     <a href="#archive">日报归档</a>
     {% if monthly %}<a href="#monthly">月度</a>{% endif %}
     {% if yearly %}<a href="#yearly">年度</a>{% endif %}
@@ -106,24 +200,12 @@
 </nav>
 
 <main class="container">
-
-  {% if daily %}
-  {% set latest = daily[0] %}
-  <section class="section" id="latest">
-    <div class="section-head"><h2>最新一期</h2><span class="count">{{ latest.date }}</span></div>
-    <a class="latest-link" href="daily/{{ latest.slug }}.html">
-      <article class="headline-card">
-        <h3>{{ latest.theme or '查看今日 AI 简报' }}</h3>
-        {% if latest.lede %}<p>{{ latest.lede[:240] }}{% if latest.lede|length > 240 %}…{% endif %}</p>{% endif %}
-        <div class="meta">
-          <span>精选 {{ latest.total }} 条</span>
-          <span>头条 {{ latest.hot_count }} 则</span>
-          <a class="link-btn" href="daily/{{ latest.slug }}.html">查看完整日报 →</a>
-        </div>
-      </article>
-    </a>
-  </section>
-  {% endif %}
+  <div id="daily-content">
+    <div class="daily-loading">
+      <div class="spinner"></div>
+      <p>正在加载最新日报…</p>
+    </div>
+  </div>
 
   <section class="section" id="archive">
     <div class="section-head"><h2>日报归档</h2><span class="count">{{ daily|length }} 期</span></div>
@@ -174,6 +256,43 @@
     <p>每天早上 9:00（北京时间）由 GitHub Actions 自动触发，4 个并行 Agent 分别负责工具教程、行业新闻、领袖观点、中文生态四大栏目，搜索 RSS 与 Tavily 后由 DeepSeek 综合提炼为一份去重后的中文日报。</p>
     <p>所有资讯均来自公开渠道，优先保留可追溯的原文链接。源代码：<a href="https://github.com/" target="_blank" rel="noopener">GitHub 仓库</a>。</p>
   </section>
-
 </main>
+{% endblock %}
+
+{% block footer_extra %}
+<script>
+(function() {
+  var slug = '{{ latest_slug }}';
+  if (!slug) return;
+  var url = 'daily/' + slug + '.html';
+  var container = document.getElementById('daily-content');
+  fetch(url)
+    .then(function(r) { return r.text(); })
+    .then(function(html) {
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(html, 'text/html');
+      var main = doc.querySelector('main.container');
+      if (main) {
+        container.innerHTML = main.innerHTML;
+        var heroDate = doc.querySelector('.hero .date');
+        var heroTheme = doc.querySelector('.hero .theme');
+        var pageHeroDate = document.querySelector('.hero .date');
+        var pageHeroTheme = document.querySelector('.hero .theme');
+        if (heroDate && pageHeroDate) pageHeroDate.textContent = heroDate.textContent;
+        if (heroTheme && pageHeroTheme) pageHeroTheme.textContent = heroTheme.textContent;
+        document.title = doc.title || document.title;
+        var metaDesc = doc.querySelector('meta[name="description"]');
+        if (metaDesc) {
+          var existing = document.querySelector('meta[name="description"]');
+          if (existing) existing.content = metaDesc.content;
+        }
+      } else {
+        container.innerHTML = '<div class="empty">日报内容加载失败，<a href="' + url + '">直接查看 →</a></div>';
+      }
+    })
+    .catch(function() {
+      container.innerHTML = '<div class="empty">日报加载失败，<a href="' + url + '">直接查看 →</a></div>';
+    });
+})();
+</script>
 {% endblock %}

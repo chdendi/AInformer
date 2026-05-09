@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Daily · 2026-05-08 | AInformer</title>
-<meta name="description" content="模型竞赛升级，安全与开源成焦点 · 共 40 条精选">
+<meta name="description" content="模型竞赛升级，安全与开源成焦点 · 共 21 条精选">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=LXGW+WenKai:wght@300;400;700&family=LXGW+WenKai+Mono&display=swap" rel="stylesheet">
@@ -597,6 +597,77 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   letter-spacing:0.02em;
 }
 .takeaway-source{margin-top:1rem}
+
+/* ===== GitHub Trending ===== */
+.trending-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:1.3rem 1.5rem;
+  position:relative;
+  transition:all 0.25s ease;
+  display:flex;
+  flex-direction:column;
+  gap:0.7rem;
+}
+.trending-card:hover{
+  border-color:rgba(184,134,11,0.4);
+  transform:translateY(-2px);
+  box-shadow:0 4px 16px rgba(26,26,26,0.05);
+}
+.trending-card .repo-line{
+  display:flex;
+  align-items:center;
+  gap:0.6rem;
+  flex-wrap:wrap;
+}
+.trending-card .repo-name{
+  font-family:'LXGW WenKai','KaiTi',serif;
+  font-size:1.15rem;
+  font-weight:700;
+  color:var(--text);
+  border-bottom:none;
+  letter-spacing:0.02em;
+}
+.trending-card .repo-name:hover{color:var(--blue)}
+.trending-card .ai-topic{
+  font-family:'LXGW WenKai','KaiTi',serif;
+  font-size:0.78rem;
+  letter-spacing:0.06em;
+  padding:0.18rem 0.6rem;
+  background:rgba(74,124,89,0.08);
+  border:1px solid rgba(74,124,89,0.2);
+  color:var(--green);
+  border-radius:4px;
+  white-space:nowrap;
+}
+.trending-card .desc{
+  color:var(--text2);
+  font-size:0.92rem;
+  line-height:1.7;
+}
+.trending-card .value{
+  color:var(--text);
+  font-size:0.92rem;
+  line-height:1.7;
+  padding:0.6rem 0.85rem;
+  background:rgba(184,134,11,0.05);
+  border-left:3px solid rgba(184,134,11,0.3);
+  border-radius:0 4px 4px 0;
+}
+.trending-card .meta{
+  display:flex;
+  align-items:center;
+  gap:0.9rem;
+  flex-wrap:wrap;
+  font-size:0.82rem;
+  color:var(--text3);
+  font-family:'LXGW WenKai','KaiTi',serif;
+  padding-top:0.5rem;
+  border-top:1px solid rgba(212,203,184,0.5);
+}
+.trending-card .meta .lang::before{content:"●";margin-right:0.3rem;color:var(--blue)}
+.trending-card .meta .stars-today{color:var(--ochre);font-weight:600}
 </style>
 </head>
 <body>
@@ -605,7 +676,7 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   <h1>每日 AI 简报</h1>
   <p class="theme">模型竞赛升级，安全与开源成焦点</p>
   <div class="meta">
-    <span>精选 40 条</span>
+    <span>精选 21 条</span>
     <span>头条 8 则</span>
     <span>生成于 2026-05-08 14:14</span>
   </div>
@@ -630,11 +701,11 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   <section class="lede">今日AI圈风起云涌：OpenAI发布GPT-5.5-Cyber网络安全模型，直接对标Anthropic的Mythos；Anthropic则宣布与SpaceX合作获得超级计算机访问权，并推出无限上下文窗口的Claude模型。中国方面，DeepSeek V4发布并完成国产芯片全栈适配，估值或达450亿美元。此外，前OpenAI CTO Mira Murati在法庭作证指控Sam Altman不诚实，引发行业震动。</section>
 
   <section class="stats-bar">
-    <div class="stat"><div class="num">7</div><div class="label">使用姿势</div></div>
-    <div class="stat"><div class="num">5</div><div class="label">行业新闻</div></div>
-    <div class="stat"><div class="num">11</div><div class="label">领袖观点</div></div>
-    <div class="stat"><div class="num">8</div><div class="label">中文 / 学术</div></div>
-    <div class="stat"><div class="num">8</div><div class="label">学术论文</div></div>
+    <div class="stat"><div class="num">4</div><div class="label">使用姿势</div></div>
+    <div class="stat"><div class="num">4</div><div class="label">行业新闻</div></div>
+    <div class="stat"><div class="num">4</div><div class="label">领袖观点</div></div>
+    <div class="stat"><div class="num">4</div><div class="label">中文 / 学术</div></div>
+    <div class="stat"><div class="num">4</div><div class="label">学术论文</div></div>
     <div class="stat"><div class="num">1</div><div class="label">评测雷达</div></div>
   </section>
 
@@ -674,6 +745,7 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
     </div>
   </section>
 
+
   <section class="takeaway" id="takeaway">
     <h3>用 Claude Code 自定义 hook 拦截危险命令</h3>
     <p>为了防止 Claude Code 执行危险命令（如删除文件或修改系统配置），可以创建自定义 hook 来拦截并提示确认。</p><ul><li>在项目根目录创建 <code>.claude/hooks/</code> 文件夹。</li><li>创建文件 <code>pre_command.sh</code>，内容如下：</li></ul><pre class="code"><code class="lang-bash">#!/bin/bash
@@ -693,7 +765,7 @@ fi
   <div class="section-divider"></div>
 
   <section class="section" id="tutorial">
-    <div class="section-head"><h2>AI 使用姿势与教程</h2><span class="count">7 条</span></div>
+    <div class="section-head"><h2>AI 使用姿势与教程</h2><span class="count">4 条</span></div>
     <div class="cards">
 <article class="news-card">
   <h3>Anthropic 为 Claude Managed Agents 新增三项功能</h3>
@@ -708,26 +780,14 @@ fi
 <p class="summary">亿万富翁 Marc Andreessen 在 X 上分享了他的 AI 自定义提示词，用于控制 AI 行为。</p><p class="value">可直接复用或参考该提示词模板，优化自己的 AI 交互效果。</p>  <div class="meta">
 <span class="tag tag-star">⭐ 重要</span><span>Forbes</span><span>· 2026-05-06</span><a class="link-btn" href="https://www.forbes.com/sites/lanceeliot/2026/05/06/analyzing-that-controversial-super-prompt-for-controlling-ai-that-billionaire-marc-andreessen-posted/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
 </article><article class="news-card">
-  <h3>Save to Spotify：AI 代理一键生成播客并发布</h3>
-<p class="summary">开源工具 Save to Spotify 让 Claude Code、Codex 等 AI 代理将研究内容直接转为播客并发布到 Spotify。</p><p class="value">内容创作者可用 AI 自动生成播客，简化从研究到发布的工作流。</p>  <div class="meta">
-<span class="tag tag-pin">📎 关注</span><span>The Verge</span><span>· 2026-05-07</span><a class="link-btn" href="https://www.theverge.com/entertainment/925916/save-to-spotify-ai-podcasts" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article><article class="news-card">
   <h3>Coder 发布自托管 AI 编码代理，支持多模型</h3>
 <p class="summary">Coder 推出自托管、模型无关的 AI 编码代理，企业可在内部运行 AI 驱动开发。</p><p class="value">企业可私有化部署 AI 编码助手，避免数据外泄，并自由选择底层模型。</p>  <div class="meta">
 <span class="tag tag-star">⭐ 重要</span><span>GlobeNewswire</span><span>· 2026-05-06</span><a class="link-btn" href="https://www.globenewswire.com/news-release/2026/05/06/3288916/0/en/coder-sets-a-new-standard-for-ai-coding-with-self-hosted-ai-model-agnostic-coder-agents.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article><article class="news-card">
-  <h3>Claude Code OAuth 令牌可通过 MCP 劫持窃取</h3>
-<p class="summary">安全研究人员发现，攻击者可通过恶意 MCP 服务器窃取 Claude Code 的 OAuth 令牌。</p><p class="value">使用 Claude Code 的开发者需警惕 MCP 来源，避免令牌泄露导致代码仓库被控。</p>  <div class="meta">
-<span class="tag tag-pin">📎 关注</span><span>SecurityWeek</span><span>· 2026-05-07</span><a class="link-btn" href="https://www.securityweek.com/claude-code-oauth-tokens-can-be-stolen-through-stealthy-mcp-hijacking/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article><article class="news-card">
-  <h3>Anthropic 提高 Claude 使用限制，与 SpaceX 合作</h3>
-<p class="summary">Anthropic 宣布提高 Claude 和 Claude Code 的使用限制，并与 SpaceX 达成计算合作。</p><p class="value">重度用户可获得更高调用额度，适合大规模自动化任务。</p>  <div class="meta">
-<span class="tag tag-star">⭐ 重要</span><span>Anthropic</span><span>· 2026-05-06</span><a class="link-btn" href="https://www.anthropic.com/news/higher-limits-spacex" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
 </article>    </div>
   </section>
 
   <section class="section" id="industry">
-    <div class="section-head"><h2>AI 行业新闻与产品动态</h2><span class="count">5 条</span></div>
+    <div class="section-head"><h2>AI 行业新闻与产品动态</h2><span class="count">4 条</span></div>
     <div class="cards">
 <article class="news-card">
   <h3>OpenAI发布GPT-5.5-Cyber网络安全模型</h3>
@@ -745,15 +805,11 @@ fi
   <h3>出版商和作者起诉Meta，指控Llama AI大规模侵权</h3>
 <p class="summary">美国出版商协会和多位作者起诉Meta，称其Llama AI服务侵犯版权，要求赔偿。</p><p class="value">AI版权诉讼再起，可能影响开源模型训练数据的合法性。</p>  <div class="meta">
 <span class="tag tag-pin">📎 关注</span><span>Publishing Perspectives</span><span>· 2026-05-06</span><a class="link-btn" href="https://publishingperspectives.com/2026/05/publishers-and-authors-sue-meta-alleging-massive-copyright-infringement-behind-its-llama-ai-service/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article><article class="news-card">
-  <h3>Google关闭Project Mariner浏览器AI代理</h3>
-<p class="summary">Google宣布关闭Project Mariner，该实验性AI代理曾允许用户通过浏览器执行多步骤任务。</p><p class="value">Google整合AI代理功能到其他产品，Mariner关闭标志独立代理产品策略调整。</p>  <div class="meta">
-<span class="tag tag-pin">📎 关注</span><span>The Verge</span><span>· 2026-05-06</span><a class="link-btn" href="https://www.theverge.com/tech/925559/google-project-mariner-shut-down" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
 </article>    </div>
   </section>
 
   <section class="section" id="opinion">
-    <div class="section-head"><h2>AI 领袖发言与深度观点</h2><span class="count">11 条</span></div>
+    <div class="section-head"><h2>AI 领袖发言与深度观点</h2><span class="count">4 条</span></div>
     <div class="cards">
       <article class="quote-card">
 <p class="quote-en">it is about Sam creating chaos.</p><p class="quote-zh">问题在于 Sam 制造混乱。</p><p class="quote-title">Mira Murati 证词：Sam Altman 不诚实且制造混乱</p>        <div class="person">— Mira Murati</div>
@@ -775,46 +831,11 @@ fi
         <div class="meta">
 <span class="tag tag-star">⭐ 重要</span><span>庭审进展可能影响 OpenAI 的治理结构，以及 Musk 对 OpenAI 的控制权诉求。</span><a class="link-btn" href="https://www.businessinsider.com/elon-musk-witness-testimony-hits-sam-altman-in-trial-2026-5" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
       </article>
-      <article class="quote-card">
-<p class="quote-en">Games have always been a huge part of my life -- I've been a gamer since I was a kid, and I started my career designing and programming complex AI simulation games like Theme Park.</p><p class="quote-zh">游戏一直是我生活中很重要的一部分——我从小就是游戏玩家，我的职业生涯始于设计和编程像《主题公园》这样的复杂 AI 模拟游戏。</p><p class="quote-title">Google DeepMind 将用《EVE Online》训练 AI</p>        <div class="person">— Demis Hassabis</div>
-        <div class="meta">
-<span class="tag tag-star">⭐ 重要</span><span>游戏环境为 AI 研究提供了复杂的动态系统，可能推动通用 AI 的突破。</span><a class="link-btn" href="https://www.cnet.com/tech/services-and-software/google-deepmind-train-ai-models-eve-online/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
-      </article>
-      <article class="quote-card">
-<p class="quote-zh">Meta 前首席 AI 科学家 Yann LeCun 在 TechCrunch 活动中与其他 AI 领袖探讨 AI 经济面临的挑战。</p><p class="quote-title">Yann LeCun 加入 AI 经济论坛，讨论系统瓶颈</p>        <div class="person">— Yann LeCun</div>
-        <div class="meta">
-<span class="tag tag-pin">📎 关注</span><span>LeCun 的参与表明业界对 AI 发展瓶颈的重视，其观点可能影响未来研究方向。</span><a class="link-btn" href="https://techcrunch.com/2026/05/06/five-architects-of-the-ai-economy-explain-where-the-wheels-are-coming-off/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
-      </article>
-      <article class="quote-card">
-<p class="quote-zh">Anthropic 与 SpaceX 达成协议，使用其 Colossus 超级计算机训练 AI，提升 Claude 性能。</p><p class="quote-title">Anthropic 获 SpaceX 超级计算机访问权，训练 Claude</p>        <div class="person">— Forbes</div>
-        <div class="meta">
-<span class="tag tag-star">⭐ 重要</span><span>算力合作凸显了 AI 训练对超算资源的依赖，可能改变行业竞争格局。</span><a class="link-btn" href="https://www.forbes.com/sites/antoniopequenoiv/2026/05/06/musks-spacex-will-give-anthropic-access-to-its-colossus-super-computer-for-ai-training/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
-      </article>
-      <article class="quote-card">
-<p class="quote-zh">前 OpenAI 研究员计划融资5亿美元，创立专注于 AI 科学研究的初创公司。</p><p class="quote-title">前 OpenAI 研究员为 AI 科学初创公司融资5亿美元</p>        <div class="person">— Forbes</div>
-        <div class="meta">
-<span class="tag tag-pin">📎 关注</span><span>巨额融资表明 AI 科学应用领域正成为资本新热点，可能催生重大科研突破。</span><a class="link-btn" href="https://www.forbes.com/sites/iainmartin/2026/05/07/former-openai-researcher-to-raise-500-million-for-ai-science-startup/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
-      </article>
-      <article class="quote-card">
-<p class="quote-zh">Claude 获得近乎无限的上下文窗口，可处理超长文本，显著提升工作流效率。</p><p class="quote-title">Anthropic 推出“无限”上下文窗口的 Claude 模型</p>        <div class="person">— Geeky Gadgets</div>
-        <div class="meta">
-<span class="tag tag-star">⭐ 重要</span><span>无限上下文是 AI 交互体验的重大进步，将改变文档分析、代码生成等应用场景。</span><a class="link-btn" href="https://www.geeky-gadgets.com/claude-s-new-infinite-context-window-model/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
-      </article>
-      <article class="quote-card">
-<p class="quote-zh">OpenAI 发布新的网络安全 AI 模型，直接与 Anthropic 的 Mythos 竞争。</p><p class="quote-title">OpenAI 推出高级 AI 网络模型，挑战 Anthropic 的 Mythos</p>        <div class="person">— Politico</div>
-        <div class="meta">
-<span class="tag tag-pin">📎 关注</span><span>AI 安全领域竞争加剧，模型能力提升可能重塑网络安全行业。</span><a class="link-btn" href="https://www.politico.com/news/2026/05/07/openai-chatgpt-cyber-ai-model-00910704" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
-      </article>
-      <article class="quote-card">
-<p class="quote-zh">中国 AI 初创公司 Moonshot AI 完成20亿美元融资，估值达200亿美元，开源 AI 需求激增。</p><p class="quote-title">中国 Moonshot AI 以200亿美元估值融资20亿美元</p>        <div class="person">— TechCrunch</div>
-        <div class="meta">
-<span class="tag tag-star">⭐ 重要</span><span>中国 AI 市场持续火热，开源模型生态正在崛起，可能改变全球 AI 格局。</span><a class="link-btn" href="https://techcrunch.com/2026/05/07/chinas-moonshot-ai-raises-2b-at-20b-valuation-as-demand-for-open-source-ai-skyrockets/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
-      </article>
     </div>
   </section>
 
   <section class="section" id="chinese">
-    <div class="section-head"><h2>中文 AI 生态与学术动态</h2><span class="count">8 条</span></div>
+    <div class="section-head"><h2>中文 AI 生态与学术动态</h2><span class="count">4 条</span></div>
     <div class="cards">
 <article class="news-card">
   <h3>DeepSeek获中国投资机构注资，估值或达500亿美元</h3>
@@ -832,27 +853,11 @@ fi
   <h3>Qwen人事震荡：阿里最年轻P10离场，高层紧急接管</h3>
 <p class="summary">阿里AI核心团队发生人事变动，最年轻P10离职，高层紧急介入，Qwen项目面临调整。</p><p class="value">阿里AI战略关键节点，或影响千问大模型后续发展节奏。</p>  <div class="meta">
 <span class="tag tag-star">⭐ 重要</span><span>新浪财经</span><span>· 2026-05-04</span><a class="link-btn" href="https://finance.sina.cn/stock/jdts/2026-03-05/detail-inhpxwvi9712739.d.html?oid=%E9%AB%98%E4%BB%BF%E8%8A%AC%E8%BF%AA%E5%A5%B3%E5%8C%85%E5%93%AA%E9%87%8C%E6%9C%89%E5%8D%96%E2%96%81%E5%BE%AE%E4%BF%A1198099199%E2%96%81BW2X&vt=4" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article><article class="news-card">
-  <h3>下一代OpenClaw将率先支持阿里千问</h3>
-<p class="summary">“龙虾之父”Peter Steinberger透露，下一代OpenClaw将融入视频生成功能，并率先支持阿里千问大模型。</p><p class="value">阿里千问获得国际知名开源项目支持，生态影响力扩大。</p>  <div class="meta">
-<span class="tag tag-pin">📎 关注</span><span>量子位</span><span>· 2026-04-08</span><a class="link-btn" href="https://www.qbitai.com/2026/04/396955.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article><article class="news-card">
-  <h3>MagicLab发布自研世界模型Magic-Mix</h3>
-<p class="summary">MagicLab推出自研世界模型Magic-Mix，用于自动驾驶等场景。</p><p class="value">国内自动驾驶领域再添世界模型新玩家，推动端到端感知决策。</p>  <div class="meta">
-<span class="tag tag-star">⭐ 重要</span><span>Gasgoo</span><span>· 2026-05-06</span><a class="link-btn" href="https://autonews.gasgoo.com/articles/news/magiclab-unveils-self-developed-world-model-magic-mix-2051981000756830209" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article><article class="news-card">
-  <h3>Genesis AI发布GENE-26.5基础模型，提升机器人灵巧操作</h3>
-<p class="summary">Genesis AI推出GENE-26.5模型，用于更灵巧的机器人操作，在低成本硬件上实现先进操控。</p><p class="value">机器人基础模型新突破，降低灵巧操作门槛。</p>  <div class="meta">
-<span class="tag tag-star">⭐ 重要</span><span>The Robot Report</span><span>· 2026-05-06</span><a class="link-btn" href="https://www.therobotreport.com/genesis-ai-introduces-gene-foundation-model-more-dexterous-manipulation/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article><article class="news-card">
-  <h3>Bonree将发布ONE 4.0，聚焦AI智能运维</h3>
-<p class="summary">Bonree将于5月12日在DCCI Malaysia 2026发布Bonree ONE 4.0，主打AI驱动的智能运维。</p><p class="value">国产AIOps平台迭代，助力企业IT运维智能化。</p>  <div class="meta">
-<span class="tag tag-pin">📎 关注</span><span>The Manila Times</span><span>· 2026-05-08</span><a class="link-btn" href="https://www.manilatimes.net/2026/05/08/tmt-newswire/pr-newswire/bonree-to-launch-bonree-one-40-at-dcci-malaysia-2026/2339217/amp" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
 </article>    </div>
   </section>
 
   <section class="section" id="academic">
-    <div class="section-head"><h2>AI 学术论文精选</h2><span class="count">8 条</span></div>
+    <div class="section-head"><h2>AI 学术论文精选</h2><span class="count">4 条</span></div>
     <div class="cards">
 <article class="news-card">
   <h3>新AI方法攻克科学界最难的数学问题之一</h3>
@@ -867,25 +872,9 @@ fi
 <p class="summary">Google发布Gemma 4开源AI模型，利用推测解码技术实现高达3倍的推理加速，适用于边缘设备。</p><p class="value">推测解码技术使开源模型在本地设备上运行更快，降低部署成本，推动边缘AI应用。</p>  <div class="meta">
 <span class="tag tag-hot">🔥 头条</span><span>Ars Technica</span><span>· 2026-05-06</span><a class="link-btn" href="https://arstechnica.com/ai/2026/05/googles-gemma-4-open-ai-models-use-speculative-decoding-to-get-up-to-3x-faster/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
 </article><article class="news-card">
-  <h3>Nature撤回一篇关于ChatGPT积极影响的被广泛引用论文</h3>
-<p class="summary">Nature杂志撤回了一篇曾被广泛引用的论文，该论文声称ChatGPT对教育有积极影响，撤回原因未详细说明。</p><p class="value">提醒AI研究社区注意论文质量和可重复性，影响教育政策制定者对AI的信任。</p>  <div class="meta">
-<span class="tag tag-pin">📎 关注</span><span>govtech.com</span><span>· 2026-05-06</span><a class="link-btn" href="https://www.govtech.com/education/nature-retracts-oft-cited-paper-on-positive-impact-of-chatgpt" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article><article class="news-card">
   <h3>ChatGPT健康分诊在关键病例中表现不足</h3>
 <p class="summary">Nature Medicine发表研究显示，ChatGPT在健康分诊的关键病例中建议不准确，存在局限性。</p><p class="value">警示AI在医疗领域的应用仍需谨慎，不能完全依赖LLM进行临床决策。</p>  <div class="meta">
 <span class="tag tag-star">⭐ 重要</span><span>Nature</span><span>· 2026-05-07</span><a class="link-btn" href="https://www.nature.com/articles/s41591-026-04427-1" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article><article class="news-card">
-  <h3>利用全血RNA速度预测疾病轨迹</h3>
-<p class="summary">Nature Communications发表研究，通过分析全血RNA速度来预测疾病发展轨迹，为早期诊断提供新方法。</p><p class="value">RNA速度分析可用于疾病进展预测，有望在临床中实现早期干预。</p>  <div class="meta">
-<span class="tag tag-star">⭐ 重要</span><span>Nature Communications</span><span>· 2026-05-06</span><a class="link-btn" href="https://www.nature.com/articles/s41467-026-71685-5" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article><article class="news-card">
-  <h3>基于视觉的多相机融合与CAD投影框架用于地铁站风险点识别</h3>
-<p class="summary">Scientific Reports提出一种视觉多相机融合与CAD投影框架，可自动识别地铁站中的风险点，提升安全监控效率。</p><p class="value">结合计算机视觉和CAD模型，为基础设施安全监测提供低成本自动化方案。</p>  <div class="meta">
-<span class="tag tag-pin">📎 关注</span><span>Nature Scientific Reports</span><span>· 2026-05-07</span><a class="link-btn" href="https://www.nature.com/articles/s41598-026-50932-1" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article><article class="news-card">
-  <h3>液体活检肿瘤微环境可强力预测治疗反应</h3>
-<p class="summary">LiquidCell Dx在Nature发表论文，证明液体活检分析肿瘤微环境能有效预测治疗反应，优于传统方法。</p><p class="value">为癌症精准医疗提供非侵入性预测工具，有望指导个性化治疗。</p>  <div class="meta">
-<span class="tag tag-star">⭐ 重要</span><span>BioSpace</span><span>· 2026-05-07</span><a class="link-btn" href="https://www.biospace.com/press-releases/liquidcell-dx-announces-nature-paper-showing-that-liquid-biopsy-of-the-tumor-microenvironment-powerfully-forecasts-therapy-response" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
 </article>    </div>
   </section>
 

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AInformer · 每日 AI 简报</title>
-<meta name="description" content="由 DeepSeek + Tavily 自动生成的中文 AI 每日资讯日报。">
+<meta name="description" content="今日各栏目稿件均未提交，包括AI使用姿势、行业新闻、领袖观点、中文生态、学术论文、模型评测等六个栏目均为空白，因此无法提炼热点新闻与实操内容。期待明日编辑提供稿件。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=LXGW+WenKai:wght@300;400;700&family=LXGW+WenKai+Mono&display=swap" rel="stylesheet">
@@ -660,12 +660,107 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   letter-spacing:0.04em;
 }
 
-.latest-link{
-  display:block;
-  color:inherit;
-  border-bottom:none;
+/* daily-specific styles (used by injected content) */
+.quote-title{
+  font-family:'LXGW WenKai','KaiTi',serif;
+  color:var(--text2);
+  font-size:0.95rem;
+  margin-bottom:0.6rem;
+  letter-spacing:0.02em;
 }
-.latest-link:hover{color:inherit}
+.takeaway-source{margin-top:1rem}
+
+/* GitHub Trending cards */
+.trending-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:1.3rem 1.5rem;
+  position:relative;
+  transition:all 0.25s ease;
+  display:flex;
+  flex-direction:column;
+  gap:0.7rem;
+}
+.trending-card:hover{
+  border-color:rgba(184,134,11,0.4);
+  transform:translateY(-2px);
+  box-shadow:0 4px 16px rgba(26,26,26,0.05);
+}
+.trending-card .repo-line{
+  display:flex;
+  align-items:center;
+  gap:0.6rem;
+  flex-wrap:wrap;
+}
+.trending-card .repo-name{
+  font-family:'LXGW WenKai','KaiTi',serif;
+  font-size:1.15rem;
+  font-weight:700;
+  color:var(--text);
+  border-bottom:none;
+  letter-spacing:0.02em;
+}
+.trending-card .repo-name:hover{color:var(--blue)}
+.trending-card .ai-topic{
+  font-family:'LXGW WenKai','KaiTi',serif;
+  font-size:0.78rem;
+  letter-spacing:0.06em;
+  padding:0.18rem 0.6rem;
+  background:rgba(74,124,89,0.08);
+  border:1px solid rgba(74,124,89,0.2);
+  color:var(--green);
+  border-radius:4px;
+  white-space:nowrap;
+}
+.trending-card .desc{
+  color:var(--text2);
+  font-size:0.92rem;
+  line-height:1.7;
+}
+.trending-card .value{
+  color:var(--text);
+  font-size:0.92rem;
+  line-height:1.7;
+  padding:0.6rem 0.85rem;
+  background:rgba(184,134,11,0.05);
+  border-left:3px solid rgba(184,134,11,0.3);
+  border-radius:0 4px 4px 0;
+}
+.trending-card .meta{
+  display:flex;
+  align-items:center;
+  gap:0.9rem;
+  flex-wrap:wrap;
+  font-size:0.82rem;
+  color:var(--text3);
+  font-family:'LXGW WenKai','KaiTi',serif;
+  padding-top:0.5rem;
+  border-top:1px solid rgba(212,203,184,0.5);
+}
+.trending-card .meta .lang::before{content:"●";margin-right:0.3rem;color:var(--blue)}
+.trending-card .meta .stars-today{color:var(--ochre);font-weight:600}
+
+/* Loading skeleton */
+.daily-loading{
+  text-align:center;
+  padding:4rem 2rem;
+  color:var(--text3);
+  font-family:'LXGW WenKai','KaiTi',serif;
+  font-size:1rem;
+  letter-spacing:0.06em;
+}
+.daily-loading .spinner{
+  display:inline-block;
+  width:24px;
+  height:24px;
+  border:2px solid var(--border);
+  border-top-color:var(--blue);
+  border-radius:50%;
+  animation:spin 0.8s linear infinite;
+  margin-bottom:0.8rem;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
 </style>
 </head>
 <body>
@@ -681,27 +776,18 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
 <nav class="sticky-nav">
   <div class="nav-inner">
     <a class="home" href="#">AInformer</a>
-    <a href="#latest">最新一期</a>
     <a href="#archive">日报归档</a>
     <a href="#about">关于</a>
   </div>
 </nav>
 
 <main class="container">
-
-  <section class="section" id="latest">
-    <div class="section-head"><h2>最新一期</h2><span class="count">2026-05-09</span></div>
-    <a class="latest-link" href="daily/20260509.html">
-      <article class="headline-card">
-        <h3>查看今日 AI 简报</h3>
-<p>今日各栏目稿件均未提交，包括AI使用姿势、行业新闻、领袖观点、中文生态、学术论文、模型评测等六个栏目均为空白，因此无法提炼热点新闻与实操内容。期待明日编辑提供稿件。</p>        <div class="meta">
-          <span>精选 0 条</span>
-          <span>头条 0 则</span>
-          <a class="link-btn" href="daily/20260509.html">查看完整日报 →</a>
-        </div>
-      </article>
-    </a>
-  </section>
+  <div id="daily-content">
+    <div class="daily-loading">
+      <div class="spinner"></div>
+      <p>正在加载最新日报…</p>
+    </div>
+  </div>
 
   <section class="section" id="archive">
     <div class="section-head"><h2>日报归档</h2><span class="count">2 期</span></div>
@@ -714,7 +800,7 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
       <a class="archive-card" href="daily/20260508.html">
         <div class="date">2026-05-08 · 周五</div>
         <h3>模型竞赛升级，安全与开源成焦点</h3>
-        <div class="stats"><span>共 40 条</span><span>头条 8</span></div>
+        <div class="stats"><span>共 21 条</span><span>头条 8</span></div>
       </a>
     </div>
   </section>
@@ -726,12 +812,46 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
     <p>每天早上 9:00（北京时间）由 GitHub Actions 自动触发，4 个并行 Agent 分别负责工具教程、行业新闻、领袖观点、中文生态四大栏目，搜索 RSS 与 Tavily 后由 DeepSeek 综合提炼为一份去重后的中文日报。</p>
     <p>所有资讯均来自公开渠道，优先保留可追溯的原文链接。源代码：<a href="https://github.com/" target="_blank" rel="noopener">GitHub 仓库</a>。</p>
   </section>
-
 </main>
 <footer class="footer">
   <div class="container">
+<script>
+(function() {
+  var slug = '20260509';
+  if (!slug) return;
+  var url = 'daily/' + slug + '.html';
+  var container = document.getElementById('daily-content');
+  fetch(url)
+    .then(function(r) { return r.text(); })
+    .then(function(html) {
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(html, 'text/html');
+      var main = doc.querySelector('main.container');
+      if (main) {
+        container.innerHTML = main.innerHTML;
+        var heroDate = doc.querySelector('.hero .date');
+        var heroTheme = doc.querySelector('.hero .theme');
+        var pageHeroDate = document.querySelector('.hero .date');
+        var pageHeroTheme = document.querySelector('.hero .theme');
+        if (heroDate && pageHeroDate) pageHeroDate.textContent = heroDate.textContent;
+        if (heroTheme && pageHeroTheme) pageHeroTheme.textContent = heroTheme.textContent;
+        document.title = doc.title || document.title;
+        var metaDesc = doc.querySelector('meta[name="description"]');
+        if (metaDesc) {
+          var existing = document.querySelector('meta[name="description"]');
+          if (existing) existing.content = metaDesc.content;
+        }
+      } else {
+        container.innerHTML = '<div class="empty">日报内容加载失败，<a href="' + url + '">直接查看 →</a></div>';
+      }
+    })
+    .catch(function() {
+      container.innerHTML = '<div class="empty">日报加载失败，<a href="' + url + '">直接查看 →</a></div>';
+    });
+})();
+</script>
     <p>本日报基于公开信息自动搜索整理生成，资讯来源包括 OpenAI / Anthropic / DeepMind 等官方博客、The Verge、TechCrunch、36kr、机器之心、量子位、ArXiv、Hacker News 等公开平台。内容可能存在时效性偏差或不完整，请以原始来源为准。</p>
-    <p>Generated at 2026-05-09 09:36 · Powered by DeepSeek + Tavily · <a href="https://chenhao-dendi.github.io/AInformer/index.html">AInformer</a></p>
+    <p>Generated at 2026-05-09 11:34 · Powered by DeepSeek + Tavily · <a href="../index.html">AInformer</a></p>
   </div>
 </footer>
 </body>

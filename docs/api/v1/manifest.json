@@ -2,8 +2,8 @@
   "api": "AInformer API",
   "version": "1.0.0",
   "description": "AI 资讯日报 JSON API，提供每日/每月/每年 AI 行业简报的结构化数据。",
-  "site_url": "https://chenhao-dendi.github.io/AInformer",
-  "updated_at": "2026-05-09T09:36:58.800797+08:00",
+  "site_url": "",
+  "updated_at": "2026-05-09T11:34:15.137326+08:00",
   "stats": {
     "total_daily_reports": 2,
     "total_monthly_reports": 0,
@@ -14,18 +14,18 @@
   },
   "endpoints": {
     "daily": {
-      "index": "https://chenhao-dendi.github.io/AInformer/api/v1/daily/index.json",
-      "latest": "https://chenhao-dendi.github.io/AInformer/api/v1/daily/latest.json",
+      "index": "/api/v1/daily/index.json",
+      "latest": "/api/v1/daily/latest.json",
       "description": "每日 AI 资讯简报列表，latest 为最新一期的完整引用"
     },
     "monthly": {
-      "index": "https://chenhao-dendi.github.io/AInformer/api/v1/monthly/index.json",
-      "latest": "https://chenhao-dendi.github.io/AInformer/api/v1/monthly/latest.json",
+      "index": "/api/v1/monthly/index.json",
+      "latest": "/api/v1/monthly/latest.json",
       "description": "每月 AI 资讯月报列表"
     },
     "yearly": {
-      "index": "https://chenhao-dendi.github.io/AInformer/api/v1/yearly/index.json",
-      "latest": "https://chenhao-dendi.github.io/AInformer/api/v1/yearly/latest.json",
+      "index": "/api/v1/yearly/index.json",
+      "latest": "/api/v1/yearly/latest.json",
       "description": "每年 AI 资讯年报列表"
     }
   }

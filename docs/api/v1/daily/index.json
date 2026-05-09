@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-05-09T09:36:58.800671+08:00",
+  "updated_at": "2026-05-09T11:34:15.137212+08:00",
   "total_days": 2,
   "latest": {
     "date": "2026-05-09",
     "theme": "",
     "generated_at": "2026-05-09T09:36:58.754786+08:00",
     "total_items": 0,
-    "data_url": "https://chenhao-dendi.github.io/AInformer/data/daily/20260509.json",
-    "html_url": "https://chenhao-dendi.github.io/AInformer/daily/20260509.html"
+    "data_url": "/data/daily/20260509.json",
+    "html_url": "/daily/20260509.html"
   },
   "dates": [
     {
@@ -15,16 +15,16 @@
       "theme": "",
       "generated_at": "2026-05-09T09:36:58.754786+08:00",
       "total_items": 0,
-      "data_url": "https://chenhao-dendi.github.io/AInformer/data/daily/20260509.json",
-      "html_url": "https://chenhao-dendi.github.io/AInformer/daily/20260509.html"
+      "data_url": "/data/daily/20260509.json",
+      "html_url": "/daily/20260509.html"
     },
     {
       "date": "2026-05-08",
       "theme": "模型竞赛升级，安全与开源成焦点",
       "generated_at": "2026-05-08T14:14:08.165382+08:00",
-      "total_items": 40,
-      "data_url": "https://chenhao-dendi.github.io/AInformer/data/daily/20260508.json",
-      "html_url": "https://chenhao-dendi.github.io/AInformer/daily/20260508.html"
+      "total_items": 21,
+      "data_url": "/data/daily/20260508.json",
+      "html_url": "/daily/20260508.html"
     }
   ]
 }
