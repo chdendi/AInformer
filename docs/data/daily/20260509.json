@@ -1,0 +1,21 @@
+{
+  "date": "2026-05-09",
+  "generated_at": "2026-05-09T09:36:58.754786+08:00",
+  "today_theme": "",
+  "lede": "今日各栏目稿件均未提交，包括AI使用姿势、行业新闻、领袖观点、中文生态、学术论文、模型评测等六个栏目均为空白，因此无法提炼热点新闻与实操内容。期待明日编辑提供稿件。",
+  "headlines": [],
+  "daily_takeaway": {
+    "title": "",
+    "body_md": "",
+    "source_url": ""
+  },
+  "sections": {
+    "tutorial": [],
+    "industry": [],
+    "opinion": [],
+    "chinese": [],
+    "academic": [],
+    "benchmark": []
+  },
+  "trending": []
+}
