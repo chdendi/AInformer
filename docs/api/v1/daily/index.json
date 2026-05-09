@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-05-09T11:34:15.137212+08:00",
+  "updated_at": "2026-05-09T13:13:26.173137+08:00",
   "total_days": 2,
   "latest": {
     "date": "2026-05-09",
-    "theme": "",
-    "generated_at": "2026-05-09T09:36:58.754786+08:00",
-    "total_items": 0,
+    "theme": "AI能力跃迁与规则重塑",
+    "generated_at": "2026-05-09T13:13:26.139535+08:00",
+    "total_items": 18,
     "data_url": "/data/daily/20260509.json",
     "html_url": "/daily/20260509.html"
   },
   "dates": [
     {
       "date": "2026-05-09",
-      "theme": "",
-      "generated_at": "2026-05-09T09:36:58.754786+08:00",
-      "total_items": 0,
+      "theme": "AI能力跃迁与规则重塑",
+      "generated_at": "2026-05-09T13:13:26.139535+08:00",
+      "total_items": 18,
       "data_url": "/data/daily/20260509.json",
       "html_url": "/daily/20260509.html"
     },

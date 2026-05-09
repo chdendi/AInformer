@@ -115,7 +115,7 @@ async def run_agent(
 
     user_prompt = _build_user_prompt(spec, materials, excluded_titles, today)
     try:
-        result = await chat_json(client, cfg, AGENT_SYSTEM, user_prompt, temperature=0.3, max_tokens=1800)
+        result = await chat_json(client, cfg, AGENT_SYSTEM, user_prompt, temperature=0.3, max_tokens=4096)
     except Exception as e:
         log.error("[agent:%s] LLM failed: %s", spec.key, e)
         return {"key": spec.key, "name": spec.name, "items": []}
