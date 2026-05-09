@@ -78,6 +78,7 @@ def write_index() -> None:
 
     today = datetime.now(tz()).strftime("%Y-%m-%d")
     generated_at = datetime.now(tz()).strftime("%Y-%m-%d %H:%M")
+    latest_slug = daily[0]["slug"] if daily else ""
 
     html = render(
         "index.html.j2",
@@ -87,6 +88,7 @@ def write_index() -> None:
         today=today,
         generated_at=generated_at,
         home_url=home_url(),
+        latest_slug=latest_slug,
     )
 
     DOCS_DIR.mkdir(parents=True, exist_ok=True)
