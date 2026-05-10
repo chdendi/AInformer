@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>提示工程极限与vibe coding新范例 · AInformer · 每日 AI 简报</title>
-<meta name="description" content="5月10日AI日报：有开发者尝试用“穴居人语言”压缩提示词以节省token，但实验表明过度缩写会导致模型输出质量严重下降，提醒提示工程仍有极限。另一方面，零编程用户借助Lovable等AI工具，仅需几十分钟便从零开发出一款社交日程App，展现了vibe coding的高效与潜力。">
+<title>AI Daily · 2026-05-10 | AInformer</title>
+<meta name="description" content="提示工程极限与vibe coding新范例 · 共 2 条精选">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=LXGW+WenKai:wght@300;400;700&family=LXGW+WenKai+Mono&display=swap" rel="stylesheet">
@@ -589,78 +589,6 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   a{color:#000;text-decoration:underline;border-bottom:none}
 }
 
-.intro{
-  padding:2.4rem 2.4rem;
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:8px;
-  margin:3rem 0 2rem;
-  line-height:1.85;
-}
-.intro h2{
-  font-size:1.5rem;
-  margin-bottom:1rem;
-  color:var(--text);
-  letter-spacing:0.04em;
-}
-.intro p{color:var(--text2);margin-bottom:0.7rem}
-.intro code{font-size:0.86rem}
-
-.archive-grid{display:grid;gap:1.1rem;margin-top:1rem}
-@media(min-width:768px){.archive-grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1024px){.archive-grid{grid-template-columns:repeat(3,1fr)}}
-
-.archive-card{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:1.4rem 1.6rem;
-  transition:all 0.25s ease;
-  display:block;
-  color:inherit;
-  border-bottom:1px solid var(--border);
-  position:relative;
-}
-.archive-card::before{
-  content:"";
-  position:absolute;
-  left:0;top:0;bottom:0;
-  width:2px;
-  background:var(--ochre);
-  opacity:0;
-  border-radius:8px 0 0 8px;
-  transition:opacity 0.25s ease;
-}
-.archive-card:hover{
-  border-color:rgba(184,134,11,0.35);
-  transform:translateY(-2px);
-  box-shadow:0 4px 18px rgba(26,26,26,0.06);
-}
-.archive-card:hover::before{opacity:0.7}
-.archive-card .date{
-  font-family:'LXGW WenKai','KaiTi',serif;
-  font-size:0.88rem;
-  color:var(--text3);
-  margin-bottom:0.55rem;
-  font-variant-numeric:tabular-nums;
-  letter-spacing:0.06em;
-}
-.archive-card h3{
-  font-size:1.05rem;
-  line-height:1.55;
-  margin-bottom:0.7rem;
-  color:var(--text);
-}
-.archive-card .stats{
-  display:flex;
-  gap:0.85rem;
-  font-size:0.78rem;
-  color:var(--text3);
-  font-family:'LXGW WenKai','KaiTi',serif;
-  letter-spacing:0.04em;
-}
-
-/* daily-specific styles (used by injected content) */
 .quote-title{
   font-family:'LXGW WenKai','KaiTi',serif;
   color:var(--text2);
@@ -670,7 +598,7 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
 }
 .takeaway-source{margin-top:1rem}
 
-/* GitHub Trending cards */
+/* ===== GitHub Trending ===== */
 .trending-card{
   background:var(--surface);
   border:1px solid var(--border);
@@ -740,120 +668,112 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
 }
 .trending-card .meta .lang::before{content:"●";margin-right:0.3rem;color:var(--blue)}
 .trending-card .meta .stars-today{color:var(--ochre);font-weight:600}
-
-/* Loading skeleton */
-.daily-loading{
-  text-align:center;
-  padding:4rem 2rem;
-  color:var(--text3);
-  font-family:'LXGW WenKai','KaiTi',serif;
-  font-size:1rem;
-  letter-spacing:0.06em;
-}
-.daily-loading .spinner{
-  display:inline-block;
-  width:24px;
-  height:24px;
-  border:2px solid var(--border);
-  border-top-color:var(--blue);
-  border-radius:50%;
-  animation:spin 0.8s linear infinite;
-  margin-bottom:0.8rem;
-}
-@keyframes spin{to{transform:rotate(360deg)}}
 </style>
 </head>
 <body>
 <header class="hero">
-  <div class="date">2026-05-10</div>
-  <h1>AInformer</h1>
-  <p class="theme">每天早上自动汇总过去 24 小时最值得关注的 AI 资讯：工具教程、行业动态、领袖观点、中文生态。</p>
+  <div class="date">2026-05-10 · 周日</div>
+  <h1>每日 AI 简报</h1>
+  <p class="theme">提示工程极限与vibe coding新范例</p>
   <div class="meta">
-    <span>已发布 3 期</span>
+    <span>精选 2 条</span>
+    <span>头条 0 则</span>
+    <span>生成于 2026-05-10 09:37</span>
   </div>
 </header>
 
 <nav class="sticky-nav">
   <div class="nav-inner">
-    <a class="home" href="#">AInformer</a>
-    <a href="#archive">日报归档</a>
-    <a href="#about">关于</a>
+    <a class="home" href="https://chenhao-dendi.github.io/AInformer/index.html">← 首页</a>
+    <a href="#headlines">今日头条</a>
+    <a href="#takeaway">每日一学</a>
+    <a href="#tutorial">使用姿势</a>
+    <a href="#industry">行业动态</a>
+    <a href="#opinion">领袖观点</a>
+    <a href="#chinese">中文 / 学术</a>
+    <a href="#academic">学术与评测</a>
   </div>
 </nav>
 
 <main class="container">
-  <div id="daily-content">
-    <div class="daily-loading">
-      <div class="spinner"></div>
-      <p>正在加载最新日报…</p>
-    </div>
-  </div>
 
-  <section class="section" id="archive">
-    <div class="section-head"><h2>日报归档</h2><span class="count">3 期</span></div>
-    <div class="archive-grid">
-      <a class="archive-card" href="daily/20260510.html">
-        <div class="date">2026-05-10 · 周日</div>
-        <h3>提示工程极限与vibe coding新范例</h3>
-        <div class="stats"><span>共 2 条</span><span>头条 0</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260509.html">
-        <div class="date">2026-05-09 · 周六</div>
-        <h3>AI能力跃迁与规则重塑</h3>
-        <div class="stats"><span>共 18 条</span><span>头条 2</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260508.html">
-        <div class="date">2026-05-08 · 周五</div>
-        <h3>模型竞赛升级，安全与开源成焦点</h3>
-        <div class="stats"><span>共 21 条</span><span>头条 8</span></div>
-      </a>
+  <section class="lede">5月10日AI日报：有开发者尝试用“穴居人语言”压缩提示词以节省token，但实验表明过度缩写会导致模型输出质量严重下降，提醒提示工程仍有极限。另一方面，零编程用户借助Lovable等AI工具，仅需几十分钟便从零开发出一款社交日程App，展现了vibe coding的高效与潜力。</section>
+
+  <section class="stats-bar">
+    <div class="stat"><div class="num">2</div><div class="label">使用姿势</div></div>
+    <div class="stat"><div class="num">0</div><div class="label">行业新闻</div></div>
+    <div class="stat"><div class="num">0</div><div class="label">领袖观点</div></div>
+    <div class="stat"><div class="num">0</div><div class="label">中文 / 学术</div></div>
+    <div class="stat"><div class="num">0</div><div class="label">学术与评测</div></div>
+  </section>
+
+  <section class="section" id="headlines">
+    <div class="section-head"><h2>今日头条</h2><span class="count">2 条</span></div>
+    <div class="headlines">
+      <article class="headline-card">
+        <h3>教Claude说“穴居人语言”省token，结果适得其反</h3>
+        <p>实验者使用极度缩写的“穴居人”风格提示试图节省token，但Claude的回答质量显著下滑，甚至出现事实偏差。该测试警示开发者，粗暴压缩提示可能破坏模型理解，省token的策略需谨慎平衡质量。</p>
+        <div class="meta">
+<span class="tag tag-tutorial">使用姿势</span><span>Business Insider</span><a class="link-btn" href="https://www.businessinsider.com/claude-caveman-speak-prompt-save-tokens-results-worse-2026-5" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="headline-card">
+        <h3>零基础用AI数十分钟构建社交日程App</h3>
+        <p>一位非技术工作者借助Lovable等AI开发平台，在极短时间内完成了朋友聚会调度应用的原型。整个过程示范了vibe coding方法：从自然语言描述需求到生成可运行代码，大幅降低了软件开发门槛。</p>
+        <div class="meta">
+<span class="tag tag-tutorial">使用姿势</span><span>Business Insider</span><a class="link-btn" href="https://www.businessinsider.com/nontechnical-worker-ai-code-lovable-scheduling-app-friends-meetup-2026-5" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
     </div>
   </section>
 
 
-
-  <section class="intro" id="about">
-    <h2>关于 AInformer</h2>
-    <p>所有资讯均来自公开渠道，优先保留可追溯的原文链接。源代码：<a href="https://github.com/" target="_blank" rel="noopener">GitHub 仓库</a>。</p>
+  <section class="takeaway" id="takeaway">
+    <h3>用AI工具快速搭建聚会调度App的实操步骤</h3>
+    <p>基于vibe coding理念，零基础用户可这样操作：</p><ul><li>打开Lovable（或类似AI开发平台），新建项目。</li><li>用自然语言描述需求，例如：“创建一个聚会调度应用，用户可以输入可参加的时间段，自动找出所有人都有空的时间。”</li><li>继续补充细节：“界面简洁，支持添加好友姓名和可选时段，生成‘最佳时间’按钮，显示结果。”</li><li>让AI生成初始代码，然后在预览中测试。如有调整，直接对话描述修改意图，如：“把背景改成浅蓝色，按钮用圆角。”</li><li>迭代完善后，一键部署为Web应用，分享链接给朋友使用。</li></ul><p>关键prompt模板：</p><pre class="code"><code class="lang-">创建一个简单的聚会时间协调器：
+- 顶部标题“找时间聚聚”
+- 可添加参与者姓名
+- 每位参与者可多选时间槽（如周一18:00，周二19:00）
+- 点击“计算最佳时间”后，高亮所有人都空闲的时间
+- 用React和Tailwind实现
+</code></pre>
+    <p class="takeaway-source"><a class="link-btn" href="https://www.businessinsider.com/nontechnical-worker-ai-code-lovable-scheduling-app-friends-meetup-2026-5" target="_blank" rel="noopener noreferrer">查看出处 ↗</a></p>
   </section>
+
+  <div class="section-divider"></div>
+
+  <section class="section" id="tutorial">
+    <div class="section-head"><h2>AI 使用姿势与教程</h2><span class="count">2 条</span></div>
+    <div class="cards">
+<article class="news-card">
+  <h3>教 Claude 说“穴居人语言”省 token？结果完全不可用</h3>
+<p class="summary">作者尝试用极度缩写的“穴居人”风格提示让 Claude 节省 token，但导致回答质量崩溃，提醒开发者压缩提示语有极限。</p><p class="value">极限压缩提示可能破坏 AI 可用性，警惕为省 token 而牺牲质量。</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>Business Insider</span><span>· 2026-05-09</span><a class="link-btn" href="https://www.businessinsider.com/claude-caveman-speak-prompt-save-tokens-results-worse-2026-5" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>零基础用 AI 几十分钟编出社交日程 App：亲述 vibe coding 体验</h3>
+<p class="summary">非技术作者借助 Lovable 等 AI 开发工具，在分钟级完成朋友聚会调度应用，展示了从想法到成品的完整 vibe coding 流程。</p><p class="value">零编程基础者可用 Lovable 快速落地应用想法，但专业软件工程仍不可替代。</p>  <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>Business Insider</span><span>· 2026-05-08</span><a class="link-btn" href="https://www.businessinsider.com/nontechnical-worker-ai-code-lovable-scheduling-app-friends-meetup-2026-5" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article>    </div>
+  </section>
+
+  <section class="section" id="industry">
+    <div class="section-head"><h2>AI 行业新闻与产品动态</h2><span class="count">0 条</span></div>
+<div class="empty">今日该领域无重大动态</div>  </section>
+
+  <section class="section" id="opinion">
+    <div class="section-head"><h2>AI 领袖发言与深度观点</h2><span class="count">0 条</span></div>
+<div class="empty">今日该领域无重大动态</div>  </section>
+
+  <section class="section" id="chinese">
+    <div class="section-head"><h2>中文 AI 生态与学术动态</h2><span class="count">0 条</span></div>
+<div class="empty">今日该领域无重大动态</div>  </section>
+
+  <section class="section" id="academic">
+    <div class="section-head"><h2>学术与评测</h2><span class="count">0 条</span></div>
+<div class="empty">今日该领域无重大动态</div>  </section>
+
 </main>
 <footer class="footer">
   <div class="container">
-<script>
-(function() {
-  var slug = '20260510';
-  if (!slug) return;
-  var url = 'daily/' + slug + '.html';
-  var container = document.getElementById('daily-content');
-  fetch(url)
-    .then(function(r) { return r.text(); })
-    .then(function(html) {
-      var parser = new DOMParser();
-      var doc = parser.parseFromString(html, 'text/html');
-      var main = doc.querySelector('main.container');
-      if (main) {
-        container.innerHTML = main.innerHTML;
-        var heroDate = doc.querySelector('.hero .date');
-        var heroTheme = doc.querySelector('.hero .theme');
-        var pageHeroDate = document.querySelector('.hero .date');
-        var pageHeroTheme = document.querySelector('.hero .theme');
-        if (heroDate && pageHeroDate) pageHeroDate.textContent = heroDate.textContent;
-        if (heroTheme && pageHeroTheme) pageHeroTheme.textContent = heroTheme.textContent;
-        document.title = doc.title || document.title;
-        var metaDesc = doc.querySelector('meta[name="description"]');
-        if (metaDesc) {
-          var existing = document.querySelector('meta[name="description"]');
-          if (existing) existing.content = metaDesc.content;
-        }
-      } else {
-        container.innerHTML = '<div class="empty">日报内容加载失败，<a href="' + url + '">直接查看 →</a></div>';
-      }
-    })
-    .catch(function() {
-      container.innerHTML = '<div class="empty">日报加载失败，<a href="' + url + '">直接查看 →</a></div>';
-    });
-})();
-</script>
+<p><a href="https://chenhao-dendi.github.io/AInformer/index.html">← 回到首页</a> · 历史日报：<a href="https://chenhao-dendi.github.io/AInformer/index.html#archive">归档</a></p>
     <p>本日报基于公开信息自动搜索整理生成，资讯来源包括 OpenAI / Anthropic / DeepMind 等官方博客、The Verge、TechCrunch、36kr、机器之心、量子位、ArXiv、Hacker News 等公开平台。内容可能存在时效性偏差或不完整，请以原始来源为准。</p>
     <p>Generated at 2026-05-10 09:37 · Powered by DeepSeek + Tavily · <a href="https://chenhao-dendi.github.io/AInformer/index.html">AInformer</a></p>
   </div>

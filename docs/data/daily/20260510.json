@@ -1,0 +1,56 @@
+{
+  "date": "2026-05-10",
+  "generated_at": "2026-05-10T09:37:52.497626+08:00",
+  "today_theme": "提示工程极限与vibe coding新范例",
+  "lede": "5月10日AI日报：有开发者尝试用“穴居人语言”压缩提示词以节省token，但实验表明过度缩写会导致模型输出质量严重下降，提醒提示工程仍有极限。另一方面，零编程用户借助Lovable等AI工具，仅需几十分钟便从零开发出一款社交日程App，展现了vibe coding的高效与潜力。",
+  "headlines": [
+    {
+      "title": "教Claude说“穴居人语言”省token，结果适得其反",
+      "summary": "实验者使用极度缩写的“穴居人”风格提示试图节省token，但Claude的回答质量显著下滑，甚至出现事实偏差。该测试警示开发者，粗暴压缩提示可能破坏模型理解，省token的策略需谨慎平衡质量。",
+      "url": "https://www.businessinsider.com/claude-caveman-speak-prompt-save-tokens-results-worse-2026-5",
+      "source_name": "Business Insider",
+      "category": "tutorial"
+    },
+    {
+      "title": "零基础用AI数十分钟构建社交日程App",
+      "summary": "一位非技术工作者借助Lovable等AI开发平台，在极短时间内完成了朋友聚会调度应用的原型。整个过程示范了vibe coding方法：从自然语言描述需求到生成可运行代码，大幅降低了软件开发门槛。",
+      "url": "https://www.businessinsider.com/nontechnical-worker-ai-code-lovable-scheduling-app-friends-meetup-2026-5",
+      "source_name": "Business Insider",
+      "category": "tutorial"
+    }
+  ],
+  "daily_takeaway": {
+    "title": "用AI工具快速搭建聚会调度App的实操步骤",
+    "body_md": "基于vibe coding理念，零基础用户可这样操作：\n\n1. 打开Lovable（或类似AI开发平台），新建项目。\n2. 用自然语言描述需求，例如：“创建一个聚会调度应用，用户可以输入可参加的时间段，自动找出所有人都有空的时间。”\n3. 继续补充细节：“界面简洁，支持添加好友姓名和可选时段，生成‘最佳时间’按钮，显示结果。”\n4. 让AI生成初始代码，然后在预览中测试。如有调整，直接对话描述修改意图，如：“把背景改成浅蓝色，按钮用圆角。”\n5. 迭代完善后，一键部署为Web应用，分享链接给朋友使用。\n\n关键prompt模板：\n```\n创建一个简单的聚会时间协调器：\n- 顶部标题“找时间聚聚”\n- 可添加参与者姓名\n- 每位参与者可多选时间槽（如周一18:00，周二19:00）\n- 点击“计算最佳时间”后，高亮所有人都空闲的时间\n- 用React和Tailwind实现\n```",
+    "source_url": "https://www.businessinsider.com/nontechnical-worker-ai-code-lovable-scheduling-app-friends-meetup-2026-5"
+  },
+  "sections": {
+    "tutorial": [
+      {
+        "title": "教 Claude 说“穴居人语言”省 token？结果完全不可用",
+        "summary": "作者尝试用极度缩写的“穴居人”风格提示让 Claude 节省 token，但导致回答质量崩溃，提醒开发者压缩提示语有极限。",
+        "value_note": "极限压缩提示可能破坏 AI 可用性，警惕为省 token 而牺牲质量。",
+        "source_name": "Business Insider",
+        "url": "https://www.businessinsider.com/claude-caveman-speak-prompt-save-tokens-results-worse-2026-5",
+        "published_at": "2026-05-09T00:00:00Z",
+        "importance": "star",
+        "category": "tutorial"
+      },
+      {
+        "title": "零基础用 AI 几十分钟编出社交日程 App：亲述 vibe coding 体验",
+        "summary": "非技术作者借助 Lovable 等 AI 开发工具，在分钟级完成朋友聚会调度应用，展示了从想法到成品的完整 vibe coding 流程。",
+        "value_note": "零编程基础者可用 Lovable 快速落地应用想法，但专业软件工程仍不可替代。",
+        "source_name": "Business Insider",
+        "url": "https://www.businessinsider.com/nontechnical-worker-ai-code-lovable-scheduling-app-friends-meetup-2026-5",
+        "published_at": "2026-05-08T00:00:00Z",
+        "importance": "pin",
+        "category": "tutorial"
+      }
+    ],
+    "industry": [],
+    "opinion": [],
+    "chinese": [],
+    "academic": []
+  },
+  "trending": []
+}
