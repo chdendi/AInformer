@@ -9,7 +9,7 @@ from openai import AsyncOpenAI
 
 from ..config import LLMConfig
 from ..llm.client import chat_json
-from ..search.tavily import batch_search
+from ..search.web_search import unified_search
 from .definitions import AgentSpec
 
 log = logging.getLogger(__name__)
@@ -102,15 +102,15 @@ async def run_agent(
     log.info("[agent:%s] starting", spec.key)
     excluded_titles = excluded_by_cat.get(spec.key, []) + excluded_by_cat.get("_headlines", [])
 
-    tavily_items: list[dict[str, Any]] = await batch_search(spec.queries, max_results=6, days=2)
-    log.info("[agent:%s] tavily=%d", spec.key, len(tavily_items))
+    search_items: list[dict[str, Any]] = await unified_search(spec.queries, max_results=6, days=2)
+    log.info("[agent:%s] search=%d", spec.key, len(search_items))
 
     rss_items = [m for m in rss_pool if m.get("category_hint") in spec.rss_categories] if spec.rss_categories else []
     log.info("[agent:%s] rss=%d", spec.key, len(rss_items))
 
     seen: set[str] = set()
     materials: list[dict[str, Any]] = []
-    for src in (tavily_items, rss_items):
+    for src in (search_items, rss_items):
         for m in src:
             url = m.get("url")
             if not url or url in seen:
