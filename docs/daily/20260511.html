@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AInformer · 每日 AI 简报</title>
-<meta name="description" content="由 DeepSeek + Tavily 自动生成的中文 AI 每日资讯日报。">
+<title>AI Daily · 2026-05-11 | AInformer</title>
+<meta name="description" content="AI 每日资讯 · 共 5 条精选">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=LXGW+WenKai:wght@300;400;700&family=LXGW+WenKai+Mono&display=swap" rel="stylesheet">
@@ -589,78 +589,6 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   a{color:#000;text-decoration:underline;border-bottom:none}
 }
 
-.intro{
-  padding:2.4rem 2.4rem;
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:8px;
-  margin:3rem 0 2rem;
-  line-height:1.85;
-}
-.intro h2{
-  font-size:1.5rem;
-  margin-bottom:1rem;
-  color:var(--text);
-  letter-spacing:0.04em;
-}
-.intro p{color:var(--text2);margin-bottom:0.7rem}
-.intro code{font-size:0.86rem}
-
-.archive-grid{display:grid;gap:1.1rem;margin-top:1rem}
-@media(min-width:768px){.archive-grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1024px){.archive-grid{grid-template-columns:repeat(3,1fr)}}
-
-.archive-card{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:1.4rem 1.6rem;
-  transition:all 0.25s ease;
-  display:block;
-  color:inherit;
-  border-bottom:1px solid var(--border);
-  position:relative;
-}
-.archive-card::before{
-  content:"";
-  position:absolute;
-  left:0;top:0;bottom:0;
-  width:2px;
-  background:var(--ochre);
-  opacity:0;
-  border-radius:8px 0 0 8px;
-  transition:opacity 0.25s ease;
-}
-.archive-card:hover{
-  border-color:rgba(184,134,11,0.35);
-  transform:translateY(-2px);
-  box-shadow:0 4px 18px rgba(26,26,26,0.06);
-}
-.archive-card:hover::before{opacity:0.7}
-.archive-card .date{
-  font-family:'LXGW WenKai','KaiTi',serif;
-  font-size:0.88rem;
-  color:var(--text3);
-  margin-bottom:0.55rem;
-  font-variant-numeric:tabular-nums;
-  letter-spacing:0.06em;
-}
-.archive-card h3{
-  font-size:1.05rem;
-  line-height:1.55;
-  margin-bottom:0.7rem;
-  color:var(--text);
-}
-.archive-card .stats{
-  display:flex;
-  gap:0.85rem;
-  font-size:0.78rem;
-  color:var(--text3);
-  font-family:'LXGW WenKai','KaiTi',serif;
-  letter-spacing:0.04em;
-}
-
-/* daily-specific styles (used by injected content) */
 .quote-title{
   font-family:'LXGW WenKai','KaiTi',serif;
   color:var(--text2);
@@ -670,7 +598,7 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
 }
 .takeaway-source{margin-top:1rem}
 
-/* GitHub Trending cards */
+/* ===== GitHub Trending ===== */
 .trending-card{
   background:var(--surface);
   border:1px solid var(--border);
@@ -740,125 +668,97 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
 }
 .trending-card .meta .lang::before{content:"●";margin-right:0.3rem;color:var(--blue)}
 .trending-card .meta .stars-today{color:var(--ochre);font-weight:600}
-
-/* Loading skeleton */
-.daily-loading{
-  text-align:center;
-  padding:4rem 2rem;
-  color:var(--text3);
-  font-family:'LXGW WenKai','KaiTi',serif;
-  font-size:1rem;
-  letter-spacing:0.06em;
-}
-.daily-loading .spinner{
-  display:inline-block;
-  width:24px;
-  height:24px;
-  border:2px solid var(--border);
-  border-top-color:var(--blue);
-  border-radius:50%;
-  animation:spin 0.8s linear infinite;
-  margin-bottom:0.8rem;
-}
-@keyframes spin{to{transform:rotate(360deg)}}
 </style>
 </head>
 <body>
 <header class="hero">
-  <div class="date">2026-05-11</div>
-  <h1>AInformer</h1>
-  <p class="theme">每天早上自动汇总过去 24 小时最值得关注的 AI 资讯：工具教程、行业动态、领袖观点、中文生态。</p>
+  <div class="date">2026-05-11 · 周一</div>
+  <h1>每日 AI 简报</h1>
+  <p class="theme"></p>
   <div class="meta">
-    <span>已发布 4 期</span>
+    <span>精选 5 条</span>
+    <span>头条 1 则</span>
+    <span>生成于 2026-05-11 09:39</span>
   </div>
 </header>
 
 <nav class="sticky-nav">
   <div class="nav-inner">
-    <a class="home" href="#">AInformer</a>
-    <a href="#archive">日报归档</a>
-    <a href="#about">关于</a>
+    <a class="home" href="https://chenhao-dendi.github.io/AInformer/index.html">← 首页</a>
+    <a href="#headlines">今日头条</a>
+    <a href="#takeaway">每日一学</a>
+    <a href="#tutorial">使用姿势</a>
+    <a href="#industry">行业动态</a>
+    <a href="#opinion">领袖观点</a>
+    <a href="#chinese">中文 / 学术</a>
+    <a href="#academic">学术与评测</a>
   </div>
 </nav>
 
 <main class="container">
-  <div id="daily-content">
-    <div class="daily-loading">
-      <div class="spinner"></div>
-      <p>正在加载最新日报…</p>
-    </div>
-  </div>
 
-  <section class="section" id="archive">
-    <div class="section-head"><h2>日报归档</h2><span class="count">4 期</span></div>
-    <div class="archive-grid">
-      <a class="archive-card" href="daily/20260511.html">
-        <div class="date">2026-05-11 · 周一</div>
-        <h3>当日 AI 简报</h3>
-        <div class="stats"><span>共 5 条</span><span>头条 1</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260510.html">
-        <div class="date">2026-05-10 · 周日</div>
-        <h3>提示工程极限与vibe coding新范例</h3>
-        <div class="stats"><span>共 2 条</span><span>头条 0</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260509.html">
-        <div class="date">2026-05-09 · 周六</div>
-        <h3>AI能力跃迁与规则重塑</h3>
-        <div class="stats"><span>共 18 条</span><span>头条 2</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260508.html">
-        <div class="date">2026-05-08 · 周五</div>
-        <h3>模型竞赛升级，安全与开源成焦点</h3>
-        <div class="stats"><span>共 21 条</span><span>头条 8</span></div>
-      </a>
-    </div>
+
+  <section class="stats-bar">
+    <div class="stat"><div class="num">1</div><div class="label">使用姿势</div></div>
+    <div class="stat"><div class="num">0</div><div class="label">行业新闻</div></div>
+    <div class="stat"><div class="num">0</div><div class="label">领袖观点</div></div>
+    <div class="stat"><div class="num">4</div><div class="label">中文 / 学术</div></div>
+    <div class="stat"><div class="num">0</div><div class="label">学术与评测</div></div>
   </section>
 
 
 
-  <section class="intro" id="about">
-    <h2>关于 AInformer</h2>
-    <p>所有资讯均来自公开渠道，优先保留可追溯的原文链接。源代码：<a href="https://github.com/" target="_blank" rel="noopener">GitHub 仓库</a>。</p>
+
+  <div class="section-divider"></div>
+
+  <section class="section" id="tutorial">
+    <div class="section-head"><h2>AI 使用姿势与教程</h2><span class="count">1 条</span></div>
+    <div class="cards">
+<article class="news-card">
+  <h3>在AMD MI300X上构建多智能体CNC可制造性检查系统</h3>
+<p class="summary">通过Lablab.ai与AMD的黑客松项目，使用多智能体LLM架构开发数控加工可行性分析系统，详细介绍了框架选择与prompt设计，并提供了部署在MI300X上的经验。</p><p class="value">多智能体协作在制造分析中的落地案例，可复用架构与prompt技巧</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>Hugging Face Blog</span><span>· 2026-05-10</span><a class="link-btn" href="https://huggingface.co/blog/lablab-ai-amd-developer-hackathon/machinacheck" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article>    </div>
   </section>
+
+  <section class="section" id="industry">
+    <div class="section-head"><h2>AI 行业新闻与产品动态</h2><span class="count">0 条</span></div>
+<div class="empty">今日该领域无重大动态</div>  </section>
+
+  <section class="section" id="opinion">
+    <div class="section-head"><h2>AI 领袖发言与深度观点</h2><span class="count">0 条</span></div>
+<div class="empty">今日该领域无重大动态</div>  </section>
+
+  <section class="section" id="chinese">
+    <div class="section-head"><h2>中文 AI 生态与学术动态</h2><span class="count">4 条</span></div>
+    <div class="cards">
+<article class="news-card">
+  <h3>阶跃语音模型登顶Artificial Analysis中国榜首</h3>
+<p class="summary">阶跃最新语音模型在独立评测机构Artificial Analysis的榜单中位居中国第一，展现中文语音技术竞争力。</p><p class="value">中文语音评测独立验证，阶跃模型获中国第一，提升国产语音AI国际竞争力。</p>  <div class="meta">
+<span class="tag tag-hot">🔥 头条</span><span>量子位</span><span>· 2026-05-09</span><a class="link-btn" href="https://www.qbitai.com/2026/05/415023.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>高德ABot体系模型斩获AGIBot全球挑战赛冠军</h3>
+<p class="summary">高德空间智能ABot体系模型以0.829总分荣登AGIBot全球挑战赛榜首，标志空间智能向具身化跃迁。</p><p class="value">击败全球对手夺冠，证明高德在具身空间智能的领先性。</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>量子位</span><span>· 2026-05-09</span><a class="link-btn" href="https://www.qbitai.com/2026/05/414826.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>浙大推出AI“导演”框架，四通道消息实现沉浸式角色扮演</h3>
+<p class="summary">浙江大学团队提出新型角色扮演框架，通过四通道消息机制让AI像导演一样协调叙事，可演绎复杂剧情。</p><p class="value">突破传统纯文本角色扮演，四通道消息实现更真实、沉浸的交互体验。</p>  <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>量子位</span><span>· 2026-05-10</span><a class="link-btn" href="https://www.qbitai.com/2026/05/415048.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>浙大团队用AI打破32年拉姆齐数下界，R(3,17)提升至93</h3>
+<p class="summary">浙江大学校友利用AI方法将拉姆齐数R(3,17)下界从92提升至93，突破保持32年的世界纪录。</p><p class="value">首次用AI改进拉姆齐数，为组合数学问题提供新解题范式。</p>  <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>量子位</span><span>· 2026-05-10</span><a class="link-btn" href="https://www.qbitai.com/2026/05/415031.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article>    </div>
+  </section>
+
+  <section class="section" id="academic">
+    <div class="section-head"><h2>学术与评测</h2><span class="count">0 条</span></div>
+<div class="empty">今日该领域无重大动态</div>  </section>
+
 </main>
 <footer class="footer">
   <div class="container">
-<script>
-(function() {
-  var slug = '20260511';
-  if (!slug) return;
-  var url = 'daily/' + slug + '.html';
-  var container = document.getElementById('daily-content');
-  fetch(url)
-    .then(function(r) { return r.text(); })
-    .then(function(html) {
-      var parser = new DOMParser();
-      var doc = parser.parseFromString(html, 'text/html');
-      var main = doc.querySelector('main.container');
-      if (main) {
-        container.innerHTML = main.innerHTML;
-        var heroDate = doc.querySelector('.hero .date');
-        var heroTheme = doc.querySelector('.hero .theme');
-        var pageHeroDate = document.querySelector('.hero .date');
-        var pageHeroTheme = document.querySelector('.hero .theme');
-        if (heroDate && pageHeroDate) pageHeroDate.textContent = heroDate.textContent;
-        if (heroTheme && pageHeroTheme) pageHeroTheme.textContent = heroTheme.textContent;
-        document.title = doc.title || document.title;
-        var metaDesc = doc.querySelector('meta[name="description"]');
-        if (metaDesc) {
-          var existing = document.querySelector('meta[name="description"]');
-          if (existing) existing.content = metaDesc.content;
-        }
-      } else {
-        container.innerHTML = '<div class="empty">日报内容加载失败，<a href="' + url + '">直接查看 →</a></div>';
-      }
-    })
-    .catch(function() {
-      container.innerHTML = '<div class="empty">日报加载失败，<a href="' + url + '">直接查看 →</a></div>';
-    });
-})();
-</script>
+<p><a href="https://chenhao-dendi.github.io/AInformer/index.html">← 回到首页</a> · 历史日报：<a href="https://chenhao-dendi.github.io/AInformer/index.html#archive">归档</a></p>
     <p>本日报基于公开信息自动搜索整理生成，资讯来源包括 OpenAI / Anthropic / DeepMind 等官方博客、The Verge、TechCrunch、36kr、机器之心、量子位、ArXiv、Hacker News 等公开平台。内容可能存在时效性偏差或不完整，请以原始来源为准。</p>
     <p>Generated at 2026-05-11 09:39 · Powered by DeepSeek + Tavily · <a href="https://chenhao-dendi.github.io/AInformer/index.html">AInformer</a></p>
   </div>

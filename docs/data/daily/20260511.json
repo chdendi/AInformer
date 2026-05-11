@@ -1,0 +1,68 @@
+{
+  "date": "2026-05-11",
+  "generated_at": "2026-05-11T09:39:14.183047+08:00",
+  "today_theme": "",
+  "lede": "",
+  "headlines": [],
+  "daily_takeaway": {},
+  "sections": {
+    "tutorial": [
+      {
+        "title": "在AMD MI300X上构建多智能体CNC可制造性检查系统",
+        "summary": "通过Lablab.ai与AMD的黑客松项目，使用多智能体LLM架构开发数控加工可行性分析系统，详细介绍了框架选择与prompt设计，并提供了部署在MI300X上的经验。",
+        "value_note": "多智能体协作在制造分析中的落地案例，可复用架构与prompt技巧",
+        "source_name": "Hugging Face Blog",
+        "url": "https://huggingface.co/blog/lablab-ai-amd-developer-hackathon/machinacheck",
+        "published_at": "2026-05-10",
+        "importance": "star",
+        "category": "tutorial"
+      }
+    ],
+    "industry": [],
+    "opinion": [],
+    "chinese": [
+      {
+        "title": "阶跃语音模型登顶Artificial Analysis中国榜首",
+        "summary": "阶跃最新语音模型在独立评测机构Artificial Analysis的榜单中位居中国第一，展现中文语音技术竞争力。",
+        "value_note": "中文语音评测独立验证，阶跃模型获中国第一，提升国产语音AI国际竞争力。",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/415023.html",
+        "published_at": "2026-05-09",
+        "importance": "hot",
+        "category": "chinese"
+      },
+      {
+        "title": "高德ABot体系模型斩获AGIBot全球挑战赛冠军",
+        "summary": "高德空间智能ABot体系模型以0.829总分荣登AGIBot全球挑战赛榜首，标志空间智能向具身化跃迁。",
+        "value_note": "击败全球对手夺冠，证明高德在具身空间智能的领先性。",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/414826.html",
+        "published_at": "2026-05-09",
+        "importance": "star",
+        "category": "chinese"
+      },
+      {
+        "title": "浙大推出AI“导演”框架，四通道消息实现沉浸式角色扮演",
+        "summary": "浙江大学团队提出新型角色扮演框架，通过四通道消息机制让AI像导演一样协调叙事，可演绎复杂剧情。",
+        "value_note": "突破传统纯文本角色扮演，四通道消息实现更真实、沉浸的交互体验。",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/415048.html",
+        "published_at": "2026-05-10",
+        "importance": "pin",
+        "category": "chinese"
+      },
+      {
+        "title": "浙大团队用AI打破32年拉姆齐数下界，R(3,17)提升至93",
+        "summary": "浙江大学校友利用AI方法将拉姆齐数R(3,17)下界从92提升至93，突破保持32年的世界纪录。",
+        "value_note": "首次用AI改进拉姆齐数，为组合数学问题提供新解题范式。",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/415031.html",
+        "published_at": "2026-05-10",
+        "importance": "pin",
+        "category": "chinese"
+      }
+    ],
+    "academic": []
+  },
+  "trending": []
+}
