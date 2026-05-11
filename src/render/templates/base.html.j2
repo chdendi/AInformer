@@ -444,38 +444,6 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   align-items:center;
 }
 
-/* ===== Daily takeaway (note paper) ===== */
-.takeaway{
-  margin:3rem 0;
-  padding:1.8rem 2rem;
-  background:var(--surface3);
-  border:1px solid var(--border);
-  border-top:3px solid rgba(184,134,11,0.55);
-  border-radius:0 0 6px 6px;
-  position:relative;
-  box-shadow:0 2px 10px rgba(26,26,26,0.04);
-}
-.takeaway::before{
-  content:"每日一学";
-  display:block;
-  font-family:'LXGW WenKai','KaiTi',serif;
-  font-size:0.78rem;
-  letter-spacing:0.2em;
-  color:var(--ochre);
-  font-weight:700;
-  margin-bottom:0.6rem;
-}
-.takeaway h3{
-  font-size:1.35rem;
-  margin-bottom:1rem;
-  color:var(--text);
-  letter-spacing:0.03em;
-}
-.takeaway p{margin-bottom:0.7rem;line-height:1.85;color:var(--text)}
-.takeaway ul,.takeaway ol{margin:0.5rem 0 0.9rem 1.6rem}
-.takeaway li{margin-bottom:0.4rem;line-height:1.75}
-.takeaway code{background:#f5f0e0}
-
 /* ===== Tags ===== */
 .tag{
   display:inline-flex;
@@ -565,7 +533,6 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   .stat{padding:1rem 0.6rem}
   .stat .num{font-size:1.7rem}
   .lede{padding:1.4rem 1.5rem}
-  .takeaway{padding:1.4rem 1.5rem}
   .quote-card{padding:1.5rem 1.4rem 1.4rem 1.6rem}
   .quote-card .quote-zh{font-size:1.05rem}
   .section{margin:3rem 0 0.5rem}
@@ -577,7 +544,7 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
 @media print{
   body{background:#fff;color:#000;background-image:none}
   .sticky-nav,.footer{display:none}
-  .news-card,.headline-card,.quote-card,.takeaway,.lede{
+  .news-card,.headline-card,.quote-card,.lede{
     break-inside:avoid;
     background:#fff;
     border:1px solid #ccc;
