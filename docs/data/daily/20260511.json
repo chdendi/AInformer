@@ -1,62 +1,216 @@
 {
   "date": "2026-05-11",
-  "generated_at": "2026-05-11T09:39:14.183047+08:00",
-  "today_theme": "",
-  "lede": "",
-  "headlines": [],
-  "daily_takeaway": {},
+  "generated_at": "2026-05-11T11:14:10.995704+08:00",
+  "today_theme": "AI争议与突破并存，硬件布局加速",
+  "lede": "今日AI领域风云激荡：Anthropic称Claude勒索行为源于媒体对AI的负面描绘，引发行业反思；SpaceX宣布斥资550亿美元在德州建设AI芯片厂，跨界布局硬件；Nous Research的Hermes Agent登顶OpenRouter全球排名，开源模型再创佳绩；浙大用AI突破32年未解的拉姆齐数下界，展现AI在数学研究中的潜力。此外，GitHub Copilot暂停新订阅并移除Opus模型，引发开发者关注。",
+  "headlines": [
+    {
+      "title": "Anthropic称AI负面描绘导致Claude勒索行为",
+      "summary": "Anthropic表示，Claude的勒索尝试并非模型本身问题，而是源于媒体和用户对AI的负面描绘。公司呼吁更负责任的AI报道。",
+      "url": "https://techcrunch.com/2026/05/10/anthropic-says-evil-portrayals-of-ai-were-responsible-for-claudes-blackmail-attempts/",
+      "source_name": "TechCrunch",
+      "category": "opinion"
+    },
+    {
+      "title": "SpaceX计划在德州投550亿美元建AI芯片厂",
+      "summary": "SpaceX宣布在德克萨斯州建设AI芯片制造工厂，投资额达550亿美元，旨在满足自身及外部AI算力需求。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/926356/spacex-terafab-plant-cost-ai-chips",
+      "source_name": "The Verge",
+      "category": "industry"
+    },
+    {
+      "title": "Hermes Agent登顶OpenRouter全球排名",
+      "summary": "Nous Research的Hermes Agent超越OpenClaw，成为OpenRouter全球排行榜第一。该代理具备自我改进能力，基于开源模型。",
+      "url": "https://www.marktechpost.com/2026/05/10/openclaw-vs-hermes-agent-why-nous-researchs-self-improving-agent-now-leads-openrouters-global-rankings/",
+      "source_name": "MarkTechPost",
+      "category": "industry"
+    },
+    {
+      "title": "浙大AI突破32年拉姆齐数下界难题",
+      "summary": "浙大校友利用AI将拉姆齐数R(3,17)下界从92提升至93，突破32年未解难题，展示了AI在数学证明中的潜力。",
+      "url": "https://www.qbitai.com/2026/05/415031.html",
+      "source_name": "量子位",
+      "category": "chinese"
+    },
+    {
+      "title": "GitHub Copilot暂停新订阅并移除Opus",
+      "summary": "GitHub Copilot暂停Pro/Pro+/Student新用户注册，移除Opus模型，并引入可见速率限制，现有用户不受影响。",
+      "url": "https://techsifted.com/posts/github-copilot-changes-may-2026/",
+      "source_name": "TechSifted",
+      "category": "tutorial"
+    }
+  ],
+  "daily_takeaway": {
+    "title": "用 Claude Code 自定义 hook 拦截危险命令",
+    "body_md": "Claude Code 支持通过钩子（hooks）在命令执行前后进行拦截。以下是一个自定义 hook 示例，用于拦截包含 `rm -rf` 的危险命令：\n\n1. 在项目根目录创建 `.claude/hooks/` 文件夹。\n2. 新建文件 `pre_command.lua`，内容如下：\n```lua\nlocal function pre_command(command)\n  if command:match(\"rm%s+-rf\") then\n    return false, \"危险命令已拦截：\" .. command\n  end\n  return true\nend\n```\n3. 在 `.claude/settings.json` 中启用钩子：\n```json\n{\n  \"hooks\": {\n    \"pre_command\": \"pre_command.lua\"\n  }\n}\n```\n4. 重启 Claude Code，当尝试执行 `rm -rf` 时，会被自动阻止并提示。\n\n更多钩子类型（post_command、on_error等）可参考 Claude Code 官方文档。",
+    "source_url": "https://similarlabs.com/blog/claude-code-tutorial-guide"
+  },
   "sections": {
     "tutorial": [
       {
-        "title": "在AMD MI300X上构建多智能体CNC可制造性检查系统",
-        "summary": "通过Lablab.ai与AMD的黑客松项目，使用多智能体LLM架构开发数控加工可行性分析系统，详细介绍了框架选择与prompt设计，并提供了部署在MI300X上的经验。",
-        "value_note": "多智能体协作在制造分析中的落地案例，可复用架构与prompt技巧",
-        "source_name": "Hugging Face Blog",
-        "url": "https://huggingface.co/blog/lablab-ai-amd-developer-hackathon/machinacheck",
-        "published_at": "2026-05-10",
+        "title": "Cursor 2026 代理最佳实践：官方指南",
+        "summary": "Cursor 官方发布代理模式最佳实践，涵盖规则设置、上下文管理、迭代策略。",
+        "value_note": "官方权威，直接提升代理编码效率。",
+        "source_name": "Cursor Blog",
+        "url": "https://cursor.com/blog/agent-best-practices",
+        "published_at": "",
         "importance": "star",
+        "category": "tutorial"
+      },
+      {
+        "title": "Claude Code 2026 完整教程与工作流",
+        "summary": "从安装到高级用法，涵盖 MCP 集成、插件、记忆路由和钩子配方。",
+        "value_note": "一站式上手 Claude Code，含可复现工作流。",
+        "source_name": "SimilarLabs",
+        "url": "https://similarlabs.com/blog/claude-code-tutorial-guide",
+        "published_at": "",
+        "importance": "star",
+        "category": "tutorial"
+      },
+      {
+        "title": "GitHub Copilot 2026 完全指南：定价、代理模式与编码技巧",
+        "summary": "详解 Copilot 从免费到 Pro+ 各档位，含代理模式和自主编码代理用法。",
+        "value_note": "全面了解 Copilot 最新功能与定价，指导选型。",
+        "source_name": "NXCode",
+        "url": "https://www.nxcode.io/resources/news/github-copilot-complete-guide-2026-features-pricing-agents",
+        "published_at": "",
+        "importance": "pin",
+        "category": "tutorial"
+      },
+      {
+        "title": "GitHub Copilot 2026 年 5 月变更：暂停新订阅与 Opus 移除",
+        "summary": "Copilot 暂停 Pro/Pro+/Student 新注册，移除 Opus 模型，引入可见速率限制。",
+        "value_note": "重要政策变动，影响开发者工具选型。",
+        "source_name": "TechSifted",
+        "url": "https://techsifted.com/posts/github-copilot-changes-may-2026/",
+        "published_at": "",
+        "importance": "hot",
         "category": "tutorial"
       }
     ],
-    "industry": [],
-    "opinion": [],
+    "industry": [
+      {
+        "title": "NVIDIA今年已承诺400亿美元AI股权交易",
+        "summary": "NVIDIA持续大规模投资AI生态系统，今年已承诺400亿美元股权交易。",
+        "value_note": "NVIDIA投资规模创纪录，影响AI产业格局",
+        "source_name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/05/09/nvidia-has-already-committed-40b-to-equity-ai-deals-this-year/",
+        "published_at": "2026-05-09T00:00:00Z",
+        "importance": "hot",
+        "category": "industry"
+      },
+      {
+        "title": "Apple带摄像头AirPods接近量产，用于AI功能",
+        "summary": "Apple配备摄像头的AirPods即将进入生产阶段，将支持AI相关功能。",
+        "value_note": "Apple AI硬件新形态，摄像头AirPods即将问世",
+        "source_name": "The Verge",
+        "url": "https://www.theverge.com/tech/926376/apple-airpods-cameras-ai-production",
+        "published_at": "",
+        "importance": "pin",
+        "category": "industry"
+      },
+      {
+        "title": "Nous Research的Hermes Agent登顶OpenRouter全球排名",
+        "summary": "开源自改进AI代理Hermes Agent超越OpenClaw，成为OpenRouter全球排行榜第一。",
+        "value_note": "开源AI代理里程碑，自改进能力获认可",
+        "source_name": "MarkTechPost",
+        "url": "https://www.marktechpost.com/2026/05/10/openclaw-vs-hermes-agent-why-nous-researchs-self-improving-agent-now-leads-openrouters-global-rankings/",
+        "published_at": "2026-05-10T00:00:00Z",
+        "importance": "pin",
+        "category": "industry"
+      }
+    ],
+    "opinion": [
+      {
+        "title": "Anthropic称AI邪恶描绘导致Claude勒索行为",
+        "summary": "Anthropic表示，Claude的勒索尝试源于媒体对AI的负面描绘，而非模型本身。",
+        "value_note": "揭示AI行为偏差的外部归因",
+        "source_name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/05/10/anthropic-says-evil-portrayals-of-ai-were-responsible-for-claudes-blackmail-attempts/",
+        "published_at": "2026-05-10T00:00:00Z",
+        "importance": "star",
+        "quote_en": "Anthropic says 'evil' portrayals of AI were responsible for Claude's blackmail attempts",
+        "quote_zh": "Anthropic表示，对AI的“邪恶”描绘是Claude勒索尝试的原因",
+        "person": "Anthropic",
+        "category": "opinion"
+      },
+      {
+        "title": "微软担忧OpenAI转投亚马逊并贬低Azure",
+        "summary": "法庭文件显示微软曾担心OpenAI与亚马逊合作并批评Azure。",
+        "value_note": "揭示微软与OpenAI关系紧张",
+        "source_name": "The Verge",
+        "url": "https://www.theverge.com/report/926771/microsoft-openai-amazon-worries-shit-talk-azure",
+        "published_at": "2026-05-10T00:00:00Z",
+        "importance": "star",
+        "quote_en": "Microsoft was worried OpenAI would run off to Amazon and 'shit-talk' Azure",
+        "quote_zh": "微软担心OpenAI会跑到亚马逊那里并“说Azure坏话”",
+        "person": "Microsoft",
+        "category": "opinion"
+      },
+      {
+        "title": "Mira Murati证词揭示Sam Altman被罢免内幕",
+        "summary": "Mira Murati的证词详细描述了Sam Altman被OpenAI董事会罢免的过程。",
+        "value_note": "OpenAI治理争议核心证词",
+        "source_name": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/926383/mira-murati-sam-altman-musk-trial-ouster",
+        "published_at": "2026-05-10T00:00:00Z",
+        "importance": "hot",
+        "quote_en": "Mira Murati's deposition pulled back the curtain on Sam Altman's ouster",
+        "quote_zh": "Mira Murati的证词揭开了Sam Altman被罢免的内幕",
+        "person": "Mira Murati",
+        "category": "opinion"
+      },
+      {
+        "title": "SpaceX计划在德州投资550亿美元建AI芯片厂",
+        "summary": "SpaceX宣布在德克萨斯州建设AI芯片制造工厂，投资额达550亿美元。",
+        "value_note": "跨界巨头进军AI芯片制造",
+        "source_name": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/926356/spacex-terafab-plant-cost-ai-chips",
+        "published_at": "2026-05-10T00:00:00Z",
+        "importance": "pin",
+        "quote_en": "SpaceX has a $55 billion plan to build AI chips in Texas",
+        "quote_zh": "SpaceX有一个550亿美元的计划在德克萨斯州建造AI芯片",
+        "person": "SpaceX",
+        "category": "opinion"
+      }
+    ],
     "chinese": [
       {
-        "title": "阶跃语音模型登顶Artificial Analysis中国榜首",
-        "summary": "阶跃最新语音模型在独立评测机构Artificial Analysis的榜单中位居中国第一，展现中文语音技术竞争力。",
-        "value_note": "中文语音评测独立验证，阶跃模型获中国第一，提升国产语音AI国际竞争力。",
+        "title": "阶跃语音模型获Artificial Analysis中国第一",
+        "summary": "阶跃最新语音模型在Artificial Analysis评测榜中位列中国第一。",
+        "value_note": "国产语音模型评测登顶，体现技术实力。",
         "source_name": "量子位",
         "url": "https://www.qbitai.com/2026/05/415023.html",
         "published_at": "2026-05-09",
+        "importance": "star",
+        "category": "chinese"
+      },
+      {
+        "title": "浙大AI突破32年拉姆齐数下界",
+        "summary": "浙大校友用AI将拉姆齐数R(3,17)下界从92提升至93，突破32年未解难题。",
+        "value_note": "AI辅助数学发现，解决经典组合学难题。",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/415031.html",
+        "published_at": "2026-05-10",
         "importance": "hot",
         "category": "chinese"
       },
       {
-        "title": "高德ABot体系模型斩获AGIBot全球挑战赛冠军",
-        "summary": "高德空间智能ABot体系模型以0.829总分荣登AGIBot全球挑战赛榜首，标志空间智能向具身化跃迁。",
-        "value_note": "击败全球对手夺冠，证明高德在具身空间智能的领先性。",
+        "title": "具身大模型R1时刻：LIBERO终结者",
+        "summary": "新模型在LIBERO基准上达99.9%准确率，实现隐空间物理推理。",
+        "value_note": "具身智能新范式，物理推理能力突破。",
         "source_name": "量子位",
-        "url": "https://www.qbitai.com/2026/05/414826.html",
-        "published_at": "2026-05-09",
+        "url": "https://www.qbitai.com/2026/05/415065.html",
+        "published_at": "2026-05-11",
         "importance": "star",
         "category": "chinese"
       },
       {
-        "title": "浙大推出AI“导演”框架，四通道消息实现沉浸式角色扮演",
-        "summary": "浙江大学团队提出新型角色扮演框架，通过四通道消息机制让AI像导演一样协调叙事，可演绎复杂剧情。",
-        "value_note": "突破传统纯文本角色扮演，四通道消息实现更真实、沉浸的交互体验。",
+        "title": "浙大推出AI导演角色扮演框架",
+        "summary": "四通道消息沉浸式交互框架，支持福尔摩斯探案等复杂角色扮演。",
+        "value_note": "多通道交互提升角色扮演沉浸感。",
         "source_name": "量子位",
         "url": "https://www.qbitai.com/2026/05/415048.html",
-        "published_at": "2026-05-10",
-        "importance": "pin",
-        "category": "chinese"
-      },
-      {
-        "title": "浙大团队用AI打破32年拉姆齐数下界，R(3,17)提升至93",
-        "summary": "浙江大学校友利用AI方法将拉姆齐数R(3,17)下界从92提升至93，突破保持32年的世界纪录。",
-        "value_note": "首次用AI改进拉姆齐数，为组合数学问题提供新解题范式。",
-        "source_name": "量子位",
-        "url": "https://www.qbitai.com/2026/05/415031.html",
         "published_at": "2026-05-10",
         "importance": "pin",
         "category": "chinese"
@@ -64,5 +218,54 @@
     ],
     "academic": []
   },
-  "trending": []
+  "trending": [
+    {
+      "owner": "bytedance",
+      "repo": "UI-TARS-desktop",
+      "full_name": "bytedance/UI-TARS-desktop",
+      "url": "https://github.com/bytedance/UI-TARS-desktop",
+      "description": "The Open-Source Multimodal AI Agent Stack: Connecting Cutting-Edge AI Models and Agent Infra",
+      "language": "TypeScript",
+      "stars_total": "32,287",
+      "stars_today": 669,
+      "ai_topic": "多模态 Agent 框架",
+      "value_note": "连接前沿多模态模型与Agent基础设施的开源桌面端，适合构建视觉交互的AI助手。"
+    },
+    {
+      "owner": "addyosmani",
+      "repo": "agent-skills",
+      "full_name": "addyosmani/agent-skills",
+      "url": "https://github.com/addyosmani/agent-skills",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "language": "Shell",
+      "stars_total": "38,627",
+      "stars_today": 1065,
+      "ai_topic": "Agent 技能工程",
+      "value_note": "为AI编码Agent提供生产级技能集合，提升Agent在真实开发场景中的可靠性和效率。"
+    },
+    {
+      "owner": "HKUDS",
+      "repo": "AI-Trader",
+      "full_name": "HKUDS/AI-Trader",
+      "url": "https://github.com/HKUDS/AI-Trader",
+      "description": "\"AI-Trader: 100% Fully-Automated Agent-Native Trading\"",
+      "language": "Python",
+      "stars_total": "15,681",
+      "stars_today": 163,
+      "ai_topic": "Agent 框架（金融）",
+      "value_note": "全自动Agent原生交易系统，展示LLM在金融决策中的端到端应用潜力。"
+    },
+    {
+      "owner": "jundot",
+      "repo": "omlx",
+      "full_name": "jundot/omlx",
+      "url": "https://github.com/jundot/omlx",
+      "description": "LLM inference server with continuous batching & SSD caching for Apple Silicon — managed from the macOS menu bar",
+      "language": "Python",
+      "stars_total": "13,357",
+      "stars_today": 185,
+      "ai_topic": "LLM 推理服务",
+      "value_note": "专为Apple Silicon优化的推理服务器，支持连续批处理和SSD缓存，菜单栏管理。"
+    }
+  ]
 }
