@@ -156,7 +156,7 @@ async def main_async(target_date: date, dedupe_days: int, dry: bool) -> None:
 
     if dry:
         sections = {s.key: [] for s in specs}
-        synth = {"lede": "（dry-run）", "today_theme": "占位", "headlines": [], "daily_takeaway": {}}
+        synth = {"lede": "（dry-run）", "today_theme": "占位", "headlines": []}
     else:
         log.info("Running %d agents + GitHub trending in parallel...", len(specs))
         agent_results, trending_raw = await asyncio.gather(
@@ -188,7 +188,7 @@ async def main_async(target_date: date, dedupe_days: int, dry: bool) -> None:
         "today_theme": synth.get("today_theme", ""),
         "lede": synth.get("lede", ""),
         "headlines": synth.get("headlines", []),
-        "daily_takeaway": synth.get("daily_takeaway", {}),
+
         "sections": sections,
         "trending": trending,
     }

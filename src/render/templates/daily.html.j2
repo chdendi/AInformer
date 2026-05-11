@@ -10,8 +10,6 @@
   margin-bottom:0.6rem;
   letter-spacing:0.02em;
 }
-.takeaway-source{margin-top:1rem}
-
 /* ===== GitHub Trending ===== */
 .trending-card{
   background:var(--surface);
@@ -101,7 +99,7 @@
     <a class="home" href="{{ home_url }}">← 首页</a>
     <a href="#headlines">今日头条</a>
     {% if report.trending %}<a href="#trending">GitHub Trending</a>{% endif %}
-    <a href="#takeaway">每日一学</a>
+
     <a href="#tutorial">使用姿势</a>
     <a href="#industry">行业动态</a>
     <a href="#opinion">领袖观点</a>
@@ -165,16 +163,6 @@
       </article>
       {% endfor %}
     </div>
-  </section>
-  {% endif %}
-
-  {% if report.daily_takeaway and report.daily_takeaway.title %}
-  <section class="takeaway" id="takeaway">
-    <h3>{{ report.daily_takeaway.title }}</h3>
-    {{ report.daily_takeaway.body_md|md|safe }}
-    {% if report.daily_takeaway.source_url %}
-    <p class="takeaway-source"><a class="link-btn" href="{{ report.daily_takeaway.source_url }}" target="_blank" rel="noopener noreferrer">查看出处 ↗</a></p>
-    {% endif %}
   </section>
   {% endif %}
 

@@ -13,7 +13,7 @@ log = logging.getLogger(__name__)
 
 SYNTH_SYSTEM = (
     "你是一份高质量中文 AI 日报的总编辑。基于五个栏目编辑提交的稿件，"
-    "撰写日报的开篇综述、头条精选、每日一学。\n"
+    "撰写日报的开篇综述、头条精选。\n"
     "严格要求：只输出 JSON，所有内容用中文，专有名词保留英文。不允许编造素材外的事实或链接。"
 )
 
@@ -65,16 +65,11 @@ async def synthesize_overview(
        "category": "tutorial|industry|opinion|chinese|academic"
     }}
   ],
-  "daily_takeaway": {{
-    "title": "今日一学标题（如：用 Claude Code 自定义 hook 拦截危险命令）",
-    "body_md": "可执行的步骤或 prompt 模板。允许 markdown 代码块。180-320 字。",
-    "source_url": "（可选）出处链接，没有就空字符串"
-  }}
+}
 }}
 
 要求：
 - headlines 选 3-5 条（覆盖不同栏目最好），且必须出现在五栏目稿件中。
-- daily_takeaway 必须有可复用的实操内容（具体命令 / prompt / 配置 / 工作流）。
 - 不要编造素材外的事实。
 """.strip()
     return await chat_json(client, cfg, SYNTH_SYSTEM, user, temperature=0.4, max_tokens=2000)
