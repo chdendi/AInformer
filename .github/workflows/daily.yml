@@ -13,6 +13,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: daily-report
@@ -52,14 +53,27 @@ jobs:
           fi
 
       - name: Commit and push
+        id: commit
         run: |
           git config user.name "ainformer-bot"
           git config user.email "ainformer-bot@users.noreply.github.com"
           git add docs/
           if git diff --staged --quiet; then
             echo "No changes to commit"
+            echo "committed=false" >> "$GITHUB_OUTPUT"
           else
             DATE=$(date -u +%Y-%m-%d)
             git commit -m "chore(daily): publish AI report ${DATE}"
             git push
+            echo "committed=true" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Trigger Pages deploy
+        if: steps.commit.outputs.committed == 'true'
+        run: |
+          sleep 5
+          curl -s -X POST \
+            -H "Authorization: token ${{ github.token }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/pages.yml/dispatches" \
+            -d '{"ref":"main"}'
