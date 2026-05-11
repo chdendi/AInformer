@@ -6,8 +6,8 @@
     "theme": "",
     "generated_at": "2026-05-11T09:39:14.183047+08:00",
     "total_items": 5,
-    "data_url": "https://chenhao-dendi.github.io/AInformer/data/daily/20260511.json",
-    "html_url": "https://chenhao-dendi.github.io/AInformer/daily/20260511.html"
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260511.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260511.html"
   },
   "dates": [
     {
@@ -15,32 +15,32 @@
       "theme": "",
       "generated_at": "2026-05-11T09:39:14.183047+08:00",
       "total_items": 5,
-      "data_url": "https://chenhao-dendi.github.io/AInformer/data/daily/20260511.json",
-      "html_url": "https://chenhao-dendi.github.io/AInformer/daily/20260511.html"
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260511.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260511.html"
     },
     {
       "date": "2026-05-10",
       "theme": "提示工程极限与vibe coding新范例",
       "generated_at": "2026-05-10T09:37:52.497626+08:00",
       "total_items": 2,
-      "data_url": "https://chenhao-dendi.github.io/AInformer/data/daily/20260510.json",
-      "html_url": "https://chenhao-dendi.github.io/AInformer/daily/20260510.html"
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260510.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260510.html"
     },
     {
       "date": "2026-05-09",
       "theme": "AI能力跃迁与规则重塑",
       "generated_at": "2026-05-09T13:13:26.139535+08:00",
       "total_items": 18,
-      "data_url": "https://chenhao-dendi.github.io/AInformer/data/daily/20260509.json",
-      "html_url": "https://chenhao-dendi.github.io/AInformer/daily/20260509.html"
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260509.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260509.html"
     },
     {
       "date": "2026-05-08",
       "theme": "模型竞赛升级，安全与开源成焦点",
       "generated_at": "2026-05-08T14:14:08.165382+08:00",
       "total_items": 21,
-      "data_url": "https://chenhao-dendi.github.io/AInformer/data/daily/20260508.json",
-      "html_url": "https://chenhao-dendi.github.io/AInformer/daily/20260508.html"
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260508.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260508.html"
     }
   ]
 }

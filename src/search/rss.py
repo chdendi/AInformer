@@ -53,11 +53,18 @@ RSS_FEEDS: dict[str, dict[str, Any]] = {
     "arxiv_lg": {"url": "https://export.arxiv.org/rss/cs.LG", "category": "academic"},
     "bair": {"url": "https://bair.berkeley.edu/blog/feed.xml", "category": "academic"},
     # 中文
-    # 机器之心已下线 RSS（站点全部返回 HTML 而非 RSS），暂依赖 qbitai/36kr/Tavily
+    # 机器之心已下线 RSS（站点全部返回 HTML 而非 RSS），暂依赖 qbitai/36kr/direct scrape
     "qbitai": {"url": "https://www.qbitai.com/feed", "category": "chinese"},
     "36kr_newsflash": {"url": "https://36kr.com/feed-newsflash", "category": "chinese"},
+    "36kr_ai": {"url": "https://36kr.com/feed?cid=ai", "category": "chinese"},
     "qwen_blog": {"url": "https://qwenlm.github.io/blog/index.xml", "category": "chinese"},
     "leiphone": {"url": "https://www.leiphone.com/feed", "category": "chinese"},
+    "sspai": {"url": "https://sspai.com/feed", "category": "chinese"},
+    "geekpark": {"url": "https://www.geekpark.net/feed", "category": "chinese"},
+    # 游戏 / 科技媒体（可能含 AI 交叉内容，由 LLM 筛选）
+    "steam_news": {"url": "https://store.steampowered.com/feeds/news.xml", "category": "industry"},
+    "ign": {"url": "https://feeds.feedburner.com/ign/all", "category": "industry"},
+    "pcgamer": {"url": "https://www.pcgamer.com/uk/rss/", "category": "industry"},
 }
 
 UA = "Mozilla/5.0 (compatible; AInformer/1.0; +https://github.com)"
