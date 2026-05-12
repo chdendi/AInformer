@@ -1,0 +1,194 @@
+{
+  "date": "2026-05-12",
+  "generated_at": "2026-05-12T10:17:39.946763+08:00",
+  "today_theme": "AI落地提速，安全治理与能力突破双线交织",
+  "lede": "今日AI领域动态密集。OpenAI宣布成立新公司DeployCo，专注帮企业将前沿AI转化为业务成果；同时，菲尔兹奖得主陶哲轩亲测ChatGPT 5.5 Pro，仅17分钟便得出可发表级数学定理，展现AI加速科研的潜能。在安全与治理层面，OpenAI CEO Sam Altman庭审自辩称善意不足以保证AI安全，强调治理结构需更透明；前CTO Mira Murati则创立Thinking Machines，提出AI应主动学习用户交互。此外，新研究揭示链式思维推理越长反而加剧位置偏差，为模型可靠性敲响警钟。AI能力突破与治理反思正同步推进。",
+  "headlines": [
+    {
+      "title": "OpenAI成立DeployCo，助力企业部署前沿AI",
+      "summary": "OpenAI宣布推出DeployCo，一家新公司，旨在帮助组织将前沿AI投入生产，并转化为可衡量的业务成果。此举显示了OpenAI加速企业级AI落地的决心。",
+      "url": "https://openai.com/index/openai-launches-the-deployment-company",
+      "source_name": "OpenAI",
+      "category": "industry"
+    },
+    {
+      "title": "陶哲轩亲测ChatGPT 5.5 Pro，17分钟产出论文级成果",
+      "summary": "菲尔兹奖得主陶哲轩使用ChatGPT 5.5 Pro进行数学研究，仅17分钟便得出可发表水平的定理并形成论文草稿。他肯定AI效率，但强调真正的‘消化’仍需人类。",
+      "url": "https://www.qbitai.com/2026/05/415186.html",
+      "source_name": "量子位",
+      "category": "chinese"
+    },
+    {
+      "title": "推理模型越长越“偏心”——长度驱动的位置偏差新发现",
+      "summary": "研究揭示，链式思维推理步骤增加反而放大位置偏差，早期信息被强化而新证据被抑制。这为推理模型的可靠性评估提供了新视角。",
+      "url": "https://arxiv.org/abs/2605.06672",
+      "source_name": "arXiv",
+      "category": "academic"
+    },
+    {
+      "title": "Mira Murati创立Thinking Machines：AI应学会与人协作交互",
+      "summary": "前OpenAI CTO Mira Murati的新公司Thinking Machines正构建一种‘学习用户’的AI交互模型，强调AI需主动适应人类对话节奏，而非被动响应。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/928309/mira-murati-thinking-machines-ai-interaction-model",
+      "source_name": "The Verge",
+      "category": "opinion"
+    }
+  ],
+  "sections": {
+    "tutorial": [],
+    "industry": [
+      {
+        "title": "OpenAI成立DeployCo，助力企业部署前沿AI",
+        "summary": "OpenAI宣布推出DeployCo，一家新公司，帮助组织将前沿AI投入生产并转化为可衡量的业务成果。",
+        "value_note": "企业AI部署服务的里程碑，加速产业落地。",
+        "source_name": "OpenAI",
+        "url": "https://openai.com/index/openai-launches-the-deployment-company",
+        "published_at": "2026-05-11",
+        "importance": "hot",
+        "category": "industry"
+      },
+      {
+        "title": "Claude平台在AWS全面上市，Anthropic原生体验",
+        "summary": "Anthropic与AWS联合推出Claude平台，客户可直接通过AWS账户使用原生Claude服务。",
+        "value_note": "平台整合简化企业AI获取，增强AWS生态。",
+        "source_name": "AWS Machine Learning Blog",
+        "url": "https://aws.amazon.com/blogs/machine-learning/introducing-claude-platform-on-aws-anthropics-native-platform-through-your-aws-account/",
+        "published_at": "2026-05-11",
+        "importance": "star",
+        "category": "industry"
+      },
+      {
+        "title": "OpenAI发布Daybreak，回应Anthropic的Mythos安全挑战",
+        "summary": "OpenAI推出Daybreak安全AI模型，旨在对抗日益严重的AI安全威胁，与Claude Mythos抗衡。",
+        "value_note": "安全AI竞赛升温，OpenAI强化防御能力。",
+        "source_name": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/928342/openai-daybreak-security-ai",
+        "published_at": "",
+        "importance": "star",
+        "category": "industry"
+      },
+      {
+        "title": "ChatGPT用户群在2026年Q1大幅拓宽，超35岁用户增长最快",
+        "summary": "OpenAI报告显示，ChatGPT在35岁以上用户和女性用户中增长迅猛，标志主流化。",
+        "value_note": "用户画像扩展，预示AI服务大众化。",
+        "source_name": "OpenAI",
+        "url": "https://openai.com/signals/research/2026q1-update",
+        "published_at": "2026-05-11",
+        "importance": "pin",
+        "category": "industry"
+      }
+    ],
+    "opinion": [
+      {
+        "title": "Mira Murati创立Thinking Machines：AI应学会与人协作交互",
+        "summary": "前OpenAI CTO Mira Murati的新公司Thinking Machines正构建一种“学习用户”的AI交互模型，强调AI需主动适应人类对话节奏。",
+        "value_note": "前OpenAI核心人物创业聚焦AI交互范式革新",
+        "source_name": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/928309/mira-murati-thinking-machines-ai-interaction-model",
+        "published_at": "2026-05-12",
+        "importance": "star",
+        "quote_en": "We want AI that engages in a continuous, adaptive dialogue — learning with you, not just from you.",
+        "quote_zh": "我们想要的AI能够进行持续、自适应的对话——与你一同学习，而不只是从你身上学习。",
+        "person": "Mira Murati",
+        "category": "opinion"
+      },
+      {
+        "title": "Sam Altman庭审自辩：善意不足以保证AI安全，治理是关键",
+        "summary": "OpenAI CEO Sam Altman在庭审中称，即便有良好初衷，若无坚定治理，AI愿景也可能走偏，承认组织架构需更透明。",
+        "value_note": "Altman首次在法庭公开反思OpenAI治理缺陷",
+        "source_name": "The Verge",
+        "url": "https://www.theverge.com/tech/917225/sam-altman-elon-musk-openai-lawsuit",
+        "published_at": "2026-05-12",
+        "importance": "hot",
+        "quote_en": "I wanted OpenAI to be a force for good, but I now realize good intentions aren't enough — governance matters.",
+        "quote_zh": "我曾希望OpenAI成为向善的力量，但现在我意识到仅有善意是不够的——治理至关重要。",
+        "person": "Sam Altman",
+        "category": "opinion"
+      }
+    ],
+    "chinese": [
+      {
+        "title": "陶哲轩亲测ChatGPT 5.5 Pro，17分钟产出论文级成果",
+        "summary": "菲尔兹奖得主陶哲轩使用ChatGPT 5.5 Pro进行数学研究，仅17分钟便得出可发表水平的定理并形成论文草稿，但强调真正的“消化”仍需人类。",
+        "value_note": "顶级数学家实证AI可大幅加速前沿研究",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/415186.html",
+        "published_at": "2026-05-11",
+        "importance": "hot",
+        "category": "chinese"
+      },
+      {
+        "title": "像素绽放PixelBloom完成C轮融资，要做全球AI视觉表达平台",
+        "summary": "国内AI视觉表达公司像素绽放PixelBloom完成C轮融资，定位全球AI办公Agent，直接交付解决方案而非单一工具。",
+        "value_note": "AI办公赛道开启“交方案”终局竞争",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/415810.html",
+        "published_at": "2026-05-11",
+        "importance": "star",
+        "category": "chinese"
+      },
+      {
+        "title": "Cerebras冲刺350亿美元估值IPO，英伟达挑战者再进一步",
+        "summary": "AI芯片公司Cerebras预计本周公布IPO定价，冲刺350亿美元估值，此前已获OpenAI高达200亿美元的预购单。",
+        "value_note": "大模型算力竞赛催生英伟达以外的新选择",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/415714.html",
+        "published_at": "2026-05-11",
+        "importance": "star",
+        "category": "chinese"
+      },
+      {
+        "title": "黄仁勋毕业演讲：AI不会取代你，但善用AI的人会",
+        "summary": "黄仁勋在毕业典礼上分享创业至暗时刻，强调AI不会替代人类，但掌握AI工具的人将具备绝对优势。",
+        "value_note": "英伟达CEO亲述：人类需与AI协同进化",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/415403.html",
+        "published_at": "2026-05-11",
+        "importance": "pin",
+        "category": "chinese"
+      }
+    ],
+    "academic": [
+      {
+        "title": "推理模型越长越“偏心”——长度驱动的位置偏差新发现",
+        "summary": "研究发现链式思维推理并非逐步优化，推理步骤增加反而放大位置偏差，早期信息被强化，新证据被抑制。",
+        "value_note": "揭示推理长度与位置偏见的关系，挑战“更多思考更准确”假设",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.06672",
+        "published_at": "",
+        "importance": "hot",
+        "category": "academic"
+      },
+      {
+        "title": "GraphDC：多智能体分治架构破解图算法推理难题",
+        "summary": "提出分而治之的多智能体系统，将复杂图算法问题拆解为子任务，由专业化Agent协作求解，显著提升推理可扩展性。",
+        "value_note": "首个可扩展的多智能体图算法推理框架，突破LLM图推理瓶颈",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.06671",
+        "published_at": "",
+        "importance": "star",
+        "category": "academic"
+      },
+      {
+        "title": "CASCADE：让大模型在部署中边用边学、告别灾难性遗忘",
+        "summary": "基于案例的持续适应方法，从部署反馈中动态挑选信息性案例进行局部更新，在适应新任务的同时最小化旧知识遗忘。",
+        "value_note": "实现大模型部署后在线适应，平衡可塑性-稳定性困境",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.06702",
+        "published_at": "",
+        "importance": "pin",
+        "category": "academic"
+      },
+      {
+        "title": "大模型何时真正“拿定主意”？因果理论揭开推理承诺时刻",
+        "summary": "提出预语言化承诺理论，通过因果分析观测模型内部隐式决策点，捕捉其口头回答之前的真实意图。",
+        "value_note": "首次用因果框架定位模型决策时刻，提升可解释性与对齐能力",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.06723",
+        "published_at": "",
+        "importance": "pin",
+        "category": "academic"
+      }
+    ]
+  },
+  "trending": []
+}
