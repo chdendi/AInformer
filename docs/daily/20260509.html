@@ -444,38 +444,6 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   align-items:center;
 }
 
-/* ===== Daily takeaway (note paper) ===== */
-.takeaway{
-  margin:3rem 0;
-  padding:1.8rem 2rem;
-  background:var(--surface3);
-  border:1px solid var(--border);
-  border-top:3px solid rgba(184,134,11,0.55);
-  border-radius:0 0 6px 6px;
-  position:relative;
-  box-shadow:0 2px 10px rgba(26,26,26,0.04);
-}
-.takeaway::before{
-  content:"每日一学";
-  display:block;
-  font-family:'LXGW WenKai','KaiTi',serif;
-  font-size:0.78rem;
-  letter-spacing:0.2em;
-  color:var(--ochre);
-  font-weight:700;
-  margin-bottom:0.6rem;
-}
-.takeaway h3{
-  font-size:1.35rem;
-  margin-bottom:1rem;
-  color:var(--text);
-  letter-spacing:0.03em;
-}
-.takeaway p{margin-bottom:0.7rem;line-height:1.85;color:var(--text)}
-.takeaway ul,.takeaway ol{margin:0.5rem 0 0.9rem 1.6rem}
-.takeaway li{margin-bottom:0.4rem;line-height:1.75}
-.takeaway code{background:#f5f0e0}
-
 /* ===== Tags ===== */
 .tag{
   display:inline-flex;
@@ -495,7 +463,6 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
 .tag-pin{background:rgba(74,124,89,0.06);color:var(--green);border-color:rgba(74,124,89,0.18)}
 
 /* Category tags */
-.tag-tutorial{background:rgba(44,74,110,0.06);color:var(--blue);border-color:rgba(44,74,110,0.18)}
 .tag-industry{background:rgba(61,90,128,0.06);color:var(--blue2);border-color:rgba(61,90,128,0.18)}
 .tag-opinion{background:rgba(107,76,110,0.06);color:var(--plum);border-color:rgba(107,76,110,0.18)}
 .tag-chinese{background:rgba(181,68,52,0.06);color:var(--red);border-color:rgba(181,68,52,0.18)}
@@ -565,7 +532,6 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   .stat{padding:1rem 0.6rem}
   .stat .num{font-size:1.7rem}
   .lede{padding:1.4rem 1.5rem}
-  .takeaway{padding:1.4rem 1.5rem}
   .quote-card{padding:1.5rem 1.4rem 1.4rem 1.6rem}
   .quote-card .quote-zh{font-size:1.05rem}
   .section{margin:3rem 0 0.5rem}
@@ -577,7 +543,7 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
 @media print{
   body{background:#fff;color:#000;background-image:none}
   .sticky-nav,.footer{display:none}
-  .news-card,.headline-card,.quote-card,.takeaway,.lede{
+  .news-card,.headline-card,.quote-card,.lede{
     break-inside:avoid;
     background:#fff;
     border:1px solid #ccc;
@@ -596,8 +562,6 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   margin-bottom:0.6rem;
   letter-spacing:0.02em;
 }
-.takeaway-source{margin-top:1rem}
-
 /* ===== GitHub Trending ===== */
 .trending-card{
   background:var(--surface);
@@ -684,15 +648,13 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
 
 <nav class="sticky-nav">
   <div class="nav-inner">
-    <a class="home" href="../index.html">← 首页</a>
+    <a class="home" href="https://chdendi.github.io/AInformer/index.html">← 首页</a>
     <a href="#headlines">今日头条</a>
-<a href="#trending">GitHub Trending</a>    <a href="#takeaway">每日一学</a>
-    <a href="#tutorial">使用姿势</a>
+<a href="#trending">GitHub Trending</a>
     <a href="#industry">行业动态</a>
     <a href="#opinion">领袖观点</a>
     <a href="#chinese">中文 / 学术</a>
-    <a href="#academic">学术论文</a>
-    <a href="#benchmark">评测雷达</a>
+    <a href="#academic">学术与评测</a>
   </div>
 </nav>
 
@@ -701,12 +663,10 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   <section class="lede">今日AI圈迎来多项重磅进展：Anthropic为Claude推出无限上下文窗口，彻底改变长文档处理工作流；同时其CEO提出AI将走向“组织智能”，并推出“dreaming”系统让AI从错误中学习。月之暗面以200亿美元估值融资20亿美元，成为中文AI生态的焦点。欧盟就简化AI规则达成临时协议，推迟AI Act部分条款。此外，Mozilla利用Anthropic的Mythos工具发现Firefox 271个漏洞，展示了AI在安全领域的巨大潜力。</section>
 
   <section class="stats-bar">
-    <div class="stat"><div class="num">4</div><div class="label">使用姿势</div></div>
     <div class="stat"><div class="num">2</div><div class="label">行业新闻</div></div>
     <div class="stat"><div class="num">4</div><div class="label">领袖观点</div></div>
     <div class="stat"><div class="num">4</div><div class="label">中文 / 学术</div></div>
-    <div class="stat"><div class="num">4</div><div class="label">学术论文</div></div>
-    <div class="stat"><div class="num">0</div><div class="label">评测雷达</div></div>
+    <div class="stat"><div class="num">4</div><div class="label">学术与评测</div></div>
   </section>
 
   <section class="section" id="headlines">
@@ -716,7 +676,7 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
         <h3>Claude获无限上下文窗口，工作流变革</h3>
         <p>Anthropic为Claude推出无限上下文窗口，允许处理超长文档和对话，显著提升复杂工作流效率。</p>
         <div class="meta">
-<span class="tag tag-tutorial">使用姿势</span><span>Geeky Gadgets</span><a class="link-btn" href="https://www.geeky-gadgets.com/claude-s-new-infinite-context-window-model/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+<span class="tag tag-tutorial">tutorial</span><span>Geeky Gadgets</span><a class="link-btn" href="https://www.geeky-gadgets.com/claude-s-new-infinite-context-window-model/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
       </article>
       <article class="headline-card">
         <h3>Anthropic CEO：AI将走向“组织智能”</h3>
@@ -783,46 +743,7 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
     </div>
   </section>
 
-  <section class="takeaway" id="takeaway">
-    <h3>用Claude Code自定义hook拦截危险命令</h3>
-    <p>Claude Code支持自定义hook，可在执行命令前进行安全检查。以下是一个拦截危险命令的示例hook配置：</p><ul><li>在项目根目录创建 <code>.claude/hooks/pre-command</code> 文件，内容如下：</li></ul><pre class="code"><code class="lang-bash">#!/bin/bash
-# 拦截危险命令
-if [[ &quot;$1&quot; == &quot;rm -rf /&quot; ]] || [[ &quot;$1&quot; == &quot;shutdown&quot; ]]; then
-  echo &quot;危险命令被拦截: $1&quot;
-  exit 1
-fi
-</code></pre><ul><li>赋予执行权限：<code>chmod +x .claude/hooks/pre-command</code></li></ul><ul><li>在Claude Code中启用hook：在<code>.claude/settings.json</code>中添加：</li></ul><pre class="code"><code class="lang-json">{
-  &quot;hooks&quot;: {
-    &quot;pre-command&quot;: &quot;.claude/hooks/pre-command&quot;
-  }
-}
-</code></pre><p>现在，当Claude尝试执行危险命令时，hook会阻止并提示。你可以根据需要扩展规则列表。</p>
-    <p class="takeaway-source"><a class="link-btn" href="https://www.geeky-gadgets.com/claude-s-new-infinite-context-window-model/" target="_blank" rel="noopener noreferrer">查看出处 ↗</a></p>
-  </section>
-
   <div class="section-divider"></div>
-
-  <section class="section" id="tutorial">
-    <div class="section-head"><h2>AI 使用姿势与教程</h2><span class="count">4 条</span></div>
-    <div class="cards">
-<article class="news-card">
-  <h3>Claude 获“无限”上下文窗口，工作流变革</h3>
-<p class="summary">Anthropic 为 Claude 推出无限上下文窗口，允许处理超长文档和对话，显著提升复杂工作流效率。</p><p class="value">开发者可一次性输入整个代码库或长篇文档，无需分块，简化 AI 辅助编程和研究流程。</p>  <div class="meta">
-<span class="tag tag-hot">🔥 头条</span><span>Geeky Gadgets</span><span>· 2026-05-07</span><a class="link-btn" href="https://www.geeky-gadgets.com/claude-s-new-infinite-context-window-model/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article><article class="news-card">
-  <h3>OpenClaw + Claude 可将 AI 播客一键保存到 Spotify</h3>
-<p class="summary">Save to Spotify 命令行工具支持 OpenClaw、Claude Code 等 AI 代理，将研究内容自动生成播客并发布到 Spotify。</p><p class="value">开发者可用 AI 代理自动化内容创作与分发，适合知识管理或播客制作工作流。</p>  <div class="meta">
-<span class="tag tag-pin">📎 关注</span><span>The Verge</span><span>· 2026-05-07</span><a class="link-btn" href="https://www.theverge.com/entertainment/925916/save-to-spotify-ai-podcasts" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article><article class="news-card">
-  <h3>Google 计划允许软件工程师在面试中使用 AI 助手</h3>
-<p class="summary">Google 正在调整面试流程，允许候选人使用 AI 编码助手，以评估其与 AI 协作解决问题的能力。</p><p class="value">开发者应关注 AI 辅助编程在招聘中的角色变化，提前适应人机协作面试模式。</p>  <div class="meta">
-<span class="tag tag-star">⭐ 重要</span><span>Business Insider</span><span>· 2026-05-07</span><a class="link-btn" href="https://www.businessinsider.com/google-job-interview-software-engineers-ai-assistant-coding-2026-5" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article><article class="news-card">
-  <h3>学区用 AI“氛围编码”预计节省 20 万美元</h3>
-<p class="summary">美国一学区通过 AI 驱动的“vibe coding”方法，让非技术人员用自然语言生成代码，预计节省 20 万美元开发成本。</p><p class="value">非开发者也可用 AI 快速构建应用，降低技术门槛，适合教育或小型组织。</p>  <div class="meta">
-<span class="tag tag-pin">📎 关注</span><span>Education Week</span><span>· 2026-05-08</span><a class="link-btn" href="https://www.edweek.org/technology/a-district-expects-to-save-200k-from-ai-powered-vibe-coding-heres-how/2026/05" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article>    </div>
-  </section>
 
   <section class="section" id="industry">
     <div class="section-head"><h2>AI 行业新闻与产品动态</h2><span class="count">2 条</span></div>
@@ -887,7 +808,7 @@ fi
   </section>
 
   <section class="section" id="academic">
-    <div class="section-head"><h2>AI 学术论文精选</h2><span class="count">4 条</span></div>
+    <div class="section-head"><h2>学术与评测</h2><span class="count">4 条</span></div>
     <div class="cards">
 <article class="news-card">
   <h3>Health-LLM：用大模型预测可穿戴传感器健康指标</h3>
@@ -908,16 +829,12 @@ fi
 </article>    </div>
   </section>
 
-  <section class="section" id="benchmark">
-    <div class="section-head"><h2>模型评测雷达</h2><span class="count">0 条</span></div>
-<div class="empty">今日该领域无重大动态</div>  </section>
-
 </main>
 <footer class="footer">
   <div class="container">
-<p><a href="../index.html">← 回到首页</a> · 历史日报：<a href="../index.html#archive">归档</a></p>
+<p><a href="https://chdendi.github.io/AInformer/index.html">← 回到首页</a> · 历史日报：<a href="https://chdendi.github.io/AInformer/index.html#archive">归档</a></p>
     <p>本日报基于公开信息自动搜索整理生成，资讯来源包括 OpenAI / Anthropic / DeepMind 等官方博客、The Verge、TechCrunch、36kr、机器之心、量子位、ArXiv、Hacker News 等公开平台。内容可能存在时效性偏差或不完整，请以原始来源为准。</p>
-    <p>Generated at 2026-05-09 13:13 · Powered by DeepSeek + Tavily · <a href="../index.html">AInformer</a></p>
+    <p>Generated at 2026-05-09 13:13 · Powered by DeepSeek + Tavily · <a href="https://chdendi.github.io/AInformer/index.html">AInformer</a> · <a href="https://chdendi.github.io/AInformer/api/v1/manifest.json">JSON API</a></p>
   </div>
 </footer>
 </body>

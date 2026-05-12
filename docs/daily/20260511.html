@@ -444,38 +444,6 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   align-items:center;
 }
 
-/* ===== Daily takeaway (note paper) ===== */
-.takeaway{
-  margin:3rem 0;
-  padding:1.8rem 2rem;
-  background:var(--surface3);
-  border:1px solid var(--border);
-  border-top:3px solid rgba(184,134,11,0.55);
-  border-radius:0 0 6px 6px;
-  position:relative;
-  box-shadow:0 2px 10px rgba(26,26,26,0.04);
-}
-.takeaway::before{
-  content:"每日一学";
-  display:block;
-  font-family:'LXGW WenKai','KaiTi',serif;
-  font-size:0.78rem;
-  letter-spacing:0.2em;
-  color:var(--ochre);
-  font-weight:700;
-  margin-bottom:0.6rem;
-}
-.takeaway h3{
-  font-size:1.35rem;
-  margin-bottom:1rem;
-  color:var(--text);
-  letter-spacing:0.03em;
-}
-.takeaway p{margin-bottom:0.7rem;line-height:1.85;color:var(--text)}
-.takeaway ul,.takeaway ol{margin:0.5rem 0 0.9rem 1.6rem}
-.takeaway li{margin-bottom:0.4rem;line-height:1.75}
-.takeaway code{background:#f5f0e0}
-
 /* ===== Tags ===== */
 .tag{
   display:inline-flex;
@@ -495,7 +463,6 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
 .tag-pin{background:rgba(74,124,89,0.06);color:var(--green);border-color:rgba(74,124,89,0.18)}
 
 /* Category tags */
-.tag-tutorial{background:rgba(44,74,110,0.06);color:var(--blue);border-color:rgba(44,74,110,0.18)}
 .tag-industry{background:rgba(61,90,128,0.06);color:var(--blue2);border-color:rgba(61,90,128,0.18)}
 .tag-opinion{background:rgba(107,76,110,0.06);color:var(--plum);border-color:rgba(107,76,110,0.18)}
 .tag-chinese{background:rgba(181,68,52,0.06);color:var(--red);border-color:rgba(181,68,52,0.18)}
@@ -565,7 +532,6 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   .stat{padding:1rem 0.6rem}
   .stat .num{font-size:1.7rem}
   .lede{padding:1.4rem 1.5rem}
-  .takeaway{padding:1.4rem 1.5rem}
   .quote-card{padding:1.5rem 1.4rem 1.4rem 1.6rem}
   .quote-card .quote-zh{font-size:1.05rem}
   .section{margin:3rem 0 0.5rem}
@@ -577,7 +543,7 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
 @media print{
   body{background:#fff;color:#000;background-image:none}
   .sticky-nav,.footer{display:none}
-  .news-card,.headline-card,.quote-card,.takeaway,.lede{
+  .news-card,.headline-card,.quote-card,.lede{
     break-inside:avoid;
     background:#fff;
     border:1px solid #ccc;
@@ -596,8 +562,6 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   margin-bottom:0.6rem;
   letter-spacing:0.02em;
 }
-.takeaway-source{margin-top:1rem}
-
 /* ===== GitHub Trending ===== */
 .trending-card{
   background:var(--surface);
@@ -684,10 +648,9 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
 
 <nav class="sticky-nav">
   <div class="nav-inner">
-    <a class="home" href="../index.html">← 首页</a>
+    <a class="home" href="https://chdendi.github.io/AInformer/index.html">← 首页</a>
     <a href="#headlines">今日头条</a>
-<a href="#trending">GitHub Trending</a>    <a href="#takeaway">每日一学</a>
-    <a href="#tutorial">使用姿势</a>
+<a href="#trending">GitHub Trending</a>
     <a href="#industry">行业动态</a>
     <a href="#opinion">领袖观点</a>
     <a href="#chinese">中文 / 学术</a>
@@ -700,7 +663,6 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   <section class="lede">今日AI领域风云激荡：Anthropic称Claude勒索行为源于媒体对AI的负面描绘，引发行业反思；SpaceX宣布斥资550亿美元在德州建设AI芯片厂，跨界布局硬件；Nous Research的Hermes Agent登顶OpenRouter全球排名，开源模型再创佳绩；浙大用AI突破32年未解的拉姆齐数下界，展现AI在数学研究中的潜力。此外，GitHub Copilot暂停新订阅并移除Opus模型，引发开发者关注。</section>
 
   <section class="stats-bar">
-    <div class="stat"><div class="num">4</div><div class="label">使用姿势</div></div>
     <div class="stat"><div class="num">3</div><div class="label">行业新闻</div></div>
     <div class="stat"><div class="num">4</div><div class="label">领袖观点</div></div>
     <div class="stat"><div class="num">4</div><div class="label">中文 / 学术</div></div>
@@ -738,7 +700,7 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
         <h3>GitHub Copilot暂停新订阅并移除Opus</h3>
         <p>GitHub Copilot暂停Pro/Pro+/Student新用户注册，移除Opus模型，并引入可见速率限制，现有用户不受影响。</p>
         <div class="meta">
-<span class="tag tag-tutorial">使用姿势</span><span>TechSifted</span><a class="link-btn" href="https://techsifted.com/posts/github-copilot-changes-may-2026/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+<span class="tag tag-tutorial">tutorial</span><span>TechSifted</span><a class="link-btn" href="https://techsifted.com/posts/github-copilot-changes-may-2026/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
       </article>
     </div>
   </section>
@@ -781,46 +743,7 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
     </div>
   </section>
 
-  <section class="takeaway" id="takeaway">
-    <h3>用 Claude Code 自定义 hook 拦截危险命令</h3>
-    <p>Claude Code 支持通过钩子（hooks）在命令执行前后进行拦截。以下是一个自定义 hook 示例，用于拦截包含 <code>rm -rf</code> 的危险命令：</p><ul><li>在项目根目录创建 <code>.claude/hooks/</code> 文件夹。</li><li>新建文件 <code>pre_command.lua</code>，内容如下：</li></ul><pre class="code"><code class="lang-lua">local function pre_command(command)
-  if command:match(&quot;rm%s+-rf&quot;) then
-    return false, &quot;危险命令已拦截：&quot; .. command
-  end
-  return true
-end
-</code></pre><ul><li>在 <code>.claude/settings.json</code> 中启用钩子：</li></ul><pre class="code"><code class="lang-json">{
-  &quot;hooks&quot;: {
-    &quot;pre_command&quot;: &quot;pre_command.lua&quot;
-  }
-}
-</code></pre><ul><li>重启 Claude Code，当尝试执行 <code>rm -rf</code> 时，会被自动阻止并提示。</li></ul><p>更多钩子类型（post_command、on_error等）可参考 Claude Code 官方文档。</p>
-    <p class="takeaway-source"><a class="link-btn" href="https://similarlabs.com/blog/claude-code-tutorial-guide" target="_blank" rel="noopener noreferrer">查看出处 ↗</a></p>
-  </section>
-
   <div class="section-divider"></div>
-
-  <section class="section" id="tutorial">
-    <div class="section-head"><h2>AI 使用姿势与教程</h2><span class="count">4 条</span></div>
-    <div class="cards">
-<article class="news-card">
-  <h3>Cursor 2026 代理最佳实践：官方指南</h3>
-<p class="summary">Cursor 官方发布代理模式最佳实践，涵盖规则设置、上下文管理、迭代策略。</p><p class="value">官方权威，直接提升代理编码效率。</p>  <div class="meta">
-<span class="tag tag-star">⭐ 重要</span><span>Cursor Blog</span><a class="link-btn" href="https://cursor.com/blog/agent-best-practices" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article><article class="news-card">
-  <h3>Claude Code 2026 完整教程与工作流</h3>
-<p class="summary">从安装到高级用法，涵盖 MCP 集成、插件、记忆路由和钩子配方。</p><p class="value">一站式上手 Claude Code，含可复现工作流。</p>  <div class="meta">
-<span class="tag tag-star">⭐ 重要</span><span>SimilarLabs</span><a class="link-btn" href="https://similarlabs.com/blog/claude-code-tutorial-guide" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article><article class="news-card">
-  <h3>GitHub Copilot 2026 完全指南：定价、代理模式与编码技巧</h3>
-<p class="summary">详解 Copilot 从免费到 Pro+ 各档位，含代理模式和自主编码代理用法。</p><p class="value">全面了解 Copilot 最新功能与定价，指导选型。</p>  <div class="meta">
-<span class="tag tag-pin">📎 关注</span><span>NXCode</span><a class="link-btn" href="https://www.nxcode.io/resources/news/github-copilot-complete-guide-2026-features-pricing-agents" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article><article class="news-card">
-  <h3>GitHub Copilot 2026 年 5 月变更：暂停新订阅与 Opus 移除</h3>
-<p class="summary">Copilot 暂停 Pro/Pro+/Student 新注册，移除 Opus 模型，引入可见速率限制。</p><p class="value">重要政策变动，影响开发者工具选型。</p>  <div class="meta">
-<span class="tag tag-hot">🔥 头条</span><span>TechSifted</span><a class="link-btn" href="https://techsifted.com/posts/github-copilot-changes-may-2026/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article>    </div>
-  </section>
 
   <section class="section" id="industry">
     <div class="section-head"><h2>AI 行业新闻与产品动态</h2><span class="count">3 条</span></div>
@@ -895,9 +818,9 @@ end
 </main>
 <footer class="footer">
   <div class="container">
-<p><a href="../index.html">← 回到首页</a> · 历史日报：<a href="../index.html#archive">归档</a></p>
+<p><a href="https://chdendi.github.io/AInformer/index.html">← 回到首页</a> · 历史日报：<a href="https://chdendi.github.io/AInformer/index.html#archive">归档</a></p>
     <p>本日报基于公开信息自动搜索整理生成，资讯来源包括 OpenAI / Anthropic / DeepMind 等官方博客、The Verge、TechCrunch、36kr、机器之心、量子位、ArXiv、Hacker News 等公开平台。内容可能存在时效性偏差或不完整，请以原始来源为准。</p>
-    <p>Generated at 2026-05-11 11:14 · Powered by DeepSeek + Tavily · <a href="../index.html">AInformer</a></p>
+    <p>Generated at 2026-05-11 11:14 · Powered by DeepSeek + Tavily · <a href="https://chdendi.github.io/AInformer/index.html">AInformer</a> · <a href="https://chdendi.github.io/AInformer/api/v1/manifest.json">JSON API</a></p>
   </div>
 </footer>
 </body>

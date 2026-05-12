@@ -444,38 +444,6 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   align-items:center;
 }
 
-/* ===== Daily takeaway (note paper) ===== */
-.takeaway{
-  margin:3rem 0;
-  padding:1.8rem 2rem;
-  background:var(--surface3);
-  border:1px solid var(--border);
-  border-top:3px solid rgba(184,134,11,0.55);
-  border-radius:0 0 6px 6px;
-  position:relative;
-  box-shadow:0 2px 10px rgba(26,26,26,0.04);
-}
-.takeaway::before{
-  content:"每日一学";
-  display:block;
-  font-family:'LXGW WenKai','KaiTi',serif;
-  font-size:0.78rem;
-  letter-spacing:0.2em;
-  color:var(--ochre);
-  font-weight:700;
-  margin-bottom:0.6rem;
-}
-.takeaway h3{
-  font-size:1.35rem;
-  margin-bottom:1rem;
-  color:var(--text);
-  letter-spacing:0.03em;
-}
-.takeaway p{margin-bottom:0.7rem;line-height:1.85;color:var(--text)}
-.takeaway ul,.takeaway ol{margin:0.5rem 0 0.9rem 1.6rem}
-.takeaway li{margin-bottom:0.4rem;line-height:1.75}
-.takeaway code{background:#f5f0e0}
-
 /* ===== Tags ===== */
 .tag{
   display:inline-flex;
@@ -495,7 +463,6 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
 .tag-pin{background:rgba(74,124,89,0.06);color:var(--green);border-color:rgba(74,124,89,0.18)}
 
 /* Category tags */
-.tag-tutorial{background:rgba(44,74,110,0.06);color:var(--blue);border-color:rgba(44,74,110,0.18)}
 .tag-industry{background:rgba(61,90,128,0.06);color:var(--blue2);border-color:rgba(61,90,128,0.18)}
 .tag-opinion{background:rgba(107,76,110,0.06);color:var(--plum);border-color:rgba(107,76,110,0.18)}
 .tag-chinese{background:rgba(181,68,52,0.06);color:var(--red);border-color:rgba(181,68,52,0.18)}
@@ -565,7 +532,6 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   .stat{padding:1rem 0.6rem}
   .stat .num{font-size:1.7rem}
   .lede{padding:1.4rem 1.5rem}
-  .takeaway{padding:1.4rem 1.5rem}
   .quote-card{padding:1.5rem 1.4rem 1.4rem 1.6rem}
   .quote-card .quote-zh{font-size:1.05rem}
   .section{margin:3rem 0 0.5rem}
@@ -577,7 +543,7 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
 @media print{
   body{background:#fff;color:#000;background-image:none}
   .sticky-nav,.footer{display:none}
-  .news-card,.headline-card,.quote-card,.takeaway,.lede{
+  .news-card,.headline-card,.quote-card,.lede{
     break-inside:avoid;
     background:#fff;
     border:1px solid #ccc;
@@ -596,8 +562,6 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   margin-bottom:0.6rem;
   letter-spacing:0.02em;
 }
-.takeaway-source{margin-top:1rem}
-
 /* ===== GitHub Trending ===== */
 .trending-card{
   background:var(--surface);
@@ -684,15 +648,13 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
 
 <nav class="sticky-nav">
   <div class="nav-inner">
-    <a class="home" href="../index.html">← 首页</a>
+    <a class="home" href="https://chdendi.github.io/AInformer/index.html">← 首页</a>
     <a href="#headlines">今日头条</a>
-    <a href="#takeaway">每日一学</a>
-    <a href="#tutorial">使用姿势</a>
+
     <a href="#industry">行业动态</a>
     <a href="#opinion">领袖观点</a>
     <a href="#chinese">中文 / 学术</a>
-    <a href="#academic">学术论文</a>
-    <a href="#benchmark">评测雷达</a>
+    <a href="#academic">学术与评测</a>
   </div>
 </nav>
 
@@ -701,12 +663,10 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   <section class="lede">今日AI圈风起云涌：OpenAI发布GPT-5.5-Cyber网络安全模型，直接对标Anthropic的Mythos；Anthropic则宣布与SpaceX合作获得超级计算机访问权，并推出无限上下文窗口的Claude模型。中国方面，DeepSeek V4发布并完成国产芯片全栈适配，估值或达450亿美元。此外，前OpenAI CTO Mira Murati在法庭作证指控Sam Altman不诚实，引发行业震动。</section>
 
   <section class="stats-bar">
-    <div class="stat"><div class="num">4</div><div class="label">使用姿势</div></div>
     <div class="stat"><div class="num">4</div><div class="label">行业新闻</div></div>
     <div class="stat"><div class="num">4</div><div class="label">领袖观点</div></div>
     <div class="stat"><div class="num">4</div><div class="label">中文 / 学术</div></div>
-    <div class="stat"><div class="num">4</div><div class="label">学术论文</div></div>
-    <div class="stat"><div class="num">1</div><div class="label">评测雷达</div></div>
+    <div class="stat"><div class="num">4</div><div class="label">学术与评测</div></div>
   </section>
 
   <section class="section" id="headlines">
@@ -740,51 +700,13 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
         <h3>Anthropic为Claude Managed Agents新增三项功能</h3>
         <p>Anthropic更新Claude Managed Agents，新增“dreaming”等三项功能，帮助AI代理自我改进。同时，Claude Code OAuth令牌存在被MCP劫持窃取的风险，安全研究人员已披露漏洞。</p>
         <div class="meta">
-<span class="tag tag-tutorial">使用姿势</span><span>9to5Mac</span><a class="link-btn" href="https://9to5mac.com/2026/05/07/anthropic-updates-claude-managed-agents-with-three-new-features/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+<span class="tag tag-tutorial">tutorial</span><span>9to5Mac</span><a class="link-btn" href="https://9to5mac.com/2026/05/07/anthropic-updates-claude-managed-agents-with-three-new-features/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
       </article>
     </div>
   </section>
 
 
-  <section class="takeaway" id="takeaway">
-    <h3>用 Claude Code 自定义 hook 拦截危险命令</h3>
-    <p>为了防止 Claude Code 执行危险命令（如删除文件或修改系统配置），可以创建自定义 hook 来拦截并提示确认。</p><ul><li>在项目根目录创建 <code>.claude/hooks/</code> 文件夹。</li><li>创建文件 <code>pre_command.sh</code>，内容如下：</li></ul><pre class="code"><code class="lang-bash">#!/bin/bash
-# 拦截包含 rm -rf 或 sudo 的命令
-if echo &quot;$CLAUDE_COMMAND&quot; | grep -qE &quot;rm -rf|sudo&quot;; then
-  echo &quot;⚠️ 危险命令被拦截: $CLAUDE_COMMAND&quot;
-  echo &quot;是否允许执行？(y/N)&quot;
-  read -r response
-  if [ &quot;$response&quot; != &quot;y&quot; ]; then
-    exit 1
-  fi
-fi
-</code></pre><ul><li>赋予执行权限：<code>chmod +x .claude/hooks/pre_command.sh</code></li><li>在 Claude Code 配置中启用 hook：在 <code>claude.json</code> 中添加 <code>&quot;hooks&quot;: [&quot;.claude/hooks/pre_command.sh&quot;]</code>。</li></ul><p>这样每次执行危险操作前都会收到确认提示，有效防止误操作。</p>
-    <p class="takeaway-source"><a class="link-btn" href="https://www.securityweek.com/claude-code-oauth-tokens-can-be-stolen-through-stealthy-mcp-hijacking/" target="_blank" rel="noopener noreferrer">查看出处 ↗</a></p>
-  </section>
-
   <div class="section-divider"></div>
-
-  <section class="section" id="tutorial">
-    <div class="section-head"><h2>AI 使用姿势与教程</h2><span class="count">4 条</span></div>
-    <div class="cards">
-<article class="news-card">
-  <h3>Anthropic 为 Claude Managed Agents 新增三项功能</h3>
-<p class="summary">Anthropic 更新 Claude Managed Agents，新增“dreaming”等三项功能，帮助 AI 代理自我改进。</p><p class="value">了解如何利用“dreaming”功能让 AI 代理自动优化任务执行，减少人工干预。</p>  <div class="meta">
-<span class="tag tag-star">⭐ 重要</span><span>9to5Mac</span><span>· 2026-05-07</span><a class="link-btn" href="https://9to5mac.com/2026/05/07/anthropic-updates-claude-managed-agents-with-three-new-features/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article><article class="news-card">
-  <h3>OpenAI 发布 Codex Chrome 插件，浏览器内开发</h3>
-<p class="summary">OpenAI 推出 Codex Chrome 插件，可在浏览器中测试 Web 应用、跨标签页收集上下文、并行使用 DevTools。</p><p class="value">前端开发者可直接在浏览器中利用 AI 辅助调试和开发，无需切换工具。</p>  <div class="meta">
-<span class="tag tag-hot">🔥 头条</span><span>Engadget</span><span>· 2026-05-07</span><a class="link-btn" href="https://www.engadget.com/2167480/openai-debuts-a-codex-plugin-for-chrome/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article><article class="news-card">
-  <h3>Marc Andreessen 公开 AI 超级提示词，引发热议</h3>
-<p class="summary">亿万富翁 Marc Andreessen 在 X 上分享了他的 AI 自定义提示词，用于控制 AI 行为。</p><p class="value">可直接复用或参考该提示词模板，优化自己的 AI 交互效果。</p>  <div class="meta">
-<span class="tag tag-star">⭐ 重要</span><span>Forbes</span><span>· 2026-05-06</span><a class="link-btn" href="https://www.forbes.com/sites/lanceeliot/2026/05/06/analyzing-that-controversial-super-prompt-for-controlling-ai-that-billionaire-marc-andreessen-posted/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article><article class="news-card">
-  <h3>Coder 发布自托管 AI 编码代理，支持多模型</h3>
-<p class="summary">Coder 推出自托管、模型无关的 AI 编码代理，企业可在内部运行 AI 驱动开发。</p><p class="value">企业可私有化部署 AI 编码助手，避免数据外泄，并自由选择底层模型。</p>  <div class="meta">
-<span class="tag tag-star">⭐ 重要</span><span>GlobeNewswire</span><span>· 2026-05-06</span><a class="link-btn" href="https://www.globenewswire.com/news-release/2026/05/06/3288916/0/en/coder-sets-a-new-standard-for-ai-coding-with-self-hosted-ai-model-agnostic-coder-agents.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article>    </div>
-  </section>
 
   <section class="section" id="industry">
     <div class="section-head"><h2>AI 行业新闻与产品动态</h2><span class="count">4 条</span></div>
@@ -857,7 +779,7 @@ fi
   </section>
 
   <section class="section" id="academic">
-    <div class="section-head"><h2>AI 学术论文精选</h2><span class="count">4 条</span></div>
+    <div class="section-head"><h2>学术与评测</h2><span class="count">4 条</span></div>
     <div class="cards">
 <article class="news-card">
   <h3>新AI方法攻克科学界最难的数学问题之一</h3>
@@ -878,22 +800,12 @@ fi
 </article>    </div>
   </section>
 
-  <section class="section" id="benchmark">
-    <div class="section-head"><h2>模型评测雷达</h2><span class="count">1 条</span></div>
-    <div class="cards">
-<article class="news-card">
-  <h3>F5报告：企业将AI推理迁移至内部</h3>
-<p class="summary">F5报告显示，企业正将AI推理工作负载从云端迁移至内部部署，以降低成本并增强数据安全。</p><p class="value">推理本地化趋势将影响云服务商和硬件厂商，企业需重新评估AI基础设施策略。</p>  <div class="meta">
-<span class="tag tag-star">⭐ 重要</span><span>RCR Wireless News</span><span>· 2026-05-07</span><a class="link-btn" href="https://www.rcrwireless.com/20260507/ai/f5-ai-inference-in-house" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article>    </div>
-  </section>
-
 </main>
 <footer class="footer">
   <div class="container">
-<p><a href="../index.html">← 回到首页</a> · 历史日报：<a href="../index.html#archive">归档</a></p>
+<p><a href="https://chdendi.github.io/AInformer/index.html">← 回到首页</a> · 历史日报：<a href="https://chdendi.github.io/AInformer/index.html#archive">归档</a></p>
     <p>本日报基于公开信息自动搜索整理生成，资讯来源包括 OpenAI / Anthropic / DeepMind 等官方博客、The Verge、TechCrunch、36kr、机器之心、量子位、ArXiv、Hacker News 等公开平台。内容可能存在时效性偏差或不完整，请以原始来源为准。</p>
-    <p>Generated at 2026-05-08 14:14 · Powered by DeepSeek + Tavily · <a href="../index.html">AInformer</a></p>
+    <p>Generated at 2026-05-08 14:14 · Powered by DeepSeek + Tavily · <a href="https://chdendi.github.io/AInformer/index.html">AInformer</a> · <a href="https://chdendi.github.io/AInformer/api/v1/manifest.json">JSON API</a></p>
   </div>
 </footer>
 </body>

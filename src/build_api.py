@@ -171,16 +171,15 @@ def build_api() -> None:
     _write(API_YEARLY_DIR / "index.json", yearly_index)
     _write(API_DIR / "manifest.json", manifest)
 
-    latest_daily = daily_index.get("latest")
-    if latest_daily:
-        _write(API_DAILY_DIR / "latest.json", latest_daily)
+    def _empty_latest(kind: str) -> dict[str, Any]:
+        return {
+            "available": False,
+            "message": f"No {kind} report has been generated yet.",
+            "updated_at": datetime.now().astimezone().isoformat(),
+        }
 
-    latest_monthly = monthly_index.get("latest")
-    if latest_monthly:
-        _write(API_MONTHLY_DIR / "latest.json", latest_monthly)
-
-    latest_yearly = yearly_index.get("latest")
-    if latest_yearly:
-        _write(API_YEARLY_DIR / "latest.json", latest_yearly)
+    _write(API_DAILY_DIR / "latest.json", daily_index.get("latest") or _empty_latest("daily"))
+    _write(API_MONTHLY_DIR / "latest.json", monthly_index.get("latest") or _empty_latest("monthly"))
+    _write(API_YEARLY_DIR / "latest.json", yearly_index.get("latest") or _empty_latest("yearly"))
 
     print("✅ API index files generated under docs/api/v1/")

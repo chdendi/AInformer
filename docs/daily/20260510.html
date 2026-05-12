@@ -444,38 +444,6 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   align-items:center;
 }
 
-/* ===== Daily takeaway (note paper) ===== */
-.takeaway{
-  margin:3rem 0;
-  padding:1.8rem 2rem;
-  background:var(--surface3);
-  border:1px solid var(--border);
-  border-top:3px solid rgba(184,134,11,0.55);
-  border-radius:0 0 6px 6px;
-  position:relative;
-  box-shadow:0 2px 10px rgba(26,26,26,0.04);
-}
-.takeaway::before{
-  content:"每日一学";
-  display:block;
-  font-family:'LXGW WenKai','KaiTi',serif;
-  font-size:0.78rem;
-  letter-spacing:0.2em;
-  color:var(--ochre);
-  font-weight:700;
-  margin-bottom:0.6rem;
-}
-.takeaway h3{
-  font-size:1.35rem;
-  margin-bottom:1rem;
-  color:var(--text);
-  letter-spacing:0.03em;
-}
-.takeaway p{margin-bottom:0.7rem;line-height:1.85;color:var(--text)}
-.takeaway ul,.takeaway ol{margin:0.5rem 0 0.9rem 1.6rem}
-.takeaway li{margin-bottom:0.4rem;line-height:1.75}
-.takeaway code{background:#f5f0e0}
-
 /* ===== Tags ===== */
 .tag{
   display:inline-flex;
@@ -495,7 +463,6 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
 .tag-pin{background:rgba(74,124,89,0.06);color:var(--green);border-color:rgba(74,124,89,0.18)}
 
 /* Category tags */
-.tag-tutorial{background:rgba(44,74,110,0.06);color:var(--blue);border-color:rgba(44,74,110,0.18)}
 .tag-industry{background:rgba(61,90,128,0.06);color:var(--blue2);border-color:rgba(61,90,128,0.18)}
 .tag-opinion{background:rgba(107,76,110,0.06);color:var(--plum);border-color:rgba(107,76,110,0.18)}
 .tag-chinese{background:rgba(181,68,52,0.06);color:var(--red);border-color:rgba(181,68,52,0.18)}
@@ -565,7 +532,6 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   .stat{padding:1rem 0.6rem}
   .stat .num{font-size:1.7rem}
   .lede{padding:1.4rem 1.5rem}
-  .takeaway{padding:1.4rem 1.5rem}
   .quote-card{padding:1.5rem 1.4rem 1.4rem 1.6rem}
   .quote-card .quote-zh{font-size:1.05rem}
   .section{margin:3rem 0 0.5rem}
@@ -577,7 +543,7 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
 @media print{
   body{background:#fff;color:#000;background-image:none}
   .sticky-nav,.footer{display:none}
-  .news-card,.headline-card,.quote-card,.takeaway,.lede{
+  .news-card,.headline-card,.quote-card,.lede{
     break-inside:avoid;
     background:#fff;
     border:1px solid #ccc;
@@ -596,8 +562,6 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   margin-bottom:0.6rem;
   letter-spacing:0.02em;
 }
-.takeaway-source{margin-top:1rem}
-
 /* ===== GitHub Trending ===== */
 .trending-card{
   background:var(--surface);
@@ -686,8 +650,7 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   <div class="nav-inner">
     <a class="home" href="https://chdendi.github.io/AInformer/index.html">← 首页</a>
     <a href="#headlines">今日头条</a>
-    <a href="#takeaway">每日一学</a>
-    <a href="#tutorial">使用姿势</a>
+
     <a href="#industry">行业动态</a>
     <a href="#opinion">领袖观点</a>
     <a href="#chinese">中文 / 学术</a>
@@ -700,7 +663,6 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   <section class="lede">5月10日AI日报：有开发者尝试用“穴居人语言”压缩提示词以节省token，但实验表明过度缩写会导致模型输出质量严重下降，提醒提示工程仍有极限。另一方面，零编程用户借助Lovable等AI工具，仅需几十分钟便从零开发出一款社交日程App，展现了vibe coding的高效与潜力。</section>
 
   <section class="stats-bar">
-    <div class="stat"><div class="num">2</div><div class="label">使用姿势</div></div>
     <div class="stat"><div class="num">0</div><div class="label">行业新闻</div></div>
     <div class="stat"><div class="num">0</div><div class="label">领袖观点</div></div>
     <div class="stat"><div class="num">0</div><div class="label">中文 / 学术</div></div>
@@ -714,45 +676,19 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
         <h3>教Claude说“穴居人语言”省token，结果适得其反</h3>
         <p>实验者使用极度缩写的“穴居人”风格提示试图节省token，但Claude的回答质量显著下滑，甚至出现事实偏差。该测试警示开发者，粗暴压缩提示可能破坏模型理解，省token的策略需谨慎平衡质量。</p>
         <div class="meta">
-<span class="tag tag-tutorial">使用姿势</span><span>Business Insider</span><a class="link-btn" href="https://www.businessinsider.com/claude-caveman-speak-prompt-save-tokens-results-worse-2026-5" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+<span class="tag tag-tutorial">tutorial</span><span>Business Insider</span><a class="link-btn" href="https://www.businessinsider.com/claude-caveman-speak-prompt-save-tokens-results-worse-2026-5" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
       </article>
       <article class="headline-card">
         <h3>零基础用AI数十分钟构建社交日程App</h3>
         <p>一位非技术工作者借助Lovable等AI开发平台，在极短时间内完成了朋友聚会调度应用的原型。整个过程示范了vibe coding方法：从自然语言描述需求到生成可运行代码，大幅降低了软件开发门槛。</p>
         <div class="meta">
-<span class="tag tag-tutorial">使用姿势</span><span>Business Insider</span><a class="link-btn" href="https://www.businessinsider.com/nontechnical-worker-ai-code-lovable-scheduling-app-friends-meetup-2026-5" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+<span class="tag tag-tutorial">tutorial</span><span>Business Insider</span><a class="link-btn" href="https://www.businessinsider.com/nontechnical-worker-ai-code-lovable-scheduling-app-friends-meetup-2026-5" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
       </article>
     </div>
   </section>
 
 
-  <section class="takeaway" id="takeaway">
-    <h3>用AI工具快速搭建聚会调度App的实操步骤</h3>
-    <p>基于vibe coding理念，零基础用户可这样操作：</p><ul><li>打开Lovable（或类似AI开发平台），新建项目。</li><li>用自然语言描述需求，例如：“创建一个聚会调度应用，用户可以输入可参加的时间段，自动找出所有人都有空的时间。”</li><li>继续补充细节：“界面简洁，支持添加好友姓名和可选时段，生成‘最佳时间’按钮，显示结果。”</li><li>让AI生成初始代码，然后在预览中测试。如有调整，直接对话描述修改意图，如：“把背景改成浅蓝色，按钮用圆角。”</li><li>迭代完善后，一键部署为Web应用，分享链接给朋友使用。</li></ul><p>关键prompt模板：</p><pre class="code"><code class="lang-">创建一个简单的聚会时间协调器：
-- 顶部标题“找时间聚聚”
-- 可添加参与者姓名
-- 每位参与者可多选时间槽（如周一18:00，周二19:00）
-- 点击“计算最佳时间”后，高亮所有人都空闲的时间
-- 用React和Tailwind实现
-</code></pre>
-    <p class="takeaway-source"><a class="link-btn" href="https://www.businessinsider.com/nontechnical-worker-ai-code-lovable-scheduling-app-friends-meetup-2026-5" target="_blank" rel="noopener noreferrer">查看出处 ↗</a></p>
-  </section>
-
   <div class="section-divider"></div>
-
-  <section class="section" id="tutorial">
-    <div class="section-head"><h2>AI 使用姿势与教程</h2><span class="count">2 条</span></div>
-    <div class="cards">
-<article class="news-card">
-  <h3>教 Claude 说“穴居人语言”省 token？结果完全不可用</h3>
-<p class="summary">作者尝试用极度缩写的“穴居人”风格提示让 Claude 节省 token，但导致回答质量崩溃，提醒开发者压缩提示语有极限。</p><p class="value">极限压缩提示可能破坏 AI 可用性，警惕为省 token 而牺牲质量。</p>  <div class="meta">
-<span class="tag tag-star">⭐ 重要</span><span>Business Insider</span><span>· 2026-05-09</span><a class="link-btn" href="https://www.businessinsider.com/claude-caveman-speak-prompt-save-tokens-results-worse-2026-5" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article><article class="news-card">
-  <h3>零基础用 AI 几十分钟编出社交日程 App：亲述 vibe coding 体验</h3>
-<p class="summary">非技术作者借助 Lovable 等 AI 开发工具，在分钟级完成朋友聚会调度应用，展示了从想法到成品的完整 vibe coding 流程。</p><p class="value">零编程基础者可用 Lovable 快速落地应用想法，但专业软件工程仍不可替代。</p>  <div class="meta">
-<span class="tag tag-pin">📎 关注</span><span>Business Insider</span><span>· 2026-05-08</span><a class="link-btn" href="https://www.businessinsider.com/nontechnical-worker-ai-code-lovable-scheduling-app-friends-meetup-2026-5" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
-</article>    </div>
-  </section>
 
   <section class="section" id="industry">
     <div class="section-head"><h2>AI 行业新闻与产品动态</h2><span class="count">0 条</span></div>
@@ -775,7 +711,7 @@ pre.code code{background:transparent;padding:0;border:none;color:var(--text)}
   <div class="container">
 <p><a href="https://chdendi.github.io/AInformer/index.html">← 回到首页</a> · 历史日报：<a href="https://chdendi.github.io/AInformer/index.html#archive">归档</a></p>
     <p>本日报基于公开信息自动搜索整理生成，资讯来源包括 OpenAI / Anthropic / DeepMind 等官方博客、The Verge、TechCrunch、36kr、机器之心、量子位、ArXiv、Hacker News 等公开平台。内容可能存在时效性偏差或不完整，请以原始来源为准。</p>
-    <p>Generated at 2026-05-10 09:37 · Powered by DeepSeek + Tavily · <a href="https://chdendi.github.io/AInformer/index.html">AInformer</a></p>
+    <p>Generated at 2026-05-10 09:37 · Powered by DeepSeek + Tavily · <a href="https://chdendi.github.io/AInformer/index.html">AInformer</a> · <a href="https://chdendi.github.io/AInformer/api/v1/manifest.json">JSON API</a></p>
   </div>
 </footer>
 </body>
