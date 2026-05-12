@@ -12,7 +12,6 @@ from .engine import render
 WEEKDAY_ZH = ["一", "二", "三", "四", "五", "六", "日"]
 
 CATEGORY_LABELS = {
-    "tutorial": "使用姿势",
     "industry": "行业新闻",
     "opinion": "领袖观点",
     "chinese": "中文 / 学术",

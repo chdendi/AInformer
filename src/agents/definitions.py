@@ -30,33 +30,6 @@ def _queries_mixed_month(base: list[str], month_token: str, skip_month: set[int]
 def build_agent_specs(month_token: str) -> list[AgentSpec]:
     """month_token like '2026-05' for query freshness hints."""
 
-    tutorial = AgentSpec(
-        key="tutorial",
-        name="AI 使用姿势与教程",
-        focus="开发者使用 AI 工具的最新技巧、配置、工作流、教程、prompt 模板。",
-        queries=_queries_with_month(
-            [
-                "Claude Code tips workflow tutorial",
-                "Cursor AI best practices",
-                "GitHub Copilot new features",
-                "prompt engineering techniques",
-                "Codex CLI tutorial",
-                "v0 dev OR bolt.new OR Replit Agent tutorial",
-                "Devin OR Augment Code OR Cline review",
-                "AI coding assistant comparison",
-                "AI Agent framework LangChain CrewAI Dify",
-                "AI 编程 技巧 教程",
-                "Claude Code 使用 心得",
-            ],
-            month_token,
-        ),
-        rss_categories=["tutorial"],
-        extra_instructions=(
-            "聚焦实操价值：能落地的工作流、可复用的 prompt、工具使用 tip。"
-            "排除纯产品发布广告，保留有具体使用方法描述的内容。"
-        ),
-    )
-
     industry = AgentSpec(
         key="industry",
         name="AI 行业新闻与产品动态",
@@ -184,4 +157,4 @@ def build_agent_specs(month_token: str) -> list[AgentSpec]:
         ),
     )
 
-    return [tutorial, industry, opinion, chinese, academic]
+    return [industry, opinion, chinese, academic]

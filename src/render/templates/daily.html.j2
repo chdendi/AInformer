@@ -100,7 +100,6 @@
     <a href="#headlines">今日头条</a>
     {% if report.trending %}<a href="#trending">GitHub Trending</a>{% endif %}
 
-    <a href="#tutorial">使用姿势</a>
     <a href="#industry">行业动态</a>
     <a href="#opinion">领袖观点</a>
     <a href="#chinese">中文 / 学术</a>
@@ -116,7 +115,6 @@
 
   <section class="stats-bar">
     {% set sec = report.sections %}
-    <div class="stat"><div class="num">{{ sec.tutorial|length }}</div><div class="label">使用姿势</div></div>
     <div class="stat"><div class="num">{{ sec.industry|length }}</div><div class="label">行业新闻</div></div>
     <div class="stat"><div class="num">{{ sec.opinion|length }}</div><div class="label">领袖观点</div></div>
     <div class="stat"><div class="num">{{ sec.chinese|length }}</div><div class="label">中文 / 学术</div></div>
@@ -167,17 +165,6 @@
   {% endif %}
 
   <div class="section-divider"></div>
-
-  <section class="section" id="tutorial">
-    <div class="section-head"><h2>AI 使用姿势与教程</h2><span class="count">{{ sec.tutorial|length }} 条</span></div>
-    {% if sec.tutorial %}
-    <div class="cards">
-      {% for it in sec.tutorial %}
-      {% include "_news_card.html.j2" %}
-      {% endfor %}
-    </div>
-    {% else %}<div class="empty">今日该领域无重大动态</div>{% endif %}
-  </section>
 
   <section class="section" id="industry">
     <div class="section-head"><h2>AI 行业新闻与产品动态</h2><span class="count">{{ sec.industry|length }} 条</span></div>

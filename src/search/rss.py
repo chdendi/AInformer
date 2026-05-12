@@ -16,7 +16,7 @@ RSS_FEEDS: dict[str, dict[str, Any]] = {
     "openai": {"url": "https://openai.com/news/rss.xml", "category": "industry"},
     # Anthropic 已下线官方 RSS（2026-05 实测全部 404），暂依赖 Tavily 兜底
     "deepmind": {"url": "https://deepmind.google/blog/rss.xml", "category": "industry"},
-    "huggingface_blog": {"url": "https://huggingface.co/blog/feed.xml", "category": "tutorial"},
+    "huggingface_blog": {"url": "https://huggingface.co/blog/feed.xml", "category": "industry"},
     # ai.meta.com 已下线 RSS，改用 Meta 工程博客 AI Research 分类
     "meta_eng_ai": {"url": "https://engineering.fb.com/category/ai-research/feed/", "category": "industry"},
     "google_research": {"url": "https://research.google/blog/rss/", "category": "industry"},
@@ -33,12 +33,12 @@ RSS_FEEDS: dict[str, dict[str, Any]] = {
     # 社区 / 聚合
     "hn_ai": {
         "url": "https://hnrss.org/frontpage?points=150&q=AI+OR+LLM+OR+Claude+OR+OpenAI+OR+GPT+OR+Anthropic+OR+DeepSeek",
-        "category": "tutorial",
+        "category": "industry",
     },
-    # 教程 / 实践
-    "latent_space": {"url": "https://www.latent.space/feed", "category": "tutorial"},
-    "simon_willison": {"url": "https://simonwillison.net/atom/everything/", "category": "tutorial"},
-    "huyenchip": {"url": "https://huyenchip.com/feed.xml", "category": "tutorial"},
+    # 实践派评论 / 长文
+    "latent_space": {"url": "https://www.latent.space/feed", "category": "opinion"},
+    "simon_willison": {"url": "https://simonwillison.net/atom/everything/", "category": "opinion"},
+    "huyenchip": {"url": "https://huyenchip.com/feed.xml", "category": "opinion"},
     # 观点 / 评论
     "sam_altman": {"url": "https://blog.samaltman.com/posts.atom", "category": "opinion"},
     "import_ai": {"url": "https://importai.substack.com/feed", "category": "opinion"},
