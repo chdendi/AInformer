@@ -3,219 +3,238 @@
 {% block description %}{% if daily and daily[0].lede %}{{ daily[0].lede[:160] }}{% else %}由 DeepSeek + Tavily 自动生成的中文 AI 每日资讯日报。{% endif %}{% endblock %}
 
 {% block extra_css %}
-.intro{
-  padding:2.4rem 2.4rem;
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:8px;
-  margin:3rem 0 2rem;
-  line-height:1.85;
-}
-.intro h2{
-  font-size:1.5rem;
-  margin-bottom:1rem;
-  color:var(--text);
-  letter-spacing:0.04em;
-}
-.intro p{color:var(--text2);margin-bottom:0.7rem}
-.intro code{font-size:0.86rem}
-
-.archive-grid{display:grid;gap:1.1rem;margin-top:1rem}
+.archive-grid{display:grid;gap:32px}
 @media(min-width:768px){.archive-grid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1024px){.archive-grid{grid-template-columns:repeat(3,1fr)}}
 
 .archive-card{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:1.4rem 1.6rem;
-  transition:all 0.25s ease;
   display:block;
+  padding:24px 0 0;
+  border-top:1px solid var(--border);
+  background:transparent;
+  border-radius:0;
   color:inherit;
-  border-bottom:1px solid var(--border);
   position:relative;
+  transition:border-color .2s ease,padding .2s ease;
 }
-.archive-card::before{
-  content:"";
-  position:absolute;
-  left:0;top:0;bottom:0;
-  width:2px;
-  background:var(--ochre);
-  opacity:0;
-  border-radius:8px 0 0 8px;
-  transition:opacity 0.25s ease;
-}
+.archive-card::before{content:none}
 .archive-card:hover{
-  border-color:rgba(184,134,11,0.35);
-  transform:translateY(-2px);
-  box-shadow:0 4px 18px rgba(26,26,26,0.06);
+  border-top-color:var(--primary);
+  opacity:1;
 }
-.archive-card:hover::before{opacity:0.7}
+.archive-card:hover h3{color:var(--accent)}
 .archive-card .date{
-  font-family:'LXGW WenKai','KaiTi',serif;
-  font-size:0.88rem;
-  color:var(--text3);
-  margin-bottom:0.55rem;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--tertiary);
+  margin-bottom:10px;
   font-variant-numeric:tabular-nums;
-  letter-spacing:0.06em;
+  font-family:var(--font-mono);
 }
 .archive-card h3{
-  font-size:1.05rem;
-  line-height:1.55;
-  margin-bottom:0.7rem;
-  color:var(--text);
+  font-size:17px;
+  line-height:1.4;
+  font-weight:600;
+  letter-spacing:-0.005em;
+  color:var(--primary);
+  margin-bottom:14px;
+  transition:color .2s ease;
 }
 .archive-card .stats{
   display:flex;
-  gap:0.85rem;
-  font-size:0.78rem;
-  color:var(--text3);
-  font-family:'LXGW WenKai','KaiTi',serif;
-  letter-spacing:0.04em;
+  gap:14px;
+  font-size:11px;
+  color:var(--tertiary);
+  font-family:var(--font-mono);
+  letter-spacing:.04em;
 }
-
-/* daily-specific styles (used by injected content) */
-.quote-title{
-  font-family:'LXGW WenKai','KaiTi',serif;
-  color:var(--text2);
-  font-size:0.95rem;
-  margin-bottom:0.6rem;
-  letter-spacing:0.02em;
-}
-
-
-/* GitHub Trending cards */
-.trending-card{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:1.3rem 1.5rem;
-  position:relative;
-  transition:all 0.25s ease;
-  display:flex;
-  flex-direction:column;
-  gap:0.7rem;
-}
-.trending-card:hover{
-  border-color:rgba(184,134,11,0.4);
-  transform:translateY(-2px);
-  box-shadow:0 4px 16px rgba(26,26,26,0.05);
-}
-.trending-card .repo-line{
+.archive-head{
   display:flex;
   align-items:center;
-  gap:0.6rem;
-  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:40px;
 }
-.trending-card .repo-name{
-  font-family:'LXGW WenKai','KaiTi',serif;
-  font-size:1.15rem;
+.archive-head .view-all{
+  font-size:13px;
+  font-weight:500;
+  color:var(--primary);
+  border:none;
+}
+.archive-head .view-all:hover{color:var(--accent);opacity:1}
+
+.about{
+  max-width:780px;
+  margin:0 auto;
+  padding:48px 0;
+  border-top:1px solid var(--border-soft);
+}
+.about h2{
+  font-size:24px;
   font-weight:700;
-  color:var(--text);
-  border-bottom:none;
-  letter-spacing:0.02em;
+  letter-spacing:-0.015em;
+  color:var(--primary);
+  margin-bottom:16px;
 }
-.trending-card .repo-name:hover{color:var(--blue)}
+.about p{
+  font-size:15px;
+  line-height:1.7;
+  color:var(--secondary);
+  margin-bottom:12px;
+}
+.about p a{color:var(--primary);font-weight:600;border-bottom:1px solid var(--border)}
+.about p a:hover{border-color:var(--primary);opacity:1}
+
+/* GitHub Trending cards (used inside injected daily content) */
+.trending-card{
+  background:var(--bg);
+  border:1px solid var(--border-soft);
+  border-radius:6px;
+  padding:24px 26px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  transition:border-color .2s ease,box-shadow .25s ease,transform .2s ease;
+}
+.trending-card:hover{
+  border-color:var(--border);
+  box-shadow:0 12px 32px rgba(15,15,20,0.05);
+  transform:translateY(-2px);
+}
+.trending-card .repo-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.trending-card .repo-name{
+  font-family:var(--font-mono);
+  font-size:15px;
+  font-weight:600;
+  color:var(--primary);
+  border:none;
+  letter-spacing:0;
+}
+.trending-card .repo-name:hover{color:var(--accent);opacity:1}
 .trending-card .ai-topic{
-  font-family:'LXGW WenKai','KaiTi',serif;
-  font-size:0.78rem;
-  letter-spacing:0.06em;
-  padding:0.18rem 0.6rem;
-  background:rgba(74,124,89,0.08);
-  border:1px solid rgba(74,124,89,0.2);
-  color:var(--green);
-  border-radius:4px;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:3px 8px;
+  background:var(--positive-soft);
+  border:1px solid var(--positive);
+  color:var(--positive);
+  border-radius:3px;
   white-space:nowrap;
 }
 .trending-card .desc{
-  color:var(--text2);
-  font-size:0.92rem;
-  line-height:1.7;
+  color:var(--secondary);
+  font-size:14px;
+  line-height:1.65;
 }
 .trending-card .value{
-  color:var(--text);
-  font-size:0.92rem;
-  line-height:1.7;
-  padding:0.6rem 0.85rem;
-  background:rgba(184,134,11,0.05);
-  border-left:3px solid rgba(184,134,11,0.3);
-  border-radius:0 4px 4px 0;
+  color:var(--primary);
+  font-size:13px;
+  line-height:1.6;
+  padding:10px 12px;
+  background:var(--highlight-soft);
+  border-left:none;
+  border-radius:4px;
+  position:relative;
+}
+.trending-card .value::before{
+  content:"VALUE";
+  display:block;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.2em;
+  color:var(--highlight);
+  margin-bottom:4px;
 }
 .trending-card .meta{
   display:flex;
   align-items:center;
-  gap:0.9rem;
+  gap:14px;
   flex-wrap:wrap;
-  font-size:0.82rem;
-  color:var(--text3);
-  font-family:'LXGW WenKai','KaiTi',serif;
-  padding-top:0.5rem;
-  border-top:1px solid rgba(212,203,184,0.5);
+  font-size:12px;
+  color:var(--tertiary);
+  padding-top:10px;
+  border-top:1px solid var(--border-soft);
+  font-family:var(--font-mono);
 }
-.trending-card .meta .lang::before{content:"●";margin-right:0.3rem;color:var(--blue)}
-.trending-card .meta .stars-today{color:var(--ochre);font-weight:600}
+.trending-card .meta .lang::before{content:"●";margin-right:6px;color:var(--info)}
+.trending-card .meta .stars-today{color:var(--highlight);font-weight:700}
 
-/* Loading skeleton */
+/* Loading state */
 .daily-loading{
   text-align:center;
-  padding:4rem 2rem;
-  color:var(--text3);
-  font-family:'LXGW WenKai','KaiTi',serif;
-  font-size:1rem;
-  letter-spacing:0.06em;
+  padding:96px 24px;
+  color:var(--tertiary);
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:.08em;
+  text-transform:uppercase;
 }
 .daily-loading .spinner{
   display:inline-block;
-  width:24px;
-  height:24px;
-  border:2px solid var(--border);
-  border-top-color:var(--blue);
+  width:28px;
+  height:28px;
+  border:1.5px solid var(--border-soft);
+  border-top-color:var(--primary);
   border-radius:50%;
-  animation:spin 0.8s linear infinite;
-  margin-bottom:0.8rem;
+  animation:spin .8s linear infinite;
+  margin-bottom:16px;
 }
 @keyframes spin{to{transform:rotate(360deg)}}
 {% endblock %}
 
 {% block body %}
-<header class="hero">
-  <div class="date">{{ today }}</div>
-  <h1>AInformer</h1>
-  <p class="theme">每天早上自动汇总过去 24 小时最值得关注的 AI 资讯：工具教程、行业动态、领袖观点、中文生态。</p>
-  <div class="meta">
-    <span>已发布 {{ daily|length }} 期</span>
-    {% if monthly %}<span>月度总结 {{ monthly|length }} 篇</span>{% endif %}
-    {% if yearly %}<span>年度总结 {{ yearly|length }} 篇</span>{% endif %}
+<header class="sticky-nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a class="home" href="#">AInformer<span class="dot">.</span></a>
+      <nav class="nav-links">
+        <a href="#archive">Archive 归档</a>
+        {% if monthly %}<a href="#monthly">Monthly</a>{% endif %}
+        {% if yearly %}<a href="#yearly">Yearly</a>{% endif %}
+        <a href="#about">About</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <a class="cta" href="{{ api_manifest_url }}" target="_blank" rel="noopener">JSON API</a>
+    </div>
   </div>
 </header>
 
-<nav class="sticky-nav">
-  <div class="nav-inner">
-    <a class="home" href="#">AInformer</a>
-    <a href="#archive">日报归档</a>
-    {% if monthly %}<a href="#monthly">月度</a>{% endif %}
-    {% if yearly %}<a href="#yearly">年度</a>{% endif %}
-    <a href="#about">关于</a>
+<section class="hero">
+  <div class="date">{{ today }}</div>
+  <h1>AInformer</h1>
+  <p class="theme">每天早上自动汇总过去 24 小时最值得关注的 AI 资讯：行业动态、领袖观点、中文生态、学术与评测。</p>
+  <div class="meta">
+    <span>已发布 {{ daily|length }} 期</span>
+    {% if monthly %}<span>月度 {{ monthly|length }} 篇</span>{% endif %}
+    {% if yearly %}<span>年度 {{ yearly|length }} 篇</span>{% endif %}
   </div>
-</nav>
+</section>
 
 <main class="container">
   <div id="daily-content">
     <div class="daily-loading">
       <div class="spinner"></div>
-      <p>正在加载最新日报…</p>
+      <p>加载最新日报…</p>
     </div>
   </div>
 
   <section class="section" id="archive">
-    <div class="section-head"><h2>日报归档</h2><span class="count">{{ daily|length }} 期</span></div>
+    <div class="archive-head">
+      <h2 style="font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--secondary);">日报归档 · Archive</h2>
+      <span class="view-all" style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tertiary);font-family:var(--font-mono);">{{ daily|length }} ISSUES</span>
+    </div>
     {% if daily %}
     <div class="archive-grid">
       {% for d in daily[:30] %}
       <a class="archive-card" href="daily/{{ d.slug }}.html">
         <div class="date">{{ d.date }} · 周{{ d.weekday_zh }}</div>
         <h3>{{ d.theme or '当日 AI 简报' }}</h3>
-        <div class="stats"><span>共 {{ d.total }} 条</span><span>头条 {{ d.hot_count }}</span></div>
+        <div class="stats"><span>{{ d.total }} ITEMS</span><span>{{ d.hot_count }} HEADLINES</span></div>
       </a>
       {% endfor %}
     </div>
@@ -224,13 +243,16 @@
 
   {% if monthly %}
   <section class="section" id="monthly">
-    <div class="section-head"><h2>月度总结</h2><span class="count">{{ monthly|length }} 篇</span></div>
+    <div class="archive-head">
+      <h2 style="font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--secondary);">月度总结 · Monthly</h2>
+      <span class="view-all" style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tertiary);font-family:var(--font-mono);">{{ monthly|length }} REPORTS</span>
+    </div>
     <div class="archive-grid">
       {% for m in monthly %}
       <a class="archive-card" href="monthly/{{ m.slug }}.html">
         <div class="date">{{ m.label }}</div>
         <h3>{{ m.title or m.label + ' 月度回顾' }}</h3>
-        <div class="stats"><span>汇总 {{ m.total }} 条</span></div>
+        <div class="stats"><span>{{ m.total }} ITEMS</span></div>
       </a>
       {% endfor %}
     </div>
@@ -239,7 +261,10 @@
 
   {% if yearly %}
   <section class="section" id="yearly">
-    <div class="section-head"><h2>年度总结</h2><span class="count">{{ yearly|length }} 篇</span></div>
+    <div class="archive-head">
+      <h2 style="font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--secondary);">年度总结 · Yearly</h2>
+      <span class="view-all" style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tertiary);font-family:var(--font-mono);">{{ yearly|length }} REPORTS</span>
+    </div>
     <div class="archive-grid">
       {% for y in yearly %}
       <a class="archive-card" href="yearly/{{ y.slug }}.html">
@@ -251,14 +276,46 @@
   </section>
   {% endif %}
 
-  <section class="intro" id="about">
-    <h2>关于 AInformer</h2>
-    <p>所有资讯均来自公开渠道，优先保留可追溯的原文链接。源代码：<a href="https://github.com/" target="_blank" rel="noopener">GitHub 仓库</a>。</p>
+  <section class="about" id="about">
+    <h2>About AInformer</h2>
+    <p>AInformer 是一份每日自动生成的中文 AI 简报：每天早上聚合过去 24 小时来自 OpenAI / Anthropic / DeepMind 官方博客、The Verge、TechCrunch、机器之心、量子位、arXiv、Hacker News 等公开渠道的最重要 AI 动态。</p>
+    <p>所有资讯均来自公开渠道，优先保留可追溯的原文链接。源代码：<a href="https://github.com/" target="_blank" rel="noopener">GitHub 仓库</a>；JSON API：<a href="{{ api_manifest_url }}" target="_blank" rel="noopener">/api/v1/manifest.json</a>。</p>
   </section>
 </main>
 {% endblock %}
 
 {% block footer_extra %}
+<div class="footer-grid">
+  <div class="brand">
+    <span class="name">AInformer<span style="color:var(--accent)">.</span></span>
+    <p>每日 AI 简报：中文 AI 生态的精选信息流，聚合行业、观点、学术与中文动态。</p>
+  </div>
+  <div>
+    <h4>Sections</h4>
+    <ul>
+      <li><a href="#archive">日报归档</a></li>
+      {% if monthly %}<li><a href="#monthly">月度总结</a></li>{% endif %}
+      {% if yearly %}<li><a href="#yearly">年度总结</a></li>{% endif %}
+      <li><a href="#about">关于本站</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Sources</h4>
+    <ul>
+      <li>OpenAI / Anthropic / DeepMind</li>
+      <li>The Verge · TechCrunch</li>
+      <li>机器之心 · 量子位 · 36kr</li>
+      <li>arXiv · Hacker News</li>
+    </ul>
+  </div>
+  <div>
+    <h4>Data</h4>
+    <ul>
+      <li><a href="{{ api_manifest_url }}" target="_blank" rel="noopener">JSON API · Manifest</a></li>
+      <li><a href="https://github.com/" target="_blank" rel="noopener">Source on GitHub</a></li>
+    </ul>
+  </div>
+</div>
 <script>
 (function() {
   var slug = '{{ latest_slug }}';
