@@ -11,7 +11,7 @@ from ..config import (
     YEARLY_DATA_DIR,
     tz,
 )
-from .daily import WEEKDAY_ZH, home_url
+from .daily import WEEKDAY_ZH, api_manifest_url, home_url
 from .engine import render
 
 
@@ -88,6 +88,7 @@ def write_index() -> None:
         today=today,
         generated_at=generated_at,
         home_url=home_url(),
+        api_manifest_url=api_manifest_url(from_root=True),
         latest_slug=latest_slug,
     )
 

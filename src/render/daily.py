@@ -34,6 +34,12 @@ def home_url() -> str:
     return "../index.html"
 
 
+def api_manifest_url(from_root: bool = False) -> str:
+    if SITE_BASE_URL:
+        return SITE_BASE_URL + "/api/v1/manifest.json"
+    return ("" if from_root else "../") + "api/v1/manifest.json"
+
+
 def render_daily(data: dict[str, Any]) -> str:
     date_str = data["date"]
     dt = datetime.fromisoformat(date_str)
@@ -71,6 +77,7 @@ def render_daily(data: dict[str, Any]) -> str:
         report=report,
         generated_at=gen_short or generated_at,
         home_url=home_url(),
+        api_manifest_url=api_manifest_url(),
         category_label=category_label,
         importance_label=importance_label,
     )

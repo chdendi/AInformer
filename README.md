@@ -12,9 +12,7 @@
 | `/api/v1/daily/index.json` | 所有日报日期列表 |
 | `/api/v1/daily/latest.json` | 最新日报摘要（含 data_url 指向完整数据） |
 | `/api/v1/monthly/index.json` | 所有月报列表 |
-| `/api/v1/monthly/latest.json` | 最新月报摘要 |
 | `/api/v1/yearly/index.json` | 所有年报列表 |
-| `/api/v1/yearly/latest.json` | 最新年报摘要 |
 | `/data/daily/YYYYMMDD.json` | 指定日报完整 JSON |
 
 所有 JSON 响应均附带 `Access-Control-Allow-Origin: *` 头。

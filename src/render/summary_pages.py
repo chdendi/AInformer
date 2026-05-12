@@ -12,7 +12,7 @@ from ..config import (
     YEARLY_HTML_DIR,
     tz,
 )
-from .daily import home_url
+from .daily import api_manifest_url, home_url
 from .engine import render
 
 
@@ -22,6 +22,7 @@ def render_monthly(summary: dict[str, Any]) -> str:
         "monthly.html.j2",
         summary=summary,
         home_url=home_url(),
+        api_manifest_url=api_manifest_url(),
         generated_at=generated_at,
     )
 
@@ -32,6 +33,7 @@ def render_yearly(summary: dict[str, Any]) -> str:
         "yearly.html.j2",
         summary=summary,
         home_url=home_url(),
+        api_manifest_url=api_manifest_url(),
         generated_at=generated_at,
     )
 
