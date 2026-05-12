@@ -21,7 +21,6 @@ SYNTH_SYSTEM = (
 def _format_sections_for_prompt(sections: dict[str, list[dict[str, Any]]]) -> str:
     blocks = []
     section_zh = {
-        "tutorial": "AI 使用姿势与教程",
         "industry": "AI 行业新闻与产品动态",
         "opinion": "AI 领袖发言与深度观点",
         "chinese": "中文 AI 生态与学术动态",
@@ -62,7 +61,7 @@ async def synthesize_overview(
       "summary": "2-3 句详细摘要",
       "url": "对应原文 URL（必须来自素材）",
       "source_name": "来源",
-       "category": "tutorial|industry|opinion|chinese|academic"
+       "category": "industry|opinion|chinese|academic"
     }}
   ]
 }}
