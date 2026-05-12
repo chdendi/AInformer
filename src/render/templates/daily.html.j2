@@ -3,87 +3,104 @@
 {% block description %}{{ report.today_theme or 'AI 每日资讯' }} · 共 {{ report.total }} 条精选{% endblock %}
 
 {% block extra_css %}
-.quote-title{
-  font-family:'LXGW WenKai','KaiTi',serif;
-  color:var(--text2);
-  font-size:0.95rem;
-  margin-bottom:0.6rem;
-  letter-spacing:0.02em;
-}
-/* ===== GitHub Trending ===== */
+/* GitHub Trending cards */
 .trending-card{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:1.3rem 1.5rem;
-  position:relative;
-  transition:all 0.25s ease;
+  background:var(--bg);
+  border:1px solid var(--border-soft);
+  border-radius:6px;
+  padding:24px 26px;
   display:flex;
   flex-direction:column;
-  gap:0.7rem;
+  gap:12px;
+  transition:border-color .2s ease,box-shadow .25s ease,transform .2s ease;
 }
 .trending-card:hover{
-  border-color:rgba(184,134,11,0.4);
+  border-color:var(--border);
+  box-shadow:0 12px 32px rgba(15,15,20,0.05);
   transform:translateY(-2px);
-  box-shadow:0 4px 16px rgba(26,26,26,0.05);
 }
-.trending-card .repo-line{
-  display:flex;
-  align-items:center;
-  gap:0.6rem;
-  flex-wrap:wrap;
-}
+.trending-card .repo-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .trending-card .repo-name{
-  font-family:'LXGW WenKai','KaiTi',serif;
-  font-size:1.15rem;
-  font-weight:700;
-  color:var(--text);
-  border-bottom:none;
-  letter-spacing:0.02em;
+  font-family:var(--font-mono);
+  font-size:15px;
+  font-weight:600;
+  color:var(--primary);
+  border:none;
+  letter-spacing:0;
 }
-.trending-card .repo-name:hover{color:var(--blue)}
+.trending-card .repo-name:hover{color:var(--accent);opacity:1}
 .trending-card .ai-topic{
-  font-family:'LXGW WenKai','KaiTi',serif;
-  font-size:0.78rem;
-  letter-spacing:0.06em;
-  padding:0.18rem 0.6rem;
-  background:rgba(74,124,89,0.08);
-  border:1px solid rgba(74,124,89,0.2);
-  color:var(--green);
-  border-radius:4px;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:3px 8px;
+  background:var(--positive-soft);
+  border:1px solid var(--positive);
+  color:var(--positive);
+  border-radius:3px;
   white-space:nowrap;
 }
 .trending-card .desc{
-  color:var(--text2);
-  font-size:0.92rem;
-  line-height:1.7;
+  color:var(--secondary);
+  font-size:14px;
+  line-height:1.65;
 }
 .trending-card .value{
-  color:var(--text);
-  font-size:0.92rem;
-  line-height:1.7;
-  padding:0.6rem 0.85rem;
-  background:rgba(184,134,11,0.05);
-  border-left:3px solid rgba(184,134,11,0.3);
-  border-radius:0 4px 4px 0;
+  color:var(--primary);
+  font-size:13px;
+  line-height:1.6;
+  padding:10px 12px;
+  background:var(--highlight-soft);
+  border-left:none;
+  border-radius:4px;
+  position:relative;
+}
+.trending-card .value::before{
+  content:"VALUE";
+  display:block;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.2em;
+  color:var(--highlight);
+  margin-bottom:4px;
 }
 .trending-card .meta{
   display:flex;
   align-items:center;
-  gap:0.9rem;
+  gap:14px;
   flex-wrap:wrap;
-  font-size:0.82rem;
-  color:var(--text3);
-  font-family:'LXGW WenKai','KaiTi',serif;
-  padding-top:0.5rem;
-  border-top:1px solid rgba(212,203,184,0.5);
+  font-size:12px;
+  color:var(--tertiary);
+  padding-top:10px;
+  border-top:1px solid var(--border-soft);
+  font-family:var(--font-mono);
 }
-.trending-card .meta .lang::before{content:"●";margin-right:0.3rem;color:var(--blue)}
-.trending-card .meta .stars-today{color:var(--ochre);font-weight:600}
+.trending-card .meta .lang::before{content:"●";margin-right:6px;color:var(--info)}
+.trending-card .meta .stars-today{color:var(--highlight);font-weight:700}
 {% endblock %}
 
 {% block body %}
-<header class="hero">
+<header class="sticky-nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a class="home" href="{{ home_url }}">AInformer<span class="dot">.</span></a>
+      <nav class="nav-links">
+        <a href="#headlines">头条</a>
+        {% if report.trending %}<a href="#trending">GitHub</a>{% endif %}
+        <a href="#industry">行业</a>
+        <a href="#opinion">观点</a>
+        <a href="#chinese">中文</a>
+        <a href="#academic">学术</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <a class="cta" href="{{ home_url }}">← 回到首页</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
   <div class="date">{{ report.date }} · 周{{ report.weekday_zh }}</div>
   <h1>每日 AI 简报</h1>
   <p class="theme">{{ report.today_theme }}</p>
@@ -92,20 +109,7 @@
     <span>头条 {{ report.hot_count }} 则</span>
     <span>生成于 {{ report.generated_at_short }}</span>
   </div>
-</header>
-
-<nav class="sticky-nav">
-  <div class="nav-inner">
-    <a class="home" href="{{ home_url }}">← 首页</a>
-    <a href="#headlines">今日头条</a>
-    {% if report.trending %}<a href="#trending">GitHub Trending</a>{% endif %}
-
-    <a href="#industry">行业动态</a>
-    <a href="#opinion">领袖观点</a>
-    <a href="#chinese">中文 / 学术</a>
-    <a href="#academic">学术与评测</a>
-  </div>
-</nav>
+</section>
 
 <main class="container">
 
@@ -225,5 +229,33 @@
 {% endblock %}
 
 {% block footer_extra %}
-<p><a href="{{ home_url }}">← 回到首页</a> · 历史日报：<a href="{{ home_url }}#archive">归档</a></p>
+<div class="footer-grid">
+  <div class="brand">
+    <span class="name">AInformer<span style="color:var(--accent)">.</span></span>
+    <p>每日 AI 简报：中文 AI 生态的精选信息流，聚合行业、观点、学术与中文动态。</p>
+  </div>
+  <div>
+    <h4>Navigate</h4>
+    <ul>
+      <li><a href="{{ home_url }}">← 回到首页</a></li>
+      <li><a href="{{ home_url }}#archive">历史日报归档</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Sources</h4>
+    <ul>
+      <li>OpenAI / Anthropic / DeepMind</li>
+      <li>The Verge · TechCrunch</li>
+      <li>机器之心 · 量子位 · 36kr</li>
+      <li>arXiv · Hacker News</li>
+    </ul>
+  </div>
+  <div>
+    <h4>Data</h4>
+    <ul>
+      <li><a href="{{ api_manifest_url }}" target="_blank" rel="noopener">JSON API · Manifest</a></li>
+      <li><a href="https://github.com/" target="_blank" rel="noopener">Source on GitHub</a></li>
+    </ul>
+  </div>
+</div>
 {% endblock %}
