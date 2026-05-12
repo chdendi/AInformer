@@ -64,8 +64,7 @@ async def synthesize_overview(
       "source_name": "来源",
        "category": "tutorial|industry|opinion|chinese|academic"
     }}
-  ],
-}
+  ]
 }}
 
 要求：
