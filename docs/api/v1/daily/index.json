@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-05-12T16:14:28.616689+08:00",
-  "total_days": 5,
+  "updated_at": "2026-05-13T09:39:38.052147+08:00",
+  "total_days": 6,
   "latest": {
-    "date": "2026-05-12",
-    "theme": "AI落地提速，安全治理与能力突破双线交织",
-    "generated_at": "2026-05-12T10:17:39.946763+08:00",
-    "total_items": 14,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260512.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260512.html"
+    "date": "2026-05-13",
+    "theme": "可灵AI百亿估值独立，Agent能力与学术理论双突破",
+    "generated_at": "2026-05-13T09:39:38.009765+08:00",
+    "total_items": 8,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260513.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260513.html"
   },
   "dates": [
+    {
+      "date": "2026-05-13",
+      "theme": "可灵AI百亿估值独立，Agent能力与学术理论双突破",
+      "generated_at": "2026-05-13T09:39:38.009765+08:00",
+      "total_items": 8,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260513.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260513.html"
+    },
     {
       "date": "2026-05-12",
       "theme": "AI落地提速，安全治理与能力突破双线交织",
