@@ -3,6 +3,7 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
+from datetime import date, timedelta
 from typing import Any
 
 from openai import AsyncOpenAI
@@ -55,7 +56,7 @@ def _build_user_prompt(
     today: str,
     relaxed: bool = False,
 ) -> str:
-    excluded_block = "\n".join(f"- {t}" for t in excluded[:20]) if excluded else "（无）"
+    excluded_block = "\n".join(f"- {t}" for t in excluded[:40]) if excluded else "（无）"
     material_lines = []
     for i, m in enumerate(materials[:25], 1):
         pub = (m.get("published_at") or "")[:10]
@@ -67,30 +68,38 @@ def _build_user_prompt(
 
     json_fmt = _JSON_FMT_OPINION if spec.key == "opinion" else _JSON_FMT_BASE
 
+    try:
+        window_start = (date.fromisoformat(today) - timedelta(days=1)).isoformat()
+    except ValueError:
+        window_start = today
+
     if relaxed:
         requirements = (
             "- 宽松模式：目标输出 2-3 条，降低质量门槛，但仍需有实质内容（非纯营销稿）。\n"
+            f"- 候选素材的 published_at 在 {window_start} ~ {today} 窗口内即可入选，不必强求当日。\n"
             "- importance：star 或 pin 即可。\n"
             "- url 必须来自候选素材，禁止编造。\n"
+            "- 务必跳过与\"近期已报道标题\"相似的内容（同一事件不同媒体均算重复）。\n"
             '- 如果候选素材中确实没有符合该栏目的内容，返回 {"items": []}'
         )
     else:
         requirements = (
             "- 输出 4-5 条最高质量资讯，宁缺毋滥。\n"
+            f"- 候选素材的 published_at 在 {window_start} ~ {today} 窗口内即可入选，不必强求当日发布。\n"
             "- importance：最多 1 hot，1-2 star，其余 pin。\n"
             "- url 必须来自候选素材，禁止编造。\n"
-            "- 跳过与\"近期已报道标题\"相似的内容。"
+            "- 务必跳过与\"近期已报道标题\"相似的内容（标题相似或同一事件不同媒体均算重复）。"
         )
 
     mode_note = "（宽松兜底模式）" if relaxed else ""
 
     return f"""
-今日日期：{today}
+报道窗口：{window_start} 至 {today}（含昨日发布的内容；超出窗口的素材请跳过）
 栏目：{spec.name}{mode_note}
 焦点：{spec.focus}
 要求：{spec.extra_instructions}
 
-## 近期已报道过的标题（跳过）：
+## 近期已报道过的标题（务必跳过，避免与昨日日报重复）：
 {excluded_block}
 
 ## 候选素材（{len(materials)} 条，已初筛）：
