@@ -1,0 +1,132 @@
+{
+  "date": "2026-05-14",
+  "generated_at": "2026-05-14T09:42:25.986128+08:00",
+  "today_theme": "生成范式革新与AI能力边界的新探索",
+  "lede": "今日AI领域迎来多重创新：字节跳动挑战传统扩散与自回归模型，提出可迭代修改的视觉生成新范式；百度秒哒3.0将应用开发门槛降至8岁儿童可及，李彦宏更首提“DAA”度量衡，定义智能进化标尺。学术方面，自由能视角首次从原理上区分了LLM后训练中的能力激发与创造，因果电路研究则为视觉语言模型的可靠性提供了深层解释。技术与工具的民主化与理论深耕并行，勾勒出AI加速渗透的新图景。",
+  "headlines": [
+    {
+      "title": "字节跳动提出视觉生成新路线：像人类一样边画边改",
+      "summary": "字节团队推出第三种生成范式，模型可迭代修改生成结果，挑战扩散与自回归模型，有望开启更灵活的视觉生成应用。",
+      "url": "https://www.qbitai.com/2026/05/416978.html",
+      "source_name": "量子位",
+      "category": "chinese"
+    },
+    {
+      "title": "百度秒哒3.0发布：8岁小学生也能制作APP",
+      "summary": "百度秒哒3.0大幅降低AI应用开发门槛，支持在手机上直接开发，李彦宏同时提出“DAA”概念作为AI自我进化的衡量标准。",
+      "url": "https://www.qbitai.com/2026/05/417366.html",
+      "source_name": "量子位",
+      "category": "chinese"
+    },
+    {
+      "title": "李彦宏首提AI时代度量衡“DAA”，定义智能进化标尺",
+      "summary": "在Create2026百度AI开发者大会上，李彦宏提出“DAA”概念，为AI自我进化能力提供量化标准，引发行业关注。",
+      "url": "https://www.qbitai.com/2026/05/416762.html",
+      "source_name": "量子位",
+      "category": "chinese"
+    },
+    {
+      "title": "自由能视角首次区分LLM后训练的能力激发与创造",
+      "summary": "从自由能原理出发，分析监督微调与强化学习在后训练中的不同作用，清晰解释为何RL能产生新能力，为训练方法选择提供理论依据。",
+      "url": "https://arxiv.org/abs/2605.08368",
+      "source_name": "arXiv",
+      "category": "academic"
+    },
+    {
+      "title": "因果电路揭示视觉语言模型可靠性根源",
+      "summary": "通过机制分析定位视觉语言模型中最具可靠性的内部组件，为构建可信多模态AI提供新见解，有助于解决幻觉和安全问题。",
+      "url": "https://arxiv.org/abs/2605.08200",
+      "source_name": "arXiv",
+      "category": "academic"
+    }
+  ],
+  "sections": {
+    "industry": [],
+    "opinion": [],
+    "chinese": [
+      {
+        "title": "字节跳动提出视觉生成新路线：像人类一样边画边改",
+        "summary": "字节团队挑战扩散与自回归模型，提出第三种生成范式，模型可迭代修改生成结果。",
+        "value_note": "相同参数量下性能超越扩散与自回归模型。",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/416978.html",
+        "published_at": "2026-05-13",
+        "importance": "hot",
+        "category": "chinese"
+      },
+      {
+        "title": "百度秒哒3.0发布：8岁小学生也能制作APP",
+        "summary": "百度推出秒哒3.0，大幅降低AI应用开发门槛，支持在手机上直接开发应用。",
+        "value_note": "进一步模糊了AI应用开发的专业边界。",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/417366.html",
+        "published_at": "2026-05-13",
+        "importance": "star",
+        "category": "chinese"
+      },
+      {
+        "title": "高德与千问开源AGenUI：跨iOS、安卓、鸿蒙原生A2UI框架",
+        "summary": "首个覆盖三大手机平台的原生A2UI框架，开发者无需为不同系统分别编写UI代码。",
+        "value_note": "实现一套代码构建多端原生AI应用界面。",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/416864.html",
+        "published_at": "2026-05-13",
+        "importance": "pin",
+        "category": "chinese"
+      },
+      {
+        "title": "李彦宏首提AI时代度量衡“DAA”，定义智能进化标尺",
+        "summary": "在Create2026百度AI开发者大会上，李彦宏提出“DAA”概念，作为AI自我进化的衡量标准。",
+        "value_note": "为AI能力评估提供新维度。",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/416762.html",
+        "published_at": "2026-05-13",
+        "importance": "star",
+        "category": "chinese"
+      }
+    ],
+    "academic": [
+      {
+        "title": "自由能视角区分LLM后训练能力激发与创造",
+        "summary": "从自由能原理出发，分析监督微调与强化学习在后训练中的不同作用，清晰区分能力激发与能力创造，解释为何RL能产生新能力。",
+        "value_note": "提出统一理论框架，指导更高效的模型后训练",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.08368",
+        "published_at": "2026-05-13T00:00:00Z",
+        "importance": "hot",
+        "category": "academic"
+      },
+      {
+        "title": "因果电路揭示视觉语言模型可靠性根源",
+        "summary": "通过机制分析研究注意力、隐藏状态和因果电路，定位视觉语言模型中最具可靠性的内部组件，为可信多模态AI提供新见解。",
+        "value_note": "找到VLM可靠性关键机制，为提升模型可信度提供理论支撑",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.08200",
+        "published_at": "2026-05-13T00:00:00Z",
+        "importance": "star",
+        "category": "academic"
+      },
+      {
+        "title": "协同进化DAG让小模型高效组合工具技能",
+        "summary": "提出CoCoDA框架，通过进化组合有向无环图动态整合外部工具，使小型语言模型在复杂任务中实现与大模型相当的性能。",
+        "value_note": "小模型通过动态工具组合，性能接近大模型且成本大幅降低",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.08399",
+        "published_at": "2026-05-13T00:00:00Z",
+        "importance": "star",
+        "category": "academic"
+      },
+      {
+        "title": "锚定双策略自对弈攻破模型安全自一致性",
+        "summary": "提出新型自对弈红队方法，利用锚定策略打破安全对齐中的自一致性，暴露现有防御的脆弱点，推动更鲁棒的安全研究。",
+        "value_note": "发现安全对齐漏洞，催生下一代对抗性训练方法",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.08427",
+        "published_at": "2026-05-13T00:00:00Z",
+        "importance": "pin",
+        "category": "academic"
+      }
+    ]
+  },
+  "trending": []
+}
