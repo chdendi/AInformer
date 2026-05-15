@@ -54,8 +54,14 @@ async def filter_trending_with_llm(
     the daily report will then omit the trending section.
     """
     if not repos:
+        log.warning("[trending] empty repo list — nothing to filter")
         return []
 
+    log.info(
+        "[trending] LLM filter input: %d repos, sample=%s",
+        len(repos),
+        [r.get("full_name") for r in repos[:5]],
+    )
     by_full_name = {r["full_name"]: r for r in repos}
 
     user = f"""
@@ -103,15 +109,21 @@ async def filter_trending_with_llm(
             max_tokens=700,
         )
     except Exception as exc:  # noqa: BLE001
-        log.warning("Trending LLM filter failed: %s", exc)
-        return []
+        log.warning("[trending] LLM filter failed (%s) — falling back to top stars_today", exc)
+        return _fallback_top_stars(repos, keep)
 
     picked = resp.get("items") or []
+    log.info("[trending] LLM returned %d picks: %s", len(picked), [
+        (it.get("full_name") if isinstance(it, dict) else str(it)) for it in picked
+    ])
+
     enriched: list[dict[str, Any]] = []
+    dropped_unknown: list[str] = []
     for it in picked:
         full_name = (it.get("full_name") or "").strip()
         base = by_full_name.get(full_name)
         if not base:
+            dropped_unknown.append(full_name)
             continue
         enriched.append(
             {
@@ -120,6 +132,38 @@ async def filter_trending_with_llm(
                 "value_note": (it.get("value_note") or "").strip(),
             }
         )
+    if dropped_unknown:
+        log.warning(
+            "[trending] dropped %d picks with unknown full_name: %s",
+            len(dropped_unknown),
+            dropped_unknown,
+        )
 
-    log.info("Trending LLM filter: kept %d / %d", len(enriched), len(repos))
+    if not enriched:
+        log.warning("[trending] LLM returned 0 valid picks — falling back to top stars_today")
+        return _fallback_top_stars(repos, keep)
+
+    log.info("[trending] LLM filter kept %d / %d", len(enriched), len(repos))
     return enriched[:keep]
+
+
+def _fallback_top_stars(repos: list[dict[str, Any]], keep: int) -> list[dict[str, Any]]:
+    """Sort repos by stars_today desc and return top `keep` with empty notes.
+
+    Used when the LLM call errors out or judges every repo non-AI. The intent
+    is "never silently empty trending" — empty value_note / ai_topic are
+    conditionally rendered, so cards still display cleanly with just the repo
+    line and stars.
+    """
+    ranked = sorted(repos, key=lambda r: r.get("stars_today") or 0, reverse=True)
+    fallback = [
+        {**r, "ai_topic": "", "value_note": ""}
+        for r in ranked[:keep]
+    ]
+    log.info(
+        "[trending] fallback kept %d / %d by stars_today: %s",
+        len(fallback),
+        len(repos),
+        [(r["full_name"], r.get("stars_today")) for r in fallback],
+    )
+    return fallback
