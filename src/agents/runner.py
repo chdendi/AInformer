@@ -143,52 +143,77 @@ async def run_agent(
             materials.append(m)
 
     if not materials:
-        log.warning("[agent:%s] no materials, returning empty", spec.key)
+        log.warning("[agent:%s] no materials (search=%d rss=%d), returning empty",
+                    spec.key, len(search_items), len(rss_items))
         return {"key": spec.key, "name": spec.name, "items": []}
+
+    log.info("[agent:%s] materials=%d (search=%d, rss=%d), excluded_titles=%d",
+             spec.key, len(materials), len(search_items), len(rss_items), len(excluded_titles))
+
+    valid_urls = {m["url"] for m in materials}
 
     user_prompt = _build_user_prompt(spec, materials, excluded_titles, today)
     try:
         result = await chat_json(client, cfg, AGENT_SYSTEM, user_prompt, temperature=0.3, max_tokens=3000)
     except Exception as e:
-        log.error("[agent:%s] LLM failed: %s", spec.key, e)
-        return {"key": spec.key, "name": spec.name, "items": []}
+        log.error("[agent:%s] LLM strict-mode failed: %s", spec.key, e)
+        result = {}
 
-    items = result.get("items", []) if isinstance(result, dict) else []
-
-    valid_urls = {m["url"] for m in materials}
-    filtered = []
-    for it in items:
-        if not isinstance(it, dict):
-            continue
-        if it.get("url") and it["url"] not in valid_urls:
-            log.debug("[agent:%s] dropping fabricated url: %s", spec.key, it["url"])
-            continue
-        it.setdefault("category", spec.key)
-        it["category"] = spec.key
-        filtered.append(it)
+    filtered, drops = _validate_items(result, valid_urls, spec.key, mode="strict")
 
     # Fallback: if LLM returned 0 items but materials existed, retry with relaxed constraints
     if not filtered and materials:
-        log.warning("[agent:%s] LLM returned 0 items, retrying with relaxed constraints", spec.key)
+        log.warning(
+            "[agent:%s] strict mode produced 0 items (raw=%d, fabricated_url_drops=%d) — retrying relaxed",
+            spec.key,
+            drops["raw"],
+            drops["fabricated"],
+        )
         relaxed_prompt = _build_user_prompt(spec, materials, excluded_titles, today, relaxed=True)
         try:
             result2 = await chat_json(client, cfg, AGENT_SYSTEM, relaxed_prompt, temperature=0.5, max_tokens=2000)
-            items2 = result2.get("items", []) if isinstance(result2, dict) else []
-            for it in items2:
-                if not isinstance(it, dict):
-                    continue
-                if it.get("url") and it["url"] not in valid_urls:
-                    log.debug("[agent:%s] fallback dropping fabricated url: %s", spec.key, it["url"])
-                    continue
-                it.setdefault("category", spec.key)
-                it["category"] = spec.key
-                filtered.append(it)
-            log.info("[agent:%s] fallback returned %d items", spec.key, len(filtered))
         except Exception as e:
-            log.error("[agent:%s] fallback LLM failed: %s", spec.key, e)
+            log.error("[agent:%s] relaxed-mode LLM failed: %s", spec.key, e)
+            result2 = {}
+        filtered, drops2 = _validate_items(result2, valid_urls, spec.key, mode="relaxed")
+        log.info(
+            "[agent:%s] relaxed mode raw=%d kept=%d fabricated_url_drops=%d",
+            spec.key,
+            drops2["raw"],
+            len(filtered),
+            drops2["fabricated"],
+        )
 
     log.info("[agent:%s] returned %d items", spec.key, len(filtered))
     return {"key": spec.key, "name": spec.name, "items": filtered}
+
+
+def _validate_items(
+    result: dict[str, Any] | Any,
+    valid_urls: set[str],
+    spec_key: str,
+    *,
+    mode: str,
+) -> tuple[list[dict[str, Any]], dict[str, int]]:
+    """Filter LLM-returned items to those whose URL is in `valid_urls`.
+
+    Returns (kept_items, {"raw": int, "fabricated": int}) so callers can log
+    the gap between raw LLM output and items that survived URL validation —
+    historically this gap was invisible and made silent failures hard to spot.
+    """
+    raw_items = result.get("items", []) if isinstance(result, dict) else []
+    kept: list[dict[str, Any]] = []
+    fabricated = 0
+    for it in raw_items:
+        if not isinstance(it, dict):
+            continue
+        if it.get("url") and it["url"] not in valid_urls:
+            log.debug("[agent:%s][%s] dropping fabricated url: %s", spec_key, mode, it["url"])
+            fabricated += 1
+            continue
+        it["category"] = spec_key
+        kept.append(it)
+    return kept, {"raw": len(raw_items), "fabricated": fabricated}
 
 
 async def run_all_agents(

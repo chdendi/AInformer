@@ -107,15 +107,29 @@ async def fetch_trending(limit: int = DEFAULT_LIMIT) -> list[dict[str, Any]]:
             resp = await client.get(TRENDING_URL, params={"since": "daily"})
             resp.raise_for_status()
             html = resp.text
+        log.info(
+            "[trending] HTTP %s, html=%d bytes from %s",
+            resp.status_code,
+            len(html),
+            TRENDING_URL,
+        )
     except (httpx.HTTPError, asyncio.TimeoutError) as exc:
-        log.warning("GitHub trending fetch failed: %s", exc)
+        log.warning("[trending] fetch failed: %s", exc)
         return []
 
     try:
         items = _parse_html(html, limit)
     except Exception as exc:  # noqa: BLE001 — parsing is best-effort
-        log.warning("GitHub trending parse failed: %s", exc)
+        log.warning("[trending] parse failed: %s (html %d bytes)", exc, len(html))
         return []
 
-    log.info("GitHub trending fetched: %d repos", len(items))
+    if not items:
+        log.warning(
+            "[trending] parse returned 0 rows — possible layout change "
+            "(html %d bytes, first 200 chars: %r)",
+            len(html),
+            html[:200],
+        )
+    else:
+        log.info("[trending] parsed %d repos", len(items))
     return items

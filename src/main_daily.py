@@ -165,18 +165,32 @@ async def main_async(target_date: date, dedupe_days: int, dry: bool) -> None:
 
         sections: dict[str, list] = {}
         for r in agent_results:
+            agent_n = len(r["items"])
             items = filter_new(r["items"], excluded_urls, excluded_titles)
+            after_hist = len(items)
             items = dedupe_within(items)
+            after_within = len(items)
+            log.info(
+                "[section:%s] agent=%d → after-historical-dedup=%d (-%d) → after-within-dedup=%d (-%d)",
+                r["key"], agent_n, after_hist, agent_n - after_hist,
+                after_within, after_hist - after_within,
+            )
             sections[r["key"]] = items
 
         sections = dedupe_across_sections(sections)
         sections = cap_sections(sections, cap=SECTION_CARD_CAP)
 
+        for key, items in sections.items():
+            if not items:
+                log.warning("[section:%s] FINAL empty — investigate agent/search/dedup logs above", key)
+
         if trending_raw:
             log.info("Filtering %d trending repos via LLM...", len(trending_raw))
             trending = await filter_trending_with_llm(client, cfg, trending_raw, keep=TRENDING_KEEP)
+            if not trending:
+                log.warning("Trending LLM filter returned 0 even though fetch had %d repos", len(trending_raw))
         else:
-            log.info("Trending fetch returned empty — skipping trending section")
+            log.warning("Trending fetch returned empty — skipping trending section (check github_trending logs above)")
 
         log.info("Synthesizing overview...")
         synth = await synthesize_overview(client, cfg, today_str, sections)
