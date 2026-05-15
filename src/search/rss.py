@@ -53,7 +53,11 @@ RSS_FEEDS: dict[str, dict[str, Any]] = {
     "karpathy_blog": {"url": "https://karpathy.github.io/feed.xml", "category": "opinion"},
     "darioamodei_blog": {"url": "https://darioamodei.com/feed.xml", "category": "opinion"},
     "oneusefulthing": {"url": "https://www.oneusefulthing.org/feed", "category": "opinion"},
-    # Dwarkesh 暂无可用公开 RSS（dwarkeshpatel.com 跳转后 SSL 失败、官方 Substack ID 未公开），暂依赖 Tavily 兜底
+    # 高产观点写手 — Tavily 不可用时主要靠这几位撑住 opinion 栏目
+    "gary_marcus": {"url": "https://garymarcus.substack.com/feed", "category": "opinion"},
+    "raschka": {"url": "https://magazine.sebastianraschka.com/feed", "category": "opinion"},
+    "lilian_weng": {"url": "https://lilianweng.github.io/index.xml", "category": "opinion"},
+    # Dwarkesh 暂无可用公开 RSS（dwarkesh.com /feed 超时、Substack ID 未公开），暂依赖 Tavily 兜底
     # 学术
     "arxiv_ai": {"url": "https://export.arxiv.org/rss/cs.AI", "category": "academic"},
     "arxiv_cl": {"url": "https://export.arxiv.org/rss/cs.CL", "category": "academic"},

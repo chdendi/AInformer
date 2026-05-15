@@ -69,18 +69,28 @@ async def filter_trending_with_llm(
 
 {_format_repos_for_prompt(repos)}
 
-任务：从中挑选 {keep} 个真正与 AI / 机器学习 / LLM / agent / 多模态 / RAG / 推理框架 强相关的项目。
+任务：从中挑选 {keep} 个与 AI / 机器学习 / LLM / agent / Coding agent / 多模态 / RAG / 推理框架
+**或 AI 工程基础设施** 相关的项目。
 
 判定标准（满足任一即视为 AI 相关）：
-- LLM / Agent / RAG / 多模态 / 推理引擎 / 训练或微调框架
-- 模型权重、模型推理服务、prompt 管理、AI workflow 编排
-- AI 应用脚手架、向量数据库、AI 评测/benchmark 工具
+- 模型层：LLM 训练/微调框架、推理引擎、模型权重、多模态模型、扩散模型
+- 应用层：Agent 框架、RAG、prompt 管理、AI workflow 编排、AI 应用脚手架、向量数据库
+- 评测层：AI benchmark / eval 工具
+- **Coding Agent 生态**：Claude Code / Cursor / Aider / Continue 的 skills / rules / extensions / 配置集
+- **MCP 生态**：MCP server、MCP client、MCP 工具集
+- **Agent 周边基础设施**：agent memory、agent observability、agent testing、tool-use 框架
+- **AI 数字人 / 具身**：digital human、AI avatar、robotics policy、VLA 模型
+- 描述里出现 LLM/agent/MCP/Claude/GPT/Gemini/RAG/embedding 等关键词且名副其实的项目
 
 反例（这些不算 AI 相关，请排除）：
-- 通用包管理器（uv、pnpm 等），通用编译器、CLI 工具
-- 数据库、缓存、消息队列等纯基础设施
-- 游戏、桌面美化、生产力小工具
-- 仅在描述里提到 "AI-powered" 但本质是 SaaS / 营销页
+- 通用包管理器（uv、pnpm 等）、通用编译器、纯 CLI 工具（除非是 AI agent 的 CLI）
+- 数据库、缓存、消息队列等纯基础设施（不为 AI 服务的）
+- 游戏、桌面美化、纯前端组件库
+- 仅在 README 写"AI-powered"营销词但实质是 SaaS 落地页
+
+**判断倾向**：宁可错收一个边界项目，不要漏掉一个真正的 AI 工程项目。
+描述里有 "skills" / "agent" / "claude" / "MCP" / "LLM" 等关键词，且仓库结构看起来不是营销页，
+就应该判为 AI 相关。
 
 输出 JSON：
 {{
