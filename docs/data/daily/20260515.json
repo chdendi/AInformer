@@ -1,0 +1,50 @@
+{
+  "date": "2026-05-15",
+  "generated_at": "2026-05-15T09:40:41.601075+08:00",
+  "today_theme": "AI基建与开发范式双双升级",
+  "lede": "今日，月之暗面公开Kimi背后的自研分布式向量数据库，专为Agent场景打造，已实现商业化落地，为AI记忆与检索奠定基座。同时，淘天集团揭晓金码奖，20名超级工程师牵引AI原生开发实践，AI正从辅助工具跃升为核心生产力。两大事件折射出中国AI在基础设施与开发范式上的双重突破。",
+  "headlines": [
+    {
+      "title": "月之暗面公开Kimi自研向量数据库，赋能Agent时代",
+      "summary": "月之暗面公布Kimi背后的分布式向量数据库，支持超大规模记忆与检索，已在Agent场景商业化落地。该数据库是Kimi智能助手的关键基础设施，标志着国产AI底层技术的重大进展。",
+      "url": "https://www.qbitai.com/2026/05/417731.html",
+      "source_name": "量子位",
+      "category": "chinese"
+    },
+    {
+      "title": "淘天金码奖揭晓，AI原生开发模式成为主流",
+      "summary": "淘天集团金码奖评选结果出炉，20名超级工程师展示了AI主导、人类协助的AI Native开发实践。AI承担核心编码与优化工作，预示着软件开发范式的变革。",
+      "url": "https://www.qbitai.com/2026/05/417927.html",
+      "source_name": "量子位",
+      "category": "chinese"
+    }
+  ],
+  "sections": {
+    "industry": [],
+    "opinion": [],
+    "chinese": [
+      {
+        "title": "月之暗面Kimi自研数据库揭秘：Agent时代的AI基建",
+        "summary": "月之暗面公开Kimi背后的分布式向量数据库，支持超大规模记忆与检索，已在Agent场景商业化落地。",
+        "value_note": "支撑Kimi长记忆的核心组件，推动AI原生数据库方向",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/417731.html",
+        "published_at": "2026-05-14",
+        "importance": "star",
+        "category": "chinese"
+      },
+      {
+        "title": "淘天金码奖：20名超级工程师推动AI原生开发实践",
+        "summary": "淘天集团金码奖评选结果揭晓，展现AI主导、人类协助的AI Native开发模式，AI承担核心编码与优化。",
+        "value_note": "国内电商巨头落地AI原生开发，加速研发效能进化",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/417927.html",
+        "published_at": "2026-05-14",
+        "importance": "star",
+        "category": "chinese"
+      }
+    ],
+    "academic": []
+  },
+  "trending": []
+}
