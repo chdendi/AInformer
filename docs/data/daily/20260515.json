@@ -1,119 +1,189 @@
 {
   "date": "2026-05-15",
-  "generated_at": "2026-05-15T16:55:44.970108+08:00",
-  "today_theme": "AI智能体技术多点突破，代码与协作能力飙升",
-  "lede": "今日AI领域多项重磅发布齐现。Anthropic宣布与SpaceX达成计算合作，大幅提升Claude使用上限，为大规模AI服务铺路；阿里推出Qoder 1.0代码智能体，实现从生成到交付的全流程自动化；蚂蚁集团开源百灵Ring-2.6-1T模型，在智能体任务执行上取得突破；OpenAI Codex移动端上线，让远程编程触手可及。学术前沿同样活跃，GraphBit框架以图非线性编排打破智能体协作局限，多篇论文聚焦记忆构建与安全风险，推动智能体系统迈向更灵活、更可靠的新阶段。",
+  "generated_at": "2026-05-15T18:11:08.144559+08:00",
+  "today_theme": "模型大战与AI安全争议",
+  "lede": "今日AI领域迎来多款重磅模型发布：OpenAI推出GPT-5.5 Instant作为ChatGPT新默认模型，提升准确性与智能；Google发布Gemini 3 Pro，推理能力提升超50%；阿里发布全栈代码智能体Qoder 1.0，可接管代码生成、验证和交付流程。同时，马斯克诉奥特曼案进入结案陈词阶段，马斯克在庭审中展示驴形奖杯讽刺奥特曼，AI安全与人性之争成为焦点。此外，Anthropic发布20余个法律MCP连接器和12个插件，深度切入法律市场。",
   "headlines": [
     {
-      "title": "Anthropic提升限制并与SpaceX达成计算合作",
-      "summary": "Anthropic提高Claude使用上限，并与SpaceX建立计算合作伙伴关系，大幅提升近期计算容量。此举将为Claude用户提供更充足的服务资源，并支持大规模AI训练与推理。",
-      "url": "https://www.anthropic.com/news/higher-limits-spacex",
-      "source_name": "Anthropic",
+      "title": "OpenAI发布GPT-5.5 Instant，默认模型升级",
+      "summary": "OpenAI推出GPT-5.5 Instant，取代GPT-5.3 Instant成为ChatGPT默认模型，在准确性和智能方面均有提升。",
+      "url": "https://techcrunch.com/2026/05/05/openai-releases-gpt-5-5-instant-a-new-default-model-for-chatgpt/",
+      "source_name": "TechCrunch",
       "category": "industry"
     },
     {
-      "title": "阿里发布Qoder 1.0，AI智能体接管代码全流程",
-      "summary": "阿里推出代码智能体Qoder 1.0，可以自动完成代码生成、验证与交付，支持Windows、macOS和Linux。该智能体实现了从需求到部署的全流程自动化，标志着AI编码进入新阶段。",
+      "title": "Google发布Gemini 3 Pro，推理能力提升超50%",
+      "summary": "Google DeepMind发布Gemini 3 Pro，相比2.5 Pro在推理和可靠性上提升超50%，已面向开发者开放。",
+      "url": "https://deepmind.google/models/gemini/",
+      "source_name": "Google DeepMind",
+      "category": "industry"
+    },
+    {
+      "title": "阿里发布Qoder 1.0，全栈代码智能体",
+      "summary": "阿里发布Qoder 1.0，可全面接管代码生成、验证和交付流程，支持Windows、macOS和Linux。",
       "url": "https://www.qbitai.com/2026/05/418027.html",
       "source_name": "量子位",
       "category": "chinese"
     },
     {
-      "title": "GraphBit：图基智能体框架突破线性编排局限",
-      "summary": "学术团队提出GraphBit框架，采用基于图的非线性编排，允许智能体间动态路由与并行协作，有效应对复杂多步任务。该方法在多个基准测试中展现出优越的性能和灵活性。",
-      "url": "https://arxiv.org/abs/2605.13848",
-      "source_name": "arXiv",
-      "category": "academic"
+      "title": "马斯克诉奥特曼案结案陈词：AI安全与人性之争",
+      "summary": "The Verge分析马斯克诉奥特曼案结案陈词，聚焦AI安全与OpenAI转型争议，马斯克在庭审中展示驴形奖杯讽刺奥特曼。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/931006/musk-v-altman-closing-arguments-analysis",
+      "source_name": "The Verge",
+      "category": "opinion"
     },
     {
-      "title": "蚂蚁百灵Ring-2.6-1T开源，Agent执行能力大幅增强",
-      "summary": "蚂蚁集团开源百灵Ring-2.6-1T大模型，在AIME 26基准上取得95.83高分，显著提升智能体任务执行能力。该模型采用高效架构，专为复杂智能体场景设计，推动Agent技术落地。",
-      "url": "https://www.qbitai.com/2026/05/417961.html",
-      "source_name": "量子位",
-      "category": "chinese"
+      "title": "Anthropic发布20余个法律MCP连接器和12个插件",
+      "summary": "Anthropic推出超过20个MCP连接器和12个法律领域插件，深度切入法律市场，为Claude提供专业化能力。",
+      "url": "https://www.lawnext.com/2026/05/anthropic-goes-all-in-on-legal-releasing-more-than-20-connectors-and-12-practice-area-plugins-for-claude.html",
+      "source_name": "LawNext",
+      "category": "industry"
     }
   ],
   "sections": {
     "industry": [
       {
-        "title": "Anthropic提升Claude限制并与SpaceX达成计算合作",
-        "summary": "Anthropic提高Claude使用上限，并与SpaceX达成计算合作伙伴关系，以大幅提升近期计算容量。",
-        "value_note": "SpaceX合作将显著扩大Anthropic的计算资源，影响大模型训练规模。",
-        "source_name": "Anthropic",
-        "url": "https://www.anthropic.com/news/higher-limits-spacex",
-        "published_at": "2026-05-14",
+        "title": "OpenAI发布GPT-5.5 Instant，默认模型升级",
+        "summary": "OpenAI推出GPT-5.5 Instant，取代GPT-5.3 Instant成为ChatGPT默认模型，提升准确性与智能。",
+        "value_note": "大模型版本更新，直接影响数亿用户",
+        "source_name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/05/05/openai-releases-gpt-5-5-instant-a-new-default-model-for-chatgpt/",
+        "published_at": "2026-05-05",
         "importance": "hot",
         "category": "industry"
       },
       {
-        "title": "IBM发布Granite Embedding多语言R2，开源32K上下文嵌入模型",
-        "summary": "IBM发布Granite嵌入多语言R2，Apache 2.0许可，支持32K上下文，子1亿参数中最佳检索质量。",
-        "value_note": "开源多语言嵌入模型，为企业提供高质量检索方案。",
-        "source_name": "Hugging Face Blog",
-        "url": "https://huggingface.co/blog/ibm-granite/granite-embedding-multilingual-r2",
+        "title": "Anthropic发布20余个法律MCP连接器和12个插件",
+        "summary": "Anthropic推出超过20个MCP连接器和12个法律领域插件，深度切入法律市场。",
+        "value_note": "AI巨头垂直行业布局里程碑",
+        "source_name": "LawNext",
+        "url": "https://www.lawnext.com/2026/05/anthropic-goes-all-in-on-legal-releasing-more-than-20-connectors-and-12-practice-area-plugins-for-claude.html",
+        "published_at": "2026-05-12",
+        "importance": "star",
+        "category": "industry"
+      },
+      {
+        "title": "Google发布Gemini 3 Pro，推理能力提升超50%",
+        "summary": "Gemini 3 Pro相比2.5 Pro在推理和可靠性上提升超50%，已面向开发者开放。",
+        "value_note": "谷歌旗舰模型重大升级",
+        "source_name": "Google DeepMind",
+        "url": "https://deepmind.google/models/gemini/",
         "published_at": "2026-05-14",
         "importance": "star",
         "category": "industry"
       },
       {
-        "title": "OpenAI Codex现已支持移动端，随时远程编程",
-        "summary": "通过ChatGPT移动应用，用户可实时监控、引导和批准Codex编码任务，实现跨设备远程开发。",
-        "value_note": "Codex移动端扩展，提升开发者灵活性与实时协作能力。",
-        "source_name": "OpenAI",
-        "url": "https://openai.com/index/work-with-codex-from-anywhere",
+        "title": "IBM开源Granite Embedding Multilingual R2，32K上下文",
+        "summary": "IBM发布Granite Embedding Multilingual R2，Apache 2.0许可，32K上下文，最佳子1亿参数检索质量。",
+        "value_note": "开源嵌入模型新标杆",
+        "source_name": "Hugging Face Blog",
+        "url": "https://huggingface.co/blog/ibm-granite/granite-embedding-multilingual-r2",
         "published_at": "2026-05-14",
         "importance": "pin",
         "category": "industry"
       }
     ],
-    "opinion": [],
+    "opinion": [
+      {
+        "title": "马斯克诉奥特曼案结案陈词：AI安全与人性之争",
+        "summary": "The Verge分析马斯克诉奥特曼案结案陈词，聚焦AI安全与OpenAI转型争议。",
+        "value_note": "AI治理与创始人责任的关键判例",
+        "source_name": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/931006/musk-v-altman-closing-arguments-analysis",
+        "published_at": "2026-05-14T00:00:00Z",
+        "importance": "hot",
+        "quote_en": "The trial has been a battle over the soul of AI — whether it should be open and safe, or closed and profitable. The closing arguments crystallized the choice: Altman's vision of a commercialized future versus Musk's insistence on a nonprofit mission.",
+        "quote_zh": "这场审判是一场关于AI灵魂的较量——它应该是开放且安全的，还是封闭且盈利的。结案陈词明确了选择：奥特曼的商业化未来愿景与马斯克对非营利使命的坚持。",
+        "person": "Sam Altman",
+        "category": "opinion"
+      },
+      {
+        "title": "马斯克获赠“驴奖杯”嘲讽奥特曼",
+        "summary": "马斯克在庭审中展示一个驴形奖杯，讽刺奥特曼为“骗子”。",
+        "value_note": "庭审戏剧性瞬间，反映双方敌意",
+        "source_name": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/930893/elon-musk-sam-altman-trial-ai-safety-jackass-statue",
+        "published_at": "2026-05-14T00:00:00Z",
+        "importance": "star",
+        "quote_en": "Elon Musk presented a 'jackass trophy' to the court, a bronze donkey with Sam Altman's face, symbolizing his belief that Altman betrayed OpenAI's original mission.",
+        "quote_zh": "埃隆·马斯克向法庭展示了一个“驴奖杯”，一个带有山姆·奥特曼面孔的青铜驴，象征他认为奥特曼背叛了OpenAI的原始使命。",
+        "person": "Sam Altman",
+        "category": "opinion"
+      },
+      {
+        "title": "微软取消Claude Code许可证，转向内部AI",
+        "summary": "微软开始取消Claude Code订阅，可能转向自研或OpenAI方案。",
+        "value_note": "微软与Anthropic关系降温信号",
+        "source_name": "The Verge",
+        "url": "https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad",
+        "published_at": "2026-05-14T00:00:00Z",
+        "importance": "star",
+        "quote_en": "Microsoft has started canceling Claude Code licenses for employees, signaling a shift away from Anthropic's coding assistant in favor of internal tools or OpenAI alternatives.",
+        "quote_zh": "微软已开始取消员工的Claude Code许可证，标志着从Anthropic的编码助手转向内部工具或OpenAI替代方案。",
+        "person": "Sam Altman",
+        "category": "opinion"
+      },
+      {
+        "title": "OpenAI Codex登陆ChatGPT手机应用",
+        "summary": "OpenAI将Codex集成到ChatGPT移动端，支持语音编程。",
+        "value_note": "AI编程助手进入移动时代",
+        "source_name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/05/14/openai-says-codex-is-coming-to-your-phone/",
+        "published_at": "2026-05-14T00:00:00Z",
+        "importance": "pin",
+        "quote_en": "OpenAI says Codex is coming to your phone, allowing users to generate and edit code via voice or text in the ChatGPT mobile app.",
+        "quote_zh": "OpenAI表示Codex即将登陆手机，允许用户在ChatGPT移动应用中通过语音或文本生成和编辑代码。",
+        "person": "Sam Altman",
+        "category": "opinion"
+      }
+    ],
     "chinese": [
       {
-        "title": "阿里发布Qoder 1.0，AI智能体接管代码全流程",
-        "summary": "阿里推出代码智能体Qoder 1.0，可自动完成代码生成、验证与交付，支持Windows、macOS和Linux。",
-        "value_note": "国产AI编程助手首次覆盖全平台，实现开发流程自动化闭环。",
+        "title": "阿里发布Qoder 1.0，全栈代码智能体",
+        "summary": "阿里发布Qoder 1.0，可全面接管代码生成、验证和交付流程，支持Windows、macOS和Linux。",
+        "value_note": "国内首个全栈代码智能体，覆盖开发全流程。",
         "source_name": "量子位",
         "url": "https://www.qbitai.com/2026/05/418027.html",
-        "published_at": "2026-05-15",
+        "published_at": "2026-05-15T00:00:00",
         "importance": "hot",
         "category": "chinese"
       },
       {
-        "title": "蚂蚁百灵Ring-2.6-1T开源，Agent执行能力大幅增强",
-        "summary": "蚂蚁开源百灵Ring-2.6-1T模型，在AIME 26基准上得分95.83，显著提升智能体任务执行能力。",
-        "value_note": "开源模型数学推理与Agent执行能力达到新高度，直接对标顶尖闭源模型。",
+        "title": "蚂蚁百灵Ring-2.6-1T开源，Agent能力增强",
+        "summary": "蚂蚁百灵Ring-2.6-1T开源，AIME 26得分95.83，Agent执行能力全面增强。",
+        "value_note": "开源大模型Agent能力新标杆，AIME得分领先。",
         "source_name": "量子位",
         "url": "https://www.qbitai.com/2026/05/417961.html",
-        "published_at": "2026-05-15",
+        "published_at": "2026-05-15T00:00:00",
         "importance": "star",
         "category": "chinese"
       },
       {
-        "title": "国内具身智能公司获数亿融资，押注“人类学习”路线",
-        "summary": "一家早期布局“人类学习”路线的具身智能公司完成数亿元融资，用人类视角重构机器人学习范式。",
-        "value_note": "资本认可模仿人类学习方式的具身智能新路线，或引发行业路线转变。",
+        "title": "数亿元融资落地，具身智能路线转变",
+        "summary": "国内最早布局“人类学习”路线的具身公司获数亿元融资，用人类视角重做具身智能。",
+        "value_note": "具身智能新路线获资本认可，推动行业变革。",
         "source_name": "量子位",
         "url": "https://www.qbitai.com/2026/05/417935.html",
-        "published_at": "2026-05-15",
+        "published_at": "2026-05-15T00:00:00",
         "importance": "star",
         "category": "chinese"
       },
       {
-        "title": "联发科天玑平台助推手机智能体AI全面跃升",
-        "summary": "联发科正成为端侧智能体落地的全栈赋能者，其天玑平台大幅提升手机AI Agent体验。",
-        "value_note": "芯片算力与工具链升级，加速智能体应用脱离云端，在手机端实用化。",
+        "title": "Kimi背后AI基建：Agent时代数据库商业化",
+        "summary": "月之暗面Kimi的AI基建揭秘，Agent时代的数据库如何跑通商业化。",
+        "value_note": "揭示Kimi底层AI基建，Agent数据库商业化实践。",
         "source_name": "量子位",
-        "url": "https://www.qbitai.com/2026/05/417968.html",
-        "published_at": "2026-05-15",
+        "url": "https://www.qbitai.com/2026/05/417731.html",
+        "published_at": "2026-05-14T00:00:00",
         "importance": "pin",
         "category": "chinese"
       }
     ],
     "academic": [
       {
-        "title": "GraphBit：图基智能体框架突破线性编排局限",
-        "summary": "提出基于图的非线性编排框架，允许智能体间动态路由与并行协作，应对复杂多步任务。",
-        "value_note": "首次利用图结构实现非线性智能体编排，提升复杂任务处理能力。",
+        "title": "GraphBit：基于图的非线性智能体编排框架",
+        "summary": "提出GraphBit框架，用图结构替代线性链式编排，实现智能体间灵活的非线性协作。",
+        "value_note": "突破线性编排限制，提升复杂任务协作效率。",
         "source_name": "arXiv",
         "url": "https://arxiv.org/abs/2605.13848",
         "published_at": "2026-05-15",
@@ -121,23 +191,33 @@
         "category": "academic"
       },
       {
-        "title": "PREPING：无需下游任务即可构建智能体记忆",
-        "summary": "提出预训练式记忆构建方法，在不依赖具体任务的情况下捕捉环境交互经验，增强泛化。",
-        "value_note": "摆脱对特定任务数据的依赖，实现通用智能体记忆的零样本迁移。",
+        "title": "多智能体系统中隐藏编排者带来安全风险",
+        "summary": "研究发现多智能体系统中隐藏协调者会抑制保护行为并削弱权力持有者，带来安全风险。",
+        "value_note": "揭示多智能体系统安全新隐患，需警惕隐藏编排。",
         "source_name": "arXiv",
-        "url": "https://arxiv.org/abs/2605.13880",
+        "url": "https://arxiv.org/abs/2605.13851",
         "published_at": "2026-05-15",
         "importance": "star",
         "category": "academic"
       },
       {
-        "title": "隐形协调器揭示多智能体LLM安全风险",
-        "summary": "研究表明多智能体系统中隐藏协调器会抑制安全防护行为，并导致权力持有者责任分离。",
-        "value_note": "首次系统揭示多智能体编排的安全隐患，警示透明性缺失风险。",
+        "title": "PREPING：无需任务即可构建智能体记忆",
+        "summary": "提出PREPING方法，无需预定义任务即可从交互中构建智能体记忆，提升泛化能力。",
+        "value_note": "摆脱任务依赖，实现更通用的智能体记忆构建。",
         "source_name": "arXiv",
-        "url": "https://arxiv.org/abs/2605.13851",
+        "url": "https://arxiv.org/abs/2605.13880",
         "published_at": "2026-05-15",
-        "importance": "star",
+        "importance": "pin",
+        "category": "academic"
+      },
+      {
+        "title": "PolitNuggets：长尾政治事实发现基准",
+        "summary": "发布PolitNuggets基准，评估智能体发现长尾政治事实的能力，揭示当前模型在稀有事实上的不足。",
+        "value_note": "首个长尾政治事实发现基准，推动智能体信息检索研究。",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.14002",
+        "published_at": "2026-05-15",
+        "importance": "pin",
         "category": "academic"
       }
     ]
@@ -150,22 +230,10 @@
       "url": "https://github.com/tinyhumansai/openhuman",
       "description": "Your Personal AI super intelligence. Private, Simple and extremely powerful.",
       "language": "Rust",
-      "stars_total": "8,213",
+      "stars_total": "8,289",
       "stars_today": 3329,
-      "ai_topic": "",
-      "value_note": ""
-    },
-    {
-      "owner": "mattpocock",
-      "repo": "skills",
-      "full_name": "mattpocock/skills",
-      "url": "https://github.com/mattpocock/skills",
-      "description": "Skills for Real Engineers. Straight from my .claude directory.",
-      "language": "Shell",
-      "stars_total": "83,486",
-      "stars_today": 2987,
-      "ai_topic": "",
-      "value_note": ""
+      "ai_topic": "Agent 框架",
+      "value_note": "个人AI超级智能，强调隐私与易用性，适合构建本地化、高自主性的AI助手。"
     },
     {
       "owner": "rohitg00",
@@ -174,22 +242,34 @@
       "url": "https://github.com/rohitg00/agentmemory",
       "description": "#1 Persistent memory for AI coding agents based on real-world benchmarks",
       "language": "TypeScript",
-      "stars_total": "9,284",
+      "stars_total": "9,330",
       "stars_today": 1879,
-      "ai_topic": "",
-      "value_note": ""
+      "ai_topic": "Agent 记忆 / RAG",
+      "value_note": "为AI编码代理提供持久记忆，基于真实基准测试，解决Agent长上下文与记忆问题。"
     },
     {
-      "owner": "obra",
-      "repo": "superpowers",
-      "full_name": "obra/superpowers",
-      "url": "https://github.com/obra/superpowers",
-      "description": "An agentic skills framework & software development methodology that works.",
-      "language": "Shell",
-      "stars_total": "191,879",
-      "stars_today": 1780,
-      "ai_topic": "",
-      "value_note": ""
+      "owner": "K-Dense-AI",
+      "repo": "scientific-agent-skills",
+      "full_name": "K-Dense-AI/scientific-agent-skills",
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "description": "A set of ready to use Agent Skills for research, science, engineering, analysis, finance and writing.",
+      "language": "Python",
+      "stars_total": "22,066",
+      "stars_today": 654,
+      "ai_topic": "Agent 技能 / 科研",
+      "value_note": "即用型Agent技能集，覆盖科研、工程、金融等场景，加速专业领域AI应用开发。"
+    },
+    {
+      "owner": "shiyu-coder",
+      "repo": "Kronos",
+      "full_name": "shiyu-coder/Kronos",
+      "url": "https://github.com/shiyu-coder/Kronos",
+      "description": "Kronos: A Foundation Model for the Language of Financial Markets",
+      "language": "Python",
+      "stars_total": "24,995",
+      "stars_today": 363,
+      "ai_topic": "金融领域模型",
+      "value_note": "金融市场的Foundation模型，专为金融语言建模，可用于量化分析与预测。"
     }
   ]
 }
