@@ -1,50 +1,195 @@
 {
   "date": "2026-05-15",
-  "generated_at": "2026-05-15T09:40:41.601075+08:00",
-  "today_theme": "AI基建与开发范式双双升级",
-  "lede": "今日，月之暗面公开Kimi背后的自研分布式向量数据库，专为Agent场景打造，已实现商业化落地，为AI记忆与检索奠定基座。同时，淘天集团揭晓金码奖，20名超级工程师牵引AI原生开发实践，AI正从辅助工具跃升为核心生产力。两大事件折射出中国AI在基础设施与开发范式上的双重突破。",
+  "generated_at": "2026-05-15T16:55:44.970108+08:00",
+  "today_theme": "AI智能体技术多点突破，代码与协作能力飙升",
+  "lede": "今日AI领域多项重磅发布齐现。Anthropic宣布与SpaceX达成计算合作，大幅提升Claude使用上限，为大规模AI服务铺路；阿里推出Qoder 1.0代码智能体，实现从生成到交付的全流程自动化；蚂蚁集团开源百灵Ring-2.6-1T模型，在智能体任务执行上取得突破；OpenAI Codex移动端上线，让远程编程触手可及。学术前沿同样活跃，GraphBit框架以图非线性编排打破智能体协作局限，多篇论文聚焦记忆构建与安全风险，推动智能体系统迈向更灵活、更可靠的新阶段。",
   "headlines": [
     {
-      "title": "月之暗面公开Kimi自研向量数据库，赋能Agent时代",
-      "summary": "月之暗面公布Kimi背后的分布式向量数据库，支持超大规模记忆与检索，已在Agent场景商业化落地。该数据库是Kimi智能助手的关键基础设施，标志着国产AI底层技术的重大进展。",
-      "url": "https://www.qbitai.com/2026/05/417731.html",
+      "title": "Anthropic提升限制并与SpaceX达成计算合作",
+      "summary": "Anthropic提高Claude使用上限，并与SpaceX建立计算合作伙伴关系，大幅提升近期计算容量。此举将为Claude用户提供更充足的服务资源，并支持大规模AI训练与推理。",
+      "url": "https://www.anthropic.com/news/higher-limits-spacex",
+      "source_name": "Anthropic",
+      "category": "industry"
+    },
+    {
+      "title": "阿里发布Qoder 1.0，AI智能体接管代码全流程",
+      "summary": "阿里推出代码智能体Qoder 1.0，可以自动完成代码生成、验证与交付，支持Windows、macOS和Linux。该智能体实现了从需求到部署的全流程自动化，标志着AI编码进入新阶段。",
+      "url": "https://www.qbitai.com/2026/05/418027.html",
       "source_name": "量子位",
       "category": "chinese"
     },
     {
-      "title": "淘天金码奖揭晓，AI原生开发模式成为主流",
-      "summary": "淘天集团金码奖评选结果出炉，20名超级工程师展示了AI主导、人类协助的AI Native开发实践。AI承担核心编码与优化工作，预示着软件开发范式的变革。",
-      "url": "https://www.qbitai.com/2026/05/417927.html",
+      "title": "GraphBit：图基智能体框架突破线性编排局限",
+      "summary": "学术团队提出GraphBit框架，采用基于图的非线性编排，允许智能体间动态路由与并行协作，有效应对复杂多步任务。该方法在多个基准测试中展现出优越的性能和灵活性。",
+      "url": "https://arxiv.org/abs/2605.13848",
+      "source_name": "arXiv",
+      "category": "academic"
+    },
+    {
+      "title": "蚂蚁百灵Ring-2.6-1T开源，Agent执行能力大幅增强",
+      "summary": "蚂蚁集团开源百灵Ring-2.6-1T大模型，在AIME 26基准上取得95.83高分，显著提升智能体任务执行能力。该模型采用高效架构，专为复杂智能体场景设计，推动Agent技术落地。",
+      "url": "https://www.qbitai.com/2026/05/417961.html",
       "source_name": "量子位",
       "category": "chinese"
     }
   ],
   "sections": {
-    "industry": [],
+    "industry": [
+      {
+        "title": "Anthropic提升Claude限制并与SpaceX达成计算合作",
+        "summary": "Anthropic提高Claude使用上限，并与SpaceX达成计算合作伙伴关系，以大幅提升近期计算容量。",
+        "value_note": "SpaceX合作将显著扩大Anthropic的计算资源，影响大模型训练规模。",
+        "source_name": "Anthropic",
+        "url": "https://www.anthropic.com/news/higher-limits-spacex",
+        "published_at": "2026-05-14",
+        "importance": "hot",
+        "category": "industry"
+      },
+      {
+        "title": "IBM发布Granite Embedding多语言R2，开源32K上下文嵌入模型",
+        "summary": "IBM发布Granite嵌入多语言R2，Apache 2.0许可，支持32K上下文，子1亿参数中最佳检索质量。",
+        "value_note": "开源多语言嵌入模型，为企业提供高质量检索方案。",
+        "source_name": "Hugging Face Blog",
+        "url": "https://huggingface.co/blog/ibm-granite/granite-embedding-multilingual-r2",
+        "published_at": "2026-05-14",
+        "importance": "star",
+        "category": "industry"
+      },
+      {
+        "title": "OpenAI Codex现已支持移动端，随时远程编程",
+        "summary": "通过ChatGPT移动应用，用户可实时监控、引导和批准Codex编码任务，实现跨设备远程开发。",
+        "value_note": "Codex移动端扩展，提升开发者灵活性与实时协作能力。",
+        "source_name": "OpenAI",
+        "url": "https://openai.com/index/work-with-codex-from-anywhere",
+        "published_at": "2026-05-14",
+        "importance": "pin",
+        "category": "industry"
+      }
+    ],
     "opinion": [],
     "chinese": [
       {
-        "title": "月之暗面Kimi自研数据库揭秘：Agent时代的AI基建",
-        "summary": "月之暗面公开Kimi背后的分布式向量数据库，支持超大规模记忆与检索，已在Agent场景商业化落地。",
-        "value_note": "支撑Kimi长记忆的核心组件，推动AI原生数据库方向",
+        "title": "阿里发布Qoder 1.0，AI智能体接管代码全流程",
+        "summary": "阿里推出代码智能体Qoder 1.0，可自动完成代码生成、验证与交付，支持Windows、macOS和Linux。",
+        "value_note": "国产AI编程助手首次覆盖全平台，实现开发流程自动化闭环。",
         "source_name": "量子位",
-        "url": "https://www.qbitai.com/2026/05/417731.html",
-        "published_at": "2026-05-14",
+        "url": "https://www.qbitai.com/2026/05/418027.html",
+        "published_at": "2026-05-15",
+        "importance": "hot",
+        "category": "chinese"
+      },
+      {
+        "title": "蚂蚁百灵Ring-2.6-1T开源，Agent执行能力大幅增强",
+        "summary": "蚂蚁开源百灵Ring-2.6-1T模型，在AIME 26基准上得分95.83，显著提升智能体任务执行能力。",
+        "value_note": "开源模型数学推理与Agent执行能力达到新高度，直接对标顶尖闭源模型。",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/417961.html",
+        "published_at": "2026-05-15",
         "importance": "star",
         "category": "chinese"
       },
       {
-        "title": "淘天金码奖：20名超级工程师推动AI原生开发实践",
-        "summary": "淘天集团金码奖评选结果揭晓，展现AI主导、人类协助的AI Native开发模式，AI承担核心编码与优化。",
-        "value_note": "国内电商巨头落地AI原生开发，加速研发效能进化",
+        "title": "国内具身智能公司获数亿融资，押注“人类学习”路线",
+        "summary": "一家早期布局“人类学习”路线的具身智能公司完成数亿元融资，用人类视角重构机器人学习范式。",
+        "value_note": "资本认可模仿人类学习方式的具身智能新路线，或引发行业路线转变。",
         "source_name": "量子位",
-        "url": "https://www.qbitai.com/2026/05/417927.html",
-        "published_at": "2026-05-14",
+        "url": "https://www.qbitai.com/2026/05/417935.html",
+        "published_at": "2026-05-15",
         "importance": "star",
+        "category": "chinese"
+      },
+      {
+        "title": "联发科天玑平台助推手机智能体AI全面跃升",
+        "summary": "联发科正成为端侧智能体落地的全栈赋能者，其天玑平台大幅提升手机AI Agent体验。",
+        "value_note": "芯片算力与工具链升级，加速智能体应用脱离云端，在手机端实用化。",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/417968.html",
+        "published_at": "2026-05-15",
+        "importance": "pin",
         "category": "chinese"
       }
     ],
-    "academic": []
+    "academic": [
+      {
+        "title": "GraphBit：图基智能体框架突破线性编排局限",
+        "summary": "提出基于图的非线性编排框架，允许智能体间动态路由与并行协作，应对复杂多步任务。",
+        "value_note": "首次利用图结构实现非线性智能体编排，提升复杂任务处理能力。",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.13848",
+        "published_at": "2026-05-15",
+        "importance": "star",
+        "category": "academic"
+      },
+      {
+        "title": "PREPING：无需下游任务即可构建智能体记忆",
+        "summary": "提出预训练式记忆构建方法，在不依赖具体任务的情况下捕捉环境交互经验，增强泛化。",
+        "value_note": "摆脱对特定任务数据的依赖，实现通用智能体记忆的零样本迁移。",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.13880",
+        "published_at": "2026-05-15",
+        "importance": "star",
+        "category": "academic"
+      },
+      {
+        "title": "隐形协调器揭示多智能体LLM安全风险",
+        "summary": "研究表明多智能体系统中隐藏协调器会抑制安全防护行为，并导致权力持有者责任分离。",
+        "value_note": "首次系统揭示多智能体编排的安全隐患，警示透明性缺失风险。",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.13851",
+        "published_at": "2026-05-15",
+        "importance": "star",
+        "category": "academic"
+      }
+    ]
   },
-  "trending": []
+  "trending": [
+    {
+      "owner": "tinyhumansai",
+      "repo": "openhuman",
+      "full_name": "tinyhumansai/openhuman",
+      "url": "https://github.com/tinyhumansai/openhuman",
+      "description": "Your Personal AI super intelligence. Private, Simple and extremely powerful.",
+      "language": "Rust",
+      "stars_total": "8,213",
+      "stars_today": 3329,
+      "ai_topic": "",
+      "value_note": ""
+    },
+    {
+      "owner": "mattpocock",
+      "repo": "skills",
+      "full_name": "mattpocock/skills",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .claude directory.",
+      "language": "Shell",
+      "stars_total": "83,486",
+      "stars_today": 2987,
+      "ai_topic": "",
+      "value_note": ""
+    },
+    {
+      "owner": "rohitg00",
+      "repo": "agentmemory",
+      "full_name": "rohitg00/agentmemory",
+      "url": "https://github.com/rohitg00/agentmemory",
+      "description": "#1 Persistent memory for AI coding agents based on real-world benchmarks",
+      "language": "TypeScript",
+      "stars_total": "9,284",
+      "stars_today": 1879,
+      "ai_topic": "",
+      "value_note": ""
+    },
+    {
+      "owner": "obra",
+      "repo": "superpowers",
+      "full_name": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "language": "Shell",
+      "stars_total": "191,879",
+      "stars_today": 1780,
+      "ai_topic": "",
+      "value_note": ""
+    }
+  ]
 }
