@@ -1,0 +1,186 @@
+{
+  "date": "2026-05-16",
+  "generated_at": "2026-05-16T09:37:58.153808+08:00",
+  "today_theme": "",
+  "lede": "",
+  "headlines": [],
+  "sections": {
+    "industry": [
+      {
+        "title": "ChatGPT Pro 推出个人理财功能预览",
+        "summary": "美国 Pro 用户可安全关联金融账户，获取 AI 驱动的财务洞察与建议。",
+        "value_note": "ChatGPT 向个人财务管理迈出重要一步",
+        "source_name": "OpenAI",
+        "url": "https://openai.com/index/personal-finance-chatgpt",
+        "published_at": "2026-05-15",
+        "importance": "star",
+        "category": "industry"
+      },
+      {
+        "title": "Databricks 将 GPT-5.5 用于企业 Agent 工作流",
+        "summary": "在 OfficeQA Pro 基准上达到新 SOTA，展现 GPT-5.5 的企业任务能力。",
+        "value_note": "GPT-5.5 企业基准表现达到新高度",
+        "source_name": "OpenAI",
+        "url": "https://openai.com/index/databricks",
+        "published_at": "2026-05-15",
+        "importance": "hot",
+        "category": "industry"
+      },
+      {
+        "title": "Codex 扩展至移动端：随时随地协作编码",
+        "summary": "ChatGPT 移动应用可使用 Codex，实时监控和批准编码任务。",
+        "value_note": "实现跨设备远程编码，提升开发灵活性",
+        "source_name": "OpenAI",
+        "url": "https://openai.com/index/work-with-codex-from-anywhere",
+        "published_at": "2026-05-14",
+        "importance": "star",
+        "category": "industry"
+      },
+      {
+        "title": "Amazon Quick 支持知识库文档级访问控制",
+        "summary": "可为 S3 知识库配置文档级 ACL，增强敏感内容的安全管理。",
+        "value_note": "增强企业知识库的隐私与合规能力",
+        "source_name": "AWS 机器学习博客",
+        "url": "https://aws.amazon.com/blogs/machine-learning/restrict-access-to-sensitive-documents-in-your-amazon-quick-knowledge-bases-for-amazon-s3/",
+        "published_at": "2026-05-15",
+        "importance": "pin",
+        "category": "industry"
+      }
+    ],
+    "opinion": [],
+    "chinese": [
+      {
+        "title": "容联云发布“数字员工”级AI Agent平台",
+        "summary": "容联云推出以AI Agent为核心的大模型联络中心平台，实现“数字员工”级交互。",
+        "value_note": "重塑企业联络中心，推动AI Agent在客服领域规模化落地",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/418140.html",
+        "published_at": "2026-05-15",
+        "importance": "hot",
+        "category": "chinese"
+      },
+      {
+        "title": "华为云创想者大会公布Agentic AI新布局",
+        "summary": "华为云通过主题论坛议程释放Agentic AI战略，加速智能体技术在企业场景落地。",
+        "value_note": "华为云明确Agentic AI方向，构建企业级智能体生态",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/418135.html",
+        "published_at": "2026-05-15",
+        "importance": "star",
+        "category": "chinese"
+      },
+      {
+        "title": "联发科天玑赋能手机智能体AI全面跃升",
+        "summary": "联发科通过天玑平台全栈赋能，推动手机端智能体化体验的全面升级。",
+        "value_note": "终端侧智能体能力显著增强，加速AI手机普及",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/417968.html",
+        "published_at": "2026-05-15",
+        "importance": "pin",
+        "category": "chinese"
+      },
+      {
+        "title": "ArXiv将禁止上传AI“灌水”论文",
+        "summary": "ArXiv宣布对大量使用AI生成内容且缺乏学术价值的论文作者实施禁令。",
+        "value_note": "维护学术出版严肃性，遏制AI滥用引发的论文质量危机",
+        "source_name": "The Verge",
+        "url": "https://www.theverge.com/science/931766/arxiv-ai-slop-ban-researchers",
+        "published_at": "",
+        "importance": "pin",
+        "category": "chinese"
+      }
+    ],
+    "academic": [
+      {
+        "title": "递归推理网络：3倍加速，GSM8K提升15%",
+        "summary": "提出递归推理网络(RRN)，在GSM8K上比思维链基线提速3倍且准确率提升15%。",
+        "value_note": "RRN实现3倍推理加速，GSM8K数学推理提升15%。",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.14036",
+        "published_at": "2026-05-15",
+        "importance": "star",
+        "category": "academic"
+      },
+      {
+        "title": "模型自适应工具基准揭示LLM“知行差距”",
+        "summary": "MATN基准诊断发现，LLM知道何时用工具但实际未用，知行差距达20-30%。",
+        "value_note": "MATN系统性揭示了LLM工具使用的知行差距20-30%。",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.14038",
+        "published_at": "2026-05-15",
+        "importance": "star",
+        "category": "academic"
+      },
+      {
+        "title": "条件属性估计：准确率提升12-30%",
+        "summary": "自回归序列模型新方法CAE在多个基准上将属性估计准确率提升12-30%。",
+        "value_note": "提出CAE方法，属性估计准确率提升12-30%。",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.14004",
+        "published_at": "2026-05-15",
+        "importance": "pin",
+        "category": "academic"
+      },
+      {
+        "title": "SPIN结构化规划让工业LLM错误减少25%",
+        "summary": "SPIN通过迭代导航改进LLM规划，在工业任务上将规划错误减少25%。",
+        "value_note": "SPIN方法减少LLM规划错误25%，提升工业智能体可靠性。",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.14051",
+        "published_at": "2026-05-15",
+        "importance": "pin",
+        "category": "academic"
+      }
+    ]
+  },
+  "trending": [
+    {
+      "owner": "mattpocock",
+      "repo": "skills",
+      "full_name": "mattpocock/skills",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .claude directory.",
+      "language": "Shell",
+      "stars_total": "85,014",
+      "stars_today": 3132,
+      "ai_topic": "",
+      "value_note": ""
+    },
+    {
+      "owner": "ruvnet",
+      "repo": "RuView",
+      "full_name": "ruvnet/RuView",
+      "url": "https://github.com/ruvnet/RuView",
+      "description": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+      "language": "Rust",
+      "stars_total": "57,527",
+      "stars_today": 1859,
+      "ai_topic": "",
+      "value_note": ""
+    },
+    {
+      "owner": "obra",
+      "repo": "superpowers",
+      "full_name": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "language": "Shell",
+      "stars_total": "192,851",
+      "stars_today": 1648,
+      "ai_topic": "",
+      "value_note": ""
+    },
+    {
+      "owner": "tinyhumansai",
+      "repo": "openhuman",
+      "full_name": "tinyhumansai/openhuman",
+      "url": "https://github.com/tinyhumansai/openhuman",
+      "description": "Your Personal AI super intelligence. Private, Simple and extremely powerful.",
+      "language": "Rust",
+      "stars_total": "9,081",
+      "stars_today": 1271,
+      "ai_topic": "",
+      "value_note": ""
+    }
+  ]
+}
