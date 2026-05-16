@@ -57,6 +57,17 @@ RSS_FEEDS: dict[str, dict[str, Any]] = {
     "gary_marcus": {"url": "https://garymarcus.substack.com/feed", "category": "opinion"},
     "raschka": {"url": "https://magazine.sebastianraschka.com/feed", "category": "opinion"},
     "lilian_weng": {"url": "https://lilianweng.github.io/index.xml", "category": "opinion"},
+    # 社区影响力 / 工程实践观点
+    "eugene_yan": {"url": "https://eugeneyan.com/rss/", "category": "opinion"},
+    "hamel_husain": {"url": "https://hamel.dev/index.xml", "category": "opinion"},
+    "jay_alammar": {"url": "https://jalammar.github.io/feed.xml", "category": "opinion"},
+    "semianalysis": {"url": "https://www.semianalysis.com/feed/", "category": "opinion"},
+    "deeplearning_ai_batch": {"url": "https://www.deeplearning.ai/the-batch/feed/", "category": "opinion"},
+    "hn_ai_discussions": {
+        "url": "https://hnrss.org/frontpage?points=75&q=AI+OR+LLM+OR+agents+OR+alignment+OR+OpenAI+OR+Anthropic",
+        "category": "opinion",
+    },
+    "lobsters_ai": {"url": "https://lobste.rs/t/ai.rss", "category": "opinion"},
     # Dwarkesh 暂无可用公开 RSS（dwarkesh.com /feed 超时、Substack ID 未公开），暂依赖 Tavily 兜底
     # 学术
     "arxiv_ai": {"url": "https://export.arxiv.org/rss/cs.AI", "category": "academic"},

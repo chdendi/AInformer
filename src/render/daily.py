@@ -13,7 +13,7 @@ WEEKDAY_ZH = ["一", "二", "三", "四", "五", "六", "日"]
 
 CATEGORY_LABELS = {
     "industry": "行业新闻",
-    "opinion": "领袖观点",
+    "opinion": "观点声音",
     "chinese": "中文 / 学术",
     "academic": "学术与评测",
 }

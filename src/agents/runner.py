@@ -26,13 +26,13 @@ _JSON_FMT_OPINION = """  "items": [
       "title": "中文标题（<40字）",
       "summary": "1-2句摘要（<80字）",
       "value_note": "一句话价值点（<40字）",
-      "source_name": "媒体或人物名",
+      "source_name": "媒体、作者或社区名",
       "url": "原始 URL（必须来自素材）",
       "published_at": "ISO 时间或空字符串",
       "importance": "hot|star|pin",
-      "quote_en": "原文引用",
-      "quote_zh": "中文翻译",
-      "person": "发言人姓名"
+      "quote_en": "英文原文摘句；若素材为中文可留空",
+      "quote_zh": "中文观点摘句或中文翻译",
+      "person": "发言人、作者或社区来源"
     }
   ]"""
 
@@ -58,7 +58,8 @@ def _build_user_prompt(
 ) -> str:
     excluded_block = "\n".join(f"- {t}" for t in excluded[:40]) if excluded else "（无）"
     material_lines = []
-    for i, m in enumerate(materials[:25], 1):
+    material_limit = 35 if spec.key == "opinion" else 25
+    for i, m in enumerate(materials[:material_limit], 1):
         pub = (m.get("published_at") or "")[:10]
         material_lines.append(
             f"[{i}] {m.get('title','')} | {m.get('url','')} | {m.get('source','?')} | {pub}\n"
@@ -84,7 +85,7 @@ def _build_user_prompt(
         )
     else:
         requirements = (
-            "- 输出 4-5 条最高质量资讯，宁缺毋滥。\n"
+            f"- 输出 {'3-5' if spec.key == 'opinion' else '4-5'} 条最高质量资讯，宁缺毋滥。\n"
             f"- 候选素材的 published_at 在 {window_start} ~ {today} 窗口内即可入选，不必强求当日发布。\n"
             "- importance：最多 1 hot，1-2 star，其余 pin。\n"
             "- url 必须来自候选素材，禁止编造。\n"
@@ -132,15 +133,7 @@ async def run_agent(
     rss_items = [m for m in rss_pool if m.get("category_hint") in spec.rss_categories] if spec.rss_categories else []
     log.info("[agent:%s] rss=%d", spec.key, len(rss_items))
 
-    seen: set[str] = set()
-    materials: list[dict[str, Any]] = []
-    for src in (search_items, rss_items):
-        for m in src:
-            url = m.get("url")
-            if not url or url in seen:
-                continue
-            seen.add(url)
-            materials.append(m)
+    materials = _merge_materials(search_items, rss_items, prefer_rss=spec.key == "opinion")
 
     if not materials:
         log.warning("[agent:%s] no materials (search=%d rss=%d), returning empty",
@@ -186,6 +179,48 @@ async def run_agent(
 
     log.info("[agent:%s] returned %d items", spec.key, len(filtered))
     return {"key": spec.key, "name": spec.name, "items": filtered}
+
+
+def _merge_materials(
+    search_items: list[dict[str, Any]],
+    rss_items: list[dict[str, Any]],
+    *,
+    prefer_rss: bool = False,
+) -> list[dict[str, Any]]:
+    """Merge search and RSS results while keeping both source types visible.
+
+    For opinion/community voices, curated RSS feeds are often higher-signal than
+    broad search results. Interleaving prevents one source from crowding the
+    other out of the prompt's material window.
+    """
+    seen: set[str] = set()
+    merged: list[dict[str, Any]] = []
+
+    if not prefer_rss:
+        for src in (search_items, rss_items):
+            for m in src:
+                url = m.get("url")
+                if not url or url in seen:
+                    continue
+                seen.add(url)
+                merged.append(m)
+        return merged
+
+    primary, secondary = rss_items, search_items
+    max_len = max(len(primary), len(secondary))
+
+    for i in range(max_len):
+        for src in (primary, secondary):
+            if i >= len(src):
+                continue
+            m = src[i]
+            url = m.get("url")
+            if not url or url in seen:
+                continue
+            seen.add(url)
+            merged.append(m)
+
+    return merged
 
 
 def _validate_items(

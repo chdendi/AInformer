@@ -120,7 +120,7 @@
   <section class="stats-bar">
     {% set sec = report.sections %}
     <div class="stat"><div class="num">{{ sec.industry|length }}</div><div class="label">行业新闻</div></div>
-    <div class="stat"><div class="num">{{ sec.opinion|length }}</div><div class="label">领袖观点</div></div>
+    <div class="stat"><div class="num">{{ sec.opinion|length }}</div><div class="label">观点声音</div></div>
     <div class="stat"><div class="num">{{ sec.chinese|length }}</div><div class="label">中文 / 学术</div></div>
     <div class="stat"><div class="num">{{ sec.academic|length }}</div><div class="label">学术与评测</div></div>
   </section>
@@ -182,7 +182,7 @@
   </section>
 
   <section class="section" id="opinion">
-    <div class="section-head"><h2>AI 领袖发言与深度观点</h2><span class="count">{{ sec.opinion|length }} 条</span></div>
+    <div class="section-head"><h2>AI 观点与社区声音</h2><span class="count">{{ sec.opinion|length }} 条</span></div>
     {% if sec.opinion %}
     <div class="cards">
       {% for it in sec.opinion %}

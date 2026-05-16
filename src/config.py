@@ -41,7 +41,7 @@ class LLMConfig:
 
 SITE_BASE_URL = os.environ.get("SITE_BASE_URL", "").rstrip("/")
 SITE_TITLE = "AInformer · 每日 AI 简报"
-SITE_DESC = "由 DeepSeek + Tavily 自动生成的中文 AI 资讯日报，覆盖工具教程、行业动态、领袖观点、中文生态。"
+SITE_DESC = "由 DeepSeek + Tavily 自动生成的中文 AI 资讯日报，覆盖工具教程、行业动态、观点声音、中文生态。"
 
 
 def ensure_dirs() -> None:

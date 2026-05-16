@@ -60,8 +60,11 @@ def build_agent_specs(month_token: str) -> list[AgentSpec]:
 
     opinion = AgentSpec(
         key="opinion",
-        name="AI 领袖发言与深度观点",
-        focus="Sam Altman、Dario Amodei、Demis Hassabis、Andrej Karpathy、Yann LeCun、Jim Fan 等关键人物的最新发言、博客、长文观点。",
+        name="AI 观点与社区声音",
+        focus=(
+            "AI 公司领军人物、研究者、工程师、开源社区维护者、知名写作者、播客嘉宾，"
+            "以及 Hacker News、LessWrong 等社区中有影响力的最新发言、博客、访谈、长文观点与争论。"
+        ),
         queries=_queries_with_month(
             [
                 '"Sam Altman" said OR posted OR essay',
@@ -77,13 +80,21 @@ def build_agent_specs(month_token: str) -> list[AgentSpec]:
                 '"Elon Musk" Grok xAI',
                 "AI safety alignment essay",
                 "AGI timeline opinion",
+                "AI agents opinion essay",
+                "LLM reasoning scaling opinion",
+                "AI coding agents developer experience opinion",
+                "open source AI community debate",
+                "Hacker News AI discussion",
+                "LessWrong AI alignment debate",
+                "AI research blog opinion",
             ],
             month_token,
         ),
         rss_categories=["opinion"],
         extra_instructions=(
-            "必须包含人物姓名 + 原文引用（英文保留原文 + 中文翻译）。"
-            "排除营销稿、产品介绍。聚焦观点、判断、争论。"
+            "不限定为公司 CEO 或公认领袖；社区中有持续影响力的作者、研究者、工程师、开源维护者也可以入选。"
+            "必须能提炼出明确观点、判断或争论点，并标注发言人 / 作者 / 社区来源；英文观点保留原文摘句并给中文翻译。"
+            "排除纯营销稿、产品介绍、普通新闻复述和无明确观点的教程。"
         ),
     )
 

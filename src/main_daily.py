@@ -23,12 +23,12 @@ log = logging.getLogger("ainformer.daily")
 
 
 # Cross-section dedup priority: smaller number wins.
-# Rationale: specialty sections (opinion quotes, academic papers, benchmark
+# Rationale: specialty sections (opinion/community voices, academic papers, benchmark
 # numbers) are intrinsically tied to their column's core attribute, so they
 # should keep the item. `industry` is the broadest catch-all and is most
 # likely to absorb stories that genuinely belong elsewhere, so it goes last.
 SECTION_PRIORITY = {
-    "opinion": 1,    # quote-driven, most exclusive
+    "opinion": 1,    # view/quote-driven, most exclusive
     "academic": 2,   # paper + benchmark driven
     "chinese": 3,    # regional bucket
     "industry": 4,   # broadest, fallback bucket
