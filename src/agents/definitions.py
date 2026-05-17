@@ -113,9 +113,11 @@ def build_agent_specs(month_token: str) -> list[AgentSpec]:
             f"- tier=\"leader\"：person 必须严格等于这 11 人之一 — {leaders_str}；"
             f"Elon Musk 仅限其 xAI/Grok/AI 相关言论，与政治/SpaceX 无关的发言一律跳过。\n"
             f"- tier=\"analyst\"：person 必须严格等于这些写手之一 — {analysts_str}。\n"
-            "quote_en 必须是该人物的直接引语（来自素材原文），不是第三方记者的转述或新闻摘要。"
-            "若素材是 The Verge / TechCrunch 等媒体报道某 CEO 的新闻、且报道里没有该人物的直接引语，跳过。"
-            "排除营销稿、产品介绍。person 字段不要随手填，找不到合规人物就少给几条。"
+            "quote_en 可以是：(a) 本人 blog/tweet/采访/演讲中的原文摘句；"
+            "(b) 第三方报道里的直接引语（带引号的原话）。"
+            "纯新闻转述（如『The Verge 报道 OpenAI 取消了 X』这种没有当事人原话的内容）跳过。"
+            "排除营销稿、产品介绍。person 字段不要随手填，找不到合规人物就少给几条；"
+            "若实在没有合规素材，返回 {\"items\": []} 即可。"
         ),
     )
 

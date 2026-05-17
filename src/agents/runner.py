@@ -156,13 +156,12 @@ async def run_agent(
 
     filtered, drops = _validate_items(result, valid_urls, spec.key, mode="strict")
     if spec.key == "opinion":
-        before = len(filtered)
+        before_strict_tier = len(filtered)
         filtered = _validate_opinion_tier(filtered, material_corpus)
-        log.info("[agent:opinion] tier-check kept %d/%d (drop %d non-leader/analyst)",
-                 len(filtered), before, before - len(filtered))
-        # opinion 不走 relaxed 兜底：宁缺毋滥，避免 LLM 凑数把新闻报道塞成"领袖发言"
-        log.info("[agent:opinion] returned %d items (fallback disabled)", len(filtered))
-        return {"key": spec.key, "name": spec.name, "items": filtered}
+        log.info(
+            "[agent:opinion] strict tier-check kept %d/%d (raw=%d, fabricated=%d)",
+            len(filtered), before_strict_tier, drops["raw"], drops["fabricated"],
+        )
 
     # Fallback: if LLM returned 0 items but materials existed, retry with relaxed constraints
     if not filtered and materials:
@@ -179,13 +178,21 @@ async def run_agent(
             log.error("[agent:%s] relaxed-mode LLM failed: %s", spec.key, e)
             result2 = {}
         filtered, drops2 = _validate_items(result2, valid_urls, spec.key, mode="relaxed")
-        log.info(
-            "[agent:%s] relaxed mode raw=%d kept=%d fabricated_url_drops=%d",
-            spec.key,
-            drops2["raw"],
-            len(filtered),
-            drops2["fabricated"],
-        )
+        if spec.key == "opinion":
+            before_relaxed_tier = len(filtered)
+            filtered = _validate_opinion_tier(filtered, material_corpus)
+            log.info(
+                "[agent:opinion] relaxed tier-check kept %d/%d (raw=%d, fabricated=%d)",
+                len(filtered), before_relaxed_tier, drops2["raw"], drops2["fabricated"],
+            )
+        else:
+            log.info(
+                "[agent:%s] relaxed mode raw=%d kept=%d fabricated_url_drops=%d",
+                spec.key,
+                drops2["raw"],
+                len(filtered),
+                drops2["fabricated"],
+            )
 
     log.info("[agent:%s] returned %d items", spec.key, len(filtered))
     return {"key": spec.key, "name": spec.name, "items": filtered}
