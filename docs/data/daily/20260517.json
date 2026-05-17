@@ -1,0 +1,63 @@
+{
+  "date": "2026-05-17",
+  "generated_at": "2026-05-17T13:06:51.653368+08:00",
+  "today_theme": "今日无更新",
+  "lede": "今日暂无 AI 行业新闻、观点、中文生态或学术评测的更新。我们将持续关注最新动态，期待明日带来更多前沿资讯。",
+  "headlines": [],
+  "sections": {
+    "industry": [],
+    "opinion": [],
+    "chinese": [],
+    "academic": []
+  },
+  "trending": [
+    {
+      "owner": "tinyhumansai",
+      "repo": "openhuman",
+      "full_name": "tinyhumansai/openhuman",
+      "url": "https://github.com/tinyhumansai/openhuman",
+      "description": "Your Personal AI super intelligence. Private, Simple and extremely powerful.",
+      "language": "Rust",
+      "stars_total": "11,032",
+      "stars_today": 1549,
+      "ai_topic": "",
+      "value_note": ""
+    },
+    {
+      "owner": "obra",
+      "repo": "superpowers",
+      "full_name": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "language": "Shell",
+      "stars_total": "194,239",
+      "stars_today": 1305,
+      "ai_topic": "",
+      "value_note": ""
+    },
+    {
+      "owner": "ruvnet",
+      "repo": "RuView",
+      "full_name": "ruvnet/RuView",
+      "url": "https://github.com/ruvnet/RuView",
+      "description": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+      "language": "Rust",
+      "stars_total": "58,495",
+      "stars_today": 1010,
+      "ai_topic": "",
+      "value_note": ""
+    },
+    {
+      "owner": "supertone-inc",
+      "repo": "supertonic",
+      "full_name": "supertone-inc/supertonic",
+      "url": "https://github.com/supertone-inc/supertonic",
+      "description": "Lightning-Fast, On-Device, Multilingual TTS — running natively via ONNX.",
+      "language": "Swift",
+      "stars_total": "7,017",
+      "stars_today": 749,
+      "ai_topic": "",
+      "value_note": ""
+    }
+  ]
+}
