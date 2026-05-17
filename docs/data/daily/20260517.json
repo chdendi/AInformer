@@ -1,0 +1,172 @@
+{
+  "date": "2026-05-17",
+  "generated_at": "2026-05-17T09:40:56.963118+08:00",
+  "today_theme": "从全民普及到智能体争夺，AI 生态加速演进",
+  "lede": "OpenAI 今日宣布与马耳他政府合作，向该国全体公民提供 ChatGPT Plus 及 AI 培训，同时再次重组高管团队，将 AI 代理业务置于核心。YouTube 则扩大 AI 肖像检测范围，允许所有成人用户搜索并移除深度伪造视频。在学术领域，FlightGen 框架通过多阶段拒绝低质样本，大幅提升令牌效率并改进下游性能。中文方面，阿里健康发布医疗 AI 助手“氢离子”，专注为医生提供循证决策支持。",
+  "headlines": [
+    {
+      "title": "OpenAI与马耳他合作，向全民提供ChatGPT Plus",
+      "summary": "OpenAI与马耳他政府达成合作，将为该国全体公民提供ChatGPT Plus及AI培训。此举旨在推动AI普及与负责任使用。",
+      "url": "https://openai.com/index/malta-chatgpt-plus-partnership",
+      "source_name": "OpenAI",
+      "category": "industry"
+    },
+    {
+      "title": "OpenAI再次重组高管团队，聚焦AI代理",
+      "summary": "OpenAI宣布新一轮组织调整，总裁Greg Brockman将领导所有代理业务。这凸显了公司对AI代理战略的高度重视。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/931544/openai-keeps-shuffling-its-executives-in-bid-to-win-ai-agent-battle",
+      "source_name": "The Verge",
+      "category": "industry"
+    },
+    {
+      "title": "YouTube将AI深伪检测工具扩展至所有成人用户",
+      "summary": "YouTube扩大AI肖像检测计划，允许所有18岁以上用户搜索并移除未经授权的深度伪造视频。该工具此前已面向公众人物推出，此次进一步扩大覆盖范围。",
+      "url": "https://www.theverge.com/news/931884/youtube-likeness-detection-ai-deepfake-expansion-all-adults",
+      "source_name": "The Verge",
+      "category": "industry"
+    },
+    {
+      "title": "阿里健康发布医疗AI“氢离子”，专注医学证据源",
+      "summary": "阿里健康推出面向医生的AI助手“氢离子”，强调基于顶级期刊证据源提供决策支持。该工具旨在改善临床决策质量。",
+      "url": "https://www.qbitai.com/2026/05/418491.html",
+      "source_name": "量子位",
+      "category": "chinese"
+    },
+    {
+      "title": "FlightGen框架令牌高效生成，性能提升2.1%",
+      "summary": "FlightGen框架通过多阶段逐步评估样本质量，及早终止低质生成，显著降低令牌消耗。在五个推理基准上平均提升下游性能2.1%，最高节省3.7倍令牌。",
+      "url": "https://arxiv.org/abs/2605.14062",
+      "source_name": "arXiv",
+      "category": "academic"
+    }
+  ],
+  "sections": {
+    "industry": [
+      {
+        "title": "OpenAI与马耳他合作，向全民提供ChatGPT Plus",
+        "summary": "OpenAI与马耳他政府达成合作，将为该国全体公民提供ChatGPT Plus及AI培训，推动AI普及与负责任使用。",
+        "value_note": "首个国家层面全民AI助手普及计划",
+        "source_name": "OpenAI",
+        "url": "https://openai.com/index/malta-chatgpt-plus-partnership",
+        "published_at": "2026-05-16",
+        "importance": "star",
+        "category": "industry"
+      },
+      {
+        "title": "OpenAI再次重组高管团队，聚焦AI代理",
+        "summary": "OpenAI宣布新一轮组织调整，总裁Greg Brockman将领导所有代理业务，凸显对AI代理战略的重视。",
+        "value_note": "Brockman统管代理业务，加速代理战略",
+        "source_name": "The Verge",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/931544/openai-keeps-shuffling-its-executives-in-bid-to-win-ai-agent-battle",
+        "published_at": "2026-05-15",
+        "importance": "star",
+        "category": "industry"
+      },
+      {
+        "title": "YouTube将AI深伪检测工具扩展至所有成人用户",
+        "summary": "YouTube扩大AI肖像检测计划，允许所有18岁以上用户搜索并移除未经授权的深度伪造视频。",
+        "value_note": "平台级AI治理工具向全体用户开放",
+        "source_name": "The Verge",
+        "url": "https://www.theverge.com/news/931884/youtube-likeness-detection-ai-deepfake-expansion-all-adults",
+        "published_at": "2026-05-15",
+        "importance": "star",
+        "category": "industry"
+      }
+    ],
+    "opinion": [],
+    "chinese": [
+      {
+        "title": "阿里健康发布医疗AI“氢离子”，专注医学证据源",
+        "summary": "阿里健康推出面向医生的AI助手“氢离子”，强调基于顶级期刊证据源提供决策支持。",
+        "value_note": "为500万中国医生提供循证AI辅助，提升诊疗准确性。",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/418491.html",
+        "published_at": "2026-05-16",
+        "importance": "star",
+        "category": "chinese"
+      }
+    ],
+    "academic": [
+      {
+        "title": "多阶段飞行中拒绝：令牌高效合成数据生成，性能提升2.1%",
+        "summary": "FlightGen框架通过多阶段逐步评估样本质量并及早终止低质生成，显著降低令牌消耗，在五个推理基准上平均提升下游性能2.1%，最高节省3.7倍令牌。",
+        "value_note": "节省最高3.7倍令牌，下游性能平均提升2.1%。",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.14062",
+        "published_at": "2026-05-16",
+        "importance": "hot",
+        "category": "academic"
+      },
+      {
+        "title": "规定性对齐框架提升LLM智能体社会价值对齐16.3%和14.7%",
+        "summary": "提出从价值描述到可执行行为的规定性对齐方法，通过价值分解与多目标优化，在两个新基准上对齐准确率较最佳基线分别提升16.3%和14.7%。",
+        "value_note": "对齐准确率提升最高16.3%。",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.14034",
+        "published_at": "2026-05-16",
+        "importance": "star",
+        "category": "academic"
+      },
+      {
+        "title": "MathAtlas：超大数学自动形式化基准，最强模型仅6.2%准确率",
+        "summary": "涵盖超10万条Stacks项目定理的自动形式化基准，评测显示当前最强LLM仅取得6.2%自动形式化准确率，揭示领域重大能力缺口。",
+        "value_note": "最强模型准确率仅6.2%，暴露出严重能力不足。",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.14061",
+        "published_at": "2026-05-16",
+        "importance": "pin",
+        "category": "academic"
+      }
+    ]
+  },
+  "trending": [
+    {
+      "owner": "tinyhumansai",
+      "repo": "openhuman",
+      "full_name": "tinyhumansai/openhuman",
+      "url": "https://github.com/tinyhumansai/openhuman",
+      "description": "Your Personal AI super intelligence. Private, Simple and extremely powerful.",
+      "language": "Rust",
+      "stars_total": "10,765",
+      "stars_today": 1549,
+      "ai_topic": "",
+      "value_note": ""
+    },
+    {
+      "owner": "obra",
+      "repo": "superpowers",
+      "full_name": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "language": "Shell",
+      "stars_total": "194,037",
+      "stars_today": 1305,
+      "ai_topic": "",
+      "value_note": ""
+    },
+    {
+      "owner": "ruvnet",
+      "repo": "RuView",
+      "full_name": "ruvnet/RuView",
+      "url": "https://github.com/ruvnet/RuView",
+      "description": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+      "language": "Rust",
+      "stars_total": "58,369",
+      "stars_today": 1010,
+      "ai_topic": "",
+      "value_note": ""
+    },
+    {
+      "owner": "supertone-inc",
+      "repo": "supertonic",
+      "full_name": "supertone-inc/supertonic",
+      "url": "https://github.com/supertone-inc/supertonic",
+      "description": "Lightning-Fast, On-Device, Multilingual TTS — running natively via ONNX.",
+      "language": "Swift",
+      "stars_total": "6,909",
+      "stars_today": 749,
+      "ai_topic": "",
+      "value_note": ""
+    }
+  ]
+}
