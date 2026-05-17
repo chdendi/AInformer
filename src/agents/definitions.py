@@ -17,6 +17,31 @@ def _queries_with_month(base: list[str], month_token: str) -> list[str]:
     return [f"{q} {month_token}" for q in base]
 
 
+# L1 头部：CEO + 首席科学家。person 字段必须严格匹配这些名字之一。
+# Musk 加 keyword_filter — quote_en/quote_zh 必须含 xAI/Grok/AI 字样，
+# 否则会把他的政治/SpaceX 言论也吸进来。
+LEADER_PROFILES: dict[str, dict] = {
+    "Sam Altman":        {"query": '"Sam Altman" said OR posted OR essay'},
+    "Dario Amodei":      {"query": '"Dario Amodei" Anthropic safety'},
+    "Demis Hassabis":    {"query": '"Demis Hassabis" DeepMind interview'},
+    "Jensen Huang":      {"query": '"Jensen Huang" keynote AI'},
+    "Mustafa Suleyman":  {"query": '"Mustafa Suleyman" Microsoft AI'},
+    "Andrej Karpathy":   {"query": '"Andrej Karpathy" tweet OR post OR talk'},
+    "Yann LeCun":        {"query": '"Yann LeCun" debate OR opinion'},
+    "Ilya Sutskever":    {"query": '"Ilya Sutskever" SSI'},
+    "Fei-Fei Li":        {"query": '"Fei-Fei Li" World Labs'},
+    "Jim Fan":           {"query": '"Jim Fan" robotics OR NVIDIA'},
+    "Elon Musk":         {"query": '"Elon Musk" Grok xAI', "keyword_filter": ("xAI", "Grok", "AI ", " AI")},
+}
+
+# L2 写手：高产 blogger / newsletter 作者
+ANALYST_NAMES: set[str] = {
+    "Simon Willison", "Gary Marcus", "Lilian Weng", "Sebastian Raschka",
+    "Chip Huyen", "Nathan Lambert", "Ethan Mollick", "Arvind Narayanan",
+    "Sayash Kapoor",
+}
+
+
 def _queries_mixed_month(base: list[str], month_token: str, skip_month: set[int] | None = None) -> list[str]:
     """Append month_token to queries, except those whose index is in skip_month.
 
@@ -58,43 +83,39 @@ def build_agent_specs(month_token: str) -> list[AgentSpec]:
         ),
     )
 
+    opinion_queries: list[str] = [p["query"] for p in LEADER_PROFILES.values()]
+    opinion_queries += [
+        '"Simon Willison" LLM blog',
+        '"Gary Marcus" essay AI',
+        '"Lilian Weng" blog',
+        '"Sebastian Raschka" newsletter',
+        '"Chip Huyen" blog',
+        '"Nathan Lambert" Interconnects',
+        '"Ethan Mollick" One Useful Thing',
+        "Latent Space podcast essay",
+        "Import AI newsletter Jack Clark",
+        "AI safety alignment essay",
+        "AGI timeline opinion essay",
+    ]
+    leaders_str = "、".join(LEADER_PROFILES.keys())
+    analysts_str = "、".join(sorted(ANALYST_NAMES))
     opinion = AgentSpec(
         key="opinion",
         name="AI 观点与社区声音",
         focus=(
-            "AI 公司领军人物、研究者、工程师、开源社区维护者、知名写作者、播客嘉宾，"
-            "以及 Hacker News、LessWrong 等社区中有影响力的最新发言、博客、访谈、长文观点与争论。"
+            "两层供稿：L1 领袖发言（CEO + 首席科学家原话、博客、采访），"
+            "L2 深度分析（高产 blogger / newsletter 作者的长文观点）。"
         ),
-        queries=_queries_with_month(
-            [
-                '"Sam Altman" said OR posted OR essay',
-                '"Dario Amodei" Anthropic safety',
-                '"Andrej Karpathy" tweet OR post OR talk',
-                '"Yann LeCun" debate OR opinion',
-                '"Jim Fan" robotics OR NVIDIA',
-                '"Jensen Huang" keynote AI',
-                '"Demis Hassabis" DeepMind interview',
-                '"Mustafa Suleyman" Microsoft AI',
-                '"Fei-Fei Li" World Labs',
-                '"Ilya Sutskever" SSI',
-                '"Elon Musk" Grok xAI',
-                "AI safety alignment essay",
-                "AGI timeline opinion",
-                "AI agents opinion essay",
-                "LLM reasoning scaling opinion",
-                "AI coding agents developer experience opinion",
-                "open source AI community debate",
-                "Hacker News AI discussion",
-                "LessWrong AI alignment debate",
-                "AI research blog opinion",
-            ],
-            month_token,
-        ),
+        queries=_queries_with_month(opinion_queries, month_token),
         rss_categories=["opinion"],
         extra_instructions=(
-            "不限定为公司 CEO 或公认领袖；社区中有持续影响力的作者、研究者、工程师、开源维护者也可以入选。"
-            "必须能提炼出明确观点、判断或争论点，并标注发言人 / 作者 / 社区来源；英文观点保留原文摘句并给中文翻译。"
-            "排除纯营销稿、产品介绍、普通新闻复述和无明确观点的教程。"
+            f"每条必须标 tier 字段：\n"
+            f"- tier=\"leader\"：person 必须严格等于这 11 人之一 — {leaders_str}；"
+            f"Elon Musk 仅限其 xAI/Grok/AI 相关言论，与政治/SpaceX 无关的发言一律跳过。\n"
+            f"- tier=\"analyst\"：person 必须严格等于这些写手之一 — {analysts_str}。\n"
+            "quote_en 必须是该人物的直接引语（来自素材原文），不是第三方记者的转述或新闻摘要。"
+            "若素材是 The Verge / TechCrunch 等媒体报道某 CEO 的新闻、且报道里没有该人物的直接引语，跳过。"
+            "排除营销稿、产品介绍。person 字段不要随手填，找不到合规人物就少给几条。"
         ),
     )
 

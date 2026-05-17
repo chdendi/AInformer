@@ -11,7 +11,7 @@ from openai import AsyncOpenAI
 from ..config import LLMConfig
 from ..llm.client import chat_json
 from ..search.web_search import unified_search
-from .definitions import AgentSpec
+from .definitions import ANALYST_NAMES, LEADER_PROFILES, AgentSpec
 
 log = logging.getLogger(__name__)
 
@@ -23,6 +23,7 @@ AGENT_SYSTEM = (
 
 _JSON_FMT_OPINION = """  "items": [
     {
+      "tier": "leader|analyst",
       "title": "中文标题（<40字）",
       "summary": "1-2句摘要（<80字）",
       "value_note": "一句话价值点（<40字）",
@@ -32,7 +33,7 @@ _JSON_FMT_OPINION = """  "items": [
       "importance": "hot|star|pin",
       "quote_en": "英文原文摘句；若素材为中文可留空",
       "quote_zh": "中文观点摘句或中文翻译",
-      "person": "发言人、作者或社区来源"
+      "person": "严格匹配 leader 或 analyst 名单中的人物全名"
     }
   ]"""
 
@@ -144,6 +145,7 @@ async def run_agent(
              spec.key, len(materials), len(search_items), len(rss_items), len(excluded_titles))
 
     valid_urls = {m["url"] for m in materials}
+    material_corpus = _materials_corpus(materials) if spec.key == "opinion" else ""
 
     user_prompt = _build_user_prompt(spec, materials, excluded_titles, today)
     try:
@@ -153,6 +155,14 @@ async def run_agent(
         result = {}
 
     filtered, drops = _validate_items(result, valid_urls, spec.key, mode="strict")
+    if spec.key == "opinion":
+        before = len(filtered)
+        filtered = _validate_opinion_tier(filtered, material_corpus)
+        log.info("[agent:opinion] tier-check kept %d/%d (drop %d non-leader/analyst)",
+                 len(filtered), before, before - len(filtered))
+        # opinion 不走 relaxed 兜底：宁缺毋滥，避免 LLM 凑数把新闻报道塞成"领袖发言"
+        log.info("[agent:opinion] returned %d items (fallback disabled)", len(filtered))
+        return {"key": spec.key, "name": spec.name, "items": filtered}
 
     # Fallback: if LLM returned 0 items but materials existed, retry with relaxed constraints
     if not filtered and materials:
@@ -249,6 +259,66 @@ def _validate_items(
         it["category"] = spec_key
         kept.append(it)
     return kept, {"raw": len(raw_items), "fabricated": fabricated}
+
+
+def _materials_corpus(materials: list[dict[str, Any]]) -> str:
+    """Concat title + snippet from all materials into one lowercase blob.
+
+    Used by opinion tier validation to verify that a claimed leader's name
+    actually appears somewhere in the source pool — guards against the LLM
+    fabricating a person field (historically defaulted to "Sam Altman").
+    """
+    parts: list[str] = []
+    for m in materials:
+        parts.append(m.get("title") or "")
+        parts.append(m.get("snippet") or "")
+    return " ".join(parts).lower()
+
+
+def _validate_opinion_tier(items: list[dict[str, Any]], corpus: str) -> list[dict[str, Any]]:
+    """Enforce two-tier opinion taxonomy.
+
+    leader: person ∈ LEADER_PROFILES, name mentioned in materials, Musk gated
+            by AI-keyword filter.
+    analyst: person ∈ ANALYST_NAMES.
+    Items failing both buckets are dropped.
+    """
+    kept: list[dict[str, Any]] = []
+    for it in items:
+        tier = (it.get("tier") or "").strip().lower()
+        person = (it.get("person") or "").strip()
+        if not person:
+            log.debug("[opinion-tier] drop empty person: %s", it.get("title"))
+            continue
+
+        if tier == "leader" or person in LEADER_PROFILES:
+            profile = LEADER_PROFILES.get(person)
+            if not profile:
+                log.debug("[opinion-tier] drop leader not in roster: %s", person)
+                continue
+            if person.lower() not in corpus:
+                log.debug("[opinion-tier] drop leader '%s' not mentioned in materials", person)
+                continue
+            kw_filter = profile.get("keyword_filter")
+            if kw_filter:
+                quote_blob = f"{it.get('quote_en','')} {it.get('quote_zh','')} {it.get('title','')}"
+                if not any(kw.lower() in quote_blob.lower() for kw in kw_filter):
+                    log.debug("[opinion-tier] drop %s — quote misses AI keywords", person)
+                    continue
+            it["tier"] = "leader"
+            kept.append(it)
+            continue
+
+        if tier == "analyst" or person in ANALYST_NAMES:
+            if person not in ANALYST_NAMES:
+                log.debug("[opinion-tier] drop analyst not in roster: %s", person)
+                continue
+            it["tier"] = "analyst"
+            kept.append(it)
+            continue
+
+        log.debug("[opinion-tier] drop unclassified person='%s' tier='%s'", person, tier)
+    return kept
 
 
 async def run_all_agents(
