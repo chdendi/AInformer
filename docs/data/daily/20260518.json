@@ -1,0 +1,99 @@
+{
+  "date": "2026-05-18",
+  "generated_at": "2026-05-18T09:44:52.594016+08:00",
+  "today_theme": "多模态RL训练隐患与Claude Code学术写作开源",
+  "lede": "今日AI领域聚焦两大中文生态进展：一项研究揭示多模态大模型在监督微调后直接进行强化学习会因遗忘问题导致性能退化，呼吁先修复SFT阶段的缺陷；另一项则是开发者将借助Claude Code辅助学术写作的完整流程开源，包含成本估算与配置指南，已在社区获得广泛关注。两条消息均反映出AI落地中的务实探索，前者为模型训练踩下刹车，后者则降低了AI学术应用的门槛。",
+  "headlines": [
+    {
+      "title": "多模态大模型SFT后直接RL或“带伤训练”",
+      "summary": "研究指出，多模态大模型在监督微调后若直接进行强化学习，会因遗忘问题导致性能下降。建议先修复SFT阶段遗留的缺陷，再开展RL训练，以避免模型能力退化。",
+      "url": "https://www.qbitai.com/2026/05/418814.html",
+      "source_name": "量子位",
+      "category": "chinese"
+    },
+    {
+      "title": "用Claude Code写论文的全套流水线开源",
+      "summary": "开发者将基于Claude Code的学术写作辅助流程打包开源，涵盖成本估算和详细配置。该项目已获6.4k星，有望大幅简化AI辅助论文写作的技术门槛。",
+      "url": "https://www.qbitai.com/2026/05/418737.html",
+      "source_name": "量子位",
+      "category": "chinese"
+    }
+  ],
+  "sections": {
+    "industry": [],
+    "opinion": [],
+    "chinese": [
+      {
+        "title": "多模态大模型SFT后直接RL或“带伤训练”",
+        "summary": "研究指出，多模态大模型在监督微调后直接强化学习，会因遗忘问题导致模型性能下降，应先修复SFT阶段遗留缺陷。",
+        "value_note": "揭示多模态训练顺序误区，提供实用调优建议",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/418814.html",
+        "published_at": "2026-05-17",
+        "importance": "star",
+        "category": "chinese"
+      },
+      {
+        "title": "用Claude Code写论文的全套流水线开源",
+        "summary": "开发者将利用Claude Code辅助学术写作的完整流程打包开源，包含成本估算和配置指南，获6.4k星。",
+        "value_note": "降低AI论文写作门槛，提供透明费用参考",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/418737.html",
+        "published_at": "2026-05-17",
+        "importance": "star",
+        "category": "chinese"
+      }
+    ],
+    "academic": []
+  },
+  "trending": [
+    {
+      "owner": "tinyhumansai",
+      "repo": "openhuman",
+      "full_name": "tinyhumansai/openhuman",
+      "url": "https://github.com/tinyhumansai/openhuman",
+      "description": "Your Personal AI super intelligence. Private, Simple and extremely powerful.",
+      "language": "Rust",
+      "stars_total": "13,357",
+      "stars_today": 1690,
+      "ai_topic": "",
+      "value_note": ""
+    },
+    {
+      "owner": "oven-sh",
+      "repo": "bun",
+      "full_name": "oven-sh/bun",
+      "url": "https://github.com/oven-sh/bun",
+      "description": "Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one",
+      "language": "Rust",
+      "stars_total": "91,726",
+      "stars_today": 910,
+      "ai_topic": "",
+      "value_note": ""
+    },
+    {
+      "owner": "colbymchenry",
+      "repo": "codegraph",
+      "full_name": "colbymchenry/codegraph",
+      "url": "https://github.com/colbymchenry/codegraph",
+      "description": "Pre-indexed code knowledge graph for Claude Code, Codex & Cursor — fewer tokens, fewer tool calls, 100% local",
+      "language": "TypeScript",
+      "stars_total": "3,371",
+      "stars_today": 857,
+      "ai_topic": "",
+      "value_note": ""
+    },
+    {
+      "owner": "K-Dense-AI",
+      "repo": "scientific-agent-skills",
+      "full_name": "K-Dense-AI/scientific-agent-skills",
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "description": "A set of ready to use Agent Skills for research, science, engineering, analysis, finance and writing.",
+      "language": "Python",
+      "stars_total": "23,836",
+      "stars_today": 762,
+      "ai_topic": "",
+      "value_note": ""
+    }
+  ]
+}
