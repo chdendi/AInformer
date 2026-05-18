@@ -1,102 +1,102 @@
 {
-  "updated_at": "2026-05-18T10:13:14.159110+08:00",
+  "updated_at": "2026-05-18T10:19:05.760970+08:00",
   "total_days": 11,
   "latest": {
     "date": "2026-05-18",
-    "theme": "多模态RL训练隐患与Claude Code学术写作开源",
-    "generated_at": "2026-05-18T09:44:52.594016+08:00",
-    "total_items": 2,
-    "data_url": "/data/daily/20260518.json",
-    "html_url": "/daily/20260518.html"
+    "theme": "主权风险与开源突破交织的AI新动态",
+    "generated_at": "2026-05-18T10:19:05.714203+08:00",
+    "total_items": 7,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260518.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260518.html"
   },
   "dates": [
     {
       "date": "2026-05-18",
-      "theme": "多模态RL训练隐患与Claude Code学术写作开源",
-      "generated_at": "2026-05-18T09:44:52.594016+08:00",
-      "total_items": 2,
-      "data_url": "/data/daily/20260518.json",
-      "html_url": "/daily/20260518.html"
+      "theme": "主权风险与开源突破交织的AI新动态",
+      "generated_at": "2026-05-18T10:19:05.714203+08:00",
+      "total_items": 7,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260518.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260518.html"
     },
     {
       "date": "2026-05-17",
       "theme": "全民AI普惠与智能体竞赛加速",
       "generated_at": "2026-05-17T13:13:38.421224+08:00",
       "total_items": 8,
-      "data_url": "/data/daily/20260517.json",
-      "html_url": "/daily/20260517.html"
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260517.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260517.html"
     },
     {
       "date": "2026-05-16",
       "theme": "",
       "generated_at": "2026-05-16T09:37:58.153808+08:00",
       "total_items": 12,
-      "data_url": "/data/daily/20260516.json",
-      "html_url": "/daily/20260516.html"
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260516.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260516.html"
     },
     {
       "date": "2026-05-15",
       "theme": "模型大战与AI安全争议",
       "generated_at": "2026-05-15T18:11:08.144559+08:00",
       "total_items": 16,
-      "data_url": "/data/daily/20260515.json",
-      "html_url": "/daily/20260515.html"
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260515.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260515.html"
     },
     {
       "date": "2026-05-14",
       "theme": "中国AI应用与开源突破，学术决策评测创新",
       "generated_at": "2026-05-14T20:01:21.875525+08:00",
       "total_items": 8,
-      "data_url": "/data/daily/20260514.json",
-      "html_url": "/daily/20260514.html"
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260514.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260514.html"
     },
     {
       "date": "2026-05-13",
       "theme": "可灵AI百亿估值独立，Agent能力与学术理论双突破",
       "generated_at": "2026-05-13T09:39:38.009765+08:00",
       "total_items": 8,
-      "data_url": "/data/daily/20260513.json",
-      "html_url": "/daily/20260513.html"
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260513.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260513.html"
     },
     {
       "date": "2026-05-12",
       "theme": "AI落地提速，安全治理与能力突破双线交织",
       "generated_at": "2026-05-12T10:17:39.946763+08:00",
       "total_items": 14,
-      "data_url": "/data/daily/20260512.json",
-      "html_url": "/daily/20260512.html"
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260512.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260512.html"
     },
     {
       "date": "2026-05-11",
       "theme": "AI争议与突破并存，硬件布局加速",
       "generated_at": "2026-05-11T11:14:10.995704+08:00",
       "total_items": 15,
-      "data_url": "/data/daily/20260511.json",
-      "html_url": "/daily/20260511.html"
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260511.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260511.html"
     },
     {
       "date": "2026-05-10",
       "theme": "提示工程极限与vibe coding新范例",
       "generated_at": "2026-05-10T09:37:52.497626+08:00",
       "total_items": 2,
-      "data_url": "/data/daily/20260510.json",
-      "html_url": "/daily/20260510.html"
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260510.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260510.html"
     },
     {
       "date": "2026-05-09",
       "theme": "AI能力跃迁与规则重塑",
       "generated_at": "2026-05-09T13:13:26.139535+08:00",
       "total_items": 18,
-      "data_url": "/data/daily/20260509.json",
-      "html_url": "/daily/20260509.html"
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260509.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260509.html"
     },
     {
       "date": "2026-05-08",
       "theme": "模型竞赛升级，安全与开源成焦点",
       "generated_at": "2026-05-08T14:14:08.165382+08:00",
       "total_items": 21,
-      "data_url": "/data/daily/20260508.json",
-      "html_url": "/daily/20260508.html"
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260508.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260508.html"
     }
   ]
 }
