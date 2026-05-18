@@ -59,8 +59,8 @@ _MATERIAL_LIMITS = {
 
 _RELAXED_MATERIAL_LIMITS = {
     "industry": 12,
-    "opinion": 16,
-    "academic": 12,
+    "opinion": 10,
+    "academic": 10,
     "chinese": 12,
 }
 
@@ -84,6 +84,21 @@ _SOURCE_RANK = {
     "arstechnica_ai": 14,
     "qbitai": 18,
     "36kr_ai": 14,
+    "simon_willison": 30,
+    "gary_marcus": 28,
+    "interconnects": 27,
+    "raschka": 27,
+    "huyenchip": 26,
+    "lilian_weng": 26,
+    "oneusefulthing": 25,
+    "karpathy_blog": 25,
+    "sam_altman": 25,
+    "arxiv_ai": 26,
+    "arxiv_cl": 24,
+    "arxiv_lg": 24,
+    "bair": 24,
+    "hn_ai_discussions": -8,
+    "lobsters_ai": -8,
     "ddg": -10,
 }
 
@@ -98,6 +113,19 @@ _SOURCE_DISPLAY = {
     "nvidia_blog": "NVIDIA Blog",
     "microsoft_ai": "Microsoft AI Blog",
     "qbitai": "量子位",
+    "simon_willison": "Simon Willison",
+    "gary_marcus": "Gary Marcus",
+    "interconnects": "Interconnects",
+    "raschka": "Sebastian Raschka",
+    "huyenchip": "Chip Huyen",
+    "lilian_weng": "Lilian Weng",
+    "oneusefulthing": "One Useful Thing",
+    "karpathy_blog": "Andrej Karpathy",
+    "sam_altman": "Sam Altman",
+    "arxiv_ai": "arXiv cs.AI",
+    "arxiv_cl": "arXiv cs.CL",
+    "arxiv_lg": "arXiv cs.LG",
+    "bair": "BAIR Blog",
     "ddg": "Web Search",
 }
 
@@ -111,6 +139,20 @@ _INDUSTRY_SIGNAL_WORDS = (
 )
 
 _BROAD_INDUSTRY_SOURCES = {"arstechnica_ai", "ign", "pcgamer", "steam"}
+
+_OPINION_SOURCE_PEOPLE = {
+    "simon_willison": ("analyst", "Simon Willison"),
+    "gary_marcus": ("analyst", "Gary Marcus"),
+    "interconnects": ("analyst", "Nathan Lambert"),
+    "raschka": ("analyst", "Sebastian Raschka"),
+    "huyenchip": ("analyst", "Chip Huyen"),
+    "lilian_weng": ("analyst", "Lilian Weng"),
+    "oneusefulthing": ("analyst", "Ethan Mollick"),
+    "karpathy_blog": ("leader", "Andrej Karpathy"),
+    "sam_altman": ("leader", "Sam Altman"),
+}
+
+_ACADEMIC_FALLBACK_SOURCES = {"arxiv_ai", "arxiv_cl", "arxiv_lg", "bair"}
 
 
 def _build_user_prompt(
@@ -276,12 +318,9 @@ def _material_fallback_items(
     """Emergency non-LLM fallback for high-signal news sections.
 
     This is intentionally limited to sections where a raw source card is better
-    than silently publishing an empty column. Opinion remains LLM-only because
-    it needs quote/person validation.
+    than silently publishing an empty column. Opinion is restricted to curated
+    first-party author feeds so the person/tier fields remain deterministic.
     """
-    if spec_key != "industry":
-        return []
-
     items: list[dict[str, Any]] = []
     for m in materials:
         title = _clean_material_text(m.get("title") or "", limit=80)
@@ -290,16 +329,53 @@ def _material_fallback_items(
             continue
         snippet = _clean_material_text(m.get("snippet") or "", limit=120)
         source = m.get("source") or ""
-        items.append({
-            "title": title,
-            "summary": snippet or "高可信来源的近期 AI 行业动态，因 LLM 结构化输出异常按素材兜底保留。",
-            "value_note": "LLM 输出异常时的高可信素材兜底",
-            "source_name": _SOURCE_DISPLAY.get(source, source or "Web"),
-            "url": url,
-            "published_at": m.get("published_at") or "",
-            "importance": "star" if len(items) < 2 else "pin",
-            "category": spec_key,
-        })
+
+        if spec_key == "opinion":
+            person_meta = _OPINION_SOURCE_PEOPLE.get(source)
+            if not person_meta:
+                continue
+            tier, person = person_meta
+            items.append({
+                "tier": tier,
+                "title": title,
+                "summary": snippet or f"{person} 的近期 AI 观点素材，因 LLM 结构化输出异常按一手来源兜底保留。",
+                "value_note": "一手作者来源的观点兜底",
+                "source_name": _SOURCE_DISPLAY.get(source, person),
+                "url": url,
+                "published_at": m.get("published_at") or "",
+                "importance": "star" if not items else "pin",
+                "quote_en": snippet or title,
+                "quote_zh": "",
+                "person": person,
+                "category": spec_key,
+            })
+        elif spec_key == "academic":
+            if source not in _ACADEMIC_FALLBACK_SOURCES:
+                continue
+            items.append({
+                "title": title,
+                "summary": snippet or "近期 AI 论文或评测素材，因 LLM 结构化输出异常按学术来源兜底保留。",
+                "value_note": "学术来源素材兜底",
+                "source_name": _SOURCE_DISPLAY.get(source, source or "Academic"),
+                "url": url,
+                "published_at": m.get("published_at") or "",
+                "importance": "star" if len(items) < 2 else "pin",
+                "category": spec_key,
+            })
+        elif spec_key == "industry":
+            items.append({
+                "title": title,
+                "summary": snippet or "高可信来源的近期 AI 行业动态，因 LLM 结构化输出异常按素材兜底保留。",
+                "value_note": "LLM 输出异常时的高可信素材兜底",
+                "source_name": _SOURCE_DISPLAY.get(source, source or "Web"),
+                "url": url,
+                "published_at": m.get("published_at") or "",
+                "importance": "star" if len(items) < 2 else "pin",
+                "category": spec_key,
+            })
+        else:
+            return []
+
         if len(items) >= keep:
             break
     return items
