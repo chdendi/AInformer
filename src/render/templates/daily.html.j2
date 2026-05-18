@@ -154,7 +154,7 @@
           <a class="repo-name" href="{{ it.url }}" target="_blank" rel="noopener noreferrer">{{ it.full_name }}</a>
           {% if it.ai_topic %}<span class="ai-topic">{{ it.ai_topic }}</span>{% endif %}
         </div>
-        {% if it.description %}<p class="desc">{{ it.description }}</p>{% endif %}
+        {% if it.summary_zh or it.description %}<p class="desc">{{ it.summary_zh or it.description }}</p>{% endif %}
         {% if it.value_note %}<div class="value">{{ it.value_note }}</div>{% endif %}
         <div class="meta">
           {% if it.language %}<span class="lang">{{ it.language }}</span>{% endif %}

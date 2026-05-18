@@ -1,9 +1,9 @@
 """LLM-driven AI-relevance filter for GitHub Trending.
 
 Takes the raw daily Top-N from `src.search.github_trending.fetch_trending`
-and asks the model to keep the most AI/ML-related ones, plus write a one-line
-Chinese value note for each. Designed for a single LLM call to keep token
-cost bounded — input is small (~20 short repo descriptions).
+and asks the model to keep the most AI/ML-related ones, plus write a Chinese
+summary and one-line value note for each. Designed for a single LLM call to
+keep token cost bounded — input is small (~20 short repo descriptions).
 """
 
 from __future__ import annotations
@@ -44,14 +44,15 @@ async def filter_trending_with_llm(
     repos: list[dict[str, Any]],
     keep: int = 4,
 ) -> list[dict[str, Any]]:
-    """Pick the top `keep` AI-relevant repos and add a Chinese value note.
+    """Pick the top `keep` AI-relevant repos and add Chinese editorial fields.
 
     Returns enriched dicts that retain the original scrape fields (`owner`,
     `repo`, `url`, `description`, `language`, `stars_today`, `stars_total`)
-    plus `value_note` (中文一句话点评) and `ai_topic`（AI 相关子领域标签）.
+    plus `summary_zh` (中文项目摘要), `value_note` (中文一句话点评) and
+    `ai_topic`（AI 相关子领域标签）.
 
-    If the LLM call fails or returns no valid items, returns an empty list —
-    the daily report will then omit the trending section.
+    If the LLM call fails or returns no valid items, falls back to the top
+    repos by daily stars with a generic Chinese summary.
     """
     if not repos:
         log.warning("[trending] empty repo list — nothing to filter")
@@ -98,6 +99,7 @@ async def filter_trending_with_llm(
     {{
       "full_name": "owner/repo",
       "ai_topic": "子领域标签（如 LLM 推理 / Agent 框架 / 多模态 / RAG / 训练 / Eval / MCP 工具）",
+      "summary_zh": "中文摘要（35-70 字）：把英文简介改写成自然中文，说明项目做什么",
       "value_note": "一句话中文点评（25-50 字）：它解决了什么、为什么值得开发者关注"
     }}
   ]
@@ -106,6 +108,7 @@ async def filter_trending_with_llm(
 要求：
 - items 数量正好 {keep}（如果 AI 相关项目不足 {keep}，按实际数量返回，可少不可多凑）。
 - full_name 必须严格来自上面列表中的项目。
+- summary_zh 必须是中文摘要，不要逐词硬翻；库名、协议名、模型名、命令可保留英文。
 - value_note 不要复述描述原文，要给"读者价值"判断。
 """.strip()
 
@@ -139,6 +142,9 @@ async def filter_trending_with_llm(
             {
                 **base,
                 "ai_topic": (it.get("ai_topic") or "").strip(),
+                "summary_zh": (
+                    it.get("summary_zh") or _fallback_summary_zh(base)
+                ).strip(),
                 "value_note": (it.get("value_note") or "").strip(),
             }
         )
@@ -158,16 +164,21 @@ async def filter_trending_with_llm(
 
 
 def _fallback_top_stars(repos: list[dict[str, Any]], keep: int) -> list[dict[str, Any]]:
-    """Sort repos by stars_today desc and return top `keep` with empty notes.
+    """Sort repos by stars_today desc and return top `keep` with fallback notes.
 
     Used when the LLM call errors out or judges every repo non-AI. The intent
     is "never silently empty trending" — empty value_note / ai_topic are
     conditionally rendered, so cards still display cleanly with just the repo
-    line and stars.
+    line, Chinese fallback summary and stars.
     """
     ranked = sorted(repos, key=lambda r: r.get("stars_today") or 0, reverse=True)
     fallback = [
-        {**r, "ai_topic": "", "value_note": ""}
+        {
+            **r,
+            "ai_topic": "",
+            "summary_zh": _fallback_summary_zh(r),
+            "value_note": "",
+        }
         for r in ranked[:keep]
     ]
     log.info(
@@ -177,3 +188,12 @@ def _fallback_top_stars(repos: list[dict[str, Any]], keep: int) -> list[dict[str
         [(r["full_name"], r.get("stars_today")) for r in fallback],
     )
     return fallback
+
+
+def _fallback_summary_zh(repo: dict[str, Any]) -> str:
+    """Best-effort Chinese summary when the LLM does not provide one."""
+    full_name = repo.get("full_name") or repo.get("repo") or "该项目"
+    language = repo.get("language") or ""
+    if language:
+        return f"{full_name} 是一个 {language} 项目，今日在 GitHub Trending 获得较高关注。"
+    return f"{full_name} 今日在 GitHub Trending 获得较高关注，建议结合仓库说明进一步评估。"
