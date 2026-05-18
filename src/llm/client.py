@@ -66,6 +66,82 @@ def make_client(cfg: LLMConfig) -> AsyncOpenAI:
     return AsyncOpenAI(api_key=cfg.api_key, base_url=cfg.base_url)
 
 
+def _parse_json_content(content: str) -> Any:
+    try:
+        return json.loads(content)
+    except json.JSONDecodeError:
+        pass
+
+    cleaned = content.strip().strip("`")
+    if cleaned.startswith("json"):
+        cleaned = cleaned[4:].strip()
+    try:
+        return json.loads(cleaned)
+    except json.JSONDecodeError:
+        pass
+
+    start = cleaned.find("{")
+    end = cleaned.rfind("}")
+    if start != -1 and end > start:
+        try:
+            return json.loads(cleaned[start:end + 1])
+        except json.JSONDecodeError:
+            pass
+
+    log.warning("JSON parse failed. Raw content (first 500 chars): %s", content[:500])
+    return {}
+
+
+def _completion_tokens(resp: Any) -> int:
+    usage = getattr(resp, "usage", None)
+    return (getattr(usage, "completion_tokens", 0) or 0) if usage else 0
+
+
+def _finish_reason(resp: Any) -> str:
+    choices = getattr(resp, "choices", None) or []
+    if not choices:
+        return ""
+    return getattr(choices[0], "finish_reason", "") or ""
+
+
+async def _chat_completion(
+    client: AsyncOpenAI,
+    cfg: LLMConfig,
+    system: str,
+    user: str,
+    *,
+    temperature: float,
+    max_tokens: int,
+    json_mode: bool,
+) -> Any:
+    kwargs: dict[str, Any] = {
+        "model": cfg.model,
+        "messages": [
+            {"role": "system", "content": system},
+            {"role": "user", "content": user},
+        ],
+        "temperature": temperature,
+        "max_tokens": max_tokens,
+    }
+    if json_mode:
+        kwargs["response_format"] = {"type": "json_object"}
+
+    resp = await client.chat.completions.create(**kwargs)
+    await _record_usage(resp)
+    content = resp.choices[0].message.content or "{}"
+    parsed = _parse_json_content(content)
+
+    if not parsed:
+        log.warning(
+            "LLM returned empty JSON object (json_mode=%s, finish=%s, completion=%d, content_len=%d)",
+            json_mode,
+            _finish_reason(resp),
+            _completion_tokens(resp),
+            len(content),
+        )
+    return parsed
+
+
 async def chat_json(
     client: AsyncOpenAI,
     cfg: LLMConfig,
@@ -83,29 +159,28 @@ async def chat_json(
         reraise=True,
     ):
         with attempt:
-            resp = await client.chat.completions.create(
-                model=cfg.model,
-                messages=[
-                    {"role": "system", "content": system},
-                    {"role": "user", "content": user},
-                ],
+            result = await _chat_completion(
+                client,
+                cfg,
+                system,
+                user,
                 temperature=temperature,
                 max_tokens=max_tokens,
-                response_format={"type": "json_object"},
+                json_mode=True,
             )
-            await _record_usage(resp)
-            content = resp.choices[0].message.content or "{}"
-            try:
-                return json.loads(content)
-            except json.JSONDecodeError:
-                cleaned = content.strip().strip("`")
-                if cleaned.startswith("json"):
-                    cleaned = cleaned[4:].strip()
-                try:
-                    return json.loads(cleaned)
-                except json.JSONDecodeError:
-                    log.warning("JSON parse failed. Raw content (first 500 chars): %s", content[:500])
-                    return {}
+            if result:
+                return result
+
+            log.warning("Retrying LLM JSON call once without response_format after empty JSON result")
+            return await _chat_completion(
+                client,
+                cfg,
+                system,
+                user,
+                temperature=temperature,
+                max_tokens=max_tokens,
+                json_mode=False,
+            )
     return {}
 
 

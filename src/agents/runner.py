@@ -3,6 +3,7 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
+import re
 from datetime import date, timedelta
 from typing import Any
 
@@ -56,6 +57,15 @@ _MATERIAL_LIMITS = {
     "chinese": 35,
 }
 
+_RELAXED_MATERIAL_LIMITS = {
+    "industry": 12,
+    "opinion": 16,
+    "academic": 12,
+    "chinese": 12,
+}
+
+_RELAXED_EXCLUDED_LIMIT = 20
+
 _SOURCE_RANK = {
     "openai": 35,
     "deepmind": 32,
@@ -77,6 +87,20 @@ _SOURCE_RANK = {
     "ddg": -10,
 }
 
+_SOURCE_DISPLAY = {
+    "the_decoder": "The Decoder",
+    "verge_ai": "The Verge",
+    "techcrunch_ai": "TechCrunch",
+    "marktechpost": "MarkTechPost",
+    "arstechnica_ai": "Ars Technica",
+    "openai": "OpenAI",
+    "deepmind": "Google DeepMind",
+    "nvidia_blog": "NVIDIA Blog",
+    "microsoft_ai": "Microsoft AI Blog",
+    "qbitai": "量子位",
+    "ddg": "Web Search",
+}
+
 _INDUSTRY_SIGNAL_WORDS = (
     "ai", "llm", "gpt", "claude", "gemini", "grok", "llama", "mistral",
     "openai", "anthropic", "deepmind", "nvidia", "model", "agent",
@@ -95,11 +119,14 @@ def _build_user_prompt(
     excluded: list[str],
     today: str,
     relaxed: bool = False,
+    *,
+    material_limit: int | None = None,
+    excluded_limit: int = 40,
 ) -> str:
-    excluded_block = "\n".join(f"- {t}" for t in excluded[:40]) if excluded else "（无）"
+    excluded_block = "\n".join(f"- {t}" for t in excluded[:excluded_limit]) if excluded else "（无）"
     material_lines = []
-    material_limit = _MATERIAL_LIMITS.get(spec.key, 30)
-    for i, m in enumerate(materials[:material_limit], 1):
+    actual_material_limit = material_limit or _MATERIAL_LIMITS.get(spec.key, 30)
+    for i, m in enumerate(materials[:actual_material_limit], 1):
         pub = (m.get("published_at") or "")[:10]
         material_lines.append(
             f"[{i}] {m.get('title','')} | {m.get('url','')} | {m.get('source','?')} | {pub}\n"
@@ -229,6 +256,55 @@ def _prepare_prompt_materials(
     return [item for score, _, item in ranked if score > -100]
 
 
+_HTML_RE = re.compile(r"<[^>]+>")
+
+
+def _clean_material_text(text: str, limit: int = 140) -> str:
+    cleaned = _HTML_RE.sub("", text or "")
+    cleaned = " ".join(cleaned.split())
+    if len(cleaned) <= limit:
+        return cleaned
+    return cleaned[:limit].rstrip() + "..."
+
+
+def _material_fallback_items(
+    spec_key: str,
+    materials: list[dict[str, Any]],
+    *,
+    keep: int = 4,
+) -> list[dict[str, Any]]:
+    """Emergency non-LLM fallback for high-signal news sections.
+
+    This is intentionally limited to sections where a raw source card is better
+    than silently publishing an empty column. Opinion remains LLM-only because
+    it needs quote/person validation.
+    """
+    if spec_key != "industry":
+        return []
+
+    items: list[dict[str, Any]] = []
+    for m in materials:
+        title = _clean_material_text(m.get("title") or "", limit=80)
+        url = m.get("url") or ""
+        if not title or not url:
+            continue
+        snippet = _clean_material_text(m.get("snippet") or "", limit=120)
+        source = m.get("source") or ""
+        items.append({
+            "title": title,
+            "summary": snippet or "高可信来源的近期 AI 行业动态，因 LLM 结构化输出异常按素材兜底保留。",
+            "value_note": "LLM 输出异常时的高可信素材兜底",
+            "source_name": _SOURCE_DISPLAY.get(source, source or "Web"),
+            "url": url,
+            "published_at": m.get("published_at") or "",
+            "importance": "star" if len(items) < 2 else "pin",
+            "category": spec_key,
+        })
+        if len(items) >= keep:
+            break
+    return items
+
+
 async def run_agent(
     spec: AgentSpec,
     rss_pool: list[dict[str, Any]],
@@ -290,13 +366,29 @@ async def run_agent(
             drops["raw"],
             drops["fabricated"],
         )
-        relaxed_prompt = _build_user_prompt(spec, prompt_materials, excluded_titles, today, relaxed=True)
+        compact_materials = prompt_materials[:_RELAXED_MATERIAL_LIMITS.get(spec.key, 12)]
+        log.info(
+            "[agent:%s] relaxed compact retry with %d/%d prompt materials",
+            spec.key,
+            len(compact_materials),
+            len(prompt_materials),
+        )
+        relaxed_prompt = _build_user_prompt(
+            spec,
+            compact_materials,
+            excluded_titles,
+            today,
+            relaxed=True,
+            material_limit=len(compact_materials),
+            excluded_limit=_RELAXED_EXCLUDED_LIMIT,
+        )
         try:
             result2 = await chat_json(client, cfg, AGENT_SYSTEM, relaxed_prompt, temperature=0.5, max_tokens=2000)
         except Exception as e:
             log.error("[agent:%s] relaxed-mode LLM failed: %s", spec.key, e)
             result2 = {}
-        filtered, drops2 = _validate_items(result2, valid_urls, spec.key, mode="relaxed")
+        compact_urls = {m["url"] for m in compact_materials}
+        filtered, drops2 = _validate_items(result2, compact_urls, spec.key, mode="relaxed")
         if spec.key == "opinion":
             before_relaxed_tier = len(filtered)
             filtered = _validate_opinion_tier(filtered, material_corpus)
@@ -312,6 +404,12 @@ async def run_agent(
                 len(filtered),
                 drops2["fabricated"],
             )
+
+    if not filtered:
+        fallback = _material_fallback_items(spec.key, prompt_materials)
+        if fallback:
+            log.warning("[agent:%s] using deterministic material fallback: %d items", spec.key, len(fallback))
+            filtered = fallback
 
     log.info("[agent:%s] returned %d items", spec.key, len(filtered))
     return {"key": spec.key, "name": spec.name, "items": filtered}
