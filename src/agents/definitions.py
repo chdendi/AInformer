@@ -79,7 +79,9 @@ def build_agent_specs(month_token: str) -> list[AgentSpec]:
         ),
         rss_categories=["industry"],
         extra_instructions=(
-            "突出行业格局变化与产品里程碑：有版本号 / 有融资金额 / 有政策原文链接的内容优先。"
+            "突出行业格局变化、产品里程碑、公司组织调整、平台治理、重要模型/工具发布。"
+            "有版本号 / 融资金额 / 政策原文链接的内容优先，但不要把它们当作硬性门槛；"
+            "可信媒体或官方来源报道的实质产品更新也应保留。"
         ),
     )
 
