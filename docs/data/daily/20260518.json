@@ -1,61 +1,89 @@
 {
   "date": "2026-05-18",
-  "generated_at": "2026-05-18T10:58:09.405779+08:00",
-  "today_theme": "AI垂直应用融资热，硬件与生态加速落地",
-  "lede": "今日AI领域投融资与产业布局活跃：宠物健康大模型公司「绮算法」连获两轮融资，智谱生态加持，已服务超200家宠物医院并推进软硬一体化；宇树科技成立星盟科技公司，布局智能机器人研发与销售；智能眼镜厂商「众见科技」完成数千万元三轮融资，产品已落地。资本持续涌向AI垂直应用与硬件创新，中文AI生态进一步丰富。",
+  "generated_at": "2026-05-18T15:33:19.169197+08:00",
+  "today_theme": "前沿模型安全风险与端侧Agent创新齐爆",
+  "lede": "今日AI圈聚焦前沿模型的安全边界与自主智能体的突破。新基准测试显示，Claude Mythos与GPT-5.5已能独立编写浏览器零日漏洞利用代码，将大模型的安全风险推向新高度。与此同时，Mistral CEO公开警告法国政府，切勿让Anthropic的Mythos扫描军事代码库，数据安全担忧升级。在应用侧，OPPO开源移动端AI Agent X-OmniClaw，凭借端侧多模态感知实现复杂交互，重新定义手机智能。国内，灵童机器人发布桌面人形机器人“念”，启动全球共创，为具身智能注入开源活力。技术狂奔与红线守护的博弈，愈发扣人心弦。",
   "headlines": [
     {
-      "title": "宠物健康大模型「绮算法」获智谱生态加持融资",
-      "summary": "宠物大模型健康公司绮算法完成数千万元融资，投资方为启赋资本与聚恒创投。公司已服务超200家宠物医院，计划推进软硬一体化。",
-      "url": "https://36kr.com/p/3812788568907520?f=rss",
-      "source_name": "36氪",
-      "category": "chinese"
+      "title": "新基准：Claude Mythos与GPT-5.5可自主开发浏览器零日漏洞",
+      "summary": "一项新基准测试表明，Anthropic的Mythos和OpenAI的GPT-5.5能够独立编写可用的浏览器零日漏洞利用代码。该发现凸显了前沿模型在网络安全领域的双重影响，自主攻击能力引发对安全管控的广泛讨论。",
+      "url": "https://the-decoder.com/new-benchmark-shows-claude-mythos-and-gpt-5-5-can-develop-real-browser-exploits-autonomously/",
+      "source_name": "the_decoder",
+      "category": "industry"
     },
     {
-      "title": "宇树科技成立星盟科技，进军智能机器人",
-      "summary": "宇树科技全资持股的杭州宇树星盟科技有限公司成立，注册资本10万元。经营范围含智能机器人研发、销售等，布局智能机器人赛道。",
-      "url": "https://36kr.com/newsflashes/3814207359672064?f=rss",
-      "source_name": "36氪",
-      "category": "chinese"
+      "title": "Mistral CEO 警告法国：别让Anthropic Mythos动军事代码",
+      "summary": "Mistral CEO Arthur Mensch公开反对法国政府允许Anthropic的AI模型Mythos扫描军事代码库，担忧此举可能导致敏感数据泄露并威胁国家主权。该警告将AI在国防领域的应用信任问题提上日程。",
+      "url": "https://the-decoder.com/mistral-ceo-arthur-mensch-warns-france-against-letting-anthropics-mythos-scan-military-code-bases/",
+      "source_name": "the_decoder",
+      "category": "industry"
     },
     {
-      "title": "智能眼镜厂商「众见科技」完成三轮融资",
-      "summary": "众见科技获韶音、高锋耐心基金等数千万元融资，用于研发推进。其初代智能眼镜产品已完成落地，加速智能穿戴市场布局。",
-      "url": "https://36kr.com/newsflashes/3814153112657413?f=rss",
+      "title": "OPPO开源端侧AI Agent X-OmniClaw，融合摄像头屏幕语音操控",
+      "summary": "OPPO正式开源Android AI智能体X-OmniClaw，无需依赖云端即可调用手机摄像头、屏幕和语音，完成复杂交互任务。此举将多模态感知与操控能力整合于设备端，展现了移动端AI代理的实用化路径。",
+      "url": "https://the-decoder.com/oppo-open-sources-android-ai-agent-x-omniclaw-that-uses-your-camera-screen-and-voice-without-leaving-the-phone/",
+      "source_name": "the_decoder",
+      "category": "industry"
+    },
+    {
+      "title": "灵童机器人发布桌面人形机器人“念”，面向全球开放共创",
+      "summary": "灵童机器人推出30自由度桌面人形机器人“念”，并计划免费发放1000台，支持全球开发者进行二次开发与内容共创。该项目通过硬件开源加速具身智能的社区生态建设。",
+      "url": "https://36kr.com/newsflashes/3814396829769225?f=rss",
       "source_name": "36氪",
       "category": "chinese"
     }
   ],
   "sections": {
-    "industry": [],
+    "industry": [
+      {
+        "title": "Mistral CEO 警告法国勿让 Anthropic Mythos 扫描军事代码库",
+        "summary": "Mistral CEO Arthur Mensch 公开反对法国政府允许 Anthropic 的 AI 模型 Mythos 扫描军事代码，担忧敏感数据泄露与国家安全风险。",
+        "value_note": "AI 模型用于军事场景引发地缘政治争议，可能影响欧洲 AI 合作格局",
+        "source_name": "the_decoder",
+        "url": "https://the-decoder.com/mistral-ceo-arthur-mensch-warns-france-against-letting-anthropics-mythos-scan-military-code-bases/",
+        "published_at": "2026-05-17",
+        "importance": "pin",
+        "category": "industry"
+      },
+      {
+        "title": "新基准揭示 Claude Mythos 与 GPT-5.5 可自主开发浏览器漏洞",
+        "summary": "一项新基准测试显示，Anthropic 的 Mythos 和 OpenAI 的 GPT-5.5 能独立编写可用的浏览器零日漏洞利用代码，凸显前沿模型的安全威胁。",
+        "value_note": "前沿大模型已具备自主漏洞挖掘与利用能力，安全风险显著升级",
+        "source_name": "the_decoder",
+        "url": "https://the-decoder.com/new-benchmark-shows-claude-mythos-and-gpt-5-5-can-develop-real-browser-exploits-autonomously/",
+        "published_at": "2026-05-16",
+        "importance": "star",
+        "category": "industry"
+      },
+      {
+        "title": "OPPO 开源移动端 AI Agent X-OmniClaw，融合多模态感知与操控",
+        "summary": "OPPO 开源 Android AI 智能体 X-OmniClaw，可直接调用手机摄像头、屏幕和语音，无需离开设备即可完成复杂交互任务。",
+        "value_note": "首个全开源的设备端多模态 AI Agent，有望推动移动生态 Agent 化",
+        "source_name": "the_decoder",
+        "url": "https://the-decoder.com/oppo-open-sources-android-ai-agent-x-omniclaw-that-uses-your-camera-screen-and-voice-without-leaving-the-phone/",
+        "published_at": "2026-05-17",
+        "importance": "star",
+        "category": "industry"
+      }
+    ],
     "opinion": [],
     "chinese": [
       {
-        "title": "宠物健康大模型公司「绮算法」连获两轮融资，智谱生态加持",
-        "summary": "宠物大模型健康公司绮算法完成数千万元融资，投资方为启赋资本与聚恒创投，已服务超200家宠物医院，计划推进软硬一体化。",
-        "value_note": "垂直领域大模型落地，智谱生态企业获得资本与产业双重认可。",
+        "title": "酷开发布原生AI企业操作系统Happy Work AIOS",
+        "summary": "酷开网络推出原生AI企业操作系统Happy Work AIOS Lite MVP，实现从生活到企业场景的全场景智能覆盖。",
+        "value_note": "国内企业AI操作系统新尝试，推动场景智能落地",
         "source_name": "36氪",
-        "url": "https://36kr.com/p/3812788568907520?f=rss",
-        "published_at": "2026-05-17",
-        "importance": "hot",
-        "category": "chinese"
-      },
-      {
-        "title": "宇树科技成立星盟科技公司，布局智能机器人研发与销售",
-        "summary": "宇树科技全资持股的杭州宇树星盟科技有限公司成立，注册资本10万元，经营范围含智能机器人研发、销售等。",
-        "value_note": "四足机器人龙头拓展业务实体，加速智能机器人商业化落地。",
-        "source_name": "36氪",
-        "url": "https://36kr.com/newsflashes/3814207359672064?f=rss",
+        "url": "https://36kr.com/newsflashes/3814473276939780?f=rss",
         "published_at": "2026-05-18",
-        "importance": "star",
+        "importance": "pin",
         "category": "chinese"
       },
       {
-        "title": "智能眼镜厂商「众见科技」完成数千万元三轮融资，产品已落地",
-        "summary": "众见科技获韶音、高锋耐心基金等数千万元融资，用于研发推进，初代智能眼镜产品已完成落地。",
-        "value_note": "AI 硬件赛道持续吸金，产业资本与专业基金联合押注。",
+        "title": "灵童机器人发布桌面人形机器人“念”，启动全球共创",
+        "summary": "灵童机器人发布30自由度桌面人形机器人“念”，并面向全球免费发放1000台，支持二次开发与内容共创。",
+        "value_note": "低成本桌面人形机器人走向开放共创，降低具身智能开发门槛",
         "source_name": "36氪",
-        "url": "https://36kr.com/newsflashes/3814153112657413?f=rss",
+        "url": "https://36kr.com/newsflashes/3814396829769225?f=rss",
         "published_at": "2026-05-18",
         "importance": "pin",
         "category": "chinese"
@@ -71,7 +99,7 @@
       "url": "https://github.com/tinyhumansai/openhuman",
       "description": "Your Personal AI super intelligence. Private, Simple and extremely powerful.",
       "language": "Rust",
-      "stars_total": "13,682",
+      "stars_total": "14,570",
       "stars_today": 1690,
       "ai_topic": "",
       "value_note": ""
@@ -83,7 +111,7 @@
       "url": "https://github.com/oven-sh/bun",
       "description": "Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one",
       "language": "Rust",
-      "stars_total": "91,749",
+      "stars_total": "91,824",
       "stars_today": 910,
       "ai_topic": "",
       "value_note": ""
@@ -95,7 +123,7 @@
       "url": "https://github.com/colbymchenry/codegraph",
       "description": "Pre-indexed code knowledge graph for Claude Code, Codex, Cursor, and OpenCode — fewer tokens, fewer tool calls, 100% local",
       "language": "TypeScript",
-      "stars_total": "3,482",
+      "stars_total": "3,706",
       "stars_today": 857,
       "ai_topic": "",
       "value_note": ""
@@ -107,7 +135,7 @@
       "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "description": "A set of ready to use Agent Skills for research, science, engineering, analysis, finance and writing.",
       "language": "Python",
-      "stars_total": "23,886",
+      "stars_total": "24,016",
       "stars_today": 762,
       "ai_topic": "",
       "value_note": ""
