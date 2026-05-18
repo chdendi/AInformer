@@ -1,95 +1,182 @@
 {
   "date": "2026-05-18",
-  "generated_at": "2026-05-18T15:33:19.169197+08:00",
-  "today_theme": "前沿模型安全风险与端侧Agent创新齐爆",
-  "lede": "今日AI圈聚焦前沿模型的安全边界与自主智能体的突破。新基准测试显示，Claude Mythos与GPT-5.5已能独立编写浏览器零日漏洞利用代码，将大模型的安全风险推向新高度。与此同时，Mistral CEO公开警告法国政府，切勿让Anthropic的Mythos扫描军事代码库，数据安全担忧升级。在应用侧，OPPO开源移动端AI Agent X-OmniClaw，凭借端侧多模态感知实现复杂交互，重新定义手机智能。国内，灵童机器人发布桌面人形机器人“念”，启动全球共创，为具身智能注入开源活力。技术狂奔与红线守护的博弈，愈发扣人心弦。",
+  "generated_at": "2026-05-18T16:12:40.710415+08:00",
+  "today_theme": "AI 自主能力跃进，安全与协作成焦点",
+  "lede": "今日 AI 圈迎来一场从实验到安全的全面冲击：Andon Labs 让四款大模型自主运营电台长达半年，结果从“称职”到“癫狂”，生动展现了 AI 的创意与失控边界。与此同时，CMU 的新基准揭示 Claude Mythos 与 GPT-5.5 已能自主开发真实浏览器漏洞，将安全焦虑推向新高。开源社区同样沸腾，Gemma 4、DeepSeek V4 等旗舰模型密集发布，推动架构创新；OpenAI 则宣布整合产品团队，全面押注“代理式未来”。在国内，信通院与清华联合提出 FedRE，在 CVPR 2026 上实现了联邦学习隐私、性能与效率的三方平衡，而学术前沿的多智能体协调框架 SDOF 也为对齐代价给出了新解。",
   "headlines": [
     {
-      "title": "新基准：Claude Mythos与GPT-5.5可自主开发浏览器零日漏洞",
-      "summary": "一项新基准测试表明，Anthropic的Mythos和OpenAI的GPT-5.5能够独立编写可用的浏览器零日漏洞利用代码。该发现凸显了前沿模型在网络安全领域的双重影响，自主攻击能力引发对安全管控的广泛讨论。",
+      "title": "四大 AI 模型自主运营电台半年：有的称职，有的疯癫",
+      "summary": "Andon Labs 让四款大模型各自运营一个全自动电台长达六个月，节目编排、主持与音乐选择完全由 AI 完成。结果表明，有的模型稳定输出专业内容，有的则逐渐偏离轨道，出现不可预测的创意或混乱输出，为 AI 长期自主行为研究提供了罕见样本。",
+      "url": "https://the-decoder.com/four-ai-models-ran-radio-stations-for-six-months-and-the-results-ranged-from-competent-to-unhinged/",
+      "source_name": "The Decoder",
+      "category": "industry"
+    },
+    {
+      "title": "新基准显示 Claude Mythos 与 GPT-5.5 可自主开发浏览器漏洞",
+      "summary": "卡内基梅隆大学构建的评测框架表明，Claude Mythos 与 GPT-5.5 已具备自主发现并利用真实浏览器漏洞的能力。这一进展在加速攻防技术演进的同时，也引发了对模型能力管控与网络安全防御的深层担忧。",
       "url": "https://the-decoder.com/new-benchmark-shows-claude-mythos-and-gpt-5-5-can-develop-real-browser-exploits-autonomously/",
-      "source_name": "the_decoder",
+      "source_name": "The Decoder",
       "category": "industry"
     },
     {
-      "title": "Mistral CEO 警告法国：别让Anthropic Mythos动军事代码",
-      "summary": "Mistral CEO Arthur Mensch公开反对法国政府允许Anthropic的AI模型Mythos扫描军事代码库，担忧此举可能导致敏感数据泄露并威胁国家主权。该警告将AI在国防领域的应用信任问题提上日程。",
-      "url": "https://the-decoder.com/mistral-ceo-arthur-mensch-warns-france-against-letting-anthropics-mythos-scan-military-code-bases/",
-      "source_name": "the_decoder",
-      "category": "industry"
+      "title": "开源模型生态大爆发：Gemma 4、DeepSeek V4 等密集亮相",
+      "summary": "Nathan Lambert 指出，过去一个月多个旗舰开源模型集中发布，覆盖 Gemma 4、DeepSeek V4 等重磅项目，反映出开源社区在模型能力、效率与可及性上的快速演进，正在重塑产业格局。",
+      "url": "https://www.interconnects.ai/p/latest-open-artifacts-21-open-model",
+      "source_name": "Interconnects",
+      "category": "opinion"
     },
     {
-      "title": "OPPO开源端侧AI Agent X-OmniClaw，融合摄像头屏幕语音操控",
-      "summary": "OPPO正式开源Android AI智能体X-OmniClaw，无需依赖云端即可调用手机摄像头、屏幕和语音，完成复杂交互任务。此举将多模态感知与操控能力整合于设备端，展现了移动端AI代理的实用化路径。",
-      "url": "https://the-decoder.com/oppo-open-sources-android-ai-agent-x-omniclaw-that-uses-your-camera-screen-and-voice-without-leaving-the-phone/",
-      "source_name": "the_decoder",
-      "category": "industry"
-    },
-    {
-      "title": "灵童机器人发布桌面人形机器人“念”，面向全球开放共创",
-      "summary": "灵童机器人推出30自由度桌面人形机器人“念”，并计划免费发放1000台，支持全球开发者进行二次开发与内容共创。该项目通过硬件开源加速具身智能的社区生态建设。",
-      "url": "https://36kr.com/newsflashes/3814396829769225?f=rss",
-      "source_name": "36氪",
+      "title": "信通院与清华提出 FedRE：纠缠表示破解联邦学习三难困境",
+      "summary": "信通院与清华大学在 CVPR 2026 上提出的 FedRE 框架，利用纠缠表示学习同时兼顾隐私保护、模型性能与通信效率，为联邦学习在敏感数据场景下的落地提供了新路径。",
+      "url": "https://www.qbitai.com/2026/05/419373.html",
+      "source_name": "量子位",
       "category": "chinese"
+    },
+    {
+      "title": "SDOF 框架驯服多智能体协调中的对齐代价",
+      "summary": "多智能体编排框架常因对齐单一智能体目标而牺牲整体效率。新工作 SDOF 引入状态约束动态优化，在保持个体对齐的前提下显著降低协调成本，为复杂代理系统部署提供了实用方案。",
+      "url": "https://arxiv.org/abs/2605.15204",
+      "source_name": "arXiv",
+      "category": "academic"
     }
   ],
   "sections": {
     "industry": [
       {
-        "title": "Mistral CEO 警告法国勿让 Anthropic Mythos 扫描军事代码库",
-        "summary": "Mistral CEO Arthur Mensch 公开反对法国政府允许 Anthropic 的 AI 模型 Mythos 扫描军事代码，担忧敏感数据泄露与国家安全风险。",
-        "value_note": "AI 模型用于军事场景引发地缘政治争议，可能影响欧洲 AI 合作格局",
-        "source_name": "the_decoder",
+        "title": "Four AI models ran radio stations for six months and the results ranged from com...",
+        "summary": "Andon Labs has been letting four AI models each run their own radio station autonomously for six months. From identical...",
+        "value_note": "LLM 输出异常时的高可信素材兜底",
+        "source_name": "The Decoder",
+        "url": "https://the-decoder.com/four-ai-models-ran-radio-stations-for-six-months-and-the-results-ranged-from-competent-to-unhinged/",
+        "published_at": "2026-05-17T08:30:55+00:00",
+        "importance": "star",
+        "category": "industry"
+      },
+      {
+        "title": "Mistral CEO Arthur Mensch warns France against letting Anthropic's Mythos scan m...",
+        "summary": "Mistral CEO Arthur Mensch warns of Europe's growing cybersecurity dependency: France's military code bases should not be...",
+        "value_note": "LLM 输出异常时的高可信素材兜底",
+        "source_name": "The Decoder",
         "url": "https://the-decoder.com/mistral-ceo-arthur-mensch-warns-france-against-letting-anthropics-mythos-scan-military-code-bases/",
-        "published_at": "2026-05-17",
+        "published_at": "2026-05-17T09:15:30+00:00",
+        "importance": "star",
+        "category": "industry"
+      },
+      {
+        "title": "New benchmark shows Claude Mythos and GPT-5.5 can develop real browser exploits...",
+        "summary": "Researchers at Carnegie Mellon University built a new benchmark that measures how far AI agents can go when exploiting r...",
+        "value_note": "LLM 输出异常时的高可信素材兜底",
+        "source_name": "The Decoder",
+        "url": "https://the-decoder.com/new-benchmark-shows-claude-mythos-and-gpt-5-5-can-develop-real-browser-exploits-autonomously/",
+        "published_at": "2026-05-16T13:08:05+00:00",
         "importance": "pin",
         "category": "industry"
       },
       {
-        "title": "新基准揭示 Claude Mythos 与 GPT-5.5 可自主开发浏览器漏洞",
-        "summary": "一项新基准测试显示，Anthropic 的 Mythos 和 OpenAI 的 GPT-5.5 能独立编写可用的浏览器零日漏洞利用代码，凸显前沿模型的安全威胁。",
-        "value_note": "前沿大模型已具备自主漏洞挖掘与利用能力，安全风险显著升级",
-        "source_name": "the_decoder",
-        "url": "https://the-decoder.com/new-benchmark-shows-claude-mythos-and-gpt-5-5-can-develop-real-browser-exploits-autonomously/",
-        "published_at": "2026-05-16",
-        "importance": "star",
-        "category": "industry"
-      },
-      {
-        "title": "OPPO 开源移动端 AI Agent X-OmniClaw，融合多模态感知与操控",
-        "summary": "OPPO 开源 Android AI 智能体 X-OmniClaw，可直接调用手机摄像头、屏幕和语音，无需离开设备即可完成复杂交互任务。",
-        "value_note": "首个全开源的设备端多模态 AI Agent，有望推动移动生态 Agent 化",
-        "source_name": "the_decoder",
-        "url": "https://the-decoder.com/oppo-open-sources-android-ai-agent-x-omniclaw-that-uses-your-camera-screen-and-voice-without-leaving-the-phone/",
-        "published_at": "2026-05-17",
-        "importance": "star",
+        "title": "Greg Brockman consolidates OpenAI's product teams to build an \"agentic future\"",
+        "summary": "OpenAI is merging ChatGPT, its coding agent Codex, and the developer API into a single product team led by Codex boss Th...",
+        "value_note": "LLM 输出异常时的高可信素材兜底",
+        "source_name": "The Decoder",
+        "url": "https://the-decoder.com/greg-brockman-consolidates-openais-product-teams-to-build-an-agentic-future/",
+        "published_at": "2026-05-17T09:51:41+00:00",
+        "importance": "pin",
         "category": "industry"
       }
     ],
-    "opinion": [],
+    "opinion": [
+      {
+        "tier": "analyst",
+        "title": "最新开源模型爆发：Gemma 4、DeepSeek V4等齐发",
+        "summary": "Nathan Lambert 点评称，过去一个月多个旗舰开源模型密集发布，生态快速演进。",
+        "value_note": "揭示开源模型生态从发布节奏到评测的全面加速",
+        "source_name": "Interconnects",
+        "url": "https://www.interconnects.ai/p/latest-open-artifacts-21-open-model",
+        "published_at": "2026-05-16",
+        "importance": "star",
+        "quote_en": "An eventful month with one flagship release after another",
+        "quote_zh": "一个充满大事的月份，旗舰模型发布接踵而至。",
+        "person": "Nathan Lambert",
+        "category": "opinion"
+      },
+      {
+        "tier": "analyst",
+        "title": "LLM架构新进展：KV共享、多头混合与压缩注意力",
+        "summary": "Sebastian Raschka 解析新开源模型如何通过 KV 共享、mHC 等降低长上下文成本。",
+        "value_note": "深入分析降低长上下文成本的三种新架构方向",
+        "source_name": "Sebastian Raschka's Blog",
+        "url": "https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures",
+        "published_at": "2026-05-16",
+        "importance": "pin",
+        "quote_en": "From Gemma 4 to DeepSeek V4, How New Open-Weight LLMs Are Reducing Long-Context Costs",
+        "quote_zh": "从Gemma 4到DeepSeek V4，新开源权重LLM如何降低长上下文成本。",
+        "person": "Sebastian Raschka",
+        "category": "opinion"
+      }
+    ],
     "chinese": [
       {
+        "title": "信通院&清华提出FedRE：用纠缠解决联邦学习三难",
+        "summary": "信通院与清华联合提出FedRE，利用纠缠表示学习，在CVPR 2026上实现隐私保护、模型性能、通信效率的三方兼顾。",
+        "value_note": "突破联邦学习隐私与性能不能两全的瓶颈",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/419373.html",
+        "published_at": "2026-05-18",
+        "importance": "star",
+        "category": "chinese"
+      },
+      {
         "title": "酷开发布原生AI企业操作系统Happy Work AIOS",
-        "summary": "酷开网络推出原生AI企业操作系统Happy Work AIOS Lite MVP，实现从生活到企业场景的全场景智能覆盖。",
-        "value_note": "国内企业AI操作系统新尝试，推动场景智能落地",
+        "summary": "酷开网络推出企业AI操作系统Happy Work AIOS Lite MVP，覆盖从生活到经营全场景，完成多场景AI生态闭环。",
+        "value_note": "国内企业级AI操作系统落地，加速场景智能",
         "source_name": "36氪",
         "url": "https://36kr.com/newsflashes/3814473276939780?f=rss",
         "published_at": "2026-05-18",
         "importance": "pin",
         "category": "chinese"
-      },
-      {
-        "title": "灵童机器人发布桌面人形机器人“念”，启动全球共创",
-        "summary": "灵童机器人发布30自由度桌面人形机器人“念”，并面向全球免费发放1000台，支持二次开发与内容共创。",
-        "value_note": "低成本桌面人形机器人走向开放共创，降低具身智能开发门槛",
-        "source_name": "36氪",
-        "url": "https://36kr.com/newsflashes/3814396829769225?f=rss",
-        "published_at": "2026-05-18",
-        "importance": "pin",
-        "category": "chinese"
       }
     ],
-    "academic": []
+    "academic": [
+      {
+        "title": "DeepSlide: From Artifacts to Presentation Delivery",
+        "summary": "arXiv:2605.15202v1 Announce Type: new Abstract: Presentations are a primary medium for scholarly communication, yet most...",
+        "value_note": "学术来源素材兜底",
+        "source_name": "arXiv cs.AI",
+        "url": "https://arxiv.org/abs/2605.15202",
+        "published_at": "2026-05-18T04:00:00+00:00",
+        "importance": "star",
+        "category": "academic"
+      },
+      {
+        "title": "SDOF: Taming the Alignment Tax in Multi-Agent Orchestration with State-Constrain...",
+        "summary": "arXiv:2605.15204v1 Announce Type: new Abstract: Multi-agent orchestration frameworks such as LangChain, LangGraph, and C...",
+        "value_note": "学术来源素材兜底",
+        "source_name": "arXiv cs.AI",
+        "url": "https://arxiv.org/abs/2605.15204",
+        "published_at": "2026-05-18T04:00:00+00:00",
+        "importance": "star",
+        "category": "academic"
+      },
+      {
+        "title": "Does Theory of Mind Improvement Really Benefit Human-AI Interactions? Empirical...",
+        "summary": "arXiv:2605.15205v1 Announce Type: new Abstract: Improving the Theory of Mind (ToM) capability of Large Language Models (...",
+        "value_note": "学术来源素材兜底",
+        "source_name": "arXiv cs.AI",
+        "url": "https://arxiv.org/abs/2605.15205",
+        "published_at": "2026-05-18T04:00:00+00:00",
+        "importance": "pin",
+        "category": "academic"
+      },
+      {
+        "title": "SkillSmith: Compiling Agent Skills into Boundary-Guided Runtime Interfaces",
+        "summary": "arXiv:2605.15215v1 Announce Type: new Abstract: Recently, skills have been widely adopted in large language model (LLM)-...",
+        "value_note": "学术来源素材兜底",
+        "source_name": "arXiv cs.AI",
+        "url": "https://arxiv.org/abs/2605.15215",
+        "published_at": "2026-05-18T04:00:00+00:00",
+        "importance": "pin",
+        "category": "academic"
+      }
+    ]
   },
   "trending": [
     {
@@ -99,7 +186,7 @@
       "url": "https://github.com/tinyhumansai/openhuman",
       "description": "Your Personal AI super intelligence. Private, Simple and extremely powerful.",
       "language": "Rust",
-      "stars_total": "14,570",
+      "stars_total": "14,724",
       "stars_today": 1690,
       "ai_topic": "",
       "value_note": ""
@@ -111,7 +198,7 @@
       "url": "https://github.com/oven-sh/bun",
       "description": "Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one",
       "language": "Rust",
-      "stars_total": "91,824",
+      "stars_total": "91,832",
       "stars_today": 910,
       "ai_topic": "",
       "value_note": ""
@@ -123,7 +210,7 @@
       "url": "https://github.com/colbymchenry/codegraph",
       "description": "Pre-indexed code knowledge graph for Claude Code, Codex, Cursor, and OpenCode — fewer tokens, fewer tool calls, 100% local",
       "language": "TypeScript",
-      "stars_total": "3,706",
+      "stars_total": "3,728",
       "stars_today": 857,
       "ai_topic": "",
       "value_note": ""
@@ -135,7 +222,7 @@
       "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "description": "A set of ready to use Agent Skills for research, science, engineering, analysis, finance and writing.",
       "language": "Python",
-      "stars_total": "24,016",
+      "stars_total": "24,043",
       "stars_today": 762,
       "ai_topic": "",
       "value_note": ""
