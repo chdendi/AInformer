@@ -1,126 +1,62 @@
 {
   "date": "2026-05-18",
-  "generated_at": "2026-05-18T10:19:05.714203+08:00",
-  "today_theme": "主权风险与开源突破交织的AI新动态",
-  "lede": "今日AI领域动态频出，主权风险、安全突破与开源创新成为焦点。Mistral CEO Arthur Mensch公开反对法国政府允许Anthropic的Mythos系统访问军事代码库，直指主权隐患。与此同时，前沿模型自主开发漏洞的能力引发安全警示，新基准测试显示Claude Mythos与GPT-5.5已能编写真实浏览器零日利用。产业层面，OpenAI收购语音克隆明星初创，强化语音交互；NVIDIA开源2.6B参数世界模型SANA-WM，单消费级GPU即可生成分钟级720p视频，推动生成式AI平民化。社区方面，Nathan Lambert点评Gemma 4、DeepSeek V4等开源模型密集发布及CAISI V4评估，Sebastian Raschka则分析KV共享等架构创新降低推理成本。中文生态中，宠物健康大模型公司「绮算法」获得融资。",
+  "generated_at": "2026-05-18T10:58:09.405779+08:00",
+  "today_theme": "AI垂直应用融资热，硬件与生态加速落地",
+  "lede": "今日AI领域投融资与产业布局活跃：宠物健康大模型公司「绮算法」连获两轮融资，智谱生态加持，已服务超200家宠物医院并推进软硬一体化；宇树科技成立星盟科技公司，布局智能机器人研发与销售；智能眼镜厂商「众见科技」完成数千万元三轮融资，产品已落地。资本持续涌向AI垂直应用与硬件创新，中文AI生态进一步丰富。",
   "headlines": [
     {
-      "title": "Mistral CEO警告法国勿让Anthropic Mythos扫描军事代码库",
-      "summary": "Mistral CEO Arthur Mensch公开反对法国政府允许Anthropic的AI系统Mythos访问军事代码库，强调此举可能带来严重主权风险，呼吁保持技术自主。",
-      "url": "https://the-decoder.com/mistral-ceo-arthur-mensch-warns-france-against-letting-anthropics-mythos-scan-military-code-bases/",
-      "source_name": "The Decoder",
-      "category": "industry"
+      "title": "宠物健康大模型「绮算法」获智谱生态加持融资",
+      "summary": "宠物大模型健康公司绮算法完成数千万元融资，投资方为启赋资本与聚恒创投。公司已服务超200家宠物医院，计划推进软硬一体化。",
+      "url": "https://36kr.com/p/3812788568907520?f=rss",
+      "source_name": "36氪",
+      "category": "chinese"
     },
     {
-      "title": "新基准测试：Claude Mythos与GPT-5.5可自主开发真实浏览器漏洞",
-      "summary": "最新安全基准测试表明，前沿AI模型已能自主发现并编写浏览器零日漏洞利用，引发安全行业对恶意滥用的高度警惕。",
-      "url": "https://the-decoder.com/new-benchmark-shows-claude-mythos-and-gpt-5-5-can-develop-real-browser-exploits-autonomously/",
-      "source_name": "The Decoder",
-      "category": "industry"
+      "title": "宇树科技成立星盟科技，进军智能机器人",
+      "summary": "宇树科技全资持股的杭州宇树星盟科技有限公司成立，注册资本10万元。经营范围含智能机器人研发、销售等，布局智能机器人赛道。",
+      "url": "https://36kr.com/newsflashes/3814207359672064?f=rss",
+      "source_name": "36氪",
+      "category": "chinese"
     },
     {
-      "title": "OpenAI收购语音克隆明星初创，强化语音交互能力",
-      "summary": "OpenAI收购一家以名人模仿闻名的语音克隆创业公司，具体金额未披露，此次收购旨在进一步提升其语音AI合成技术。",
-      "url": "https://the-decoder.com/openai-bought-a-voice-cloning-startup-famous-for-celebrity-imitations/",
-      "source_name": "The Decoder",
-      "category": "industry"
-    },
-    {
-      "title": "NVIDIA开源SANA-WM：2.6B世界模型单GPU生成分钟级720p视频",
-      "summary": "NVIDIA发布开源世界模型SANA-WM，仅需单张消费级GPU即能生成60秒720p可控视频，极大降低了长视频生成的门槛。",
-      "url": "https://www.marktechpost.com/2026/05/16/nvidia-introduces-sana-wm-a-2-6b-parameter-open-source-world-model-that-generates-minute-scale-720p-video-on-a-single-gpu/",
-      "source_name": "MarkTechPost",
-      "category": "industry"
-    },
-    {
-      "title": "开源模型密集发布：Gemma 4、DeepSeek V4等与CAISI V4评估",
-      "summary": "Nathan Lambert分析近期Gemma 4、DeepSeek V4等旗舰开源模型的密集发布，并探讨CAISI V4安全评估体系对开源生态的影响。",
-      "url": "https://www.interconnects.ai/p/latest-open-artifacts-21-open-model",
-      "source_name": "Interconnects",
-      "category": "opinion"
+      "title": "智能眼镜厂商「众见科技」完成三轮融资",
+      "summary": "众见科技获韶音、高锋耐心基金等数千万元融资，用于研发推进。其初代智能眼镜产品已完成落地，加速智能穿戴市场布局。",
+      "url": "https://36kr.com/newsflashes/3814153112657413?f=rss",
+      "source_name": "36氪",
+      "category": "chinese"
     }
   ],
   "sections": {
-    "industry": [
-      {
-        "title": "Mistral CEO 警告法国勿让 Anthropic Mythos 扫描军事代码库",
-        "summary": "Mistral CEO Arthur Mensch 公开反对法国政府允许 Anthropic 的 AI 系统 Mythos 访问军事代码库，强调主权风险。",
-        "value_note": "AI 主权与安全争议升级，直接牵涉军方部署决策",
-        "source_name": "The Decoder",
-        "url": "https://the-decoder.com/mistral-ceo-arthur-mensch-warns-france-against-letting-anthropics-mythos-scan-military-code-bases/",
-        "published_at": "2026-05-17T00:00:00+00:00",
-        "importance": "star",
-        "category": "industry"
-      },
-      {
-        "title": "新基准测试显示 Claude Mythos 与 GPT-5.5 可自主开发真实浏览器漏洞",
-        "summary": "安全研究人员发布最新 benchmark，表明前沿 AI 模型已能自主发现并编写浏览器零日漏洞利用，引发安全行业警惕。",
-        "value_note": "揭示 AI 自主攻击能力的重要里程碑，加剧安全担忧",
-        "source_name": "The Decoder",
-        "url": "https://the-decoder.com/new-benchmark-shows-claude-mythos-and-gpt-5-5-can-develop-real-browser-exploits-autonomously/",
-        "published_at": "2026-05-16T00:00:00+00:00",
-        "importance": "star",
-        "category": "industry"
-      },
-      {
-        "title": "OpenAI 收购语音克隆明星初创，强化语音交互能力",
-        "summary": "OpenAI 收购一家以名人模仿闻名的语音克隆创业公司，具体收购金额未披露，旨在提升语音 AI 合成技术。",
-        "value_note": "收购补强语音技术，标志 OpenAI 在多模态 AI 上加码布局",
-        "source_name": "The Decoder",
-        "url": "https://the-decoder.com/openai-bought-a-voice-cloning-startup-famous-for-celebrity-imitations/",
-        "published_at": "2026-05-16T00:00:00+00:00",
-        "importance": "hot",
-        "category": "industry"
-      },
-      {
-        "title": "NVIDIA 开源 SANA-WM：2.6B 参数世界模型，单 GPU 生成分钟级 720p 视频",
-        "summary": "SANA-WM 是世界模型，能生成 60 秒长、720p 的可控视频，仅需单张消费级 GPU，已开源。",
-        "value_note": "显著降低世界模型训练与生成门槛，推动具身智能与视频生成发展",
-        "source_name": "MarkTechPost",
-        "url": "https://www.marktechpost.com/2026/05/16/nvidia-introduces-sana-wm-a-2-6b-parameter-open-source-world-model-that-generates-minute-scale-720p-video-on-a-single-gpu/",
-        "published_at": "2026-05-16T00:00:00+00:00",
-        "importance": "star",
-        "category": "industry"
-      }
-    ],
-    "opinion": [
-      {
-        "tier": "analyst",
-        "title": "开源模型爆发：密集发布与CAISI V4评估",
-        "summary": "Nathan Lambert点评近期Gemma 4、DeepSeek V4等旗舰开源模型的密集发布，分析CAISI V4的安全评估体系。",
-        "value_note": "开源模型军备竞赛白热化，旗舰密集亮相",
-        "source_name": "Interconnects",
-        "url": "https://www.interconnects.ai/p/latest-open-artifacts-21-open-model",
-        "published_at": "2026-05-16",
-        "importance": "star",
-        "quote_en": "An eventful month with one flagship release after another",
-        "quote_zh": "充满事件的一个月，旗舰发布接踵而至",
-        "person": "Nathan Lambert",
-        "category": "opinion"
-      },
-      {
-        "tier": "analyst",
-        "title": "LLM架构新进展：KV共享与压缩注意力降低长上下文成本",
-        "summary": "Sebastian Raschka分析最新开放权重模型如何通过KV共享、多头混合注意力等机制大幅降低长上下文推理成本。",
-        "value_note": "新架构显著降低推理成本，助力长上下文应用",
-        "source_name": "Sebastian Raschka's Blog",
-        "url": "https://magazine.sebastianraschka.com/p/recent-developments-in-llm-architectures",
-        "published_at": "2026-05-16",
-        "importance": "star",
-        "quote_en": "From Gemma 4 to DeepSeek V4, How New Open-Weight LLMs Are Reducing Long-Context Costs",
-        "quote_zh": "从Gemma 4到DeepSeek V4，新的开放权重LLM如何降低长上下文成本",
-        "person": "Sebastian Raschka",
-        "category": "opinion"
-      }
-    ],
+    "industry": [],
+    "opinion": [],
     "chinese": [
       {
-        "title": "宠物健康大模型公司「绮算法」连融两轮，智谱Z计划企业",
-        "summary": "重庆绮算法专注宠物健康大模型，已完成数千万元融资，投资方为启赋资本与聚恒创投，计划深化模型能力并拓展市场。",
-        "value_note": "软硬一体化布局，已服务超200家宠物医院",
+        "title": "宠物健康大模型公司「绮算法」连获两轮融资，智谱生态加持",
+        "summary": "宠物大模型健康公司绮算法完成数千万元融资，投资方为启赋资本与聚恒创投，已服务超200家宠物医院，计划推进软硬一体化。",
+        "value_note": "垂直领域大模型落地，智谱生态企业获得资本与产业双重认可。",
         "source_name": "36氪",
         "url": "https://36kr.com/p/3812788568907520?f=rss",
-        "published_at": "2026-05-17T00:00:00Z",
+        "published_at": "2026-05-17",
+        "importance": "hot",
+        "category": "chinese"
+      },
+      {
+        "title": "宇树科技成立星盟科技公司，布局智能机器人研发与销售",
+        "summary": "宇树科技全资持股的杭州宇树星盟科技有限公司成立，注册资本10万元，经营范围含智能机器人研发、销售等。",
+        "value_note": "四足机器人龙头拓展业务实体，加速智能机器人商业化落地。",
+        "source_name": "36氪",
+        "url": "https://36kr.com/newsflashes/3814207359672064?f=rss",
+        "published_at": "2026-05-18",
+        "importance": "star",
+        "category": "chinese"
+      },
+      {
+        "title": "智能眼镜厂商「众见科技」完成数千万元三轮融资，产品已落地",
+        "summary": "众见科技获韶音、高锋耐心基金等数千万元融资，用于研发推进，初代智能眼镜产品已完成落地。",
+        "value_note": "AI 硬件赛道持续吸金，产业资本与专业基金联合押注。",
+        "source_name": "36氪",
+        "url": "https://36kr.com/newsflashes/3814153112657413?f=rss",
+        "published_at": "2026-05-18",
         "importance": "pin",
         "category": "chinese"
       }
@@ -135,7 +71,7 @@
       "url": "https://github.com/tinyhumansai/openhuman",
       "description": "Your Personal AI super intelligence. Private, Simple and extremely powerful.",
       "language": "Rust",
-      "stars_total": "13,514",
+      "stars_total": "13,682",
       "stars_today": 1690,
       "ai_topic": "",
       "value_note": ""
@@ -147,7 +83,7 @@
       "url": "https://github.com/oven-sh/bun",
       "description": "Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one",
       "language": "Rust",
-      "stars_total": "91,737",
+      "stars_total": "91,749",
       "stars_today": 910,
       "ai_topic": "",
       "value_note": ""
@@ -159,7 +95,7 @@
       "url": "https://github.com/colbymchenry/codegraph",
       "description": "Pre-indexed code knowledge graph for Claude Code, Codex, Cursor, and OpenCode — fewer tokens, fewer tool calls, 100% local",
       "language": "TypeScript",
-      "stars_total": "3,438",
+      "stars_total": "3,482",
       "stars_today": 857,
       "ai_topic": "",
       "value_note": ""
@@ -171,7 +107,7 @@
       "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "description": "A set of ready to use Agent Skills for research, science, engineering, analysis, finance and writing.",
       "language": "Python",
-      "stars_total": "23,866",
+      "stars_total": "23,886",
       "stars_today": 762,
       "ai_topic": "",
       "value_note": ""

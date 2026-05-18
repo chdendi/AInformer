@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-05-18T10:19:05.760970+08:00",
+  "updated_at": "2026-05-18T10:58:09.458796+08:00",
   "total_days": 11,
   "latest": {
     "date": "2026-05-18",
-    "theme": "主权风险与开源突破交织的AI新动态",
-    "generated_at": "2026-05-18T10:19:05.714203+08:00",
-    "total_items": 7,
+    "theme": "AI垂直应用融资热，硬件与生态加速落地",
+    "generated_at": "2026-05-18T10:58:09.405779+08:00",
+    "total_items": 3,
     "data_url": "https://chdendi.github.io/AInformer/data/daily/20260518.json",
     "html_url": "https://chdendi.github.io/AInformer/daily/20260518.html"
   },
   "dates": [
     {
       "date": "2026-05-18",
-      "theme": "主权风险与开源突破交织的AI新动态",
-      "generated_at": "2026-05-18T10:19:05.714203+08:00",
-      "total_items": 7,
+      "theme": "AI垂直应用融资热，硬件与生态加速落地",
+      "generated_at": "2026-05-18T10:58:09.405779+08:00",
+      "total_items": 3,
       "data_url": "https://chdendi.github.io/AInformer/data/daily/20260518.json",
       "html_url": "https://chdendi.github.io/AInformer/daily/20260518.html"
     },
