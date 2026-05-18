@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>多模态RL训练隐患与Claude Code学术写作开源 · AInformer · 每日 AI 简报</title>
-<meta name="description" content="今日AI领域聚焦两大中文生态进展：一项研究揭示多模态大模型在监督微调后直接进行强化学习会因遗忘问题导致性能退化，呼吁先修复SFT阶段的缺陷；另一项则是开发者将借助Claude Code辅助学术写作的完整流程开源，包含成本估算与配置指南，已在社区获得广泛关注。两条消息均反映出AI落地中的务实探索，前者为模型训练踩下刹车，">
+<title>主权风险与开源突破交织的AI新动态 · AInformer · 每日 AI 简报</title>
+<meta name="description" content="今日AI领域动态频出，主权风险、安全突破与开源创新成为焦点。Mistral CEO Arthur Mensch公开反对法国政府允许Anthropic的Mythos系统访问军事代码库，直指主权隐患。与此同时，前沿模型自主开发漏洞的能力引发安全警示，新基准测试显示Claude Mythos与GPT-5.5已能编写真实浏览器">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -323,6 +323,20 @@ pre.code code{background:transparent;padding:0;border:none}
   color:var(--tertiary);
   font-family:var(--font-mono);
 }
+.subhead{
+  margin:32px 0 16px;
+  font-size:18px;
+  font-weight:600;
+  color:var(--secondary);
+  letter-spacing:.02em;
+  display:flex;align-items:baseline;gap:12px;
+}
+.subhead:first-child{margin-top:8px}
+.subhead .subcount{
+  font-size:11px;font-weight:600;letter-spacing:.12em;
+  color:var(--tertiary);font-family:var(--font-mono);
+}
+.quote-card.analyst::before{content:"✎"}
 .section-divider{
   height:1px;
   background:var(--border-soft);
@@ -849,7 +863,7 @@ pre.code code{background:transparent;padding:0;border:none}
 <section class="hero">
   <div class="date">2026-05-18</div>
   <h1>AInformer</h1>
-  <p class="theme">每天早上自动汇总过去 24 小时最值得关注的 AI 资讯：行业动态、领袖观点、中文生态、学术与评测。</p>
+  <p class="theme">每天早上自动汇总过去 24 小时最值得关注的 AI 资讯：行业动态、观点声音、中文生态、学术与评测。</p>
   <div class="meta">
     <span>已发布 11 期</span>
   </div>
@@ -871,13 +885,13 @@ pre.code code{background:transparent;padding:0;border:none}
     <div class="archive-grid">
       <a class="archive-card" href="daily/20260518.html">
         <div class="date">2026-05-18 · 周一</div>
-        <h3>多模态RL训练隐患与Claude Code学术写作开源</h3>
-        <div class="stats"><span>2 ITEMS</span><span>0 HEADLINES</span></div>
+        <h3>主权风险与开源突破交织的AI新动态</h3>
+        <div class="stats"><span>7 ITEMS</span><span>1 HEADLINES</span></div>
       </a>
       <a class="archive-card" href="daily/20260517.html">
         <div class="date">2026-05-17 · 周日</div>
-        <h3>从全民普及到智能体争夺，AI 生态加速演进</h3>
-        <div class="stats"><span>7 ITEMS</span><span>1 HEADLINES</span></div>
+        <h3>全民AI普惠与智能体竞赛加速</h3>
+        <div class="stats"><span>8 ITEMS</span><span>2 HEADLINES</span></div>
       </a>
       <a class="archive-card" href="daily/20260516.html">
         <div class="date">2026-05-16 · 周六</div>
@@ -1002,7 +1016,7 @@ pre.code code{background:transparent;padding:0;border:none}
 </script>
   <div class="footer-bottom">
     <p>本日报基于公开信息自动搜索整理生成，资讯来源包括 OpenAI / Anthropic / DeepMind 等官方博客、The Verge、TechCrunch、36kr、机器之心、量子位、ArXiv、Hacker News 等公开平台。内容可能存在时效性偏差或不完整，请以原始来源为准。</p>
-    <p>Generated at 2026-05-18 09:44 · Powered by DeepSeek + Tavily · <a href="https://chdendi.github.io/AInformer/index.html">AInformer</a> · <a href="https://chdendi.github.io/AInformer/api/v1/manifest.json">JSON API</a></p>
+    <p>Generated at 2026-05-18 10:19 · Powered by DeepSeek + Tavily · <a href="https://chdendi.github.io/AInformer/index.html">AInformer</a> · <a href="https://chdendi.github.io/AInformer/api/v1/manifest.json">JSON API</a></p>
   </div>
 </footer>
 </body>

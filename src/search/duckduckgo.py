@@ -37,6 +37,17 @@ def _decode_ddg_url(raw: str) -> str:
     return raw
 
 
+def _is_noise_url(url: str) -> bool:
+    """Drop DDG/Bing ad and help links that can appear in Lite results."""
+    parsed = urlparse(url)
+    host = parsed.netloc.lower()
+    if host.endswith("duckduckgo.com"):
+        return True
+    if host in {"bing.com", "www.bing.com"} and "/aclick" in parsed.path:
+        return True
+    return False
+
+
 async def ddg_search(
     query: str,
     *,
@@ -87,6 +98,9 @@ async def ddg_search(
             url = _decode_ddg_url(link_el.get("href", "").strip())
             title = link_el.get_text(strip=True)
             if not url or not title:
+                continue
+            if _is_noise_url(url):
+                log.debug("DDG dropped noise result: %s", url[:120])
                 continue
 
             snippet = ""

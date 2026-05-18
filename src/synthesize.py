@@ -22,7 +22,7 @@ def _format_sections_for_prompt(sections: dict[str, list[dict[str, Any]]]) -> st
     blocks = []
     section_zh = {
         "industry": "AI 行业新闻与产品动态",
-        "opinion": "AI 领袖发言与深度观点",
+        "opinion": "AI 观点与社区声音",
         "chinese": "中文 AI 生态与学术动态",
         "academic": "AI 学术与评测",
     }

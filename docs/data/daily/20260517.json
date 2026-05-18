@@ -1,61 +1,71 @@
 {
   "date": "2026-05-17",
-  "generated_at": "2026-05-17T09:40:56.963118+08:00",
-  "today_theme": "从全民普及到智能体争夺，AI 生态加速演进",
-  "lede": "OpenAI 今日宣布与马耳他政府合作，向该国全体公民提供 ChatGPT Plus 及 AI 培训，同时再次重组高管团队，将 AI 代理业务置于核心。YouTube 则扩大 AI 肖像检测范围，允许所有成人用户搜索并移除深度伪造视频。在学术领域，FlightGen 框架通过多阶段拒绝低质样本，大幅提升令牌效率并改进下游性能。中文方面，阿里健康发布医疗 AI 助手“氢离子”，专注为医生提供循证决策支持。",
+  "generated_at": "2026-05-17T13:13:38.421224+08:00",
+  "today_theme": "全民AI普惠与智能体竞赛加速",
+  "lede": "今日AI领域重磅不断：OpenAI与马耳他政府达成历史性合作，宣布向全民免费提供ChatGPT Plus及AI培训，开启国家层面的AI普惠。与此同时，OpenAI内部再度重组高管团队，由总裁Greg Brockman统一挂帅AI代理产品，全力争夺智能体市场。在内容安全层面，YouTube将其AI虚假人脸检测工具全面开放给所有成年用户，以应对深度伪造泛滥。回到国内，阿里健康推出临床决策AI“氢离子”，联手顶级期刊为医生提供实时循证支持。此外，多模态大模型研究警示，监督微调阶段的缺陷会在强化学习中放大，为模型训练敲响警钟。",
   "headlines": [
     {
-      "title": "OpenAI与马耳他合作，向全民提供ChatGPT Plus",
-      "summary": "OpenAI与马耳他政府达成合作，将为该国全体公民提供ChatGPT Plus及AI培训。此举旨在推动AI普及与负责任使用。",
+      "title": "OpenAI与马耳他合作：全民免费ChatGPT Plus时代来临",
+      "summary": "OpenAI宣布与马耳他政府合作，向全国公民免费提供ChatGPT Plus订阅及AI技能培训，推动负责任地使用AI。此举标志着国家层面AI普惠的新尝试。",
       "url": "https://openai.com/index/malta-chatgpt-plus-partnership",
-      "source_name": "OpenAI",
+      "source_name": "OpenAI官方博客",
       "category": "industry"
     },
     {
-      "title": "OpenAI再次重组高管团队，聚焦AI代理",
-      "summary": "OpenAI宣布新一轮组织调整，总裁Greg Brockman将领导所有代理业务。这凸显了公司对AI代理战略的高度重视。",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/931544/openai-keeps-shuffling-its-executives-in-bid-to-win-ai-agent-battle",
-      "source_name": "The Verge",
-      "category": "industry"
-    },
-    {
-      "title": "YouTube将AI深伪检测工具扩展至所有成人用户",
-      "summary": "YouTube扩大AI肖像检测计划，允许所有18岁以上用户搜索并移除未经授权的深度伪造视频。该工具此前已面向公众人物推出，此次进一步扩大覆盖范围。",
+      "title": "YouTube AI虚假人脸检测扩展至全体成年用户，对抗深度伪造",
+      "summary": "YouTube将其AI肖像检测功能从少数名人开放给所有18岁以上用户，可自动扫描并标记AI生成的虚假视频，以应对日益猖獗的深度伪造威胁。",
       "url": "https://www.theverge.com/news/931884/youtube-likeness-detection-ai-deepfake-expansion-all-adults",
       "source_name": "The Verge",
       "category": "industry"
     },
     {
-      "title": "阿里健康发布医疗AI“氢离子”，专注医学证据源",
-      "summary": "阿里健康推出面向医生的AI助手“氢离子”，强调基于顶级期刊证据源提供决策支持。该工具旨在改善临床决策质量。",
+      "title": "OpenAI高管再重组，Greg Brockman领衔AI代理产品争夺战",
+      "summary": "OpenAI宣布新一轮组织调整，由总裁Greg Brockman统一领导AI代理产品，集中资源应对激烈的智能体市场竞争。这是OpenAI为夺取AI Agent高地的最新举措。",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/931544/openai-keeps-shuffling-its-executives-in-bid-to-win-ai-agent-battle",
+      "source_name": "The Verge",
+      "category": "industry"
+    },
+    {
+      "title": "阿里健康发布临床AI「氢离子」，联手顶刊打造循证决策支持",
+      "summary": "阿里健康推出临床决策AI助手「氢离子」，与顶级医学期刊合作，为医生提供实时、权威的循证证据，提升诊疗效率与质量。",
       "url": "https://www.qbitai.com/2026/05/418491.html",
       "source_name": "量子位",
       "category": "chinese"
     },
     {
-      "title": "FlightGen框架令牌高效生成，性能提升2.1%",
-      "summary": "FlightGen框架通过多阶段逐步评估样本质量，及早终止低质生成，显著降低令牌消耗。在五个推理基准上平均提升下游性能2.1%，最高节省3.7倍令牌。",
-      "url": "https://arxiv.org/abs/2605.14062",
-      "source_name": "arXiv",
-      "category": "academic"
+      "title": "研究揭示多模态大模型SFT缺陷损害RL训练效果，呼吁先修复再强化",
+      "summary": "最新研究发现，多模态大模型在监督微调阶段积累的错误会在后续强化学习中被放大，建议开发者优先修复SFT问题，以避免影响模型性能。",
+      "url": "https://www.qbitai.com/2026/05/418814.html",
+      "source_name": "量子位",
+      "category": "chinese"
     }
   ],
   "sections": {
     "industry": [
       {
-        "title": "OpenAI与马耳他合作，向全民提供ChatGPT Plus",
-        "summary": "OpenAI与马耳他政府达成合作，将为该国全体公民提供ChatGPT Plus及AI培训，推动AI普及与负责任使用。",
-        "value_note": "首个国家层面全民AI助手普及计划",
-        "source_name": "OpenAI",
+        "title": "OpenAI 与马耳他合作，为全体公民提供 ChatGPT Plus 及 AI 培训",
+        "summary": "OpenAI 与马耳他政府达成合作，将向全国公民免费提供 ChatGPT Plus 订阅和 AI 技能培训，推动全民负责任地使用 AI。",
+        "value_note": "首次国家级全民 AI 普及合作，开创 AI 公共服务新模式。",
+        "source_name": "OpenAI 官方博客",
         "url": "https://openai.com/index/malta-chatgpt-plus-partnership",
         "published_at": "2026-05-16",
+        "importance": "hot",
+        "category": "industry"
+      },
+      {
+        "title": "YouTube 将 AI 虚假人脸检测工具扩展至所有成年用户",
+        "summary": "YouTube 宣布其 AI 肖像检测功能不再限于少数名人，向所有 18 岁以上用户开放，可自动扫描并标记 AI 生成的虚假视频。",
+        "value_note": "AI 生成内容检测从特定人群转向全民覆盖，提升平台真实性。",
+        "source_name": "The Verge",
+        "url": "https://www.theverge.com/news/931884/youtube-likeness-detection-ai-deepfake-expansion-all-adults",
+        "published_at": "2026-05-15",
         "importance": "star",
         "category": "industry"
       },
       {
-        "title": "OpenAI再次重组高管团队，聚焦AI代理",
-        "summary": "OpenAI宣布新一轮组织调整，总裁Greg Brockman将领导所有代理业务，凸显对AI代理战略的重视。",
-        "value_note": "Brockman统管代理业务，加速代理战略",
+        "title": "OpenAI 再次重组高管团队，全力争夺 AI Agent 市场",
+        "summary": "OpenAI 宣布新轮组织调整，由总裁 Greg Brockman 统一领导 AI 代理产品，整合资源应对智能体竞争。",
+        "value_note": "高层架构变动彰显 AI Agent 已成为头部企业战略制高点。",
         "source_name": "The Verge",
         "url": "https://www.theverge.com/ai-artificial-intelligence/931544/openai-keeps-shuffling-its-executives-in-bid-to-win-ai-agent-battle",
         "published_at": "2026-05-15",
@@ -63,61 +73,60 @@
         "category": "industry"
       },
       {
-        "title": "YouTube将AI深伪检测工具扩展至所有成人用户",
-        "summary": "YouTube扩大AI肖像检测计划，允许所有18岁以上用户搜索并移除未经授权的深度伪造视频。",
-        "value_note": "平台级AI治理工具向全体用户开放",
+        "title": "arXiv 将封禁大量提交 AI 生成“水文”的论文作者",
+        "summary": "学术预印本平台 arXiv 出台新规，对上传含 AI 生成低质内容的论文作者实施封禁，以遏制学术污染。",
+        "value_note": "顶刊预印本平台重拳治理 AI 滥用，维护学术诚信基线。",
         "source_name": "The Verge",
-        "url": "https://www.theverge.com/news/931884/youtube-likeness-detection-ai-deepfake-expansion-all-adults",
+        "url": "https://www.theverge.com/science/931766/arxiv-ai-slop-ban-researchers",
         "published_at": "2026-05-15",
-        "importance": "star",
+        "importance": "pin",
         "category": "industry"
       }
     ],
     "opinion": [],
     "chinese": [
       {
-        "title": "阿里健康发布医疗AI“氢离子”，专注医学证据源",
-        "summary": "阿里健康推出面向医生的AI助手“氢离子”，强调基于顶级期刊证据源提供决策支持。",
-        "value_note": "为500万中国医生提供循证AI辅助，提升诊疗准确性。",
+        "title": "阿里健康发布临床AI「氢离子」，联手顶刊打造证据源",
+        "summary": "阿里健康推出临床决策AI助手「氢离子」，与顶级医学期刊合作，为医生提供实时循证证据支持。",
+        "value_note": "整合权威医学证据，助力中国医生诊疗决策。",
         "source_name": "量子位",
         "url": "https://www.qbitai.com/2026/05/418491.html",
-        "published_at": "2026-05-16",
+        "published_at": "2026-05-16T00:00:00",
+        "importance": "hot",
+        "category": "chinese"
+      },
+      {
+        "title": "多模态大模型SFT缺陷会损害RL训练效果",
+        "summary": "研究发现，多模态大模型在监督微调阶段积累的错误会在强化学习阶段被放大，建议先修复SFT问题。",
+        "value_note": "揭示SFT与RL协同训练的关键陷阱。",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/418814.html",
+        "published_at": "2026-05-17T00:00:00",
         "importance": "star",
+        "category": "chinese"
+      },
+      {
+        "title": "开源项目用Claude Code实现论文写作自动化流水线",
+        "summary": "一个GitHub高星项目整合了Claude Code，提供从构思到排版的论文写作全流程方案，附带费用参考。",
+        "value_note": "降低AI辅助论文写作门槛，透明成本参考。",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/418737.html",
+        "published_at": "2026-05-17T00:00:00",
+        "importance": "pin",
+        "category": "chinese"
+      },
+      {
+        "title": "GitHub 20k星项目：将全网API转为命令行，降低Token消耗",
+        "summary": "该工具可将各类网络服务转换为命令行界面，让大模型直接调用，避免浏览器操作耗费大量Token。",
+        "value_note": "提升模型与网络交互效率，降低使用成本。",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/418518.html",
+        "published_at": "2026-05-16T00:00:00",
+        "importance": "pin",
         "category": "chinese"
       }
     ],
-    "academic": [
-      {
-        "title": "多阶段飞行中拒绝：令牌高效合成数据生成，性能提升2.1%",
-        "summary": "FlightGen框架通过多阶段逐步评估样本质量并及早终止低质生成，显著降低令牌消耗，在五个推理基准上平均提升下游性能2.1%，最高节省3.7倍令牌。",
-        "value_note": "节省最高3.7倍令牌，下游性能平均提升2.1%。",
-        "source_name": "arXiv",
-        "url": "https://arxiv.org/abs/2605.14062",
-        "published_at": "2026-05-16",
-        "importance": "hot",
-        "category": "academic"
-      },
-      {
-        "title": "规定性对齐框架提升LLM智能体社会价值对齐16.3%和14.7%",
-        "summary": "提出从价值描述到可执行行为的规定性对齐方法，通过价值分解与多目标优化，在两个新基准上对齐准确率较最佳基线分别提升16.3%和14.7%。",
-        "value_note": "对齐准确率提升最高16.3%。",
-        "source_name": "arXiv",
-        "url": "https://arxiv.org/abs/2605.14034",
-        "published_at": "2026-05-16",
-        "importance": "star",
-        "category": "academic"
-      },
-      {
-        "title": "MathAtlas：超大数学自动形式化基准，最强模型仅6.2%准确率",
-        "summary": "涵盖超10万条Stacks项目定理的自动形式化基准，评测显示当前最强LLM仅取得6.2%自动形式化准确率，揭示领域重大能力缺口。",
-        "value_note": "最强模型准确率仅6.2%，暴露出严重能力不足。",
-        "source_name": "arXiv",
-        "url": "https://arxiv.org/abs/2605.14061",
-        "published_at": "2026-05-16",
-        "importance": "pin",
-        "category": "academic"
-      }
-    ]
+    "academic": []
   },
   "trending": [
     {
@@ -127,7 +136,7 @@
       "url": "https://github.com/tinyhumansai/openhuman",
       "description": "Your Personal AI super intelligence. Private, Simple and extremely powerful.",
       "language": "Rust",
-      "stars_total": "10,765",
+      "stars_total": "11,040",
       "stars_today": 1549,
       "ai_topic": "",
       "value_note": ""
@@ -139,7 +148,7 @@
       "url": "https://github.com/obra/superpowers",
       "description": "An agentic skills framework & software development methodology that works.",
       "language": "Shell",
-      "stars_total": "194,037",
+      "stars_total": "194,248",
       "stars_today": 1305,
       "ai_topic": "",
       "value_note": ""
@@ -151,7 +160,7 @@
       "url": "https://github.com/ruvnet/RuView",
       "description": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
       "language": "Rust",
-      "stars_total": "58,369",
+      "stars_total": "58,496",
       "stars_today": 1010,
       "ai_topic": "",
       "value_note": ""
@@ -163,7 +172,7 @@
       "url": "https://github.com/supertone-inc/supertonic",
       "description": "Lightning-Fast, On-Device, Multilingual TTS — running natively via ONNX.",
       "language": "Swift",
-      "stars_total": "6,909",
+      "stars_total": "7,018",
       "stars_today": 749,
       "ai_topic": "",
       "value_note": ""

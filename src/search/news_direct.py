@@ -24,9 +24,11 @@ USER_AGENT = (
 _SEMAPHORE = asyncio.Semaphore(3)
 
 
-def _clean(text: str | None) -> str:
+def _clean(text: Any | None) -> str:
     if not text:
         return ""
+    if hasattr(text, "get_text"):
+        text = text.get_text(" ", strip=True)
     return " ".join(text.split())
 
 

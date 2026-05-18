@@ -120,7 +120,7 @@
   <section class="stats-bar">
     {% set sec = report.sections %}
     <div class="stat"><div class="num">{{ sec.industry|length }}</div><div class="label">行业新闻</div></div>
-    <div class="stat"><div class="num">{{ sec.opinion|length }}</div><div class="label">领袖观点</div></div>
+    <div class="stat"><div class="num">{{ sec.opinion|length }}</div><div class="label">观点声音</div></div>
     <div class="stat"><div class="num">{{ sec.chinese|length }}</div><div class="label">中文 / 学术</div></div>
     <div class="stat"><div class="num">{{ sec.academic|length }}</div><div class="label">学术与评测</div></div>
   </section>
@@ -181,25 +181,50 @@
     {% else %}<div class="empty">今日该领域无重大动态</div>{% endif %}
   </section>
 
+  {% set leader_items = sec.opinion | selectattr('tier', 'equalto', 'leader') | list %}
+  {% set analyst_items = sec.opinion | selectattr('tier', 'equalto', 'analyst') | list %}
+  {% set untiered_items = sec.opinion | rejectattr('tier', 'in', ['leader', 'analyst']) | list %}
   <section class="section" id="opinion">
-    <div class="section-head"><h2>AI 领袖发言与深度观点</h2><span class="count">{{ sec.opinion|length }} 条</span></div>
+    <div class="section-head"><h2>AI 观点与社区声音</h2><span class="count">{{ sec.opinion|length }} 条</span></div>
     {% if sec.opinion %}
-    <div class="cards">
-      {% for it in sec.opinion %}
-      <article class="quote-card">
-        {% if it.quote_en %}<p class="quote-en">{{ it.quote_en }}</p>{% endif %}
-        {% if it.quote_zh %}<p class="quote-zh">{{ it.quote_zh }}</p>{% endif %}
-        {% if not it.quote_en and not it.quote_zh and it.summary %}<p class="quote-zh">{{ it.summary }}</p>{% endif %}
-        {% if it.title and it.title != it.quote_zh %}<p class="quote-title">{{ it.title }}</p>{% endif %}
-        <div class="person">— {{ it.person or it.source_name or '匿名' }}</div>
-        <div class="meta">
-          {% if it.importance %}<span class="tag tag-{{ it.importance }}">{{ importance_label(it.importance) }}</span>{% endif %}
-          {% if it.value_note %}<span>{{ it.value_note }}</span>{% endif %}
-          {% if it.url %}<a class="link-btn" href="{{ it.url }}" target="_blank" rel="noopener noreferrer">原文 ↗</a>{% endif %}
-        </div>
-      </article>
-      {% endfor %}
-    </div>
+      {% if leader_items or untiered_items %}
+      <h3 class="subhead">领袖发言 <span class="subcount">{{ (leader_items + untiered_items)|length }} 条</span></h3>
+      <div class="cards">
+        {% for it in leader_items + untiered_items %}
+        <article class="quote-card">
+          {% if it.quote_en %}<p class="quote-en">{{ it.quote_en }}</p>{% endif %}
+          {% if it.quote_zh %}<p class="quote-zh">{{ it.quote_zh }}</p>{% endif %}
+          {% if not it.quote_en and not it.quote_zh and it.summary %}<p class="quote-zh">{{ it.summary }}</p>{% endif %}
+          {% if it.title and it.title != it.quote_zh %}<p class="quote-title">{{ it.title }}</p>{% endif %}
+          <div class="person">— {{ it.person or it.source_name or '匿名' }}</div>
+          <div class="meta">
+            {% if it.importance %}<span class="tag tag-{{ it.importance }}">{{ importance_label(it.importance) }}</span>{% endif %}
+            {% if it.value_note %}<span>{{ it.value_note }}</span>{% endif %}
+            {% if it.url %}<a class="link-btn" href="{{ it.url }}" target="_blank" rel="noopener noreferrer">原文 ↗</a>{% endif %}
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% if analyst_items %}
+      <h3 class="subhead">深度分析 <span class="subcount">{{ analyst_items|length }} 条</span></h3>
+      <div class="cards">
+        {% for it in analyst_items %}
+        <article class="quote-card analyst">
+          {% if it.quote_en %}<p class="quote-en">{{ it.quote_en }}</p>{% endif %}
+          {% if it.quote_zh %}<p class="quote-zh">{{ it.quote_zh }}</p>{% endif %}
+          {% if not it.quote_en and not it.quote_zh and it.summary %}<p class="quote-zh">{{ it.summary }}</p>{% endif %}
+          {% if it.title and it.title != it.quote_zh %}<p class="quote-title">{{ it.title }}</p>{% endif %}
+          <div class="person">— {{ it.person or it.source_name or '匿名' }} · 分析师</div>
+          <div class="meta">
+            {% if it.importance %}<span class="tag tag-{{ it.importance }}">{{ importance_label(it.importance) }}</span>{% endif %}
+            {% if it.value_note %}<span>{{ it.value_note }}</span>{% endif %}
+            {% if it.url %}<a class="link-btn" href="{{ it.url }}" target="_blank" rel="noopener noreferrer">原文 ↗</a>{% endif %}
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+      {% endif %}
     {% else %}<div class="empty">今日该领域无重大动态</div>{% endif %}
   </section>
 
