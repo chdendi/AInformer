@@ -1,0 +1,252 @@
+{
+  "date": "2026-05-19",
+  "generated_at": "2026-05-19T09:48:35.954666+08:00",
+  "today_theme": "算力硬件与AI应用齐头并进",
+  "lede": "今日AI领域，算力与生态竞争再度升温。NVIDIA首款CPU Vera开始向OpenAI等顶级实验室交付，专为AI Agent设计，推理能效大幅提升。与此同时，Anthropic收购SDK工具公司Stainless，进一步强化开发者生态。AI创业公司总收入突破800亿美元，但Anthropic与OpenAI占据绝大部分份额，马太效应凸显。中文方面，百度一季度AI业务收入达136亿元，成为核心增长引擎；上海交通大学联合瑞金医院发布的CX-Mind系统在胸片诊断中实现可验证推理，五项评估维度均居榜首。",
+  "headlines": [
+    {
+      "title": "NVIDIA首款CPU Vera交付，专为AI Agent设计",
+      "summary": "NVIDIA Vera CPU已向Anthropic、OpenAI和SpaceXAI交付，该处理器针对AI Agent优化，推理能效大幅提升，标志着NVIDIA在CPU领域的重大突破。",
+      "url": "https://blogs.nvidia.com/blog/vera-cpu-delivery/",
+      "source_name": "NVIDIA Blog",
+      "category": "industry"
+    },
+    {
+      "title": "Anthropic收购API工具公司Stainless，强化开发者生态",
+      "summary": "Anthropic收购了曾为OpenAI、Google等自动生成SDK的Stainless，此举将显著增强Anthropic的开发者工具链，加速API生态建设。",
+      "url": "https://techcrunch.com/2026/05/18/anthropic-has-acquired-the-dev-tools-startup-used-by-openai-google-and-cloudflare/",
+      "source_name": "TechCrunch",
+      "category": "industry"
+    },
+    {
+      "title": "百度一季度AI业务收入136亿元，成为核心增长引擎",
+      "summary": "百度2026年Q1财报显示整体营收321亿元，其中AI业务收入达136亿元，云与智能服务持续扩张，AI已成公司增长支柱。",
+      "url": "https://36kr.com/p/3814695536336387?f=rss",
+      "source_name": "36氪",
+      "category": "chinese"
+    },
+    {
+      "title": "上交大联合发布CX-Mind：胸片诊断实现可验证推理",
+      "summary": "上海交通大学、创智院与瑞金医院共同推出CX-Mind系统，在胸片诊断的五项评估维度上均排名第一，其可验证推理能力提升了临床信任度。",
+      "url": "https://www.qbitai.com/2026/05/419396.html",
+      "source_name": "量子位",
+      "category": "chinese"
+    }
+  ],
+  "sections": {
+    "industry": [
+      {
+        "title": "NVIDIA首款CPU Vera交付顶级AI实验室",
+        "summary": "NVIDIA Vera CPU开始向Anthropic、OpenAI和SpaceXAI交付，专为Agent设计，推理能效大幅提升。",
+        "value_note": "硬件里程碑：NVIDIA进军CPU，加速Agent推理。",
+        "source_name": "NVIDIA Blog",
+        "url": "https://blogs.nvidia.com/blog/vera-cpu-delivery/",
+        "published_at": "2026-05-18",
+        "importance": "pin",
+        "category": "industry"
+      },
+      {
+        "title": "Anthropic收购API工具公司Stainless",
+        "summary": "Anthropic收购Stainless，后者曾为OpenAI、Google、Cloudflare等自动生成SDK，将强化开发者生态。",
+        "value_note": "关键收购：整合开发者工具，巩固平台地位。",
+        "source_name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/05/18/anthropic-has-acquired-the-dev-tools-startup-used-by-openai-google-and-cloudflare/",
+        "published_at": "2026-05-18",
+        "importance": "pin",
+        "category": "industry"
+      },
+      {
+        "title": "AI初创收入达800亿美元，绝大部分归Anthropic与OpenAI",
+        "summary": "AI创业公司总收入突破800亿美元，但Anthropic和OpenAI占据主要份额，马太效应加剧。",
+        "value_note": "行业格局：两大巨头垄断AI初创收入。",
+        "source_name": "The Decoder",
+        "url": "https://the-decoder.com/ai-startup-revenue-hits-80-billion-but-anthropic-and-openai-take-almost-all-of-it/",
+        "published_at": "2026-05-18",
+        "importance": "pin",
+        "category": "industry"
+      }
+    ],
+    "opinion": [
+      {
+        "tier": "analyst",
+        "title": "The last six months in LLMs in five minutes",
+        "summary": "I put together these annotated slides from my five minute lightning talk at PyCon US 2026, using the latest iteration of...",
+        "value_note": "一手作者来源的观点兜底",
+        "source_name": "Simon Willison",
+        "url": "https://simonwillison.net/2026/May/19/5-minute-llms/#atom-everything",
+        "published_at": "2026-05-19T01:09:44+00:00",
+        "importance": "star",
+        "quote_en": "I put together these annotated slides from my five minute lightning talk at PyCon US 2026, using the latest iteration of...",
+        "quote_zh": "",
+        "person": "Simon Willison",
+        "category": "opinion"
+      },
+      {
+        "tier": "analyst",
+        "title": "Glaucous-winged Gull, Brown Pelican, Snowy Egret, Canada Goose",
+        "summary": "Simon Willison 的近期 AI 观点素材，因 LLM 结构化输出异常按一手来源兜底保留。",
+        "value_note": "一手作者来源的观点兜底",
+        "source_name": "Simon Willison",
+        "url": "https://simonwillison.net/2026/May/18/sighting-362781627/#atom-everything",
+        "published_at": "2026-05-18T14:51:00+00:00",
+        "importance": "pin",
+        "quote_en": "Glaucous-winged Gull, Brown Pelican, Snowy Egret, Canada Goose",
+        "quote_zh": "",
+        "person": "Simon Willison",
+        "category": "opinion"
+      },
+      {
+        "tier": "analyst",
+        "title": "GDS weighs in on the NHS's decision to retreat from Open Source",
+        "summary": "GDS weighs in on the NHS&#x27;s decision to retreat from Open Source Terence Eden continues his coverage of the NHS' poo...",
+        "value_note": "一手作者来源的观点兜底",
+        "source_name": "Simon Willison",
+        "url": "https://simonwillison.net/2026/May/17/gds-weighs-in/#atom-everything",
+        "published_at": "2026-05-17T15:59:41+00:00",
+        "importance": "pin",
+        "quote_en": "GDS weighs in on the NHS&#x27;s decision to retreat from Open Source Terence Eden continues his coverage of the NHS' poo...",
+        "quote_zh": "",
+        "person": "Simon Willison",
+        "category": "opinion"
+      }
+    ],
+    "chinese": [
+      {
+        "title": "百度一季度AI业务收入136亿元，云与智能服务持续扩张",
+        "summary": "百度发布2026年一季度财报，整体营收321亿元，其中AI业务收入136亿元，显示AI已成为核心增长引擎。",
+        "value_note": "AI业务收入占比超40%，验证百度AI转型成效",
+        "source_name": "36氪",
+        "url": "https://36kr.com/p/3814695536336387?f=rss",
+        "published_at": "2026-05-18",
+        "importance": "hot",
+        "category": "chinese"
+      },
+      {
+        "title": "番茄小说推动AI动漫上院线，开放头部IP改编权限",
+        "summary": "字节跳动旗下番茄小说计划将AI生成的动漫作品推入院线，并向外部创作者开放头部IP改编权。",
+        "value_note": "字节跳动AI内容生成进入商业化新阶段",
+        "source_name": "36氪",
+        "url": "https://36kr.com/p/3810598875307780?f=rss",
+        "published_at": "2026-05-18",
+        "importance": "star",
+        "category": "chinese"
+      },
+      {
+        "title": "上交大联合发布CX-Mind：胸片诊断实现可验证推理",
+        "summary": "上海交通大学、创智院与瑞金医院共同推出CX-Mind系统，在胸片诊断的五项评估维度上均排名第一。",
+        "value_note": "首次将可验证推理引入胸片诊断，五项指标全面领先",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/419396.html",
+        "published_at": "2026-05-18",
+        "importance": "star",
+        "category": "chinese"
+      },
+      {
+        "title": "8B小模型做生物实验步骤不失序、剂量无幻觉，超越GPT-4o",
+        "summary": "ICLR 2026收录论文表明，仅8B参数的语言模型即可精准规划生物实验步骤，表现优于GPT-4o。",
+        "value_note": "小模型在专业实验指令遵循上首次超越超大模型",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/419386.html",
+        "published_at": "2026-05-18",
+        "importance": "pin",
+        "category": "chinese"
+      }
+    ],
+    "academic": [
+      {
+        "title": "Fair outputs, Biased Internals: Causal Potency and Asymmetry of Latent Bias in L...",
+        "summary": "arXiv:2605.15217v1 Announce Type: new Abstract: Instruction-tuned language models exhibit behavioural fairness in high-s...",
+        "value_note": "学术来源素材兜底",
+        "source_name": "arXiv cs.AI",
+        "url": "https://arxiv.org/abs/2605.15217",
+        "published_at": "2026-05-18T04:00:00+00:00",
+        "importance": "star",
+        "category": "academic"
+      },
+      {
+        "title": "CAX-Agent: A Lightweight Agent Harness for Reliable APDL Automation",
+        "summary": "arXiv:2605.15218v1 Announce Type: new Abstract: Large language models deployed for MAPDL finite-element simulation face...",
+        "value_note": "学术来源素材兜底",
+        "source_name": "arXiv cs.AI",
+        "url": "https://arxiv.org/abs/2605.15218",
+        "published_at": "2026-05-18T04:00:00+00:00",
+        "importance": "star",
+        "category": "academic"
+      },
+      {
+        "title": "NOVA: Fundamental Limits of Knowledge Discovery Through AI",
+        "summary": "arXiv:2605.15219v1 Announce Type: new Abstract: Can AI systems discover genuinely new knowledge through iterative self i...",
+        "value_note": "学术来源素材兜底",
+        "source_name": "arXiv cs.AI",
+        "url": "https://arxiv.org/abs/2605.15219",
+        "published_at": "2026-05-18T04:00:00+00:00",
+        "importance": "pin",
+        "category": "academic"
+      },
+      {
+        "title": "ICRL: Learning to Internalize Self-Critique with Reinforcement Learning",
+        "summary": "arXiv:2605.15224v1 Announce Type: new Abstract: Large language model-based agents make mistakes, yet critique can often...",
+        "value_note": "学术来源素材兜底",
+        "source_name": "arXiv cs.AI",
+        "url": "https://arxiv.org/abs/2605.15224",
+        "published_at": "2026-05-18T04:00:00+00:00",
+        "importance": "pin",
+        "category": "academic"
+      }
+    ]
+  },
+  "trending": [
+    {
+      "owner": "tinyhumansai",
+      "repo": "openhuman",
+      "full_name": "tinyhumansai/openhuman",
+      "url": "https://github.com/tinyhumansai/openhuman",
+      "description": "Your Personal AI super intelligence. Private, Simple and extremely powerful.",
+      "language": "Rust",
+      "stars_total": "17,400",
+      "stars_today": 3941,
+      "ai_topic": "",
+      "summary_zh": "tinyhumansai/openhuman 是一个 Rust 项目，今日在 GitHub Trending 获得较高关注。",
+      "value_note": ""
+    },
+    {
+      "owner": "Imbad0202",
+      "repo": "academic-research-skills",
+      "full_name": "Imbad0202/academic-research-skills",
+      "url": "https://github.com/Imbad0202/academic-research-skills",
+      "description": "Academic Research Skills for Claude Code: research → write → review → revise → finalize",
+      "language": "Python",
+      "stars_total": "11,858",
+      "stars_today": 1439,
+      "ai_topic": "",
+      "summary_zh": "Imbad0202/academic-research-skills 是一个 Python 项目，今日在 GitHub Trending 获得较高关注。",
+      "value_note": ""
+    },
+    {
+      "owner": "CloakHQ",
+      "repo": "CloakBrowser",
+      "full_name": "CloakHQ/CloakBrowser",
+      "url": "https://github.com/CloakHQ/CloakBrowser",
+      "description": "Stealth Chromium that passes every bot detection test. Drop-in Playwright replacement with source-level fingerprint patches. 30/30 tests passed.",
+      "language": "Python",
+      "stars_total": "15,275",
+      "stars_today": 1420,
+      "ai_topic": "",
+      "summary_zh": "CloakHQ/CloakBrowser 是一个 Python 项目，今日在 GitHub Trending 获得较高关注。",
+      "value_note": ""
+    },
+    {
+      "owner": "tech-leads-club",
+      "repo": "agent-skills",
+      "full_name": "tech-leads-club/agent-skills",
+      "url": "https://github.com/tech-leads-club/agent-skills",
+      "description": "The secure, validated skill registry for professional AI coding agents. Extend Antigravity, Claude Code, Cursor, Copilot and more with absolute confidence.",
+      "language": "TypeScript",
+      "stars_total": "4,065",
+      "stars_today": 1244,
+      "ai_topic": "",
+      "summary_zh": "tech-leads-club/agent-skills 是一个 TypeScript 项目，今日在 GitHub Trending 获得较高关注。",
+      "value_note": ""
+    }
+  ]
+}
