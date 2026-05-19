@@ -205,9 +205,9 @@
       "language": "Rust",
       "stars_total": "17,400",
       "stars_today": 3941,
-      "ai_topic": "",
-      "summary_zh": "tinyhumansai/openhuman 是一个 Rust 项目，今日在 GitHub Trending 获得较高关注。",
-      "value_note": ""
+      "ai_topic": "个人 AI 助手",
+      "summary_zh": "面向个人使用的 AI 助手项目，强调隐私、简单和高能力，定位为个人智能工作入口。",
+      "value_note": "个人助手方向仍在快速试错，隐私、易用性和本地能力值得重点观察。"
     },
     {
       "owner": "Imbad0202",
@@ -218,9 +218,9 @@
       "language": "Python",
       "stars_total": "11,858",
       "stars_today": 1439,
-      "ai_topic": "",
-      "summary_zh": "Imbad0202/academic-research-skills 是一个 Python 项目，今日在 GitHub Trending 获得较高关注。",
-      "value_note": ""
+      "ai_topic": "Coding Agent 生态",
+      "summary_zh": "为 Claude Code 提供学术研究工作流技能，覆盖资料研究、写作、审稿、修改到定稿流程。",
+      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
     },
     {
       "owner": "CloakHQ",
@@ -231,9 +231,9 @@
       "language": "Python",
       "stars_total": "15,275",
       "stars_today": 1420,
-      "ai_topic": "",
-      "summary_zh": "CloakHQ/CloakBrowser 是一个 Python 项目，今日在 GitHub Trending 获得较高关注。",
-      "value_note": ""
+      "ai_topic": "Agent 浏览器基础设施",
+      "summary_zh": "带源码级指纹补丁的隐身 Chromium，可作为 Playwright 替代方案通过自动化检测。",
+      "value_note": "可提升网页自动化和 Agent 浏览器操作稳定性，适合测试与反检测场景。"
     },
     {
       "owner": "tech-leads-club",
@@ -244,9 +244,9 @@
       "language": "TypeScript",
       "stars_total": "4,065",
       "stars_today": 1244,
-      "ai_topic": "",
-      "summary_zh": "tech-leads-club/agent-skills 是一个 TypeScript 项目，今日在 GitHub Trending 获得较高关注。",
-      "value_note": ""
+      "ai_topic": "Coding Agent 生态",
+      "summary_zh": "面向专业 AI 编码 Agent 的安全技能注册表，可扩展 Antigravity、Claude Code、Cursor、Copilot 等工具。",
+      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
     }
   ]
 }
