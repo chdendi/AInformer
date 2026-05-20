@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-05-19T09:48:36.002578+08:00",
-  "total_days": 12,
+  "updated_at": "2026-05-20T09:47:49.144520+08:00",
+  "total_days": 13,
   "latest": {
-    "date": "2026-05-19",
-    "theme": "算力硬件与AI应用齐头并进",
-    "generated_at": "2026-05-19T09:48:35.954666+08:00",
-    "total_items": 14,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260519.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260519.html"
+    "date": "2026-05-20",
+    "theme": "人才流动加速，代理时代开启，中国力量崛起",
+    "generated_at": "2026-05-20T09:47:49.094412+08:00",
+    "total_items": 10,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260520.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260520.html"
   },
   "dates": [
+    {
+      "date": "2026-05-20",
+      "theme": "人才流动加速，代理时代开启，中国力量崛起",
+      "generated_at": "2026-05-20T09:47:49.094412+08:00",
+      "total_items": 10,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260520.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260520.html"
+    },
     {
       "date": "2026-05-19",
       "theme": "算力硬件与AI应用齐头并进",

@@ -1,0 +1,211 @@
+{
+  "date": "2026-05-20",
+  "generated_at": "2026-05-20T09:47:49.094412+08:00",
+  "today_theme": "人才流动加速，代理时代开启，中国力量崛起",
+  "lede": "今日AI圈最重磅的消息当属OpenAI联合创始人Andrej Karpathy加盟Anthropic，执掌预训练团队，为Claude核心能力注入新血。与此同时，Google I/O火力全开，Gemini 3.5 Flash模型全面转向AI代理，搜索彻底告别传统链接，订阅体系也迎来分层变革。国内方面，阿里通义千问Qwen 3.7 Max预览版发布，文本视觉双双登顶国产榜；百度萝卜快跑周订单破35万并首度实现单城盈利。面对汹涌的进展，DeepMind CEO Demis Hassabis更将当前阶段形容为“奇点的山麓”，预示变革才刚刚开始。",
+  "headlines": [
+    {
+      "title": "Andrej Karpathy 加盟 Anthropic 掌管预训练",
+      "summary": "OpenAI 联合创始人 Andrej Karpathy 选择加入 Anthropic 预训练团队，而非回归 OpenAI。他将负责 Claude 核心能力的大规模训练，此举被视为 AI 人才争夺战的标志性事件。",
+      "url": "https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/",
+      "source_name": "TechCrunch",
+      "category": "industry"
+    },
+    {
+      "title": "Google 发布 Gemini 3.5 Flash，押注 AI Agent",
+      "summary": "Gemini 3.5 Flash 是 Google 迄今最强的编码与代理模型，能自主使用工具执行多步骤任务。这标志着 Google 从聊天机器人向智能代理的战略转折。",
+      "url": "https://techcrunch.com/2026/05/19/with-gemini-3-5-flash-google-bets-its-next-ai-wave-on-agents-not-chatbots/",
+      "source_name": "TechCrunch",
+      "category": "industry"
+    },
+    {
+      "title": "通义千问 Qwen 3.7 Max 预览版发布，文本视觉双第一",
+      "summary": "阿里通义千问推出 Qwen 3.7 Max 预览版，在文本和视觉评测中均获国产模型第一名，两代超大杯并行迭代，展现了中国大模型的强劲实力。",
+      "url": "https://www.qbitai.com/2026/05/419822.html",
+      "source_name": "量子位",
+      "category": "chinese"
+    },
+    {
+      "title": "百度无人车周订单破 35 万，首次实现单城盈利",
+      "summary": "百度萝卜快跑自动驾驶出行服务周订单突破 35 万，首度实现单城盈利，已落地全球 27 座城市，商业化进程迈出关键一步。",
+      "url": "https://www.qbitai.com/2026/05/419597.html",
+      "source_name": "量子位",
+      "category": "chinese"
+    },
+    {
+      "title": "Demis Hassabis：当前 AI 或为「奇点的山麓」",
+      "summary": "DeepMind CEO Demis Hassabis 在 Google I/O 2026 期间表示，当前 AI 进展可能只是通往技术奇点的初始阶段，暗示未来将有更惊人的突破。",
+      "url": "https://www.theverge.com/tech/934260/google-io-ai-singularity-demis-hassabis",
+      "source_name": "The Verge",
+      "category": "opinion"
+    }
+  ],
+  "sections": {
+    "industry": [
+      {
+        "title": "Andrej Karpathy 加盟 Anthropic 掌管预训练",
+        "summary": "OpenAI 联合创始人 Karpathy 选择加入 Anthropic 预训练团队，而非回归 OpenAI，负责 Claude 核心能力的大规模训练。",
+        "value_note": "顶尖人才流向 Anthropic，直接影响前沿模型竞争格局。",
+        "source_name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/",
+        "published_at": "2026-05-19",
+        "importance": "hot",
+        "category": "industry"
+      },
+      {
+        "title": "Google 发布 Gemini 3.5 Flash，全面押注 AI Agent",
+        "summary": "Gemini 3.5 Flash 是 Google 迄今最强编码与代理模型，能自主使用工具并执行多步骤任务，标志着从聊天到代理的战略转折。",
+        "value_note": "Google 用新模型明确将 AI 重心从对话转向自主代理。",
+        "source_name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/05/19/with-gemini-3-5-flash-google-bets-its-next-ai-wave-on-agents-not-chatbots/",
+        "published_at": "2026-05-19",
+        "importance": "star",
+        "category": "industry"
+      },
+      {
+        "title": "Google 重塑 AI 订阅体系，三层定价最低每月 10 美元",
+        "summary": "Google I/O 公布全新 AI 订阅方案，分免费、Pro、Ultra 三档，试图以分层定价覆盖更广用户群。",
+        "value_note": "AI 订阅全面分层，可能引发行业性价格与用户争夺战。",
+        "source_name": "The Decoder",
+        "url": "https://the-decoder.com/google-overhauls-its-ai-subscriptions-at-i-o-2026-with-three-tiers-starting-at-10-a-month/",
+        "published_at": "2026-05-19",
+        "importance": "pin",
+        "category": "industry"
+      },
+      {
+        "title": "Google 搜索彻底 AI 化，传统链接结果页成为历史",
+        "summary": "Google Search 将全面转向对话式答案和自主代理，用互动界面取代传统链接列表，重塑搜索体验。",
+        "value_note": "搜索二十年来最大变革，流量分发逻辑将被重构。",
+        "source_name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/05/19/google-search-as-you-know-it-is-over/",
+        "published_at": "2026-05-19",
+        "importance": "pin",
+        "category": "industry"
+      }
+    ],
+    "opinion": [
+      {
+        "tier": "leader",
+        "title": "Demis Hassabis 称当前 AI 或为「奇点的山麓」",
+        "summary": "DeepMind CEO Demis Hassabis 在 Google I/O 2026 期间表示，当前 AI 进展可能只是通往技术奇点的初始阶段。",
+        "value_note": "反映出前沿实验室对 AGI 临近的乐观预期",
+        "source_name": "The Verge",
+        "url": "https://www.theverge.com/tech/934260/google-io-ai-singularity-demis-hassabis",
+        "published_at": "2026-05-19T00:00:00Z",
+        "importance": "star",
+        "quote_en": "This might be the foothills of the singularity.",
+        "quote_zh": "这可能是奇点的山麓。",
+        "person": "Demis Hassabis",
+        "category": "opinion"
+      }
+    ],
+    "chinese": [
+      {
+        "title": "DeepSeek回应用户对话泄露疑虑：已排查澄清",
+        "summary": "DeepSeek回应近日用户反映的对话历史疑似泄露事件，表示已完成排查并澄清原因，强调用户数据安全。",
+        "value_note": "明星公司及时回应安全关切，维护用户信任。",
+        "source_name": "36氪",
+        "url": "https://36kr.com/p/3816885092910212?f=rss",
+        "published_at": "2026-05-20T08:00:00",
+        "importance": "hot",
+        "category": "chinese"
+      },
+      {
+        "title": "通义千问Qwen 3.7 Max预览版发布，文本视觉双双第一",
+        "summary": "阿里通义千问推出Qwen 3.7 Max预览版，在文本和视觉评测中均获国产模型第一名，两代超大杯并行迭代。",
+        "value_note": "国产大模型性能持续刷新上限，开源与商业化并行。",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/419822.html",
+        "published_at": "2026-05-19T00:00:00",
+        "importance": "star",
+        "category": "chinese"
+      },
+      {
+        "title": "百度无人车周订单破35万，李彦宏称开始单城盈利",
+        "summary": "百度萝卜快跑自动驾驶出行服务周订单突破35万，首次实现单城盈利，已落地全球27座城市。",
+        "value_note": "无人驾驶规模化运营迈过盈利拐点，验证商业模式。",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/419597.html",
+        "published_at": "2026-05-19T00:00:00",
+        "importance": "star",
+        "category": "chinese"
+      }
+    ],
+    "academic": [
+      {
+        "title": "ANNEAL：通过受控符号补丁学习让LLM代理从错误中适应",
+        "summary": "LLM代理在相同任务上反复失败，ANNEAL利用符号补丁学习从历史错误中自适应，避免重复故障。",
+        "value_note": "让LLM代理从历史错误中学习，减少重复故障率。",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.16309",
+        "published_at": "2026-05-19T00:00:00Z",
+        "importance": "star",
+        "category": "academic"
+      },
+      {
+        "title": "LinAlg-Bench：揭示LLM数学推理结构性失败的诊断基准",
+        "summary": "评测10个前沿LLM的线性代数问题，发现普遍的结构性失败模式，暴露推理盲点。",
+        "value_note": "揭示LLM在结构化数学推理上的系统性缺陷。",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.16675",
+        "published_at": "2026-05-19T00:00:00Z",
+        "importance": "star",
+        "category": "academic"
+      }
+    ]
+  },
+  "trending": [
+    {
+      "owner": "rohitg00",
+      "repo": "agentmemory",
+      "full_name": "rohitg00/agentmemory",
+      "url": "https://github.com/rohitg00/agentmemory",
+      "description": "#1 Persistent memory for AI coding agents based on real-world benchmarks",
+      "language": "TypeScript",
+      "stars_total": "14,189",
+      "stars_today": 1609,
+      "ai_topic": "Coding Agent 生态",
+      "summary_zh": "仓库简介显示，rohitg00/agentmemory 主要提供：#1 Persistent memory for AI coding agents based on real-world。",
+      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+    },
+    {
+      "owner": "colbymchenry",
+      "repo": "codegraph",
+      "full_name": "colbymchenry/codegraph",
+      "url": "https://github.com/colbymchenry/codegraph",
+      "description": "Pre-indexed code knowledge graph for Claude Code, Codex, Cursor, and OpenCode — fewer tokens, fewer tool calls, 100% local",
+      "language": "TypeScript",
+      "stars_total": "6,683",
+      "stars_today": 1850,
+      "ai_topic": "Coding Agent 生态",
+      "summary_zh": "为 AI 编码工具预索引本地代码知识图谱，减少 token 消耗和工具调用次数。",
+      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+    },
+    {
+      "owner": "multica-ai",
+      "repo": "andrej-karpathy-skills",
+      "full_name": "multica-ai/andrej-karpathy-skills",
+      "url": "https://github.com/multica-ai/andrej-karpathy-skills",
+      "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
+      "language": "",
+      "stars_total": "138,107",
+      "stars_today": 1955,
+      "ai_topic": "Coding Agent 生态",
+      "summary_zh": "面向大模型开发或推理部署的工具项目，重点改善模型运行效率与工程体验。",
+      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+    },
+    {
+      "owner": "humanlayer",
+      "repo": "12-factor-agents",
+      "full_name": "humanlayer/12-factor-agents",
+      "url": "https://github.com/humanlayer/12-factor-agents",
+      "description": "What are the principles we can use to build LLM-powered software that is actually good enough to put in the hands of production customers?",
+      "language": "TypeScript",
+      "stars_total": "21,197",
+      "stars_today": 736,
+      "ai_topic": "Agent 框架",
+      "summary_zh": "面向大模型开发或推理部署的工具项目，重点改善模型运行效率与工程体验。",
+      "value_note": "面向复杂任务编排和工具调用，适合评估 Agent 工程化落地能力。"
+    }
+  ]
+}
