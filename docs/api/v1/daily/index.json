@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-05-20T09:47:49.144520+08:00",
-  "total_days": 13,
+  "updated_at": "2026-05-21T09:49:52.826221+08:00",
+  "total_days": 14,
   "latest": {
-    "date": "2026-05-20",
-    "theme": "人才流动加速，代理时代开启，中国力量崛起",
-    "generated_at": "2026-05-20T09:47:49.094412+08:00",
-    "total_items": 10,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260520.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260520.html"
+    "date": "2026-05-21",
+    "theme": "",
+    "generated_at": "2026-05-21T09:49:52.774561+08:00",
+    "total_items": 13,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260521.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260521.html"
   },
   "dates": [
+    {
+      "date": "2026-05-21",
+      "theme": "",
+      "generated_at": "2026-05-21T09:49:52.774561+08:00",
+      "total_items": 13,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260521.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260521.html"
+    },
     {
       "date": "2026-05-20",
       "theme": "人才流动加速，代理时代开启，中国力量崛起",

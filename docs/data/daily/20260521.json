@@ -1,0 +1,217 @@
+{
+  "date": "2026-05-21",
+  "generated_at": "2026-05-21T09:49:52.774561+08:00",
+  "today_theme": "",
+  "lede": "",
+  "headlines": [],
+  "sections": {
+    "industry": [
+      {
+        "title": "AWS SageMaker AI 推 OpenAI 兼容 API，简化模型推理",
+        "summary": "Amazon SageMaker AI 端点支持 OpenAI 兼容 API，用户可直接用 OpenAI SDK、LangChain 等工具调用托管模型。",
+        "value_note": "打通生态壁垒，降低企业从 OpenAI 迁移或混合部署的门槛。",
+        "source_name": "AWS Machine Learning Blog",
+        "url": "https://aws.amazon.com/blogs/machine-learning/announcing-openai-compatible-api-support-for-amazon-sagemaker-ai-endpoints/",
+        "published_at": "2026-05-20",
+        "importance": "star",
+        "category": "industry"
+      },
+      {
+        "title": "OpenAI 模型破解 80 年离散几何猜想",
+        "summary": "OpenAI 模型解决了困扰学界 80 年的“单位距离问题”，推翻离散几何核心猜想，为 AI 驱动科学研究树立里程碑。",
+        "value_note": "首次证明 AI 能独立发现重大数学新结论，加速科研范式变革。",
+        "source_name": "OpenAI",
+        "url": "https://openai.com/index/model-disproves-discrete-geometry-conjecture",
+        "published_at": "2026-05-20",
+        "importance": "pin",
+        "category": "industry"
+      },
+      {
+        "title": "DeepSeek 发布 DeepSeek Code，直指代码工具市场",
+        "summary": "DeepSeek 推出 DeepSeek Code，对标 Claude Code 和 OpenAI Codex，加入 AI 编程助手竞争。",
+        "value_note": "中国厂商切入全球开发者工具赛道，或将重塑代码生成格局。",
+        "source_name": "The Decoder",
+        "url": "https://the-decoder.com/deepseek-wants-to-take-on-claude-code-and-openais-codex-with-deepseek-code/",
+        "published_at": "2026-05-20",
+        "importance": "star",
+        "category": "industry"
+      }
+    ],
+    "opinion": [
+      {
+        "tier": "analyst",
+        "title": "Quoting SpaceX S-1",
+        "summary": "We have the ability to use compute resources to support our proprietary AI applications (such as Grok 5, which is curren...",
+        "value_note": "一手作者来源的观点兜底",
+        "source_name": "Simon Willison",
+        "url": "https://simonwillison.net/2026/May/20/spacex-s1/#atom-everything",
+        "published_at": "2026-05-20T22:26:36+00:00",
+        "importance": "star",
+        "quote_en": "We have the ability to use compute resources to support our proprietary AI applications (such as Grok 5, which is curren...",
+        "quote_zh": "",
+        "person": "Simon Willison",
+        "category": "opinion"
+      },
+      {
+        "tier": "analyst",
+        "title": "How fast is 10 tokens per second really?",
+        "summary": "How fast is 10 tokens per second really? Neat little HTML app by Mike Veerman (source code here) which simulates LLM tok...",
+        "value_note": "一手作者来源的观点兜底",
+        "source_name": "Simon Willison",
+        "url": "https://simonwillison.net/2026/May/20/tokens-per-second/#atom-everything",
+        "published_at": "2026-05-20T17:57:45+00:00",
+        "importance": "pin",
+        "quote_en": "How fast is 10 tokens per second really? Neat little HTML app by Mike Veerman (source code here) which simulates LLM tok...",
+        "quote_zh": "",
+        "person": "Simon Willison",
+        "category": "opinion"
+      },
+      {
+        "tier": "analyst",
+        "title": "Google I/O, Gemini Spark, Antigravity",
+        "summary": "It's hard to find much to write about Google I/O this year because I have a policy of not writing about anything that I...",
+        "value_note": "一手作者来源的观点兜底",
+        "source_name": "Simon Willison",
+        "url": "https://simonwillison.net/2026/May/20/google-io/#atom-everything",
+        "published_at": "2026-05-20T15:32:17+00:00",
+        "importance": "pin",
+        "quote_en": "It's hard to find much to write about Google I/O this year because I have a policy of not writing about anything that I...",
+        "quote_zh": "",
+        "person": "Simon Willison",
+        "category": "opinion"
+      },
+      {
+        "tier": "analyst",
+        "title": "llm-gemini 0.32",
+        "summary": "Release: llm-gemini 0.32 New model gemini-3.5-flash for Gemini 3.5 Flash. See also my notes on Gemini 3.5 Flash, and the...",
+        "value_note": "一手作者来源的观点兜底",
+        "source_name": "Simon Willison",
+        "url": "https://simonwillison.net/2026/May/19/llm-gemini-2/#atom-everything",
+        "published_at": "2026-05-19T23:46:27+00:00",
+        "importance": "pin",
+        "quote_en": "Release: llm-gemini 0.32 New model gemini-3.5-flash for Gemini 3.5 Flash. See also my notes on Gemini 3.5 Flash, and the...",
+        "quote_zh": "",
+        "person": "Simon Willison",
+        "category": "opinion"
+      }
+    ],
+    "chinese": [
+      {
+        "title": "腾讯推出操作系统层级AI助手“马维斯”",
+        "summary": "腾讯正式上线系统级AI助手Marvis，内置6个协同Agent，覆盖文件、应用、浏览器等操作。",
+        "value_note": "将AI深度整合到OS层级，出厂预置多Agent团队",
+        "source_name": "36氪",
+        "url": "https://36kr.com/newsflashes/3818361394496390?f=rss",
+        "published_at": "2026-05-21T00:00:00",
+        "importance": "hot",
+        "category": "chinese"
+      },
+      {
+        "title": "智象未来发布两千亿参数图像大模型HiDream-O1-Image-Pro",
+        "summary": "智象未来推出超两千亿参数图像生成模型HiDream-O1-Image-Pro，向世界模型演进。",
+        "value_note": "国内图像大模型参数首次突破两千亿，迈向世界模型",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/420753.html",
+        "published_at": "2026-05-20T00:00:00",
+        "importance": "star",
+        "category": "chinese"
+      },
+      {
+        "title": "趋境科技完成数亿元Pre-A轮融资，主攻AI Token基础设施",
+        "summary": "趋境科技获数亿元Pre-A轮融资，其ATaaS平台日均Token调用量近万亿。",
+        "value_note": "高品质Token生产基础设施获资本认可，日均调用近万亿",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/420651.html",
+        "published_at": "2026-05-20T00:00:00",
+        "importance": "pin",
+        "category": "chinese"
+      }
+    ],
+    "academic": [
+      {
+        "title": "有线学习训练控制治理：压力下有界自主训练提升稳定性",
+        "summary": "提出Learn-by-Wire训练控制框架，在压力情境下实现有界自主训练，缓解大模型训练中的不稳定与资源浪费问题。",
+        "value_note": "解决大模型训练频繁崩溃损失，保障长期稳定高效训练",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.19008",
+        "published_at": "2026-05-20",
+        "importance": "star",
+        "category": "academic"
+      },
+      {
+        "title": "干扰感知的多任务遗忘方法",
+        "summary": "提出考虑任务间干扰的多任务机器学习遗忘框架，在删除指定数据的同时降低对剩余任务的负面影响。",
+        "value_note": "引入干扰建模，显著提高多任务遗忘的保真度和安全性",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.19042",
+        "published_at": "2026-05-20",
+        "importance": "star",
+        "category": "academic"
+      },
+      {
+        "title": "通过启发式嵌入实现系统提示贝叶斯优化",
+        "summary": "针对系统提示优化提出动态嵌入方法，利用贝叶斯优化实现跨对话场景的自动提示调优。",
+        "value_note": "动态表示使提示优化更高效，减少人工调试成本",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.19093",
+        "published_at": "2026-05-20",
+        "importance": "pin",
+        "category": "academic"
+      }
+    ]
+  },
+  "trending": [
+    {
+      "owner": "rohitg00",
+      "repo": "agentmemory",
+      "full_name": "rohitg00/agentmemory",
+      "url": "https://github.com/rohitg00/agentmemory",
+      "description": "#1 Persistent memory for AI coding agents based on real-world benchmarks",
+      "language": "TypeScript",
+      "stars_total": "15,168",
+      "stars_today": 1080,
+      "ai_topic": "Coding Agent 生态",
+      "summary_zh": "仓库简介显示，rohitg00/agentmemory 主要提供：#1 Persistent memory for AI coding agents based on real-world。",
+      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+    },
+    {
+      "owner": "can1357",
+      "repo": "oh-my-pi",
+      "full_name": "can1357/oh-my-pi",
+      "url": "https://github.com/can1357/oh-my-pi",
+      "description": "⌥ AI Coding agent for the terminal — hash-anchored edits, optimized tool harness, LSP, Python, browser, subagents, and more",
+      "language": "TypeScript",
+      "stars_total": "5,438",
+      "stars_today": 270,
+      "ai_topic": "Coding Agent 生态",
+      "summary_zh": "仓库简介显示，can1357/oh-my-pi 主要提供：⌥ AI Coding agent for the terminal — hash-anchored edits, optimize。",
+      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+    },
+    {
+      "owner": "colbymchenry",
+      "repo": "codegraph",
+      "full_name": "colbymchenry/codegraph",
+      "url": "https://github.com/colbymchenry/codegraph",
+      "description": "Pre-indexed code knowledge graph for Claude Code, Codex, Cursor, and OpenCode — fewer tokens, fewer tool calls, 100% local",
+      "language": "TypeScript",
+      "stars_total": "9,732",
+      "stars_today": 2123,
+      "ai_topic": "Coding Agent 生态",
+      "summary_zh": "为 AI 编码工具预索引本地代码知识图谱，减少 token 消耗和工具调用次数。",
+      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+    },
+    {
+      "owner": "multica-ai",
+      "repo": "andrej-karpathy-skills",
+      "full_name": "multica-ai/andrej-karpathy-skills",
+      "url": "https://github.com/multica-ai/andrej-karpathy-skills",
+      "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
+      "language": "",
+      "stars_total": "140,945",
+      "stars_today": 2679,
+      "ai_topic": "Coding Agent 生态",
+      "summary_zh": "面向大模型开发或推理部署的工具项目，重点改善模型运行效率与工程体验。",
+      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+    }
+  ]
+}
