@@ -1,0 +1,231 @@
+{
+  "date": "2026-05-22",
+  "generated_at": "2026-05-22T09:47:28.265011+08:00",
+  "today_theme": "AI代理兼容性受检，国防与科研突破并行",
+  "lede": "今日AI领域迎来多项重磅进展：Google开始测试网站对AI代理的兼容性，通过扫描llms.txt文件评估代理友好度；美国网络司令部成立专项小组，加速在绝密网络中部署OpenAI与Google等模型。国内方面，腾讯混元开源翻译模型Hy-MT2并上线小程序，指令遵循能力大幅提升；北大与阿里达摩院合作利用AI完成中国风光发电资源普查，成果登上《自然》。此外，OpenAI非数学模型自主解决80年未解数学难题，推演过程长达125页。学术上，AQuaUI通过自适应四叉树裁剪GUI截图，将代理性能提升最高12%，为视觉界面理解带来高效方案。",
+  "headlines": [
+    {
+      "title": "Google测试网站II.ms.txt，评估AI代理兼容性",
+      "summary": "Google启动实验性审计，检查网站是否提供llms.txt文件，以此衡量其对AI代理的友好度。此举标志着搜索引擎巨头开始系统性地规范AI代理与网站的交互方式，可能影响未来网站的SEO与可访问性标准。",
+      "url": "https://the-decoder.com/google-tests-websites-for-llms-txt-and-agent-compatibility/",
+      "source_name": "The Decoder",
+      "category": "industry"
+    },
+    {
+      "title": "美网络司令部加速在绝密网络部署AI模型",
+      "summary": "美国网络司令部成立专项任务组，推动OpenAI、Google等公司的AI模型在最高机密网络中运行。该行动旨在利用人工智能强化网络防御与攻击能力，反映出大国间AI军事化竞争的白热化。",
+      "url": "https://the-decoder.com/us-cyber-command-races-to-deploy-ai-on-top-secret-networks/",
+      "source_name": "The Decoder",
+      "category": "industry"
+    },
+    {
+      "title": "腾讯混元开源翻译模型Hy-MT2，小程序同步上线",
+      "summary": "腾讯混元发布全新翻译模型Hy-MT2，在指令遵循和翻译质量上显著提升，并同步推出「腾讯Hy翻译」小程序。该模型已开源，便于开发者和企业集成，有望在跨语言交流场景中发挥重要作用。",
+      "url": "https://www.qbitai.com/2026/05/422068.html",
+      "source_name": "量子位",
+      "category": "chinese"
+    },
+    {
+      "title": "北大阿里达摩院AI风光发电普查登《自然》",
+      "summary": "北京大学与阿里达摩院合作，首次利用AI完成中国风光发电资源全面普查，相关研究登上《自然》杂志。该成果通过深度学习分析气象与地理数据，精准评估风能太阳能潜力，直接助力国家‘双碳’目标实现。",
+      "url": "https://www.qbitai.com/2026/05/422002.html",
+      "source_name": "量子位",
+      "category": "chinese"
+    },
+    {
+      "title": "AQuaUI：自适应四叉树裁剪视觉token，GUI代理性能提升12%",
+      "summary": "研究者提出AQuaUI方法，利用自适应四叉树动态裁剪GUI截图，去除冗余视觉token。在多个基准测试中，该方法优于传统像素和文本表示，使图形界面代理的任务成功率提升最高12%，为高效视觉理解提供了新思路。",
+      "url": "https://arxiv.org/abs/2605.19260",
+      "source_name": "arXiv",
+      "category": "academic"
+    }
+  ],
+  "sections": {
+    "industry": [
+      {
+        "title": "Google checks websites for llms.txt in new agentic browsing audit",
+        "summary": "Google is testing how well websites handle AI agents through a new experimental category called \"Agentic Browsing\" in it...",
+        "value_note": "LLM 输出异常时的高可信素材兜底",
+        "source_name": "The Decoder",
+        "url": "https://the-decoder.com/google-tests-websites-for-llms-txt-and-agent-compatibility/",
+        "published_at": "2026-05-21T19:07:33+00:00",
+        "importance": "star",
+        "category": "industry"
+      },
+      {
+        "title": "US Cyber Command races to deploy AI on top-secret networks",
+        "summary": "US Cyber Command has launched a task force to run AI models from OpenAI, Google, and others on the most classified Penta...",
+        "value_note": "LLM 输出异常时的高可信素材兜底",
+        "source_name": "The Decoder",
+        "url": "https://the-decoder.com/us-cyber-command-races-to-deploy-ai-on-top-secret-networks/",
+        "published_at": "2026-05-21T15:20:44+00:00",
+        "importance": "star",
+        "category": "industry"
+      },
+      {
+        "title": "AdventHealth advances whole-person care with OpenAI",
+        "summary": "AdventHealth is using ChatGPT for Healthcare to streamline workflows, reduce administrative burden, and return more time...",
+        "value_note": "LLM 输出异常时的高可信素材兜底",
+        "source_name": "OpenAI",
+        "url": "https://openai.com/index/adventhealth",
+        "published_at": "2026-05-21T12:00:00+00:00",
+        "importance": "pin",
+        "category": "industry"
+      },
+      {
+        "title": "Build AI agents for business intelligence with Amazon Bedrock AgentCore",
+        "summary": "In this post, we show you how OPLOG developed three AI agents using the Strands Agents SDK, deployed them to Amazon Bedr...",
+        "value_note": "LLM 输出异常时的高可信素材兜底",
+        "source_name": "aws_ml",
+        "url": "https://aws.amazon.com/blogs/machine-learning/build-ai-agents-for-business-intelligence-with-amazon-bedrock-agentcore/",
+        "published_at": "2026-05-21T16:04:17+00:00",
+        "importance": "pin",
+        "category": "industry"
+      }
+    ],
+    "opinion": [
+      {
+        "tier": "analyst",
+        "title": "AI 风险需要特殊政府干预吗？",
+        "summary": "AI 蛇油团队撰文反对跳过 AI 治理的艰难工作，呼吁不依赖“特殊干预”的务实路径。",
+        "value_note": "系统性地论证了用常规治理手段应对 AI 风险的可行性",
+        "source_name": "AI Snake Oil (NormalTech)",
+        "url": "https://www.normaltech.ai/p/do-ai-risks-require-extraordinary",
+        "published_at": "2026-05-21",
+        "importance": "star",
+        "quote_en": "Let’s not skip the hard work of AI governance.",
+        "quote_zh": "不要跳过 AI 治理的艰难工作。",
+        "person": "Sayash Kapoor",
+        "category": "opinion"
+      }
+    ],
+    "chinese": [
+      {
+        "title": "腾讯混元开源翻译模型Hy-MT2，上线小程序",
+        "summary": "腾讯混元发布全新翻译模型Hy-MT2，指令遵循能力显著提升，同步上线「腾讯Hy翻译」小程序。",
+        "value_note": "指令遵循能力突出，翻译更精准",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/422068.html",
+        "published_at": "",
+        "importance": "hot",
+        "category": "chinese"
+      },
+      {
+        "title": "北大阿里达摩院AI风光发电普查登上《自然》",
+        "summary": "AI首次实现中国风光发电资源普查，北大与阿里达摩院合作研究登上《自然》，助力‘双碳’目标。",
+        "value_note": "AI加速可再生能源规划，助力双碳",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/422002.html",
+        "published_at": "",
+        "importance": "star",
+        "category": "chinese"
+      },
+      {
+        "title": "OpenAI非数学模型自主突破80年未解数学难题",
+        "summary": "OpenAI非数学模型在未经专门训练的情况下，自主解决了困扰数学家80年的难题，推演过程达125页。",
+        "value_note": "非数学模型展现意外数学推理能力",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/422032.html",
+        "published_at": "",
+        "importance": "star",
+        "category": "chinese"
+      },
+      {
+        "title": "顺丰仓库机器人获具身智能挑战赛冠军",
+        "summary": "顺丰邮政仓库使用的机器人夺得RoboChallenge榜首，清华系公司千寻智能加冕。",
+        "value_note": "具身智能在工业场景率先落地",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/420918.html",
+        "published_at": "",
+        "importance": "pin",
+        "category": "chinese"
+      }
+    ],
+    "academic": [
+      {
+        "title": "AQuaUI：自适应四叉树减少视觉token，GUI代理性能提升12%",
+        "summary": "提出AQuaUI，利用自适应四叉树动态裁剪GUI截图，减少视觉token冗余，在多个基准上优于像素和文本表示，最高提升12%。",
+        "value_note": "首次将四叉树结构用于GUI代理视觉压缩，性能超越像素和文本基线达12%。",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.19260",
+        "published_at": "2026-05-21T00:00:00Z",
+        "importance": "star",
+        "category": "academic"
+      },
+      {
+        "title": "MOCHA：多目标退火优化智能体技能，次要目标提升30%",
+        "summary": "MOCHA框架通过切比雪夫标量化和模拟退火将多目标优化引入LLM智能体技能设计，实验表明在保持主任务性能的同时，次要指标提升高达30%。",
+        "value_note": "创新性地实现智能体技能的多目标帕累托优化，次要目标最高提升30%。",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.19330",
+        "published_at": "2026-05-21T00:00:00Z",
+        "importance": "pin",
+        "category": "academic"
+      },
+      {
+        "title": "TTCW评估揭示：推理监督损害长篇文学评论质量18%",
+        "summary": "提出主题张力-连贯性-写作质量（TTCW）自动评估指标，实验发现强制推理监督反而使长篇文学评论生成质量下降最高18%。",
+        "value_note": "提出首个评估文学创作质量的多维指标，并揭示推理监督的意外负面效应。",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.20364",
+        "published_at": "2026-05-21T00:00:00Z",
+        "importance": "pin",
+        "category": "academic"
+      }
+    ]
+  },
+  "trending": [
+    {
+      "owner": "ChromeDevTools",
+      "repo": "chrome-devtools-mcp",
+      "full_name": "ChromeDevTools/chrome-devtools-mcp",
+      "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "description": "Chrome DevTools for coding agents",
+      "language": "TypeScript",
+      "stars_total": "40,507",
+      "stars_today": 151,
+      "ai_topic": "MCP 工具",
+      "summary_zh": "仓库简介显示，ChromeDevTools/chrome-devtools-mcp 主要提供：Chrome DevTools for coding agents。",
+      "value_note": "降低模型接入外部工具的成本，适合关注 Agent 工具生态的开发者。"
+    },
+    {
+      "owner": "can1357",
+      "repo": "oh-my-pi",
+      "full_name": "can1357/oh-my-pi",
+      "url": "https://github.com/can1357/oh-my-pi",
+      "description": "⌥ AI Coding agent for the terminal — hash-anchored edits, optimized tool harness, LSP, Python, browser, subagents, and more",
+      "language": "TypeScript",
+      "stars_total": "5,861",
+      "stars_today": 500,
+      "ai_topic": "Coding Agent 生态",
+      "summary_zh": "仓库简介显示，can1357/oh-my-pi 主要提供：⌥ AI Coding agent for the terminal — hash-anchored edits, optimize。",
+      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+    },
+    {
+      "owner": "teng-lin",
+      "repo": "notebooklm-py",
+      "full_name": "teng-lin/notebooklm-py",
+      "url": "https://github.com/teng-lin/notebooklm-py",
+      "description": "Unofficial Python API and agentic skill for Google NotebookLM. Full programmatic access to NotebookLM's features—including capabilities the web UI doesn't expose—via Python, CLI, and AI agents like Claude Code, Codex, and OpenClaw.",
+      "language": "Python",
+      "stars_total": "14,392",
+      "stars_today": 186,
+      "ai_topic": "Coding Agent 生态",
+      "summary_zh": "仓库简介显示，teng-lin/notebooklm-py 主要提供：Unofficial Python API and agentic skill for Google NotebookL。",
+      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+    },
+    {
+      "owner": "dotnet",
+      "repo": "skills",
+      "full_name": "dotnet/skills",
+      "url": "https://github.com/dotnet/skills",
+      "description": "Repository for skills to assist AI coding agents with .NET and C#",
+      "language": "C#",
+      "stars_total": "2,209",
+      "stars_today": 129,
+      "ai_topic": "Coding Agent 生态",
+      "summary_zh": "提供可复用的 Agent Skills 集合，帮助把专业任务流程封装成 AI Agent 可调用能力。",
+      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+    }
+  ]
+}
