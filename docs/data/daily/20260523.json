@@ -1,0 +1,273 @@
+{
+  "date": "2026-05-23",
+  "generated_at": "2026-05-23T09:41:22.158283+08:00",
+  "today_theme": "政策护航、资本押注、技术突破三线并进",
+  "lede": "加州签署美国首份防止AI引发大规模失业的行政令，为就业保障提供政策护航。隐秘创企Hark以7亿美元A轮融资引发关注，其通用AI界面或将重塑个人计算。DeepSeek在获数十亿融资后仍将AGI研究置于回报之上，而由金牌选手领衔的DeepSeek Code模型也即将登场。学术界方面，SOLAR框架让AI智能体通过自我优化实现终身学习，为动态适应开辟新路。政策、资本与技术三重奏，今日AI再掀波澜。",
+  "headlines": [
+    {
+      "title": "加州签署全美首份行政令严防AI失业潮",
+      "summary": "加州州长签署行政命令，要求评估AI对就业的冲击并制定保护措施，成为美国首个从州层面应对AI失业风险的行动。此举标志着政策制定者开始正视AI对劳动力市场的深远影响。",
+      "url": "https://the-decoder.com/california-governor-signs-first-us-executive-order-to-protect-workers-from-ai-job-loss/",
+      "source_name": "the-decoder",
+      "category": "industry"
+    },
+    {
+      "title": "秘密创企Hark融资7亿美元打造通用AI界面",
+      "summary": "Hark完成高达7亿美元的A轮融资，计划发布多模态模型并构建个人AI平台。该界面旨在与现有应用协同，提供通用智能交互，引发业界对下一代人机交互形态的想象。",
+      "url": "https://techcrunch.com/2026/05/21/hark-raises-700m-series-a-for-its-secretive-universal-ai-interface/",
+      "source_name": "TechCrunch",
+      "category": "industry"
+    },
+    {
+      "title": "DeepSeek押注AGI不为短期利益所动",
+      "summary": "尽管已获得数十亿美元级别融资，DeepSeek据报道依旧优先推进AGI研究，延缓商业化变现。这一战略延续了其追求终极智能的定位，与多数急于盈利的AI公司形成对比。",
+      "url": "https://the-decoder.com/deepseek-reportedly-prioritizes-agi-research-over-quick-profits-despite-billions-in-funding/",
+      "source_name": "the-decoder",
+      "category": "industry"
+    },
+    {
+      "title": "DeepSeek Code模型即将发布，ACM金牌大神挂帅",
+      "summary": "继融资700亿元后，DeepSeek被曝将推出编程模型DeepSeek Code，由IOI与ACM金牌得主崔添翼领衔。该模型有望在代码生成领域树立新标杆，进一步扩展DeepSeek的技术版图。",
+      "url": "https://www.qbitai.com/2026/05/422624.html",
+      "source_name": "量子位",
+      "category": "chinese"
+    },
+    {
+      "title": "SOLAR框架让AI智能体实现终身自主学习",
+      "summary": "arXiv最新论文提出SOLAR框架，使大型语言模型智能体在部署后仍能通过自我优化持续适应新任务。这一突破打破了静态模型的限制，为构建长期进化的自主智能系统提供新方向。",
+      "url": "https://arxiv.org/abs/2605.20189",
+      "source_name": "arXiv",
+      "category": "academic"
+    }
+  ],
+  "sections": {
+    "industry": [
+      {
+        "title": "加州州长签署美国首份保护工人免受AI失业影响的行政令",
+        "summary": "加州州长签署行政令，旨在防止AI引发大规模失业，这是美国首个专门针对AI对就业冲击的州级行政命令。",
+        "value_note": "开创性政策，可能推动全美AI与劳动力保障立法",
+        "source_name": "the-decoder",
+        "url": "https://the-decoder.com/california-governor-signs-first-us-executive-order-to-protect-workers-from-ai-job-loss/",
+        "published_at": "2026-05-22",
+        "importance": "hot",
+        "category": "industry"
+      },
+      {
+        "title": "Hark获7亿美元A轮融资，开发通用AI界面",
+        "summary": "秘密初创公司Hark完成7亿美元A轮融资，将发布多模态模型，打造与现有产品协同的个人AI平台。",
+        "value_note": "本年度AI领域最大规模种子轮之一，预示着消费级AI平台竞争加剧",
+        "source_name": "techcrunch_ai",
+        "url": "https://techcrunch.com/2026/05/21/hark-raises-700m-series-a-for-its-secretive-universal-ai-interface/",
+        "published_at": "2026-05-21",
+        "importance": "star",
+        "category": "industry"
+      },
+      {
+        "title": "DeepSeek优先推进AGI研究，不为短期盈利所动",
+        "summary": "尽管已获数十亿美元融资，DeepSeek据报道仍将AGI研究置于快速盈利之上，延续其追求终极智能的战略。",
+        "value_note": "凸显AGI竞赛中中国团队的长期主义路线，影响行业资本流向",
+        "source_name": "the-decoder",
+        "url": "https://the-decoder.com/deepseek-reportedly-prioritizes-agi-research-over-quick-profits-despite-billions-in-funding/",
+        "published_at": "2026-05-22",
+        "importance": "star",
+        "category": "industry"
+      },
+      {
+        "title": "OpenAI被Gartner评为企业级编程智能体领导者",
+        "summary": "Gartner 2026年企业AI编程智能体魔力象限将OpenAI列为领导者，Codex因创新和企业级扩展能力获认可。",
+        "value_note": "稳固OpenAI在AI编码工具市场的地位，赋能企业级Agent发展",
+        "source_name": "openai",
+        "url": "https://openai.com/index/gartner-2026-agentic-coding-leader",
+        "published_at": "2026-05-22",
+        "importance": "pin",
+        "category": "industry"
+      }
+    ],
+    "opinion": [
+      {
+        "tier": "analyst",
+        "title": "The memory shortage is causing a repricing of consumer electronics",
+        "summary": "The memory shortage is causing a repricing of consumer electronics David Oks provides the clearest explanation I've seen...",
+        "value_note": "一手作者来源的观点兜底",
+        "source_name": "Simon Willison",
+        "url": "https://simonwillison.net/2026/May/22/memory-shortage/#atom-everything",
+        "published_at": "2026-05-22T22:01:31+00:00",
+        "importance": "star",
+        "quote_en": "The memory shortage is causing a repricing of consumer electronics David Oks provides the clearest explanation I've seen...",
+        "quote_zh": "",
+        "person": "Simon Willison",
+        "category": "opinion"
+      },
+      {
+        "tier": "analyst",
+        "title": "FTC to Require Cox Media Group, Two Other Firms to Pay Nearly $1 Million to Sett...",
+        "summary": "FTC to Require Cox Media Group, Two Other Firms to Pay Nearly $1 Million to Settle Charges They Deceived Customers About...",
+        "value_note": "一手作者来源的观点兜底",
+        "source_name": "Simon Willison",
+        "url": "https://simonwillison.net/2026/May/22/ftc-active-listening/#atom-everything",
+        "published_at": "2026-05-22T04:48:32+00:00",
+        "importance": "pin",
+        "quote_en": "FTC to Require Cox Media Group, Two Other Firms to Pay Nearly $1 Million to Settle Charges They Deceived Customers About...",
+        "quote_zh": "",
+        "person": "Simon Willison",
+        "category": "opinion"
+      },
+      {
+        "tier": "analyst",
+        "title": "Datasette Agent",
+        "summary": "We just announced the first release of Datasette Agent, a new extensible AI assistant for Datasette. I've been working o...",
+        "value_note": "一手作者来源的观点兜底",
+        "source_name": "Simon Willison",
+        "url": "https://simonwillison.net/2026/May/21/datasette-agent/#atom-everything",
+        "published_at": "2026-05-21T19:52:19+00:00",
+        "importance": "pin",
+        "quote_en": "We just announced the first release of Datasette Agent, a new extensible AI assistant for Datasette. I've been working o...",
+        "quote_zh": "",
+        "person": "Simon Willison",
+        "category": "opinion"
+      },
+      {
+        "tier": "analyst",
+        "title": "datasette-agent-sprites 0.1a0",
+        "summary": "Release: datasette-agent-sprites 0.1a0 A Datasette Agent plugin for running commands in a Fly Sprites sandbox. Tags: san...",
+        "value_note": "一手作者来源的观点兜底",
+        "source_name": "Simon Willison",
+        "url": "https://simonwillison.net/2026/May/21/datasette-agent-sprites/#atom-everything",
+        "published_at": "2026-05-21T18:21:07+00:00",
+        "importance": "pin",
+        "quote_en": "Release: datasette-agent-sprites 0.1a0 A Datasette Agent plugin for running commands in a Fly Sprites sandbox. Tags: san...",
+        "quote_zh": "",
+        "person": "Simon Willison",
+        "category": "opinion"
+      }
+    ],
+    "chinese": [
+      {
+        "title": "DeepSeek Code即将发布，ACM金牌大神崔添翼挂帅",
+        "summary": "据传DeepSeek Code编程模型即将推出，由IOI/ACM金牌得主崔添翼领导，公司近期完成700亿元融资。",
+        "value_note": "ACM大神领衔，DeepSeek进军代码生成赛道",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/422624.html",
+        "published_at": "2026-05-22",
+        "importance": "hot",
+        "category": "chinese"
+      },
+      {
+        "title": "智谱代码模型速度登顶，生成达400 tokens/s",
+        "summary": "智谱现场演示其代码模型生成速度达400 tokens/s，在主流模型中位列第一，展现极高吞吐量。",
+        "value_note": "400 tokens/s，主流代码模型中速度最快",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/422511.html",
+        "published_at": "2026-05-22",
+        "importance": "star",
+        "category": "chinese"
+      },
+      {
+        "title": "李飞飞团队发布空间智能新基准，号称“具身智能的ImageNet”",
+        "summary": "李飞飞团队推出专门用于评测具身空间智能的新基准，旨在系统衡量物理世界理解与交互能力。",
+        "value_note": "首个标准化具身空间智能评测基准",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/422738.html",
+        "published_at": "2026-05-22",
+        "importance": "star",
+        "category": "chinese"
+      },
+      {
+        "title": "京东618将办全网首档AI购物直播晚会，AI数字人唱主角",
+        "summary": "京东宣布6月1日推出AI购物直播晚会《赛博联欢会》，由AI数字人演绎经典IP，打造沉浸式消费体验。",
+        "value_note": "开辟AI数字人直播新应用场景",
+        "source_name": "36氪",
+        "url": "https://36kr.com/newsflashes/3820427661398407?f=rss",
+        "published_at": "2026-05-22",
+        "importance": "pin",
+        "category": "chinese"
+      }
+    ],
+    "academic": [
+      {
+        "title": "SOLAR：开放自优化智能体实现终身学习与持续适应",
+        "summary": "提出SOLAR框架，让LLM智能体在部署后通过自我优化持续适应新任务和新环境，突破静态模型瓶颈。",
+        "value_note": "解决了LLM智能体无法终身持续适应新任务的瓶颈。",
+        "source_name": "arXiv论文",
+        "url": "https://arxiv.org/abs/2605.20189",
+        "published_at": "2026-05-22",
+        "importance": "star",
+        "category": "academic"
+      },
+      {
+        "title": "OSCToM：基于RL的对抗生成提升高阶心智推理",
+        "summary": "利用强化学习引导的对抗样本生成，大幅增强LLM的高阶心理理论（ToM）推理能力，超越现有极限。",
+        "value_note": "突破LLM高阶心智推理的上限，对抗训练产生更强泛化的ToM能力。",
+        "source_name": "arXiv论文",
+        "url": "https://arxiv.org/abs/2605.20423",
+        "published_at": "2026-05-22",
+        "importance": "star",
+        "category": "academic"
+      },
+      {
+        "title": "AgentCo-op：检索合成实现多智能体工作流互操作",
+        "summary": "针对开放科学任务，提出基于检索的合成方法自动设计多智能体工作流，解决手动编排困难。",
+        "value_note": "实现多智能体工作流的自动合成与互操作，降低复杂科研任务编排门槛。",
+        "source_name": "arXiv论文",
+        "url": "https://arxiv.org/abs/2605.20425",
+        "published_at": "2026-05-22",
+        "importance": "pin",
+        "category": "academic"
+      }
+    ]
+  },
+  "trending": [
+    {
+      "owner": "ChromeDevTools",
+      "repo": "chrome-devtools-mcp",
+      "full_name": "ChromeDevTools/chrome-devtools-mcp",
+      "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "description": "Chrome DevTools for coding agents",
+      "language": "TypeScript",
+      "stars_total": "40,983",
+      "stars_today": 501,
+      "ai_topic": "MCP 工具",
+      "summary_zh": "仓库简介显示，ChromeDevTools/chrome-devtools-mcp 主要提供：Chrome DevTools for coding agents。",
+      "value_note": "降低模型接入外部工具的成本，适合关注 Agent 工具生态的开发者。"
+    },
+    {
+      "owner": "colbymchenry",
+      "repo": "codegraph",
+      "full_name": "colbymchenry/codegraph",
+      "url": "https://github.com/colbymchenry/codegraph",
+      "description": "Pre-indexed code knowledge graph for Claude Code, Codex, Cursor, OpenCode, and Hermes Agent — fewer tokens, fewer tool calls, 100% local",
+      "language": "TypeScript",
+      "stars_total": "16,609",
+      "stars_today": 3684,
+      "ai_topic": "Coding Agent 生态",
+      "summary_zh": "为 AI 编码工具预索引本地代码知识图谱，减少 token 消耗和工具调用次数。",
+      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+    },
+    {
+      "owner": "can1357",
+      "repo": "oh-my-pi",
+      "full_name": "can1357/oh-my-pi",
+      "url": "https://github.com/can1357/oh-my-pi",
+      "description": "⌥ AI Coding agent for the terminal — hash-anchored edits, optimized tool harness, LSP, Python, browser, subagents, and more",
+      "language": "TypeScript",
+      "stars_total": "6,363",
+      "stars_today": 457,
+      "ai_topic": "Coding Agent 生态",
+      "summary_zh": "仓库简介显示，can1357/oh-my-pi 主要提供：⌥ AI Coding agent for the terminal — hash-anchored edits, optimize。",
+      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+    },
+    {
+      "owner": "dotnet",
+      "repo": "skills",
+      "full_name": "dotnet/skills",
+      "url": "https://github.com/dotnet/skills",
+      "description": "Repository for skills to assist AI coding agents with .NET and C#",
+      "language": "C#",
+      "stars_total": "2,536",
+      "stars_today": 389,
+      "ai_topic": "Coding Agent 生态",
+      "summary_zh": "提供可复用的 Agent Skills 集合，帮助把专业任务流程封装成 AI Agent 可调用能力。",
+      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+    }
+  ]
+}
