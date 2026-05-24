@@ -1,0 +1,152 @@
+{
+  "date": "2026-05-24",
+  "generated_at": "2026-05-24T09:42:50.248639+08:00",
+  "today_theme": "大模型价格战白热化与多模态生成安全争议并行",
+  "lede": "今日AI领域重磅消息频出：DeepSeek宣布API降价75%且永久化，输出token价格仅为GPT-5.5的1/34，将大模型价格战推向新高度。阿里巴巴AI模型在无人工干预下自主运行35小时，成功为定制芯片生成并优化代码，展示了AI在芯片设计领域的自主性突破。Google推出any-to-any多模态生成模型，可以自如修改视频内容，但深度伪造门槛的降低引发了广泛担忧。与此同时，Anthropic警告Claude Mythos预览版发现漏洞的速度已远超开发者修补能力，给AI安全响应带来全新挑战。这些动态共同勾勒了当前AI技术既快速跃进又伴随尖锐安全矛盾的复杂图景。",
+  "headlines": [
+    {
+      "title": "DeepSeek 宣布 75% 折扣永久化，输出 token 价格仅为 GPT-5.5 的 1/34",
+      "summary": "DeepSeek 将 API 价格永久降低 75%，输出 token 定价低至 GPT-5.5 的 1/34，进一步加剧大模型价格战。这一策略可能迫使其他云服务商跟进，重塑行业定价格局。",
+      "url": "https://the-decoder.com/deepseek-makes-its-75-percent-discount-permanent-pricing-output-tokens-at-least-34x-below-gpt-5-5/",
+      "source_name": "The Decoder",
+      "category": "industry"
+    },
+    {
+      "title": "阿里 AI 模型自主运行 35 小时优化自研芯片代码",
+      "summary": "阿里巴巴最新 AI 模型在无人工干预下连续运行 35 小时，成功为定制芯片生成并优化代码，展现了 AI 在芯片设计领域的自主能力，可能为未来半导体开发加速。",
+      "url": "https://the-decoder.com/alibabas-latest-ai-model-ran-autonomously-for-35-hours-to-optimize-code-for-its-own-custom-chip/",
+      "source_name": "The Decoder",
+      "category": "industry"
+    },
+    {
+      "title": "Google 发布 any-to-any 生成式模型，可随意修改视频内容",
+      "summary": "Google 推出多模态模型，能将文本转为视频并修改现有视频，但深度伪造门槛大幅降低引发担忧。该技术虽便利创作，却可能被滥用于虚假信息传播。",
+      "url": "https://www.theverge.com/tech/936507/gemini-omni-hands-on-deepfake-ai-video",
+      "source_name": "The Verge",
+      "category": "industry"
+    },
+    {
+      "title": "Anthropic 警告 Claude Mythos 发现漏洞速度超开发者修补",
+      "summary": "Anthropic 披露 Claude Mythos 预览版在自动化漏洞挖掘中速度远超人类开发者，可能导致安全响应滞后，凸显 AI 自身安全工具化的双刃剑效应。",
+      "url": "https://the-decoder.com/anthropic-warns-claude-mythos-preview-finds-bugs-faster-than-developers-can-patch-them/",
+      "source_name": "The Decoder",
+      "category": "industry"
+    }
+  ],
+  "sections": {
+    "industry": [
+      {
+        "title": "DeepSeek 宣布 75% 折扣永久化，输出 token 价格仅为 GPT-5.5 的 1/34",
+        "summary": "DeepSeek 将 API 价格永久降低 75%，输出 token 定价低至 GPT-5.5 的 1/34，进一步加剧大模型价格战。",
+        "value_note": "永久降价重塑 API 市场格局，迫使竞争对手调整定价策略",
+        "source_name": "The Decoder",
+        "url": "https://the-decoder.com/deepseek-makes-its-75-percent-discount-permanent-pricing-output-tokens-at-least-34x-below-gpt-5-5/",
+        "published_at": "2026-05-23",
+        "importance": "hot",
+        "category": "industry"
+      },
+      {
+        "title": "阿里 AI 模型自主运行 35 小时优化自研芯片代码",
+        "summary": "阿里巴巴最新 AI 模型在无人工干预下连续运行 35 小时，成功为定制芯片生成并优化代码，展现自主芯片设计潜力。",
+        "value_note": "AI 首次长时间自主硬件设计，可能颠覆芯片开发流程",
+        "source_name": "The Decoder",
+        "url": "https://the-decoder.com/alibabas-latest-ai-model-ran-autonomously-for-35-hours-to-optimize-code-for-its-own-custom-chip/",
+        "published_at": "2026-05-23",
+        "importance": "star",
+        "category": "industry"
+      },
+      {
+        "title": "Google 发布 any-to-any 生成式模型，可随意修改视频内容",
+        "summary": "Google 推出新型多模态模型，能将文本转为视频并修改现有视频，但深度伪造门槛大幅降低引发担忧。",
+        "value_note": "多模态合成能力跨越式升级，但滥用风险难控",
+        "source_name": "The Verge",
+        "url": "https://www.theverge.com/tech/936507/gemini-omni-hands-on-deepfake-ai-video",
+        "published_at": "2026-05-23",
+        "importance": "star",
+        "category": "industry"
+      },
+      {
+        "title": "Anthropic 警告 Claude Mythos 发现漏洞速度超开发者修补",
+        "summary": "Anthropic 披露 Claude Mythos 预览版在自动化漏洞挖掘中速度远超人类开发者，可能引发安全响应挑战。",
+        "value_note": "AI 漏洞挖掘能力升级，倒逼安全更新流程加速",
+        "source_name": "The Decoder",
+        "url": "https://the-decoder.com/anthropic-warns-claude-mythos-preview-finds-bugs-faster-than-developers-can-patch-them/",
+        "published_at": "2026-05-23",
+        "importance": "pin",
+        "category": "industry"
+      }
+    ],
+    "opinion": [
+      {
+        "tier": "analyst",
+        "title": "On the",
+        "summary": "On the &lt;dl&gt; I learned a few new-to-me things about the &lt;dl&gt; element from this article by Ben Meyer: A &lt;dt...",
+        "value_note": "一手作者来源的观点兜底",
+        "source_name": "Simon Willison",
+        "url": "https://simonwillison.net/2026/May/23/on-the-dl/#atom-everything",
+        "published_at": "2026-05-23T20:24:48+00:00",
+        "importance": "star",
+        "quote_en": "On the &lt;dl&gt; I learned a few new-to-me things about the &lt;dl&gt; element from this article by Ben Meyer: A &lt;dt...",
+        "quote_zh": "",
+        "person": "Simon Willison",
+        "category": "opinion"
+      }
+    ],
+    "chinese": [],
+    "academic": []
+  },
+  "trending": [
+    {
+      "owner": "ChromeDevTools",
+      "repo": "chrome-devtools-mcp",
+      "full_name": "ChromeDevTools/chrome-devtools-mcp",
+      "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "description": "Chrome DevTools for coding agents",
+      "language": "TypeScript",
+      "stars_total": "41,347",
+      "stars_today": 435,
+      "ai_topic": "MCP 工具",
+      "summary_zh": "仓库简介显示，ChromeDevTools/chrome-devtools-mcp 主要提供：Chrome DevTools for coding agents。",
+      "value_note": "降低模型接入外部工具的成本，适合关注 Agent 工具生态的开发者。"
+    },
+    {
+      "owner": "colbymchenry",
+      "repo": "codegraph",
+      "full_name": "colbymchenry/codegraph",
+      "url": "https://github.com/colbymchenry/codegraph",
+      "description": "Pre-indexed code knowledge graph for Claude Code, Codex, Cursor, OpenCode, and Hermes Agent — fewer tokens, fewer tool calls, 100% local",
+      "language": "TypeScript",
+      "stars_total": "19,560",
+      "stars_today": 2456,
+      "ai_topic": "Coding Agent 生态",
+      "summary_zh": "为 AI 编码工具预索引本地代码知识图谱，减少 token 消耗和工具调用次数。",
+      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+    },
+    {
+      "owner": "mukul975",
+      "repo": "Anthropic-Cybersecurity-Skills",
+      "full_name": "mukul975/Anthropic-Cybersecurity-Skills",
+      "url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+      "description": "754 structured cybersecurity skills for AI agents · Mapped to 5 frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND & NIST AI RMF · agentskills.io standard · Works with Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI & 20+ platforms · 26 security domains · Apache 2.0",
+      "language": "Python",
+      "stars_total": "7,452",
+      "stars_today": 281,
+      "ai_topic": "Coding Agent 生态",
+      "summary_zh": "提供可复用的 Agent Skills 集合，帮助把专业任务流程封装成 AI Agent 可调用能力。",
+      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+    },
+    {
+      "owner": "dotnet",
+      "repo": "skills",
+      "full_name": "dotnet/skills",
+      "url": "https://github.com/dotnet/skills",
+      "description": "Repository for skills to assist AI coding agents with .NET and C#",
+      "language": "C#",
+      "stars_total": "2,753",
+      "stars_today": 266,
+      "ai_topic": "Coding Agent 生态",
+      "summary_zh": "提供可复用的 Agent Skills 集合，帮助把专业任务流程封装成 AI Agent 可调用能力。",
+      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+    }
+  ]
+}
