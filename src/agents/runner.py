@@ -415,8 +415,8 @@ def _material_fallback_items(
             items.append({
                 "tier": tier,
                 "title": title,
-                "summary": snippet or f"{person} 的近期 AI 观点素材，因 LLM 结构化输出异常按可信来源兜底保留。",
-                "value_note": "一手作者来源的观点兜底",
+                "summary": snippet or f"{person} 的近期观点摘要。",
+                "value_note": "观点摘要",
                 "source_name": _SOURCE_DISPLAY.get(source, person),
                 "url": url,
                 "published_at": m.get("published_at") or "",
