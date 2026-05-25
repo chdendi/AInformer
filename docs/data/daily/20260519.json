@@ -220,7 +220,7 @@
       "stars_today": 1439,
       "ai_topic": "Coding Agent 生态",
       "summary_zh": "为 Claude Code 提供学术研究工作流技能，覆盖资料研究、写作、审稿、修改到定稿流程。",
-      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+      "value_note": "把文献调研、写作、审稿等流程封装为 Claude Code 技能，适合科研工作流自动化。"
     },
     {
       "owner": "CloakHQ",
@@ -246,7 +246,7 @@
       "stars_today": 1244,
       "ai_topic": "Coding Agent 生态",
       "summary_zh": "面向专业 AI 编码 Agent 的安全技能注册表，可扩展 Antigravity、Claude Code、Cursor、Copilot 等工具。",
-      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+      "value_note": "提供跨工具复用的安全技能注册表，适合团队统一管理 Coding Agent 能力边界。"
     }
   ]
 }

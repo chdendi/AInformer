@@ -53,7 +53,7 @@ AI_TOPIC_RULES: list[tuple[str, tuple[str, ...]]] = [
 VALUE_NOTE_BY_TOPIC = {
     "MCP 工具": "降低模型接入外部工具的成本，适合关注 Agent 工具生态的开发者。",
     "Agent 浏览器基础设施": "可提升网页自动化和 Agent 浏览器操作稳定性，适合测试与反检测场景。",
-    "Coding Agent 生态": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。",
+    "Coding Agent 生态": "适合评估其能否沉淀编码 Agent 的可复用流程、规则或协作约束。",
     "Agent 框架": "面向复杂任务编排和工具调用，适合评估 Agent 工程化落地能力。",
     "个人 AI 助手": "个人助手方向仍在快速试错，隐私、易用性和本地能力值得重点观察。",
     "RAG / 知识库": "围绕知识检索和上下文压缩，直接影响企业 AI 应用的可用性与成本。",
@@ -349,6 +349,51 @@ def _fallback_summary_zh(repo: dict[str, Any]) -> str:
 
 
 def _fallback_value_note(repo: dict[str, Any], topic: str = "") -> str:
+    desc = _clean_text(repo.get("description"))
+    lower = desc.lower()
+
+    if desc:
+        if "chrome devtools" in lower and "coding agents" in lower:
+            return "把 Chrome DevTools 暴露给编码 Agent，适合调试网页、性能和前端自动化流程。"
+        if "persistent memory" in lower and "coding agents" in lower:
+            return "为编码 Agent 增加跨会话记忆，适合减少重复上下文和提升长任务连续性。"
+        if "hash-anchored edits" in lower or "optimized tool harness" in lower:
+            return "强调终端内的稳定编辑锚点和工具编排，适合评估本地编码 Agent 操作可靠性。"
+        if "notebooklm" in lower and "programmatic access" in lower:
+            return "把 NotebookLM 能力开放给 Python、CLI 和 Agent，适合自动化资料整理与问答流程。"
+        if "llm-powered software" in lower and "production customers" in lower:
+            return "把 Agent 产品化原则整理成工程清单，适合评估 LLM 应用是否能进入生产环境。"
+        if "academic research skills" in lower and "claude code" in lower:
+            return "把文献调研、写作、审稿等流程封装为 Claude Code 技能，适合科研工作流自动化。"
+        if "claude.md" in lower and "coding pitfalls" in lower:
+            return "把 LLM 编码常见坑整理成 Claude Code 行为约束，适合改善日常代码生成质量。"
+        if "skill registry" in lower and ("coding agent" in lower or "coding agents" in lower):
+            return "提供跨工具复用的安全技能注册表，适合团队统一管理 Coding Agent 能力边界。"
+        if ".net and c#" in lower:
+            return "面向 .NET 和 C# 场景沉淀 Agent 技能，适合企业技术栈里的编码助手落地。"
+        if "cybersecurity skills" in lower or "security domains" in lower:
+            return "将安全框架映射成 Agent 技能，适合安全团队把检测、响应和审计流程工具化。"
+        if "agent skills" in lower or ("skills" in lower and "agent" in lower):
+            return "将专业任务流程拆成可复用 Agent 技能，适合沉淀团队级自动化经验。"
+        if "ai agent toolkit" in lower and "coding agent cli" in lower:
+            return "集合编码 Agent CLI、统一 LLM API 和多端 UI，适合评估端到端 Agent 工具栈。"
+        if "ghostty-based macos terminal" in lower:
+            return "面向 AI 编码场景改造 macOS 终端体验，适合重度本地 Agent 工作流。"
+        if "personal ai" in lower and "super intelligence" in lower:
+            return "个人 AI 助手方向强调私有化与易用性，适合观察本地智能入口的产品形态。"
+        if "stealth chromium" in lower and "playwright" in lower:
+            return "解决浏览器自动化被识别的问题，适合需要稳定网页操作的 Agent 和测试场景。"
+        if "code knowledge graph" in lower:
+            return "把代码库预处理成知识图谱，可减少编码 Agent 的上下文消耗和检索成本。"
+        if "mcp" in lower:
+            return "围绕 MCP 扩展模型工具调用边界，适合构建可组合的 Agent 工作流。"
+        if re.search(r"rag|retrieval|embedding|vector", lower):
+            return "增强模型访问外部知识的能力，适合关注企业知识库和检索增强应用。"
+        if re.search(r"llm|inference|serving|transformer", lower):
+            return "聚焦模型运行效率和部署体验，适合评估推理成本与工程集成复杂度。"
+        if re.search(r"tts|speech|voice", lower):
+            return "语音能力正在工具化，适合观察多模态交互在应用层的落地方式。"
+
     topic = topic or _fallback_ai_topic(repo)
     if topic:
         note = VALUE_NOTE_BY_TOPIC.get(topic)
@@ -359,6 +404,6 @@ def _fallback_value_note(repo: dict[str, Any], topic: str = "") -> str:
         note = VALUE_NOTE_BY_TOPIC.get(fallback_topic)
         if note:
             return note
-    if _clean_text(repo.get("description")):
+    if desc:
         return "仓库简介提供了明确使用场景，值得结合 README 进一步判断成熟度。"
     return ""

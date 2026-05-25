@@ -170,7 +170,7 @@
       "stars_today": 3003,
       "ai_topic": "Coding Agent 生态",
       "summary_zh": "为 AI 编码工具预索引本地代码知识图谱，减少 token 消耗和工具调用次数。",
-      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+      "value_note": "把代码库预处理成知识图谱，可减少编码 Agent 的上下文消耗和检索成本。"
     },
     {
       "owner": "earendil-works",
@@ -183,7 +183,7 @@
       "stars_today": 456,
       "ai_topic": "Coding Agent 生态",
       "summary_zh": "面向大模型开发或推理部署的工具项目，重点改善模型运行效率与工程体验。",
-      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+      "value_note": "集合编码 Agent CLI、统一 LLM API 和多端 UI，适合评估端到端 Agent 工具栈。"
     },
     {
       "owner": "mukul975",
@@ -196,7 +196,7 @@
       "stars_today": 930,
       "ai_topic": "Coding Agent 生态",
       "summary_zh": "提供可复用的 Agent Skills 集合，帮助把专业任务流程封装成 AI Agent 可调用能力。",
-      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+      "value_note": "将安全框架映射成 Agent 技能，适合安全团队把检测、响应和审计流程工具化。"
     },
     {
       "owner": "manaflow-ai",
@@ -209,7 +209,7 @@
       "stars_today": 696,
       "ai_topic": "Coding Agent 生态",
       "summary_zh": "仓库简介显示，manaflow-ai/cmux 主要提供：Ghostty-based macOS terminal with vertical tabs and notifications。",
-      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+      "value_note": "面向 AI 编码场景改造 macOS 终端体验，适合重度本地 Agent 工作流。"
     }
   ]
 }

@@ -221,42 +221,6 @@ pre.code code{background:transparent;padding:0;border:none}
   background:transparent;
 }
 
-/* ===== Stats bar ===== */
-.stats-bar{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-  margin:0 0 80px;
-}
-.stat{
-  text-align:center;
-  padding:32px 16px;
-  border-right:1px solid var(--border-soft);
-  background:transparent;
-  transition:background .2s ease;
-}
-.stat:last-child{border-right:none}
-.stat:hover{background:var(--surface-low)}
-.stat .num{
-  display:block;
-  font-size:40px;
-  font-weight:700;
-  letter-spacing:-0.03em;
-  color:var(--primary);
-  line-height:1;
-  font-variant-numeric:tabular-nums;
-}
-.stat .label{
-  display:block;
-  margin-top:10px;
-  font-size:11px;
-  font-weight:600;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--tertiary);
-}
-
 /* ===== Lede ===== */
 .lede{
   max-width:780px;
@@ -323,6 +287,20 @@ pre.code code{background:transparent;padding:0;border:none}
   color:var(--tertiary);
   font-family:var(--font-mono);
 }
+.subhead{
+  margin:32px 0 16px;
+  font-size:18px;
+  font-weight:600;
+  color:var(--secondary);
+  letter-spacing:.02em;
+  display:flex;align-items:baseline;gap:12px;
+}
+.subhead:first-child{margin-top:8px}
+.subhead .subcount{
+  font-size:11px;font-weight:600;letter-spacing:.12em;
+  color:var(--tertiary);font-family:var(--font-mono);
+}
+.quote-card.analyst::before{content:"✎"}
 .section-divider{
   height:1px;
   background:var(--border-soft);
@@ -607,18 +585,10 @@ pre.code code{background:transparent;padding:0;border:none}
 .footer .footer-bottom p{margin-bottom:6px}
 
 /* ===== Responsive ===== */
-@media(max-width:1023px){
-  .stats-bar{grid-template-columns:repeat(2,1fr)}
-  .stat:nth-child(2){border-right:none}
-  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--border-soft)}
-}
 @media(max-width:639px){
   body{font-size:15px}
   .hero{padding:64px 20px 56px}
   .container{padding:0 20px}
-  .stats-bar{margin-bottom:56px}
-  .stat{padding:24px 12px}
-  .stat .num{font-size:32px}
   .lede{margin-bottom:64px;font-size:17px}
   .lede::first-letter{font-size:52px}
   .section{margin-bottom:64px}
@@ -728,7 +698,7 @@ pre.code code{background:transparent;padding:0;border:none}
 <header class="sticky-nav">
   <div class="nav-inner">
     <div class="nav-left">
-      <a class="home" href="https://chdendi.github.io/AInformer/index.html">AInformer<span class="dot">.</span></a>
+      <a class="home" href="../index.html">AInformer<span class="dot">.</span></a>
       <nav class="nav-links">
         <a href="#headlines">头条</a>
 <a href="#trending">GitHub</a>        <a href="#industry">行业</a>
@@ -738,7 +708,7 @@ pre.code code{background:transparent;padding:0;border:none}
       </nav>
     </div>
     <div class="nav-right">
-      <a class="cta" href="https://chdendi.github.io/AInformer/index.html">← 回到首页</a>
+      <a class="cta" href="../index.html">← 回到首页</a>
     </div>
   </div>
 </header>
@@ -758,13 +728,6 @@ pre.code code{background:transparent;padding:0;border:none}
 
   <section class="lede">今日AI圈迎来多项重磅进展：Anthropic为Claude推出无限上下文窗口，彻底改变长文档处理工作流；同时其CEO提出AI将走向“组织智能”，并推出“dreaming”系统让AI从错误中学习。月之暗面以200亿美元估值融资20亿美元，成为中文AI生态的焦点。欧盟就简化AI规则达成临时协议，推迟AI Act部分条款。此外，Mozilla利用Anthropic的Mythos工具发现Firefox 271个漏洞，展示了AI在安全领域的巨大潜力。</section>
 
-  <section class="stats-bar">
-    <div class="stat"><div class="num">2</div><div class="label">行业新闻</div></div>
-    <div class="stat"><div class="num">4</div><div class="label">领袖观点</div></div>
-    <div class="stat"><div class="num">4</div><div class="label">中文 / 学术</div></div>
-    <div class="stat"><div class="num">4</div><div class="label">学术与评测</div></div>
-  </section>
-
   <section class="section" id="headlines">
     <div class="section-head"><h2>今日头条</h2><span class="count">5 条</span></div>
     <div class="headlines">
@@ -778,7 +741,7 @@ pre.code code{background:transparent;padding:0;border:none}
         <h3>Anthropic CEO：AI将走向“组织智能”</h3>
         <p>Anthropic推出“dreaming”系统让AI智能体从自身错误中学习。CEO Dario Amodei描绘了从单智能体到多智能体再到整个组织智能的演进路径。</p>
         <div class="meta">
-<span class="tag tag-opinion">领袖观点</span><span>VentureBeat</span><a class="link-btn" href="https://venturebeat.com/technology/anthropic-introduces-dreaming-a-system-that-lets-ai-agents-learn-from-their-own-mistakes" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+<span class="tag tag-opinion">观点声音</span><span>VentureBeat</span><a class="link-btn" href="https://venturebeat.com/technology/anthropic-introduces-dreaming-a-system-that-lets-ai-agents-learn-from-their-own-mistakes" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
       </article>
       <article class="headline-card">
         <h3>月之暗面以200亿美元估值融资20亿</h3>
@@ -856,29 +819,30 @@ pre.code code{background:transparent;padding:0;border:none}
   </section>
 
   <section class="section" id="opinion">
-    <div class="section-head"><h2>AI 领袖发言与深度观点</h2><span class="count">4 条</span></div>
-    <div class="cards">
-      <article class="quote-card">
-<p class="quote-en">He described a progression from single agents to multiple agents to whole organizational intelligence</p><p class="quote-zh">他描述了一个从单智能体到多智能体再到整个组织智能的演进过程</p><p class="quote-title">Anthropic CEO Dario Amodei：AI将走向“组织智能”</p>        <div class="person">— Dario Amodei</div>
-        <div class="meta">
-<span class="tag tag-star">⭐ 重要</span><span>Amodei对AI演进路径的展望，代表了Anthropic对下一代AI架构的核心判断。</span><a class="link-btn" href="https://venturebeat.com/technology/anthropic-introduces-dreaming-a-system-that-lets-ai-agents-learn-from-their-own-mistakes" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
-      </article>
-      <article class="quote-card">
-<p class="quote-en">It's always been the case that humans outside the technology need to come up with the ideas that they then put back into it. What happens if we have a technology that can generate ideas within itself?</p><p class="quote-zh">一直以来都是技术之外的人类提出想法，然后将其注入技术。如果技术本身能内部产生想法，会发生什么？</p><p class="quote-title">Axios：Anthropic高管谈“智能爆炸”</p>        <div class="person">— Jack Clark</div>
-        <div class="meta">
-<span class="tag tag-pin">📎 关注</span><span>对AI自主创新能力的深度思考，触及AI发展最核心的哲学问题。</span><a class="link-btn" href="https://www.axios.com/2026/05/07/anthropic-jack-clark-ai-intelligence-explosion" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
-      </article>
-      <article class="quote-card">
-<p class="quote-zh">Meta前首席AI科学家Yann LeCun与ASML CEO等五位AI经济架构师同台，讨论AI行业面临的系统性挑战。</p><p class="quote-title">Yann LeCun加入TechCrunch圆桌：AI经济“车轮脱落”</p>        <div class="person">— Yann LeCun</div>
-        <div class="meta">
-<span class="tag tag-star">⭐ 重要</span><span>LeCun等顶级专家对AI经济瓶颈的坦率分析，对理解行业现状至关重要。</span><a class="link-btn" href="https://techcrunch.com/2026/05/06/five-architects-of-the-ai-economy-explain-where-the-wheels-are-coming-off/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
-      </article>
-      <article class="quote-card">
-<p class="quote-en">Huang said the scale of AI infrastructure spending is creating a unique opportunity to reinvest in American manufacturing and supply chains after decades of offshoring.</p><p class="quote-zh">黄仁勋表示，AI基础设施支出的规模创造了一个独特的机会，可以在几十年的离岸外包之后，重新投资于美国制造业和供应链。</p><p class="quote-title">NVIDIA黄仁勋：AI与康宁合作将“重振美国制造业”</p>        <div class="person">— Jensen Huang</div>
-        <div class="meta">
-<span class="tag tag-pin">📎 关注</span><span>黄仁勋对AI与实体经济结合的宏观判断，影响产业投资方向。</span><a class="link-btn" href="https://www.cnbc.com/2026/05/07/nvidia-ceo-ai-partnership-corning-revitalize-american-manufacturing.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
-      </article>
-    </div>
+    <div class="section-head"><h2>AI 观点与社区声音</h2><span class="count">4 条</span></div>
+      <h3 class="subhead">领袖发言 <span class="subcount">4 条</span></h3>
+      <div class="cards">
+        <article class="quote-card">
+<p class="quote-en">He described a progression from single agents to multiple agents to whole organizational intelligence</p><p class="quote-zh">他描述了一个从单智能体到多智能体再到整个组织智能的演进过程</p><p class="quote-title">Anthropic CEO Dario Amodei：AI将走向“组织智能”</p>          <div class="person">— Dario Amodei</div>
+          <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>Amodei对AI演进路径的展望，代表了Anthropic对下一代AI架构的核心判断。</span><a class="link-btn" href="https://venturebeat.com/technology/anthropic-introduces-dreaming-a-system-that-lets-ai-agents-learn-from-their-own-mistakes" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+        <article class="quote-card">
+<p class="quote-en">It's always been the case that humans outside the technology need to come up with the ideas that they then put back into it. What happens if we have a technology that can generate ideas within itself?</p><p class="quote-zh">一直以来都是技术之外的人类提出想法，然后将其注入技术。如果技术本身能内部产生想法，会发生什么？</p><p class="quote-title">Axios：Anthropic高管谈“智能爆炸”</p>          <div class="person">— Jack Clark</div>
+          <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>对AI自主创新能力的深度思考，触及AI发展最核心的哲学问题。</span><a class="link-btn" href="https://www.axios.com/2026/05/07/anthropic-jack-clark-ai-intelligence-explosion" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+        <article class="quote-card">
+<p class="quote-zh">Meta前首席AI科学家Yann LeCun与ASML CEO等五位AI经济架构师同台，讨论AI行业面临的系统性挑战。</p><p class="quote-title">Yann LeCun加入TechCrunch圆桌：AI经济“车轮脱落”</p>          <div class="person">— Yann LeCun</div>
+          <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>LeCun等顶级专家对AI经济瓶颈的坦率分析，对理解行业现状至关重要。</span><a class="link-btn" href="https://techcrunch.com/2026/05/06/five-architects-of-the-ai-economy-explain-where-the-wheels-are-coming-off/" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+        <article class="quote-card">
+<p class="quote-en">Huang said the scale of AI infrastructure spending is creating a unique opportunity to reinvest in American manufacturing and supply chains after decades of offshoring.</p><p class="quote-zh">黄仁勋表示，AI基础设施支出的规模创造了一个独特的机会，可以在几十年的离岸外包之后，重新投资于美国制造业和供应链。</p><p class="quote-title">NVIDIA黄仁勋：AI与康宁合作将“重振美国制造业”</p>          <div class="person">— Jensen Huang</div>
+          <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>黄仁勋对AI与实体经济结合的宏观判断，影响产业投资方向。</span><a class="link-btn" href="https://www.cnbc.com/2026/05/07/nvidia-ceo-ai-partnership-corning-revitalize-american-manufacturing.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+      </div>
   </section>
 
   <section class="section" id="chinese">
@@ -935,8 +899,8 @@ pre.code code{background:transparent;padding:0;border:none}
   <div>
     <h4>Navigate</h4>
     <ul>
-      <li><a href="https://chdendi.github.io/AInformer/index.html">← 回到首页</a></li>
-      <li><a href="https://chdendi.github.io/AInformer/index.html#archive">历史日报归档</a></li>
+      <li><a href="../index.html">← 回到首页</a></li>
+      <li><a href="../index.html#archive">历史日报归档</a></li>
     </ul>
   </div>
   <div>
@@ -951,14 +915,14 @@ pre.code code{background:transparent;padding:0;border:none}
   <div>
     <h4>Data</h4>
     <ul>
-      <li><a href="https://chdendi.github.io/AInformer/api/v1/manifest.json" target="_blank" rel="noopener">JSON API · Manifest</a></li>
+      <li><a href="../api/v1/manifest.json" target="_blank" rel="noopener">JSON API · Manifest</a></li>
       <li><a href="https://github.com/" target="_blank" rel="noopener">Source on GitHub</a></li>
     </ul>
   </div>
 </div>
   <div class="footer-bottom">
     <p>本日报基于公开信息自动搜索整理生成，资讯来源包括 OpenAI / Anthropic / DeepMind 等官方博客、The Verge、TechCrunch、36kr、机器之心、量子位、ArXiv、Hacker News 等公开平台。内容可能存在时效性偏差或不完整，请以原始来源为准。</p>
-    <p>Generated at 2026-05-09 13:13 · Powered by DeepSeek + Tavily · <a href="https://chdendi.github.io/AInformer/index.html">AInformer</a> · <a href="https://chdendi.github.io/AInformer/api/v1/manifest.json">JSON API</a></p>
+    <p>Generated at 2026-05-09 13:13 · Powered by DeepSeek + Tavily · <a href="../index.html">AInformer</a> · <a href="../api/v1/manifest.json">JSON API</a></p>
   </div>
 </footer>
 </body>

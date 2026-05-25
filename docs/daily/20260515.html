@@ -221,42 +221,6 @@ pre.code code{background:transparent;padding:0;border:none}
   background:transparent;
 }
 
-/* ===== Stats bar ===== */
-.stats-bar{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-  margin:0 0 80px;
-}
-.stat{
-  text-align:center;
-  padding:32px 16px;
-  border-right:1px solid var(--border-soft);
-  background:transparent;
-  transition:background .2s ease;
-}
-.stat:last-child{border-right:none}
-.stat:hover{background:var(--surface-low)}
-.stat .num{
-  display:block;
-  font-size:40px;
-  font-weight:700;
-  letter-spacing:-0.03em;
-  color:var(--primary);
-  line-height:1;
-  font-variant-numeric:tabular-nums;
-}
-.stat .label{
-  display:block;
-  margin-top:10px;
-  font-size:11px;
-  font-weight:600;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--tertiary);
-}
-
 /* ===== Lede ===== */
 .lede{
   max-width:780px;
@@ -323,6 +287,20 @@ pre.code code{background:transparent;padding:0;border:none}
   color:var(--tertiary);
   font-family:var(--font-mono);
 }
+.subhead{
+  margin:32px 0 16px;
+  font-size:18px;
+  font-weight:600;
+  color:var(--secondary);
+  letter-spacing:.02em;
+  display:flex;align-items:baseline;gap:12px;
+}
+.subhead:first-child{margin-top:8px}
+.subhead .subcount{
+  font-size:11px;font-weight:600;letter-spacing:.12em;
+  color:var(--tertiary);font-family:var(--font-mono);
+}
+.quote-card.analyst::before{content:"✎"}
 .section-divider{
   height:1px;
   background:var(--border-soft);
@@ -607,18 +585,10 @@ pre.code code{background:transparent;padding:0;border:none}
 .footer .footer-bottom p{margin-bottom:6px}
 
 /* ===== Responsive ===== */
-@media(max-width:1023px){
-  .stats-bar{grid-template-columns:repeat(2,1fr)}
-  .stat:nth-child(2){border-right:none}
-  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--border-soft)}
-}
 @media(max-width:639px){
   body{font-size:15px}
   .hero{padding:64px 20px 56px}
   .container{padding:0 20px}
-  .stats-bar{margin-bottom:56px}
-  .stat{padding:24px 12px}
-  .stat .num{font-size:32px}
   .lede{margin-bottom:64px;font-size:17px}
   .lede::first-letter{font-size:52px}
   .section{margin-bottom:64px}
@@ -758,13 +728,6 @@ pre.code code{background:transparent;padding:0;border:none}
 
   <section class="lede">今日AI领域迎来多款重磅模型发布：OpenAI推出GPT-5.5 Instant作为ChatGPT新默认模型，提升准确性与智能；Google发布Gemini 3 Pro，推理能力提升超50%；阿里发布全栈代码智能体Qoder 1.0，可接管代码生成、验证和交付流程。同时，马斯克诉奥特曼案进入结案陈词阶段，马斯克在庭审中展示驴形奖杯讽刺奥特曼，AI安全与人性之争成为焦点。此外，Anthropic发布20余个法律MCP连接器和12个插件，深度切入法律市场。</section>
 
-  <section class="stats-bar">
-    <div class="stat"><div class="num">4</div><div class="label">行业新闻</div></div>
-    <div class="stat"><div class="num">4</div><div class="label">领袖观点</div></div>
-    <div class="stat"><div class="num">4</div><div class="label">中文 / 学术</div></div>
-    <div class="stat"><div class="num">4</div><div class="label">学术与评测</div></div>
-  </section>
-
   <section class="section" id="headlines">
     <div class="section-head"><h2>今日头条</h2><span class="count">5 条</span></div>
     <div class="headlines">
@@ -790,7 +753,7 @@ pre.code code{background:transparent;padding:0;border:none}
         <h3>马斯克诉奥特曼案结案陈词：AI安全与人性之争</h3>
         <p>The Verge分析马斯克诉奥特曼案结案陈词，聚焦AI安全与OpenAI转型争议，马斯克在庭审中展示驴形奖杯讽刺奥特曼。</p>
         <div class="meta">
-<span class="tag tag-opinion">领袖观点</span><span>The Verge</span><a class="link-btn" href="https://www.theverge.com/ai-artificial-intelligence/931006/musk-v-altman-closing-arguments-analysis" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+<span class="tag tag-opinion">观点声音</span><span>The Verge</span><a class="link-btn" href="https://www.theverge.com/ai-artificial-intelligence/931006/musk-v-altman-closing-arguments-analysis" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
       </article>
       <article class="headline-card">
         <h3>Anthropic发布20余个法律MCP连接器和12个插件</h3>
@@ -864,29 +827,30 @@ pre.code code{background:transparent;padding:0;border:none}
   </section>
 
   <section class="section" id="opinion">
-    <div class="section-head"><h2>AI 领袖发言与深度观点</h2><span class="count">4 条</span></div>
-    <div class="cards">
-      <article class="quote-card">
-<p class="quote-en">The trial has been a battle over the soul of AI — whether it should be open and safe, or closed and profitable. The closing arguments crystallized the choice: Altman's vision of a commercialized future versus Musk's insistence on a nonprofit mission.</p><p class="quote-zh">这场审判是一场关于AI灵魂的较量——它应该是开放且安全的，还是封闭且盈利的。结案陈词明确了选择：奥特曼的商业化未来愿景与马斯克对非营利使命的坚持。</p><p class="quote-title">马斯克诉奥特曼案结案陈词：AI安全与人性之争</p>        <div class="person">— Sam Altman</div>
-        <div class="meta">
-<span class="tag tag-hot">🔥 头条</span><span>AI治理与创始人责任的关键判例</span><a class="link-btn" href="https://www.theverge.com/ai-artificial-intelligence/931006/musk-v-altman-closing-arguments-analysis" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
-      </article>
-      <article class="quote-card">
-<p class="quote-en">Elon Musk presented a 'jackass trophy' to the court, a bronze donkey with Sam Altman's face, symbolizing his belief that Altman betrayed OpenAI's original mission.</p><p class="quote-zh">埃隆·马斯克向法庭展示了一个“驴奖杯”，一个带有山姆·奥特曼面孔的青铜驴，象征他认为奥特曼背叛了OpenAI的原始使命。</p><p class="quote-title">马斯克获赠“驴奖杯”嘲讽奥特曼</p>        <div class="person">— Sam Altman</div>
-        <div class="meta">
-<span class="tag tag-star">⭐ 重要</span><span>庭审戏剧性瞬间，反映双方敌意</span><a class="link-btn" href="https://www.theverge.com/ai-artificial-intelligence/930893/elon-musk-sam-altman-trial-ai-safety-jackass-statue" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
-      </article>
-      <article class="quote-card">
-<p class="quote-en">Microsoft has started canceling Claude Code licenses for employees, signaling a shift away from Anthropic's coding assistant in favor of internal tools or OpenAI alternatives.</p><p class="quote-zh">微软已开始取消员工的Claude Code许可证，标志着从Anthropic的编码助手转向内部工具或OpenAI替代方案。</p><p class="quote-title">微软取消Claude Code许可证，转向内部AI</p>        <div class="person">— Sam Altman</div>
-        <div class="meta">
-<span class="tag tag-star">⭐ 重要</span><span>微软与Anthropic关系降温信号</span><a class="link-btn" href="https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
-      </article>
-      <article class="quote-card">
-<p class="quote-en">OpenAI says Codex is coming to your phone, allowing users to generate and edit code via voice or text in the ChatGPT mobile app.</p><p class="quote-zh">OpenAI表示Codex即将登陆手机，允许用户在ChatGPT移动应用中通过语音或文本生成和编辑代码。</p><p class="quote-title">OpenAI Codex登陆ChatGPT手机应用</p>        <div class="person">— Sam Altman</div>
-        <div class="meta">
-<span class="tag tag-pin">📎 关注</span><span>AI编程助手进入移动时代</span><a class="link-btn" href="https://techcrunch.com/2026/05/14/openai-says-codex-is-coming-to-your-phone/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
-      </article>
-    </div>
+    <div class="section-head"><h2>AI 观点与社区声音</h2><span class="count">4 条</span></div>
+      <h3 class="subhead">领袖发言 <span class="subcount">4 条</span></h3>
+      <div class="cards">
+        <article class="quote-card">
+<p class="quote-en">The trial has been a battle over the soul of AI — whether it should be open and safe, or closed and profitable. The closing arguments crystallized the choice: Altman's vision of a commercialized future versus Musk's insistence on a nonprofit mission.</p><p class="quote-zh">这场审判是一场关于AI灵魂的较量——它应该是开放且安全的，还是封闭且盈利的。结案陈词明确了选择：奥特曼的商业化未来愿景与马斯克对非营利使命的坚持。</p><p class="quote-title">马斯克诉奥特曼案结案陈词：AI安全与人性之争</p>          <div class="person">— Sam Altman</div>
+          <div class="meta">
+<span class="tag tag-hot">🔥 头条</span><span>AI治理与创始人责任的关键判例</span><a class="link-btn" href="https://www.theverge.com/ai-artificial-intelligence/931006/musk-v-altman-closing-arguments-analysis" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+        <article class="quote-card">
+<p class="quote-en">Elon Musk presented a 'jackass trophy' to the court, a bronze donkey with Sam Altman's face, symbolizing his belief that Altman betrayed OpenAI's original mission.</p><p class="quote-zh">埃隆·马斯克向法庭展示了一个“驴奖杯”，一个带有山姆·奥特曼面孔的青铜驴，象征他认为奥特曼背叛了OpenAI的原始使命。</p><p class="quote-title">马斯克获赠“驴奖杯”嘲讽奥特曼</p>          <div class="person">— Sam Altman</div>
+          <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>庭审戏剧性瞬间，反映双方敌意</span><a class="link-btn" href="https://www.theverge.com/ai-artificial-intelligence/930893/elon-musk-sam-altman-trial-ai-safety-jackass-statue" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+        <article class="quote-card">
+<p class="quote-en">Microsoft has started canceling Claude Code licenses for employees, signaling a shift away from Anthropic's coding assistant in favor of internal tools or OpenAI alternatives.</p><p class="quote-zh">微软已开始取消员工的Claude Code许可证，标志着从Anthropic的编码助手转向内部工具或OpenAI替代方案。</p><p class="quote-title">微软取消Claude Code许可证，转向内部AI</p>          <div class="person">— Sam Altman</div>
+          <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>微软与Anthropic关系降温信号</span><a class="link-btn" href="https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+        <article class="quote-card">
+<p class="quote-en">OpenAI says Codex is coming to your phone, allowing users to generate and edit code via voice or text in the ChatGPT mobile app.</p><p class="quote-zh">OpenAI表示Codex即将登陆手机，允许用户在ChatGPT移动应用中通过语音或文本生成和编辑代码。</p><p class="quote-title">OpenAI Codex登陆ChatGPT手机应用</p>          <div class="person">— Sam Altman</div>
+          <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>AI编程助手进入移动时代</span><a class="link-btn" href="https://techcrunch.com/2026/05/14/openai-says-codex-is-coming-to-your-phone/" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+      </div>
   </section>
 
   <section class="section" id="chinese">
