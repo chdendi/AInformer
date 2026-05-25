@@ -12,7 +12,7 @@ from openai import AsyncOpenAI
 from ..config import LLMConfig
 from ..llm.client import chat_json
 from ..search.web_search import unified_search
-from .definitions import ANALYST_NAMES, LEADER_PROFILES, AgentSpec
+from .definitions import ANALYST_NAMES, COMMUNITY_VOICE_SOURCES, LEADER_PROFILES, AgentSpec
 
 log = logging.getLogger(__name__)
 
@@ -24,7 +24,7 @@ AGENT_SYSTEM = (
 
 _JSON_FMT_OPINION = """  "items": [
     {
-      "tier": "leader|analyst",
+      "tier": "leader|analyst|community",
       "title": "中文标题（<40字）",
       "summary": "1-2句摘要（<80字）",
       "value_note": "一句话价值点（<40字）",
@@ -32,9 +32,9 @@ _JSON_FMT_OPINION = """  "items": [
       "url": "原始 URL（必须来自素材）",
       "published_at": "ISO 时间或空字符串",
       "importance": "hot|star|pin",
-      "quote_en": "英文原文摘句；若素材为中文可留空",
-      "quote_zh": "中文观点摘句或中文翻译",
-      "person": "严格匹配 leader 或 analyst 名单中的人物全名"
+      "quote_en": "英文原文摘句；若素材为中文或 community 核心观点可留空",
+      "quote_zh": "中文观点摘句、中文翻译或 community 核心观点",
+      "person": "leader/analyst 用人物全名；community 可用作者、社区或 newsletter 名"
     }
   ]"""
 
@@ -93,6 +93,17 @@ _SOURCE_RANK = {
     "oneusefulthing": 25,
     "karpathy_blog": 25,
     "sam_altman": 25,
+    "darioamodei_blog": 25,
+    "eugene_yan": 24,
+    "hamel_husain": 24,
+    "jay_alammar": 24,
+    "semianalysis": 23,
+    "deeplearning_ai_batch": 22,
+    "latent_space": 22,
+    "import_ai": 22,
+    "thegradient": 20,
+    "aisnakeoil": 20,
+    "lesswrong": 18,
     "arxiv_ai": 26,
     "arxiv_cl": 24,
     "arxiv_lg": 24,
@@ -122,10 +133,29 @@ _SOURCE_DISPLAY = {
     "oneusefulthing": "One Useful Thing",
     "karpathy_blog": "Andrej Karpathy",
     "sam_altman": "Sam Altman",
+    "darioamodei_blog": "Dario Amodei",
+    "latent_space": "Latent Space",
+    "import_ai": "Import AI",
+    "lesswrong": "LessWrong",
+    "thegradient": "The Gradient",
+    "aisnakeoil": "AI Snake Oil",
+    "eugene_yan": "Eugene Yan",
+    "hamel_husain": "Hamel Husain",
+    "jay_alammar": "Jay Alammar",
+    "semianalysis": "SemiAnalysis",
+    "deeplearning_ai_batch": "DeepLearning.AI The Batch",
+    "hn_ai_discussions": "Hacker News",
+    "lobsters_ai": "Lobsters",
     "arxiv_ai": "arXiv cs.AI",
     "arxiv_cl": "arXiv cs.CL",
     "arxiv_lg": "arXiv cs.LG",
     "bair": "BAIR Blog",
+    "36kr_newsflash": "36氪快讯",
+    "36kr_ai": "36氪 AI",
+    "qwen_blog": "通义千问博客",
+    "leiphone": "雷峰网",
+    "sspai": "少数派",
+    "geekpark": "极客公园",
     "ddg": "Web Search",
 }
 
@@ -150,9 +180,22 @@ _OPINION_SOURCE_PEOPLE = {
     "oneusefulthing": ("analyst", "Ethan Mollick"),
     "karpathy_blog": ("leader", "Andrej Karpathy"),
     "sam_altman": ("leader", "Sam Altman"),
+    "darioamodei_blog": ("leader", "Dario Amodei"),
+    "eugene_yan": ("community", "Eugene Yan"),
+    "hamel_husain": ("community", "Hamel Husain"),
+    "jay_alammar": ("community", "Jay Alammar"),
 }
 
 _ACADEMIC_FALLBACK_SOURCES = {"arxiv_ai", "arxiv_cl", "arxiv_lg", "bair"}
+_CHINESE_FALLBACK_SOURCES = {
+    "qbitai",
+    "36kr_newsflash",
+    "36kr_ai",
+    "qwen_blog",
+    "leiphone",
+    "sspai",
+    "geekpark",
+}
 
 
 def _build_user_prompt(
@@ -309,6 +352,36 @@ def _clean_material_text(text: str, limit: int = 140) -> str:
     return cleaned[:limit].rstrip() + "..."
 
 
+def _base_diagnostics(spec_key: str) -> dict[str, Any]:
+    return {
+        "section": spec_key,
+        "search_count": 0,
+        "rss_count": 0,
+        "materials_count": 0,
+        "prompt_materials_count": 0,
+        "top_sources": [],
+        "excluded_titles_count": 0,
+        "strict_raw_count": 0,
+        "strict_kept_count": 0,
+        "strict_fabricated_url_drops": 0,
+        "strict_tier_drops": 0,
+        "relaxed_attempted": False,
+        "relaxed_raw_count": 0,
+        "relaxed_kept_count": 0,
+        "relaxed_fabricated_url_drops": 0,
+        "relaxed_tier_drops": 0,
+        "fallback_count": 0,
+        "selection_mode": "empty",
+        "empty_reason": "",
+    }
+
+
+def _empty_agent_result(spec: AgentSpec, diagnostics: dict[str, Any], reason: str) -> dict[str, Any]:
+    diagnostics["selection_mode"] = "empty"
+    diagnostics["empty_reason"] = reason
+    return {"key": spec.key, "name": spec.name, "items": [], "diagnostics": diagnostics}
+
+
 def _material_fallback_items(
     spec_key: str,
     materials: list[dict[str, Any]],
@@ -332,22 +405,27 @@ def _material_fallback_items(
 
         if spec_key == "opinion":
             person_meta = _OPINION_SOURCE_PEOPLE.get(source)
-            if not person_meta:
+            if not person_meta and source not in COMMUNITY_VOICE_SOURCES:
                 continue
-            tier, person = person_meta
+            if person_meta:
+                tier, person = person_meta
+            else:
+                tier, person = "community", COMMUNITY_VOICE_SOURCES[source]
+            quote_text = snippet or title
             items.append({
                 "tier": tier,
                 "title": title,
-                "summary": snippet or f"{person} 的近期 AI 观点素材，因 LLM 结构化输出异常按一手来源兜底保留。",
-                "value_note": "一手作者来源的观点兜底",
+                "summary": snippet or f"{person} 的近期观点摘要。",
+                "value_note": "观点摘要",
                 "source_name": _SOURCE_DISPLAY.get(source, person),
                 "url": url,
                 "published_at": m.get("published_at") or "",
                 "importance": "star" if not items else "pin",
-                "quote_en": snippet or title,
-                "quote_zh": "",
+                "quote_en": quote_text if tier != "community" else "",
+                "quote_zh": quote_text if tier == "community" else "",
                 "person": person,
                 "category": spec_key,
+                "selection_mode": "fallback",
             })
         elif spec_key == "academic":
             if source not in _ACADEMIC_FALLBACK_SOURCES:
@@ -361,6 +439,7 @@ def _material_fallback_items(
                 "published_at": m.get("published_at") or "",
                 "importance": "star" if len(items) < 2 else "pin",
                 "category": spec_key,
+                "selection_mode": "fallback",
             })
         elif spec_key == "industry":
             items.append({
@@ -372,6 +451,21 @@ def _material_fallback_items(
                 "published_at": m.get("published_at") or "",
                 "importance": "star" if len(items) < 2 else "pin",
                 "category": spec_key,
+                "selection_mode": "fallback",
+            })
+        elif spec_key == "chinese":
+            if source not in _CHINESE_FALLBACK_SOURCES:
+                continue
+            items.append({
+                "title": title,
+                "summary": snippet or "近期中文 AI 生态素材，因 LLM 结构化输出异常按中文来源兜底保留。",
+                "value_note": "中文来源素材兜底",
+                "source_name": _SOURCE_DISPLAY.get(source, source or "中文来源"),
+                "url": url,
+                "published_at": m.get("published_at") or "",
+                "importance": "star" if len(items) < 2 else "pin",
+                "category": spec_key,
+                "selection_mode": "fallback",
             })
         else:
             return []
@@ -391,32 +485,42 @@ async def run_agent(
 ) -> dict[str, Any]:
     log.info("[agent:%s] starting", spec.key)
     excluded_titles = excluded_by_cat.get(spec.key, []) + excluded_by_cat.get("_headlines", [])
+    diagnostics = _base_diagnostics(spec.key)
+    diagnostics["excluded_titles_count"] = len(excluded_titles)
 
     search_items: list[dict[str, Any]] = await unified_search(spec.queries, max_results=6, days=2)
     log.info("[agent:%s] search=%d", spec.key, len(search_items))
+    diagnostics["search_count"] = len(search_items)
 
     rss_items = [m for m in rss_pool if m.get("category_hint") in spec.rss_categories] if spec.rss_categories else []
     log.info("[agent:%s] rss=%d", spec.key, len(rss_items))
+    diagnostics["rss_count"] = len(rss_items)
 
     materials = _merge_materials(search_items, rss_items, prefer_rss=spec.key == "opinion")
+    diagnostics["materials_count"] = len(materials)
 
     if not materials:
         log.warning("[agent:%s] no materials (search=%d rss=%d), returning empty",
                     spec.key, len(search_items), len(rss_items))
-        return {"key": spec.key, "name": spec.name, "items": []}
+        return _empty_agent_result(spec, diagnostics, "no_materials")
 
     log.info("[agent:%s] materials=%d (search=%d, rss=%d), excluded_titles=%d",
              spec.key, len(materials), len(search_items), len(rss_items), len(excluded_titles))
 
     prompt_materials = _prepare_prompt_materials(spec.key, materials, today)
     top_sources = [m.get("source", "?") for m in prompt_materials[:8]]
+    diagnostics["prompt_materials_count"] = len(prompt_materials)
+    diagnostics["top_sources"] = top_sources
     log.info(
         "[agent:%s] prompt_materials=%d/%d top_sources=%s",
         spec.key, len(prompt_materials), len(materials), top_sources,
     )
 
+    if not prompt_materials:
+        log.warning("[agent:%s] all materials filtered before prompt", spec.key)
+        return _empty_agent_result(spec, diagnostics, "materials_filtered_out")
+
     valid_urls = {m["url"] for m in prompt_materials}
-    material_corpus = _materials_corpus(prompt_materials) if spec.key == "opinion" else ""
 
     user_prompt = _build_user_prompt(spec, prompt_materials, excluded_titles, today)
     try:
@@ -426,16 +530,23 @@ async def run_agent(
         result = {}
 
     filtered, drops = _validate_items(result, valid_urls, spec.key, mode="strict")
+    diagnostics["strict_raw_count"] = drops["raw"]
+    diagnostics["strict_fabricated_url_drops"] = drops["fabricated"]
     if spec.key == "opinion":
         before_strict_tier = len(filtered)
-        filtered = _validate_opinion_tier(filtered, material_corpus)
+        filtered = _validate_opinion_tier(filtered, prompt_materials)
+        diagnostics["strict_tier_drops"] = before_strict_tier - len(filtered)
         log.info(
             "[agent:opinion] strict tier-check kept %d/%d (raw=%d, fabricated=%d)",
             len(filtered), before_strict_tier, drops["raw"], drops["fabricated"],
         )
+    diagnostics["strict_kept_count"] = len(filtered)
+    if filtered:
+        diagnostics["selection_mode"] = "strict"
 
     # Fallback: if LLM returned 0 items but materials existed, retry with relaxed constraints
-    if not filtered and materials:
+    if not filtered:
+        diagnostics["relaxed_attempted"] = True
         log.warning(
             "[agent:%s] strict mode produced 0 items (raw=%d, fabricated_url_drops=%d) — retrying relaxed",
             spec.key,
@@ -465,9 +576,12 @@ async def run_agent(
             result2 = {}
         compact_urls = {m["url"] for m in compact_materials}
         filtered, drops2 = _validate_items(result2, compact_urls, spec.key, mode="relaxed")
+        diagnostics["relaxed_raw_count"] = drops2["raw"]
+        diagnostics["relaxed_fabricated_url_drops"] = drops2["fabricated"]
         if spec.key == "opinion":
             before_relaxed_tier = len(filtered)
-            filtered = _validate_opinion_tier(filtered, material_corpus)
+            filtered = _validate_opinion_tier(filtered, compact_materials)
+            diagnostics["relaxed_tier_drops"] = before_relaxed_tier - len(filtered)
             log.info(
                 "[agent:opinion] relaxed tier-check kept %d/%d (raw=%d, fabricated=%d)",
                 len(filtered), before_relaxed_tier, drops2["raw"], drops2["fabricated"],
@@ -480,15 +594,24 @@ async def run_agent(
                 len(filtered),
                 drops2["fabricated"],
             )
+        diagnostics["relaxed_kept_count"] = len(filtered)
+        if filtered:
+            diagnostics["selection_mode"] = "relaxed"
 
     if not filtered:
         fallback = _material_fallback_items(spec.key, prompt_materials)
+        diagnostics["fallback_count"] = len(fallback)
         if fallback:
             log.warning("[agent:%s] using deterministic material fallback: %d items", spec.key, len(fallback))
             filtered = fallback
+            diagnostics["selection_mode"] = "fallback"
+
+    if not filtered:
+        diagnostics["selection_mode"] = "empty"
+        diagnostics["empty_reason"] = "llm_and_fallback_empty"
 
     log.info("[agent:%s] returned %d items", spec.key, len(filtered))
-    return {"key": spec.key, "name": spec.name, "items": filtered}
+    return {"key": spec.key, "name": spec.name, "items": filtered, "diagnostics": diagnostics}
 
 
 def _merge_materials(
@@ -603,6 +726,7 @@ def _validate_items(
             fabricated += 1
             continue
         it["category"] = spec_key
+        it["selection_mode"] = mode
         kept.append(it)
     return kept, {"raw": len(raw_items), "fabricated": fabricated}
 
@@ -621,28 +745,42 @@ def _materials_corpus(materials: list[dict[str, Any]]) -> str:
     return " ".join(parts).lower()
 
 
-def _validate_opinion_tier(items: list[dict[str, Any]], corpus: str) -> list[dict[str, Any]]:
-    """Enforce two-tier opinion taxonomy.
+def _validate_opinion_tier(items: list[dict[str, Any]], materials: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Enforce opinion taxonomy.
 
     leader: person ∈ LEADER_PROFILES, name mentioned in materials, Musk gated
             by AI-keyword filter.
     analyst: person ∈ ANALYST_NAMES.
+    community: URL comes from a trusted opinion/community source.
     Items failing both buckets are dropped.
     """
+    corpus = _materials_corpus(materials)
+    source_by_url = {
+        m.get("url"): (m.get("source") or "")
+        for m in materials
+        if m.get("url")
+    }
     kept: list[dict[str, Any]] = []
     for it in items:
         tier = (it.get("tier") or "").strip().lower()
         person = (it.get("person") or "").strip()
+        url = it.get("url") or ""
+        source = source_by_url.get(url, "")
+        source_person_meta = _OPINION_SOURCE_PEOPLE.get(source)
         if not person:
-            log.debug("[opinion-tier] drop empty person: %s", it.get("title"))
-            continue
+            if tier == "community" and source in COMMUNITY_VOICE_SOURCES:
+                person = COMMUNITY_VOICE_SOURCES[source]
+                it["person"] = person
+            else:
+                log.debug("[opinion-tier] drop empty person: %s", it.get("title"))
+                continue
 
         if tier == "leader" or person in LEADER_PROFILES:
             profile = LEADER_PROFILES.get(person)
             if not profile:
                 log.debug("[opinion-tier] drop leader not in roster: %s", person)
                 continue
-            if person.lower() not in corpus:
+            if person.lower() not in corpus and source_person_meta != ("leader", person):
                 log.debug("[opinion-tier] drop leader '%s' not mentioned in materials", person)
                 continue
             kw_filter = profile.get("keyword_filter")
@@ -660,6 +798,17 @@ def _validate_opinion_tier(items: list[dict[str, Any]], corpus: str) -> list[dic
                 log.debug("[opinion-tier] drop analyst not in roster: %s", person)
                 continue
             it["tier"] = "analyst"
+            kept.append(it)
+            continue
+
+        if tier == "community" or source in COMMUNITY_VOICE_SOURCES:
+            if source not in COMMUNITY_VOICE_SOURCES:
+                log.debug("[opinion-tier] drop community item from untrusted source: %s", source)
+                continue
+            it["tier"] = "community"
+            it["person"] = person or COMMUNITY_VOICE_SOURCES[source]
+            if not it.get("quote_en") and not it.get("quote_zh") and it.get("summary"):
+                it["quote_zh"] = it["summary"]
             kept.append(it)
             continue
 

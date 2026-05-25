@@ -42,7 +42,11 @@ TRENDING_FETCH_LIMIT = 20
 TRENDING_KEEP = 4
 
 
-def dedupe_across_sections(sections: dict[str, list[dict]]) -> dict[str, list[dict]]:
+def dedupe_across_sections(
+    sections: dict[str, list[dict]],
+    *,
+    return_drops: bool = False,
+) -> dict[str, list[dict]] | tuple[dict[str, list[dict]], dict[str, int]]:
     """Drop items that appear in more than one section, keeping the highest-priority section.
 
     Item identity key is `url` when present, otherwise `normalize_title(title)`.
@@ -56,6 +60,7 @@ def dedupe_across_sections(sections: dict[str, list[dict]]) -> dict[str, list[di
     """
     seen: set[str] = set()
     result: dict[str, list[dict]] = {k: [] for k in sections}
+    drops_by_section: dict[str, int] = {k: 0 for k in sections}
 
     ordered_keys = sorted(
         sections.keys(),
@@ -77,6 +82,7 @@ def dedupe_across_sections(sections: dict[str, list[dict]]) -> dict[str, list[di
                 ident = f"title:{norm}"
             if ident in seen:
                 removed += 1
+                drops_by_section[key] += 1
                 continue
             seen.add(ident)
             kept.append(item)
@@ -85,10 +91,17 @@ def dedupe_across_sections(sections: dict[str, list[dict]]) -> dict[str, list[di
     msg = f"Cross-section dedup: removed {removed} duplicates"
     log.info(msg)
     print(msg)
+    if return_drops:
+        return result, drops_by_section
     return result
 
 
-def cap_sections(sections: dict[str, list[dict]], cap: int = SECTION_CARD_CAP) -> dict[str, list[dict]]:
+def cap_sections(
+    sections: dict[str, list[dict]],
+    cap: int = SECTION_CARD_CAP,
+    *,
+    return_drops: bool = False,
+) -> dict[str, list[dict]] | tuple[dict[str, list[dict]], dict[str, int]]:
     """Trim each section to at most `cap` items. Order is preserved.
 
     Items kept are sorted by importance (hot → star → pin) within their
@@ -97,6 +110,7 @@ def cap_sections(sections: dict[str, list[dict]], cap: int = SECTION_CARD_CAP) -
     """
     importance_rank = {"hot": 0, "star": 1, "pin": 2}
     capped: dict[str, list[dict]] = {}
+    drops_by_section: dict[str, int] = {k: 0 for k in sections}
     dropped_total = 0
     for key, items in sections.items():
         if len(items) <= cap:
@@ -108,13 +122,23 @@ def cap_sections(sections: dict[str, list[dict]], cap: int = SECTION_CARD_CAP) -
         )
         kept = sorted(ranked[:cap], key=lambda pair: pair[0])
         capped[key] = [it for _, it in kept]
-        dropped_total += len(items) - cap
+        dropped = len(items) - cap
+        dropped_total += dropped
+        drops_by_section[key] = dropped
 
     if dropped_total:
         msg = f"Section cap={cap}: dropped {dropped_total} surplus items"
         log.info(msg)
         print(msg)
+    if return_drops:
+        return capped, drops_by_section
     return capped
+
+
+def _mark_empty_reason(meta: dict, reason: str) -> None:
+    if not meta.get("empty_reason"):
+        meta["empty_reason"] = reason
+    meta["selection_mode"] = "empty"
 
 
 def _parse_args() -> argparse.Namespace:
@@ -152,9 +176,19 @@ async def main_async(target_date: date, dedupe_days: int, dry: bool) -> None:
     specs = build_agent_specs(month_token)
 
     trending: list[dict] = []
+    section_meta: dict[str, dict] = {}
 
     if dry:
         sections = {s.key: [] for s in specs}
+        section_meta = {
+            s.key: {
+                "section": s.key,
+                "selection_mode": "empty",
+                "empty_reason": "dry_run",
+                "final_count": 0,
+            }
+            for s in specs
+        }
         synth = {"lede": "（dry-run）", "today_theme": "占位", "headlines": []}
     else:
         log.info("Running %d agents + GitHub trending in parallel...", len(specs))
@@ -165,24 +199,56 @@ async def main_async(target_date: date, dedupe_days: int, dry: bool) -> None:
 
         sections: dict[str, list] = {}
         for r in agent_results:
+            meta = dict(r.get("diagnostics") or {"section": r["key"]})
             agent_n = len(r["items"])
             items = filter_new(r["items"], excluded_urls, excluded_titles)
             after_hist = len(items)
             items = dedupe_within(items)
             after_within = len(items)
+            meta["agent_count"] = agent_n
+            meta["after_historical_dedupe_count"] = after_hist
+            meta["historical_dedupe_drops"] = agent_n - after_hist
+            meta["after_within_dedupe_count"] = after_within
+            meta["within_dedupe_drops"] = after_hist - after_within
+            if agent_n and not after_hist:
+                _mark_empty_reason(meta, "historical_dedupe_dropped_all")
+            elif after_hist and not after_within:
+                _mark_empty_reason(meta, "within_dedupe_dropped_all")
             log.info(
                 "[section:%s] agent=%d → after-historical-dedup=%d (-%d) → after-within-dedup=%d (-%d)",
                 r["key"], agent_n, after_hist, agent_n - after_hist,
                 after_within, after_hist - after_within,
             )
             sections[r["key"]] = items
+            section_meta[r["key"]] = meta
 
-        sections = dedupe_across_sections(sections)
-        sections = cap_sections(sections, cap=SECTION_CARD_CAP)
+        pre_cross_counts = {key: len(items) for key, items in sections.items()}
+        sections, cross_drops = dedupe_across_sections(sections, return_drops=True)
+        for key, drops in cross_drops.items():
+            meta = section_meta.setdefault(key, {"section": key})
+            meta["cross_section_dedupe_drops"] = drops
+            meta["after_cross_section_dedupe_count"] = len(sections.get(key, []))
+            if pre_cross_counts.get(key, 0) and not sections.get(key):
+                _mark_empty_reason(meta, "cross_section_dedupe_dropped_all")
+
+        pre_cap_counts = {key: len(items) for key, items in sections.items()}
+        sections, cap_drops = cap_sections(sections, cap=SECTION_CARD_CAP, return_drops=True)
+        for key, drops in cap_drops.items():
+            meta = section_meta.setdefault(key, {"section": key})
+            meta["cap_drops"] = drops
+            meta["final_count"] = len(sections.get(key, []))
+            if sections.get(key):
+                meta["empty_reason"] = ""
+            elif not meta.get("empty_reason"):
+                if pre_cap_counts.get(key, 0):
+                    _mark_empty_reason(meta, "section_cap_dropped_all")
+                else:
+                    _mark_empty_reason(meta, "no_publishable_items")
 
         for key, items in sections.items():
             if not items:
-                log.warning("[section:%s] FINAL empty — investigate agent/search/dedup logs above", key)
+                reason = section_meta.get(key, {}).get("empty_reason") or "unknown"
+                log.warning("[section:%s] FINAL empty (%s) — investigate section_meta", key, reason)
 
         if trending_raw:
             log.info("Filtering %d trending repos via LLM...", len(trending_raw))
@@ -203,6 +269,7 @@ async def main_async(target_date: date, dedupe_days: int, dry: bool) -> None:
         "headlines": synth.get("headlines", []),
 
         "sections": sections,
+        "section_meta": section_meta,
         "trending": trending,
     }
 
