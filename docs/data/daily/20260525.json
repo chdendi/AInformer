@@ -1,0 +1,215 @@
+{
+  "date": "2026-05-25",
+  "generated_at": "2026-05-25T09:45:14.172370+08:00",
+  "today_theme": "AI代理、语音交互与智能体记忆创新齐发",
+  "lede": "今日AI领域亮点纷呈：微软研究院发布Webwright框架，通过Playwright脚本替代点击追踪，将网页代理基准成绩从33.5%大幅提升至60.1%，推动终端原生自动化。StepFun推出StepAudio 2.5 Realtime，引入角色扮演专用RLHF和副语言理解，实现全双工实时语音交互。腾讯开源TencentDB Agent Memory，融合符号化与向量化记忆，为智能体提供生产级四级本地记忆方案。此外，具脑磐石完成亿元级融资，专注类脑具身智能世界模型；《和平精英》AI队友单周末活跃用户破1770万，语音互动超真人，彰显游戏AI新高度。",
+  "headlines": [
+    {
+      "title": "微软发布Webwright：终端原生网页代理性能飞跃",
+      "summary": "微软研究院推出Webwright框架，采用Playwright脚本替代传统点击追踪，实现网页自动化。该框架在Odysseys基准测试中得分60.1%，较GPT-5.4的33.5%大幅提升，显著增强终端原生网页代理能力。",
+      "url": "https://www.marktechpost.com/2026/05/24/microsoft-research-releases-webwright-a-terminal-native-web-agent-framework-that-scores-60-1-on-odysseys-up-from-base-gpt-5-4s-33-5/",
+      "source_name": "marktechpost",
+      "category": "industry"
+    },
+    {
+      "title": "StepFun推出StepAudio 2.5：语音模型支持角色扮演",
+      "summary": "上海AI实验室StepFun发布StepAudio 2.5 Realtime端到端语音模型，引入角色扮演专用RLHF和副语言理解技术。该模型实现全双工实时语音交互，推动语音AI在情感化、角色化场景的落地。",
+      "url": "https://www.marktechpost.com/2026/05/24/stepfun-releases-stepaudio-2-5-realtime-an-end-to-end-voice-model-with-roleplay-specific-rlhf-and-paralinguistic-comprehension/",
+      "source_name": "marktechpost",
+      "category": "industry"
+    },
+    {
+      "title": "腾讯开源TencentDB Agent Memory：智能体记忆方案",
+      "summary": "腾讯发布MIT许可的TencentDB Agent Memory，构建起四级本地记忆管线。该方案融合符号化记忆与向量化语义记忆，为AI智能体提供可靠、可扩展的生产级记忆支持，助力长期上下文管理。",
+      "url": "https://www.marktechpost.com/2026/05/23/tencent-open-sources-tencentdb-agent-memory-a-4-tier-local-memory-pipeline-for-ai-agents/",
+      "source_name": "marktechpost",
+      "category": "industry"
+    },
+    {
+      "title": "《和平精英》AI队友周末活跃破1770万，语音互动超真人",
+      "summary": "GDC 2026披露，《和平精英》AI队友累计体验人次达1.1亿，麦克风开启率高达75%，周末活跃玩家峰值突破1770万。其语音互动频率已超过真人双排，展现游戏AI在社交陪伴上的巨大潜力。",
+      "url": "https://36kr.com/p/3822747968196993?f=rss",
+      "source_name": "36氪",
+      "category": "chinese"
+    }
+  ],
+  "sections": {
+    "industry": [
+      {
+        "title": "微软发布 Webwright：终端原生网页代理，Odysseys 得分 60.1%",
+        "summary": "微软研究院推出 Webwright 框架，基于 Playwright 脚本替代点击追踪实现网页自动化，将基准成绩从 GPT-5.4 的 33.5% 提升至 60.1%。",
+        "value_note": "大幅刷新网页智能体性能上限，有望改变浏览器自动化工具格局",
+        "source_name": "marktechpost",
+        "url": "https://www.marktechpost.com/2026/05/24/microsoft-research-releases-webwright-a-terminal-native-web-agent-framework-that-scores-60-1-on-odysseys-up-from-base-gpt-5-4s-33-5/",
+        "published_at": "2026-05-24",
+        "importance": "hot",
+        "category": "industry"
+      },
+      {
+        "title": "StepFun 发布 StepAudio 2.5 Realtime：端到端语音模型支持角色扮演",
+        "summary": "上海 AI 实验室 StepFun 推出 StepAudio 2.5 Realtime，引入角色扮演专用 RLHF 和副语言理解，实现全双工实时语音交互。",
+        "value_note": "将角色扮演强化学习与实时语音结合，为虚拟陪伴和内容创作提供新范式",
+        "source_name": "marktechpost",
+        "url": "https://www.marktechpost.com/2026/05/24/stepfun-releases-stepaudio-2-5-realtime-an-end-to-end-voice-model-with-roleplay-specific-rlhf-and-paralinguistic-comprehension/",
+        "published_at": "2026-05-24",
+        "importance": "star",
+        "category": "industry"
+      },
+      {
+        "title": "腾讯开源 TencentDB Agent Memory：AI 智能体四级本地记忆管线",
+        "summary": "腾讯发布 MIT 许可的 TencentDB Agent Memory，融合符号化记忆与向量化语义记忆，为 AI 智能体提供本地化、生产级记忆方案。",
+        "value_note": "填补 Agent 持久化记忆的工程空白，推动智能体从会话级向长期记忆演进",
+        "source_name": "marktechpost",
+        "url": "https://www.marktechpost.com/2026/05/23/tencent-open-sources-tencentdb-agent-memory-a-4-tier-local-memory-pipeline-for-ai-agents/",
+        "published_at": "2026-05-23",
+        "importance": "star",
+        "category": "industry"
+      },
+      {
+        "title": "NVIDIA 发布 Gated DeltaNet-2：解耦擦除与写入的线性注意力层",
+        "summary": "NVIDIA AI 发布 Gated DeltaNet-2，通过将 Delta 规则中的擦除与写入操作分离，改善线性注意力在记忆编辑时的干扰问题。",
+        "value_note": "有望在长序列推理中降低 KV 缓存开销，推动线性注意力模型落地",
+        "source_name": "marktechpost",
+        "url": "https://www.marktechpost.com/2026/05/24/nvidia-ai-releases-gated-deltanet-2-a-linear-attention-layer-that-decouples-erase-and-write-in-the-delta-rule/",
+        "published_at": "2026-05-24",
+        "importance": "pin",
+        "category": "industry"
+      }
+    ],
+    "opinion": [
+      {
+        "tier": "analyst",
+        "title": "datasette 1.0a30",
+        "summary": "Release: datasette 1.0a30 The big new feature in this alpha is a new customizable \"Jump to...\" menu, described in detail...",
+        "value_note": "一手作者来源的观点兜底",
+        "source_name": "Simon Willison",
+        "url": "https://simonwillison.net/2026/May/24/datasette/#atom-everything",
+        "published_at": "2026-05-24T23:52:37+00:00",
+        "importance": "star",
+        "quote_en": "Release: datasette 1.0a30 The big new feature in this alpha is a new customizable \"Jump to...\" menu, described in detail...",
+        "quote_zh": "",
+        "person": "Simon Willison",
+        "category": "opinion"
+      },
+      {
+        "tier": "analyst",
+        "title": "datasette-agent 0.1a4",
+        "summary": "Release: datasette-agent 0.1a4 Taking advantage of the new makeJumpSections() JavaScript plugin hook added in Datasette...",
+        "value_note": "一手作者来源的观点兜底",
+        "source_name": "Simon Willison",
+        "url": "https://simonwillison.net/2026/May/24/datasette-agent/#atom-everything",
+        "published_at": "2026-05-24T23:19:34+00:00",
+        "importance": "pin",
+        "quote_en": "Release: datasette-agent 0.1a4 Taking advantage of the new makeJumpSections() JavaScript plugin hook added in Datasette...",
+        "quote_zh": "",
+        "person": "Simon Willison",
+        "category": "opinion"
+      },
+      {
+        "tier": "analyst",
+        "title": "datasette-fixtures 0.1a0",
+        "summary": "Release: datasette-fixtures 0.1a0 One of the smaller features in Datasette 1.0a30 is this: New documented datasette.fixt...",
+        "value_note": "一手作者来源的观点兜底",
+        "source_name": "Simon Willison",
+        "url": "https://simonwillison.net/2026/May/24/datasette-fixtures/#atom-everything",
+        "published_at": "2026-05-24T21:38:32+00:00",
+        "importance": "pin",
+        "quote_en": "Release: datasette-fixtures 0.1a0 One of the smaller features in Datasette 1.0a30 is this: New documented datasette.fixt...",
+        "quote_zh": "",
+        "person": "Simon Willison",
+        "category": "opinion"
+      },
+      {
+        "tier": "analyst",
+        "title": "Quoting Armin Ronacher",
+        "summary": "The most frustrating failure mode right now is that people submit issues that are not in their own voice. They contain a...",
+        "value_note": "一手作者来源的观点兜底",
+        "source_name": "Simon Willison",
+        "url": "https://simonwillison.net/2026/May/24/armin-ronacher/#atom-everything",
+        "published_at": "2026-05-24T18:46:53+00:00",
+        "importance": "pin",
+        "quote_en": "The most frustrating failure mode right now is that people submit issues that are not in their own voice. They contain a...",
+        "quote_zh": "",
+        "person": "Simon Willison",
+        "category": "opinion"
+      }
+    ],
+    "chinese": [
+      {
+        "title": "类脑智能公司「具脑磐石」获亿元级融资，专注具身智能世界模型",
+        "summary": "具脑磐石完成亿元级融资，由产业资本领投，资金用于类脑具身智能大脑研发，其世界模型对标JEPA。",
+        "value_note": "国内类脑+具身智能融合新突破，推动机器人自主决策",
+        "source_name": "硬氪",
+        "url": "https://36kr.com/p/3819931562414467?f=rss",
+        "published_at": "2026-05-25",
+        "importance": "star",
+        "category": "chinese"
+      },
+      {
+        "title": "《和平精英》AI队友周末活跃玩家破1770万，语音互动超真人",
+        "summary": "GDC 2026披露，AI队友累计1.1亿人体验，麦克风开启率75%，超过真人双排峰值。",
+        "value_note": "游戏AI社交化标杆，验证大规模AI队友可行性",
+        "source_name": "36氪",
+        "url": "https://36kr.com/p/3822747968196993?f=rss",
+        "published_at": "2026-05-25",
+        "importance": "star",
+        "category": "chinese"
+      }
+    ],
+    "academic": []
+  },
+  "trending": [
+    {
+      "owner": "colbymchenry",
+      "repo": "codegraph",
+      "full_name": "colbymchenry/codegraph",
+      "url": "https://github.com/colbymchenry/codegraph",
+      "description": "Pre-indexed code knowledge graph for Claude Code, Codex, Cursor, OpenCode, and Hermes Agent — fewer tokens, fewer tool calls, 100% local",
+      "language": "TypeScript",
+      "stars_total": "22,157",
+      "stars_today": 3003,
+      "ai_topic": "Coding Agent 生态",
+      "summary_zh": "为 AI 编码工具预索引本地代码知识图谱，减少 token 消耗和工具调用次数。",
+      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+    },
+    {
+      "owner": "earendil-works",
+      "repo": "pi",
+      "full_name": "earendil-works/pi",
+      "url": "https://github.com/earendil-works/pi",
+      "description": "AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods",
+      "language": "TypeScript",
+      "stars_total": "53,966",
+      "stars_today": 456,
+      "ai_topic": "Coding Agent 生态",
+      "summary_zh": "面向大模型开发或推理部署的工具项目，重点改善模型运行效率与工程体验。",
+      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+    },
+    {
+      "owner": "mukul975",
+      "repo": "Anthropic-Cybersecurity-Skills",
+      "full_name": "mukul975/Anthropic-Cybersecurity-Skills",
+      "url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+      "description": "754 structured cybersecurity skills for AI agents · Mapped to 5 frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3FEND & NIST AI RMF · agentskills.io standard · Works with Claude Code, GitHub Copilot, Codex CLI, Cursor, Gemini CLI & 20+ platforms · 26 security domains · Apache 2.0",
+      "language": "Python",
+      "stars_total": "8,379",
+      "stars_today": 930,
+      "ai_topic": "Coding Agent 生态",
+      "summary_zh": "提供可复用的 Agent Skills 集合，帮助把专业任务流程封装成 AI Agent 可调用能力。",
+      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+    },
+    {
+      "owner": "manaflow-ai",
+      "repo": "cmux",
+      "full_name": "manaflow-ai/cmux",
+      "url": "https://github.com/manaflow-ai/cmux",
+      "description": "Ghostty-based macOS terminal with vertical tabs and notifications for AI coding agents",
+      "language": "Swift",
+      "stars_total": "19,038",
+      "stars_today": 696,
+      "ai_topic": "Coding Agent 生态",
+      "summary_zh": "仓库简介显示，manaflow-ai/cmux 主要提供：Ghostty-based macOS terminal with vertical tabs and notifications。",
+      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+    }
+  ]
+}
