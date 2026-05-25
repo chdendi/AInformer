@@ -186,7 +186,7 @@
       "stars_today": 151,
       "ai_topic": "MCP 工具",
       "summary_zh": "仓库简介显示，ChromeDevTools/chrome-devtools-mcp 主要提供：Chrome DevTools for coding agents。",
-      "value_note": "降低模型接入外部工具的成本，适合关注 Agent 工具生态的开发者。"
+      "value_note": "把 Chrome DevTools 暴露给编码 Agent，适合调试网页、性能和前端自动化流程。"
     },
     {
       "owner": "can1357",
@@ -199,7 +199,7 @@
       "stars_today": 500,
       "ai_topic": "Coding Agent 生态",
       "summary_zh": "仓库简介显示，can1357/oh-my-pi 主要提供：⌥ AI Coding agent for the terminal — hash-anchored edits, optimize。",
-      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+      "value_note": "强调终端内的稳定编辑锚点和工具编排，适合评估本地编码 Agent 操作可靠性。"
     },
     {
       "owner": "teng-lin",
@@ -212,7 +212,7 @@
       "stars_today": 186,
       "ai_topic": "Coding Agent 生态",
       "summary_zh": "仓库简介显示，teng-lin/notebooklm-py 主要提供：Unofficial Python API and agentic skill for Google NotebookL。",
-      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+      "value_note": "把 NotebookLM 能力开放给 Python、CLI 和 Agent，适合自动化资料整理与问答流程。"
     },
     {
       "owner": "dotnet",
@@ -225,7 +225,7 @@
       "stars_today": 129,
       "ai_topic": "Coding Agent 生态",
       "summary_zh": "提供可复用的 Agent Skills 集合，帮助把专业任务流程封装成 AI Agent 可调用能力。",
-      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+      "value_note": "面向 .NET 和 C# 场景沉淀 Agent 技能，适合企业技术栈里的编码助手落地。"
     }
   ]
 }

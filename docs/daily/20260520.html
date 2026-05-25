@@ -221,42 +221,6 @@ pre.code code{background:transparent;padding:0;border:none}
   background:transparent;
 }
 
-/* ===== Stats bar ===== */
-.stats-bar{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-  margin:0 0 80px;
-}
-.stat{
-  text-align:center;
-  padding:32px 16px;
-  border-right:1px solid var(--border-soft);
-  background:transparent;
-  transition:background .2s ease;
-}
-.stat:last-child{border-right:none}
-.stat:hover{background:var(--surface-low)}
-.stat .num{
-  display:block;
-  font-size:40px;
-  font-weight:700;
-  letter-spacing:-0.03em;
-  color:var(--primary);
-  line-height:1;
-  font-variant-numeric:tabular-nums;
-}
-.stat .label{
-  display:block;
-  margin-top:10px;
-  font-size:11px;
-  font-weight:600;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--tertiary);
-}
-
 /* ===== Lede ===== */
 .lede{
   max-width:780px;
@@ -621,18 +585,10 @@ pre.code code{background:transparent;padding:0;border:none}
 .footer .footer-bottom p{margin-bottom:6px}
 
 /* ===== Responsive ===== */
-@media(max-width:1023px){
-  .stats-bar{grid-template-columns:repeat(2,1fr)}
-  .stat:nth-child(2){border-right:none}
-  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--border-soft)}
-}
 @media(max-width:639px){
   body{font-size:15px}
   .hero{padding:64px 20px 56px}
   .container{padding:0 20px}
-  .stats-bar{margin-bottom:56px}
-  .stat{padding:24px 12px}
-  .stat .num{font-size:32px}
   .lede{margin-bottom:64px;font-size:17px}
   .lede::first-letter{font-size:52px}
   .section{margin-bottom:64px}
@@ -742,7 +698,7 @@ pre.code code{background:transparent;padding:0;border:none}
 <header class="sticky-nav">
   <div class="nav-inner">
     <div class="nav-left">
-      <a class="home" href="https://chdendi.github.io/AInformer/index.html">AInformer<span class="dot">.</span></a>
+      <a class="home" href="../index.html">AInformer<span class="dot">.</span></a>
       <nav class="nav-links">
         <a href="#headlines">头条</a>
 <a href="#trending">GitHub</a>        <a href="#industry">行业</a>
@@ -752,7 +708,7 @@ pre.code code{background:transparent;padding:0;border:none}
       </nav>
     </div>
     <div class="nav-right">
-      <a class="cta" href="https://chdendi.github.io/AInformer/index.html">← 回到首页</a>
+      <a class="cta" href="../index.html">← 回到首页</a>
     </div>
   </div>
 </header>
@@ -771,13 +727,6 @@ pre.code code{background:transparent;padding:0;border:none}
 <main class="container">
 
   <section class="lede">今日AI圈最重磅的消息当属OpenAI联合创始人Andrej Karpathy加盟Anthropic，执掌预训练团队，为Claude核心能力注入新血。与此同时，Google I/O火力全开，Gemini 3.5 Flash模型全面转向AI代理，搜索彻底告别传统链接，订阅体系也迎来分层变革。国内方面，阿里通义千问Qwen 3.7 Max预览版发布，文本视觉双双登顶国产榜；百度萝卜快跑周订单破35万并首度实现单城盈利。面对汹涌的进展，DeepMind CEO Demis Hassabis更将当前阶段形容为“奇点的山麓”，预示变革才刚刚开始。</section>
-
-  <section class="stats-bar">
-    <div class="stat"><div class="num">4</div><div class="label">行业新闻</div></div>
-    <div class="stat"><div class="num">1</div><div class="label">观点声音</div></div>
-    <div class="stat"><div class="num">3</div><div class="label">中文 / 学术</div></div>
-    <div class="stat"><div class="num">2</div><div class="label">学术与评测</div></div>
-  </section>
 
   <section class="section" id="headlines">
     <div class="section-head"><h2>今日头条</h2><span class="count">5 条</span></div>
@@ -822,7 +771,7 @@ pre.code code{background:transparent;padding:0;border:none}
         <div class="repo-line">
           <a class="repo-name" href="https://github.com/rohitg00/agentmemory" target="_blank" rel="noopener noreferrer">rohitg00/agentmemory</a>
 <span class="ai-topic">Coding Agent 生态</span>        </div>
-<p class="desc">仓库简介显示，rohitg00/agentmemory 主要提供：#1 Persistent memory for AI coding agents based on real-world。</p><div class="value">把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。</div>        <div class="meta">
+<p class="desc">仓库简介显示，rohitg00/agentmemory 主要提供：#1 Persistent memory for AI coding agents based on real-world。</p><div class="value">为编码 Agent 增加跨会话记忆，适合减少重复上下文和提升长任务连续性。</div>        <div class="meta">
 <span class="lang">TypeScript</span><span class="stars-today">+1609 ⭐ 今日</span><span>14,189 ⭐ 总计</span>          <a class="link-btn" href="https://github.com/rohitg00/agentmemory" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
         </div>
       </article>
@@ -830,7 +779,7 @@ pre.code code{background:transparent;padding:0;border:none}
         <div class="repo-line">
           <a class="repo-name" href="https://github.com/colbymchenry/codegraph" target="_blank" rel="noopener noreferrer">colbymchenry/codegraph</a>
 <span class="ai-topic">Coding Agent 生态</span>        </div>
-<p class="desc">为 AI 编码工具预索引本地代码知识图谱，减少 token 消耗和工具调用次数。</p><div class="value">把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。</div>        <div class="meta">
+<p class="desc">为 AI 编码工具预索引本地代码知识图谱，减少 token 消耗和工具调用次数。</p><div class="value">把代码库预处理成知识图谱，可减少编码 Agent 的上下文消耗和检索成本。</div>        <div class="meta">
 <span class="lang">TypeScript</span><span class="stars-today">+1850 ⭐ 今日</span><span>6,683 ⭐ 总计</span>          <a class="link-btn" href="https://github.com/colbymchenry/codegraph" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
         </div>
       </article>
@@ -838,7 +787,7 @@ pre.code code{background:transparent;padding:0;border:none}
         <div class="repo-line">
           <a class="repo-name" href="https://github.com/multica-ai/andrej-karpathy-skills" target="_blank" rel="noopener noreferrer">multica-ai/andrej-karpathy-skills</a>
 <span class="ai-topic">Coding Agent 生态</span>        </div>
-<p class="desc">面向大模型开发或推理部署的工具项目，重点改善模型运行效率与工程体验。</p><div class="value">把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。</div>        <div class="meta">
+<p class="desc">面向大模型开发或推理部署的工具项目，重点改善模型运行效率与工程体验。</p><div class="value">把 LLM 编码常见坑整理成 Claude Code 行为约束，适合改善日常代码生成质量。</div>        <div class="meta">
 <span class="stars-today">+1955 ⭐ 今日</span><span>138,107 ⭐ 总计</span>          <a class="link-btn" href="https://github.com/multica-ai/andrej-karpathy-skills" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
         </div>
       </article>
@@ -846,7 +795,7 @@ pre.code code{background:transparent;padding:0;border:none}
         <div class="repo-line">
           <a class="repo-name" href="https://github.com/humanlayer/12-factor-agents" target="_blank" rel="noopener noreferrer">humanlayer/12-factor-agents</a>
 <span class="ai-topic">Agent 框架</span>        </div>
-<p class="desc">面向大模型开发或推理部署的工具项目，重点改善模型运行效率与工程体验。</p><div class="value">面向复杂任务编排和工具调用，适合评估 Agent 工程化落地能力。</div>        <div class="meta">
+<p class="desc">面向大模型开发或推理部署的工具项目，重点改善模型运行效率与工程体验。</p><div class="value">把 Agent 产品化原则整理成工程清单，适合评估 LLM 应用是否能进入生产环境。</div>        <div class="meta">
 <span class="lang">TypeScript</span><span class="stars-today">+736 ⭐ 今日</span><span>21,197 ⭐ 总计</span>          <a class="link-btn" href="https://github.com/humanlayer/12-factor-agents" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
         </div>
       </article>
@@ -931,8 +880,8 @@ pre.code code{background:transparent;padding:0;border:none}
   <div>
     <h4>Navigate</h4>
     <ul>
-      <li><a href="https://chdendi.github.io/AInformer/index.html">← 回到首页</a></li>
-      <li><a href="https://chdendi.github.io/AInformer/index.html#archive">历史日报归档</a></li>
+      <li><a href="../index.html">← 回到首页</a></li>
+      <li><a href="../index.html#archive">历史日报归档</a></li>
     </ul>
   </div>
   <div>
@@ -947,14 +896,14 @@ pre.code code{background:transparent;padding:0;border:none}
   <div>
     <h4>Data</h4>
     <ul>
-      <li><a href="https://chdendi.github.io/AInformer/api/v1/manifest.json" target="_blank" rel="noopener">JSON API · Manifest</a></li>
+      <li><a href="../api/v1/manifest.json" target="_blank" rel="noopener">JSON API · Manifest</a></li>
       <li><a href="https://github.com/" target="_blank" rel="noopener">Source on GitHub</a></li>
     </ul>
   </div>
 </div>
   <div class="footer-bottom">
     <p>本日报基于公开信息自动搜索整理生成，资讯来源包括 OpenAI / Anthropic / DeepMind 等官方博客、The Verge、TechCrunch、36kr、机器之心、量子位、ArXiv、Hacker News 等公开平台。内容可能存在时效性偏差或不完整，请以原始来源为准。</p>
-    <p>Generated at 2026-05-20 09:47 · Powered by DeepSeek + Tavily · <a href="https://chdendi.github.io/AInformer/index.html">AInformer</a> · <a href="https://chdendi.github.io/AInformer/api/v1/manifest.json">JSON API</a></p>
+    <p>Generated at 2026-05-20 09:47 · Powered by DeepSeek + Tavily · <a href="../index.html">AInformer</a> · <a href="../api/v1/manifest.json">JSON API</a></p>
   </div>
 </footer>
 </body>

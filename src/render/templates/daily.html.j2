@@ -112,18 +112,11 @@
 </section>
 
 <main class="container">
+  {% set sec = report.sections %}
 
   {% if report.lede %}
   <section class="lede">{{ report.lede }}</section>
   {% endif %}
-
-  <section class="stats-bar">
-    {% set sec = report.sections %}
-    <div class="stat"><div class="num">{{ sec.industry|length }}</div><div class="label">行业新闻</div></div>
-    <div class="stat"><div class="num">{{ sec.opinion|length }}</div><div class="label">观点声音</div></div>
-    <div class="stat"><div class="num">{{ sec.chinese|length }}</div><div class="label">中文 / 学术</div></div>
-    <div class="stat"><div class="num">{{ sec.academic|length }}</div><div class="label">学术与评测</div></div>
-  </section>
 
   {% if report.headlines %}
   <section class="section" id="headlines">

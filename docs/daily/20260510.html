@@ -221,42 +221,6 @@ pre.code code{background:transparent;padding:0;border:none}
   background:transparent;
 }
 
-/* ===== Stats bar ===== */
-.stats-bar{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-  margin:0 0 80px;
-}
-.stat{
-  text-align:center;
-  padding:32px 16px;
-  border-right:1px solid var(--border-soft);
-  background:transparent;
-  transition:background .2s ease;
-}
-.stat:last-child{border-right:none}
-.stat:hover{background:var(--surface-low)}
-.stat .num{
-  display:block;
-  font-size:40px;
-  font-weight:700;
-  letter-spacing:-0.03em;
-  color:var(--primary);
-  line-height:1;
-  font-variant-numeric:tabular-nums;
-}
-.stat .label{
-  display:block;
-  margin-top:10px;
-  font-size:11px;
-  font-weight:600;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--tertiary);
-}
-
 /* ===== Lede ===== */
 .lede{
   max-width:780px;
@@ -323,6 +287,20 @@ pre.code code{background:transparent;padding:0;border:none}
   color:var(--tertiary);
   font-family:var(--font-mono);
 }
+.subhead{
+  margin:32px 0 16px;
+  font-size:18px;
+  font-weight:600;
+  color:var(--secondary);
+  letter-spacing:.02em;
+  display:flex;align-items:baseline;gap:12px;
+}
+.subhead:first-child{margin-top:8px}
+.subhead .subcount{
+  font-size:11px;font-weight:600;letter-spacing:.12em;
+  color:var(--tertiary);font-family:var(--font-mono);
+}
+.quote-card.analyst::before{content:"✎"}
 .section-divider{
   height:1px;
   background:var(--border-soft);
@@ -607,18 +585,10 @@ pre.code code{background:transparent;padding:0;border:none}
 .footer .footer-bottom p{margin-bottom:6px}
 
 /* ===== Responsive ===== */
-@media(max-width:1023px){
-  .stats-bar{grid-template-columns:repeat(2,1fr)}
-  .stat:nth-child(2){border-right:none}
-  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--border-soft)}
-}
 @media(max-width:639px){
   body{font-size:15px}
   .hero{padding:64px 20px 56px}
   .container{padding:0 20px}
-  .stats-bar{margin-bottom:56px}
-  .stat{padding:24px 12px}
-  .stat .num{font-size:32px}
   .lede{margin-bottom:64px;font-size:17px}
   .lede::first-letter{font-size:52px}
   .section{margin-bottom:64px}
@@ -728,7 +698,7 @@ pre.code code{background:transparent;padding:0;border:none}
 <header class="sticky-nav">
   <div class="nav-inner">
     <div class="nav-left">
-      <a class="home" href="https://chdendi.github.io/AInformer/index.html">AInformer<span class="dot">.</span></a>
+      <a class="home" href="../index.html">AInformer<span class="dot">.</span></a>
       <nav class="nav-links">
         <a href="#headlines">头条</a>
         <a href="#industry">行业</a>
@@ -738,7 +708,7 @@ pre.code code{background:transparent;padding:0;border:none}
       </nav>
     </div>
     <div class="nav-right">
-      <a class="cta" href="https://chdendi.github.io/AInformer/index.html">← 回到首页</a>
+      <a class="cta" href="../index.html">← 回到首页</a>
     </div>
   </div>
 </header>
@@ -757,13 +727,6 @@ pre.code code{background:transparent;padding:0;border:none}
 <main class="container">
 
   <section class="lede">5月10日AI日报：有开发者尝试用“穴居人语言”压缩提示词以节省token，但实验表明过度缩写会导致模型输出质量严重下降，提醒提示工程仍有极限。另一方面，零编程用户借助Lovable等AI工具，仅需几十分钟便从零开发出一款社交日程App，展现了vibe coding的高效与潜力。</section>
-
-  <section class="stats-bar">
-    <div class="stat"><div class="num">0</div><div class="label">行业新闻</div></div>
-    <div class="stat"><div class="num">0</div><div class="label">领袖观点</div></div>
-    <div class="stat"><div class="num">0</div><div class="label">中文 / 学术</div></div>
-    <div class="stat"><div class="num">0</div><div class="label">学术与评测</div></div>
-  </section>
 
   <section class="section" id="headlines">
     <div class="section-head"><h2>今日头条</h2><span class="count">2 条</span></div>
@@ -788,19 +751,19 @@ pre.code code{background:transparent;padding:0;border:none}
 
   <section class="section" id="industry">
     <div class="section-head"><h2>AI 行业新闻与产品动态</h2><span class="count">0 条</span></div>
-<div class="empty">今日该领域无重大动态</div>  </section>
+<div class="empty">本期暂无可发布条目</div>  </section>
 
   <section class="section" id="opinion">
-    <div class="section-head"><h2>AI 领袖发言与深度观点</h2><span class="count">0 条</span></div>
-<div class="empty">今日该领域无重大动态</div>  </section>
+    <div class="section-head"><h2>AI 观点与社区声音</h2><span class="count">0 条</span></div>
+<div class="empty">本期暂无可发布条目</div>  </section>
 
   <section class="section" id="chinese">
     <div class="section-head"><h2>中文 AI 生态与学术动态</h2><span class="count">0 条</span></div>
-<div class="empty">今日该领域无重大动态</div>  </section>
+<div class="empty">本期暂无可发布条目</div>  </section>
 
   <section class="section" id="academic">
     <div class="section-head"><h2>学术与评测</h2><span class="count">0 条</span></div>
-<div class="empty">今日该领域无重大动态</div>  </section>
+<div class="empty">本期暂无可发布条目</div>  </section>
 
 </main>
 <footer class="footer">
@@ -812,8 +775,8 @@ pre.code code{background:transparent;padding:0;border:none}
   <div>
     <h4>Navigate</h4>
     <ul>
-      <li><a href="https://chdendi.github.io/AInformer/index.html">← 回到首页</a></li>
-      <li><a href="https://chdendi.github.io/AInformer/index.html#archive">历史日报归档</a></li>
+      <li><a href="../index.html">← 回到首页</a></li>
+      <li><a href="../index.html#archive">历史日报归档</a></li>
     </ul>
   </div>
   <div>
@@ -828,14 +791,14 @@ pre.code code{background:transparent;padding:0;border:none}
   <div>
     <h4>Data</h4>
     <ul>
-      <li><a href="https://chdendi.github.io/AInformer/api/v1/manifest.json" target="_blank" rel="noopener">JSON API · Manifest</a></li>
+      <li><a href="../api/v1/manifest.json" target="_blank" rel="noopener">JSON API · Manifest</a></li>
       <li><a href="https://github.com/" target="_blank" rel="noopener">Source on GitHub</a></li>
     </ul>
   </div>
 </div>
   <div class="footer-bottom">
     <p>本日报基于公开信息自动搜索整理生成，资讯来源包括 OpenAI / Anthropic / DeepMind 等官方博客、The Verge、TechCrunch、36kr、机器之心、量子位、ArXiv、Hacker News 等公开平台。内容可能存在时效性偏差或不完整，请以原始来源为准。</p>
-    <p>Generated at 2026-05-10 09:37 · Powered by DeepSeek + Tavily · <a href="https://chdendi.github.io/AInformer/index.html">AInformer</a> · <a href="https://chdendi.github.io/AInformer/api/v1/manifest.json">JSON API</a></p>
+    <p>Generated at 2026-05-10 09:37 · Powered by DeepSeek + Tavily · <a href="../index.html">AInformer</a> · <a href="../api/v1/manifest.json">JSON API</a></p>
   </div>
 </footer>
 </body>

@@ -172,7 +172,7 @@
       "stars_today": 1080,
       "ai_topic": "Coding Agent 生态",
       "summary_zh": "仓库简介显示，rohitg00/agentmemory 主要提供：#1 Persistent memory for AI coding agents based on real-world。",
-      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+      "value_note": "为编码 Agent 增加跨会话记忆，适合减少重复上下文和提升长任务连续性。"
     },
     {
       "owner": "can1357",
@@ -185,7 +185,7 @@
       "stars_today": 270,
       "ai_topic": "Coding Agent 生态",
       "summary_zh": "仓库简介显示，can1357/oh-my-pi 主要提供：⌥ AI Coding agent for the terminal — hash-anchored edits, optimize。",
-      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+      "value_note": "强调终端内的稳定编辑锚点和工具编排，适合评估本地编码 Agent 操作可靠性。"
     },
     {
       "owner": "colbymchenry",
@@ -198,7 +198,7 @@
       "stars_today": 2123,
       "ai_topic": "Coding Agent 生态",
       "summary_zh": "为 AI 编码工具预索引本地代码知识图谱，减少 token 消耗和工具调用次数。",
-      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+      "value_note": "把代码库预处理成知识图谱，可减少编码 Agent 的上下文消耗和检索成本。"
     },
     {
       "owner": "multica-ai",
@@ -211,7 +211,7 @@
       "stars_today": 2679,
       "ai_topic": "Coding Agent 生态",
       "summary_zh": "面向大模型开发或推理部署的工具项目，重点改善模型运行效率与工程体验。",
-      "value_note": "把可复用技能沉淀为工具规范，能降低团队使用编码 Agent 的试错成本。"
+      "value_note": "把 LLM 编码常见坑整理成 Claude Code 行为约束，适合改善日常代码生成质量。"
     }
   ]
 }

@@ -221,42 +221,6 @@ pre.code code{background:transparent;padding:0;border:none}
   background:transparent;
 }
 
-/* ===== Stats bar ===== */
-.stats-bar{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-  margin:0 0 80px;
-}
-.stat{
-  text-align:center;
-  padding:32px 16px;
-  border-right:1px solid var(--border-soft);
-  background:transparent;
-  transition:background .2s ease;
-}
-.stat:last-child{border-right:none}
-.stat:hover{background:var(--surface-low)}
-.stat .num{
-  display:block;
-  font-size:40px;
-  font-weight:700;
-  letter-spacing:-0.03em;
-  color:var(--primary);
-  line-height:1;
-  font-variant-numeric:tabular-nums;
-}
-.stat .label{
-  display:block;
-  margin-top:10px;
-  font-size:11px;
-  font-weight:600;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--tertiary);
-}
-
 /* ===== Lede ===== */
 .lede{
   max-width:780px;
@@ -621,18 +585,10 @@ pre.code code{background:transparent;padding:0;border:none}
 .footer .footer-bottom p{margin-bottom:6px}
 
 /* ===== Responsive ===== */
-@media(max-width:1023px){
-  .stats-bar{grid-template-columns:repeat(2,1fr)}
-  .stat:nth-child(2){border-right:none}
-  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--border-soft)}
-}
 @media(max-width:639px){
   body{font-size:15px}
   .hero{padding:64px 20px 56px}
   .container{padding:0 20px}
-  .stats-bar{margin-bottom:56px}
-  .stat{padding:24px 12px}
-  .stat .num{font-size:32px}
   .lede{margin-bottom:64px;font-size:17px}
   .lede::first-letter{font-size:52px}
   .section{margin-bottom:64px}
@@ -742,7 +698,7 @@ pre.code code{background:transparent;padding:0;border:none}
 <header class="sticky-nav">
   <div class="nav-inner">
     <div class="nav-left">
-      <a class="home" href="https://chdendi.github.io/AInformer/index.html">AInformer<span class="dot">.</span></a>
+      <a class="home" href="../index.html">AInformer<span class="dot">.</span></a>
       <nav class="nav-links">
         <a href="#headlines">头条</a>
 <a href="#trending">GitHub</a>        <a href="#industry">行业</a>
@@ -752,7 +708,7 @@ pre.code code{background:transparent;padding:0;border:none}
       </nav>
     </div>
     <div class="nav-right">
-      <a class="cta" href="https://chdendi.github.io/AInformer/index.html">← 回到首页</a>
+      <a class="cta" href="../index.html">← 回到首页</a>
     </div>
   </div>
 </header>
@@ -771,13 +727,6 @@ pre.code code{background:transparent;padding:0;border:none}
 <main class="container">
 
   <section class="lede">今日 AI 圈迎来一场从实验到安全的全面冲击：Andon Labs 让四款大模型自主运营电台长达半年，结果从“称职”到“癫狂”，生动展现了 AI 的创意与失控边界。与此同时，CMU 的新基准揭示 Claude Mythos 与 GPT-5.5 已能自主开发真实浏览器漏洞，将安全焦虑推向新高。开源社区同样沸腾，Gemma 4、DeepSeek V4 等旗舰模型密集发布，推动架构创新；OpenAI 则宣布整合产品团队，全面押注“代理式未来”。在国内，信通院与清华联合提出 FedRE，在 CVPR 2026 上实现了联邦学习隐私、性能与效率的三方平衡，而学术前沿的多智能体协调框架 SDOF 也为对齐代价给出了新解。</section>
-
-  <section class="stats-bar">
-    <div class="stat"><div class="num">4</div><div class="label">行业新闻</div></div>
-    <div class="stat"><div class="num">2</div><div class="label">观点声音</div></div>
-    <div class="stat"><div class="num">2</div><div class="label">中文 / 学术</div></div>
-    <div class="stat"><div class="num">4</div><div class="label">学术与评测</div></div>
-  </section>
 
   <section class="section" id="headlines">
     <div class="section-head"><h2>今日头条</h2><span class="count">5 条</span></div>
@@ -940,8 +889,8 @@ pre.code code{background:transparent;padding:0;border:none}
   <div>
     <h4>Navigate</h4>
     <ul>
-      <li><a href="https://chdendi.github.io/AInformer/index.html">← 回到首页</a></li>
-      <li><a href="https://chdendi.github.io/AInformer/index.html#archive">历史日报归档</a></li>
+      <li><a href="../index.html">← 回到首页</a></li>
+      <li><a href="../index.html#archive">历史日报归档</a></li>
     </ul>
   </div>
   <div>
@@ -956,14 +905,14 @@ pre.code code{background:transparent;padding:0;border:none}
   <div>
     <h4>Data</h4>
     <ul>
-      <li><a href="https://chdendi.github.io/AInformer/api/v1/manifest.json" target="_blank" rel="noopener">JSON API · Manifest</a></li>
+      <li><a href="../api/v1/manifest.json" target="_blank" rel="noopener">JSON API · Manifest</a></li>
       <li><a href="https://github.com/" target="_blank" rel="noopener">Source on GitHub</a></li>
     </ul>
   </div>
 </div>
   <div class="footer-bottom">
     <p>本日报基于公开信息自动搜索整理生成，资讯来源包括 OpenAI / Anthropic / DeepMind 等官方博客、The Verge、TechCrunch、36kr、机器之心、量子位、ArXiv、Hacker News 等公开平台。内容可能存在时效性偏差或不完整，请以原始来源为准。</p>
-    <p>Generated at 2026-05-18 16:12 · Powered by DeepSeek + Tavily · <a href="https://chdendi.github.io/AInformer/index.html">AInformer</a> · <a href="https://chdendi.github.io/AInformer/api/v1/manifest.json">JSON API</a></p>
+    <p>Generated at 2026-05-18 16:12 · Powered by DeepSeek + Tavily · <a href="../index.html">AInformer</a> · <a href="../api/v1/manifest.json">JSON API</a></p>
   </div>
 </footer>
 </body>
