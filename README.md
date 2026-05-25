@@ -17,6 +17,14 @@
 
 所有 JSON 响应均附带 `Access-Control-Allow-Origin: *` 头。
 
+## 栏目健康检查
+
+日报 JSON 会在 `section_meta` 中记录每个栏目的素材量、LLM 筛选量、fallback 状态和空栏原因。可用下面的命令检查最近 N 期栏目覆盖情况：
+
+```bash
+python -m src.report_health --days 7
+```
+
 ## 目录结构
 
 ```

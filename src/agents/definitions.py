@@ -41,6 +41,21 @@ ANALYST_NAMES: set[str] = {
     "Sayash Kapoor",
 }
 
+COMMUNITY_VOICE_SOURCES: dict[str, str] = {
+    "latent_space": "Latent Space",
+    "import_ai": "Jack Clark / Import AI",
+    "lesswrong": "LessWrong",
+    "thegradient": "The Gradient",
+    "aisnakeoil": "AI Snake Oil",
+    "eugene_yan": "Eugene Yan",
+    "hamel_husain": "Hamel Husain",
+    "jay_alammar": "Jay Alammar",
+    "semianalysis": "SemiAnalysis",
+    "deeplearning_ai_batch": "DeepLearning.AI The Batch",
+    "hn_ai_discussions": "Hacker News",
+    "lobsters_ai": "Lobsters",
+}
+
 
 def _queries_mixed_month(base: list[str], month_token: str, skip_month: set[int] | None = None) -> list[str]:
     """Append month_token to queries, except those whose index is in skip_month.
@@ -105,8 +120,9 @@ def build_agent_specs(month_token: str) -> list[AgentSpec]:
         key="opinion",
         name="AI 观点与社区声音",
         focus=(
-            "两层供稿：L1 领袖发言（CEO + 首席科学家原话、博客、采访），"
-            "L2 深度分析（高产 blogger / newsletter 作者的长文观点）。"
+            "三层供稿：L1 领袖发言（CEO + 首席科学家原话、博客、采访），"
+            "L2 深度分析（高产 blogger / newsletter 作者的长文观点），"
+            "L3 社区声音（可信社区、工程实践作者、专业 newsletter 的一手观点）。"
         ),
         queries=_queries_with_month(opinion_queries, month_token),
         rss_categories=["opinion"],
@@ -115,9 +131,12 @@ def build_agent_specs(month_token: str) -> list[AgentSpec]:
             f"- tier=\"leader\"：person 必须严格等于这 11 人之一 — {leaders_str}；"
             f"Elon Musk 仅限其 xAI/Grok/AI 相关言论，与政治/SpaceX 无关的发言一律跳过。\n"
             f"- tier=\"analyst\"：person 必须严格等于这些写手之一 — {analysts_str}。\n"
+            f"- tier=\"community\"：必须来自这些可信社区/作者源之一 — {', '.join(COMMUNITY_VOICE_SOURCES.values())}；"
+            "person 可填作者、社区或 newsletter 名，不强制在 leader/analyst 名单中。\n"
             "quote_en 可以是：(a) 本人 blog/tweet/采访/演讲中的原文摘句；"
             "(b) 第三方报道里的直接引语（带引号的原话）。"
-            "纯新闻转述（如『The Verge 报道 OpenAI 取消了 X』这种没有当事人原话的内容）跳过。"
+            "community 若没有直接引语，可以用 quote_zh 提炼其核心观点，但必须基于原文素材。"
+            "纯新闻转述（如『The Verge 报道 OpenAI 取消了 X』这种没有当事人原话或观点判断的内容）跳过。"
             "排除营销稿、产品介绍。person 字段不要随手填，找不到合规人物就少给几条；"
             "若实在没有合规素材，返回 {\"items\": []} 即可。"
         ),

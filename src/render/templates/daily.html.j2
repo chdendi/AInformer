@@ -178,12 +178,13 @@
       {% include "_news_card.html.j2" %}
       {% endfor %}
     </div>
-    {% else %}<div class="empty">今日该领域无重大动态</div>{% endif %}
+    {% else %}<div class="empty">本期暂无可发布条目</div>{% endif %}
   </section>
 
   {% set leader_items = sec.opinion | selectattr('tier', 'equalto', 'leader') | list %}
   {% set analyst_items = sec.opinion | selectattr('tier', 'equalto', 'analyst') | list %}
-  {% set untiered_items = sec.opinion | rejectattr('tier', 'in', ['leader', 'analyst']) | list %}
+  {% set community_items = sec.opinion | selectattr('tier', 'equalto', 'community') | list %}
+  {% set untiered_items = sec.opinion | rejectattr('tier', 'in', ['leader', 'analyst', 'community']) | list %}
   <section class="section" id="opinion">
     <div class="section-head"><h2>AI 观点与社区声音</h2><span class="count">{{ sec.opinion|length }} 条</span></div>
     {% if sec.opinion %}
@@ -225,7 +226,26 @@
         {% endfor %}
       </div>
       {% endif %}
-    {% else %}<div class="empty">今日该领域无重大动态</div>{% endif %}
+      {% if community_items %}
+      <h3 class="subhead">社区声音 <span class="subcount">{{ community_items|length }} 条</span></h3>
+      <div class="cards">
+        {% for it in community_items %}
+        <article class="quote-card analyst">
+          {% if it.quote_en %}<p class="quote-en">{{ it.quote_en }}</p>{% endif %}
+          {% if it.quote_zh %}<p class="quote-zh">{{ it.quote_zh }}</p>{% endif %}
+          {% if not it.quote_en and not it.quote_zh and it.summary %}<p class="quote-zh">{{ it.summary }}</p>{% endif %}
+          {% if it.title and it.title != it.quote_zh %}<p class="quote-title">{{ it.title }}</p>{% endif %}
+          <div class="person">— {{ it.person or it.source_name or '社区来源' }} · 社区</div>
+          <div class="meta">
+            {% if it.importance %}<span class="tag tag-{{ it.importance }}">{{ importance_label(it.importance) }}</span>{% endif %}
+            {% if it.value_note %}<span>{{ it.value_note }}</span>{% endif %}
+            {% if it.url %}<a class="link-btn" href="{{ it.url }}" target="_blank" rel="noopener noreferrer">原文 ↗</a>{% endif %}
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+      {% endif %}
+    {% else %}<div class="empty">本期暂无可发布条目</div>{% endif %}
   </section>
 
   <section class="section" id="chinese">
@@ -236,7 +256,7 @@
       {% include "_news_card.html.j2" %}
       {% endfor %}
     </div>
-    {% else %}<div class="empty">今日该领域无重大动态</div>{% endif %}
+    {% else %}<div class="empty">本期暂无可发布条目</div>{% endif %}
   </section>
 
   <section class="section" id="academic">
@@ -247,7 +267,7 @@
       {% include "_news_card.html.j2" %}
       {% endfor %}
     </div>
-    {% else %}<div class="empty">今日该领域无重大动态</div>{% endif %}
+    {% else %}<div class="empty">本期暂无可发布条目</div>{% endif %}
   </section>
 
 </main>
