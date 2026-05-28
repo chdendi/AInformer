@@ -323,6 +323,20 @@ pre.code code{background:transparent;padding:0;border:none}
   color:var(--tertiary);
   font-family:var(--font-mono);
 }
+.subhead{
+  margin:32px 0 16px;
+  font-size:18px;
+  font-weight:600;
+  color:var(--secondary);
+  letter-spacing:.02em;
+  display:flex;align-items:baseline;gap:12px;
+}
+.subhead:first-child{margin-top:8px}
+.subhead .subcount{
+  font-size:11px;font-weight:600;letter-spacing:.12em;
+  color:var(--tertiary);font-family:var(--font-mono);
+}
+.quote-card.analyst::before{content:"✎"}
 .section-divider{
   height:1px;
   background:var(--border-soft);
@@ -728,7 +742,7 @@ pre.code code{background:transparent;padding:0;border:none}
 <header class="sticky-nav">
   <div class="nav-inner">
     <div class="nav-left">
-      <a class="home" href="https://chdendi.github.io/AInformer/index.html">AInformer<span class="dot">.</span></a>
+      <a class="home" href="../index.html">AInformer<span class="dot">.</span></a>
       <nav class="nav-links">
         <a href="#headlines">头条</a>
         <a href="#industry">行业</a>
@@ -738,7 +752,7 @@ pre.code code{background:transparent;padding:0;border:none}
       </nav>
     </div>
     <div class="nav-right">
-      <a class="cta" href="https://chdendi.github.io/AInformer/index.html">← 回到首页</a>
+      <a class="cta" href="../index.html">← 回到首页</a>
     </div>
   </div>
 </header>
@@ -752,7 +766,20 @@ pre.code code{background:transparent;padding:0;border:none}
     <span>头条 4 则</span>
     <span>生成于 2026-05-12 10:17</span>
   </div>
-</section>
+</header>
+
+<nav class="sticky-nav">
+  <div class="nav-inner">
+    <a class="home" href="../index.html">← 首页</a>
+    <a href="#headlines">今日头条</a>
+    <a href="#takeaway">每日一学</a>
+    <a href="#tutorial">使用姿势</a>
+    <a href="#industry">行业动态</a>
+    <a href="#opinion">领袖观点</a>
+    <a href="#chinese">中文 / 学术</a>
+    <a href="#academic">学术与评测</a>
+  </div>
+</nav>
 
 <main class="container">
 
@@ -760,7 +787,7 @@ pre.code code{background:transparent;padding:0;border:none}
 
   <section class="stats-bar">
     <div class="stat"><div class="num">4</div><div class="label">行业新闻</div></div>
-    <div class="stat"><div class="num">2</div><div class="label">领袖观点</div></div>
+    <div class="stat"><div class="num">2</div><div class="label">观点声音</div></div>
     <div class="stat"><div class="num">4</div><div class="label">中文 / 学术</div></div>
     <div class="stat"><div class="num">4</div><div class="label">学术与评测</div></div>
   </section>
@@ -790,7 +817,7 @@ pre.code code{background:transparent;padding:0;border:none}
         <h3>Mira Murati创立Thinking Machines：AI应学会与人协作交互</h3>
         <p>前OpenAI CTO Mira Murati的新公司Thinking Machines正构建一种‘学习用户’的AI交互模型，强调AI需主动适应人类对话节奏，而非被动响应。</p>
         <div class="meta">
-<span class="tag tag-opinion">领袖观点</span><span>The Verge</span><a class="link-btn" href="https://www.theverge.com/ai-artificial-intelligence/928309/mira-murati-thinking-machines-ai-interaction-model" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+<span class="tag tag-opinion">观点声音</span><span>The Verge</span><a class="link-btn" href="https://www.theverge.com/ai-artificial-intelligence/928309/mira-murati-thinking-machines-ai-interaction-model" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
       </article>
     </div>
   </section>
@@ -821,19 +848,20 @@ pre.code code{background:transparent;padding:0;border:none}
   </section>
 
   <section class="section" id="opinion">
-    <div class="section-head"><h2>AI 领袖发言与深度观点</h2><span class="count">2 条</span></div>
-    <div class="cards">
-      <article class="quote-card">
-<p class="quote-en">We want AI that engages in a continuous, adaptive dialogue — learning with you, not just from you.</p><p class="quote-zh">我们想要的AI能够进行持续、自适应的对话——与你一同学习，而不只是从你身上学习。</p><p class="quote-title">Mira Murati创立Thinking Machines：AI应学会与人协作交互</p>        <div class="person">— Mira Murati</div>
-        <div class="meta">
-<span class="tag tag-star">⭐ 重要</span><span>前OpenAI核心人物创业聚焦AI交互范式革新</span><a class="link-btn" href="https://www.theverge.com/ai-artificial-intelligence/928309/mira-murati-thinking-machines-ai-interaction-model" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
-      </article>
-      <article class="quote-card">
-<p class="quote-en">I wanted OpenAI to be a force for good, but I now realize good intentions aren't enough — governance matters.</p><p class="quote-zh">我曾希望OpenAI成为向善的力量，但现在我意识到仅有善意是不够的——治理至关重要。</p><p class="quote-title">Sam Altman庭审自辩：善意不足以保证AI安全，治理是关键</p>        <div class="person">— Sam Altman</div>
-        <div class="meta">
-<span class="tag tag-hot">🔥 头条</span><span>Altman首次在法庭公开反思OpenAI治理缺陷</span><a class="link-btn" href="https://www.theverge.com/tech/917225/sam-altman-elon-musk-openai-lawsuit" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
-      </article>
-    </div>
+    <div class="section-head"><h2>AI 观点与社区声音</h2><span class="count">2 条</span></div>
+      <h3 class="subhead">领袖发言 <span class="subcount">2 条</span></h3>
+      <div class="cards">
+        <article class="quote-card">
+<p class="quote-en">We want AI that engages in a continuous, adaptive dialogue — learning with you, not just from you.</p><p class="quote-zh">我们想要的AI能够进行持续、自适应的对话——与你一同学习，而不只是从你身上学习。</p><p class="quote-title">Mira Murati创立Thinking Machines：AI应学会与人协作交互</p>          <div class="person">— Mira Murati</div>
+          <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>前OpenAI核心人物创业聚焦AI交互范式革新</span><a class="link-btn" href="https://www.theverge.com/ai-artificial-intelligence/928309/mira-murati-thinking-machines-ai-interaction-model" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+        <article class="quote-card">
+<p class="quote-en">I wanted OpenAI to be a force for good, but I now realize good intentions aren't enough — governance matters.</p><p class="quote-zh">我曾希望OpenAI成为向善的力量，但现在我意识到仅有善意是不够的——治理至关重要。</p><p class="quote-title">Sam Altman庭审自辩：善意不足以保证AI安全，治理是关键</p>          <div class="person">— Sam Altman</div>
+          <div class="meta">
+<span class="tag tag-hot">🔥 头条</span><span>Altman首次在法庭公开反思OpenAI治理缺陷</span><a class="link-btn" href="https://www.theverge.com/tech/917225/sam-altman-elon-musk-openai-lawsuit" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+      </div>
   </section>
 
   <section class="section" id="chinese">
@@ -890,8 +918,8 @@ pre.code code{background:transparent;padding:0;border:none}
   <div>
     <h4>Navigate</h4>
     <ul>
-      <li><a href="https://chdendi.github.io/AInformer/index.html">← 回到首页</a></li>
-      <li><a href="https://chdendi.github.io/AInformer/index.html#archive">历史日报归档</a></li>
+      <li><a href="../index.html">← 回到首页</a></li>
+      <li><a href="../index.html#archive">历史日报归档</a></li>
     </ul>
   </div>
   <div>
@@ -906,14 +934,14 @@ pre.code code{background:transparent;padding:0;border:none}
   <div>
     <h4>Data</h4>
     <ul>
-      <li><a href="https://chdendi.github.io/AInformer/api/v1/manifest.json" target="_blank" rel="noopener">JSON API · Manifest</a></li>
+      <li><a href="../api/v1/manifest.json" target="_blank" rel="noopener">JSON API · Manifest</a></li>
       <li><a href="https://github.com/" target="_blank" rel="noopener">Source on GitHub</a></li>
     </ul>
   </div>
 </div>
   <div class="footer-bottom">
     <p>本日报基于公开信息自动搜索整理生成，资讯来源包括 OpenAI / Anthropic / DeepMind 等官方博客、The Verge、TechCrunch、36kr、机器之心、量子位、ArXiv、Hacker News 等公开平台。内容可能存在时效性偏差或不完整，请以原始来源为准。</p>
-    <p>Generated at 2026-05-12 10:17 · Powered by DeepSeek + Tavily · <a href="https://chdendi.github.io/AInformer/index.html">AInformer</a> · <a href="https://chdendi.github.io/AInformer/api/v1/manifest.json">JSON API</a></p>
+    <p>Generated at 2026-05-12 10:17 · Powered by DeepSeek + Tavily · <a href="../index.html">AInformer</a> · <a href="../api/v1/manifest.json">JSON API</a></p>
   </div>
 </footer>
 </body>

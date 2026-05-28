@@ -193,4 +193,4 @@ def build_agent_specs(month_token: str) -> list[AgentSpec]:
         ),
     )
 
-    return [industry, opinion, chinese, academic]
+    return [tutorial, industry, opinion, chinese, academic]

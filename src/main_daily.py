@@ -30,8 +30,9 @@ log = logging.getLogger("ainformer.daily")
 SECTION_PRIORITY = {
     "opinion": 1,    # view/quote-driven, most exclusive
     "academic": 2,   # paper + benchmark driven
-    "chinese": 3,    # regional bucket
-    "industry": 4,   # broadest, fallback bucket
+    "tutorial": 3,   # hands-on tutorials
+    "chinese": 4,    # regional bucket
+    "industry": 5,   # broadest, fallback bucket
 }
 
 # Per-section visible card cap. Agents are instructed to return 5-6 candidates

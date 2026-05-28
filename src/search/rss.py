@@ -39,10 +39,10 @@ RSS_FEEDS: dict[str, dict[str, Any]] = {
     "the_decoder": {"url": "https://the-decoder.com/feed/", "category": "industry"},
     "wired_ai": {"url": "https://www.wired.com/feed/category/artificial-intelligence/latest/rss", "category": "industry"},
     "semafor_ai": {"url": "https://www.semafor.com/rss/topic/ai", "category": "industry"},
-    # 实践派评论 / 长文
-    "latent_space": {"url": "https://www.latent.space/feed", "category": "opinion"},
-    "simon_willison": {"url": "https://simonwillison.net/atom/everything/", "category": "opinion"},
-    "huyenchip": {"url": "https://huyenchip.com/feed.xml", "category": "opinion"},
+    # 教程 / 实践
+    "latent_space": {"url": "https://www.latent.space/feed", "category": "tutorial"},
+    "simon_willison": {"url": "https://simonwillison.net/atom/everything/", "category": "tutorial"},
+    "huyenchip": {"url": "https://huyenchip.com/feed.xml", "category": "tutorial"},
     # 观点 / 评论
     "sam_altman": {"url": "https://blog.samaltman.com/posts.atom", "category": "opinion"},
     "import_ai": {"url": "https://importai.substack.com/feed", "category": "opinion"},
@@ -51,24 +51,6 @@ RSS_FEEDS: dict[str, dict[str, Any]] = {
     "interconnects": {"url": "https://www.interconnects.ai/feed", "category": "opinion"},
     "aisnakeoil": {"url": "https://www.aisnakeoil.com/feed.xml", "category": "opinion"},
     "karpathy_blog": {"url": "https://karpathy.github.io/feed.xml", "category": "opinion"},
-    "darioamodei_blog": {"url": "https://darioamodei.com/feed.xml", "category": "opinion"},
-    "oneusefulthing": {"url": "https://www.oneusefulthing.org/feed", "category": "opinion"},
-    # 高产观点写手 — Tavily 不可用时主要靠这几位撑住 opinion 栏目
-    "gary_marcus": {"url": "https://garymarcus.substack.com/feed", "category": "opinion"},
-    "raschka": {"url": "https://magazine.sebastianraschka.com/feed", "category": "opinion"},
-    "lilian_weng": {"url": "https://lilianweng.github.io/index.xml", "category": "opinion"},
-    # 社区影响力 / 工程实践观点
-    "eugene_yan": {"url": "https://eugeneyan.com/rss/", "category": "opinion"},
-    "hamel_husain": {"url": "https://hamel.dev/index.xml", "category": "opinion"},
-    "jay_alammar": {"url": "https://jalammar.github.io/feed.xml", "category": "opinion"},
-    "semianalysis": {"url": "https://www.semianalysis.com/feed/", "category": "opinion"},
-    "deeplearning_ai_batch": {"url": "https://www.deeplearning.ai/the-batch/feed/", "category": "opinion"},
-    "hn_ai_discussions": {
-        "url": "https://hnrss.org/frontpage?points=75&q=AI+OR+LLM+OR+agents+OR+alignment+OR+OpenAI+OR+Anthropic",
-        "category": "opinion",
-    },
-    "lobsters_ai": {"url": "https://lobste.rs/t/ai.rss", "category": "opinion"},
-    # Dwarkesh 暂无可用公开 RSS（dwarkesh.com /feed 超时、Substack ID 未公开），暂依赖 Tavily 兜底
     # 学术
     "arxiv_ai": {"url": "https://export.arxiv.org/rss/cs.AI", "category": "academic"},
     "arxiv_cl": {"url": "https://export.arxiv.org/rss/cs.CL", "category": "academic"},

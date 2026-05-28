@@ -154,7 +154,6 @@ _OPINION_SOURCE_PEOPLE = {
 
 _ACADEMIC_FALLBACK_SOURCES = {"arxiv_ai", "arxiv_cl", "arxiv_lg", "bair"}
 
-
 def _build_user_prompt(
     spec: AgentSpec,
     materials: list[dict[str, Any]],
@@ -531,7 +530,6 @@ def _merge_materials(
             merged.append(m)
 
     return merged
-
 
 def _extract_result_items(
     result: dict[str, Any] | Any,
