@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-05-28T09:39:34.447616+08:00",
-  "total_days": 21,
+  "updated_at": "2026-05-29T09:47:19.906865+08:00",
+  "total_days": 22,
   "latest": {
-    "date": "2026-05-28",
-    "theme": "AI代理狂飙，基础设施与学术框架齐进化",
-    "generated_at": "2026-05-28T09:39:34.394029+08:00",
+    "date": "2026-05-29",
+    "theme": "Anthropic冲击万亿估值，AI安全与创新并进",
+    "generated_at": "2026-05-29T09:47:19.855455+08:00",
     "total_items": 15,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260528.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260528.html"
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260529.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260529.html"
   },
   "dates": [
+    {
+      "date": "2026-05-29",
+      "theme": "Anthropic冲击万亿估值，AI安全与创新并进",
+      "generated_at": "2026-05-29T09:47:19.855455+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260529.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260529.html"
+    },
     {
       "date": "2026-05-28",
       "theme": "AI代理狂飙，基础设施与学术框架齐进化",
