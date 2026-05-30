@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-05-29T09:47:19.906865+08:00",
-  "total_days": 22,
+  "updated_at": "2026-05-30T09:42:59.028030+08:00",
+  "total_days": 23,
   "latest": {
-    "date": "2026-05-29",
-    "theme": "Anthropic冲击万亿估值，AI安全与创新并进",
-    "generated_at": "2026-05-29T09:47:19.855455+08:00",
+    "date": "2026-05-30",
+    "theme": "资本狂潮与技术迭代双轮驱动 AI 新纪元",
+    "generated_at": "2026-05-30T09:42:58.970356+08:00",
     "total_items": 15,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260529.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260529.html"
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260530.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260530.html"
   },
   "dates": [
+    {
+      "date": "2026-05-30",
+      "theme": "资本狂潮与技术迭代双轮驱动 AI 新纪元",
+      "generated_at": "2026-05-30T09:42:58.970356+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260530.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260530.html"
+    },
     {
       "date": "2026-05-29",
       "theme": "Anthropic冲击万亿估值，AI安全与创新并进",
