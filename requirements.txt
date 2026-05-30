@@ -7,3 +7,6 @@ openai>=1.50.0
 python-dateutil>=2.9.0
 tenacity>=9.0.0
 pyyaml>=6.0.2
+akshare>=1.14.0
+yfinance>=0.2.40
+pandas>=2.0.0
