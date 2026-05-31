@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-05-30T09:42:59.028030+08:00",
-  "total_days": 23,
+  "updated_at": "2026-05-31T09:47:53.244873+08:00",
+  "total_days": 24,
   "latest": {
-    "date": "2026-05-30",
-    "theme": "资本狂潮与技术迭代双轮驱动 AI 新纪元",
-    "generated_at": "2026-05-30T09:42:58.970356+08:00",
-    "total_items": 15,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260530.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260530.html"
+    "date": "2026-05-31",
+    "theme": "",
+    "generated_at": "2026-05-31T09:47:53.189399+08:00",
+    "total_items": 12,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260531.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260531.html"
   },
   "dates": [
+    {
+      "date": "2026-05-31",
+      "theme": "",
+      "generated_at": "2026-05-31T09:47:53.189399+08:00",
+      "total_items": 12,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260531.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260531.html"
+    },
     {
       "date": "2026-05-30",
       "theme": "资本狂潮与技术迭代双轮驱动 AI 新纪元",
