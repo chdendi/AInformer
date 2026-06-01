@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-05-31T09:47:53.244873+08:00",
-  "total_days": 24,
+  "updated_at": "2026-06-01T09:52:21.304177+08:00",
+  "total_days": 25,
   "latest": {
-    "date": "2026-05-31",
-    "theme": "",
-    "generated_at": "2026-05-31T09:47:53.189399+08:00",
-    "total_items": 12,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260531.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260531.html"
+    "date": "2026-06-01",
+    "theme": "AI可信度受拷问，开源创新势头不减",
+    "generated_at": "2026-06-01T09:52:21.245822+08:00",
+    "total_items": 13,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260601.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260601.html"
   },
   "dates": [
+    {
+      "date": "2026-06-01",
+      "theme": "AI可信度受拷问，开源创新势头不减",
+      "generated_at": "2026-06-01T09:52:21.245822+08:00",
+      "total_items": 13,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260601.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260601.html"
+    },
     {
       "date": "2026-05-31",
       "theme": "",
