@@ -1,5 +1,9 @@
 {
-  "available": false,
-  "message": "No monthly report has been generated yet.",
-  "updated_at": "2026-06-01T09:52:21.305255+08:00"
+  "label": "2026-05",
+  "title": "2026 年 5 月 AI 月度回顾",
+  "tagline": "",
+  "total_items": 398,
+  "generated_at": "2026-06-01T11:25:55.305044+08:00",
+  "data_url": "https://chdendi.github.io/AInformer/data/monthly/202605.json",
+  "html_url": "https://chdendi.github.io/AInformer/monthly/202605.html"
 }

@@ -1,6 +1,24 @@
 {
-  "updated_at": "2026-06-01T09:52:21.304376+08:00",
-  "total_months": 0,
-  "latest": null,
-  "months": []
+  "updated_at": "2026-06-01T11:25:55.341215+08:00",
+  "total_months": 1,
+  "latest": {
+    "label": "2026-05",
+    "title": "2026 年 5 月 AI 月度回顾",
+    "tagline": "",
+    "total_items": 398,
+    "generated_at": "2026-06-01T11:25:55.305044+08:00",
+    "data_url": "https://chdendi.github.io/AInformer/data/monthly/202605.json",
+    "html_url": "https://chdendi.github.io/AInformer/monthly/202605.html"
+  },
+  "months": [
+    {
+      "label": "2026-05",
+      "title": "2026 年 5 月 AI 月度回顾",
+      "tagline": "",
+      "total_items": 398,
+      "generated_at": "2026-06-01T11:25:55.305044+08:00",
+      "data_url": "https://chdendi.github.io/AInformer/data/monthly/202605.json",
+      "html_url": "https://chdendi.github.io/AInformer/monthly/202605.html"
+    }
+  ]
 }
