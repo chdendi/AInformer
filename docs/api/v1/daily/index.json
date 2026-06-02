@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-06-01T11:25:55.340961+08:00",
-  "total_days": 25,
+  "updated_at": "2026-06-02T09:54:43.811094+08:00",
+  "total_days": 26,
   "latest": {
-    "date": "2026-06-01",
-    "theme": "AI可信度受拷问，开源创新势头不减",
-    "generated_at": "2026-06-01T09:52:21.245822+08:00",
-    "total_items": 13,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260601.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260601.html"
+    "date": "2026-06-02",
+    "theme": "大模型商业化加速，安全与科学应用齐头并进",
+    "generated_at": "2026-06-02T09:54:43.752129+08:00",
+    "total_items": 14,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260602.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260602.html"
   },
   "dates": [
+    {
+      "date": "2026-06-02",
+      "theme": "大模型商业化加速，安全与科学应用齐头并进",
+      "generated_at": "2026-06-02T09:54:43.752129+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260602.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260602.html"
+    },
     {
       "date": "2026-06-01",
       "theme": "AI可信度受拷问，开源创新势头不减",
