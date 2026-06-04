@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-06-03T09:58:48.574725+08:00",
-  "total_days": 27,
+  "updated_at": "2026-06-04T09:58:26.390646+08:00",
+  "total_days": 28,
   "latest": {
-    "date": "2026-06-03",
-    "theme": "Agent生态加速成熟，多模态与安全控制并行",
-    "generated_at": "2026-06-03T09:58:48.516153+08:00",
-    "total_items": 14,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260603.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260603.html"
+    "date": "2026-06-04",
+    "theme": "多模态模型突破与AI商业井喷",
+    "generated_at": "2026-06-04T09:58:26.325381+08:00",
+    "total_items": 15,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260604.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260604.html"
   },
   "dates": [
+    {
+      "date": "2026-06-04",
+      "theme": "多模态模型突破与AI商业井喷",
+      "generated_at": "2026-06-04T09:58:26.325381+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260604.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260604.html"
+    },
     {
       "date": "2026-06-03",
       "theme": "Agent生态加速成熟，多模态与安全控制并行",
