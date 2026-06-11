@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-06-10T09:49:06.804638+08:00",
-  "total_days": 34,
+  "updated_at": "2026-06-11T09:55:24.489620+08:00",
+  "total_days": 35,
   "latest": {
-    "date": "2026-06-10",
-    "theme": "Anthropic发布Claude Fable 5，AI模型迈入Mythos新纪元",
-    "generated_at": "2026-06-10T09:49:06.746733+08:00",
-    "total_items": 14,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260610.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260610.html"
+    "date": "2026-06-11",
+    "theme": "Claude Fable 5 登场，中国 AI 多线突破",
+    "generated_at": "2026-06-11T09:55:24.428341+08:00",
+    "total_items": 16,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260611.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260611.html"
   },
   "dates": [
+    {
+      "date": "2026-06-11",
+      "theme": "Claude Fable 5 登场，中国 AI 多线突破",
+      "generated_at": "2026-06-11T09:55:24.428341+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260611.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260611.html"
+    },
     {
       "date": "2026-06-10",
       "theme": "Anthropic发布Claude Fable 5，AI模型迈入Mythos新纪元",
