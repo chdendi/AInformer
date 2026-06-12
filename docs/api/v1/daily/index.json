@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-06-11T09:55:24.489620+08:00",
-  "total_days": 35,
+  "updated_at": "2026-06-12T09:52:03.464575+08:00",
+  "total_days": 36,
   "latest": {
-    "date": "2026-06-11",
-    "theme": "Claude Fable 5 登场，中国 AI 多线突破",
-    "generated_at": "2026-06-11T09:55:24.428341+08:00",
-    "total_items": 16,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260611.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260611.html"
+    "date": "2026-06-12",
+    "theme": "AI Agent落地提速，安全与创新并行",
+    "generated_at": "2026-06-12T09:52:03.403816+08:00",
+    "total_items": 15,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260612.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260612.html"
   },
   "dates": [
+    {
+      "date": "2026-06-12",
+      "theme": "AI Agent落地提速，安全与创新并行",
+      "generated_at": "2026-06-12T09:52:03.403816+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260612.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260612.html"
+    },
     {
       "date": "2026-06-11",
       "theme": "Claude Fable 5 登场，中国 AI 多线突破",
