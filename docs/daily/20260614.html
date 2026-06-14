@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>开源模型价格战、职场教育升级与多学科融合并进 · AInformer · 每日 AI 简报</title>
-<meta name="description" content="今日AI领域迎来多方进展。Moonshot AI发布Kimi K2.7 Code，以仅为GPT-5.5和Claude十二分之一的价格引发关注。OpenAI推出Academy课程，聚焦职场AI技能。2026智源大会在京开幕，强调AI与物理世界、生命科学的三体互动。Google Research的Gemini-SQL2在文">
+<title>AI Daily · 2026-06-14 | AInformer</title>
+<meta name="description" content="开源模型价格战、职场教育升级与多学科融合并进 · 共 10 条精选">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -617,91 +617,7 @@ pre.code code{background:transparent;padding:0;border:none}
   a{color:#000;text-decoration:underline;border-bottom:none}
 }
 
-.archive-grid{display:grid;gap:32px}
-@media(min-width:768px){.archive-grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1024px){.archive-grid{grid-template-columns:repeat(3,1fr)}}
-
-.archive-card{
-  display:block;
-  padding:24px 0 0;
-  border-top:1px solid var(--border);
-  background:transparent;
-  border-radius:0;
-  color:inherit;
-  position:relative;
-  transition:border-color .2s ease,padding .2s ease;
-}
-.archive-card::before{content:none}
-.archive-card:hover{
-  border-top-color:var(--primary);
-  opacity:1;
-}
-.archive-card:hover h3{color:var(--accent)}
-.archive-card .date{
-  font-size:11px;
-  font-weight:600;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--tertiary);
-  margin-bottom:10px;
-  font-variant-numeric:tabular-nums;
-  font-family:var(--font-mono);
-}
-.archive-card h3{
-  font-size:17px;
-  line-height:1.4;
-  font-weight:600;
-  letter-spacing:-0.005em;
-  color:var(--primary);
-  margin-bottom:14px;
-  transition:color .2s ease;
-}
-.archive-card .stats{
-  display:flex;
-  gap:14px;
-  font-size:11px;
-  color:var(--tertiary);
-  font-family:var(--font-mono);
-  letter-spacing:.04em;
-}
-.archive-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-  margin-bottom:40px;
-}
-.archive-head .view-all{
-  font-size:13px;
-  font-weight:500;
-  color:var(--primary);
-  border:none;
-}
-.archive-head .view-all:hover{color:var(--accent);opacity:1}
-
-.about{
-  max-width:780px;
-  margin:0 auto;
-  padding:48px 0;
-  border-top:1px solid var(--border-soft);
-}
-.about h2{
-  font-size:24px;
-  font-weight:700;
-  letter-spacing:-0.015em;
-  color:var(--primary);
-  margin-bottom:16px;
-}
-.about p{
-  font-size:15px;
-  line-height:1.7;
-  color:var(--secondary);
-  margin-bottom:12px;
-}
-.about p a{color:var(--primary);font-weight:600;border-bottom:1px solid var(--border)}
-.about p a:hover{border-color:var(--primary);opacity:1}
-
-/* GitHub Trending cards (used inside injected daily content) */
+/* GitHub Trending cards */
 .trending-card{
   background:var(--bg);
   border:1px solid var(--border-soft);
@@ -776,242 +692,188 @@ pre.code code{background:transparent;padding:0;border:none}
 }
 .trending-card .meta .lang::before{content:"●";margin-right:6px;color:var(--info)}
 .trending-card .meta .stars-today{color:var(--highlight);font-weight:700}
-
-/* Loading state */
-.daily-loading{
-  text-align:center;
-  padding:96px 24px;
-  color:var(--tertiary);
-  font-size:13px;
-  font-weight:500;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-}
-.daily-loading .spinner{
-  display:inline-block;
-  width:28px;
-  height:28px;
-  border:1.5px solid var(--border-soft);
-  border-top-color:var(--primary);
-  border-radius:50%;
-  animation:spin .8s linear infinite;
-  margin-bottom:16px;
-}
-@keyframes spin{to{transform:rotate(360deg)}}
 </style>
 </head>
 <body>
 <header class="sticky-nav">
   <div class="nav-inner">
     <div class="nav-left">
-      <a class="home" href="#">AInformer<span class="dot">.</span></a>
+      <a class="home" href="https://chdendi.github.io/AInformer/index.html">AInformer<span class="dot">.</span></a>
       <nav class="nav-links">
-        <a href="#archive">Archive 归档</a>
-<a href="#monthly">Monthly</a>        <a href="#about">About</a>
+        <a href="#headlines">头条</a>
+<a href="#trending">GitHub</a>        <a href="#industry">行业</a>
+        <a href="#opinion">观点</a>
+        <a href="#chinese">中文</a>
+        <a href="#academic">学术</a>
       </nav>
     </div>
     <div class="nav-right">
-      <a class="cta" href="https://chdendi.github.io/AInformer/api/v1/manifest.json" target="_blank" rel="noopener">JSON API</a>
+      <a class="cta" href="https://chdendi.github.io/AInformer/index.html">← 回到首页</a>
     </div>
   </div>
 </header>
 
 <section class="hero">
-  <div class="date">2026-06-14</div>
-  <h1>AInformer</h1>
-  <p class="theme">每天早上自动汇总过去 24 小时最值得关注的 AI 资讯：行业动态、观点声音、中文生态、学术与评测。</p>
+  <div class="date">2026-06-14 · 周日</div>
+  <h1>每日 AI 简报</h1>
+  <p class="theme">开源模型价格战、职场教育升级与多学科融合并进</p>
   <div class="meta">
-    <span>已发布 38 期</span>
-<span>月度 1 篇</span>  </div>
+    <span>精选 10 条</span>
+    <span>头条 0 则</span>
+    <span>生成于 2026-06-14 09:49</span>
+  </div>
 </section>
 
 <main class="container">
-  <div id="daily-content">
-    <div class="daily-loading">
-      <div class="spinner"></div>
-      <p>加载最新日报…</p>
-    </div>
-  </div>
 
-  <section class="section" id="archive">
-    <div class="archive-head">
-      <h2 style="font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--secondary);">日报归档 · Archive</h2>
-      <span class="view-all" style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tertiary);font-family:var(--font-mono);">38 ISSUES</span>
-    </div>
-    <div class="archive-grid">
-      <a class="archive-card" href="daily/20260614.html">
-        <div class="date">2026-06-14 · 周日</div>
-        <h3>开源模型价格战、职场教育升级与多学科融合并进</h3>
-        <div class="stats"><span>10 ITEMS</span><span>0 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260613.html">
-        <div class="date">2026-06-13 · 周六</div>
-        <h3>融资、基准、预测与安全：AI代理时代全面起航</h3>
-        <div class="stats"><span>14 ITEMS</span><span>2 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260612.html">
-        <div class="date">2026-06-12 · 周五</div>
-        <h3>AI Agent落地提速，安全与创新并行</h3>
-        <div class="stats"><span>15 ITEMS</span><span>1 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260611.html">
-        <div class="date">2026-06-11 · 周四</div>
-        <h3>Claude Fable 5 登场，中国 AI 多线突破</h3>
-        <div class="stats"><span>16 ITEMS</span><span>1 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260610.html">
-        <div class="date">2026-06-10 · 周三</div>
-        <h3>Anthropic发布Claude Fable 5，AI模型迈入Mythos新纪元</h3>
-        <div class="stats"><span>14 ITEMS</span><span>1 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260609.html">
-        <div class="date">2026-06-09 · 周二</div>
-        <h3>当日 AI 简报</h3>
-        <div class="stats"><span>15 ITEMS</span><span>2 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260608.html">
-        <div class="date">2026-06-08 · 周一</div>
-        <h3>AI代理时代开启，成本与效率双重革命</h3>
-        <div class="stats"><span>11 ITEMS</span><span>2 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260607.html">
-        <div class="date">2026-06-07 · 周日</div>
-        <h3>政策介入与技术商业化并行，AI市场冷热不均</h3>
-        <div class="stats"><span>14 ITEMS</span><span>2 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260606.html">
-        <div class="date">2026-06-06 · 周六</div>
-        <h3>当日 AI 简报</h3>
-        <div class="stats"><span>11 ITEMS</span><span>3 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260605.html">
-        <div class="date">2026-06-05 · 周五</div>
-        <h3>智能体落地与协作成为AI发展主旋律</h3>
-        <div class="stats"><span>16 ITEMS</span><span>2 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260604.html">
-        <div class="date">2026-06-04 · 周四</div>
-        <h3>多模态模型突破与AI商业井喷</h3>
-        <div class="stats"><span>15 ITEMS</span><span>2 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260603.html">
-        <div class="date">2026-06-03 · 周三</div>
-        <h3>Agent生态加速成熟，多模态与安全控制并行</h3>
-        <div class="stats"><span>14 ITEMS</span><span>1 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260602.html">
-        <div class="date">2026-06-02 · 周二</div>
-        <h3>大模型商业化加速，安全与科学应用齐头并进</h3>
-        <div class="stats"><span>14 ITEMS</span><span>1 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260601.html">
-        <div class="date">2026-06-01 · 周一</div>
-        <h3>AI可信度受拷问，开源创新势头不减</h3>
-        <div class="stats"><span>13 ITEMS</span><span>2 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260531.html">
-        <div class="date">2026-05-31 · 周日</div>
-        <h3>当日 AI 简报</h3>
-        <div class="stats"><span>12 ITEMS</span><span>2 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260530.html">
-        <div class="date">2026-05-30 · 周六</div>
-        <h3>资本狂潮与技术迭代双轮驱动 AI 新纪元</h3>
-        <div class="stats"><span>15 ITEMS</span><span>1 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260529.html">
-        <div class="date">2026-05-29 · 周五</div>
-        <h3>Anthropic冲击万亿估值，AI安全与创新并进</h3>
-        <div class="stats"><span>15 ITEMS</span><span>2 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260528.html">
-        <div class="date">2026-05-28 · 周四</div>
-        <h3>AI代理狂飙，基础设施与学术框架齐进化</h3>
-        <div class="stats"><span>15 ITEMS</span><span>2 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260527.html">
-        <div class="date">2026-05-27 · 周三</div>
-        <h3>用户反抗Google AI搜索，国产AI在自训练与编程榜上全面冲顶</h3>
-        <div class="stats"><span>16 ITEMS</span><span>2 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260526.html">
-        <div class="date">2026-05-26 · 周二</div>
-        <h3>AI数学突破、人力替代与成本革命并行</h3>
-        <div class="stats"><span>15 ITEMS</span><span>3 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260525.html">
-        <div class="date">2026-05-25 · 周一</div>
-        <h3>AI代理、语音交互与智能体记忆创新齐发</h3>
-        <div class="stats"><span>10 ITEMS</span><span>1 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260524.html">
-        <div class="date">2026-05-24 · 周日</div>
-        <h3>大模型价格战白热化与多模态生成安全争议并行</h3>
-        <div class="stats"><span>5 ITEMS</span><span>1 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260523.html">
-        <div class="date">2026-05-23 · 周六</div>
-        <h3>政策护航、资本押注、技术突破三线并进</h3>
-        <div class="stats"><span>15 ITEMS</span><span>2 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260522.html">
-        <div class="date">2026-05-22 · 周五</div>
-        <h3>AI代理兼容性受检，国防与科研突破并行</h3>
-        <div class="stats"><span>12 ITEMS</span><span>1 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260521.html">
-        <div class="date">2026-05-21 · 周四</div>
-        <h3>当日 AI 简报</h3>
-        <div class="stats"><span>13 ITEMS</span><span>1 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260520.html">
-        <div class="date">2026-05-20 · 周三</div>
-        <h3>人才流动加速，代理时代开启，中国力量崛起</h3>
-        <div class="stats"><span>10 ITEMS</span><span>2 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260519.html">
-        <div class="date">2026-05-19 · 周二</div>
-        <h3>算力硬件与AI应用齐头并进</h3>
-        <div class="stats"><span>14 ITEMS</span><span>1 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260518.html">
-        <div class="date">2026-05-18 · 周一</div>
-        <h3>AI 自主能力跃进，安全与协作成焦点</h3>
-        <div class="stats"><span>12 ITEMS</span><span>0 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260517.html">
-        <div class="date">2026-05-17 · 周日</div>
-        <h3>全民AI普惠与智能体竞赛加速</h3>
-        <div class="stats"><span>8 ITEMS</span><span>2 HEADLINES</span></div>
-      </a>
-      <a class="archive-card" href="daily/20260516.html">
-        <div class="date">2026-05-16 · 周六</div>
-        <h3>当日 AI 简报</h3>
-        <div class="stats"><span>12 ITEMS</span><span>2 HEADLINES</span></div>
-      </a>
+  <section class="lede">今日AI领域迎来多方进展。Moonshot AI发布Kimi K2.7 Code，以仅为GPT-5.5和Claude十二分之一的价格引发关注。OpenAI推出Academy课程，聚焦职场AI技能。2026智源大会在京开幕，强调AI与物理世界、生命科学的三体互动。Google Research的Gemini-SQL2在文本转SQL基准上大幅领先。此外，Bengio团队仅用1500美元训练出1B参数高性能奖励模型，展示低成本路线。这些动态折射出模型效率、教育应用与交叉融合的产业趋势。</section>
+
+  <section class="section" id="headlines">
+    <div class="section-head"><h2>今日头条</h2><span class="count">5 条</span></div>
+    <div class="headlines">
+      <article class="headline-card">
+        <h3>Kimi K2.7 Code 价格仅 GPT-5.5 十二分之一</h3>
+        <p>Moonshot AI 发布开源万亿参数模型 Kimi K2.7 Code，在编程任务上性能强劲，且每 token 成本仅为 GPT-5.5 和 Claude 的 1/12，引发价格战。模型采用开放权重，直接冲击商用 API 市场。</p>
+        <div class="meta">
+<span class="tag tag-industry">行业新闻</span><span>The Decoder</span><a class="link-btn" href="https://the-decoder.com/moonshots-open-model-kimi-k2-7-code-undercuts-gpt-5-5-and-claude-by-up-to-12x-on-price-per-token/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="headline-card">
+        <h3>OpenAI Academy 新课助力职场 AI 应用</h3>
+        <p>OpenAI 发布三门 Academy 课程，旨在帮助大众构建实用 AI 技能，适应未来工作方式。课程覆盖提示工程、数据分析与自动化，标志着 AI 教育向职场场景延伸。</p>
+        <div class="meta">
+<span class="tag tag-industry">行业新闻</span><span>OpenAI</span><a class="link-btn" href="https://openai.com/index/academy-courses-applying-ai-at-work" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="headline-card">
+        <h3>智源大会开幕，聚焦 AI 与物理、生命科学融合</h3>
+        <p>2026 智源大会在京开幕，主题为“三体互动”，推动人工智能与物理世界、生命科学深度融合，强调多学科交叉的创新范式，多位顶尖学者参与。</p>
+        <div class="meta">
+<span class="tag tag-chinese">中文 / 学术</span><span>量子位</span><a class="link-btn" href="https://www.qbitai.com/2026/06/435394.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="headline-card">
+        <h3>Bengio 团队 1500 美元训出高性能 1B 奖励模型</h3>
+        <p>Bengio 团队推出仅 1B 参数的 HRM 奖励模型，训练成本低至 1500 美元，在多项基准上表现卓越，获 HuggingFace CEO 力推，为低成本模型训练提供新方向。</p>
+        <div class="meta">
+<span class="tag tag-chinese">中文 / 学术</span><span>量子位</span><a class="link-btn" href="https://www.qbitai.com/2026/06/435483.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="headline-card">
+        <h3>Gemini-SQL2 在文本转 SQL 基准中大幅领先</h3>
+        <p>Google Research 的 Gemini-SQL2 将自然语言精准转化为可执行 SQL，在多项基准测试中以明显优势登顶，有望简化数据库查询与数据分析流程。</p>
+        <div class="meta">
+<span class="tag tag-industry">行业新闻</span><span>The Decoder</span><a class="link-btn" href="https://the-decoder.com/google-researchs-gemini-sql2-tops-text-to-sql-benchmarks-by-a-wide-margin/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
     </div>
   </section>
 
-  <section class="section" id="monthly">
-    <div class="archive-head">
-      <h2 style="font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--secondary);">月度总结 · Monthly</h2>
-      <span class="view-all" style="font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tertiary);font-family:var(--font-mono);">1 REPORTS</span>
-    </div>
-    <div class="archive-grid">
-      <a class="archive-card" href="monthly/202605.html">
-        <div class="date">2026-05</div>
-        <h3>2026 年 5 月 AI 月度回顾</h3>
-        <div class="stats"><span>398 ITEMS</span></div>
-      </a>
+  <section class="section" id="trending">
+    <div class="section-head"><h2>GitHub Trending · 今日热门 AI 项目</h2><span class="count">4 个</span></div>
+    <div class="cards">
+      <article class="trending-card">
+        <div class="repo-line">
+          <a class="repo-name" href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener noreferrer">addyosmani/agent-skills</a>
+<span class="ai-topic">Coding Agent 生态</span>        </div>
+<p class="desc">提供可复用的 Agent Skills 集合，帮助把专业任务流程封装成 AI Agent 可调用能力。</p><div class="value">将专业任务流程拆成可复用 Agent 技能，适合沉淀团队级自动化经验。</div>        <div class="meta">
+<span class="lang">Shell</span><span class="stars-today">+1514 ⭐ 今日</span><span>58,427 ⭐ 总计</span>          <a class="link-btn" href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+        </div>
+      </article>
+      <article class="trending-card">
+        <div class="repo-line">
+          <a class="repo-name" href="https://github.com/NVIDIA/SkillSpector" target="_blank" rel="noopener noreferrer">NVIDIA/SkillSpector</a>
+<span class="ai-topic">Coding Agent 生态</span>        </div>
+<p class="desc">提供可复用的 Agent Skills 集合，帮助把专业任务流程封装成 AI Agent 可调用能力。</p><div class="value">将专业任务流程拆成可复用 Agent 技能，适合沉淀团队级自动化经验。</div>        <div class="meta">
+<span class="lang">Python</span><span class="stars-today">+804 ⭐ 今日</span><span>4,474 ⭐ 总计</span>          <a class="link-btn" href="https://github.com/NVIDIA/SkillSpector" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+        </div>
+      </article>
+      <article class="trending-card">
+        <div class="repo-line">
+          <a class="repo-name" href="https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools" target="_blank" rel="noopener noreferrer">x1xhlol/system-prompts-and-models-of-ai-tools</a>
+<span class="ai-topic">Coding Agent 生态</span>        </div>
+<p class="desc">仓库简介显示，x1xhlol/system-prompts-and-models-of-ai-tools 主要提供：FULL Augment Code, Claude Code, Cluel。</p><div class="value">适合评估其能否沉淀编码 Agent 的可复用流程、规则或协作约束。</div>        <div class="meta">
+<span class="stars-today">+109 ⭐ 今日</span><span>140,306 ⭐ 总计</span>          <a class="link-btn" href="https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+        </div>
+      </article>
+      <article class="trending-card">
+        <div class="repo-line">
+          <a class="repo-name" href="https://github.com/kenn-io/agentsview" target="_blank" rel="noopener noreferrer">kenn-io/agentsview</a>
+<span class="ai-topic">Coding Agent 生态</span>        </div>
+<p class="desc">仓库简介显示，kenn-io/agentsview 主要提供：Local-first session intelligence and analytics for coding agents。</p><div class="value">适合评估其能否沉淀编码 Agent 的可复用流程、规则或协作约束。</div>        <div class="meta">
+<span class="lang">Go</span><span class="stars-today">+190 ⭐ 今日</span><span>2,371 ⭐ 总计</span>          <a class="link-btn" href="https://github.com/kenn-io/agentsview" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+        </div>
+      </article>
     </div>
   </section>
 
+  <div class="section-divider"></div>
 
-  <section class="about" id="about">
-    <h2>About AInformer</h2>
-    <p>AInformer 是一份每日自动生成的中文 AI 简报：每天早上聚合过去 24 小时来自 OpenAI / Anthropic / DeepMind 官方博客、The Verge、TechCrunch、机器之心、量子位、arXiv、Hacker News 等公开渠道的最重要 AI 动态。</p>
-    <p>所有资讯均来自公开渠道，优先保留可追溯的原文链接。源代码：<a href="https://github.com/chdendi/AInformer" target="_blank" rel="noopener">GitHub 仓库</a>；JSON API：<a href="https://chdendi.github.io/AInformer/api/v1/manifest.json" target="_blank" rel="noopener">/api/v1/manifest.json</a>。</p>
+  <section class="section" id="industry">
+    <div class="section-head"><h2>AI 行业新闻与产品动态</h2><span class="count">4 条</span></div>
+    <div class="cards">
+<article class="news-card">
+  <h3>Open model Kimi K2.7 Code undercuts GPT-5.5 and Claude by up to 12x on price per...</h3>
+<p class="summary">Moonshot AI has released Kimi K2.7 Code, an open-weights model with one trillion parameters built for programming. It st...</p><p class="value">LLM 输出异常时的高可信素材兜底</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>The Decoder</span><span>· 2026-06-13</span><a class="link-btn" href="https://the-decoder.com/moonshots-open-model-kimi-k2-7-code-undercuts-gpt-5-5-and-claude-by-up-to-12x-on-price-per-token/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>New OpenAI Academy courses for the next era of work</h3>
+<p class="summary">OpenAI introduces three Academy courses that help people build practical AI skills, create repeatable workflows, and app...</p><p class="value">LLM 输出异常时的高可信素材兜底</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>OpenAI</span><span>· 2026-06-12</span><a class="link-btn" href="https://openai.com/index/academy-courses-applying-ai-at-work" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>Google Research's Gemini-SQL2 tops text-to-SQL benchmarks by a wide margin</h3>
+<p class="summary">Google Research's Gemini-SQL2 turns natural language into executable SQL queries. Built on Gemini 3.1 Pro, it tops the B...</p><p class="value">LLM 输出异常时的高可信素材兜底</p>  <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>The Decoder</span><span>· 2026-06-13</span><a class="link-btn" href="https://the-decoder.com/google-researchs-gemini-sql2-tops-text-to-sql-benchmarks-by-a-wide-margin/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>Microsoft's SkillOpt boosts GPT-5.5 by using nothing but a trained Markdown file</h3>
+<p class="summary">Microsoft and three Chinese universities have developed SkillOpt, a method that optimizes instruction documents for AI a...</p><p class="value">LLM 输出异常时的高可信素材兜底</p>  <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>The Decoder</span><span>· 2026-06-13</span><a class="link-btn" href="https://the-decoder.com/microsofts-skillopt-boosts-gpt-5-5-by-using-nothing-but-a-trained-markdown-file/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article>    </div>
   </section>
+
+  <section class="section" id="opinion">
+    <div class="section-head"><h2>AI 观点与社区声音</h2><span class="count">4 条</span></div>
+      <h3 class="subhead">深度分析 <span class="subcount">3 条</span></h3>
+      <div class="cards">
+        <article class="quote-card analyst">
+<p class="quote-en">The Pyodide 314.0 release announcement (via Hacker News) includes news I've been looking forward to for a long time: You...</p><p class="quote-title">Publishing WASM wheels to PyPI for use with Pyodide</p>          <div class="person">— Simon Willison · 分析师</div>
+          <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>观点摘要</span><a class="link-btn" href="https://simonwillison.net/2026/Jun/13/publishing-wasm-wheels/#atom-everything" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+        <article class="quote-card analyst">
+<p class="quote-en">Release: luau-wasm 0.1a0 See Publishing WASM wheels to PyPI for use with Pyodide for details. Tags: lua, webassembly, py...</p><p class="quote-title">luau-wasm 0.1a0</p>          <div class="person">— Simon Willison · 分析师</div>
+          <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>观点摘要</span><a class="link-btn" href="https://simonwillison.net/2026/Jun/13/luau-wasm/#atom-everything" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+        <article class="quote-card analyst">
+<p class="quote-en">Research: Mapping SQLite result columns back to their source `table.column` It would be neat if arbitrary SQL queries in...</p><p class="quote-title">Mapping SQLite result columns back to their source `table.column`</p>          <div class="person">— Simon Willison · 分析师</div>
+          <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>观点摘要</span><a class="link-btn" href="https://simonwillison.net/2026/Jun/13/sqlite-column-provenance/#atom-everything" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+      </div>
+      <h3 class="subhead">社区声音 <span class="subcount">1 条</span></h3>
+      <div class="cards">
+        <article class="quote-card analyst">
+<p class="quote-zh">We are in the strangest timeline.</p><p class="quote-title">[AINews] Fable and Mythos officially too dangerous to release</p>          <div class="person">— Latent Space · 社区</div>
+          <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>观点摘要</span><a class="link-btn" href="https://www.latent.space/p/ainews-fable-and-mythos-officially" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+      </div>
+  </section>
+
+  <section class="section" id="chinese">
+    <div class="section-head"><h2>中文 AI 生态与学术动态</h2><span class="count">2 条</span></div>
+    <div class="cards">
+<article class="news-card">
+  <h3>2026智源大会开幕：推动AI、物理世界与生命科学“三体互动”</h3>
+<p class="summary">2026智源大会在京开幕，聚焦人工智能与物理世界、生命科学的深度融合，强调多学科交叉的创新范式。</p><p class="value">国内顶级AI学术会议定调年度前沿方向，促进跨领域融合。</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>量子位</span><span>· 2026-06-13</span><a class="link-btn" href="https://www.qbitai.com/2026/06/435394.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>Bengio团队押注1B参数HRM模型，仅1500美元训出高性能</h3>
+<p class="summary">一个参数量仅1B的奖励模型（HRM）获得Bengio团队及HuggingFace CEO力荐，训练成本仅1500美元，在多个基准上表现卓越。</p><p class="value">极致低成本的奖励模型或将改变RLHF范式，推动小模型的高效对齐。</p>  <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>量子位</span><span>· 2026-06-13</span><a class="link-btn" href="https://www.qbitai.com/2026/06/435483.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article>    </div>
+  </section>
+
+  <section class="section" id="academic">
+    <div class="section-head"><h2>学术与评测</h2><span class="count">0 条</span></div>
+<div class="empty">本期暂无可发布条目</div>  </section>
+
 </main>
 <footer class="footer">
 <div class="footer-grid">
@@ -1020,10 +882,10 @@ pre.code code{background:transparent;padding:0;border:none}
     <p>每日 AI 简报：中文 AI 生态的精选信息流，聚合行业、观点、学术与中文动态。</p>
   </div>
   <div>
-    <h4>Sections</h4>
+    <h4>Navigate</h4>
     <ul>
-      <li><a href="#archive">日报归档</a></li>
-<li><a href="#monthly">月度总结</a></li>      <li><a href="#about">关于本站</a></li>
+      <li><a href="https://chdendi.github.io/AInformer/index.html">← 回到首页</a></li>
+      <li><a href="https://chdendi.github.io/AInformer/index.html#archive">历史日报归档</a></li>
     </ul>
   </div>
   <div>
@@ -1043,41 +905,6 @@ pre.code code{background:transparent;padding:0;border:none}
     </ul>
   </div>
 </div>
-<script>
-(function() {
-  var slug = '20260614';
-  if (!slug) return;
-  var url = 'daily/' + slug + '.html';
-  var container = document.getElementById('daily-content');
-  fetch(url)
-    .then(function(r) { return r.text(); })
-    .then(function(html) {
-      var parser = new DOMParser();
-      var doc = parser.parseFromString(html, 'text/html');
-      var main = doc.querySelector('main.container');
-      if (main) {
-        container.innerHTML = main.innerHTML;
-        var heroDate = doc.querySelector('.hero .date');
-        var heroTheme = doc.querySelector('.hero .theme');
-        var pageHeroDate = document.querySelector('.hero .date');
-        var pageHeroTheme = document.querySelector('.hero .theme');
-        if (heroDate && pageHeroDate) pageHeroDate.textContent = heroDate.textContent;
-        if (heroTheme && pageHeroTheme) pageHeroTheme.textContent = heroTheme.textContent;
-        document.title = doc.title || document.title;
-        var metaDesc = doc.querySelector('meta[name="description"]');
-        if (metaDesc) {
-          var existing = document.querySelector('meta[name="description"]');
-          if (existing) existing.content = metaDesc.content;
-        }
-      } else {
-        container.innerHTML = '<div class="empty">日报内容加载失败，<a href="' + url + '">直接查看 →</a></div>';
-      }
-    })
-    .catch(function() {
-      container.innerHTML = '<div class="empty">日报加载失败，<a href="' + url + '">直接查看 →</a></div>';
-    });
-})();
-</script>
   <div class="footer-bottom">
     <p>本日报基于公开信息自动搜索整理生成，资讯来源包括 OpenAI / Anthropic / DeepMind 等官方博客、The Verge、TechCrunch、36kr、机器之心、量子位、ArXiv、Hacker News 等公开平台。内容可能存在时效性偏差或不完整，请以原始来源为准。</p>
     <p>Generated at 2026-06-14 09:49 · Powered by DeepSeek + Tavily · <a href="https://chdendi.github.io/AInformer/index.html">AInformer</a> · <a href="https://chdendi.github.io/AInformer/api/v1/manifest.json">JSON API</a></p>
