@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-06-17T09:55:07.411652+08:00",
-  "total_days": 41,
+  "updated_at": "2026-06-18T09:54:04.035042+08:00",
+  "total_days": 42,
   "latest": {
-    "date": "2026-06-17",
-    "theme": "天价收购与巨额融资齐飞，AI 迈向具身与世界模型的新战场",
-    "generated_at": "2026-06-17T09:55:07.347775+08:00",
-    "total_items": 15,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260617.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260617.html"
+    "date": "2026-06-18",
+    "theme": "开源模型赶超闭源，国产算力与医疗 AI 双突破",
+    "generated_at": "2026-06-18T09:54:03.967631+08:00",
+    "total_items": 14,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260618.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260618.html"
   },
   "dates": [
+    {
+      "date": "2026-06-18",
+      "theme": "开源模型赶超闭源，国产算力与医疗 AI 双突破",
+      "generated_at": "2026-06-18T09:54:03.967631+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260618.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260618.html"
+    },
     {
       "date": "2026-06-17",
       "theme": "天价收购与巨额融资齐飞，AI 迈向具身与世界模型的新战场",
