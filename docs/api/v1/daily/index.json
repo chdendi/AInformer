@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-06-21T09:51:22.999633+08:00",
-  "total_days": 45,
+  "updated_at": "2026-06-22T09:52:16.266650+08:00",
+  "total_days": 46,
   "latest": {
-    "date": "2026-06-21",
-    "theme": "OpenAI巨亏中加速自动化，学术与开源反击",
-    "generated_at": "2026-06-21T09:51:22.935692+08:00",
-    "total_items": 13,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260621.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260621.html"
+    "date": "2026-06-22",
+    "theme": "AI落地加速，资本狂热与功能进化并行",
+    "generated_at": "2026-06-22T09:52:16.201928+08:00",
+    "total_items": 9,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260622.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260622.html"
   },
   "dates": [
+    {
+      "date": "2026-06-22",
+      "theme": "AI落地加速，资本狂热与功能进化并行",
+      "generated_at": "2026-06-22T09:52:16.201928+08:00",
+      "total_items": 9,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260622.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260622.html"
+    },
     {
       "date": "2026-06-21",
       "theme": "OpenAI巨亏中加速自动化，学术与开源反击",
