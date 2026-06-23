@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-06-22T09:52:16.266650+08:00",
-  "total_days": 46,
+  "updated_at": "2026-06-23T09:42:42.032865+08:00",
+  "total_days": 47,
   "latest": {
-    "date": "2026-06-22",
-    "theme": "AI落地加速，资本狂热与功能进化并行",
-    "generated_at": "2026-06-22T09:52:16.201928+08:00",
-    "total_items": 9,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260622.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260622.html"
+    "date": "2026-06-23",
+    "theme": "安全、智能体与商业合作共同推动 AI 落地",
+    "generated_at": "2026-06-23T09:42:41.982885+08:00",
+    "total_items": 11,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260623.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260623.html"
   },
   "dates": [
+    {
+      "date": "2026-06-23",
+      "theme": "安全、智能体与商业合作共同推动 AI 落地",
+      "generated_at": "2026-06-23T09:42:41.982885+08:00",
+      "total_items": 11,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260623.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260623.html"
+    },
     {
       "date": "2026-06-22",
       "theme": "AI落地加速，资本狂热与功能进化并行",
