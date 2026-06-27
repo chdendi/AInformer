@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-06-26T09:47:15.643871+08:00",
-  "total_days": 50,
+  "updated_at": "2026-06-27T09:42:19.590137+08:00",
+  "total_days": 51,
   "latest": {
-    "date": "2026-06-26",
-    "theme": "GPT-5.6 推迟与 Claude 反攻，AI 竞争进入多极博弈",
-    "generated_at": "2026-06-26T09:47:15.574090+08:00",
+    "date": "2026-06-27",
+    "theme": "",
+    "generated_at": "2026-06-27T09:42:19.524518+08:00",
     "total_items": 14,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260626.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260626.html"
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260627.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260627.html"
   },
   "dates": [
+    {
+      "date": "2026-06-27",
+      "theme": "",
+      "generated_at": "2026-06-27T09:42:19.524518+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260627.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260627.html"
+    },
     {
       "date": "2026-06-26",
       "theme": "GPT-5.6 推迟与 Claude 反攻，AI 竞争进入多极博弈",
