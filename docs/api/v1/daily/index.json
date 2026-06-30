@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-06-29T09:47:40.842099+08:00",
-  "total_days": 53,
+  "updated_at": "2026-06-30T09:44:14.852743+08:00",
+  "total_days": 54,
   "latest": {
-    "date": "2026-06-29",
-    "theme": "",
-    "generated_at": "2026-06-29T09:47:40.773888+08:00",
-    "total_items": 11,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260629.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260629.html"
+    "date": "2026-06-30",
+    "theme": "算力合纵与模型壁垒：AI 进入竞合新阶段",
+    "generated_at": "2026-06-30T09:44:14.784629+08:00",
+    "total_items": 15,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260630.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260630.html"
   },
   "dates": [
+    {
+      "date": "2026-06-30",
+      "theme": "算力合纵与模型壁垒：AI 进入竞合新阶段",
+      "generated_at": "2026-06-30T09:44:14.784629+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260630.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260630.html"
+    },
     {
       "date": "2026-06-29",
       "theme": "",
