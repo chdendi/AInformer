@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-06-30T09:44:14.852743+08:00",
-  "total_days": 54,
+  "updated_at": "2026-07-01T09:49:02.696594+08:00",
+  "total_days": 55,
   "latest": {
-    "date": "2026-06-30",
-    "theme": "算力合纵与模型壁垒：AI 进入竞合新阶段",
-    "generated_at": "2026-06-30T09:44:14.784629+08:00",
-    "total_items": 15,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260630.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260630.html"
+    "date": "2026-07-01",
+    "theme": "巨头模型与智能体密集发布，中国展示芯片限制下的韧性",
+    "generated_at": "2026-07-01T09:49:02.631073+08:00",
+    "total_items": 14,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260701.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260701.html"
   },
   "dates": [
+    {
+      "date": "2026-07-01",
+      "theme": "巨头模型与智能体密集发布，中国展示芯片限制下的韧性",
+      "generated_at": "2026-07-01T09:49:02.631073+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260701.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260701.html"
+    },
     {
       "date": "2026-06-30",
       "theme": "算力合纵与模型壁垒：AI 进入竞合新阶段",
