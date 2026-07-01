@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-06 月度回顾 | AInformer</title>
+<meta name="description" content="大模型激起安全风暴，AI代理重塑生态格局">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --surface:#faf8fe;
+  --surface-low:#f4f3f8;
+  --surface-mid:#eeedf3;
+  --surface-high:#e9e7ed;
+  --border:#c7c6ca;
+  --border-soft:#e3e2e7;
+
+  --primary:#030304;
+  --on-surface:#1a1b1f;
+  --secondary:#5d5e60;
+  --tertiary:#77767b;
+  --muted:#9a999d;
+
+  --accent:#ba1a1a;
+  --accent-soft:#fff0ef;
+  --positive:#2e7d32;
+  --positive-soft:#e8f5e9;
+  --highlight:#a05a00;
+  --highlight-soft:#fff5e1;
+  --info:#1f4a82;
+  --info-soft:#eaf0f9;
+
+  --container:1200px;
+  --gutter:24px;
+
+  --font-sans:'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--on-surface);
+  font-family:var(--font-sans);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  font-feature-settings:"ss01","cv11";
+}
+::selection{background:#1a1b1f;color:#fff}
+img{max-width:100%;display:block}
+
+h1,h2,h3,h4,h5{font-family:var(--font-sans);color:var(--primary);font-weight:600;letter-spacing:-0.01em}
+p{margin:0}
+
+a{color:var(--primary);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s ease,color .2s ease,opacity .2s ease}
+a:hover{opacity:.7}
+
+code{
+  background:var(--surface-mid);
+  padding:1px 6px;
+  border-radius:3px;
+  font-family:var(--font-mono);
+  font-size:.86em;
+  color:var(--primary);
+  border:1px solid var(--border-soft);
+}
+pre.code{
+  background:var(--surface-mid);
+  border:1px solid var(--border-soft);
+  border-radius:6px;
+  padding:14px 16px;
+  overflow:auto;
+  margin:10px 0;
+  font-size:.84rem;
+  line-height:1.65;
+  font-family:var(--font-mono);
+}
+pre.code code{background:transparent;padding:0;border:none}
+
+.material-symbols-outlined{
+  font-family:'Material Symbols Outlined';
+  font-weight:400;
+  font-style:normal;
+  font-size:24px;
+  line-height:1;
+  letter-spacing:normal;
+  text-transform:none;
+  display:inline-block;
+  white-space:nowrap;
+  word-wrap:normal;
+  direction:ltr;
+  vertical-align:middle;
+  font-feature-settings:'liga';
+  -webkit-font-feature-settings:'liga';
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{max-width:var(--container);margin:0 auto;padding:0 24px}
+@media(min-width:1024px){.container{padding:0 64px}}
+
+/* ===== Top app bar (sticky nav) ===== */
+.sticky-nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(255,255,255,0.85);
+  -webkit-backdrop-filter:saturate(180%) blur(14px);
+  backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid var(--border-soft);
+}
+.nav-inner{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0 24px;
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+@media(min-width:1024px){.nav-inner{padding:0 64px}}
+.nav-left{display:flex;align-items:center;gap:32px;min-width:0}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-inner .home{
+  font-size:20px;
+  font-weight:800;
+  color:var(--primary);
+  letter-spacing:-0.02em;
+  border:none;
+  white-space:nowrap;
+}
+.nav-inner .home:hover{opacity:1;color:var(--primary)}
+.nav-inner .home .dot{color:var(--accent)}
+.nav-links{display:none;gap:24px;align-items:center}
+@media(min-width:768px){.nav-links{display:flex}}
+.nav-inner a:not(.home):not(.cta){
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:.02em;
+  color:var(--secondary);
+  border:none;
+  padding:6px 0;
+  white-space:nowrap;
+}
+.nav-inner a:not(.home):not(.cta):hover{color:var(--primary);opacity:1}
+.nav-inner .cta{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 14px;
+  background:var(--primary);
+  color:#fff;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.02em;
+  border-radius:6px;
+  border:none;
+  transition:transform .15s ease,opacity .2s ease;
+}
+.nav-inner .cta:hover{opacity:.9;color:#fff}
+.nav-inner .cta:active{transform:scale(.96)}
+
+/* ===== Hero ===== */
+.hero{
+  padding:96px 24px 80px;
+  text-align:center;
+  background:var(--bg);
+}
+@media(min-width:1024px){.hero{padding:120px 64px 96px}}
+.hero .date{
+  display:inline-block;
+  font-size:13px;
+  font-weight:600;
+  font-family:var(--font-mono);
+  letter-spacing:.06em;
+  color:#fff;
+  background:var(--primary);
+  padding:6px 12px;
+  border-radius:4px;
+  margin-bottom:24px;
+}
+.hero h1{
+  font-size:clamp(40px,7vw,72px);
+  line-height:1.05;
+  letter-spacing:-0.035em;
+  font-weight:700;
+  color:var(--primary);
+  margin-bottom:18px;
+}
+.hero .theme{
+  max-width:640px;
+  margin:0 auto;
+  font-size:18px;
+  line-height:1.6;
+  color:var(--secondary);
+  font-weight:400;
+}
+.hero .meta{
+  margin-top:28px;
+  display:inline-flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--tertiary);
+}
+.hero .meta span{
+  padding:5px 10px;
+  border:1px solid var(--border);
+  border-radius:3px;
+  background:transparent;
+}
+
+/* ===== Lede ===== */
+.lede{
+  max-width:780px;
+  margin:0 auto 96px;
+  padding:0;
+  background:transparent;
+  border:none;
+  border-radius:0;
+}
+.lede::before{
+  content:"今日速读 · Editorial";
+  display:flex;
+  align-items:center;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+  border:1px solid var(--accent);
+  padding:4px 10px;
+  border-radius:3px;
+  width:fit-content;
+  margin-bottom:28px;
+}
+.lede{
+  font-size:19px;
+  line-height:1.75;
+  color:var(--primary);
+  font-weight:400;
+}
+.lede::first-letter{
+  font-size:64px;
+  font-weight:700;
+  float:left;
+  line-height:.9;
+  margin:6px 12px 0 0;
+  color:var(--primary);
+  letter-spacing:-0.03em;
+}
+
+/* ===== Section ===== */
+.section{margin:0 0 96px}
+.section-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:40px;
+  padding-bottom:0;
+  border-bottom:none;
+}
+.section-head h2{
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--secondary);
+}
+.section-head .count{
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--tertiary);
+  font-family:var(--font-mono);
+}
+.subhead{
+  margin:32px 0 16px;
+  font-size:18px;
+  font-weight:600;
+  color:var(--secondary);
+  letter-spacing:.02em;
+  display:flex;align-items:baseline;gap:12px;
+}
+.subhead:first-child{margin-top:8px}
+.subhead .subcount{
+  font-size:11px;font-weight:600;letter-spacing:.12em;
+  color:var(--tertiary);font-family:var(--font-mono);
+}
+.quote-card.analyst::before{content:"✎"}
+.section-divider{
+  height:1px;
+  background:var(--border-soft);
+  margin:0 0 96px;
+}
+
+/* ===== Headlines ===== */
+.headlines{display:grid;gap:32px}
+@media(min-width:768px){.headlines{grid-template-columns:1fr 1fr;gap:40px}}
+.headline-card{
+  position:relative;
+  padding:4px 0 4px 24px;
+  border-left:3px solid var(--primary);
+  background:transparent;
+  border-radius:0;
+  transition:border-color .2s ease;
+}
+.headline-card:nth-child(1){border-left-color:var(--accent)}
+.headline-card:hover{border-left-color:var(--accent)}
+.headline-card::before{content:none}
+.headline-card h3{
+  font-size:24px;
+  line-height:1.25;
+  letter-spacing:-0.015em;
+  font-weight:600;
+  color:var(--primary);
+  margin-bottom:14px;
+}
+.headline-card p{
+  font-size:15px;
+  line-height:1.65;
+  color:var(--secondary);
+  margin-bottom:18px;
+}
+.headline-card .meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  font-size:12px;
+  color:var(--tertiary);
+}
+
+/* ===== News cards ===== */
+.cards{display:grid;gap:24px}
+@media(min-width:768px){.cards{grid-template-columns:1fr 1fr}}
+@media(min-width:1280px){.cards.three-col{grid-template-columns:repeat(3,1fr)}}
+.news-card{
+  position:relative;
+  background:var(--bg);
+  border:1px solid var(--border-soft);
+  border-radius:6px;
+  padding:28px 28px 24px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  transition:border-color .2s ease,box-shadow .25s ease,transform .2s ease;
+}
+.news-card::before{content:none}
+.news-card:hover{
+  border-color:var(--border);
+  box-shadow:0 12px 32px rgba(15,15,20,0.05);
+  transform:translateY(-2px);
+}
+.news-card h3{
+  font-size:18px;
+  line-height:1.35;
+  font-weight:600;
+  letter-spacing:-0.005em;
+  color:var(--primary);
+}
+.news-card .summary{
+  font-size:14.5px;
+  line-height:1.65;
+  color:var(--secondary);
+  flex-grow:1;
+}
+.news-card .value{
+  font-size:13px;
+  line-height:1.6;
+  color:var(--primary);
+  background:var(--positive-soft);
+  border-left:none;
+  border-radius:4px;
+  padding:10px 12px;
+  position:relative;
+}
+.news-card .value::before{
+  content:"VALUE";
+  display:block;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.2em;
+  color:var(--positive);
+  margin-bottom:4px;
+}
+.news-card .meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  font-size:12px;
+  color:var(--tertiary);
+  margin-top:auto;
+  padding-top:8px;
+  border-top:1px dashed var(--border-soft);
+}
+
+/* ===== Quote (opinion) ===== */
+.quote-card{
+  position:relative;
+  background:var(--surface-low);
+  border:none;
+  border-left:none;
+  border-radius:8px;
+  padding:48px 40px 36px;
+  transition:background .2s ease;
+}
+.quote-card::before{
+  content:"format_quote";
+  font-family:'Material Symbols Outlined';
+  position:absolute;
+  top:24px;
+  left:32px;
+  font-size:36px;
+  color:var(--primary);
+  opacity:.85;
+  line-height:1;
+  pointer-events:none;
+}
+.quote-card:hover{background:var(--surface-mid)}
+.quote-card .quote-en{
+  font-style:italic;
+  color:var(--tertiary);
+  line-height:1.6;
+  font-size:14px;
+  margin:64px 0 12px;
+}
+.quote-card .quote-zh{
+  font-family:var(--font-sans);
+  color:var(--primary);
+  line-height:1.4;
+  margin:0 0 18px;
+  font-size:24px;
+  font-weight:600;
+  letter-spacing:-0.015em;
+}
+.quote-card .quote-en + .quote-zh{margin-top:0}
+.quote-card:not(:has(.quote-en)) .quote-zh{margin-top:64px}
+.quote-title{
+  font-size:13px;
+  color:var(--tertiary);
+  margin-bottom:12px;
+  letter-spacing:.02em;
+}
+.quote-card .person{
+  font-family:var(--font-sans);
+  color:var(--primary);
+  font-size:14px;
+  font-weight:700;
+  text-align:left;
+  margin-top:20px;
+  letter-spacing:.02em;
+}
+.quote-card .meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  font-size:12px;
+  color:var(--tertiary);
+  margin-top:18px;
+  padding-top:14px;
+  border-top:1px solid var(--border-soft);
+}
+
+/* ===== Tags ===== */
+.tag{
+  display:inline-flex;
+  align-items:center;
+  padding:3px 8px;
+  border-radius:3px;
+  font-size:10.5px;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  border:1px solid transparent;
+  background:transparent;
+}
+.tag-hot{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+.tag-star{color:var(--highlight);border-color:var(--highlight);background:var(--highlight-soft)}
+.tag-pin{color:var(--positive);border-color:var(--positive);background:var(--positive-soft)}
+.tag-industry{color:var(--info);border-color:var(--info);background:var(--info-soft)}
+.tag-opinion{color:var(--primary);border-color:var(--primary);background:var(--surface-mid)}
+.tag-chinese{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+.tag-academic{color:var(--positive);border-color:var(--positive);background:var(--positive-soft)}
+.tag-benchmark{color:var(--highlight);border-color:var(--highlight);background:var(--highlight-soft)}
+.tag-headline{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+
+/* ===== Link button ===== */
+.link-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  padding:5px 10px;
+  background:transparent;
+  border:1px solid var(--border);
+  border-radius:3px;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.04em;
+  color:var(--primary);
+  transition:background .15s ease,border-color .15s ease,color .15s ease;
+}
+.link-btn:hover{
+  background:var(--primary);
+  border-color:var(--primary);
+  color:#fff;
+  opacity:1;
+}
+
+/* ===== Empty state ===== */
+.empty{
+  padding:32px;
+  text-align:center;
+  color:var(--tertiary);
+  background:var(--surface-low);
+  border:1px dashed var(--border);
+  border-radius:6px;
+  font-size:14px;
+}
+
+/* ===== Footer ===== */
+.footer{
+  margin-top:96px;
+  background:var(--surface-low);
+  color:var(--secondary);
+  border-top:1px solid var(--border-soft);
+}
+.footer .footer-grid{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:80px 24px 32px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:48px;
+}
+@media(min-width:768px){
+  .footer .footer-grid{grid-template-columns:2fr 1fr 1fr 1fr;padding:96px 24px 32px}
+}
+@media(min-width:1024px){.footer .footer-grid{padding:96px 64px 32px}}
+.footer .brand{display:flex;flex-direction:column;gap:12px}
+.footer .brand .name{font-size:20px;font-weight:800;color:var(--primary);letter-spacing:-0.02em}
+.footer .brand p{font-size:14px;line-height:1.6;color:var(--secondary);max-width:320px}
+.footer h4{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--primary);
+  margin-bottom:18px;
+}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.footer ul a,.footer p a{
+  color:var(--secondary);
+  font-size:13px;
+  border:none;
+  transition:color .2s ease;
+}
+.footer ul a:hover,.footer p a:hover{color:var(--primary);opacity:1}
+.footer .footer-bottom{
+  border-top:1px solid var(--border-soft);
+  max-width:var(--container);
+  margin:0 auto;
+  padding:24px;
+  font-size:12px;
+  color:var(--tertiary);
+  text-align:center;
+  line-height:1.7;
+}
+@media(min-width:1024px){.footer .footer-bottom{padding:24px 64px}}
+.footer .footer-bottom p{margin-bottom:6px}
+
+/* ===== Responsive ===== */
+@media(max-width:639px){
+  body{font-size:15px}
+  .hero{padding:64px 20px 56px}
+  .container{padding:0 20px}
+  .lede{margin-bottom:64px;font-size:17px}
+  .lede::first-letter{font-size:52px}
+  .section{margin-bottom:64px}
+  .quote-card{padding:40px 24px 28px}
+  .quote-card::before{top:20px;left:20px;font-size:30px}
+  .quote-card .quote-zh{font-size:20px}
+  .news-card{padding:24px 22px 22px}
+  .headline-card{padding-left:18px}
+  .headline-card h3{font-size:20px}
+}
+
+/* ===== Print ===== */
+@media print{
+  body{background:#fff;color:#000}
+  .sticky-nav,.footer{display:none}
+  .news-card,.headline-card,.quote-card,.lede{
+    break-inside:avoid;
+    background:#fff;
+    border:1px solid #ccc;
+    color:#000;
+    box-shadow:none;
+  }
+  .hero{background:#fff;color:#000;border-bottom:2px solid #000}
+  .hero h1,.hero .date,.hero .theme{color:#000}
+  .hero .date{background:#000;color:#fff}
+  a{color:#000;text-decoration:underline;border-bottom:none}
+}
+
+.archive-link{display:block;color:inherit;border-bottom:none}
+.archive-link:hover{color:inherit}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="date">2026-06</div>
+  <h1>月度 AI 回顾</h1>
+  <p class="theme">大模型激起安全风暴，AI代理重塑生态格局</p>
+  <div class="meta">
+    <span>汇总 516 条</span>
+    <span>涵盖 30 天</span>
+  </div>
+</header>
+
+<nav class="sticky-nav">
+  <div class="nav-inner">
+    <a class="home" href="https://chdendi.github.io/AInformer/index.html">← 首页</a>
+    <a href="#overview">本月综述</a>
+    <a href="#themes">主题脉络</a>
+    <a href="#milestones">关键里程碑</a>
+    <a href="#daily">逐日索引</a>
+  </div>
+</nav>
+
+<main class="container">
+
+  <section class="lede" id="overview">2026年6月，AI行业在模型能力、代理转型与安全治理三线交织中剧烈震荡。月初Anthropic秘密申请IPO，旋即发布首个Mythos级模型Claude Fable 5与Mythos 5，其惊人能力与“有意识”暗示引发微软公开抨击和内部使用限制。谷歌、OpenAI、英伟达与微软则集体押注AI代理：OpenAI宣布“聊天已死”，将ChatGPT重构为全功能代理应用，并收购Ona以获取持久化云环境；英伟达与微软联手打造统一Agent部署栈；Meta推出首个付费AI代理Hatch。同期，Gemma 4 12B等小模型与Ideogram 4.0开源释放端侧智能。学术与社区对代理安全产生激烈讨论，美国政府紧急指令暂停访问Fable 5与Mythos，AGI治理呼声高涨。中国阵营同样风起云涌，字节跳动豆包正式付费引发用户流失与商业化反思，火山引擎上调MaaS营收目标，智谱港股飙涨近48%；阿里Qwen3.7-Plus剑指自主代理，微信推出Agent-to-Agent助手。本月，技术狂飙与安全刹车、商业变现与开源理想相互碰撞，AI行业站在分水岭上。</section>
+
+  <section class="section" id="themes">
+    <div class="section-head"><h2>本月主题脉络</h2></div>
+    <div class="cards">
+      <article class="news-card">
+        <h3>Mythos级模型引爆能力争议与安全恐慌</h3>
+        <p class="summary">Anthropic秘密筹备IPO之际发布Claude Fable 5与Mythos 5，被称为首个Mythos级模型，展现出超强代码生成能力与主动操作特征，但微软AI负责人抨击其暗示模型有意识“极为危险”。美国政府迅速发出暂停访问指令，微软也在内部限制员工使用，业界围绕模型能力边界与安全意识展开激烈交锋。</p>
+        <div class="meta">
+          <a class="link-btn" href="https://the-decoder.com/claude-maker-anthropic-files-for-ipo-with-the-sec/" target="_blank" rel="noopener noreferrer">Anthropic秘密申请IPO ↗</a>
+          <a class="link-btn" href="https://www.theverge.com/news/946725/anthropic-releases-claude-fable-5-mythos" target="_blank" rel="noopener noreferrer">Anthropic发布Claude Fable 5与Mythos 5 ↗</a>
+          <a class="link-btn" href="https://www.theverge.com/tech/947197/microsoft-ai-mustafa-suleyman-anthropic-claude-conscious" target="_blank" rel="noopener noreferrer">微软AI负责人抨击Claude Fable暗示有意识 ↗</a>
+          <a class="link-btn" href="https://simonwillison.net/2026/Jun/13/us-government-directive-to-suspend-access/#atom-everything" target="_blank" rel="noopener noreferrer">美政府指令暂停访问Fable 5与Mythos ↗</a>
+          <a class="link-btn" href="https://www.theverge.com/report/947575/microsoft-claude-fable-5-restricted-internally" target="_blank" rel="noopener noreferrer">微软以数据留存担忧限制员工使用Claude Fable 5 ↗</a>
+        </div>
+      </article>
+      <article class="news-card">
+        <h3>AI代理全面爆发：从聊天到自主任务执行</h3>
+        <p class="summary">OpenAI宣布“聊天已死”，ChatGPT向全功能代理应用转型，并收购Ona获得持久化云环境，同时发布Codex插件赋能白领工作。英伟达与微软合作构建统一Agent部署栈，微软还推出新规范精细化控制AI代理行为。Meta则推出首个付费AI代理Hatch，月费最高200美元。中国阵营中，阿里Qwen3.7-Plus明确面向自主代理，微信联合华为小米推出Agent-to-Agent助手，Meshy发布全球首个3D AI Agent。</p>
+        <div class="meta">
+          <a class="link-btn" href="https://the-decoder.com/openai-says-chat-is-dead-and-plans-to-rebuild-chatgpt-as-a-full-blown-agent-app/" target="_blank" rel="noopener noreferrer">OpenAI宣布“聊天已死”，ChatGPT向代理应用转型 ↗</a>
+          <a class="link-btn" href="https://blogs.nvidia.com/blog/microsoft-build-windows-local-cloud-devices/" target="_blank" rel="noopener noreferrer">英伟达与微软联手打造Agent AI部署栈 ↗</a>
+          <a class="link-btn" href="https://techcrunch.com/2026/06/02/microsoft-offers-devs-a-better-way-to-control-ai-agent-behavior/" target="_blank" rel="noopener noreferrer">微软新规范精细控制AI Agent行为 ↗</a>
+          <a class="link-btn" href="https://openai.com/index/openai-to-acquire-ona" target="_blank" rel="noopener noreferrer">OpenAI收购Ona为Codex解锁持久化云环境 ↗</a>
+          <a class="link-btn" href="https://the-decoder.com/qwen3-7-plus-is-alibabas-bid-to-turn-multimodal-ai-into-a-full-blown-autonomous-agent/" target="_blank" rel="noopener noreferrer">阿里发布Qwen3.7-Plus剑指全自主AI代理 ↗</a>
+        </div>
+      </article>
+      <article class="news-card">
+        <h3>大国博弈与治理进程骤然加速</h3>
+        <p class="summary">特朗普政府谈判入股OpenAI，美国后续紧急暂停对Anthropic Mythos模型的访问，彰显国家力量深度介入AI头部公司。AGI治理讨论从学术圈扩散至社会层面，研究者提出道义政策实现运行时治理，社区呼吁勿禁开源AI。中美之间技术竞争暗流涌动，DeepSeek登顶Ramp热门供应商，低成本优势席卷美国企业。</p>
+        <div class="meta">
+          <a class="link-btn" href="https://techcrunch.com/2026/06/06/the-trump-administration-might-take-an-equity-stake-in-openai/" target="_blank" rel="noopener noreferrer">特朗普政府拟入股OpenAI ↗</a>
+          <a class="link-btn" href="https://www.interconnects.ai/p/welcome-to-the-agi-era-of-ai-governance" target="_blank" rel="noopener noreferrer">AGI治理时代降临，社会准备不足 ↗</a>
+          <a class="link-btn" href="https://arxiv.org/abs/2606.19464" target="_blank" rel="noopener noreferrer">道义政策实现自主AI系统运行时治理 ↗</a>
+          <a class="link-btn" href="https://www.interconnects.ai/p/banning-open-source-ai-would-be-a" target="_blank" rel="noopener noreferrer">社区声音：禁止开源AI将是一个错误 ↗</a>
+          <a class="link-btn" href="https://the-decoder.com/deepseek-topped-ramps-trending-software-vendors-in-june-2026-as-us-companies-chase-cheaper-ai/" target="_blank" rel="noopener noreferrer">Deepseek登顶Ramp热门供应商 ↗</a>
+        </div>
+      </article>
+      <article class="news-card">
+        <h3>中国AI商业化淬火：付费、营收与资本热潮</h3>
+        <p class="summary">豆包6月下旬正式付费导致月活骤降610万，敲响AI产品商业化警钟；火山引擎却逆势上调MaaS营收目标至150亿元，Seedance 2.0月营收破10亿。智谱港股盘中飙涨48%，Kimi联合银行推出首张AI原生信用卡，字节跳动启动AI制药业务拆分独立融资。国产开源框架实现5分钟长视频生成，跨维智能登顶WorldArena，展现出技术迭代与商业探索并行的复杂图景。</p>
+        <div class="meta">
+          <a class="link-btn" href="https://36kr.com/p/3834544830721671?f=rss" target="_blank" rel="noopener noreferrer">豆包正式付费，基础版免费专业版月费500元 ↗</a>
+          <a class="link-btn" href="https://36kr.com/p/3840996342073604?f=rss" target="_blank" rel="noopener noreferrer">豆包付费后月活减少610万 ↗</a>
+          <a class="link-btn" href="https://36kr.com/p/3836973710423429?f=rss" target="_blank" rel="noopener noreferrer">火山引擎上调MaaS营收目标至150亿元 ↗</a>
+          <a class="link-btn" href="https://36kr.com/newsflashes/3853769391887362?f=rss" target="_blank" rel="noopener noreferrer">智谱港股盘中飙涨近48% ↗</a>
+          <a class="link-btn" href="https://36kr.com/p/3846956646124036?f=rss" target="_blank" rel="noopener noreferrer">字节跳动启动AI制药业务拆分并独立融资 ↗</a>
+        </div>
+      </article>
+      <article class="news-card">
+        <h3>开源小模型与端侧智能释放新动能</h3>
+        <p class="summary">Google DeepMind发布Gemma 4 12B，仅需16GB内存即可运行多模态任务；Ideogram 4.0开源并原生支持2K分辨率；商汤8B生图模型去掉VAE重新定义开源上限；国产HiDream-O1-Image-1.5登顶文生图榜单。学术上，GLM-5.2成为最强纯文本开源模型，Bengio团队以1500美元训出高性能1B奖励模型，开源社区持续创新。</p>
+        <div class="meta">
+          <a class="link-btn" href="https://the-decoder.com/google-deepminds-gemma-4-12b-squeezes-multimodal-ai-onto-a-laptop-with-just-16-gb-of-ram/" target="_blank" rel="noopener noreferrer">Google DeepMind发布Gemma 4 12B多模态小模型 ↗</a>
+          <a class="link-btn" href="https://the-decoder.com/ideogram-4-0-drops-as-an-open-weight-model-with-native-2k-resolution-and-improved-text-rendering/" target="_blank" rel="noopener noreferrer">Ideogram 4.0开源发布，原生支持2K分辨率 ↗</a>
+          <a class="link-btn" href="https://www.leiphone.com/category/industrynews/hBRYpm9vvt6sWbhJ.html" target="_blank" rel="noopener noreferrer">商汤8B开源生图模型去掉VAE ↗</a>
+          <a class="link-btn" href="https://simonwillison.net/2026/Jun/17/glm-52/#atom-everything" target="_blank" rel="noopener noreferrer">GLM-5.2可能是最强纯文本开源LLM ↗</a>
+          <a class="link-btn" href="https://www.qbitai.com/2026/06/435483.html" target="_blank" rel="noopener noreferrer">Bengio团队1500美元训出高性能1B奖励模型 ↗</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="milestones">
+    <div class="section-head"><h2>关键里程碑</h2></div>
+    <div class="cards">
+      <article class="news-card">
+        <h3>Anthropic秘密提交IPO申请，AI巨头上市潮或开启</h3>
+        <p class="summary">Claude开发商Anthropic向SEC秘密递交IPO文件，成为首个准备上市的领先AI实验室，人才暗战同步升级。</p>
+        <div class="meta">
+<span>2026-06-02</span><a class="link-btn" href="https://the-decoder.com/claude-maker-anthropic-files-for-ipo-with-the-sec/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="news-card">
+        <h3>OpenAI模型正式登陆Amazon Bedrock，GPT-5.5全面可用</h3>
+        <p class="summary">AWS与OpenAI合作深化，Codex与GPT-5.5通过Bedrock向企业提供服务，加速模型生态融合。</p>
+        <div class="meta">
+<span>2026-06-02</span><a class="link-btn" href="https://aws.amazon.com/blogs/machine-learning/openai-models-and-codex-on-amazon-bedrock-are-now-generally-available/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="news-card">
+        <h3>英伟达与微软联手构建统一Agent AI部署栈</h3>
+        <p class="summary">双方在微软Build大会披露合作细节，希望打通从本地到云的AI代理开发瓶颈。</p>
+        <div class="meta">
+<span>2026-06-03</span><a class="link-btn" href="https://blogs.nvidia.com/blog/microsoft-build-windows-local-cloud-devices/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="news-card">
+        <h3>苹果正式发布Siri AI，打造对话式AI伴侣</h3>
+        <p class="summary">WWDC 2026上苹果隆重推出全新Siri，深度整合系统级智能，被视为苹果在AI消费端的重磅反击。</p>
+        <div class="meta">
+<span>2026-06-09</span><a class="link-btn" href="https://techcrunch.com/2026/06/08/apples-long-awaited-ai-siri-overhaul-is-finally-here/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="news-card">
+        <h3>Anthropic发布首个Mythos级模型Claude Fable 5</h3>
+        <p class="summary">具有5000万行代码日处理能力的超级模型亮相，其能力与“有意识”特征引发行业震动。</p>
+        <div class="meta">
+<span>2026-06-10</span><a class="link-btn" href="https://www.theverge.com/news/946725/anthropic-releases-claude-fable-5-mythos" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="news-card">
+        <h3>微软AI负责人公开抨击Anthropic暗示Claude有意识</h3>
+        <p class="summary">Mustafa Suleyman直指该行为“极为危险”，随后微软内部限制员工使用Claude Fable 5。</p>
+        <div class="meta">
+<span>2026-06-10</span><a class="link-btn" href="https://www.theverge.com/tech/947197/microsoft-ai-mustafa-suleyman-anthropic-claude-conscious" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="news-card">
+        <h3>美国政府指令暂停访问Fable 5与Mythos</h3>
+        <p class="summary">安全关切下，美国政府要求限制对Anthropic最新模型的访问，社区强烈反弹。</p>
+        <div class="meta">
+<span>2026-06-13</span><a class="link-btn" href="https://simonwillison.net/2026/Jun/13/us-government-directive-to-suspend-access/#atom-everything" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="news-card">
+        <h3>OpenAI收购Ona并宣布“聊天已死”</h3>
+        <p class="summary">ChatGPT正式走向代理化转型，收购初创公司Ona获取持久化云环境，同时推出Codex六大插件。</p>
+        <div class="meta">
+<span>2026-06-12</span><a class="link-btn" href="https://openai.com/index/openai-to-acquire-ona" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="news-card">
+        <h3>豆包正式付费引用户流失，月活锐减610万</h3>
+        <p class="summary">中国AI头部产品商业化试水遭遇挫折，引发对C端变现路径的广泛讨论。</p>
+        <div class="meta">
+<span>2026-06-07</span><a class="link-btn" href="https://36kr.com/p/3840996342073604?f=rss" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="news-card">
+        <h3>字节跳动启动AI制药业务拆分与独立融资</h3>
+        <p class="summary">继MaaS营收猛增后，字节通过资本运作加速AI在垂直行业的渗透，生物医药成为新战场。</p>
+        <div class="meta">
+<span>2026-06-11</span><a class="link-btn" href="https://36kr.com/p/3846956646124036?f=rss" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="daily">
+    <div class="section-head"><h2>逐日索引</h2><span class="count">30 期</span></div>
+    <div class="cards three-col">
+      <a class="archive-link" href="../daily/20260601.html">
+        <article class="news-card">
+          <h3>2026-06-01</h3>
+          <p class="summary">AI可信度受拷问，开源创新势头不减</p>
+          <div class="meta"><span>共 13 条</span><span>头条 2</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260602.html">
+        <article class="news-card">
+          <h3>2026-06-02</h3>
+          <p class="summary">大模型商业化加速，安全与科学应用齐头并进</p>
+          <div class="meta"><span>共 14 条</span><span>头条 1</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260603.html">
+        <article class="news-card">
+          <h3>2026-06-03</h3>
+          <p class="summary">Agent生态加速成熟，多模态与安全控制并行</p>
+          <div class="meta"><span>共 14 条</span><span>头条 1</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260604.html">
+        <article class="news-card">
+          <h3>2026-06-04</h3>
+          <p class="summary">多模态模型突破与AI商业井喷</p>
+          <div class="meta"><span>共 15 条</span><span>头条 2</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260605.html">
+        <article class="news-card">
+          <h3>2026-06-05</h3>
+          <p class="summary">智能体落地与协作成为AI发展主旋律</p>
+          <div class="meta"><span>共 16 条</span><span>头条 2</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260606.html">
+        <article class="news-card">
+          <h3>2026-06-06</h3>
+          <p class="summary">查看当日日报</p>
+          <div class="meta"><span>共 11 条</span><span>头条 3</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260607.html">
+        <article class="news-card">
+          <h3>2026-06-07</h3>
+          <p class="summary">政策介入与技术商业化并行，AI市场冷热不均</p>
+          <div class="meta"><span>共 14 条</span><span>头条 2</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260608.html">
+        <article class="news-card">
+          <h3>2026-06-08</h3>
+          <p class="summary">AI代理时代开启，成本与效率双重革命</p>
+          <div class="meta"><span>共 11 条</span><span>头条 2</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260609.html">
+        <article class="news-card">
+          <h3>2026-06-09</h3>
+          <p class="summary">查看当日日报</p>
+          <div class="meta"><span>共 15 条</span><span>头条 2</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260610.html">
+        <article class="news-card">
+          <h3>2026-06-10</h3>
+          <p class="summary">Anthropic发布Claude Fable 5，AI模型迈入Mythos新纪元</p>
+          <div class="meta"><span>共 14 条</span><span>头条 1</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260611.html">
+        <article class="news-card">
+          <h3>2026-06-11</h3>
+          <p class="summary">Claude Fable 5 登场，中国 AI 多线突破</p>
+          <div class="meta"><span>共 16 条</span><span>头条 1</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260612.html">
+        <article class="news-card">
+          <h3>2026-06-12</h3>
+          <p class="summary">AI Agent落地提速，安全与创新并行</p>
+          <div class="meta"><span>共 15 条</span><span>头条 1</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260613.html">
+        <article class="news-card">
+          <h3>2026-06-13</h3>
+          <p class="summary">融资、基准、预测与安全：AI代理时代全面起航</p>
+          <div class="meta"><span>共 14 条</span><span>头条 2</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260614.html">
+        <article class="news-card">
+          <h3>2026-06-14</h3>
+          <p class="summary">开源模型价格战、职场教育升级与多学科融合并进</p>
+          <div class="meta"><span>共 10 条</span><span>头条 0</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260615.html">
+        <article class="news-card">
+          <h3>2026-06-15</h3>
+          <p class="summary">企业 AI 加速落地，治理与诚信问题凸显</p>
+          <div class="meta"><span>共 7 条</span><span>头条 1</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260616.html">
+        <article class="news-card">
+          <h3>2026-06-16</h3>
+          <p class="summary">开源模型落地与融资热潮迭起，平台AI创新加速。</p>
+          <div class="meta"><span>共 15 条</span><span>头条 2</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260617.html">
+        <article class="news-card">
+          <h3>2026-06-17</h3>
+          <p class="summary">天价收购与巨额融资齐飞，AI 迈向具身与世界模型的新战场</p>
+          <div class="meta"><span>共 15 条</span><span>头条 2</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260618.html">
+        <article class="news-card">
+          <h3>2026-06-18</h3>
+          <p class="summary">开源模型赶超闭源，国产算力与医疗 AI 双突破</p>
+          <div class="meta"><span>共 14 条</span><span>头条 0</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260619.html">
+        <article class="news-card">
+          <h3>2026-06-19</h3>
+          <p class="summary">出口管制、人才流动与小模型突破</p>
+          <div class="meta"><span>共 15 条</span><span>头条 2</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260620.html">
+        <article class="news-card">
+          <h3>2026-06-20</h3>
+          <p class="summary">人才争夺、AI短板与机器人突破交织</p>
+          <div class="meta"><span>共 11 条</span><span>头条 1</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260621.html">
+        <article class="news-card">
+          <h3>2026-06-21</h3>
+          <p class="summary">OpenAI巨亏中加速自动化，学术与开源反击</p>
+          <div class="meta"><span>共 13 条</span><span>头条 3</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260622.html">
+        <article class="news-card">
+          <h3>2026-06-22</h3>
+          <p class="summary">AI落地加速，资本狂热与功能进化并行</p>
+          <div class="meta"><span>共 9 条</span><span>头条 2</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260623.html">
+        <article class="news-card">
+          <h3>2026-06-23</h3>
+          <p class="summary">安全、智能体与商业合作共同推动 AI 落地</p>
+          <div class="meta"><span>共 11 条</span><span>头条 2</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260624.html">
+        <article class="news-card">
+          <h3>2026-06-24</h3>
+          <p class="summary">AI代理自主与基础设施竞赛白热化</p>
+          <div class="meta"><span>共 9 条</span><span>头条 1</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260625.html">
+        <article class="news-card">
+          <h3>2026-06-25</h3>
+          <p class="summary">算力芯片、模型能力与商业模式创新并行</p>
+          <div class="meta"><span>共 15 条</span><span>头条 1</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260626.html">
+        <article class="news-card">
+          <h3>2026-06-26</h3>
+          <p class="summary">GPT-5.6 推迟与 Claude 反攻，AI 竞争进入多极博弈</p>
+          <div class="meta"><span>共 14 条</span><span>头条 2</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260627.html">
+        <article class="news-card">
+          <h3>2026-06-27</h3>
+          <p class="summary">查看当日日报</p>
+          <div class="meta"><span>共 14 条</span><span>头条 1</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260628.html">
+        <article class="news-card">
+          <h3>2026-06-28</h3>
+          <p class="summary">亚洲AI崛起、成本驱动迁移与端侧突破并行</p>
+          <div class="meta"><span>共 13 条</span><span>头条 2</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260629.html">
+        <article class="news-card">
+          <h3>2026-06-29</h3>
+          <p class="summary">查看当日日报</p>
+          <div class="meta"><span>共 11 条</span><span>头条 0</span></div>
+        </article>
+      </a>
+      <a class="archive-link" href="../daily/20260630.html">
+        <article class="news-card">
+          <h3>2026-06-30</h3>
+          <p class="summary">算力合纵与模型壁垒：AI 进入竞合新阶段</p>
+          <div class="meta"><span>共 15 条</span><span>头条 1</span></div>
+        </article>
+      </a>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="footer-bottom">
+    <p>本日报基于公开信息自动搜索整理生成，资讯来源包括 OpenAI / Anthropic / DeepMind 等官方博客、The Verge、TechCrunch、36kr、机器之心、量子位、ArXiv、Hacker News 等公开平台。内容可能存在时效性偏差或不完整，请以原始来源为准。</p>
+    <p>Generated at 2026-07-01 11:21 · Powered by DeepSeek + Tavily · <a href="https://chdendi.github.io/AInformer/index.html">AInformer</a> · <a href="https://chdendi.github.io/AInformer/api/v1/manifest.json">JSON API</a></p>
+  </div>
+</footer>
+</body>
+</html>
