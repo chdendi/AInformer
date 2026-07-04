@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-07-03T12:41:04.508099+08:00",
-  "total_days": 57,
+  "updated_at": "2026-07-04T12:34:38.276589+08:00",
+  "total_days": 58,
   "latest": {
-    "date": "2026-07-03",
-    "theme": "AI部署、芯片自研与模型创新多点突破",
-    "generated_at": "2026-07-03T12:41:04.437284+08:00",
-    "total_items": 15,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260703.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260703.html"
+    "date": "2026-07-04",
+    "theme": "AI融资与应用竞赛升温，科学发现再提速",
+    "generated_at": "2026-07-04T12:34:38.175294+08:00",
+    "total_items": 12,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260704.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260704.html"
   },
   "dates": [
+    {
+      "date": "2026-07-04",
+      "theme": "AI融资与应用竞赛升温，科学发现再提速",
+      "generated_at": "2026-07-04T12:34:38.175294+08:00",
+      "total_items": 12,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260704.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260704.html"
+    },
     {
       "date": "2026-07-03",
       "theme": "AI部署、芯片自研与模型创新多点突破",
