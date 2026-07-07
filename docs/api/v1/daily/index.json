@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-07-06T13:08:16.591591+08:00",
-  "total_days": 60,
+  "updated_at": "2026-07-07T12:48:40.629636+08:00",
+  "total_days": 61,
   "latest": {
-    "date": "2026-07-06",
-    "theme": "政策宽松、平台更迭与理论突破共塑AI新格局",
-    "generated_at": "2026-07-06T13:08:16.523016+08:00",
-    "total_items": 9,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260706.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260706.html"
+    "date": "2026-07-07",
+    "theme": "监管与突破交织，AI社会影响加速显现",
+    "generated_at": "2026-07-07T12:48:40.547434+08:00",
+    "total_items": 14,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260707.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260707.html"
   },
   "dates": [
+    {
+      "date": "2026-07-07",
+      "theme": "监管与突破交织，AI社会影响加速显现",
+      "generated_at": "2026-07-07T12:48:40.547434+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260707.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260707.html"
+    },
     {
       "date": "2026-07-06",
       "theme": "政策宽松、平台更迭与理论突破共塑AI新格局",
