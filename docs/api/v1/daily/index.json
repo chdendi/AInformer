@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-07-07T12:48:40.629636+08:00",
-  "total_days": 61,
+  "updated_at": "2026-07-08T12:14:01.427644+08:00",
+  "total_days": 62,
   "latest": {
-    "date": "2026-07-07",
-    "theme": "监管与突破交织，AI社会影响加速显现",
-    "generated_at": "2026-07-07T12:48:40.547434+08:00",
+    "date": "2026-07-08",
+    "theme": "自研芯片、出口管制与可解释性突破共振",
+    "generated_at": "2026-07-08T12:14:01.344901+08:00",
     "total_items": 14,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260707.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260707.html"
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260708.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260708.html"
   },
   "dates": [
+    {
+      "date": "2026-07-08",
+      "theme": "自研芯片、出口管制与可解释性突破共振",
+      "generated_at": "2026-07-08T12:14:01.344901+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260708.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260708.html"
+    },
     {
       "date": "2026-07-07",
       "theme": "监管与突破交织，AI社会影响加速显现",
