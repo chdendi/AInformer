@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-07-08T12:14:01.427644+08:00",
-  "total_days": 62,
+  "updated_at": "2026-07-09T12:59:01.821860+08:00",
+  "total_days": 63,
   "latest": {
-    "date": "2026-07-08",
-    "theme": "自研芯片、出口管制与可解释性突破共振",
-    "generated_at": "2026-07-08T12:14:01.344901+08:00",
-    "total_items": 14,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260708.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260708.html"
+    "date": "2026-07-09",
+    "theme": "",
+    "generated_at": "2026-07-09T12:59:01.732821+08:00",
+    "total_items": 12,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260709.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260709.html"
   },
   "dates": [
+    {
+      "date": "2026-07-09",
+      "theme": "",
+      "generated_at": "2026-07-09T12:59:01.732821+08:00",
+      "total_items": 12,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260709.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260709.html"
+    },
     {
       "date": "2026-07-08",
       "theme": "自研芯片、出口管制与可解释性突破共振",
