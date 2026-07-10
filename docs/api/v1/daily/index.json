@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-07-09T12:59:01.821860+08:00",
-  "total_days": 63,
+  "updated_at": "2026-07-10T12:48:47.673323+08:00",
+  "total_days": 64,
   "latest": {
-    "date": "2026-07-09",
-    "theme": "",
-    "generated_at": "2026-07-09T12:59:01.732821+08:00",
-    "total_items": 12,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260709.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260709.html"
+    "date": "2026-07-10",
+    "theme": "GPT-5.6 与智能代理引领 AI 范式升级",
+    "generated_at": "2026-07-10T12:48:47.585269+08:00",
+    "total_items": 15,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260710.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260710.html"
   },
   "dates": [
+    {
+      "date": "2026-07-10",
+      "theme": "GPT-5.6 与智能代理引领 AI 范式升级",
+      "generated_at": "2026-07-10T12:48:47.585269+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260710.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260710.html"
+    },
     {
       "date": "2026-07-09",
       "theme": "",
