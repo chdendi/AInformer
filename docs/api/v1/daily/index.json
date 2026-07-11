@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-07-10T12:48:47.673323+08:00",
-  "total_days": 64,
+  "updated_at": "2026-07-11T12:09:53.115951+08:00",
+  "total_days": 65,
   "latest": {
-    "date": "2026-07-10",
-    "theme": "GPT-5.6 与智能代理引领 AI 范式升级",
-    "generated_at": "2026-07-10T12:48:47.585269+08:00",
+    "date": "2026-07-11",
+    "theme": "巨头角力升级：苹果诉OpenAI窃密，腾讯接盘Manus",
+    "generated_at": "2026-07-11T12:09:53.050434+08:00",
     "total_items": 15,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260710.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260710.html"
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260711.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260711.html"
   },
   "dates": [
+    {
+      "date": "2026-07-11",
+      "theme": "巨头角力升级：苹果诉OpenAI窃密，腾讯接盘Manus",
+      "generated_at": "2026-07-11T12:09:53.050434+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260711.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260711.html"
+    },
     {
       "date": "2026-07-10",
       "theme": "GPT-5.6 与智能代理引领 AI 范式升级",
