@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-07-13T12:31:03.731429+08:00",
-  "total_days": 67,
+  "updated_at": "2026-07-14T11:55:36.971189+08:00",
+  "total_days": 68,
   "latest": {
-    "date": "2026-07-13",
-    "theme": "AI代理进化与模型价格战并进",
-    "generated_at": "2026-07-13T12:31:03.643889+08:00",
-    "total_items": 13,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260713.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260713.html"
+    "date": "2026-07-14",
+    "theme": "定价战火与开源困局交织，AI生态面临重塑",
+    "generated_at": "2026-07-14T11:55:36.845114+08:00",
+    "total_items": 12,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260714.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260714.html"
   },
   "dates": [
+    {
+      "date": "2026-07-14",
+      "theme": "定价战火与开源困局交织，AI生态面临重塑",
+      "generated_at": "2026-07-14T11:55:36.845114+08:00",
+      "total_items": 12,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260714.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260714.html"
+    },
     {
       "date": "2026-07-13",
       "theme": "AI代理进化与模型价格战并进",
