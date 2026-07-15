@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-07-14T11:55:36.971189+08:00",
-  "total_days": 68,
+  "updated_at": "2026-07-15T11:57:42.433141+08:00",
+  "total_days": 69,
   "latest": {
-    "date": "2026-07-14",
-    "theme": "定价战火与开源困局交织，AI生态面临重塑",
-    "generated_at": "2026-07-14T11:55:36.845114+08:00",
-    "total_items": 12,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260714.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260714.html"
+    "date": "2026-07-15",
+    "theme": "OpenAI硬件亮相，DeepSeek再冲IPO，AI编程爆发",
+    "generated_at": "2026-07-15T11:57:42.252701+08:00",
+    "total_items": 13,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260715.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260715.html"
   },
   "dates": [
+    {
+      "date": "2026-07-15",
+      "theme": "OpenAI硬件亮相，DeepSeek再冲IPO，AI编程爆发",
+      "generated_at": "2026-07-15T11:57:42.252701+08:00",
+      "total_items": 13,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260715.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260715.html"
+    },
     {
       "date": "2026-07-14",
       "theme": "定价战火与开源困局交织，AI生态面临重塑",
