@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-07-15T11:57:42.433141+08:00",
-  "total_days": 69,
+  "updated_at": "2026-07-16T12:00:44.257178+08:00",
+  "total_days": 70,
   "latest": {
-    "date": "2026-07-15",
-    "theme": "OpenAI硬件亮相，DeepSeek再冲IPO，AI编程爆发",
-    "generated_at": "2026-07-15T11:57:42.252701+08:00",
-    "total_items": 13,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260715.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260715.html"
+    "date": "2026-07-16",
+    "theme": "自动化安全与端侧模型引领AI新落地浪潮",
+    "generated_at": "2026-07-16T12:00:44.173085+08:00",
+    "total_items": 15,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260716.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260716.html"
   },
   "dates": [
+    {
+      "date": "2026-07-16",
+      "theme": "自动化安全与端侧模型引领AI新落地浪潮",
+      "generated_at": "2026-07-16T12:00:44.173085+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260716.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260716.html"
+    },
     {
       "date": "2026-07-15",
       "theme": "OpenAI硬件亮相，DeepSeek再冲IPO，AI编程爆发",
