@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-07-20T12:35:05.304285+08:00",
-  "total_days": 74,
+  "updated_at": "2026-07-21T12:14:40.598702+08:00",
+  "total_days": 75,
   "latest": {
-    "date": "2026-07-20",
-    "theme": "开源对垒与战略加速，AI竞逐进入多线博弈",
-    "generated_at": "2026-07-20T12:35:05.209016+08:00",
-    "total_items": 10,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260720.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260720.html"
+    "date": "2026-07-21",
+    "theme": "AI 芯片竞争、版权与多模态创新并行",
+    "generated_at": "2026-07-21T12:14:40.426771+08:00",
+    "total_items": 11,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260721.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260721.html"
   },
   "dates": [
+    {
+      "date": "2026-07-21",
+      "theme": "AI 芯片竞争、版权与多模态创新并行",
+      "generated_at": "2026-07-21T12:14:40.426771+08:00",
+      "total_items": 11,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260721.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260721.html"
+    },
     {
       "date": "2026-07-20",
       "theme": "开源对垒与战略加速，AI竞逐进入多线博弈",
