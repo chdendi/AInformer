@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-07-23T12:15:23.651964+08:00",
-  "total_days": 77,
+  "updated_at": "2026-07-24T12:13:39.304004+08:00",
+  "total_days": 78,
   "latest": {
-    "date": "2026-07-23",
-    "theme": "代理崛起与意外失控：AI 进入攻防新篇章",
-    "generated_at": "2026-07-23T12:15:23.560843+08:00",
-    "total_items": 15,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260723.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260723.html"
+    "date": "2026-07-24",
+    "theme": "语音升级、AGI 誓言与失控智能体争议",
+    "generated_at": "2026-07-24T12:13:39.215440+08:00",
+    "total_items": 16,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260724.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260724.html"
   },
   "dates": [
+    {
+      "date": "2026-07-24",
+      "theme": "语音升级、AGI 誓言与失控智能体争议",
+      "generated_at": "2026-07-24T12:13:39.215440+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260724.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260724.html"
+    },
     {
       "date": "2026-07-23",
       "theme": "代理崛起与意外失控：AI 进入攻防新篇章",
