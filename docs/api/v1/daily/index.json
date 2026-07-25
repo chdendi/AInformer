@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-07-24T12:13:39.304004+08:00",
-  "total_days": 78,
+  "updated_at": "2026-07-25T12:02:39.899087+08:00",
+  "total_days": 79,
   "latest": {
-    "date": "2026-07-24",
-    "theme": "语音升级、AGI 誓言与失控智能体争议",
-    "generated_at": "2026-07-24T12:13:39.215440+08:00",
+    "date": "2026-07-25",
+    "theme": "模型发布与硬件角力齐飞，AI竞赛进入新一轮多维碰撞。",
+    "generated_at": "2026-07-25T12:02:39.776730+08:00",
     "total_items": 16,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260724.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260724.html"
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260725.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260725.html"
   },
   "dates": [
+    {
+      "date": "2026-07-25",
+      "theme": "模型发布与硬件角力齐飞，AI竞赛进入新一轮多维碰撞。",
+      "generated_at": "2026-07-25T12:02:39.776730+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260725.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260725.html"
+    },
     {
       "date": "2026-07-24",
       "theme": "语音升级、AGI 誓言与失控智能体争议",
