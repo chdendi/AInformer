@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-07-29T12:06:58.517980+08:00",
-  "total_days": 83,
+  "updated_at": "2026-07-30T11:56:13.781655+08:00",
+  "total_days": 84,
   "latest": {
-    "date": "2026-07-29",
-    "theme": "AI代理安全、加密突破与智能体应用拓展",
-    "generated_at": "2026-07-29T12:06:58.233465+08:00",
-    "total_items": 16,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260729.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260729.html"
+    "date": "2026-07-30",
+    "theme": "",
+    "generated_at": "2026-07-30T11:56:13.575319+08:00",
+    "total_items": 15,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260730.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260730.html"
   },
   "dates": [
+    {
+      "date": "2026-07-30",
+      "theme": "",
+      "generated_at": "2026-07-30T11:56:13.575319+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260730.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260730.html"
+    },
     {
       "date": "2026-07-29",
       "theme": "AI代理安全、加密突破与智能体应用拓展",
