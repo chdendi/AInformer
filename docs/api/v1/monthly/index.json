@@ -1,16 +1,25 @@
 {
-  "updated_at": "2026-07-31T12:23:07.785067+08:00",
-  "total_months": 2,
+  "updated_at": "2026-08-01T11:13:09.184394+08:00",
+  "total_months": 3,
   "latest": {
-    "label": "2026-06",
-    "title": "2026 年 6 月 AI 月度回顾",
-    "tagline": "大模型激起安全风暴，AI代理重塑生态格局",
-    "total_items": 516,
-    "generated_at": "2026-07-01T11:21:16.409448+08:00",
-    "data_url": "https://chdendi.github.io/AInformer/data/monthly/202606.json",
-    "html_url": "https://chdendi.github.io/AInformer/monthly/202606.html"
+    "label": "2026-07",
+    "title": "2026 年 7 月 AI 月度回顾",
+    "tagline": "",
+    "total_items": 534,
+    "generated_at": "2026-08-01T11:13:09.099510+08:00",
+    "data_url": "https://chdendi.github.io/AInformer/data/monthly/202607.json",
+    "html_url": "https://chdendi.github.io/AInformer/monthly/202607.html"
   },
   "months": [
+    {
+      "label": "2026-07",
+      "title": "2026 年 7 月 AI 月度回顾",
+      "tagline": "",
+      "total_items": 534,
+      "generated_at": "2026-08-01T11:13:09.099510+08:00",
+      "data_url": "https://chdendi.github.io/AInformer/data/monthly/202607.json",
+      "html_url": "https://chdendi.github.io/AInformer/monthly/202607.html"
+    },
     {
       "label": "2026-06",
       "title": "2026 年 6 月 AI 月度回顾",
