@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-08-02T12:23:56.302109+08:00",
-  "total_days": 87,
+  "updated_at": "2026-08-03T12:30:17.397083+08:00",
+  "total_days": 88,
   "latest": {
-    "date": "2026-08-02",
-    "theme": "",
-    "generated_at": "2026-08-02T12:23:56.200604+08:00",
-    "total_items": 9,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260802.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260802.html"
+    "date": "2026-08-03",
+    "theme": "AI Agent迈向生产、自进化与安全治理",
+    "generated_at": "2026-08-03T12:30:17.307398+08:00",
+    "total_items": 11,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260803.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260803.html"
   },
   "dates": [
+    {
+      "date": "2026-08-03",
+      "theme": "AI Agent迈向生产、自进化与安全治理",
+      "generated_at": "2026-08-03T12:30:17.307398+08:00",
+      "total_items": 11,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260803.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260803.html"
+    },
     {
       "date": "2026-08-02",
       "theme": "",
