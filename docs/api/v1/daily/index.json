@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-08-04T12:05:03.858003+08:00",
-  "total_days": 89,
+  "updated_at": "2026-08-05T12:00:40.426191+08:00",
+  "total_days": 90,
   "latest": {
-    "date": "2026-08-04",
-    "theme": "中国开源模型霸榜，监管新规落地",
-    "generated_at": "2026-08-04T12:05:03.806847+08:00",
-    "total_items": 16,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260804.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260804.html"
+    "date": "2026-08-05",
+    "theme": "百亿算力契约与政策变数交织，开源工具与本体智能齐飞",
+    "generated_at": "2026-08-05T12:00:40.332023+08:00",
+    "total_items": 15,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260805.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260805.html"
   },
   "dates": [
+    {
+      "date": "2026-08-05",
+      "theme": "百亿算力契约与政策变数交织，开源工具与本体智能齐飞",
+      "generated_at": "2026-08-05T12:00:40.332023+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260805.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260805.html"
+    },
     {
       "date": "2026-08-04",
       "theme": "中国开源模型霸榜，监管新规落地",
