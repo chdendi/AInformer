@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-08-07T11:52:37.077666+08:00",
-  "total_days": 92,
+  "updated_at": "2026-08-08T10:55:07.219322+08:00",
+  "total_days": 93,
   "latest": {
-    "date": "2026-08-07",
-    "theme": "AI安全敲响警钟，Agentic能力竞逐白热化",
-    "generated_at": "2026-08-07T11:52:36.911410+08:00",
-    "total_items": 14,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260807.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260807.html"
+    "date": "2026-08-08",
+    "theme": "AI安全与多智能体架构引发关注",
+    "generated_at": "2026-08-08T10:55:07.123597+08:00",
+    "total_items": 12,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260808.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260808.html"
   },
   "dates": [
+    {
+      "date": "2026-08-08",
+      "theme": "AI安全与多智能体架构引发关注",
+      "generated_at": "2026-08-08T10:55:07.123597+08:00",
+      "total_items": 12,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260808.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260808.html"
+    },
     {
       "date": "2026-08-07",
       "theme": "AI安全敲响警钟，Agentic能力竞逐白热化",
