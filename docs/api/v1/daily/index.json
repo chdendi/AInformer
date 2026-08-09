@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-08-08T10:55:07.219322+08:00",
-  "total_days": 93,
+  "updated_at": "2026-08-09T11:01:55.906069+08:00",
+  "total_days": 94,
   "latest": {
-    "date": "2026-08-08",
-    "theme": "AI安全与多智能体架构引发关注",
-    "generated_at": "2026-08-08T10:55:07.123597+08:00",
-    "total_items": 12,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260808.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260808.html"
+    "date": "2026-08-09",
+    "theme": "大模型竞赛白热化：巨参、越狱与芯片革新",
+    "generated_at": "2026-08-09T11:01:55.831580+08:00",
+    "total_items": 13,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260809.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260809.html"
   },
   "dates": [
+    {
+      "date": "2026-08-09",
+      "theme": "大模型竞赛白热化：巨参、越狱与芯片革新",
+      "generated_at": "2026-08-09T11:01:55.831580+08:00",
+      "total_items": 13,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260809.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260809.html"
+    },
     {
       "date": "2026-08-08",
       "theme": "AI安全与多智能体架构引发关注",
