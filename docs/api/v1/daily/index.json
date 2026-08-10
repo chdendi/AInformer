@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-08-09T11:01:55.906069+08:00",
-  "total_days": 94,
+  "updated_at": "2026-08-10T11:11:12.034482+08:00",
+  "total_days": 95,
   "latest": {
-    "date": "2026-08-09",
-    "theme": "大模型竞赛白热化：巨参、越狱与芯片革新",
-    "generated_at": "2026-08-09T11:01:55.831580+08:00",
-    "total_items": 13,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260809.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260809.html"
+    "date": "2026-08-10",
+    "theme": "AI投资、模型创新与本土生态并行，安全反思引关注",
+    "generated_at": "2026-08-10T11:11:11.958262+08:00",
+    "total_items": 7,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260810.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260810.html"
   },
   "dates": [
+    {
+      "date": "2026-08-10",
+      "theme": "AI投资、模型创新与本土生态并行，安全反思引关注",
+      "generated_at": "2026-08-10T11:11:11.958262+08:00",
+      "total_items": 7,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260810.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260810.html"
+    },
     {
       "date": "2026-08-09",
       "theme": "大模型竞赛白热化：巨参、越狱与芯片革新",
