@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-08-11T11:05:05.943425+08:00",
-  "total_days": 96,
+  "updated_at": "2026-08-12T11:23:55.997985+08:00",
+  "total_days": 97,
   "latest": {
-    "date": "2026-08-11",
-    "theme": "攻防升级、开源回归、代理安全引热议",
-    "generated_at": "2026-08-11T11:05:05.849706+08:00",
-    "total_items": 12,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260811.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260811.html"
+    "date": "2026-08-12",
+    "theme": "",
+    "generated_at": "2026-08-12T11:23:55.799050+08:00",
+    "total_items": 13,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260812.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260812.html"
   },
   "dates": [
+    {
+      "date": "2026-08-12",
+      "theme": "",
+      "generated_at": "2026-08-12T11:23:55.799050+08:00",
+      "total_items": 13,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260812.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260812.html"
+    },
     {
       "date": "2026-08-11",
       "theme": "攻防升级、开源回归、代理安全引热议",
