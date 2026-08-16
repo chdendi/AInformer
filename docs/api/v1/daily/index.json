@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-08-15T10:14:10.324778+08:00",
-  "total_days": 100,
+  "updated_at": "2026-08-16T10:21:24.458779+08:00",
+  "total_days": 101,
   "latest": {
-    "date": "2026-08-15",
+    "date": "2026-08-16",
     "theme": "",
-    "generated_at": "2026-08-15T10:14:10.173114+08:00",
+    "generated_at": "2026-08-16T10:21:24.365005+08:00",
     "total_items": 15,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260815.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260815.html"
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260816.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260816.html"
   },
   "dates": [
+    {
+      "date": "2026-08-16",
+      "theme": "",
+      "generated_at": "2026-08-16T10:21:24.365005+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260816.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260816.html"
+    },
     {
       "date": "2026-08-15",
       "theme": "",
