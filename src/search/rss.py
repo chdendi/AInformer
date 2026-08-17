@@ -21,7 +21,6 @@ RSS_FEEDS: dict[str, dict[str, Any]] = {
     "meta_eng_ai": {"url": "https://engineering.fb.com/category/ai-research/feed/", "category": "industry"},
     "google_research": {"url": "https://research.google/blog/rss/", "category": "industry"},
     "nvidia_blog": {"url": "https://blogs.nvidia.com/feed/", "category": "industry"},
-    "microsoft_ai": {"url": "https://blogs.microsoft.com/ai/feed/", "category": "industry"},
     "aws_ml": {"url": "https://aws.amazon.com/blogs/machine-learning/feed/", "category": "industry"},
     # 英文媒体
     "verge_ai": {"url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml", "category": "industry"},
@@ -37,8 +36,7 @@ RSS_FEEDS: dict[str, dict[str, Any]] = {
     },
     # AI 专业媒体（内容密度高，每日必有新稿）
     "the_decoder": {"url": "https://the-decoder.com/feed/", "category": "industry"},
-    "wired_ai": {"url": "https://www.wired.com/feed/category/artificial-intelligence/latest/rss", "category": "industry"},
-    "semafor_ai": {"url": "https://www.semafor.com/rss/topic/ai", "category": "industry"},
+    "wired_ai": {"url": "https://www.wired.com/feed/tag/ai/latest/rss", "category": "industry"},
     # 实践派评论 / 长文
     "latent_space": {"url": "https://www.latent.space/feed", "category": "opinion"},
     "simon_willison": {"url": "https://simonwillison.net/atom/everything/", "category": "opinion"},
@@ -51,7 +49,6 @@ RSS_FEEDS: dict[str, dict[str, Any]] = {
     "interconnects": {"url": "https://www.interconnects.ai/feed", "category": "opinion"},
     "aisnakeoil": {"url": "https://www.aisnakeoil.com/feed.xml", "category": "opinion"},
     "karpathy_blog": {"url": "https://karpathy.github.io/feed.xml", "category": "opinion"},
-    "darioamodei_blog": {"url": "https://darioamodei.com/feed.xml", "category": "opinion"},
     "oneusefulthing": {"url": "https://www.oneusefulthing.org/feed", "category": "opinion"},
     # 高产观点写手 — Tavily 不可用时主要靠这几位撑住 opinion 栏目
     "gary_marcus": {"url": "https://garymarcus.substack.com/feed", "category": "opinion"},
@@ -62,7 +59,6 @@ RSS_FEEDS: dict[str, dict[str, Any]] = {
     "hamel_husain": {"url": "https://hamel.dev/index.xml", "category": "opinion"},
     "jay_alammar": {"url": "https://jalammar.github.io/feed.xml", "category": "opinion"},
     "semianalysis": {"url": "https://www.semianalysis.com/feed/", "category": "opinion"},
-    "deeplearning_ai_batch": {"url": "https://www.deeplearning.ai/the-batch/feed/", "category": "opinion"},
     "hn_ai_discussions": {
         "url": "https://hnrss.org/frontpage?points=75&q=AI+OR+LLM+OR+agents+OR+alignment+OR+OpenAI+OR+Anthropic",
         "category": "opinion",
@@ -77,31 +73,43 @@ RSS_FEEDS: dict[str, dict[str, Any]] = {
     # 中文
     # 机器之心已下线 RSS（站点全部返回 HTML 而非 RSS），暂依赖 qbitai/36kr/direct scrape
     "qbitai": {"url": "https://www.qbitai.com/feed", "category": "chinese"},
-    "36kr_newsflash": {"url": "https://36kr.com/feed-newsflash", "category": "chinese"},
-    "36kr_ai": {"url": "https://36kr.com/feed?cid=ai", "category": "chinese"},
     "qwen_blog": {"url": "https://qwenlm.github.io/blog/index.xml", "category": "chinese"},
     "leiphone": {"url": "https://www.leiphone.com/feed", "category": "chinese"},
     "sspai": {"url": "https://sspai.com/feed", "category": "chinese"},
-    "geekpark": {"url": "https://www.geekpark.net/feed", "category": "chinese"},
+    "geekpark": {"url": "https://www.geekpark.net/rss", "category": "chinese"},
     # 游戏 / 科技媒体（可能含 AI 交叉内容，由 LLM 筛选）
     "steam_news": {"url": "https://store.steampowered.com/feeds/news.xml", "category": "industry"},
     "ign": {"url": "https://feeds.feedburner.com/ign/all", "category": "industry"},
     "pcgamer": {"url": "https://www.pcgamer.com/uk/rss/", "category": "industry"},
 }
 
-UA = "Mozilla/5.0 (compatible; AInformer/1.0; +https://github.com)"
+RSS_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+    ),
+    "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml;q=0.9, */*;q=0.8",
+}
 
 
 async def _fetch(client: httpx.AsyncClient, name: str, meta: dict[str, Any]):
     try:
-        r = await client.get(meta["url"], timeout=20, follow_redirects=True, headers={"User-Agent": UA})
+        r = await client.get(meta["url"], timeout=20, follow_redirects=True, headers=RSS_HEADERS)
         if r.status_code != 200:
             log.warning("RSS %s -> HTTP %s", name, r.status_code)
             return name, None
         parsed = feedparser.parse(r.text)
+        if not parsed.entries:
+            log.warning(
+                "RSS %s returned no parseable entries (content-type=%s, bozo=%s)",
+                name,
+                r.headers.get("content-type", "unknown"),
+                bool(getattr(parsed, "bozo", False)),
+            )
+            return name, None
         return name, parsed
     except Exception as e:
-        log.warning("RSS %s failed: %s", name, e)
+        log.warning("RSS %s failed: %r", name, e)
         return name, None
 
 

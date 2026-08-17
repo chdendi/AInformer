@@ -11,7 +11,42 @@ from tenacity import AsyncRetrying, stop_after_attempt, wait_exponential
 log = logging.getLogger(__name__)
 
 TAVILY_URL = "https://api.tavily.com/search"
-_SEMAPHORE = asyncio.Semaphore(4)
+_SEMAPHORE = asyncio.Semaphore(1)
+_REQUEST_LOCK = asyncio.Lock()
+_LAST_REQUEST_AT = 0.0
+_MIN_REQUEST_INTERVAL_SECONDS = 1.0
+_DISABLED_REASON = ""
+_PERMANENT_FAILURE_STATUSES = {400, 401, 402, 403, 422, 432}
+
+
+async def _wait_for_request_slot() -> None:
+    """Serialize API calls so a single workflow run stays below provider rate limits."""
+    global _LAST_REQUEST_AT
+    async with _REQUEST_LOCK:
+        now = asyncio.get_running_loop().time()
+        wait_for = _MIN_REQUEST_INTERVAL_SECONDS - (now - _LAST_REQUEST_AT)
+        if wait_for > 0:
+            await asyncio.sleep(wait_for)
+        _LAST_REQUEST_AT = asyncio.get_running_loop().time()
+
+
+def _response_detail(response: httpx.Response, api_key: str) -> str:
+    body = " ".join(response.text.split())[:300]
+    if api_key:
+        body = body.replace(api_key, "***")
+    return body or "no response body"
+
+
+def _disable_for_run(status_code: int, detail: str) -> None:
+    global _DISABLED_REASON
+    if _DISABLED_REASON:
+        return
+    _DISABLED_REASON = f"HTTP {status_code}: {detail}"
+    log.error(
+        "Tavily disabled for this workflow run after a non-retriable response (%s). "
+        "Check TAVILY_API_KEY, account credits, and provider status.",
+        _DISABLED_REASON,
+    )
 
 
 async def tavily_search(
@@ -25,6 +60,9 @@ async def tavily_search(
     if not api_key:
         log.warning("TAVILY_API_KEY not set; skipping query: %s", query)
         return []
+    if _DISABLED_REASON:
+        log.debug("Tavily skipped for query [%s]: %s", query, _DISABLED_REASON)
+        return []
 
     payload = {
         "api_key": api_key,
@@ -37,6 +75,8 @@ async def tavily_search(
     }
 
     async with _SEMAPHORE:
+        if _DISABLED_REASON:
+            return []
         try:
             async for attempt in AsyncRetrying(
                 stop=stop_after_attempt(2),
@@ -44,8 +84,12 @@ async def tavily_search(
                 reraise=True,
             ):
                 with attempt:
+                    await _wait_for_request_slot()
                     async with httpx.AsyncClient(timeout=30) as client:
                         r = await client.post(TAVILY_URL, json=payload)
+                        if r.status_code in _PERMANENT_FAILURE_STATUSES:
+                            _disable_for_run(r.status_code, _response_detail(r, api_key))
+                            return []
                         r.raise_for_status()
                         data = r.json()
                         return [
@@ -61,7 +105,7 @@ async def tavily_search(
                             if x.get("url")
                         ]
         except Exception as e:
-            log.warning("Tavily query failed [%s]: %s", query, e)
+            log.warning("Tavily query failed [%s]: %r", query, e)
             return []
     return []
 

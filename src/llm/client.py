@@ -3,6 +3,7 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
+from dataclasses import dataclass
 from typing import Any
 
 from openai import AsyncOpenAI
@@ -24,6 +25,16 @@ _PRICE_OUTPUT_CNY_PER_M = 7.92   # 输出
 
 _USAGE_LOCK = asyncio.Lock()
 _USAGE: dict[str, int] = {"calls": 0, "prompt_tokens": 0, "completion_tokens": 0}
+_MAX_JSON_RETRY_TOKENS = 8192
+
+
+@dataclass(frozen=True)
+class _CompletionResult:
+    parsed: dict[str, Any]
+    finish_reason: str
+    completion_tokens: int
+    content_length: int
+    reasoning_length: int
 
 
 async def _record_usage(resp: Any) -> None:
@@ -66,27 +77,25 @@ def make_client(cfg: LLMConfig) -> AsyncOpenAI:
     return AsyncOpenAI(api_key=cfg.api_key, base_url=cfg.base_url)
 
 
-def _parse_json_content(content: str) -> Any:
-    try:
-        return json.loads(content)
-    except json.JSONDecodeError:
-        pass
-
+def _parse_json_content(content: str) -> dict[str, Any]:
+    candidates = [content]
     cleaned = content.strip().strip("`")
     if cleaned.startswith("json"):
         cleaned = cleaned[4:].strip()
-    try:
-        return json.loads(cleaned)
-    except json.JSONDecodeError:
-        pass
+    candidates.append(cleaned)
 
     start = cleaned.find("{")
     end = cleaned.rfind("}")
     if start != -1 and end > start:
+        candidates.append(cleaned[start:end + 1])
+
+    for candidate in candidates:
         try:
-            return json.loads(cleaned[start:end + 1])
+            parsed = json.loads(candidate)
         except json.JSONDecodeError:
-            pass
+            continue
+        if isinstance(parsed, dict):
+            return parsed
 
     log.warning("JSON parse failed. Raw content (first 500 chars): %s", content[:500])
     return {}
@@ -113,7 +122,7 @@ async def _chat_completion(
     temperature: float,
     max_tokens: int,
     json_mode: bool,
-) -> Any:
+) -> _CompletionResult:
     kwargs: dict[str, Any] = {
         "model": cfg.model,
         "messages": [
@@ -128,18 +137,66 @@ async def _chat_completion(
 
     resp = await client.chat.completions.create(**kwargs)
     await _record_usage(resp)
-    content = resp.choices[0].message.content or "{}"
+    if not resp.choices:
+        raise RuntimeError("LLM response did not include a completion choice")
+
+    message = resp.choices[0].message
+    content = getattr(message, "content", None) or ""
+    reasoning = getattr(message, "reasoning_content", None) or ""
     parsed = _parse_json_content(content)
+    finish_reason = _finish_reason(resp)
+    completion_tokens = _completion_tokens(resp)
 
     if not parsed:
         log.warning(
-            "LLM returned empty JSON object (json_mode=%s, finish=%s, completion=%d, content_len=%d)",
+            "LLM returned unusable JSON (model=%s, json_mode=%s, finish=%s, completion=%d, content_len=%d, reasoning_len=%d)",
+            cfg.model,
             json_mode,
-            _finish_reason(resp),
-            _completion_tokens(resp),
+            finish_reason,
+            completion_tokens,
             len(content),
+            len(reasoning),
         )
-    return parsed
+    return _CompletionResult(
+        parsed=parsed,
+        finish_reason=finish_reason,
+        completion_tokens=completion_tokens,
+        content_length=len(content),
+        reasoning_length=len(reasoning),
+    )
+
+
+async def _request_completion(
+    client: AsyncOpenAI,
+    cfg: LLMConfig,
+    system: str,
+    user: str,
+    *,
+    temperature: float,
+    max_tokens: int,
+    json_mode: bool,
+) -> _CompletionResult:
+    async for attempt in AsyncRetrying(
+        stop=stop_after_attempt(3),
+        wait=wait_exponential(min=2, max=20),
+        retry=retry_if_exception_type(Exception),
+        reraise=True,
+    ):
+        with attempt:
+            return await _chat_completion(
+                client,
+                cfg,
+                system,
+                user,
+                temperature=temperature,
+                max_tokens=max_tokens,
+                json_mode=json_mode,
+            )
+    raise RuntimeError("unreachable")
+
+
+def _expanded_json_budget(max_tokens: int) -> int:
+    return min(max(max_tokens * 2, 4096), _MAX_JSON_RETRY_TOKENS)
 
 
 async def chat_json(
@@ -151,37 +208,62 @@ async def chat_json(
     temperature: float = 0.3,
     max_tokens: int = 4000,
 ) -> dict[str, Any]:
-    """Call chat completion and parse JSON. Retries on transient failures."""
-    async for attempt in AsyncRetrying(
-        stop=stop_after_attempt(3),
-        wait=wait_exponential(min=2, max=20),
-        retry=retry_if_exception_type(Exception),
-        reraise=True,
-    ):
-        with attempt:
-            result = await _chat_completion(
+    """Call a model for JSON, recovering from incomplete structured output.
+
+    Reasoning-capable models can consume the entire completion budget before
+    closing their JSON object. A retry must therefore increase the budget,
+    rather than repeating the same truncated request unchanged.
+    """
+    first = await _request_completion(
+        client,
+        cfg,
+        system,
+        user,
+        temperature=temperature,
+        max_tokens=max_tokens,
+        json_mode=True,
+    )
+    if first.parsed:
+        return first.parsed
+
+    retry_tokens = max_tokens
+    if first.finish_reason == "length":
+        retry_tokens = _expanded_json_budget(max_tokens)
+        if retry_tokens > max_tokens:
+            log.warning(
+                "LLM JSON was truncated (model=%s, completion=%d, content_len=%d); retrying with max_tokens=%d",
+                cfg.model,
+                first.completion_tokens,
+                first.content_length,
+                retry_tokens,
+            )
+            enlarged = await _request_completion(
                 client,
                 cfg,
                 system,
                 user,
                 temperature=temperature,
-                max_tokens=max_tokens,
+                max_tokens=retry_tokens,
                 json_mode=True,
             )
-            if result:
-                return result
+            if enlarged.parsed:
+                return enlarged.parsed
 
-            log.warning("Retrying LLM JSON call once without response_format after empty JSON result")
-            return await _chat_completion(
-                client,
-                cfg,
-                system,
-                user,
-                temperature=temperature,
-                max_tokens=max_tokens,
-                json_mode=False,
-            )
-    return {}
+    log.warning(
+        "Retrying LLM JSON without response_format (model=%s, max_tokens=%d)",
+        cfg.model,
+        retry_tokens,
+    )
+    fallback = await _request_completion(
+        client,
+        cfg,
+        system,
+        user,
+        temperature=temperature,
+        max_tokens=retry_tokens,
+        json_mode=False,
+    )
+    return fallback.parsed
 
 
 async def chat_text(
