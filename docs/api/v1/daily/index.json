@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-08-17T10:20:12.467940+08:00",
+  "updated_at": "2026-08-17T12:20:22.882441+08:00",
   "total_days": 102,
   "latest": {
     "date": "2026-08-17",
-    "theme": "",
-    "generated_at": "2026-08-17T10:20:12.372269+08:00",
-    "total_items": 12,
+    "theme": "AI安全与资本博弈，巨头动作频频",
+    "generated_at": "2026-08-17T12:20:22.775066+08:00",
+    "total_items": 16,
     "data_url": "https://chdendi.github.io/AInformer/data/daily/20260817.json",
     "html_url": "https://chdendi.github.io/AInformer/daily/20260817.html"
   },
   "dates": [
     {
       "date": "2026-08-17",
-      "theme": "",
-      "generated_at": "2026-08-17T10:20:12.372269+08:00",
-      "total_items": 12,
+      "theme": "AI安全与资本博弈，巨头动作频频",
+      "generated_at": "2026-08-17T12:20:22.775066+08:00",
+      "total_items": 16,
       "data_url": "https://chdendi.github.io/AInformer/data/daily/20260817.json",
       "html_url": "https://chdendi.github.io/AInformer/daily/20260817.html"
     },
