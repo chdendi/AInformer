@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-08-17T13:08:41.637195+08:00",
+  "updated_at": "2026-08-17T13:12:07.439784+08:00",
   "total_days": 102,
   "latest": {
     "date": "2026-08-17",
-    "theme": "安全红灯与资本热潮同台",
-    "generated_at": "2026-08-17T13:08:41.551019+08:00",
-    "total_items": 12,
+    "theme": "AI安全与巨额投入并行",
+    "generated_at": "2026-08-17T13:12:07.330325+08:00",
+    "total_items": 16,
     "data_url": "https://chdendi.github.io/AInformer/data/daily/20260817.json",
     "html_url": "https://chdendi.github.io/AInformer/daily/20260817.html"
   },
   "dates": [
     {
       "date": "2026-08-17",
-      "theme": "安全红灯与资本热潮同台",
-      "generated_at": "2026-08-17T13:08:41.551019+08:00",
-      "total_items": 12,
+      "theme": "AI安全与巨额投入并行",
+      "generated_at": "2026-08-17T13:12:07.330325+08:00",
+      "total_items": 16,
       "data_url": "https://chdendi.github.io/AInformer/data/daily/20260817.json",
       "html_url": "https://chdendi.github.io/AInformer/daily/20260817.html"
     },

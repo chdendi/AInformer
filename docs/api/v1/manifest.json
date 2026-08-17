@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "AI 资讯日报 JSON API，提供每日/每月/每年 AI 行业简报的结构化数据。",
   "site_url": "https://chdendi.github.io/AInformer",
-  "updated_at": "2026-08-17T13:08:41.638360+08:00",
+  "updated_at": "2026-08-17T13:12:07.441221+08:00",
   "stats": {
     "total_daily_reports": 102,
     "total_monthly_reports": 3,
