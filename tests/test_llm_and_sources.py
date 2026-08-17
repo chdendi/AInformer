@@ -42,6 +42,10 @@ class ChatJsonTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(result, {"items": []})
         self.assertEqual(create.await_count, 2)
         self.assertEqual(create.await_args_list[0].kwargs["max_tokens"], 3000)
+        self.assertEqual(
+            create.await_args_list[0].kwargs["extra_body"],
+            {"thinking": {"type": "disabled"}},
+        )
         self.assertEqual(create.await_args_list[1].kwargs["max_tokens"], 6000)
         self.assertEqual(create.await_args_list[1].kwargs["response_format"], {"type": "json_object"})
 

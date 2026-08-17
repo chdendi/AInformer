@@ -128,6 +128,7 @@ async def _chat_completion(
     }
     if json_mode:
         kwargs["response_format"] = {"type": "json_object"}
+    kwargs["extra_body"] = {"thinking": {"type": cfg.thinking_mode}}
 
     resp = await client.chat.completions.create(**kwargs)
     await _record_usage(resp)

@@ -26,16 +26,21 @@ class LLMConfig:
     api_key: str
     base_url: str
     model: str
+    thinking_mode: str = "disabled"
 
     @classmethod
     def from_env(cls) -> "LLMConfig":
         api_key = os.environ.get("DEEPSEEK_API_KEY", "").strip()
         if not api_key:
             raise RuntimeError("DEEPSEEK_API_KEY is not set")
+        thinking_mode = os.environ.get("DEEPSEEK_THINKING_MODE", "disabled").strip().lower()
+        if thinking_mode not in {"enabled", "disabled"}:
+            raise RuntimeError("DEEPSEEK_THINKING_MODE must be 'enabled' or 'disabled'")
         return cls(
             api_key=api_key,
             base_url=os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com/v1"),
             model=os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-flash"),
+            thinking_mode=thinking_mode,
         )
 
 
