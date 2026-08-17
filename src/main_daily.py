@@ -292,8 +292,7 @@ async def main_async(target_date: date, dedupe_days: int, dry: bool) -> None:
     usage = get_usage_summary()
     print(
         f"   💰 LLM usage: {usage['calls']} calls · "
-        f"prompt={usage['prompt_tokens']:,} · completion={usage['completion_tokens']:,} · "
-        f"≈ ¥{usage['cost_cny']}"
+        f"prompt={usage['prompt_tokens']:,} · completion={usage['completion_tokens']:,}"
     )
 
 

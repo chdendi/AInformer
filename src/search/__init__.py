@@ -1,5 +1,5 @@
 """Search modules for AInformer.
 
-Provides RSS collection, web search (Tavily → DDG → direct fallback),
+Provides RSS collection, web search (DDG → direct fallback),
 and GitHub trending scraping.
 """

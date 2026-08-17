@@ -1,4 +1,4 @@
-"""DuckDuckGo search via HTML scraping — zero-API-key alternative to Tavily.
+"""DuckDuckGo search via HTML scraping.
 
 Uses DuckDuckGo Lite (no-JS version) to avoid blocking. When rate-limited
 (HTTP 429 / 403), degrades gracefully by returning an empty list.

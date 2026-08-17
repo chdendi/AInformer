@@ -43,7 +43,6 @@ AInformer/
 │   ├── llm/client.py      DeepSeek (OpenAI 兼容) 客户端
 │   ├── search/
 │   │   ├── rss.py         OpenAI/Anthropic/TheVerge/36kr/ArXiv 等 RSS
-│   │   └── tavily.py      Tavily Web Search
 │   ├── agents/
 │   │   ├── definitions.py 4 个 Agent 的 query 集和 RSS 过滤
 │   │   └── runner.py      并行执行器

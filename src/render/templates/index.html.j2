@@ -1,6 +1,6 @@
 {% extends "base.html.j2" %}
 {% block title %}{% if daily and daily[0].theme %}{{ daily[0].theme }} · {% endif %}AInformer · 每日 AI 简报{% endblock %}
-{% block description %}{% if daily and daily[0].lede %}{{ daily[0].lede[:160] }}{% else %}由 DeepSeek + Tavily 自动生成的中文 AI 每日资讯日报。{% endif %}{% endblock %}
+{% block description %}{% if daily and daily[0].lede %}{{ daily[0].lede[:160] }}{% else %}由 DeepSeek 与公开信息源自动生成的中文 AI 每日资讯日报。{% endif %}{% endblock %}
 
 {% block extra_css %}
 .archive-grid{display:grid;gap:32px}

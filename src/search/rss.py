@@ -14,7 +14,7 @@ log = logging.getLogger(__name__)
 RSS_FEEDS: dict[str, dict[str, Any]] = {
     # 厂商官方
     "openai": {"url": "https://openai.com/news/rss.xml", "category": "industry"},
-    # Anthropic 已下线官方 RSS（2026-05 实测全部 404），暂依赖 Tavily 兜底
+    # Anthropic 已下线官方 RSS（2026-05 实测全部 404），由新闻源与直连抓取覆盖
     "deepmind": {"url": "https://deepmind.google/blog/rss.xml", "category": "industry"},
     "huggingface_blog": {"url": "https://huggingface.co/blog/feed.xml", "category": "industry"},
     # ai.meta.com 已下线 RSS，改用 Meta 工程博客 AI Research 分类
@@ -50,7 +50,7 @@ RSS_FEEDS: dict[str, dict[str, Any]] = {
     "aisnakeoil": {"url": "https://www.aisnakeoil.com/feed.xml", "category": "opinion"},
     "karpathy_blog": {"url": "https://karpathy.github.io/feed.xml", "category": "opinion"},
     "oneusefulthing": {"url": "https://www.oneusefulthing.org/feed", "category": "opinion"},
-    # 高产观点写手 — Tavily 不可用时主要靠这几位撑住 opinion 栏目
+    # 高产观点写手 — 为 opinion 栏目提供稳定的一手素材
     "gary_marcus": {"url": "https://garymarcus.substack.com/feed", "category": "opinion"},
     "raschka": {"url": "https://magazine.sebastianraschka.com/feed", "category": "opinion"},
     "lilian_weng": {"url": "https://lilianweng.github.io/index.xml", "category": "opinion"},
@@ -64,7 +64,7 @@ RSS_FEEDS: dict[str, dict[str, Any]] = {
         "category": "opinion",
     },
     "lobsters_ai": {"url": "https://lobste.rs/t/ai.rss", "category": "opinion"},
-    # Dwarkesh 暂无可用公开 RSS（dwarkesh.com /feed 超时、Substack ID 未公开），暂依赖 Tavily 兜底
+    # Dwarkesh 暂无可用公开 RSS（dwarkesh.com /feed 超时、Substack ID 未公开）
     # 学术
     "arxiv_ai": {"url": "https://export.arxiv.org/rss/cs.AI", "category": "academic"},
     "arxiv_cl": {"url": "https://export.arxiv.org/rss/cs.CL", "category": "academic"},

@@ -35,13 +35,13 @@ class LLMConfig:
         return cls(
             api_key=api_key,
             base_url=os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com/v1"),
-            model=os.environ.get("DEEPSEEK_MODEL", "deepseek-chat"),
+            model=os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-flash"),
         )
 
 
 SITE_BASE_URL = os.environ.get("SITE_BASE_URL", "").rstrip("/")
 SITE_TITLE = "AInformer · 每日 AI 简报"
-SITE_DESC = "由 DeepSeek + Tavily 自动生成的中文 AI 资讯日报，覆盖工具教程、行业动态、观点声音、中文生态。"
+SITE_DESC = "由 DeepSeek 与公开信息源自动生成的中文 AI 资讯日报，覆盖工具教程、行业动态、观点声音、中文生态。"
 
 
 def ensure_dirs() -> None:

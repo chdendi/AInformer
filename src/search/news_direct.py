@@ -1,7 +1,7 @@
 """Direct news source scraping — fallback when search APIs are unavailable.
 
 Scrapes known news sites for recent articles. Each source has its own parser.
-Returns structured items compatible with the RSS/tavily item format.
+Returns structured items compatible with the RSS/search item format.
 """
 
 from __future__ import annotations
@@ -255,7 +255,7 @@ async def fetch_direct_sources(
     Args:
         sources: List of source keys to fetch. Defaults to all.
 
-    Returns deduplicated list of items compatible with RSS/tavily format.
+    Returns deduplicated list of items compatible with RSS/search format.
     """
     keys = sources or list(DIRECT_SOURCES.keys())
     tasks = {}

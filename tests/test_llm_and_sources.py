@@ -1,14 +1,13 @@
 from __future__ import annotations
 
-import os
 import unittest
 from types import SimpleNamespace
 from unittest.mock import AsyncMock, patch
 
 from src.config import LLMConfig
 from src.llm.client import chat_json
-from src.search import tavily
 from src.search.rss import RSS_FEEDS, _fetch
+from src.search.web_search import unified_search
 
 
 def _completion(content: str, *, finish_reason: str = "stop", completion_tokens: int = 100):
@@ -30,7 +29,7 @@ def _client_with(*responses):
 
 class ChatJsonTests(unittest.IsolatedAsyncioTestCase):
     def setUp(self):
-        self.cfg = LLMConfig(api_key="test", base_url="https://example.test/v1", model="deepseek-chat")
+        self.cfg = LLMConfig(api_key="test", base_url="https://example.test/v1", model="deepseek-v4-flash")
 
     async def test_retries_truncated_json_with_larger_budget(self):
         client, create = _client_with(
@@ -96,39 +95,25 @@ class RssFetchTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(len(parsed.entries), 1)
 
 
-class _TavilyResponse:
-    status_code = 432
-    text = '{"detail":"credits exhausted"}'
-
-    def raise_for_status(self):
-        raise AssertionError("permanent Tavily errors should not be retried")
-
-
-class _TavilyHttpClient:
-    def __init__(self):
-        self.post = AsyncMock(return_value=_TavilyResponse())
-
-    async def __aenter__(self):
-        return self
-
-    async def __aexit__(self, exc_type, exc, traceback):
-        return False
-
-
-class TavilyTests(unittest.IsolatedAsyncioTestCase):
-    async def test_disables_search_for_run_after_permanent_failure(self):
-        tavily._DISABLED_REASON = ""
-        tavily._LAST_REQUEST_AT = 0.0
-        client = _TavilyHttpClient()
-
-        with patch.dict(os.environ, {"TAVILY_API_KEY": "test-key"}, clear=False), patch.object(
-            tavily.httpx, "AsyncClient", return_value=client
+class SearchFallbackTests(unittest.IsolatedAsyncioTestCase):
+    async def test_returns_ddg_results_without_contacting_direct_sources(self):
+        ddg_items = [{"title": "DDG result", "url": "https://example.test/ddg"}]
+        direct = AsyncMock()
+        with patch("src.search.web_search.ddg_batch_search", new=AsyncMock(return_value=ddg_items)) as ddg, patch(
+            "src.search.web_search.fetch_direct_sources", new=direct
         ):
-            first = await tavily.tavily_search("first")
-            second = await tavily.tavily_search("second")
+            result = await unified_search(["AI news"], max_results=3)
 
-        self.assertEqual(first, [])
-        self.assertEqual(second, [])
-        self.assertEqual(client.post.await_count, 1)
-        self.assertIn("HTTP 432", tavily._DISABLED_REASON)
-        tavily._DISABLED_REASON = ""
+        self.assertEqual(result, ddg_items)
+        ddg.assert_awaited_once_with(["AI news"], max_results=3)
+        direct.assert_not_awaited()
+
+    async def test_uses_direct_sources_when_ddg_is_empty(self):
+        direct_items = [{"title": "Direct result", "url": "https://example.test/direct"}]
+        with patch("src.search.web_search.ddg_batch_search", new=AsyncMock(return_value=[])), patch(
+            "src.search.web_search.fetch_direct_sources", new=AsyncMock(return_value=direct_items)
+        ) as direct:
+            result = await unified_search(["AI news"])
+
+        self.assertEqual(result, direct_items)
+        direct.assert_awaited_once_with()
