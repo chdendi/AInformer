@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-08-18T10:11:43.757665+08:00",
-  "total_days": 103,
+  "updated_at": "2026-08-19T10:15:01.631221+08:00",
+  "total_days": 104,
   "latest": {
-    "date": "2026-08-18",
-    "theme": "资本涌动，AI基础设施与模型生态加速重构",
-    "generated_at": "2026-08-18T10:11:43.655261+08:00",
-    "total_items": 16,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260818.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260818.html"
+    "date": "2026-08-19",
+    "theme": "安全与创新并进，AI商业化与学术突破齐飞",
+    "generated_at": "2026-08-19T10:15:01.532671+08:00",
+    "total_items": 15,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260819.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260819.html"
   },
   "dates": [
+    {
+      "date": "2026-08-19",
+      "theme": "安全与创新并进，AI商业化与学术突破齐飞",
+      "generated_at": "2026-08-19T10:15:01.532671+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260819.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260819.html"
+    },
     {
       "date": "2026-08-18",
       "theme": "资本涌动，AI基础设施与模型生态加速重构",
