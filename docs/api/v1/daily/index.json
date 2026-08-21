@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-08-20T10:13:31.798009+08:00",
-  "total_days": 105,
+  "updated_at": "2026-08-21T10:20:19.586290+08:00",
+  "total_days": 106,
   "latest": {
-    "date": "2026-08-20",
-    "theme": "竞争加剧，成本承压，中国AI崛起",
-    "generated_at": "2026-08-20T10:13:31.710682+08:00",
+    "date": "2026-08-21",
+    "theme": "AI商业化加速，智能体与模型能力双突破",
+    "generated_at": "2026-08-21T10:20:19.490073+08:00",
     "total_items": 16,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260820.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260820.html"
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260821.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260821.html"
   },
   "dates": [
+    {
+      "date": "2026-08-21",
+      "theme": "AI商业化加速，智能体与模型能力双突破",
+      "generated_at": "2026-08-21T10:20:19.490073+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260821.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260821.html"
+    },
     {
       "date": "2026-08-20",
       "theme": "竞争加剧，成本承压，中国AI崛起",
