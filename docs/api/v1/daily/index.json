@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-08-24T10:19:31.461218+08:00",
-  "total_days": 109,
+  "updated_at": "2026-08-25T10:14:54.873902+08:00",
+  "total_days": 110,
   "latest": {
-    "date": "2026-08-24",
-    "theme": "AI代理崛起，基础设施与垂直模型并进",
-    "generated_at": "2026-08-24T10:19:31.355806+08:00",
-    "total_items": 12,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260824.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260824.html"
+    "date": "2026-08-25",
+    "theme": "AI基础设施与生态整合加速",
+    "generated_at": "2026-08-25T10:14:54.783611+08:00",
+    "total_items": 13,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260825.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260825.html"
   },
   "dates": [
+    {
+      "date": "2026-08-25",
+      "theme": "AI基础设施与生态整合加速",
+      "generated_at": "2026-08-25T10:14:54.783611+08:00",
+      "total_items": 13,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260825.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260825.html"
+    },
     {
       "date": "2026-08-24",
       "theme": "AI代理崛起，基础设施与垂直模型并进",
