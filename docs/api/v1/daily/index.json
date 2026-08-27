@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-08-26T10:21:51.282589+08:00",
-  "total_days": 111,
+  "updated_at": "2026-08-27T18:49:22.476420+08:00",
+  "total_days": 112,
   "latest": {
-    "date": "2026-08-26",
-    "theme": "算力自主与智能体安全并进",
-    "generated_at": "2026-08-26T10:21:51.168552+08:00",
+    "date": "2026-08-27",
+    "theme": "开源并购与国产模型崛起",
+    "generated_at": "2026-08-27T18:49:22.382900+08:00",
     "total_items": 16,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260826.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260826.html"
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260827.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260827.html"
   },
   "dates": [
+    {
+      "date": "2026-08-27",
+      "theme": "开源并购与国产模型崛起",
+      "generated_at": "2026-08-27T18:49:22.382900+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260827.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260827.html"
+    },
     {
       "date": "2026-08-26",
       "theme": "算力自主与智能体安全并进",
