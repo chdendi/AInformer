@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-08-28T20:25:32.992543+08:00",
-  "total_days": 113,
+  "updated_at": "2026-08-29T15:35:08.953921+08:00",
+  "total_days": 114,
   "latest": {
-    "date": "2026-08-28",
-    "theme": "AI安全与AGI争议交织，国产模型创新突破",
-    "generated_at": "2026-08-28T20:25:32.888913+08:00",
-    "total_items": 16,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260828.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260828.html"
+    "date": "2026-08-29",
+    "theme": "巨头博弈与开源创新并行",
+    "generated_at": "2026-08-29T15:35:08.843735+08:00",
+    "total_items": 15,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260829.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260829.html"
   },
   "dates": [
+    {
+      "date": "2026-08-29",
+      "theme": "巨头博弈与开源创新并行",
+      "generated_at": "2026-08-29T15:35:08.843735+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260829.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260829.html"
+    },
     {
       "date": "2026-08-28",
       "theme": "AI安全与AGI争议交织，国产模型创新突破",
