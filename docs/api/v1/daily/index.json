@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-09-03T13:24:16.892457+08:00",
-  "total_days": 119,
+  "updated_at": "2026-09-04T13:19:05.592508+08:00",
+  "total_days": 120,
   "latest": {
-    "date": "2026-09-03",
-    "theme": "AI军事、3D生成与安全融资齐头并进",
-    "generated_at": "2026-09-03T13:24:16.719285+08:00",
+    "date": "2026-09-04",
+    "theme": "巨头竞逐，AI进入新纪元",
+    "generated_at": "2026-09-04T13:19:05.488027+08:00",
     "total_items": 16,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260903.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260903.html"
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260904.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260904.html"
   },
   "dates": [
+    {
+      "date": "2026-09-04",
+      "theme": "巨头竞逐，AI进入新纪元",
+      "generated_at": "2026-09-04T13:19:05.488027+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260904.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260904.html"
+    },
     {
       "date": "2026-09-03",
       "theme": "AI军事、3D生成与安全融资齐头并进",
