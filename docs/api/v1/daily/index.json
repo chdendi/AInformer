@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-09-05T13:08:47.110494+08:00",
-  "total_days": 121,
+  "updated_at": "2026-09-06T13:23:04.712308+08:00",
+  "total_days": 122,
   "latest": {
-    "date": "2026-09-05",
-    "theme": "AI安全与突破并行，OpenAI风波不断，Anthropic开源新蓝图",
-    "generated_at": "2026-09-05T13:08:47.014570+08:00",
-    "total_items": 16,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260905.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260905.html"
+    "date": "2026-09-06",
+    "theme": "资本与技术双轮驱动，AI生态加速扩张",
+    "generated_at": "2026-09-06T13:23:04.616420+08:00",
+    "total_items": 15,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260906.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260906.html"
   },
   "dates": [
+    {
+      "date": "2026-09-06",
+      "theme": "资本与技术双轮驱动，AI生态加速扩张",
+      "generated_at": "2026-09-06T13:23:04.616420+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260906.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260906.html"
+    },
     {
       "date": "2026-09-05",
       "theme": "AI安全与突破并行，OpenAI风波不断，Anthropic开源新蓝图",
