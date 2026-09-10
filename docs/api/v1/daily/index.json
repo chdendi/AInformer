@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-09-09T13:38:30.555611+08:00",
-  "total_days": 125,
+  "updated_at": "2026-09-10T13:29:13.310756+08:00",
+  "total_days": 126,
   "latest": {
-    "date": "2026-09-09",
-    "theme": "资本涌入与科研突破并行，AI应用加速落地",
-    "generated_at": "2026-09-09T13:38:30.454287+08:00",
-    "total_items": 14,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260909.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260909.html"
+    "date": "2026-09-10",
+    "theme": "企业级模型与国产算力双线推进",
+    "generated_at": "2026-09-10T13:29:13.113415+08:00",
+    "total_items": 15,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260910.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260910.html"
   },
   "dates": [
+    {
+      "date": "2026-09-10",
+      "theme": "企业级模型与国产算力双线推进",
+      "generated_at": "2026-09-10T13:29:13.113415+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260910.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260910.html"
+    },
     {
       "date": "2026-09-09",
       "theme": "资本涌入与科研突破并行，AI应用加速落地",
