@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-09-10T13:29:13.310756+08:00",
-  "total_days": 126,
+  "updated_at": "2026-09-11T13:30:20.762696+08:00",
+  "total_days": 127,
   "latest": {
-    "date": "2026-09-10",
-    "theme": "企业级模型与国产算力双线推进",
-    "generated_at": "2026-09-10T13:29:13.113415+08:00",
-    "total_items": 15,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260910.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260910.html"
+    "date": "2026-09-11",
+    "theme": "代理基础设施与蒸馏攻防同日升温",
+    "generated_at": "2026-09-11T13:30:20.644464+08:00",
+    "total_items": 16,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260911.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260911.html"
   },
   "dates": [
+    {
+      "date": "2026-09-11",
+      "theme": "代理基础设施与蒸馏攻防同日升温",
+      "generated_at": "2026-09-11T13:30:20.644464+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260911.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260911.html"
+    },
     {
       "date": "2026-09-10",
       "theme": "企业级模型与国产算力双线推进",
