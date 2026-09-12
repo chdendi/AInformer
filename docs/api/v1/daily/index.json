@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-09-11T13:30:20.762696+08:00",
-  "total_days": 127,
+  "updated_at": "2026-09-12T13:18:30.369406+08:00",
+  "total_days": 128,
   "latest": {
-    "date": "2026-09-11",
-    "theme": "代理基础设施与蒸馏攻防同日升温",
-    "generated_at": "2026-09-11T13:30:20.644464+08:00",
+    "date": "2026-09-12",
+    "theme": "企业落地与学界反思并行",
+    "generated_at": "2026-09-12T13:18:30.271938+08:00",
     "total_items": 16,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260911.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260911.html"
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260912.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260912.html"
   },
   "dates": [
+    {
+      "date": "2026-09-12",
+      "theme": "企业落地与学界反思并行",
+      "generated_at": "2026-09-12T13:18:30.271938+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260912.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260912.html"
+    },
     {
       "date": "2026-09-11",
       "theme": "代理基础设施与蒸馏攻防同日升温",
