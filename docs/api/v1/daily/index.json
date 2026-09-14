@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-09-13T13:32:39.459439+08:00",
-  "total_days": 129,
+  "updated_at": "2026-09-14T13:37:26.210105+08:00",
+  "total_days": 130,
   "latest": {
-    "date": "2026-09-13",
-    "theme": "模型性价比竞赛与前沿发展“限速”之争并行",
-    "generated_at": "2026-09-13T13:32:39.298364+08:00",
+    "date": "2026-09-14",
+    "theme": "智能体接管真实系统，前沿限速罕见达成共识",
+    "generated_at": "2026-09-14T13:37:26.130771+08:00",
     "total_items": 15,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260913.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260913.html"
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260914.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260914.html"
   },
   "dates": [
+    {
+      "date": "2026-09-14",
+      "theme": "智能体接管真实系统，前沿限速罕见达成共识",
+      "generated_at": "2026-09-14T13:37:26.130771+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260914.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260914.html"
+    },
     {
       "date": "2026-09-13",
       "theme": "模型性价比竞赛与前沿发展“限速”之争并行",
