@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-09-19T13:23:03.981406+08:00",
-  "total_days": 135,
+  "updated_at": "2026-09-20T13:35:36.093155+08:00",
+  "total_days": 136,
   "latest": {
-    "date": "2026-09-19",
-    "theme": "监管收紧与Agent落地并行",
-    "generated_at": "2026-09-19T13:23:03.890820+08:00",
-    "total_items": 15,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260919.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260919.html"
+    "date": "2026-09-20",
+    "theme": "安全争议与开源竞速并行",
+    "generated_at": "2026-09-20T13:35:36.000910+08:00",
+    "total_items": 16,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260920.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260920.html"
   },
   "dates": [
+    {
+      "date": "2026-09-20",
+      "theme": "安全争议与开源竞速并行",
+      "generated_at": "2026-09-20T13:35:36.000910+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260920.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260920.html"
+    },
     {
       "date": "2026-09-19",
       "theme": "监管收紧与Agent落地并行",
