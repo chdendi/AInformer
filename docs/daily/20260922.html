@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Daily · 2026-09-22 | AInformer</title>
+<meta name="description" content="模型竞赛与治理警钟同鸣 · 共 16 条精选">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --surface:#faf8fe;
+  --surface-low:#f4f3f8;
+  --surface-mid:#eeedf3;
+  --surface-high:#e9e7ed;
+  --border:#c7c6ca;
+  --border-soft:#e3e2e7;
+
+  --primary:#030304;
+  --on-surface:#1a1b1f;
+  --secondary:#5d5e60;
+  --tertiary:#77767b;
+  --muted:#9a999d;
+
+  --accent:#ba1a1a;
+  --accent-soft:#fff0ef;
+  --positive:#2e7d32;
+  --positive-soft:#e8f5e9;
+  --highlight:#a05a00;
+  --highlight-soft:#fff5e1;
+  --info:#1f4a82;
+  --info-soft:#eaf0f9;
+
+  --container:1200px;
+  --gutter:24px;
+
+  --font-sans:'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--on-surface);
+  font-family:var(--font-sans);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  font-feature-settings:"ss01","cv11";
+}
+::selection{background:#1a1b1f;color:#fff}
+img{max-width:100%;display:block}
+
+h1,h2,h3,h4,h5{font-family:var(--font-sans);color:var(--primary);font-weight:600;letter-spacing:-0.01em}
+p{margin:0}
+
+a{color:var(--primary);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s ease,color .2s ease,opacity .2s ease}
+a:hover{opacity:.7}
+
+code{
+  background:var(--surface-mid);
+  padding:1px 6px;
+  border-radius:3px;
+  font-family:var(--font-mono);
+  font-size:.86em;
+  color:var(--primary);
+  border:1px solid var(--border-soft);
+}
+pre.code{
+  background:var(--surface-mid);
+  border:1px solid var(--border-soft);
+  border-radius:6px;
+  padding:14px 16px;
+  overflow:auto;
+  margin:10px 0;
+  font-size:.84rem;
+  line-height:1.65;
+  font-family:var(--font-mono);
+}
+pre.code code{background:transparent;padding:0;border:none}
+
+.material-symbols-outlined{
+  font-family:'Material Symbols Outlined';
+  font-weight:400;
+  font-style:normal;
+  font-size:24px;
+  line-height:1;
+  letter-spacing:normal;
+  text-transform:none;
+  display:inline-block;
+  white-space:nowrap;
+  word-wrap:normal;
+  direction:ltr;
+  vertical-align:middle;
+  font-feature-settings:'liga';
+  -webkit-font-feature-settings:'liga';
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{max-width:var(--container);margin:0 auto;padding:0 24px}
+@media(min-width:1024px){.container{padding:0 64px}}
+
+/* ===== Top app bar (sticky nav) ===== */
+.sticky-nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(255,255,255,0.85);
+  -webkit-backdrop-filter:saturate(180%) blur(14px);
+  backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid var(--border-soft);
+}
+.nav-inner{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0 24px;
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+@media(min-width:1024px){.nav-inner{padding:0 64px}}
+.nav-left{display:flex;align-items:center;gap:32px;min-width:0}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-inner .home{
+  font-size:20px;
+  font-weight:800;
+  color:var(--primary);
+  letter-spacing:-0.02em;
+  border:none;
+  white-space:nowrap;
+}
+.nav-inner .home:hover{opacity:1;color:var(--primary)}
+.nav-inner .home .dot{color:var(--accent)}
+.nav-links{display:none;gap:24px;align-items:center}
+@media(min-width:768px){.nav-links{display:flex}}
+.nav-inner a:not(.home):not(.cta){
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:.02em;
+  color:var(--secondary);
+  border:none;
+  padding:6px 0;
+  white-space:nowrap;
+}
+.nav-inner a:not(.home):not(.cta):hover{color:var(--primary);opacity:1}
+.nav-inner .cta{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 14px;
+  background:var(--primary);
+  color:#fff;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.02em;
+  border-radius:6px;
+  border:none;
+  transition:transform .15s ease,opacity .2s ease;
+}
+.nav-inner .cta:hover{opacity:.9;color:#fff}
+.nav-inner .cta:active{transform:scale(.96)}
+
+/* ===== Hero ===== */
+.hero{
+  padding:96px 24px 80px;
+  text-align:center;
+  background:var(--bg);
+}
+@media(min-width:1024px){.hero{padding:120px 64px 96px}}
+.hero .date{
+  display:inline-block;
+  font-size:13px;
+  font-weight:600;
+  font-family:var(--font-mono);
+  letter-spacing:.06em;
+  color:#fff;
+  background:var(--primary);
+  padding:6px 12px;
+  border-radius:4px;
+  margin-bottom:24px;
+}
+.hero h1{
+  font-size:clamp(40px,7vw,72px);
+  line-height:1.05;
+  letter-spacing:-0.035em;
+  font-weight:700;
+  color:var(--primary);
+  margin-bottom:18px;
+}
+.hero .theme{
+  max-width:640px;
+  margin:0 auto;
+  font-size:18px;
+  line-height:1.6;
+  color:var(--secondary);
+  font-weight:400;
+}
+.hero .meta{
+  margin-top:28px;
+  display:inline-flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--tertiary);
+}
+.hero .meta span{
+  padding:5px 10px;
+  border:1px solid var(--border);
+  border-radius:3px;
+  background:transparent;
+}
+
+/* ===== Lede ===== */
+.lede{
+  max-width:780px;
+  margin:0 auto 96px;
+  padding:0;
+  background:transparent;
+  border:none;
+  border-radius:0;
+}
+.lede::before{
+  content:"今日速读 · Editorial";
+  display:flex;
+  align-items:center;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+  border:1px solid var(--accent);
+  padding:4px 10px;
+  border-radius:3px;
+  width:fit-content;
+  margin-bottom:28px;
+}
+.lede{
+  font-size:19px;
+  line-height:1.75;
+  color:var(--primary);
+  font-weight:400;
+}
+.lede::first-letter{
+  font-size:64px;
+  font-weight:700;
+  float:left;
+  line-height:.9;
+  margin:6px 12px 0 0;
+  color:var(--primary);
+  letter-spacing:-0.03em;
+}
+
+/* ===== Section ===== */
+.section{margin:0 0 96px}
+.section-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:40px;
+  padding-bottom:0;
+  border-bottom:none;
+}
+.section-head h2{
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--secondary);
+}
+.section-head .count{
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--tertiary);
+  font-family:var(--font-mono);
+}
+.subhead{
+  margin:32px 0 16px;
+  font-size:18px;
+  font-weight:600;
+  color:var(--secondary);
+  letter-spacing:.02em;
+  display:flex;align-items:baseline;gap:12px;
+}
+.subhead:first-child{margin-top:8px}
+.subhead .subcount{
+  font-size:11px;font-weight:600;letter-spacing:.12em;
+  color:var(--tertiary);font-family:var(--font-mono);
+}
+.quote-card.analyst::before{content:"✎"}
+.section-divider{
+  height:1px;
+  background:var(--border-soft);
+  margin:0 0 96px;
+}
+
+/* ===== Headlines ===== */
+.headlines{display:grid;gap:32px}
+@media(min-width:768px){.headlines{grid-template-columns:1fr 1fr;gap:40px}}
+.headline-card{
+  position:relative;
+  padding:4px 0 4px 24px;
+  border-left:3px solid var(--primary);
+  background:transparent;
+  border-radius:0;
+  transition:border-color .2s ease;
+}
+.headline-card:nth-child(1){border-left-color:var(--accent)}
+.headline-card:hover{border-left-color:var(--accent)}
+.headline-card::before{content:none}
+.headline-card h3{
+  font-size:24px;
+  line-height:1.25;
+  letter-spacing:-0.015em;
+  font-weight:600;
+  color:var(--primary);
+  margin-bottom:14px;
+}
+.headline-card p{
+  font-size:15px;
+  line-height:1.65;
+  color:var(--secondary);
+  margin-bottom:18px;
+}
+.headline-card .meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  font-size:12px;
+  color:var(--tertiary);
+}
+
+/* ===== News cards ===== */
+.cards{display:grid;gap:24px}
+@media(min-width:768px){.cards{grid-template-columns:1fr 1fr}}
+@media(min-width:1280px){.cards.three-col{grid-template-columns:repeat(3,1fr)}}
+.news-card{
+  position:relative;
+  background:var(--bg);
+  border:1px solid var(--border-soft);
+  border-radius:6px;
+  padding:28px 28px 24px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  transition:border-color .2s ease,box-shadow .25s ease,transform .2s ease;
+}
+.news-card::before{content:none}
+.news-card:hover{
+  border-color:var(--border);
+  box-shadow:0 12px 32px rgba(15,15,20,0.05);
+  transform:translateY(-2px);
+}
+.news-card h3{
+  font-size:18px;
+  line-height:1.35;
+  font-weight:600;
+  letter-spacing:-0.005em;
+  color:var(--primary);
+}
+.news-card .summary{
+  font-size:14.5px;
+  line-height:1.65;
+  color:var(--secondary);
+  flex-grow:1;
+}
+.news-card .value{
+  font-size:13px;
+  line-height:1.6;
+  color:var(--primary);
+  background:var(--positive-soft);
+  border-left:none;
+  border-radius:4px;
+  padding:10px 12px;
+  position:relative;
+}
+.news-card .value::before{
+  content:"VALUE";
+  display:block;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.2em;
+  color:var(--positive);
+  margin-bottom:4px;
+}
+.news-card .meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  font-size:12px;
+  color:var(--tertiary);
+  margin-top:auto;
+  padding-top:8px;
+  border-top:1px dashed var(--border-soft);
+}
+
+/* ===== Quote (opinion) ===== */
+.quote-card{
+  position:relative;
+  background:var(--surface-low);
+  border:none;
+  border-left:none;
+  border-radius:8px;
+  padding:48px 40px 36px;
+  transition:background .2s ease;
+}
+.quote-card::before{
+  content:"format_quote";
+  font-family:'Material Symbols Outlined';
+  position:absolute;
+  top:24px;
+  left:32px;
+  font-size:36px;
+  color:var(--primary);
+  opacity:.85;
+  line-height:1;
+  pointer-events:none;
+}
+.quote-card:hover{background:var(--surface-mid)}
+.quote-card .quote-en{
+  font-style:italic;
+  color:var(--tertiary);
+  line-height:1.6;
+  font-size:14px;
+  margin:64px 0 12px;
+}
+.quote-card .quote-zh{
+  font-family:var(--font-sans);
+  color:var(--primary);
+  line-height:1.4;
+  margin:0 0 18px;
+  font-size:24px;
+  font-weight:600;
+  letter-spacing:-0.015em;
+}
+.quote-card .quote-en + .quote-zh{margin-top:0}
+.quote-card:not(:has(.quote-en)) .quote-zh{margin-top:64px}
+.quote-title{
+  font-size:13px;
+  color:var(--tertiary);
+  margin-bottom:12px;
+  letter-spacing:.02em;
+}
+.quote-card .person{
+  font-family:var(--font-sans);
+  color:var(--primary);
+  font-size:14px;
+  font-weight:700;
+  text-align:left;
+  margin-top:20px;
+  letter-spacing:.02em;
+}
+.quote-card .meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  font-size:12px;
+  color:var(--tertiary);
+  margin-top:18px;
+  padding-top:14px;
+  border-top:1px solid var(--border-soft);
+}
+
+/* ===== Tags ===== */
+.tag{
+  display:inline-flex;
+  align-items:center;
+  padding:3px 8px;
+  border-radius:3px;
+  font-size:10.5px;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  border:1px solid transparent;
+  background:transparent;
+}
+.tag-hot{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+.tag-star{color:var(--highlight);border-color:var(--highlight);background:var(--highlight-soft)}
+.tag-pin{color:var(--positive);border-color:var(--positive);background:var(--positive-soft)}
+.tag-industry{color:var(--info);border-color:var(--info);background:var(--info-soft)}
+.tag-opinion{color:var(--primary);border-color:var(--primary);background:var(--surface-mid)}
+.tag-chinese{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+.tag-academic{color:var(--positive);border-color:var(--positive);background:var(--positive-soft)}
+.tag-benchmark{color:var(--highlight);border-color:var(--highlight);background:var(--highlight-soft)}
+.tag-headline{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+
+/* ===== Link button ===== */
+.link-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  padding:5px 10px;
+  background:transparent;
+  border:1px solid var(--border);
+  border-radius:3px;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.04em;
+  color:var(--primary);
+  transition:background .15s ease,border-color .15s ease,color .15s ease;
+}
+.link-btn:hover{
+  background:var(--primary);
+  border-color:var(--primary);
+  color:#fff;
+  opacity:1;
+}
+
+/* ===== Empty state ===== */
+.empty{
+  padding:32px;
+  text-align:center;
+  color:var(--tertiary);
+  background:var(--surface-low);
+  border:1px dashed var(--border);
+  border-radius:6px;
+  font-size:14px;
+}
+
+/* ===== Footer ===== */
+.footer{
+  margin-top:96px;
+  background:var(--surface-low);
+  color:var(--secondary);
+  border-top:1px solid var(--border-soft);
+}
+.footer .footer-grid{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:80px 24px 32px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:48px;
+}
+@media(min-width:768px){
+  .footer .footer-grid{grid-template-columns:2fr 1fr 1fr 1fr;padding:96px 24px 32px}
+}
+@media(min-width:1024px){.footer .footer-grid{padding:96px 64px 32px}}
+.footer .brand{display:flex;flex-direction:column;gap:12px}
+.footer .brand .name{font-size:20px;font-weight:800;color:var(--primary);letter-spacing:-0.02em}
+.footer .brand p{font-size:14px;line-height:1.6;color:var(--secondary);max-width:320px}
+.footer h4{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--primary);
+  margin-bottom:18px;
+}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.footer ul a,.footer p a{
+  color:var(--secondary);
+  font-size:13px;
+  border:none;
+  transition:color .2s ease;
+}
+.footer ul a:hover,.footer p a:hover{color:var(--primary);opacity:1}
+.footer .footer-bottom{
+  border-top:1px solid var(--border-soft);
+  max-width:var(--container);
+  margin:0 auto;
+  padding:24px;
+  font-size:12px;
+  color:var(--tertiary);
+  text-align:center;
+  line-height:1.7;
+}
+@media(min-width:1024px){.footer .footer-bottom{padding:24px 64px}}
+.footer .footer-bottom p{margin-bottom:6px}
+
+/* ===== Responsive ===== */
+@media(max-width:639px){
+  body{font-size:15px}
+  .hero{padding:64px 20px 56px}
+  .container{padding:0 20px}
+  .lede{margin-bottom:64px;font-size:17px}
+  .lede::first-letter{font-size:52px}
+  .section{margin-bottom:64px}
+  .quote-card{padding:40px 24px 28px}
+  .quote-card::before{top:20px;left:20px;font-size:30px}
+  .quote-card .quote-zh{font-size:20px}
+  .news-card{padding:24px 22px 22px}
+  .headline-card{padding-left:18px}
+  .headline-card h3{font-size:20px}
+}
+
+/* ===== Print ===== */
+@media print{
+  body{background:#fff;color:#000}
+  .sticky-nav,.footer{display:none}
+  .news-card,.headline-card,.quote-card,.lede{
+    break-inside:avoid;
+    background:#fff;
+    border:1px solid #ccc;
+    color:#000;
+    box-shadow:none;
+  }
+  .hero{background:#fff;color:#000;border-bottom:2px solid #000}
+  .hero h1,.hero .date,.hero .theme{color:#000}
+  .hero .date{background:#000;color:#fff}
+  a{color:#000;text-decoration:underline;border-bottom:none}
+}
+
+/* GitHub Trending cards */
+.trending-card{
+  background:var(--bg);
+  border:1px solid var(--border-soft);
+  border-radius:6px;
+  padding:24px 26px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  transition:border-color .2s ease,box-shadow .25s ease,transform .2s ease;
+}
+.trending-card:hover{
+  border-color:var(--border);
+  box-shadow:0 12px 32px rgba(15,15,20,0.05);
+  transform:translateY(-2px);
+}
+.trending-card .repo-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.trending-card .repo-name{
+  font-family:var(--font-mono);
+  font-size:15px;
+  font-weight:600;
+  color:var(--primary);
+  border:none;
+  letter-spacing:0;
+}
+.trending-card .repo-name:hover{color:var(--accent);opacity:1}
+.trending-card .ai-topic{
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:3px 8px;
+  background:var(--positive-soft);
+  border:1px solid var(--positive);
+  color:var(--positive);
+  border-radius:3px;
+  white-space:nowrap;
+}
+.trending-card .desc{
+  color:var(--secondary);
+  font-size:14px;
+  line-height:1.65;
+}
+.trending-card .value{
+  color:var(--primary);
+  font-size:13px;
+  line-height:1.6;
+  padding:10px 12px;
+  background:var(--highlight-soft);
+  border-left:none;
+  border-radius:4px;
+  position:relative;
+}
+.trending-card .value::before{
+  content:"VALUE";
+  display:block;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.2em;
+  color:var(--highlight);
+  margin-bottom:4px;
+}
+.trending-card .meta{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+  font-size:12px;
+  color:var(--tertiary);
+  padding-top:10px;
+  border-top:1px solid var(--border-soft);
+  font-family:var(--font-mono);
+}
+.trending-card .meta .lang::before{content:"●";margin-right:6px;color:var(--info)}
+.trending-card .meta .stars-today{color:var(--highlight);font-weight:700}
+</style>
+</head>
+<body>
+<header class="sticky-nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a class="home" href="https://chdendi.github.io/AInformer/index.html">AInformer<span class="dot">.</span></a>
+      <nav class="nav-links">
+        <a href="#headlines">头条</a>
+<a href="#trending">GitHub</a>        <a href="#industry">行业</a>
+        <a href="#opinion">观点</a>
+        <a href="#chinese">中文</a>
+        <a href="#academic">学术</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <a class="cta" href="https://chdendi.github.io/AInformer/index.html">← 回到首页</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="date">2026-09-22 · 周二</div>
+  <h1>每日 AI 简报</h1>
+  <p class="theme">模型竞赛与治理警钟同鸣</p>
+  <div class="meta">
+    <span>精选 16 条</span>
+    <span>头条 3 则</span>
+    <span>生成于 2026-09-22 13:42</span>
+  </div>
+</section>
+
+<main class="container">
+
+  <section class="lede">今日AI领域多条线索交织。xAI发布Grok 4.7，以低价策略入场，但基准测试显示其与Claude、GPT-6仍有明显差距；与此同时，联合国科学小组发出警告，称无法保证人类能控制高能力AI智能体，呼吁提前约束。国内方面，阿里云栖大会成为焦点，阿里公布Qwen4.5及后续模型将扩展至5-10T参数，CEO吴泳铭强调坚定投入AI模型、AI芯片与AI云三大基石。此外，Meta的Muse智能体代购功能被亚马逊封禁，平台与AI智能体的摩擦浮出水面。</section>
+
+  <section class="section" id="headlines">
+    <div class="section-head"><h2>今日头条</h2><span class="count">5 条</span></div>
+    <div class="headlines">
+      <article class="headline-card">
+        <h3>xAI发布Grok 4.7：低价难掩与Claude、GPT-6差距</h3>
+        <p>xAI推出Grok 4.7并主打低价策略，但基准测试显示其与Claude、GPT-6仍存在明显性能差距。低价能否换取市场份额，仍有待观察。</p>
+        <div class="meta">
+<span class="tag tag-industry">行业新闻</span><span>The Decoder</span><a class="link-btn" href="https://the-decoder.com/xai-launches-grok-4-7-at-bargain-prices-but-benchmarks-reveal-a-wide-gap-to-claude-and-gpt-6/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="headline-card">
+        <h3>联合国科学小组警告：无法保证人类能控制AI智能体</h3>
+        <p>联合国科学小组呼吁各国在风险完全明确前就对高能力AI智能体加以约束，称无法保证人类保持控制。这一警告为全球AI治理再添紧迫性。</p>
+        <div class="meta">
+<span class="tag tag-industry">行业新闻</span><span>The Verge</span><a class="link-btn" href="https://www.theverge.com/ai-artificial-intelligence/998090/un-ai-panel-hugging-face-hack-precautionary-principle" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="headline-card">
+        <h3>阿里云栖大会：Qwen4.5后模型将扩展至5-10T参数</h3>
+        <p>2026云栖大会开幕，阿里公布大模型最新进展：Qwen4与下代视频模型均在训练中，未来Qwen4.5、Qwen5将扩展至5-10T参数。阿里CEO吴泳铭同日表示将坚定投入AI模型、AI芯片、AI云三大基石。</p>
+        <div class="meta">
+<span class="tag tag-chinese">中文 / 学术</span><span>量子位</span><a class="link-btn" href="https://www.qbitai.com/2026/09/493629.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="headline-card">
+        <h3>Nathan Lambert：开放模型的力量平衡现状</h3>
+        <p>Interconnects作者Nathan Lambert发布其为国会准备的证词扩展版，系统梳理当前开放权重模型的竞争格局与政策含义。文章为理解开放模型生态提供了政策视角。</p>
+        <div class="meta">
+<span class="tag tag-opinion">观点声音</span><span>Interconnects</span><a class="link-btn" href="https://www.interconnects.ai/p/the-current-balance-of-power-in-open" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="headline-card">
+        <h3>LLM幻觉检测新法：追踪注意力图拓扑特征</h3>
+        <p>通过分析注意力图的信息流拓扑结构，识别上下文共享受损的拓扑特征来检测LLM幻觉，为幻觉检测提供无需外部知识的新路径。该方法有望提升模型输出的可靠性。</p>
+        <div class="meta">
+<span class="tag tag-academic">学术与评测</span><span>arXiv</span><a class="link-btn" href="https://arxiv.org/abs/2609.21096" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="trending">
+    <div class="section-head"><h2>GitHub Trending · 今日热门 AI 项目</h2><span class="count">4 个</span></div>
+    <div class="cards">
+      <article class="trending-card">
+        <div class="repo-line">
+          <a class="repo-name" href="https://github.com/BuilderIO/agent-native" target="_blank" rel="noopener noreferrer">BuilderIO/agent-native</a>
+<span class="ai-topic">Agent 框架</span>        </div>
+<p class="desc">BuilderIO 推出的框架，用于构建 agentic 应用，帮助开发者快速搭建具备自主决策与工具调用能力的智能体产品。</p><div class="value">由知名低代码团队打造，为 Agent 应用提供脚手架，适合想快速落地智能体产品的开发者。</div>        <div class="meta">
+<span class="lang">TypeScript</span><span class="stars-today">+607 ⭐ 今日</span><span>6,070 ⭐ 总计</span>          <a class="link-btn" href="https://github.com/BuilderIO/agent-native" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+        </div>
+      </article>
+      <article class="trending-card">
+        <div class="repo-line">
+          <a class="repo-name" href="https://github.com/trycua/cua" target="_blank" rel="noopener noreferrer">trycua/cua</a>
+<span class="ai-topic">Computer-Use Agent / 评测基准</span>        </div>
+<p class="desc">开源 computer-use 驱动与跨操作系统集群方案，并提供用于训练、评测和数据生成的 benchmark，扩展 computer-use 2.0 能力。</p><div class="value">为操控电脑的 Agent 提供基础设施与评测标准，是 computer-use 方向少见的开源全栈方案。</div>        <div class="meta">
+<span class="lang">HTML</span><span class="stars-today">+609 ⭐ 今日</span><span>25,793 ⭐ 总计</span>          <a class="link-btn" href="https://github.com/trycua/cua" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+        </div>
+      </article>
+      <article class="trending-card">
+        <div class="repo-line">
+          <a class="repo-name" href="https://github.com/akitaonrails/ai-memory" target="_blank" rel="noopener noreferrer">akitaonrails/ai-memory</a>
+<span class="ai-topic">Agent Memory</span>        </div>
+<p class="desc">用 Rust 实现的长期记忆方案，为 agent coding CLI 提供持久记忆，并支持在不同 agent 厂商之间交接上下文。</p><div class="value">解决编码 Agent 跨会话、跨工具的记忆丢失痛点，是 agent 周边基础设施的实用补充。</div>        <div class="meta">
+<span class="lang">Rust</span><span class="stars-today">+167 ⭐ 今日</span><span>7,817 ⭐ 总计</span>          <a class="link-btn" href="https://github.com/akitaonrails/ai-memory" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+        </div>
+      </article>
+      <article class="trending-card">
+        <div class="repo-line">
+          <a class="repo-name" href="https://github.com/yynxxxxx/Codex-X" target="_blank" rel="noopener noreferrer">yynxxxxx/Codex-X</a>
+<span class="ai-topic">Coding Agent 工具链</span>        </div>
+<p class="desc">OpenAI Codex 桌面端与 CLI 的可视化管理工具，支持 Provider/API 切换、会话同步、提示词注入、Skills/MCP 管理与 TOML 配置可视化。</p><div class="value">把 Codex 的配置与 MCP/Skills 管理图形化，降低 Coding Agent 日常使用与切换成本。</div>        <div class="meta">
+<span class="lang">Rust</span><span class="stars-today">+50 ⭐ 今日</span><span>3,751 ⭐ 总计</span>          <a class="link-btn" href="https://github.com/yynxxxxx/Codex-X" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="section" id="industry">
+    <div class="section-head"><h2>AI 行业新闻与产品动态</h2><span class="count">4 条</span></div>
+    <div class="cards">
+<article class="news-card">
+  <h3>xAI发布Grok 4.7：低价策略难掩与Claude、GPT-6的差距</h3>
+<p class="summary">xAI推出Grok 4.7并主打低价，但基准测试显示其与Claude、GPT-6仍存在明显性能差距。</p><p class="value">价格战之外，xAI在模型能力上仍未追平头部阵营。</p>  <div class="meta">
+<span class="tag tag-hot">🔥 头条</span><span>The Decoder</span><span>· 2026-09-21</span><a class="link-btn" href="https://the-decoder.com/xai-launches-grok-4-7-at-bargain-prices-but-benchmarks-reveal-a-wide-gap-to-claude-and-gpt-6/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>亚马逊封禁Meta的Muse智能体代购功能</h3>
+<p class="summary">Meta的Muse AI智能体被亚马逊阻止代表用户购物，用户端出现权限等待弹窗。</p><p class="value">平台与AI智能体的权限博弈成为电商新战场。</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>The Verge</span><span>· 2026-09-21</span><a class="link-btn" href="https://www.theverge.com/tech/998078/amazon-blocks-meta-muse-ai-agent-shopping" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>联合国科学小组警告：无法保证人类能控制AI智能体</h3>
+<p class="summary">联合国科学小组呼吁各国在风险完全明确前就对高能力AI智能体加以约束，称无法保证人类保持控制。</p><p class="value">国际治理机构首次以预防原则对AI智能体发出集体警告。</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>The Verge</span><span>· 2026-09-21</span><a class="link-btn" href="https://www.theverge.com/ai-artificial-intelligence/998090/un-ai-panel-hugging-face-hack-precautionary-principle" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>字节跳动推出Dramagic：短剧全流程AI生产平台</h3>
+<p class="summary">字节跳动发布Dramagic，覆盖从剧本到成片的短剧AI制作全流程。</p><p class="value">AI内容生产工具向垂直内容品类进一步下沉。</p>  <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>The Decoder</span><span>· 2026-09-21</span><a class="link-btn" href="https://the-decoder.com/bytedance-launches-dramagic-a-full-pipeline-ai-platform-for-producing-short-dramas-from-script-to-screen/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article>    </div>
+  </section>
+
+  <section class="section" id="opinion">
+    <div class="section-head"><h2>AI 观点与社区声音</h2><span class="count">4 条</span></div>
+      <h3 class="subhead">深度分析 <span class="subcount">1 条</span></h3>
+      <div class="cards">
+        <article class="quote-card analyst">
+<p class="quote-zh">这是我为国会准备的证词的扩展版本，讨论开放模型当前的权力平衡。</p><p class="quote-title">Nathan Lambert：开放模型的力量平衡现状</p>          <div class="person">— Nathan Lambert · 分析师</div>
+          <div class="meta">
+<span class="tag tag-hot">🔥 头条</span><span>从政策证词视角看开放模型生态的权力分布</span><a class="link-btn" href="https://www.interconnects.ai/p/the-current-balance-of-power-in-open" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+      </div>
+      <h3 class="subhead">社区声音 <span class="subcount">3 条</span></h3>
+      <div class="cards">
+        <article class="quote-card analyst">
+<p class="quote-en">The definitive Jev podcast with its lead creator.</p><p class="quote-zh">与 Jev 主创的权威播客对谈：System One 模型是为生产环境而生，而非追求「上帝模型」。</p><p class="quote-title">Latent Space 对话 TypeSafe AI CEO：System One 决策模型</p>          <div class="person">— Latent Space · 社区</div>
+          <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>理解决策模型与通用大模型路线分歧的一手访谈</span><a class="link-btn" href="https://www.latent.space/p/jev" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+        <article class="quote-card analyst">
+<p class="quote-en">It might destroy the world, despite passing every known safety test. If we wait for a "warning shot" before we act, it may be too late.</p><p class="quote-zh">它可能通过所有已知安全测试却仍毁灭世界；若等到「警告信号」再行动，恐怕为时已晚。</p><p class="quote-title">LessWrong：臭氧层治理史能给 AI 安全什么启示</p>          <div class="person">— LessWrong · 社区</div>
+          <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>用历史治理案例反思 AI 安全的预防原则</span><a class="link-btn" href="https://www.lesswrong.com/posts/zxXPEtSSSEdwpjopb/we-ve-saved-the-world-before-what-the-ozone-hole-teaches-us" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+        <article class="quote-card analyst">
+<p class="quote-zh">核心观点：LLM 已经太大，一个日志路由器这类简单任务并不需要动用会「唱歌」的大模型。</p><p class="quote-title">Lobsters：LLM 太大，我的日志路由器不需要会唱歌</p>          <div class="person">— Lobsters · 社区</div>
+          <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>工程实践中对「大模型万能论」的务实反思</span><a class="link-btn" href="https://www.distributedthoughts.org/my-log-router-doesnt-need-to-sing/" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+      </div>
+  </section>
+
+  <section class="section" id="chinese">
+    <div class="section-head"><h2>中文 AI 生态与学术动态</h2><span class="count">4 条</span></div>
+    <div class="cards">
+<article class="news-card">
+  <h3>阿里云栖大会：Qwen4.5后模型将扩展至5-10T参数</h3>
+<p class="summary">2026云栖大会开幕，阿里公布大模型最新进展：Qwen4与下代视频模型均在训练中，未来Qwen4.5、Qwen5将扩展至5-10T参数。</p><p class="value">国产大模型参数规模首次明确迈向十万亿级路线图</p>  <div class="meta">
+<span class="tag tag-hot">🔥 头条</span><span>量子位</span><span>· 2026-09-22</span><a class="link-btn" href="https://www.qbitai.com/2026/09/493629.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>吴泳铭：阿里坚定投入AI模型、AI芯片、AI云三大基石</h3>
+<p class="summary">阿里CEO吴泳铭在云栖大会演讲称，机器思考总量将达人类1000倍以上，阿里将长期坚定投入AI模型、AI芯片与AI云三项基础设施。</p><p class="value">阿里AI战略定调：模型+芯片+云三位一体长期投入</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>量子位</span><span>· 2026-09-22</span><a class="link-btn" href="https://www.qbitai.com/2026/09/493502.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>OceanBase登顶国际Data Agent榜单，准确率破90%</h3>
+<p class="summary">OceanBase团队Data Agent方案以90.62%准确率登顶国际数据智能体基准DAB，成为首个突破90%的参评方案，基于国产大模型GLM-5.2构建。</p><p class="value">国产数据库+国产大模型组合超越多项GPT、Claude方案</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>量子位</span><span>· 2026-09-21</span><a class="link-btn" href="https://www.qbitai.com/2026/09/493231.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>华为云码道上线鸿蒙编码大模型，专为鸿蒙生态打造</h3>
+<p class="summary">华为云CodeArts代码智能体面向鸿蒙开发者升级，上线鸿蒙编码大模型、码道鸿蒙智能体与鸿蒙开发者实践中心三大能力。</p><p class="value">全球首个专为鸿蒙生态打造的AI编码智能体</p>  <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>雷峰网</span><span>· 2026-09-21</span><a class="link-btn" href="https://www.leiphone.com/category/industrynews/B5ahgA6nibk33DRO.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article>    </div>
+  </section>
+
+  <section class="section" id="academic">
+    <div class="section-head"><h2>学术与评测</h2><span class="count">4 条</span></div>
+    <div class="cards">
+<article class="news-card">
+  <h3>LLM幻觉检测新法：追踪注意力图拓扑特征</h3>
+<p class="summary">通过分析注意力图的信息流拓扑结构，识别上下文共享受损的拓扑特征来检测LLM幻觉，为幻觉检测提供无需外部知识的新路径。</p><p class="value">从注意力拓扑角度检测幻觉，方法新颖且可解释</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>arXiv</span><span>· 2026-09-22</span><a class="link-btn" href="https://arxiv.org/abs/2609.21096" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>微调中内部表征变化与因果重要性可解耦</h3>
+<p class="summary">研究发现微调引起的LLM内部表征变化与其对下游任务的因果重要性可以解耦，挑战了「表征变化越大越关键」的直觉假设。</p><p class="value">揭示微调机制中表征变化与因果贡献的非对应关系</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>arXiv</span><span>· 2026-09-22</span><a class="link-btn" href="https://arxiv.org/abs/2609.21113" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>信息增益奖励+多样性剪枝测试提升代码生成可靠性</h3>
+<p class="summary">提出GT锚定验证器协同训练方法，用信息增益奖励和多样性剪枝测试替代传统自博弈，提升代码生成中验证器的可靠性。</p><p class="value">改进自博弈验证器训练，缓解测试作者与编码者共谋问题</p>  <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>arXiv</span><span>· 2026-09-22</span><a class="link-btn" href="https://arxiv.org/abs/2609.21208" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>CogGym：大规模人机认知对比评测基准</h3>
+<p class="summary">构建CogGym基准，支持对人类与机器认知进行大规模比较评估，填补现有评测在认知维度对比上的空白。</p><p class="value">首个面向人机认知对比的大规模评测框架</p>  <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>arXiv</span><span>· 2026-09-22</span><a class="link-btn" href="https://arxiv.org/abs/2609.21259" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article>    </div>
+  </section>
+
+</main>
+<footer class="footer">
+<div class="footer-grid">
+  <div class="brand">
+    <span class="name">AInformer<span style="color:var(--accent)">.</span></span>
+    <p>每日 AI 简报：中文 AI 生态的精选信息流，聚合行业、观点、学术与中文动态。</p>
+  </div>
+  <div>
+    <h4>Navigate</h4>
+    <ul>
+      <li><a href="https://chdendi.github.io/AInformer/index.html">← 回到首页</a></li>
+      <li><a href="https://chdendi.github.io/AInformer/index.html#archive">历史日报归档</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Sources</h4>
+    <ul>
+      <li>OpenAI / Anthropic / DeepMind</li>
+      <li>The Verge · TechCrunch</li>
+      <li>机器之心 · 量子位 · 36kr</li>
+      <li>arXiv · Hacker News</li>
+    </ul>
+  </div>
+  <div>
+    <h4>Data</h4>
+    <ul>
+      <li><a href="https://chdendi.github.io/AInformer/api/v1/manifest.json" target="_blank" rel="noopener">JSON API · Manifest</a></li>
+      <li><a href="https://github.com/chdendi/AInformer" target="_blank" rel="noopener">Source on GitHub</a></li>
+    </ul>
+  </div>
+</div>
+  <div class="footer-bottom">
+    <p>本日报基于公开信息自动搜索整理生成，资讯来源包括 OpenAI / Anthropic / DeepMind 等官方博客、The Verge、TechCrunch、36kr、机器之心、量子位、ArXiv、Hacker News 等公开平台。内容可能存在时效性偏差或不完整，请以原始来源为准。</p>
+    <p>Generated at 2026-09-22 13:42 · Powered by DeepSeek + public sources · <a href="https://chdendi.github.io/AInformer/index.html">AInformer</a> · <a href="https://chdendi.github.io/AInformer/api/v1/manifest.json">JSON API</a></p>
+  </div>
+</footer>
+</body>
+</html>
