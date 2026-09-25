@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-09-24T13:43:22.292241+08:00",
-  "total_days": 140,
+  "updated_at": "2026-09-25T13:40:33.424348+08:00",
+  "total_days": 141,
   "latest": {
-    "date": "2026-09-24",
-    "theme": "智能体走向硬件，模型价格战与数据重做并行",
-    "generated_at": "2026-09-24T13:43:22.185972+08:00",
+    "date": "2026-09-25",
+    "theme": "AI从对话走向具身与实时化身",
+    "generated_at": "2026-09-25T13:40:33.317367+08:00",
     "total_items": 16,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260924.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260924.html"
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260925.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260925.html"
   },
   "dates": [
+    {
+      "date": "2026-09-25",
+      "theme": "AI从对话走向具身与实时化身",
+      "generated_at": "2026-09-25T13:40:33.317367+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260925.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260925.html"
+    },
     {
       "date": "2026-09-24",
       "theme": "智能体走向硬件，模型价格战与数据重做并行",
