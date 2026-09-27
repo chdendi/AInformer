@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-09-26T13:44:06.523112+08:00",
-  "total_days": 142,
+  "updated_at": "2026-09-27T14:03:29.438887+08:00",
+  "total_days": 143,
   "latest": {
-    "date": "2026-09-26",
-    "theme": "算力豪赌与安全审查并行，Agent 能力向日常场景渗透",
-    "generated_at": "2026-09-26T13:44:06.401321+08:00",
-    "total_items": 14,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260926.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260926.html"
+    "date": "2026-09-27",
+    "theme": "训练暂停、成本减半与推理提速并行",
+    "generated_at": "2026-09-27T14:03:29.307264+08:00",
+    "total_items": 15,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260927.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260927.html"
   },
   "dates": [
+    {
+      "date": "2026-09-27",
+      "theme": "训练暂停、成本减半与推理提速并行",
+      "generated_at": "2026-09-27T14:03:29.307264+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260927.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260927.html"
+    },
     {
       "date": "2026-09-26",
       "theme": "算力豪赌与安全审查并行，Agent 能力向日常场景渗透",
