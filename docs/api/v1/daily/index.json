@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-09-29T14:28:54.108425+08:00",
-  "total_days": 145,
+  "updated_at": "2026-09-30T14:13:01.503160+08:00",
+  "total_days": 146,
   "latest": {
-    "date": "2026-09-29",
-    "theme": "巨头抢滩世界模型与智能体安全",
-    "generated_at": "2026-09-29T14:28:53.989049+08:00",
+    "date": "2026-09-30",
+    "theme": "能力跃升与安全红线同时逼近",
+    "generated_at": "2026-09-30T14:13:01.406663+08:00",
     "total_items": 16,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260929.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20260929.html"
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20260930.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20260930.html"
   },
   "dates": [
+    {
+      "date": "2026-09-30",
+      "theme": "能力跃升与安全红线同时逼近",
+      "generated_at": "2026-09-30T14:13:01.406663+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260930.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260930.html"
+    },
     {
       "date": "2026-09-29",
       "theme": "巨头抢滩世界模型与智能体安全",
