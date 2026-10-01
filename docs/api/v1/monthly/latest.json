@@ -1,9 +1,9 @@
 {
-  "label": "2026-08",
-  "title": "2026 年 8 月 AI 月度回顾",
-  "tagline": "AI安全警钟长鸣，开源与商业化并进",
-  "total_items": 548,
-  "generated_at": "2026-09-01T15:38:42.516168+08:00",
-  "data_url": "https://chdendi.github.io/AInformer/data/monthly/202608.json",
-  "html_url": "https://chdendi.github.io/AInformer/monthly/202608.html"
+  "label": "2026-09",
+  "title": "2026 年 9 月 AI 月度回顾",
+  "tagline": "巨头并购、模型军备与安全失控交织的九月",
+  "total_items": 605,
+  "generated_at": "2026-10-01T16:40:29.681989+08:00",
+  "data_url": "https://chdendi.github.io/AInformer/data/monthly/202609.json",
+  "html_url": "https://chdendi.github.io/AInformer/monthly/202609.html"
 }
