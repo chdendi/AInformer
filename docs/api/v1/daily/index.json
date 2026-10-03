@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-10-02T14:31:29.989330+08:00",
-  "total_days": 148,
+  "updated_at": "2026-10-03T13:57:13.945554+08:00",
+  "total_days": 149,
   "latest": {
-    "date": "2026-10-02",
-    "theme": "模型竞速与智能体治理并行",
-    "generated_at": "2026-10-02T14:31:29.882103+08:00",
-    "total_items": 16,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261002.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20261002.html"
+    "date": "2026-10-03",
+    "theme": "AI智能体自主性上升，安全边界与路线之争同步升温",
+    "generated_at": "2026-10-03T13:57:13.769435+08:00",
+    "total_items": 15,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261003.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20261003.html"
   },
   "dates": [
+    {
+      "date": "2026-10-03",
+      "theme": "AI智能体自主性上升，安全边界与路线之争同步升温",
+      "generated_at": "2026-10-03T13:57:13.769435+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261003.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261003.html"
+    },
     {
       "date": "2026-10-02",
       "theme": "模型竞速与智能体治理并行",
