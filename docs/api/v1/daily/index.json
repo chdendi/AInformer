@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-10-03T13:57:13.945554+08:00",
-  "total_days": 149,
+  "updated_at": "2026-10-04T14:35:26.837905+08:00",
+  "total_days": 150,
   "latest": {
-    "date": "2026-10-03",
-    "theme": "AI智能体自主性上升，安全边界与路线之争同步升温",
-    "generated_at": "2026-10-03T13:57:13.769435+08:00",
-    "total_items": 15,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261003.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20261003.html"
+    "date": "2026-10-04",
+    "theme": "智能体加速落地，安全治理同步收紧",
+    "generated_at": "2026-10-04T14:35:26.731011+08:00",
+    "total_items": 14,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261004.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20261004.html"
   },
   "dates": [
+    {
+      "date": "2026-10-04",
+      "theme": "智能体加速落地，安全治理同步收紧",
+      "generated_at": "2026-10-04T14:35:26.731011+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261004.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261004.html"
+    },
     {
       "date": "2026-10-03",
       "theme": "AI智能体自主性上升，安全边界与路线之争同步升温",
