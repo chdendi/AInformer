@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-10-06T15:04:16.595527+08:00",
-  "total_days": 152,
+  "updated_at": "2026-10-07T14:45:41.516304+08:00",
+  "total_days": 153,
   "latest": {
-    "date": "2026-10-06",
-    "theme": "开源模型对垒与智能体科研闭环",
-    "generated_at": "2026-10-06T15:04:16.478873+08:00",
-    "total_items": 15,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261006.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20261006.html"
+    "date": "2026-10-07",
+    "theme": "万亿参数开源与巨额融资同日登场",
+    "generated_at": "2026-10-07T14:45:41.424932+08:00",
+    "total_items": 14,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261007.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20261007.html"
   },
   "dates": [
+    {
+      "date": "2026-10-07",
+      "theme": "万亿参数开源与巨额融资同日登场",
+      "generated_at": "2026-10-07T14:45:41.424932+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261007.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261007.html"
+    },
     {
       "date": "2026-10-06",
       "theme": "开源模型对垒与智能体科研闭环",
