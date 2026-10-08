@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Daily · 2026-10-08 | AInformer</title>
+<meta name="description" content="小模型降价、GPT-6 交互升级与本地智能体同台竞速 · 共 14 条精选">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --surface:#faf8fe;
+  --surface-low:#f4f3f8;
+  --surface-mid:#eeedf3;
+  --surface-high:#e9e7ed;
+  --border:#c7c6ca;
+  --border-soft:#e3e2e7;
+
+  --primary:#030304;
+  --on-surface:#1a1b1f;
+  --secondary:#5d5e60;
+  --tertiary:#77767b;
+  --muted:#9a999d;
+
+  --accent:#ba1a1a;
+  --accent-soft:#fff0ef;
+  --positive:#2e7d32;
+  --positive-soft:#e8f5e9;
+  --highlight:#a05a00;
+  --highlight-soft:#fff5e1;
+  --info:#1f4a82;
+  --info-soft:#eaf0f9;
+
+  --container:1200px;
+  --gutter:24px;
+
+  --font-sans:'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--on-surface);
+  font-family:var(--font-sans);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  font-feature-settings:"ss01","cv11";
+}
+::selection{background:#1a1b1f;color:#fff}
+img{max-width:100%;display:block}
+
+h1,h2,h3,h4,h5{font-family:var(--font-sans);color:var(--primary);font-weight:600;letter-spacing:-0.01em}
+p{margin:0}
+
+a{color:var(--primary);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s ease,color .2s ease,opacity .2s ease}
+a:hover{opacity:.7}
+
+code{
+  background:var(--surface-mid);
+  padding:1px 6px;
+  border-radius:3px;
+  font-family:var(--font-mono);
+  font-size:.86em;
+  color:var(--primary);
+  border:1px solid var(--border-soft);
+}
+pre.code{
+  background:var(--surface-mid);
+  border:1px solid var(--border-soft);
+  border-radius:6px;
+  padding:14px 16px;
+  overflow:auto;
+  margin:10px 0;
+  font-size:.84rem;
+  line-height:1.65;
+  font-family:var(--font-mono);
+}
+pre.code code{background:transparent;padding:0;border:none}
+
+.material-symbols-outlined{
+  font-family:'Material Symbols Outlined';
+  font-weight:400;
+  font-style:normal;
+  font-size:24px;
+  line-height:1;
+  letter-spacing:normal;
+  text-transform:none;
+  display:inline-block;
+  white-space:nowrap;
+  word-wrap:normal;
+  direction:ltr;
+  vertical-align:middle;
+  font-feature-settings:'liga';
+  -webkit-font-feature-settings:'liga';
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{max-width:var(--container);margin:0 auto;padding:0 24px}
+@media(min-width:1024px){.container{padding:0 64px}}
+
+/* ===== Top app bar (sticky nav) ===== */
+.sticky-nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(255,255,255,0.85);
+  -webkit-backdrop-filter:saturate(180%) blur(14px);
+  backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid var(--border-soft);
+}
+.nav-inner{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0 24px;
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+@media(min-width:1024px){.nav-inner{padding:0 64px}}
+.nav-left{display:flex;align-items:center;gap:32px;min-width:0}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-inner .home{
+  font-size:20px;
+  font-weight:800;
+  color:var(--primary);
+  letter-spacing:-0.02em;
+  border:none;
+  white-space:nowrap;
+}
+.nav-inner .home:hover{opacity:1;color:var(--primary)}
+.nav-inner .home .dot{color:var(--accent)}
+.nav-links{display:none;gap:24px;align-items:center}
+@media(min-width:768px){.nav-links{display:flex}}
+.nav-inner a:not(.home):not(.cta){
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:.02em;
+  color:var(--secondary);
+  border:none;
+  padding:6px 0;
+  white-space:nowrap;
+}
+.nav-inner a:not(.home):not(.cta):hover{color:var(--primary);opacity:1}
+.nav-inner .cta{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 14px;
+  background:var(--primary);
+  color:#fff;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.02em;
+  border-radius:6px;
+  border:none;
+  transition:transform .15s ease,opacity .2s ease;
+}
+.nav-inner .cta:hover{opacity:.9;color:#fff}
+.nav-inner .cta:active{transform:scale(.96)}
+
+/* ===== Hero ===== */
+.hero{
+  padding:96px 24px 80px;
+  text-align:center;
+  background:var(--bg);
+}
+@media(min-width:1024px){.hero{padding:120px 64px 96px}}
+.hero .date{
+  display:inline-block;
+  font-size:13px;
+  font-weight:600;
+  font-family:var(--font-mono);
+  letter-spacing:.06em;
+  color:#fff;
+  background:var(--primary);
+  padding:6px 12px;
+  border-radius:4px;
+  margin-bottom:24px;
+}
+.hero h1{
+  font-size:clamp(40px,7vw,72px);
+  line-height:1.05;
+  letter-spacing:-0.035em;
+  font-weight:700;
+  color:var(--primary);
+  margin-bottom:18px;
+}
+.hero .theme{
+  max-width:640px;
+  margin:0 auto;
+  font-size:18px;
+  line-height:1.6;
+  color:var(--secondary);
+  font-weight:400;
+}
+.hero .meta{
+  margin-top:28px;
+  display:inline-flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--tertiary);
+}
+.hero .meta span{
+  padding:5px 10px;
+  border:1px solid var(--border);
+  border-radius:3px;
+  background:transparent;
+}
+
+/* ===== Lede ===== */
+.lede{
+  max-width:780px;
+  margin:0 auto 96px;
+  padding:0;
+  background:transparent;
+  border:none;
+  border-radius:0;
+}
+.lede::before{
+  content:"今日速读 · Editorial";
+  display:flex;
+  align-items:center;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+  border:1px solid var(--accent);
+  padding:4px 10px;
+  border-radius:3px;
+  width:fit-content;
+  margin-bottom:28px;
+}
+.lede{
+  font-size:19px;
+  line-height:1.75;
+  color:var(--primary);
+  font-weight:400;
+}
+.lede::first-letter{
+  font-size:64px;
+  font-weight:700;
+  float:left;
+  line-height:.9;
+  margin:6px 12px 0 0;
+  color:var(--primary);
+  letter-spacing:-0.03em;
+}
+
+/* ===== Section ===== */
+.section{margin:0 0 96px}
+.section-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:40px;
+  padding-bottom:0;
+  border-bottom:none;
+}
+.section-head h2{
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--secondary);
+}
+.section-head .count{
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--tertiary);
+  font-family:var(--font-mono);
+}
+.subhead{
+  margin:32px 0 16px;
+  font-size:18px;
+  font-weight:600;
+  color:var(--secondary);
+  letter-spacing:.02em;
+  display:flex;align-items:baseline;gap:12px;
+}
+.subhead:first-child{margin-top:8px}
+.subhead .subcount{
+  font-size:11px;font-weight:600;letter-spacing:.12em;
+  color:var(--tertiary);font-family:var(--font-mono);
+}
+.quote-card.analyst::before{content:"✎"}
+.section-divider{
+  height:1px;
+  background:var(--border-soft);
+  margin:0 0 96px;
+}
+
+/* ===== Headlines ===== */
+.headlines{display:grid;gap:32px}
+@media(min-width:768px){.headlines{grid-template-columns:1fr 1fr;gap:40px}}
+.headline-card{
+  position:relative;
+  padding:4px 0 4px 24px;
+  border-left:3px solid var(--primary);
+  background:transparent;
+  border-radius:0;
+  transition:border-color .2s ease;
+}
+.headline-card:nth-child(1){border-left-color:var(--accent)}
+.headline-card:hover{border-left-color:var(--accent)}
+.headline-card::before{content:none}
+.headline-card h3{
+  font-size:24px;
+  line-height:1.25;
+  letter-spacing:-0.015em;
+  font-weight:600;
+  color:var(--primary);
+  margin-bottom:14px;
+}
+.headline-card p{
+  font-size:15px;
+  line-height:1.65;
+  color:var(--secondary);
+  margin-bottom:18px;
+}
+.headline-card .meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  font-size:12px;
+  color:var(--tertiary);
+}
+
+/* ===== News cards ===== */
+.cards{display:grid;gap:24px}
+@media(min-width:768px){.cards{grid-template-columns:1fr 1fr}}
+@media(min-width:1280px){.cards.three-col{grid-template-columns:repeat(3,1fr)}}
+.news-card{
+  position:relative;
+  background:var(--bg);
+  border:1px solid var(--border-soft);
+  border-radius:6px;
+  padding:28px 28px 24px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  transition:border-color .2s ease,box-shadow .25s ease,transform .2s ease;
+}
+.news-card::before{content:none}
+.news-card:hover{
+  border-color:var(--border);
+  box-shadow:0 12px 32px rgba(15,15,20,0.05);
+  transform:translateY(-2px);
+}
+.news-card h3{
+  font-size:18px;
+  line-height:1.35;
+  font-weight:600;
+  letter-spacing:-0.005em;
+  color:var(--primary);
+}
+.news-card .summary{
+  font-size:14.5px;
+  line-height:1.65;
+  color:var(--secondary);
+  flex-grow:1;
+}
+.news-card .value{
+  font-size:13px;
+  line-height:1.6;
+  color:var(--primary);
+  background:var(--positive-soft);
+  border-left:none;
+  border-radius:4px;
+  padding:10px 12px;
+  position:relative;
+}
+.news-card .value::before{
+  content:"VALUE";
+  display:block;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.2em;
+  color:var(--positive);
+  margin-bottom:4px;
+}
+.news-card .meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  font-size:12px;
+  color:var(--tertiary);
+  margin-top:auto;
+  padding-top:8px;
+  border-top:1px dashed var(--border-soft);
+}
+
+/* ===== Quote (opinion) ===== */
+.quote-card{
+  position:relative;
+  background:var(--surface-low);
+  border:none;
+  border-left:none;
+  border-radius:8px;
+  padding:48px 40px 36px;
+  transition:background .2s ease;
+}
+.quote-card::before{
+  content:"format_quote";
+  font-family:'Material Symbols Outlined';
+  position:absolute;
+  top:24px;
+  left:32px;
+  font-size:36px;
+  color:var(--primary);
+  opacity:.85;
+  line-height:1;
+  pointer-events:none;
+}
+.quote-card:hover{background:var(--surface-mid)}
+.quote-card .quote-en{
+  font-style:italic;
+  color:var(--tertiary);
+  line-height:1.6;
+  font-size:14px;
+  margin:64px 0 12px;
+}
+.quote-card .quote-zh{
+  font-family:var(--font-sans);
+  color:var(--primary);
+  line-height:1.4;
+  margin:0 0 18px;
+  font-size:24px;
+  font-weight:600;
+  letter-spacing:-0.015em;
+}
+.quote-card .quote-en + .quote-zh{margin-top:0}
+.quote-card:not(:has(.quote-en)) .quote-zh{margin-top:64px}
+.quote-title{
+  font-size:13px;
+  color:var(--tertiary);
+  margin-bottom:12px;
+  letter-spacing:.02em;
+}
+.quote-card .person{
+  font-family:var(--font-sans);
+  color:var(--primary);
+  font-size:14px;
+  font-weight:700;
+  text-align:left;
+  margin-top:20px;
+  letter-spacing:.02em;
+}
+.quote-card .meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  font-size:12px;
+  color:var(--tertiary);
+  margin-top:18px;
+  padding-top:14px;
+  border-top:1px solid var(--border-soft);
+}
+
+/* ===== Tags ===== */
+.tag{
+  display:inline-flex;
+  align-items:center;
+  padding:3px 8px;
+  border-radius:3px;
+  font-size:10.5px;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  border:1px solid transparent;
+  background:transparent;
+}
+.tag-hot{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+.tag-star{color:var(--highlight);border-color:var(--highlight);background:var(--highlight-soft)}
+.tag-pin{color:var(--positive);border-color:var(--positive);background:var(--positive-soft)}
+.tag-industry{color:var(--info);border-color:var(--info);background:var(--info-soft)}
+.tag-opinion{color:var(--primary);border-color:var(--primary);background:var(--surface-mid)}
+.tag-chinese{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+.tag-academic{color:var(--positive);border-color:var(--positive);background:var(--positive-soft)}
+.tag-benchmark{color:var(--highlight);border-color:var(--highlight);background:var(--highlight-soft)}
+.tag-headline{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+
+/* ===== Link button ===== */
+.link-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  padding:5px 10px;
+  background:transparent;
+  border:1px solid var(--border);
+  border-radius:3px;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.04em;
+  color:var(--primary);
+  transition:background .15s ease,border-color .15s ease,color .15s ease;
+}
+.link-btn:hover{
+  background:var(--primary);
+  border-color:var(--primary);
+  color:#fff;
+  opacity:1;
+}
+
+/* ===== Empty state ===== */
+.empty{
+  padding:32px;
+  text-align:center;
+  color:var(--tertiary);
+  background:var(--surface-low);
+  border:1px dashed var(--border);
+  border-radius:6px;
+  font-size:14px;
+}
+
+/* ===== Footer ===== */
+.footer{
+  margin-top:96px;
+  background:var(--surface-low);
+  color:var(--secondary);
+  border-top:1px solid var(--border-soft);
+}
+.footer .footer-grid{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:80px 24px 32px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:48px;
+}
+@media(min-width:768px){
+  .footer .footer-grid{grid-template-columns:2fr 1fr 1fr 1fr;padding:96px 24px 32px}
+}
+@media(min-width:1024px){.footer .footer-grid{padding:96px 64px 32px}}
+.footer .brand{display:flex;flex-direction:column;gap:12px}
+.footer .brand .name{font-size:20px;font-weight:800;color:var(--primary);letter-spacing:-0.02em}
+.footer .brand p{font-size:14px;line-height:1.6;color:var(--secondary);max-width:320px}
+.footer h4{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--primary);
+  margin-bottom:18px;
+}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.footer ul a,.footer p a{
+  color:var(--secondary);
+  font-size:13px;
+  border:none;
+  transition:color .2s ease;
+}
+.footer ul a:hover,.footer p a:hover{color:var(--primary);opacity:1}
+.footer .footer-bottom{
+  border-top:1px solid var(--border-soft);
+  max-width:var(--container);
+  margin:0 auto;
+  padding:24px;
+  font-size:12px;
+  color:var(--tertiary);
+  text-align:center;
+  line-height:1.7;
+}
+@media(min-width:1024px){.footer .footer-bottom{padding:24px 64px}}
+.footer .footer-bottom p{margin-bottom:6px}
+
+/* ===== Responsive ===== */
+@media(max-width:639px){
+  body{font-size:15px}
+  .hero{padding:64px 20px 56px}
+  .container{padding:0 20px}
+  .lede{margin-bottom:64px;font-size:17px}
+  .lede::first-letter{font-size:52px}
+  .section{margin-bottom:64px}
+  .quote-card{padding:40px 24px 28px}
+  .quote-card::before{top:20px;left:20px;font-size:30px}
+  .quote-card .quote-zh{font-size:20px}
+  .news-card{padding:24px 22px 22px}
+  .headline-card{padding-left:18px}
+  .headline-card h3{font-size:20px}
+}
+
+/* ===== Print ===== */
+@media print{
+  body{background:#fff;color:#000}
+  .sticky-nav,.footer{display:none}
+  .news-card,.headline-card,.quote-card,.lede{
+    break-inside:avoid;
+    background:#fff;
+    border:1px solid #ccc;
+    color:#000;
+    box-shadow:none;
+  }
+  .hero{background:#fff;color:#000;border-bottom:2px solid #000}
+  .hero h1,.hero .date,.hero .theme{color:#000}
+  .hero .date{background:#000;color:#fff}
+  a{color:#000;text-decoration:underline;border-bottom:none}
+}
+
+/* GitHub Trending cards */
+.trending-card{
+  background:var(--bg);
+  border:1px solid var(--border-soft);
+  border-radius:6px;
+  padding:24px 26px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  transition:border-color .2s ease,box-shadow .25s ease,transform .2s ease;
+}
+.trending-card:hover{
+  border-color:var(--border);
+  box-shadow:0 12px 32px rgba(15,15,20,0.05);
+  transform:translateY(-2px);
+}
+.trending-card .repo-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.trending-card .repo-name{
+  font-family:var(--font-mono);
+  font-size:15px;
+  font-weight:600;
+  color:var(--primary);
+  border:none;
+  letter-spacing:0;
+}
+.trending-card .repo-name:hover{color:var(--accent);opacity:1}
+.trending-card .ai-topic{
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:3px 8px;
+  background:var(--positive-soft);
+  border:1px solid var(--positive);
+  color:var(--positive);
+  border-radius:3px;
+  white-space:nowrap;
+}
+.trending-card .desc{
+  color:var(--secondary);
+  font-size:14px;
+  line-height:1.65;
+}
+.trending-card .value{
+  color:var(--primary);
+  font-size:13px;
+  line-height:1.6;
+  padding:10px 12px;
+  background:var(--highlight-soft);
+  border-left:none;
+  border-radius:4px;
+  position:relative;
+}
+.trending-card .value::before{
+  content:"VALUE";
+  display:block;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.2em;
+  color:var(--highlight);
+  margin-bottom:4px;
+}
+.trending-card .meta{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+  font-size:12px;
+  color:var(--tertiary);
+  padding-top:10px;
+  border-top:1px solid var(--border-soft);
+  font-family:var(--font-mono);
+}
+.trending-card .meta .lang::before{content:"●";margin-right:6px;color:var(--info)}
+.trending-card .meta .stars-today{color:var(--highlight);font-weight:700}
+</style>
+</head>
+<body>
+<header class="sticky-nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a class="home" href="https://chdendi.github.io/AInformer/index.html">AInformer<span class="dot">.</span></a>
+      <nav class="nav-links">
+        <a href="#headlines">头条</a>
+<a href="#trending">GitHub</a>        <a href="#industry">行业</a>
+        <a href="#opinion">观点</a>
+        <a href="#chinese">中文</a>
+        <a href="#academic">学术</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <a class="cta" href="https://chdendi.github.io/AInformer/index.html">← 回到首页</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="date">2026-10-08 · 周四</div>
+  <h1>每日 AI 简报</h1>
+  <p class="theme">小模型降价、GPT-6 交互升级与本地智能体同台竞速</p>
+  <div class="meta">
+    <span>精选 14 条</span>
+    <span>头条 2 则</span>
+    <span>生成于 2026-10-08 14:55</span>
+  </div>
+</section>
+
+<main class="container">
+
+  <section class="lede">今日最受关注的是模型与硬件两端的同步推进：Anthropic 发布 Claude Haiku 5.5，以 1M 上下文和低至 0.1 美元/百万 token 的输入价刷新小模型性价比；OpenAI 则全球推送 GPT-6 与 ChatGPT 智能 UI，让回答从纯文本转向可交互的图表、按钮与迷你应用。与此同时，英伟达与微软联合发布 RTX Spark，把 AI 智能体带到 Windows PC 本地运行；Nous Research 确认 15 亿美元估值并推出面向企业的智能体产品。学术侧，跨 120 种语言的分词器基准 Tokka-Bench 首次给出标准化评测，为多语言模型质量差异提供了可比较的标尺。</section>
+
+  <section class="section" id="headlines">
+    <div class="section-head"><h2>今日头条</h2><span class="count">5 条</span></div>
+    <div class="headlines">
+      <article class="headline-card">
+        <h3>Anthropic 发布 Claude Haiku 5.5：1M 上下文，输入价降至 0.1 美元/百万 token</h3>
+        <p>Anthropic 推出号称最快最省的小模型 Claude Haiku 5.5，已在 Amazon Bedrock 与 AWS 上的 Claude 平台上线，保留 1M 上下文能力。输入价格降至 0.1 美元/百万 token，进一步压低小模型的使用门槛。</p>
+        <div class="meta">
+<span class="tag tag-industry">行业新闻</span><span>AWS Machine Learning Blog / MarkTechPost</span><a class="link-btn" href="https://aws.amazon.com/blogs/machine-learning/introducing-claude-haiku-5-5-on-aws/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="headline-card">
+        <h3>OpenAI 全球推送 GPT-6 与 ChatGPT 智能 UI：图表、按钮与迷你应用</h3>
+        <p>OpenAI 宣布 GPT-6 在 ChatGPT 全球上线，并推出 Intelligent UI，让回答从纯文本转向可交互的图表、按钮与迷你应用。官方称响应更快、更可探索，交互形态的转变成为本次更新的核心看点。</p>
+        <div class="meta">
+<span class="tag tag-industry">行业新闻</span><span>OpenAI / The Verge</span><a class="link-btn" href="https://openai.com/index/gpt-6-for-everyone" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="headline-card">
+        <h3>英伟达与微软发布 RTX Spark：Windows PC 本地跑 AI 智能体</h3>
+        <p>在旧金山微软活动上，黄仁勋与纳德拉共同宣布 RTX Spark 与 AI Agents 方案，并展示 Surface Laptop Ultra 及 Surface RTX Spark 相关产品。该方案意在让 Windows PC 在本地运行 AI 智能体，减少对云端推理的依赖。</p>
+        <div class="meta">
+<span class="tag tag-industry">行业新闻</span><span>NVIDIA Blog / The Verge</span><a class="link-btn" href="https://blogs.nvidia.com/blog/local-ai-rtx-spark-microsoft-windows-event/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="headline-card">
+        <h3>Kubernetes 联合创始人：把智能体 harness 搬进云</h3>
+        <p>Craig McLuckie 与 Joe Beda 创立 Stacklok，主张智能体 harness 应完全运行在云端，而非困在桌面。这一观点延续了两人在基础设施领域的思路，把智能体运行环境视为新的平台层问题。</p>
+        <div class="meta">
+<span class="tag tag-opinion">观点声音</span><span>Latent Space</span><a class="link-btn" href="https://www.latent.space/p/stacklok" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="headline-card">
+        <h3>Tokka-Bench：跨 120 种语言评测分词器</h3>
+        <p>该工作提出首个覆盖 100 种自然语言与 20 种编程语言的分词器标准化基准，揭示不同语言间分词质量的差异。它为多语言模型的分词环节提供了可比较的评测标尺。</p>
+        <div class="meta">
+<span class="tag tag-academic">学术与评测</span><span>arXiv</span><a class="link-btn" href="https://arxiv.org/abs/2610.08794" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="trending">
+    <div class="section-head"><h2>GitHub Trending · 今日热门 AI 项目</h2><span class="count">4 个</span></div>
+    <div class="cards">
+      <article class="trending-card">
+        <div class="repo-line">
+          <a class="repo-name" href="https://github.com/thedotmack/claude-mem" target="_blank" rel="noopener noreferrer">thedotmack/claude-mem</a>
+<span class="ai-topic">Agent 记忆 / 上下文管理</span>        </div>
+<p class="desc">为各类 AI coding agent 提供跨会话的持久记忆：捕获 agent 在会话中的所有操作，用 AI 压缩后，在后续会话中注入相关上下文。兼容 Claude Code、Codex、Gemini、Copilot、OpenCode 等。</p><div class="value">解决 agent 每次会话从零开始的痛点，让长期项目中的上下文得以延续，是 agent 工程化的关键基础设施。</div>        <div class="meta">
+<span class="lang">TypeScript</span><span class="stars-today">+578 ⭐ 今日</span><span>97,918 ⭐ 总计</span>          <a class="link-btn" href="https://github.com/thedotmack/claude-mem" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+        </div>
+      </article>
+      <article class="trending-card">
+        <div class="repo-line">
+          <a class="repo-name" href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener noreferrer">addyosmani/agent-skills</a>
+<span class="ai-topic">Coding Agent Skills</span>        </div>
+<p class="desc">面向 AI coding agent 的生产级工程技能集合，提供可直接复用的 skills 配置，帮助 agent 在真实项目中遵循工程规范完成任务。</p><div class="value">由知名前端工程师维护，把工程最佳实践沉淀为 agent 可调用的技能，降低团队落地 coding agent 的门槛。</div>        <div class="meta">
+<span class="lang">JavaScript</span><span class="stars-today">+677 ⭐ 今日</span><span>103,011 ⭐ 总计</span>          <a class="link-btn" href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+        </div>
+      </article>
+      <article class="trending-card">
+        <div class="repo-line">
+          <a class="repo-name" href="https://github.com/cloudflare/security-audit-skill" target="_blank" rel="noopener noreferrer">cloudflare/security-audit-skill</a>
+<span class="ai-topic">Coding Agent Skills / 安全审计</span>        </div>
+<p class="desc">一个用于 coding agent 的安全审计技能，支持多阶段审计流程，产出可独立验证、机器可读的审计发现，便于集成到自动化工作流。</p><div class="value">把安全审计能力封装成 agent skill，让 AI 辅助代码审计结果可验证、可追溯，适合 DevSecOps 场景。</div>        <div class="meta">
+<span class="lang">JavaScript</span><span class="stars-today">+576 ⭐ 今日</span><span>26,245 ⭐ 总计</span>          <a class="link-btn" href="https://github.com/cloudflare/security-audit-skill" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+        </div>
+      </article>
+      <article class="trending-card">
+        <div class="repo-line">
+          <a class="repo-name" href="https://github.com/trycua/cua" target="_blank" rel="noopener noreferrer">trycua/cua</a>
+<span class="ai-topic">Computer-Use Agent / 评测基准</span>        </div>
+<p class="desc">面向 computer-use 2.0 的开源驱动、跨操作系统机群与基准测试，用于训练、评估和生成 agent 操作计算机的数据。</p><div class="value">为 computer-use agent 提供可扩展的跨 OS 运行与评测环境，是训练和验证 GUI 操作智能体的重要基础设施。</div>        <div class="meta">
+<span class="lang">Rust</span><span class="stars-today">+228 ⭐ 今日</span><span>28,884 ⭐ 总计</span>          <a class="link-btn" href="https://github.com/trycua/cua" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="section" id="industry">
+    <div class="section-head"><h2>AI 行业新闻与产品动态</h2><span class="count">4 条</span></div>
+    <div class="cards">
+<article class="news-card">
+  <h3>Anthropic发布Claude Haiku 5.5：1M上下文，输入价降至0.1美元/百万token</h3>
+<p class="summary">Anthropic推出最快最省的小模型Claude Haiku 5.5，已在Amazon Bedrock与AWS上的Claude平台上线，保留1M上下文，OSWorld得分72.4%，输入定价低至每百万token 0.10美元。</p><p class="value">小模型价格战升级，长上下文低成本推理门槛再降</p>  <div class="meta">
+<span class="tag tag-hot">🔥 头条</span><span>AWS Machine Learning Blog / MarkTechPost</span><span>· 2026-10-07</span><a class="link-btn" href="https://aws.amazon.com/blogs/machine-learning/introducing-claude-haiku-5-5-on-aws/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>OpenAI全球推送GPT-6与ChatGPT智能UI：图表、按钮与迷你应用</h3>
+<p class="summary">OpenAI宣布GPT-6在ChatGPT全球上线，并推出Intelligent UI，让回答从纯文本转向可交互的图表、按钮与迷你应用，响应更快、可探索。</p><p class="value">ChatGPT从对话界面转向交互式应用层，重塑产品形态</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>OpenAI / The Verge</span><span>· 2026-10-07</span><a class="link-btn" href="https://openai.com/index/gpt-6-for-everyone" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>英伟达与微软发布RTX Spark：Windows PC本地跑AI智能体</h3>
+<p class="summary">在旧金山微软活动上，黄仁勋与纳德拉宣布RTX Spark与AI Agents方案，Surface Laptop Ultra及Surface RTX Spark Dev Box（约5999美元，11月发货）搭载英伟达芯片，主打本地运行模型与智能体。</p><p class="value">本地AI PC进入智能体时代，端侧算力竞争升温</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>NVIDIA Blog / The Verge</span><span>· 2026-10-07</span><a class="link-btn" href="https://blogs.nvidia.com/blog/local-ai-rtx-spark-microsoft-windows-event/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>Nous Research确认15亿美元估值，推出面向企业的AI智能体</h3>
+<p class="summary">Hermes Agent开发商Nous Research完成9000万美元B轮融资，确认估值达15亿美元，并发布面向商业用户的AI智能体产品。</p><p class="value">开源系智能体厂商获资本认可，企业级Agent赛道扩容</p>  <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>TechCrunch</span><span>· 2026-10-07</span><a class="link-btn" href="https://techcrunch.com/2026/10/07/nous-research-confirms-it-hit-1-5b-valuation-launches-ai-agents-for-business-users/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article>    </div>
+  </section>
+
+  <section class="section" id="opinion">
+    <div class="section-head"><h2>AI 观点与社区声音</h2><span class="count">4 条</span></div>
+      <h3 class="subhead">深度分析 <span class="subcount">1 条</span></h3>
+      <div class="cards">
+        <article class="quote-card analyst">
+<p class="quote-en">I've always been kind of into computers since I was young.</p><p class="quote-zh">我从年轻时就一直对计算机挺感兴趣。</p><p class="quote-title">Simon Willison 摘录：Ben Affleck 谈自己动手写代码</p>          <div class="person">— Simon Willison · 分析师</div>
+          <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>名人一手使用体验，反映非专业开发者的 AI 工作流。</span><a class="link-btn" href="https://simonwillison.net/2026/Oct/7/ben-affleck/" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+      </div>
+      <h3 class="subhead">社区声音 <span class="subcount">3 条</span></h3>
+      <div class="cards">
+        <article class="quote-card analyst">
+<p class="quote-en">Kubernetes co-creators Craig McLuckie and Joe Beda aim to bring agent harnesses fully into the cloud.</p><p class="quote-zh">Kubernetes 联合创始人 Craig McLuckie 与 Joe Beda 的目标，是让智能体 harness 完全进入云端运行。</p><p class="quote-title">Kubernetes 联合创始人：把智能体 harness 搬进云</p>          <div class="person">— Latent Space · 社区</div>
+          <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>智能体可靠性的下一个战场可能在云原生基础设施层。</span><a class="link-btn" href="https://www.latent.space/p/stacklok" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+        <article class="quote-card analyst">
+<p class="quote-zh">社区围绕 LLM 是否让小众语言更难获得训练数据与工具支持展开讨论。</p><p class="quote-title">Lobsters 讨论：语言模型时代的 Clojure</p>          <div class="person">— Lobsters · 社区</div>
+          <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>小众语言在 AI 编码时代是受益还是被边缘化。</span><a class="link-btn" href="https://yogthos.net/posts/2026-10-07-clojure-llms.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+        <article class="quote-card analyst">
+<p class="quote-en">Assuming I have been on hibernation since 2018-19 time frame, which materials - books, MOOC courses and YT channels would be recommended for me to ...</p><p class="quote-zh">假设我从 2018-19 年起就处于休眠状态，现在该推荐哪些书、MOOC 课程和 YouTube 频道来补课？</p><p class="quote-title">Lobsters 提问：2018 年后如何补 AI/ML 基础</p>          <div class="person">— Lobsters · 社区</div>
+          <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>反映从业者对知识断层的焦虑与再学习路径需求。</span><a class="link-btn" href="https://lobste.rs/s/xff77a/best_books_courses_channels_leapfrog_on" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+      </div>
+  </section>
+
+  <section class="section" id="chinese">
+    <div class="section-head"><h2>中文 AI 生态与学术动态</h2><span class="count">2 条</span></div>
+    <div class="cards">
+<article class="news-card">
+  <h3>苹果发布中国App Store生态报告：五年规模翻倍</h3>
+<p class="summary">苹果发布《中国App Store生态系统2025年开发者与用户价值研究》，显示生态规模五年翻倍，助力中国开发者走向全球。</p><p class="value">中国开发者出海与AI应用分发的关键渠道数据</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>少数派</span><span>· 2026-10-08</span><a class="link-btn" href="https://sspai.com/post/115462" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>派早报：Anthropic推Claude for Google Workspace</h3>
+<p class="summary">Anthropic推出Claude for Google Workspace，Reflection发布首个开放权重模型Beam，微软发布Windows相关新品。</p><p class="value">办公场景AI集成加速，开源权重模型竞争加剧</p>  <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>少数派</span><span>· 2026-10-08</span><a class="link-btn" href="https://sspai.com/post/115455" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article>    </div>
+  </section>
+
+  <section class="section" id="academic">
+    <div class="section-head"><h2>学术与评测</h2><span class="count">4 条</span></div>
+    <div class="cards">
+<article class="news-card">
+  <h3>Tokka-Bench：跨120种语言评测分词器</h3>
+<p class="summary">首个覆盖100种自然语言与20种编程语言的分词器标准化基准，揭示不同语言间分词质量差异。</p><p class="value">填补分词器跨语言评测空白，暴露多语言模型隐性成本</p>  <div class="meta">
+<span class="tag tag-hot">🔥 头条</span><span>arXiv</span><span>· 2026-10-08</span><a class="link-btn" href="https://arxiv.org/abs/2610.08794" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>CARE：为VLA推理加速提供认证</h3>
+<p class="summary">针对视觉-语言-动作模型每步推理开销大的问题，提出可认证的加速方法，保证加速后动作质量。</p><p class="value">首次为VLA推理加速给出理论保证，兼顾实时性与可靠性</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>arXiv</span><span>· 2026-10-08</span><a class="link-btn" href="https://arxiv.org/abs/2610.08917" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>CoDR：扩散语言模型的免训练重掩码</h3>
+<p class="summary">针对掩码扩散语言模型解码时的置信度漂移，提出免训练的重掩码策略，提升生成质量。</p><p class="value">无需训练即可修正扩散LM解码偏差，降低部署成本</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>arXiv</span><span>· 2026-10-08</span><a class="link-btn" href="https://arxiv.org/abs/2610.08833" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>LRCC：低秩压缩结合条件计算</h3>
+<p class="summary">将低秩压缩与条件计算结合，在压缩预训练语言模型的同时保持性能，泛化现有低秩方法。</p><p class="value">条件计算让低秩压缩更灵活，压缩率与性能兼得</p>  <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>arXiv</span><span>· 2026-10-08</span><a class="link-btn" href="https://arxiv.org/abs/2610.08858" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article>    </div>
+  </section>
+
+</main>
+<footer class="footer">
+<div class="footer-grid">
+  <div class="brand">
+    <span class="name">AInformer<span style="color:var(--accent)">.</span></span>
+    <p>每日 AI 简报：中文 AI 生态的精选信息流，聚合行业、观点、学术与中文动态。</p>
+  </div>
+  <div>
+    <h4>Navigate</h4>
+    <ul>
+      <li><a href="https://chdendi.github.io/AInformer/index.html">← 回到首页</a></li>
+      <li><a href="https://chdendi.github.io/AInformer/index.html#archive">历史日报归档</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Sources</h4>
+    <ul>
+      <li>OpenAI / Anthropic / DeepMind</li>
+      <li>The Verge · TechCrunch</li>
+      <li>机器之心 · 量子位 · 36kr</li>
+      <li>arXiv · Hacker News</li>
+    </ul>
+  </div>
+  <div>
+    <h4>Data</h4>
+    <ul>
+      <li><a href="https://chdendi.github.io/AInformer/api/v1/manifest.json" target="_blank" rel="noopener">JSON API · Manifest</a></li>
+      <li><a href="https://github.com/chdendi/AInformer" target="_blank" rel="noopener">Source on GitHub</a></li>
+    </ul>
+  </div>
+</div>
+  <div class="footer-bottom">
+    <p>本日报基于公开信息自动搜索整理生成，资讯来源包括 OpenAI / Anthropic / DeepMind 等官方博客、The Verge、TechCrunch、36kr、机器之心、量子位、ArXiv、Hacker News 等公开平台。内容可能存在时效性偏差或不完整，请以原始来源为准。</p>
+    <p>Generated at 2026-10-08 14:55 · Powered by DeepSeek + public sources · <a href="https://chdendi.github.io/AInformer/index.html">AInformer</a> · <a href="https://chdendi.github.io/AInformer/api/v1/manifest.json">JSON API</a></p>
+  </div>
+</footer>
+</body>
+</html>
