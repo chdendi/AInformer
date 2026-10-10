@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-10-09T15:06:47.161136+08:00",
-  "total_days": 155,
+  "updated_at": "2026-10-10T14:34:40.210602+08:00",
+  "total_days": 156,
   "latest": {
-    "date": "2026-10-09",
-    "theme": "从对话到执行，智能体全面加速落地",
-    "generated_at": "2026-10-09T15:06:47.043051+08:00",
+    "date": "2026-10-10",
+    "theme": "智能体规模跃升，安全与资本同步紧绷",
+    "generated_at": "2026-10-10T14:34:40.094205+08:00",
     "total_items": 16,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261009.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20261009.html"
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261010.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20261010.html"
   },
   "dates": [
+    {
+      "date": "2026-10-10",
+      "theme": "智能体规模跃升，安全与资本同步紧绷",
+      "generated_at": "2026-10-10T14:34:40.094205+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261010.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261010.html"
+    },
     {
       "date": "2026-10-09",
       "theme": "从对话到执行，智能体全面加速落地",
