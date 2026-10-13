@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-10-12T14:50:16.465917+08:00",
-  "total_days": 158,
+  "updated_at": "2026-10-13T15:16:05.110408+08:00",
+  "total_days": 159,
   "latest": {
-    "date": "2026-10-12",
-    "theme": "智能体协作成本受质疑，模型与工具持续上新",
-    "generated_at": "2026-10-12T14:50:16.387743+08:00",
-    "total_items": 14,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261012.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20261012.html"
+    "date": "2026-10-13",
+    "theme": "前沿模型与推理硬件同日竞速，智能体走向长程与落地",
+    "generated_at": "2026-10-13T15:16:05.007864+08:00",
+    "total_items": 16,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261013.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20261013.html"
   },
   "dates": [
+    {
+      "date": "2026-10-13",
+      "theme": "前沿模型与推理硬件同日竞速，智能体走向长程与落地",
+      "generated_at": "2026-10-13T15:16:05.007864+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261013.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261013.html"
+    },
     {
       "date": "2026-10-12",
       "theme": "智能体协作成本受质疑，模型与工具持续上新",
