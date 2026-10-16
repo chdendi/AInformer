@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-10-15T13:26:26.139480+08:00",
-  "total_days": 161,
+  "updated_at": "2026-10-16T13:19:42.158688+08:00",
+  "total_days": 162,
   "latest": {
-    "date": "2026-10-15",
-    "theme": "算力加码与监管收紧并行，端侧智能体加速落地",
-    "generated_at": "2026-10-15T13:26:25.944729+08:00",
+    "date": "2026-10-16",
+    "theme": "开源模型竞逐与前沿推理突破",
+    "generated_at": "2026-10-16T13:19:42.011273+08:00",
     "total_items": 16,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261015.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20261015.html"
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261016.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20261016.html"
   },
   "dates": [
+    {
+      "date": "2026-10-16",
+      "theme": "开源模型竞逐与前沿推理突破",
+      "generated_at": "2026-10-16T13:19:42.011273+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261016.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261016.html"
+    },
     {
       "date": "2026-10-15",
       "theme": "算力加码与监管收紧并行，端侧智能体加速落地",
