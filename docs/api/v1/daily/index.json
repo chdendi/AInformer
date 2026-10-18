@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-10-17T13:14:37.312596+08:00",
-  "total_days": 163,
+  "updated_at": "2026-10-18T13:18:21.526057+08:00",
+  "total_days": 164,
   "latest": {
-    "date": "2026-10-17",
-    "theme": "出口管制收紧与开源模型竞速并行",
-    "generated_at": "2026-10-17T13:14:37.170774+08:00",
-    "total_items": 13,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261017.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20261017.html"
+    "date": "2026-10-18",
+    "theme": "模型迭代加速，智能体生态开源与竞争并进",
+    "generated_at": "2026-10-18T13:18:21.409284+08:00",
+    "total_items": 15,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261018.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20261018.html"
   },
   "dates": [
+    {
+      "date": "2026-10-18",
+      "theme": "模型迭代加速，智能体生态开源与竞争并进",
+      "generated_at": "2026-10-18T13:18:21.409284+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261018.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261018.html"
+    },
     {
       "date": "2026-10-17",
       "theme": "出口管制收紧与开源模型竞速并行",
