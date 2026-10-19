@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Daily · 2026-10-19 | AInformer</title>
+<meta name="description" content="开源与责任并进，AI生态加速重构 · 共 14 条精选">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --surface:#faf8fe;
+  --surface-low:#f4f3f8;
+  --surface-mid:#eeedf3;
+  --surface-high:#e9e7ed;
+  --border:#c7c6ca;
+  --border-soft:#e3e2e7;
+
+  --primary:#030304;
+  --on-surface:#1a1b1f;
+  --secondary:#5d5e60;
+  --tertiary:#77767b;
+  --muted:#9a999d;
+
+  --accent:#ba1a1a;
+  --accent-soft:#fff0ef;
+  --positive:#2e7d32;
+  --positive-soft:#e8f5e9;
+  --highlight:#a05a00;
+  --highlight-soft:#fff5e1;
+  --info:#1f4a82;
+  --info-soft:#eaf0f9;
+
+  --container:1200px;
+  --gutter:24px;
+
+  --font-sans:'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--on-surface);
+  font-family:var(--font-sans);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  font-feature-settings:"ss01","cv11";
+}
+::selection{background:#1a1b1f;color:#fff}
+img{max-width:100%;display:block}
+
+h1,h2,h3,h4,h5{font-family:var(--font-sans);color:var(--primary);font-weight:600;letter-spacing:-0.01em}
+p{margin:0}
+
+a{color:var(--primary);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s ease,color .2s ease,opacity .2s ease}
+a:hover{opacity:.7}
+
+code{
+  background:var(--surface-mid);
+  padding:1px 6px;
+  border-radius:3px;
+  font-family:var(--font-mono);
+  font-size:.86em;
+  color:var(--primary);
+  border:1px solid var(--border-soft);
+}
+pre.code{
+  background:var(--surface-mid);
+  border:1px solid var(--border-soft);
+  border-radius:6px;
+  padding:14px 16px;
+  overflow:auto;
+  margin:10px 0;
+  font-size:.84rem;
+  line-height:1.65;
+  font-family:var(--font-mono);
+}
+pre.code code{background:transparent;padding:0;border:none}
+
+.material-symbols-outlined{
+  font-family:'Material Symbols Outlined';
+  font-weight:400;
+  font-style:normal;
+  font-size:24px;
+  line-height:1;
+  letter-spacing:normal;
+  text-transform:none;
+  display:inline-block;
+  white-space:nowrap;
+  word-wrap:normal;
+  direction:ltr;
+  vertical-align:middle;
+  font-feature-settings:'liga';
+  -webkit-font-feature-settings:'liga';
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{max-width:var(--container);margin:0 auto;padding:0 24px}
+@media(min-width:1024px){.container{padding:0 64px}}
+
+/* ===== Top app bar (sticky nav) ===== */
+.sticky-nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(255,255,255,0.85);
+  -webkit-backdrop-filter:saturate(180%) blur(14px);
+  backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid var(--border-soft);
+}
+.nav-inner{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0 24px;
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+@media(min-width:1024px){.nav-inner{padding:0 64px}}
+.nav-left{display:flex;align-items:center;gap:32px;min-width:0}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-inner .home{
+  font-size:20px;
+  font-weight:800;
+  color:var(--primary);
+  letter-spacing:-0.02em;
+  border:none;
+  white-space:nowrap;
+}
+.nav-inner .home:hover{opacity:1;color:var(--primary)}
+.nav-inner .home .dot{color:var(--accent)}
+.nav-links{display:none;gap:24px;align-items:center}
+@media(min-width:768px){.nav-links{display:flex}}
+.nav-inner a:not(.home):not(.cta){
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:.02em;
+  color:var(--secondary);
+  border:none;
+  padding:6px 0;
+  white-space:nowrap;
+}
+.nav-inner a:not(.home):not(.cta):hover{color:var(--primary);opacity:1}
+.nav-inner .cta{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 14px;
+  background:var(--primary);
+  color:#fff;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.02em;
+  border-radius:6px;
+  border:none;
+  transition:transform .15s ease,opacity .2s ease;
+}
+.nav-inner .cta:hover{opacity:.9;color:#fff}
+.nav-inner .cta:active{transform:scale(.96)}
+
+/* ===== Hero ===== */
+.hero{
+  padding:96px 24px 80px;
+  text-align:center;
+  background:var(--bg);
+}
+@media(min-width:1024px){.hero{padding:120px 64px 96px}}
+.hero .date{
+  display:inline-block;
+  font-size:13px;
+  font-weight:600;
+  font-family:var(--font-mono);
+  letter-spacing:.06em;
+  color:#fff;
+  background:var(--primary);
+  padding:6px 12px;
+  border-radius:4px;
+  margin-bottom:24px;
+}
+.hero h1{
+  font-size:clamp(40px,7vw,72px);
+  line-height:1.05;
+  letter-spacing:-0.035em;
+  font-weight:700;
+  color:var(--primary);
+  margin-bottom:18px;
+}
+.hero .theme{
+  max-width:640px;
+  margin:0 auto;
+  font-size:18px;
+  line-height:1.6;
+  color:var(--secondary);
+  font-weight:400;
+}
+.hero .meta{
+  margin-top:28px;
+  display:inline-flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--tertiary);
+}
+.hero .meta span{
+  padding:5px 10px;
+  border:1px solid var(--border);
+  border-radius:3px;
+  background:transparent;
+}
+
+/* ===== Lede ===== */
+.lede{
+  max-width:780px;
+  margin:0 auto 96px;
+  padding:0;
+  background:transparent;
+  border:none;
+  border-radius:0;
+}
+.lede::before{
+  content:"今日速读 · Editorial";
+  display:flex;
+  align-items:center;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+  border:1px solid var(--accent);
+  padding:4px 10px;
+  border-radius:3px;
+  width:fit-content;
+  margin-bottom:28px;
+}
+.lede{
+  font-size:19px;
+  line-height:1.75;
+  color:var(--primary);
+  font-weight:400;
+}
+.lede::first-letter{
+  font-size:64px;
+  font-weight:700;
+  float:left;
+  line-height:.9;
+  margin:6px 12px 0 0;
+  color:var(--primary);
+  letter-spacing:-0.03em;
+}
+
+/* ===== Section ===== */
+.section{margin:0 0 96px}
+.section-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:40px;
+  padding-bottom:0;
+  border-bottom:none;
+}
+.section-head h2{
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--secondary);
+}
+.section-head .count{
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--tertiary);
+  font-family:var(--font-mono);
+}
+.subhead{
+  margin:32px 0 16px;
+  font-size:18px;
+  font-weight:600;
+  color:var(--secondary);
+  letter-spacing:.02em;
+  display:flex;align-items:baseline;gap:12px;
+}
+.subhead:first-child{margin-top:8px}
+.subhead .subcount{
+  font-size:11px;font-weight:600;letter-spacing:.12em;
+  color:var(--tertiary);font-family:var(--font-mono);
+}
+.quote-card.analyst::before{content:"✎"}
+.section-divider{
+  height:1px;
+  background:var(--border-soft);
+  margin:0 0 96px;
+}
+
+/* ===== Headlines ===== */
+.headlines{display:grid;gap:32px}
+@media(min-width:768px){.headlines{grid-template-columns:1fr 1fr;gap:40px}}
+.headline-card{
+  position:relative;
+  padding:4px 0 4px 24px;
+  border-left:3px solid var(--primary);
+  background:transparent;
+  border-radius:0;
+  transition:border-color .2s ease;
+}
+.headline-card:nth-child(1){border-left-color:var(--accent)}
+.headline-card:hover{border-left-color:var(--accent)}
+.headline-card::before{content:none}
+.headline-card h3{
+  font-size:24px;
+  line-height:1.25;
+  letter-spacing:-0.015em;
+  font-weight:600;
+  color:var(--primary);
+  margin-bottom:14px;
+}
+.headline-card p{
+  font-size:15px;
+  line-height:1.65;
+  color:var(--secondary);
+  margin-bottom:18px;
+}
+.headline-card .meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  font-size:12px;
+  color:var(--tertiary);
+}
+
+/* ===== News cards ===== */
+.cards{display:grid;gap:24px}
+@media(min-width:768px){.cards{grid-template-columns:1fr 1fr}}
+@media(min-width:1280px){.cards.three-col{grid-template-columns:repeat(3,1fr)}}
+.news-card{
+  position:relative;
+  background:var(--bg);
+  border:1px solid var(--border-soft);
+  border-radius:6px;
+  padding:28px 28px 24px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  transition:border-color .2s ease,box-shadow .25s ease,transform .2s ease;
+}
+.news-card::before{content:none}
+.news-card:hover{
+  border-color:var(--border);
+  box-shadow:0 12px 32px rgba(15,15,20,0.05);
+  transform:translateY(-2px);
+}
+.news-card h3{
+  font-size:18px;
+  line-height:1.35;
+  font-weight:600;
+  letter-spacing:-0.005em;
+  color:var(--primary);
+}
+.news-card .summary{
+  font-size:14.5px;
+  line-height:1.65;
+  color:var(--secondary);
+  flex-grow:1;
+}
+.news-card .value{
+  font-size:13px;
+  line-height:1.6;
+  color:var(--primary);
+  background:var(--positive-soft);
+  border-left:none;
+  border-radius:4px;
+  padding:10px 12px;
+  position:relative;
+}
+.news-card .value::before{
+  content:"VALUE";
+  display:block;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.2em;
+  color:var(--positive);
+  margin-bottom:4px;
+}
+.news-card .meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  font-size:12px;
+  color:var(--tertiary);
+  margin-top:auto;
+  padding-top:8px;
+  border-top:1px dashed var(--border-soft);
+}
+
+/* ===== Quote (opinion) ===== */
+.quote-card{
+  position:relative;
+  background:var(--surface-low);
+  border:none;
+  border-left:none;
+  border-radius:8px;
+  padding:48px 40px 36px;
+  transition:background .2s ease;
+}
+.quote-card::before{
+  content:"format_quote";
+  font-family:'Material Symbols Outlined';
+  position:absolute;
+  top:24px;
+  left:32px;
+  font-size:36px;
+  color:var(--primary);
+  opacity:.85;
+  line-height:1;
+  pointer-events:none;
+}
+.quote-card:hover{background:var(--surface-mid)}
+.quote-card .quote-en{
+  font-style:italic;
+  color:var(--tertiary);
+  line-height:1.6;
+  font-size:14px;
+  margin:64px 0 12px;
+}
+.quote-card .quote-zh{
+  font-family:var(--font-sans);
+  color:var(--primary);
+  line-height:1.4;
+  margin:0 0 18px;
+  font-size:24px;
+  font-weight:600;
+  letter-spacing:-0.015em;
+}
+.quote-card .quote-en + .quote-zh{margin-top:0}
+.quote-card:not(:has(.quote-en)) .quote-zh{margin-top:64px}
+.quote-title{
+  font-size:13px;
+  color:var(--tertiary);
+  margin-bottom:12px;
+  letter-spacing:.02em;
+}
+.quote-card .person{
+  font-family:var(--font-sans);
+  color:var(--primary);
+  font-size:14px;
+  font-weight:700;
+  text-align:left;
+  margin-top:20px;
+  letter-spacing:.02em;
+}
+.quote-card .meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  font-size:12px;
+  color:var(--tertiary);
+  margin-top:18px;
+  padding-top:14px;
+  border-top:1px solid var(--border-soft);
+}
+
+/* ===== Tags ===== */
+.tag{
+  display:inline-flex;
+  align-items:center;
+  padding:3px 8px;
+  border-radius:3px;
+  font-size:10.5px;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  border:1px solid transparent;
+  background:transparent;
+}
+.tag-hot{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+.tag-star{color:var(--highlight);border-color:var(--highlight);background:var(--highlight-soft)}
+.tag-pin{color:var(--positive);border-color:var(--positive);background:var(--positive-soft)}
+.tag-industry{color:var(--info);border-color:var(--info);background:var(--info-soft)}
+.tag-opinion{color:var(--primary);border-color:var(--primary);background:var(--surface-mid)}
+.tag-chinese{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+.tag-academic{color:var(--positive);border-color:var(--positive);background:var(--positive-soft)}
+.tag-benchmark{color:var(--highlight);border-color:var(--highlight);background:var(--highlight-soft)}
+.tag-headline{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+
+/* ===== Link button ===== */
+.link-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  padding:5px 10px;
+  background:transparent;
+  border:1px solid var(--border);
+  border-radius:3px;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.04em;
+  color:var(--primary);
+  transition:background .15s ease,border-color .15s ease,color .15s ease;
+}
+.link-btn:hover{
+  background:var(--primary);
+  border-color:var(--primary);
+  color:#fff;
+  opacity:1;
+}
+
+/* ===== Empty state ===== */
+.empty{
+  padding:32px;
+  text-align:center;
+  color:var(--tertiary);
+  background:var(--surface-low);
+  border:1px dashed var(--border);
+  border-radius:6px;
+  font-size:14px;
+}
+
+/* ===== Footer ===== */
+.footer{
+  margin-top:96px;
+  background:var(--surface-low);
+  color:var(--secondary);
+  border-top:1px solid var(--border-soft);
+}
+.footer .footer-grid{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:80px 24px 32px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:48px;
+}
+@media(min-width:768px){
+  .footer .footer-grid{grid-template-columns:2fr 1fr 1fr 1fr;padding:96px 24px 32px}
+}
+@media(min-width:1024px){.footer .footer-grid{padding:96px 64px 32px}}
+.footer .brand{display:flex;flex-direction:column;gap:12px}
+.footer .brand .name{font-size:20px;font-weight:800;color:var(--primary);letter-spacing:-0.02em}
+.footer .brand p{font-size:14px;line-height:1.6;color:var(--secondary);max-width:320px}
+.footer h4{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--primary);
+  margin-bottom:18px;
+}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.footer ul a,.footer p a{
+  color:var(--secondary);
+  font-size:13px;
+  border:none;
+  transition:color .2s ease;
+}
+.footer ul a:hover,.footer p a:hover{color:var(--primary);opacity:1}
+.footer .footer-bottom{
+  border-top:1px solid var(--border-soft);
+  max-width:var(--container);
+  margin:0 auto;
+  padding:24px;
+  font-size:12px;
+  color:var(--tertiary);
+  text-align:center;
+  line-height:1.7;
+}
+@media(min-width:1024px){.footer .footer-bottom{padding:24px 64px}}
+.footer .footer-bottom p{margin-bottom:6px}
+
+/* ===== Responsive ===== */
+@media(max-width:639px){
+  body{font-size:15px}
+  .hero{padding:64px 20px 56px}
+  .container{padding:0 20px}
+  .lede{margin-bottom:64px;font-size:17px}
+  .lede::first-letter{font-size:52px}
+  .section{margin-bottom:64px}
+  .quote-card{padding:40px 24px 28px}
+  .quote-card::before{top:20px;left:20px;font-size:30px}
+  .quote-card .quote-zh{font-size:20px}
+  .news-card{padding:24px 22px 22px}
+  .headline-card{padding-left:18px}
+  .headline-card h3{font-size:20px}
+}
+
+/* ===== Print ===== */
+@media print{
+  body{background:#fff;color:#000}
+  .sticky-nav,.footer{display:none}
+  .news-card,.headline-card,.quote-card,.lede{
+    break-inside:avoid;
+    background:#fff;
+    border:1px solid #ccc;
+    color:#000;
+    box-shadow:none;
+  }
+  .hero{background:#fff;color:#000;border-bottom:2px solid #000}
+  .hero h1,.hero .date,.hero .theme{color:#000}
+  .hero .date{background:#000;color:#fff}
+  a{color:#000;text-decoration:underline;border-bottom:none}
+}
+
+/* GitHub Trending cards */
+.trending-card{
+  background:var(--bg);
+  border:1px solid var(--border-soft);
+  border-radius:6px;
+  padding:24px 26px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  transition:border-color .2s ease,box-shadow .25s ease,transform .2s ease;
+}
+.trending-card:hover{
+  border-color:var(--border);
+  box-shadow:0 12px 32px rgba(15,15,20,0.05);
+  transform:translateY(-2px);
+}
+.trending-card .repo-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.trending-card .repo-name{
+  font-family:var(--font-mono);
+  font-size:15px;
+  font-weight:600;
+  color:var(--primary);
+  border:none;
+  letter-spacing:0;
+}
+.trending-card .repo-name:hover{color:var(--accent);opacity:1}
+.trending-card .ai-topic{
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:3px 8px;
+  background:var(--positive-soft);
+  border:1px solid var(--positive);
+  color:var(--positive);
+  border-radius:3px;
+  white-space:nowrap;
+}
+.trending-card .desc{
+  color:var(--secondary);
+  font-size:14px;
+  line-height:1.65;
+}
+.trending-card .value{
+  color:var(--primary);
+  font-size:13px;
+  line-height:1.6;
+  padding:10px 12px;
+  background:var(--highlight-soft);
+  border-left:none;
+  border-radius:4px;
+  position:relative;
+}
+.trending-card .value::before{
+  content:"VALUE";
+  display:block;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.2em;
+  color:var(--highlight);
+  margin-bottom:4px;
+}
+.trending-card .meta{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+  font-size:12px;
+  color:var(--tertiary);
+  padding-top:10px;
+  border-top:1px solid var(--border-soft);
+  font-family:var(--font-mono);
+}
+.trending-card .meta .lang::before{content:"●";margin-right:6px;color:var(--info)}
+.trending-card .meta .stars-today{color:var(--highlight);font-weight:700}
+</style>
+</head>
+<body>
+<header class="sticky-nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a class="home" href="https://chdendi.github.io/AInformer/index.html">AInformer<span class="dot">.</span></a>
+      <nav class="nav-links">
+        <a href="#headlines">头条</a>
+<a href="#trending">GitHub</a>        <a href="#industry">行业</a>
+        <a href="#opinion">观点</a>
+        <a href="#chinese">中文</a>
+        <a href="#academic">学术</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <a class="cta" href="https://chdendi.github.io/AInformer/index.html">← 回到首页</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="date">2026-10-19 · 周一</div>
+  <h1>每日 AI 简报</h1>
+  <p class="theme">开源与责任并进，AI生态加速重构</p>
+  <div class="meta">
+    <span>精选 14 条</span>
+    <span>头条 2 则</span>
+    <span>生成于 2026-10-19 13:33</span>
+  </div>
+</section>
+
+<main class="container">
+
+  <section class="lede">今日AI领域迎来多项重磅变动：英伟达以Apache 2.0开源Run:ai GPU编排平台，进一步降低Kubernetes上的GPU调度门槛；Anthropic宣布将5%股份投入公共利益基金，探索AI公司的公共责任机制；迪士尼同意接收Character.AI多数员工，引发对AI初创团队走向的关注。与此同时，德国两家法院裁定谷歌须为AI概览内容承担法律责任，为生成式内容的责任归属立下判例。国内方面，VAST开源实时世界模型EdenLive，单卡即可实现720P超24FPS交互生成，展现中国团队在实时世界模型上的工程突破。</section>
+
+  <section class="section" id="headlines">
+    <div class="section-head"><h2>今日头条</h2><span class="count">5 条</span></div>
+    <div class="headlines">
+      <article class="headline-card">
+        <h3>英伟达Apache 2.0开源Run:ai GPU编排平台</h3>
+        <p>英伟达将完整Run:ai平台开源，包含KAI Scheduler与CUDA 13.4 GPU能力，面向Kubernetes GPU编排。此举有望降低企业GPU调度门槛，推动AI基础设施标准化。</p>
+        <div class="meta">
+<span class="tag tag-industry">行业新闻</span><span>MarkTechPost</span><a class="link-btn" href="https://www.marktechpost.com/2026/10/18/nvidia-runai-open-source-gpu-orchestration-kubernetes/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="headline-card">
+        <h3>Anthropic承诺将5%股份投入公共利益基金</h3>
+        <p>Anthropic宣布把公司5%的股份划入公共利益基金，用于承担公共责任。这一安排为AI公司如何回馈社会提供了新的治理样本。</p>
+        <div class="meta">
+<span class="tag tag-industry">行业新闻</span><span>TechCrunch</span><a class="link-btn" href="https://techcrunch.com/2026/10/18/anthropic-says-its-committing-5-of-its-shares-to-a-public-benefit-fund/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="headline-card">
+        <h3>德国两法院裁定谷歌须为AI概览内容担责</h3>
+        <p>两家德国法院认定谷歌需对其AI Overviews生成内容承担法律责任。该判决可能影响生成式AI搜索产品的责任边界与合规策略。</p>
+        <div class="meta">
+<span class="tag tag-industry">行业新闻</span><span>The Decoder</span><a class="link-btn" href="https://the-decoder.com/two-german-courts-now-hold-google-liable-for-what-its-ai-overviews-say/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="headline-card">
+        <h3>VAST开源实时世界模型EdenLive：单卡720P超24FPS</h3>
+        <p>VAST开源实时交互世界模型EdenLive，单张消费级显卡即可跑720P、超24FPS，面向可交互世界生成。该模型有望降低实时世界模型的应用门槛。</p>
+        <div class="meta">
+<span class="tag tag-chinese">中文 / 学术</span><span>量子位</span><a class="link-btn" href="https://www.qbitai.com/2026/10/504136.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="headline-card">
+        <h3>PRIME：让LLM智能体的推理可验证、有据可查</h3>
+        <p>提出PRIME框架，要求智能体每条结论都绑定可核验证据，在记录合规审查任务上显著降低无依据断言。该工作为智能体推理的可信度评估提供了新思路。</p>
+        <div class="meta">
+<span class="tag tag-academic">学术与评测</span><span>arXiv</span><a class="link-btn" href="https://arxiv.org/abs/2610.22426" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="trending">
+    <div class="section-head"><h2>GitHub Trending · 今日热门 AI 项目</h2><span class="count">4 个</span></div>
+    <div class="cards">
+      <article class="trending-card">
+        <div class="repo-line">
+          <a class="repo-name" href="https://github.com/MadsLorentzen/ai-job-search" target="_blank" rel="noopener noreferrer">MadsLorentzen/ai-job-search</a>
+<span class="ai-topic">Agent 应用 / AI 求职脚手架</span>        </div>
+<p class="desc">基于 Claude Code 的本地求职框架，可评估职位、定制简历、撰写求职信并准备面试，Fork 后完全归自己所有。</p><div class="value">把求职流程拆成可复用的 agent 工作流，是 Claude Code 落地真实场景的参考范例。</div>        <div class="meta">
+<span class="lang">Python</span><span class="stars-today">+2232 ⭐ 今日</span><span>54,021 ⭐ 总计</span>          <a class="link-btn" href="https://github.com/MadsLorentzen/ai-job-search" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+        </div>
+      </article>
+      <article class="trending-card">
+        <div class="repo-line">
+          <a class="repo-name" href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener noreferrer">anomalyco/opencode</a>
+<span class="ai-topic">Coding Agent</span>        </div>
+<p class="desc">开源编码 agent，可在终端中理解代码库并自主完成修改、调试等开发任务。</p><div class="value">开源可自托管的 coding agent，为不想绑定闭源 IDE 的团队提供替代方案。</div>        <div class="meta">
+<span class="lang">TypeScript</span><span class="stars-today">+1414 ⭐ 今日</span><span>216,835 ⭐ 总计</span>          <a class="link-btn" href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+        </div>
+      </article>
+      <article class="trending-card">
+        <div class="repo-line">
+          <a class="repo-name" href="https://github.com/akitaonrails/ai-memory" target="_blank" rel="noopener noreferrer">akitaonrails/ai-memory</a>
+<span class="ai-topic">Agent 记忆基础设施</span>        </div>
+<p class="desc">用 Rust 实现的长期记忆方案，为编码 CLI agent 保存上下文，并支持在不同 agent 厂商之间交接。</p><div class="value">解决 agent 跨会话失忆与厂商锁定痛点，是 agent 记忆层少见的工程化实现。</div>        <div class="meta">
+<span class="lang">Rust</span><span class="stars-today">+512 ⭐ 今日</span><span>10,667 ⭐ 总计</span>          <a class="link-btn" href="https://github.com/akitaonrails/ai-memory" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+        </div>
+      </article>
+      <article class="trending-card">
+        <div class="repo-line">
+          <a class="repo-name" href="https://github.com/debpalash/VoiceStudio" target="_blank" rel="noopener noreferrer">debpalash/VoiceStudio</a>
+<span class="ai-topic">多模态 / 语音合成</span>        </div>
+<p class="desc">完全本地运行的开源 ElevenLabs 替代品，支持声音克隆、声音设计、视频配音、听写、转写与有声书制作，覆盖 646 种语言。</p><div class="value">本地化语音生成全链路工具，隐私敏感场景可绕开云端 TTS 服务。</div>        <div class="meta">
+<span class="lang">Python</span><span class="stars-today">+2082 ⭐ 今日</span><span>75,959 ⭐ 总计</span>          <a class="link-btn" href="https://github.com/debpalash/VoiceStudio" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="section" id="industry">
+    <div class="section-head"><h2>AI 行业新闻与产品动态</h2><span class="count">4 条</span></div>
+    <div class="cards">
+<article class="news-card">
+  <h3>英伟达以Apache 2.0开源Run:ai GPU编排平台</h3>
+<p class="summary">英伟达将完整Run:ai平台开源，含KAI Scheduler与CUDA 13.4 GPU能力，面向Kubernetes GPU编排。</p><p class="value">GPU调度层开源，降低集群编排门槛并扩大生态锁定</p>  <div class="meta">
+<span class="tag tag-hot">🔥 头条</span><span>MarkTechPost</span><span>· 2026-10-19</span><a class="link-btn" href="https://www.marktechpost.com/2026/10/18/nvidia-runai-open-source-gpu-orchestration-kubernetes/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>Anthropic承诺将5%股份投入公共利益基金</h3>
+<p class="summary">Anthropic宣布把公司5%的股份划入公共利益基金，用于承担公共责任。</p><p class="value">前沿实验室治理结构创新，或成行业参照</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>TechCrunch</span><span>· 2026-10-18</span><a class="link-btn" href="https://techcrunch.com/2026/10/18/anthropic-says-its-committing-5-of-its-shares-to-a-public-benefit-fund/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>迪士尼同意接收Character.AI多数员工</h3>
+<p class="summary">文件显示Character.AI绝大多数获聘员工已接受迪士尼职位，交易含持续义务条款。</p><p class="value">AI角色公司团队整体并入迪士尼，行业整合加速</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>TechCrunch</span><span>· 2026-10-18</span><a class="link-btn" href="https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>德国两法院裁定谷歌须为AI概览内容担责</h3>
+<p class="summary">两家德国法院认定谷歌需对其AI Overviews生成内容承担法律责任。</p><p class="value">AI生成内容责任归属首获司法确认，平台治理承压</p>  <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>The Decoder</span><span>· 2026-10-18</span><a class="link-btn" href="https://the-decoder.com/two-german-courts-now-hold-google-liable-for-what-its-ai-overviews-say/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article>    </div>
+  </section>
+
+  <section class="section" id="opinion">
+    <div class="section-head"><h2>AI 观点与社区声音</h2><span class="count">2 条</span></div>
+      <h3 class="subhead">深度分析 <span class="subcount">2 条</span></h3>
+      <div class="cards">
+        <article class="quote-card analyst">
+<p class="quote-zh">llm-tools-datasette 0.1.1 发布，把 Datasette 查询能力封装成 LLM 可调用的工具。</p><p class="quote-title">Simon Willison 发布 llm-tools-datasette 0.1.1</p>          <div class="person">— Simon Willison · 分析师</div>
+          <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>展示 LLM 工具调用与结构化数据查询的轻量集成路径</span><a class="link-btn" href="https://simonwillison.net/2026/Oct/18/llm-tools-datasette/" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+        <article class="quote-card analyst">
+<p class="quote-en">I'm working towards a new <</p><p class="quote-zh">llm-echo 0.5 发布，作者表示正朝一个新方向推进。</p><p class="quote-title">Simon Willison 发布 llm-echo 0.5</p>          <div class="person">— Simon Willison · 分析师</div>
+          <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>反映 LLM 插件生态的持续迭代与作者路线图</span><a class="link-btn" href="https://simonwillison.net/2026/Oct/18/llm-echo/" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+      </div>
+  </section>
+
+  <section class="section" id="chinese">
+    <div class="section-head"><h2>中文 AI 生态与学术动态</h2><span class="count">4 条</span></div>
+    <div class="cards">
+<article class="news-card">
+  <h3>VAST开源实时世界模型EdenLive：单卡720P超24FPS</h3>
+<p class="summary">VAST开源实时交互世界模型EdenLive，单张消费级显卡即可跑720P、超24FPS，面向可交互世界生成。</p><p class="value">把实时世界模型门槛降到消费级单卡，利好内容与游戏创作</p>  <div class="meta">
+<span class="tag tag-hot">🔥 头条</span><span>量子位</span><span>· 2026-10-18</span><a class="link-btn" href="https://www.qbitai.com/2026/10/504136.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>复旦贾萧松：VLA与WAM瓶颈不在模型架构</h3>
+<p class="summary">复旦学者在世界模型50人访谈中指出，VLA、WAM等新架构层出不穷，但真正瓶颈不在架构本身。</p><p class="value">为具身智能路线之争提供反共识判断，指向数据与系统层</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>雷峰网</span><span>· 2026-10-19</span><a class="link-btn" href="https://www.leiphone.com/category/academic/omK9nE62h3kHaQg5.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>MemSilicon铭芯启睿完成超4亿元A轮融资</h3>
+<p class="summary">RRAM存储芯片公司铭芯启睿完成超4亿元A轮，博原资本领投，米哈游、兆易创新、小米战投等参与。</p><p class="value">存算一体存储获产业资本加注，瞄准AI芯片内存瓶颈</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>极客公园</span><span>· 2026-10-19</span><a class="link-btn" href="http://www.geekpark.net/news/372545" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>DeepSeek开放搜索与网页抓取API</h3>
+<p class="summary">极客早知道汇总：DeepSeek开放搜索与网页抓取API，同时OpenAI三款神秘模型曝光。</p><p class="value">补齐检索与抓取能力，为智能体生态提供基础设施</p>  <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>极客公园</span><span>· 2026-10-19</span><a class="link-btn" href="http://www.geekpark.net/news/372514" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article>    </div>
+  </section>
+
+  <section class="section" id="academic">
+    <div class="section-head"><h2>学术与评测</h2><span class="count">4 条</span></div>
+    <div class="cards">
+<article class="news-card">
+  <h3>PRIME：让LLM智能体的推理可验证、有据可查</h3>
+<p class="summary">提出PRIME框架，要求智能体每条结论都绑定可核验证据，在记录合规审查任务上显著降低无依据断言。</p><p class="value">把证据链纳入推理闭环，提升智能体审计可信度</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>arXiv</span><span>· 2026-10-19</span><a class="link-btn" href="https://arxiv.org/abs/2610.22426" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>ECHOES：递归压缩历史，突破GUI智能体长时程视觉记忆瓶颈</h3>
+<p class="summary">用递归历史压缩加特权在线蒸馏，让GUI智能体在有限上下文内保留关键屏幕状态，长任务成功率提升。</p><p class="value">解决长时程GUI任务的历史截图爆炸问题</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>arXiv</span><span>· 2026-10-19</span><a class="link-btn" href="https://arxiv.org/abs/2610.22408" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>Harness-Delta：拆解智能体框架进化带来的真实增益</h3>
+<p class="summary">提出归因方法，把智能体性能提升分解到prompt、工具、编排代码等各组件，量化框架演化的贡献。</p><p class="value">首次系统归因harness改动，避免把模型能力误算成框架功劳</p>  <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>arXiv</span><span>· 2026-10-19</span><a class="link-btn" href="https://arxiv.org/abs/2610.22466" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>RealCLI：统一评测人机协作式CLI智能体</h3>
+<p class="summary">针对命令行智能体长时程任务，构建覆盖人机协作全流程的统一评测基准，弥补现有benchmark只看单轮执行的缺陷。</p><p class="value">补齐CLI智能体人机协作评测空白</p>  <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>arXiv</span><span>· 2026-10-19</span><a class="link-btn" href="https://arxiv.org/abs/2610.22507" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article>    </div>
+  </section>
+
+</main>
+<footer class="footer">
+<div class="footer-grid">
+  <div class="brand">
+    <span class="name">AInformer<span style="color:var(--accent)">.</span></span>
+    <p>每日 AI 简报：中文 AI 生态的精选信息流，聚合行业、观点、学术与中文动态。</p>
+  </div>
+  <div>
+    <h4>Navigate</h4>
+    <ul>
+      <li><a href="https://chdendi.github.io/AInformer/index.html">← 回到首页</a></li>
+      <li><a href="https://chdendi.github.io/AInformer/index.html#archive">历史日报归档</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Sources</h4>
+    <ul>
+      <li>OpenAI / Anthropic / DeepMind</li>
+      <li>The Verge · TechCrunch</li>
+      <li>机器之心 · 量子位 · 36kr</li>
+      <li>arXiv · Hacker News</li>
+    </ul>
+  </div>
+  <div>
+    <h4>Data</h4>
+    <ul>
+      <li><a href="https://chdendi.github.io/AInformer/api/v1/manifest.json" target="_blank" rel="noopener">JSON API · Manifest</a></li>
+      <li><a href="https://github.com/chdendi/AInformer" target="_blank" rel="noopener">Source on GitHub</a></li>
+    </ul>
+  </div>
+</div>
+  <div class="footer-bottom">
+    <p>本日报基于公开信息自动搜索整理生成，资讯来源包括 OpenAI / Anthropic / DeepMind 等官方博客、The Verge、TechCrunch、36kr、机器之心、量子位、ArXiv、Hacker News 等公开平台。内容可能存在时效性偏差或不完整，请以原始来源为准。</p>
+    <p>Generated at 2026-10-19 13:33 · Powered by DeepSeek + public sources · <a href="https://chdendi.github.io/AInformer/index.html">AInformer</a> · <a href="https://chdendi.github.io/AInformer/api/v1/manifest.json">JSON API</a></p>
+  </div>
+</footer>
+</body>
+</html>
