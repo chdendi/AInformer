@@ -17,9 +17,10 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
-  group: monthly-summary
+  group: publish-gh-pages
   cancel-in-progress: false
 
 jobs:
@@ -47,6 +48,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Restore site history from gh-pages
+        run: bash scripts/publish_gh_pages.sh restore
+
       - name: Generate monthly summary
         run: |
           ARGS=""
@@ -55,14 +59,13 @@ jobs:
           fi
           python -m src.main_monthly $ARGS
 
-      - name: Commit and push
+      - name: Publish site to gh-pages
+        run: bash scripts/publish_gh_pages.sh publish docs "chore(monthly): publish monthly summary"
+
+      - name: Trigger Pages deploy
         run: |
-          git config user.name "ainformer-bot"
-          git config user.email "ainformer-bot@users.noreply.github.com"
-          git add docs/
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "chore(monthly): publish monthly summary"
-            git push
-          fi
+          curl -sS -X POST \
+            -H "Authorization: token ${{ github.token }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/pages.yml/dispatches" \
+            -d '{"ref":"main"}'

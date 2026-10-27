@@ -16,7 +16,7 @@ permissions:
   actions: write
 
 concurrency:
-  group: daily-report
+  group: publish-gh-pages
   cancel-in-progress: false
 
 jobs:
@@ -44,6 +44,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Restore site history from gh-pages
+        run: bash scripts/publish_gh_pages.sh restore
+
       - name: Generate daily report
         run: |
           if [ -n "${{ github.event.inputs.date }}" ]; then
@@ -52,27 +55,14 @@ jobs:
             python -m src.main_daily
           fi
 
-      - name: Commit and push
-        id: commit
+      - name: Publish site to gh-pages
         run: |
-          git config user.name "ainformer-bot"
-          git config user.email "ainformer-bot@users.noreply.github.com"
-          git add docs/
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-            echo "committed=false" >> "$GITHUB_OUTPUT"
-          else
-            DATE=$(date -u +%Y-%m-%d)
-            git commit -m "chore(daily): publish AI report ${DATE}"
-            git push
-            echo "committed=true" >> "$GITHUB_OUTPUT"
-          fi
+          DATE=$(date -u +%Y-%m-%d)
+          bash scripts/publish_gh_pages.sh publish docs "chore(daily): publish AI report ${DATE}"
 
       - name: Trigger Pages deploy
-        if: steps.commit.outputs.committed == 'true'
         run: |
-          sleep 5
-          curl -s -X POST \
+          curl -sS -X POST \
             -H "Authorization: token ${{ github.token }}" \
             -H "Accept: application/vnd.github.v3+json" \
             "https://api.github.com/repos/${{ github.repository }}/actions/workflows/pages.yml/dispatches" \

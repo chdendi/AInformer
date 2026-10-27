@@ -1,12 +1,12 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'docs/**'
-      - '.github/workflows/pages.yml'
   workflow_dispatch:
+  # A push made with the default GITHUB_TOKEN does not start this workflow.
+  # The report workflows dispatch it after they update gh-pages. A push that
+  # uses a personal token still deploys from this event.
+  push:
+    branches: [gh-pages]
 
 permissions:
   contents: read
@@ -24,7 +24,17 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 1
+          path: gh-pages-site
+
+      - name: Stage site artifact
+        run: |
+          mkdir -p _site
+          rsync -a --exclude '.git' gh-pages-site/ _site/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -32,7 +42,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs
+          path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment
