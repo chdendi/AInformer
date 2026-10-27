@@ -1,0 +1,335 @@
+{
+  "date": "2026-05-08",
+  "generated_at": "2026-05-08T14:14:08.165382+08:00",
+  "today_theme": "模型竞赛升级，安全与开源成焦点",
+  "lede": "今日AI圈风起云涌：OpenAI发布GPT-5.5-Cyber网络安全模型，直接对标Anthropic的Mythos；Anthropic则宣布与SpaceX合作获得超级计算机访问权，并推出无限上下文窗口的Claude模型。中国方面，DeepSeek V4发布并完成国产芯片全栈适配，估值或达450亿美元。此外，前OpenAI CTO Mira Murati在法庭作证指控Sam Altman不诚实，引发行业震动。",
+  "headlines": [
+    {
+      "title": "OpenAI发布GPT-5.5-Cyber网络安全模型",
+      "summary": "OpenAI推出GPT-5.5-Cyber模型，面向关键基础设施安全人员开放有限预览，直接对标Anthropic的Mythos。该模型专注于网络安全领域，旨在提升威胁检测和响应能力。",
+      "url": "https://www.axios.com/2026/05/07/openai-gpt-55-cybersecurity-model",
+      "source_name": "Axios",
+      "category": "industry"
+    },
+    {
+      "title": "Anthropic获SpaceX超级计算机访问权",
+      "summary": "Anthropic与SpaceX达成协议，使用其Colossus超级计算机训练AI，提升Claude性能。同时，Anthropic宣布提高Claude和Claude Code的使用限制，并推出无限上下文窗口的Claude模型。",
+      "url": "https://www.forbes.com/sites/antoniopequenoiv/2026/05/06/musks-spacex-will-give-anthropic-access-to-its-colossus-super-computer-for-ai-training/",
+      "source_name": "Forbes",
+      "category": "industry"
+    },
+    {
+      "title": "DeepSeek V4发布，完成国产芯片全栈适配",
+      "summary": "DeepSeek V4如期发布，率先完成华为昇腾、寒武纪、摩尔线程等国产芯片全栈适配，并携手百度千帆实现Day0集成。字节跳动、腾讯等纷纷接入，标志战略重心转向中国本土AI基础设施。",
+      "url": "https://m.thepaper.cn/newsDetail_forward_33102242",
+      "source_name": "澎湃新闻",
+      "category": "chinese"
+    },
+    {
+      "title": "Mira Murati证词：Sam Altman不诚实且制造混乱",
+      "summary": "前OpenAI CTO Mira Murati在法庭作证称Altman不诚实、挑拨高管关系，并称其管理风格“制造混乱”。Musk律师也在庭审中成功质疑Altman的诚信，Altman当天表现被动。",
+      "url": "https://nypost.com/2026/05/06/business/openai-ceo-sam-altman-was-dishonest-caused-chaos-ex-exec-mira-murati-says-in-bombshell-testimony/",
+      "source_name": "New York Post",
+      "category": "opinion"
+    },
+    {
+      "title": "Anthropic为Claude Managed Agents新增三项功能",
+      "summary": "Anthropic更新Claude Managed Agents，新增“dreaming”等三项功能，帮助AI代理自我改进。同时，Claude Code OAuth令牌存在被MCP劫持窃取的风险，安全研究人员已披露漏洞。",
+      "url": "https://9to5mac.com/2026/05/07/anthropic-updates-claude-managed-agents-with-three-new-features/",
+      "source_name": "9to5Mac",
+      "category": "tutorial"
+    }
+  ],
+  "daily_takeaway": {
+    "title": "用 Claude Code 自定义 hook 拦截危险命令",
+    "body_md": "为了防止 Claude Code 执行危险命令（如删除文件或修改系统配置），可以创建自定义 hook 来拦截并提示确认。\n\n1. 在项目根目录创建 `.claude/hooks/` 文件夹。\n2. 创建文件 `pre_command.sh`，内容如下：\n```bash\n#!/bin/bash\n# 拦截包含 rm -rf 或 sudo 的命令\nif echo \"$CLAUDE_COMMAND\" | grep -qE \"rm -rf|sudo\"; then\n  echo \"⚠️ 危险命令被拦截: $CLAUDE_COMMAND\"\n  echo \"是否允许执行？(y/N)\"\n  read -r response\n  if [ \"$response\" != \"y\" ]; then\n    exit 1\n  fi\nfi\n```\n3. 赋予执行权限：`chmod +x .claude/hooks/pre_command.sh`\n4. 在 Claude Code 配置中启用 hook：在 `claude.json` 中添加 `\"hooks\": [\".claude/hooks/pre_command.sh\"]`。\n\n这样每次执行危险操作前都会收到确认提示，有效防止误操作。",
+    "source_url": "https://www.securityweek.com/claude-code-oauth-tokens-can-be-stolen-through-stealthy-mcp-hijacking/"
+  },
+  "sections": {
+    "tutorial": [
+      {
+        "title": "Anthropic 为 Claude Managed Agents 新增三项功能",
+        "summary": "Anthropic 更新 Claude Managed Agents，新增“dreaming”等三项功能，帮助 AI 代理自我改进。",
+        "value_note": "了解如何利用“dreaming”功能让 AI 代理自动优化任务执行，减少人工干预。",
+        "source_name": "9to5Mac",
+        "url": "https://9to5mac.com/2026/05/07/anthropic-updates-claude-managed-agents-with-three-new-features/",
+        "published_at": "2026-05-07T15:37:06Z",
+        "importance": "star",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "tutorial"
+      },
+      {
+        "title": "OpenAI 发布 Codex Chrome 插件，浏览器内开发",
+        "summary": "OpenAI 推出 Codex Chrome 插件，可在浏览器中测试 Web 应用、跨标签页收集上下文、并行使用 DevTools。",
+        "value_note": "前端开发者可直接在浏览器中利用 AI 辅助调试和开发，无需切换工具。",
+        "source_name": "Engadget",
+        "url": "https://www.engadget.com/2167480/openai-debuts-a-codex-plugin-for-chrome/",
+        "published_at": "2026-05-07T21:57:21Z",
+        "importance": "hot",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "tutorial"
+      },
+      {
+        "title": "Marc Andreessen 公开 AI 超级提示词，引发热议",
+        "summary": "亿万富翁 Marc Andreessen 在 X 上分享了他的 AI 自定义提示词，用于控制 AI 行为。",
+        "value_note": "可直接复用或参考该提示词模板，优化自己的 AI 交互效果。",
+        "source_name": "Forbes",
+        "url": "https://www.forbes.com/sites/lanceeliot/2026/05/06/analyzing-that-controversial-super-prompt-for-controlling-ai-that-billionaire-marc-andreessen-posted/",
+        "published_at": "2026-05-06T23:00:19Z",
+        "importance": "star",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "tutorial"
+      },
+      {
+        "title": "Coder 发布自托管 AI 编码代理，支持多模型",
+        "summary": "Coder 推出自托管、模型无关的 AI 编码代理，企业可在内部运行 AI 驱动开发。",
+        "value_note": "企业可私有化部署 AI 编码助手，避免数据外泄，并自由选择底层模型。",
+        "source_name": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/05/06/3288916/0/en/coder-sets-a-new-standard-for-ai-coding-with-self-hosted-ai-model-agnostic-coder-agents.html",
+        "published_at": "2026-05-06T13:05:00Z",
+        "importance": "star",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "tutorial"
+      }
+    ],
+    "industry": [
+      {
+        "title": "OpenAI发布GPT-5.5-Cyber网络安全模型",
+        "summary": "OpenAI推出GPT-5.5-Cyber模型，面向关键基础设施安全人员开放有限预览，直接对标Anthropic的Mythos。",
+        "value_note": "标志着AI在网络安全领域的军备竞赛升级，GPT-5.5-Cyber是OpenAI首个专用安全模型。",
+        "source_name": "Axios",
+        "url": "https://www.axios.com/2026/05/07/openai-gpt-55-cybersecurity-model",
+        "published_at": "2026-05-07T21:47:23Z",
+        "importance": "hot",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "industry"
+      },
+      {
+        "title": "DeepSeek首轮融资估值或达450亿美元",
+        "summary": "中国AI公司DeepSeek正在洽谈首轮外部融资，估值可能高达450亿美元。",
+        "value_note": "DeepSeek成为AI领域新独角兽，估值仅次于OpenAI和Anthropic，反映中国AI赛道热度。",
+        "source_name": "TechCrunch",
+        "url": "https://techcrunch.com/2026/05/06/deepseek-could-hit-45b-valuation-from-its-first-investment-round/",
+        "published_at": "2026-05-06T17:20:34Z",
+        "importance": "star",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "industry"
+      },
+      {
+        "title": "中国AI模型Kimi估值200亿美元融资",
+        "summary": "中国AI模型开发商Kimi正在融资，估值达200亿美元。",
+        "value_note": "Kimi是中国AI领域又一高估值公司，显示资本对国产大模型的信心。",
+        "source_name": "Forbes",
+        "url": "https://www.forbes.com/sites/ywang/2026/05/07/chinese-ai-model-developer-kimi-raising-funds-valuing-it-at-20-billion/",
+        "published_at": "2026-05-07T06:35:58Z",
+        "importance": "star",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "industry"
+      },
+      {
+        "title": "出版商和作者起诉Meta，指控Llama AI大规模侵权",
+        "summary": "美国出版商协会和多位作者起诉Meta，称其Llama AI服务侵犯版权，要求赔偿。",
+        "value_note": "AI版权诉讼再起，可能影响开源模型训练数据的合法性。",
+        "source_name": "Publishing Perspectives",
+        "url": "https://publishingperspectives.com/2026/05/publishers-and-authors-sue-meta-alleging-massive-copyright-infringement-behind-its-llama-ai-service/",
+        "published_at": "2026-05-06T11:55:59Z",
+        "importance": "pin",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "industry"
+      }
+    ],
+    "opinion": [
+      {
+        "title": "Mira Murati 证词：Sam Altman 不诚实且制造混乱",
+        "summary": "前 OpenAI CTO Mira Murati 在法庭作证称 Altman 不诚实、挑拨高管关系，并称其管理风格“制造混乱”。",
+        "value_note": "这是 OpenAI 内部矛盾首次在法庭公开，直接影响公众对 Altman 领导力的信任。",
+        "source_name": "New York Post",
+        "url": "https://nypost.com/2026/05/06/business/openai-ceo-sam-altman-was-dishonest-caused-chaos-ex-exec-mira-murati-says-in-bombshell-testimony/",
+        "published_at": "2026-05-06T21:26:17Z",
+        "importance": "hot",
+        "quote_en": "it is about Sam creating chaos.",
+        "quote_zh": "问题在于 Sam 制造混乱。",
+        "person": "Mira Murati",
+        "category": "opinion"
+      },
+      {
+        "title": "Anthropic CEO：公司今年可能增长80倍",
+        "summary": "Anthropic CEO Dario Amodei 表示公司收入有望增长80倍，并强调 AI 监管和就业影响。",
+        "value_note": "Anthropic 的爆炸性增长预期反映了 AI 行业的竞争白热化，也暗示了潜在的市场泡沫。",
+        "source_name": "The New York Times",
+        "url": "https://www.nytimes.com/2026/05/06/technology/anthropic-ceo-ai-growth.html",
+        "published_at": "2026-05-06T00:39:12Z",
+        "importance": "hot",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "Dario Amodei",
+        "category": "opinion"
+      },
+      {
+        "title": "Anthropic 联合创始人：AI 自我创造概率达60%",
+        "summary": "Anthropic 联合创始人 Jack Clark 称，AI 系统在2028年底前自主创造 AI 的概率为60%。",
+        "value_note": "这一预测挑战了人类对 AI 发展的控制力，引发对 AI 自主进化的伦理讨论。",
+        "source_name": "eu.36kr.com",
+        "url": "https://eu.36kr.com/en/p/3797756582747395",
+        "published_at": "2026-05-06T13:21:23Z",
+        "importance": "star",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "Jack Clark",
+        "category": "opinion"
+      },
+      {
+        "title": "Elon Musk 律师在庭审中三次打击 Sam Altman",
+        "summary": "Musk 律师在 OpenAI 庭审中成功质疑 Altman 的诚信和管理能力，Altman 当天在法庭上表现被动。",
+        "value_note": "庭审进展可能影响 OpenAI 的治理结构，以及 Musk 对 OpenAI 的控制权诉求。",
+        "source_name": "Business Insider",
+        "url": "https://www.businessinsider.com/elon-musk-witness-testimony-hits-sam-altman-in-trial-2026-5",
+        "published_at": "2026-05-07T21:56:46Z",
+        "importance": "star",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "Elon Musk",
+        "category": "opinion"
+      }
+    ],
+    "chinese": [
+      {
+        "title": "DeepSeek获中国投资机构注资，估值或达500亿美元",
+        "summary": "据WSJ报道，中国将投资DeepSeek，估值约500亿美元；TechCrunch称其首轮融资估值可达450亿美元。",
+        "value_note": "DeepSeek估值飙升反映国产大模型商业化潜力，是AI赛道重要风向标。",
+        "source_name": "WSJ",
+        "url": "https://www.wsj.com/tech/ai/china-to-invest-in-deepseek-at-50-billion-valuation-045041d0",
+        "published_at": "2026-05-06T10:12:00Z",
+        "importance": "hot",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "chinese"
+      },
+      {
+        "title": "DeepSeek V4发布，完成国产芯片全栈适配",
+        "summary": "DeepSeek V4如期发布，率先完成华为昇腾、寒武纪、摩尔线程等国产芯片全栈适配，并携手百度千帆实现Day0集成。",
+        "value_note": "标志国产大模型摆脱对美芯片依赖，筑牢AI产业自主根基。",
+        "source_name": "澎湃新闻",
+        "url": "https://m.thepaper.cn/newsDetail_forward_33102242",
+        "published_at": "2026-05-07T06:13:18Z",
+        "importance": "hot",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "chinese"
+      },
+      {
+        "title": "DeepSeek新模型押注国产芯片，筑牢AI产业根基",
+        "summary": "路透社报道，DeepSeek-V4发布后字节跳动、腾讯等纷纷接入，标志战略重心从美国半导体转向中国本土AI基础设施。",
+        "value_note": "国产芯片生态成熟度获验证，降低地缘政治风险。",
+        "source_name": "新洞察",
+        "url": "https://www.xindb.com/static/content/TGGJ/2026-05-06/1501616363847573504.html",
+        "published_at": "2026-05-06T06:13:18Z",
+        "importance": "star",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "chinese"
+      },
+      {
+        "title": "Qwen人事震荡：阿里最年轻P10离场，高层紧急接管",
+        "summary": "阿里AI核心团队发生人事变动，最年轻P10离职，高层紧急介入，Qwen项目面临调整。",
+        "value_note": "阿里AI战略关键节点，或影响千问大模型后续发展节奏。",
+        "source_name": "新浪财经",
+        "url": "https://finance.sina.cn/stock/jdts/2026-03-05/detail-inhpxwvi9712739.d.html?oid=%E9%AB%98%E4%BB%BF%E8%8A%AC%E8%BF%AA%E5%A5%B3%E5%8C%85%E5%93%AA%E9%87%8C%E6%9C%89%E5%8D%96%E2%96%81%E5%BE%AE%E4%BF%A1198099199%E2%96%81BW2X&vt=4",
+        "published_at": "2026-05-04T06:13:18Z",
+        "importance": "star",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "chinese"
+      }
+    ],
+    "academic": [
+      {
+        "title": "新AI方法攻克科学界最难的数学问题之一",
+        "summary": "宾夕法尼亚大学工程学院开发了一种新AI方法，能够解决科学界最难的数学问题之一，具体方法细节尚未公开，但标志着AI在数学推理领域的重大突破。",
+        "value_note": "展示了AI在纯数学领域的潜力，可能推动数学定理证明和科学发现自动化。",
+        "source_name": "ScienceDaily",
+        "url": "https://www.sciencedaily.com/releases/2026/05/260505234605.htm",
+        "published_at": "2026-05-06T08:27:04Z",
+        "importance": "hot",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "academic"
+      },
+      {
+        "title": "小鹏发布世界模型加速器X-Cache，推理速度提升2.7倍",
+        "summary": "小鹏汽车推出X-Cache，一种无需训练、即插即用的世界模型加速器，可将推理速度提升2.7倍，适用于自动驾驶等场景。",
+        "value_note": "无需重新训练即可显著加速世界模型推理，对自动驾驶和机器人领域的实时性有重要影响。",
+        "source_name": "CleanTechnica",
+        "url": "https://cleantechnica.com/2026/05/07/xpeng-unveils-the-world-model-accelerator-x-cache-which-requires-no-training-is-plug-and-play-and-boosts-inference-speed-by-2-7-times/",
+        "published_at": "2026-05-08T03:57:15Z",
+        "importance": "star",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "academic"
+      },
+      {
+        "title": "Google Gemma 4开源模型采用推测解码，速度提升3倍",
+        "summary": "Google发布Gemma 4开源AI模型，利用推测解码技术实现高达3倍的推理加速，适用于边缘设备。",
+        "value_note": "推测解码技术使开源模型在本地设备上运行更快，降低部署成本，推动边缘AI应用。",
+        "source_name": "Ars Technica",
+        "url": "https://arstechnica.com/ai/2026/05/googles-gemma-4-open-ai-models-use-speculative-decoding-to-get-up-to-3x-faster/",
+        "published_at": "2026-05-06T15:44:20Z",
+        "importance": "hot",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "academic"
+      },
+      {
+        "title": "ChatGPT健康分诊在关键病例中表现不足",
+        "summary": "Nature Medicine发表研究显示，ChatGPT在健康分诊的关键病例中建议不准确，存在局限性。",
+        "value_note": "警示AI在医疗领域的应用仍需谨慎，不能完全依赖LLM进行临床决策。",
+        "source_name": "Nature",
+        "url": "https://www.nature.com/articles/s41591-026-04427-1",
+        "published_at": "2026-05-07T16:24:07Z",
+        "importance": "star",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "academic"
+      }
+    ],
+    "benchmark": [
+      {
+        "title": "F5报告：企业将AI推理迁移至内部",
+        "summary": "F5报告显示，企业正将AI推理工作负载从云端迁移至内部部署，以降低成本并增强数据安全。",
+        "value_note": "推理本地化趋势将影响云服务商和硬件厂商，企业需重新评估AI基础设施策略。",
+        "source_name": "RCR Wireless News",
+        "url": "https://www.rcrwireless.com/20260507/ai/f5-ai-inference-in-house",
+        "published_at": "2026-05-07T20:41:12Z",
+        "importance": "star",
+        "quote_en": "",
+        "quote_zh": "",
+        "person": "",
+        "category": "benchmark"
+      }
+    ]
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "date": "2026-05-13",
+  "generated_at": "2026-05-13T09:39:38.009765+08:00",
+  "today_theme": "可灵AI百亿估值独立，Agent能力与学术理论双突破",
+  "lede": "今日AI领域波澜再起，快手旗下视频生成超级独角兽可灵AI被曝启动独立融资，估值高达200亿美元，堪称今年本土最大AI资本动作。与此同时，荣耀Agent平台OpenClaw实现屏幕感知与键鼠操作的重大升级，大幅拓宽智能体任务边界；硅谷则围绕AI护城河展开激辩，社群飞轮被奉为唯一不可复制的壁垒。学术侧同样亮点纷呈，因果证据首次揭示大模型上下文学习依赖信念推断而非模式匹配，而将Q学习融入记忆的MemQ智能体则开辟了经验累积的新路径。",
+  "headlines": [
+    {
+      "title": "可灵AI被曝独立分拆，估值200亿美元成超级独角兽",
+      "summary": "快手旗下视频生成AI“可灵AI”被曝将独立分拆并启动新一轮融资，估值约200亿美元，或将继快手之后成为又一家超级独角兽。这一动作标志着快手在AI领域的资本布局进入新阶段。",
+      "url": "https://www.qbitai.com/2026/05/416056.html",
+      "source_name": "量子位",
+      "category": "chinese"
+    },
+    {
+      "title": "荣耀OpenClaw重磅升级：实现屏幕感知与键鼠操作",
+      "summary": "荣耀AI智能体平台OpenClaw完成关键更新，新增屏幕内容理解能力，并支持模拟鼠标、键盘操作。此举极大拓展了Agent可执行任务的范围，提升了跨应用自动化水平。",
+      "url": "https://www.qbitai.com/2026/05/416034.html",
+      "source_name": "量子位",
+      "category": "chinese"
+    },
+    {
+      "title": "硅谷热议AI护城河：社群飞轮成唯一不可复制壁垒",
+      "summary": "一篇广为传播的文章指出，AI时代代码与产品皆可抄袭，唯有强大的开发者社群与用户互动形成的飞轮效应才能建立真正护城河。该观点引发硅谷对AI竞争本质的重新思考。",
+      "url": "https://www.qbitai.com/2026/05/415842.html",
+      "source_name": "量子位",
+      "category": "chinese"
+    },
+    {
+      "title": "因果证据揭示LLM上下文学习机制：依赖信念推断而非模式匹配",
+      "summary": "一项因果研究显示，大语言模型在上下文学习中并非单纯进行表面模式匹配，而是依赖于更深层的信念推断过程。这一发现为理解LLM的泛化能力提供了全新视角。",
+      "url": "https://arxiv.org/abs/2605.08405",
+      "source_name": "arXiv",
+      "category": "academic"
+    },
+    {
+      "title": "MemQ：结合Q学习的自演化记忆智能体，实现经验高效回放",
+      "summary": "研究者将Q学习集成到LLM智能体的情境记忆中，使智能体能够积累有效经验并进行优先回放。MemQ在复杂任务中展现出更强的自适应和持续学习能力。",
+      "url": "https://arxiv.org/abs/2605.08374",
+      "source_name": "arXiv",
+      "category": "academic"
+    }
+  ],
+  "sections": {
+    "industry": [],
+    "opinion": [],
+    "chinese": [
+      {
+        "title": "可灵AI被曝剥离快手，独立融资估值200亿美元",
+        "summary": "快手旗下视频生成AI“可灵AI”被曝将独立分拆并启动新一轮融资，估值约200亿美元，或成快手孵化的第二家超级独角兽。",
+        "value_note": "国内AI视频模型首次独立分拆，跻身超200亿美元估值阵营",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/416056.html",
+        "published_at": "2026-05-12",
+        "importance": "hot",
+        "category": "chinese"
+      },
+      {
+        "title": "荣耀OpenClaw重磅更新：实现屏幕感知与键鼠操作",
+        "summary": "荣耀AI智能体平台OpenClaw完成关键升级，新增屏幕内容理解能力，并支持模拟鼠标、键盘操作，大幅拓展Agent可执行任务范围。",
+        "value_note": "从语音交互走向全模态执行，端侧Agent能力实现代际跃升",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/416034.html",
+        "published_at": "2026-05-12",
+        "importance": "star",
+        "category": "chinese"
+      },
+      {
+        "title": "硅谷热议AI护城河新论：社群飞轮是唯一不可复制的壁垒",
+        "summary": "一篇硅谷广为传播的文章指出，AI时代代码与产品皆可抄袭，唯有强大的开发者社群与用户互动形成的飞轮效应才能建立真正护城河。",
+        "value_note": "颠覆传统技术护城河认知，强调社群网络效应决定AI竞争力",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/415842.html",
+        "published_at": "2026-05-11",
+        "importance": "star",
+        "category": "chinese"
+      },
+      {
+        "title": "商汤“烧卖购”机器人便利店开业，落地具身智能零售",
+        "summary": "商汤善惠推出的“烧卖购”具身智能便利店在上海开业，通过机器人实现取货、打包、交付，打造“一人多面”的无人零售方案。",
+        "value_note": "首次将具身智能机器人规模化应用于线下便利店场景",
+        "source_name": "量子位",
+        "url": "https://www.qbitai.com/2026/05/416590.html",
+        "published_at": "2026-05-12",
+        "importance": "pin",
+        "category": "chinese"
+      }
+    ],
+    "academic": [
+      {
+        "title": "空间启动方法提升LLM图表数据提取准确率",
+        "summary": "提出基于网格的空间启动方法，在科学图表数据提取任务上显著优于语义提示基线。",
+        "value_note": "空间启动方法相比语义提示大幅提升图表数据提取准确率。",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.08220",
+        "published_at": "2026-05-12",
+        "importance": "hot",
+        "category": "academic"
+      },
+      {
+        "title": "因果证据揭示LLM上下文学习机制",
+        "summary": "研究显示LLM在上下文学习中依赖信念推断而非模式匹配，提供了因果证据。",
+        "value_note": "首次以因果证据证明LLM上下文学习是基于信念推断。",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.08405",
+        "published_at": "2026-05-12",
+        "importance": "star",
+        "category": "academic"
+      },
+      {
+        "title": "MemQ：结合Q学习的自演化记忆智能体",
+        "summary": "将Q学习集成到LLM智能体的情境记忆中，实现经验的有效积累和优先回放。",
+        "value_note": "用Q学习优化记忆，提升智能体经验利用效率。",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.08374",
+        "published_at": "2026-05-12",
+        "importance": "star",
+        "category": "academic"
+      },
+      {
+        "title": "Auto-Rubric：自动评分量规作为多模态生成奖励",
+        "summary": "提出用自动生成的评分量规作为奖励信号，对齐多模态生成模型与人类偏好。",
+        "value_note": "自动评分量规奖励改善多模态生成对齐效果。",
+        "source_name": "arXiv",
+        "url": "https://arxiv.org/abs/2605.08354",
+        "published_at": "2026-05-12",
+        "importance": "pin",
+        "category": "academic"
+      }
+    ]
+  },
+  "trending": []
+}

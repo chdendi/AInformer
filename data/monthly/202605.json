@@ -1,0 +1,250 @@
+{
+  "year": 2026,
+  "month": 5,
+  "label": "2026-05",
+  "slug": "202605",
+  "title": "2026 年 5 月 AI 月度回顾",
+  "tagline": "",
+  "overview": "",
+  "themes": [],
+  "milestones": [],
+  "daily_links": [
+    {
+      "date": "2026-05-08",
+      "weekday_zh": "五",
+      "slug": "20260508",
+      "theme": "模型竞赛升级，安全与开源成焦点",
+      "total": 21,
+      "hot_count": 8
+    },
+    {
+      "date": "2026-05-09",
+      "weekday_zh": "六",
+      "slug": "20260509",
+      "theme": "AI能力跃迁与规则重塑",
+      "total": 18,
+      "hot_count": 2
+    },
+    {
+      "date": "2026-05-10",
+      "weekday_zh": "日",
+      "slug": "20260510",
+      "theme": "提示工程极限与vibe coding新范例",
+      "total": 2,
+      "hot_count": 0
+    },
+    {
+      "date": "2026-05-11",
+      "weekday_zh": "一",
+      "slug": "20260511",
+      "theme": "AI争议与突破并存，硬件布局加速",
+      "total": 15,
+      "hot_count": 4
+    },
+    {
+      "date": "2026-05-12",
+      "weekday_zh": "二",
+      "slug": "20260512",
+      "theme": "AI落地提速，安全治理与能力突破双线交织",
+      "total": 14,
+      "hot_count": 4
+    },
+    {
+      "date": "2026-05-13",
+      "weekday_zh": "三",
+      "slug": "20260513",
+      "theme": "可灵AI百亿估值独立，Agent能力与学术理论双突破",
+      "total": 8,
+      "hot_count": 2
+    },
+    {
+      "date": "2026-05-14",
+      "weekday_zh": "四",
+      "slug": "20260514",
+      "theme": "中国AI应用与开源突破，学术决策评测创新",
+      "total": 8,
+      "hot_count": 2
+    },
+    {
+      "date": "2026-05-15",
+      "weekday_zh": "五",
+      "slug": "20260515",
+      "theme": "模型大战与AI安全争议",
+      "total": 16,
+      "hot_count": 3
+    },
+    {
+      "date": "2026-05-16",
+      "weekday_zh": "六",
+      "slug": "20260516",
+      "theme": "",
+      "total": 12,
+      "hot_count": 2
+    },
+    {
+      "date": "2026-05-17",
+      "weekday_zh": "日",
+      "slug": "20260517",
+      "theme": "全民AI普惠与智能体竞赛加速",
+      "total": 8,
+      "hot_count": 2
+    },
+    {
+      "date": "2026-05-18",
+      "weekday_zh": "一",
+      "slug": "20260518",
+      "theme": "AI 自主能力跃进，安全与协作成焦点",
+      "total": 12,
+      "hot_count": 0
+    },
+    {
+      "date": "2026-05-19",
+      "weekday_zh": "二",
+      "slug": "20260519",
+      "theme": "算力硬件与AI应用齐头并进",
+      "total": 14,
+      "hot_count": 1
+    },
+    {
+      "date": "2026-05-20",
+      "weekday_zh": "三",
+      "slug": "20260520",
+      "theme": "人才流动加速，代理时代开启，中国力量崛起",
+      "total": 10,
+      "hot_count": 2
+    },
+    {
+      "date": "2026-05-21",
+      "weekday_zh": "四",
+      "slug": "20260521",
+      "theme": "",
+      "total": 13,
+      "hot_count": 1
+    },
+    {
+      "date": "2026-05-22",
+      "weekday_zh": "五",
+      "slug": "20260522",
+      "theme": "AI代理兼容性受检，国防与科研突破并行",
+      "total": 12,
+      "hot_count": 1
+    },
+    {
+      "date": "2026-05-23",
+      "weekday_zh": "六",
+      "slug": "20260523",
+      "theme": "政策护航、资本押注、技术突破三线并进",
+      "total": 15,
+      "hot_count": 2
+    },
+    {
+      "date": "2026-05-24",
+      "weekday_zh": "日",
+      "slug": "20260524",
+      "theme": "大模型价格战白热化与多模态生成安全争议并行",
+      "total": 5,
+      "hot_count": 1
+    },
+    {
+      "date": "2026-05-25",
+      "weekday_zh": "一",
+      "slug": "20260525",
+      "theme": "AI代理、语音交互与智能体记忆创新齐发",
+      "total": 10,
+      "hot_count": 1
+    },
+    {
+      "date": "2026-05-26",
+      "weekday_zh": "二",
+      "slug": "20260526",
+      "theme": "AI数学突破、人力替代与成本革命并行",
+      "total": 15,
+      "hot_count": 3
+    },
+    {
+      "date": "2026-05-27",
+      "weekday_zh": "三",
+      "slug": "20260527",
+      "theme": "用户反抗Google AI搜索，国产AI在自训练与编程榜上全面冲顶",
+      "total": 16,
+      "hot_count": 2
+    },
+    {
+      "date": "2026-05-28",
+      "weekday_zh": "四",
+      "slug": "20260528",
+      "theme": "AI代理狂飙，基础设施与学术框架齐进化",
+      "total": 15,
+      "hot_count": 2
+    },
+    {
+      "date": "2026-05-29",
+      "weekday_zh": "五",
+      "slug": "20260529",
+      "theme": "Anthropic冲击万亿估值，AI安全与创新并进",
+      "total": 15,
+      "hot_count": 2
+    },
+    {
+      "date": "2026-05-30",
+      "weekday_zh": "六",
+      "slug": "20260530",
+      "theme": "资本狂潮与技术迭代双轮驱动 AI 新纪元",
+      "total": 15,
+      "hot_count": 1
+    },
+    {
+      "date": "2026-05-31",
+      "weekday_zh": "日",
+      "slug": "20260531",
+      "theme": "",
+      "total": 12,
+      "hot_count": 2
+    }
+  ],
+  "day_count": 24,
+  "total_items": 398,
+  "top_sources": [
+    [
+      "量子位",
+      81
+    ],
+    [
+      "arXiv",
+      50
+    ],
+    [
+      "Simon Willison",
+      34
+    ],
+    [
+      "TechCrunch",
+      31
+    ],
+    [
+      "The Verge",
+      24
+    ],
+    [
+      "The Decoder",
+      21
+    ],
+    [
+      "arXiv cs.AI",
+      16
+    ],
+    [
+      "36氪",
+      14
+    ],
+    [
+      "OpenAI",
+      10
+    ],
+    [
+      "the_decoder",
+      8
+    ]
+  ],
+  "generated_at": "2026-06-01T11:25:55.305044+08:00"
+}

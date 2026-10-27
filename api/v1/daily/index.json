@@ -1,0 +1,1398 @@
+{
+  "updated_at": "2026-10-27T13:50:52.910924+08:00",
+  "total_days": 173,
+  "latest": {
+    "date": "2026-10-27",
+    "theme": "资本与智能体基建双线提速",
+    "generated_at": "2026-10-27T13:50:52.716202+08:00",
+    "total_items": 15,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261027.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20261027.html"
+  },
+  "dates": [
+    {
+      "date": "2026-10-27",
+      "theme": "资本与智能体基建双线提速",
+      "generated_at": "2026-10-27T13:50:52.716202+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261027.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261027.html"
+    },
+    {
+      "date": "2026-10-26",
+      "theme": "价格战与路线分化并行，AI落地回报待验证",
+      "generated_at": "2026-10-26T13:40:53.332200+08:00",
+      "total_items": 13,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261026.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261026.html"
+    },
+    {
+      "date": "2026-10-25",
+      "theme": "智能体框架与安全基建并进，开源加速追赶闭源",
+      "generated_at": "2026-10-25T13:33:31.885597+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261025.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261025.html"
+    },
+    {
+      "date": "2026-10-24",
+      "theme": "前沿模型竞速：开源突破与安全收紧并行",
+      "generated_at": "2026-10-24T13:16:41.527521+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261024.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261024.html"
+    },
+    {
+      "date": "2026-10-23",
+      "theme": "决策模型竞速与智能体安全基建并进",
+      "generated_at": "2026-10-23T13:37:51.972641+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261023.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261023.html"
+    },
+    {
+      "date": "2026-10-22",
+      "theme": "智能体竞速与安全警钟同鸣",
+      "generated_at": "2026-10-22T13:38:55.749613+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261022.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261022.html"
+    },
+    {
+      "date": "2026-10-21",
+      "theme": "收购、开源与安全立法并行，AI落地加速",
+      "generated_at": "2026-10-21T13:37:05.320227+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261021.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261021.html"
+    },
+    {
+      "date": "2026-10-20",
+      "theme": "开放权重与智能体安全并进",
+      "generated_at": "2026-10-20T13:36:14.463711+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261020.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261020.html"
+    },
+    {
+      "date": "2026-10-19",
+      "theme": "开源与责任并进，AI生态加速重构",
+      "generated_at": "2026-10-19T13:33:40.886966+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261019.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261019.html"
+    },
+    {
+      "date": "2026-10-18",
+      "theme": "模型迭代加速，智能体生态开源与竞争并进",
+      "generated_at": "2026-10-18T13:18:21.409284+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261018.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261018.html"
+    },
+    {
+      "date": "2026-10-17",
+      "theme": "出口管制收紧与开源模型竞速并行",
+      "generated_at": "2026-10-17T13:14:37.170774+08:00",
+      "total_items": 13,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261017.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261017.html"
+    },
+    {
+      "date": "2026-10-16",
+      "theme": "开源模型竞逐与前沿推理突破",
+      "generated_at": "2026-10-16T13:19:42.011273+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261016.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261016.html"
+    },
+    {
+      "date": "2026-10-15",
+      "theme": "算力加码与监管收紧并行，端侧智能体加速落地",
+      "generated_at": "2026-10-15T13:26:25.944729+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261015.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261015.html"
+    },
+    {
+      "date": "2026-10-14",
+      "theme": "Gemini 4 上线，行业洗牌与安全焦虑并行",
+      "generated_at": "2026-10-14T13:41:17.664338+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261014.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261014.html"
+    },
+    {
+      "date": "2026-10-13",
+      "theme": "前沿模型与推理硬件同日竞速，智能体走向长程与落地",
+      "generated_at": "2026-10-13T15:16:05.007864+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261013.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261013.html"
+    },
+    {
+      "date": "2026-10-12",
+      "theme": "智能体协作成本受质疑，模型与工具持续上新",
+      "generated_at": "2026-10-12T14:50:16.387743+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261012.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261012.html"
+    },
+    {
+      "date": "2026-10-11",
+      "theme": "模型安全警钟与编码能力竞赛同步升温",
+      "generated_at": "2026-10-11T14:42:33.967671+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261011.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261011.html"
+    },
+    {
+      "date": "2026-10-10",
+      "theme": "智能体规模跃升，安全与资本同步紧绷",
+      "generated_at": "2026-10-10T14:34:40.094205+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261010.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261010.html"
+    },
+    {
+      "date": "2026-10-09",
+      "theme": "从对话到执行，智能体全面加速落地",
+      "generated_at": "2026-10-09T15:06:47.043051+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261009.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261009.html"
+    },
+    {
+      "date": "2026-10-08",
+      "theme": "小模型降价、GPT-6 交互升级与本地智能体同台竞速",
+      "generated_at": "2026-10-08T14:55:24.804304+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261008.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261008.html"
+    },
+    {
+      "date": "2026-10-07",
+      "theme": "万亿参数开源与巨额融资同日登场",
+      "generated_at": "2026-10-07T14:45:41.424932+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261007.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261007.html"
+    },
+    {
+      "date": "2026-10-06",
+      "theme": "开源模型对垒与智能体科研闭环",
+      "generated_at": "2026-10-06T15:04:16.478873+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261006.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261006.html"
+    },
+    {
+      "date": "2026-10-05",
+      "theme": "AI开始造AI，产业与评测同步收紧",
+      "generated_at": "2026-10-05T14:27:52.160177+08:00",
+      "total_items": 13,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261005.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261005.html"
+    },
+    {
+      "date": "2026-10-04",
+      "theme": "智能体加速落地，安全治理同步收紧",
+      "generated_at": "2026-10-04T14:35:26.731011+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261004.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261004.html"
+    },
+    {
+      "date": "2026-10-03",
+      "theme": "AI智能体自主性上升，安全边界与路线之争同步升温",
+      "generated_at": "2026-10-03T13:57:13.769435+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261003.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261003.html"
+    },
+    {
+      "date": "2026-10-02",
+      "theme": "模型竞速与智能体治理并行",
+      "generated_at": "2026-10-02T14:31:29.882103+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261002.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261002.html"
+    },
+    {
+      "date": "2026-10-01",
+      "theme": "能力跃升与安全监管同步收紧",
+      "generated_at": "2026-10-01T14:44:01.164894+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261001.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261001.html"
+    },
+    {
+      "date": "2026-09-30",
+      "theme": "能力跃升与安全红线同时逼近",
+      "generated_at": "2026-09-30T14:13:01.406663+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260930.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260930.html"
+    },
+    {
+      "date": "2026-09-29",
+      "theme": "巨头抢滩世界模型与智能体安全",
+      "generated_at": "2026-09-29T14:28:53.989049+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260929.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260929.html"
+    },
+    {
+      "date": "2026-09-28",
+      "theme": "智能体越界风险与AI基建狂飙并行",
+      "generated_at": "2026-09-28T14:11:28.969069+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260928.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260928.html"
+    },
+    {
+      "date": "2026-09-27",
+      "theme": "训练暂停、成本减半与推理提速并行",
+      "generated_at": "2026-09-27T14:03:29.307264+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260927.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260927.html"
+    },
+    {
+      "date": "2026-09-26",
+      "theme": "算力豪赌与安全审查并行，Agent 能力向日常场景渗透",
+      "generated_at": "2026-09-26T13:44:06.401321+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260926.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260926.html"
+    },
+    {
+      "date": "2026-09-25",
+      "theme": "AI从对话走向具身与实时化身",
+      "generated_at": "2026-09-25T13:40:33.317367+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260925.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260925.html"
+    },
+    {
+      "date": "2026-09-24",
+      "theme": "智能体走向硬件，模型价格战与数据重做并行",
+      "generated_at": "2026-09-24T13:43:22.185972+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260924.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260924.html"
+    },
+    {
+      "date": "2026-09-23",
+      "theme": "模型密集发布，价格战与评测反思并行",
+      "generated_at": "2026-09-23T13:25:44.042785+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260923.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260923.html"
+    },
+    {
+      "date": "2026-09-22",
+      "theme": "模型竞赛与治理警钟同鸣",
+      "generated_at": "2026-09-22T13:42:45.696962+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260922.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260922.html"
+    },
+    {
+      "date": "2026-09-21",
+      "theme": "资本退潮与产品加速并行",
+      "generated_at": "2026-09-21T13:44:48.474771+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260921.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260921.html"
+    },
+    {
+      "date": "2026-09-20",
+      "theme": "安全争议与开源竞速并行",
+      "generated_at": "2026-09-20T13:35:36.000910+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260920.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260920.html"
+    },
+    {
+      "date": "2026-09-19",
+      "theme": "监管收紧与Agent落地并行",
+      "generated_at": "2026-09-19T13:23:03.890820+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260919.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260919.html"
+    },
+    {
+      "date": "2026-09-18",
+      "theme": "大模型进专业行业，安全与自改进并进",
+      "generated_at": "2026-09-18T13:27:02.353574+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260918.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260918.html"
+    },
+    {
+      "date": "2026-09-17",
+      "theme": "产品整合与智能体生态加速落地",
+      "generated_at": "2026-09-17T13:38:48.539829+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260917.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260917.html"
+    },
+    {
+      "date": "2026-09-16",
+      "theme": "语音模型竞速与企业级推理落地并行",
+      "generated_at": "2026-09-16T13:33:16.708103+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260916.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260916.html"
+    },
+    {
+      "date": "2026-09-15",
+      "theme": "资本并购提速，开源与治理并行",
+      "generated_at": "2026-09-15T13:38:39.246638+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260915.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260915.html"
+    },
+    {
+      "date": "2026-09-14",
+      "theme": "智能体接管真实系统，前沿限速罕见达成共识",
+      "generated_at": "2026-09-14T13:37:26.130771+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260914.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260914.html"
+    },
+    {
+      "date": "2026-09-13",
+      "theme": "模型性价比竞赛与前沿发展“限速”之争并行",
+      "generated_at": "2026-09-13T13:32:39.298364+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260913.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260913.html"
+    },
+    {
+      "date": "2026-09-12",
+      "theme": "企业落地与学界反思并行",
+      "generated_at": "2026-09-12T13:18:30.271938+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260912.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260912.html"
+    },
+    {
+      "date": "2026-09-11",
+      "theme": "代理基础设施与蒸馏攻防同日升温",
+      "generated_at": "2026-09-11T13:30:20.644464+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260911.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260911.html"
+    },
+    {
+      "date": "2026-09-10",
+      "theme": "企业级模型与国产算力双线推进",
+      "generated_at": "2026-09-10T13:29:13.113415+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260910.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260910.html"
+    },
+    {
+      "date": "2026-09-09",
+      "theme": "资本涌入与科研突破并行，AI应用加速落地",
+      "generated_at": "2026-09-09T13:38:30.454287+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260909.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260909.html"
+    },
+    {
+      "date": "2026-09-08",
+      "theme": "算力巨头扩张，端侧与教育政策成焦点",
+      "generated_at": "2026-09-08T13:31:07.024531+08:00",
+      "total_items": 12,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260908.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260908.html"
+    },
+    {
+      "date": "2026-09-07",
+      "theme": "开源模型与版权诉讼并行，AI竞争白热化",
+      "generated_at": "2026-09-07T13:32:54.234297+08:00",
+      "total_items": 13,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260907.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260907.html"
+    },
+    {
+      "date": "2026-09-06",
+      "theme": "资本与技术双轮驱动，AI生态加速扩张",
+      "generated_at": "2026-09-06T13:23:04.616420+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260906.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260906.html"
+    },
+    {
+      "date": "2026-09-05",
+      "theme": "AI安全与突破并行，OpenAI风波不断，Anthropic开源新蓝图",
+      "generated_at": "2026-09-05T13:08:47.014570+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260905.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260905.html"
+    },
+    {
+      "date": "2026-09-04",
+      "theme": "巨头竞逐，AI进入新纪元",
+      "generated_at": "2026-09-04T13:19:05.488027+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260904.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260904.html"
+    },
+    {
+      "date": "2026-09-03",
+      "theme": "AI军事、3D生成与安全融资齐头并进",
+      "generated_at": "2026-09-03T13:24:16.719285+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260903.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260903.html"
+    },
+    {
+      "date": "2026-09-02",
+      "theme": "模型能力跃升与安全治理并进",
+      "generated_at": "2026-09-02T13:19:22.451537+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260902.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260902.html"
+    },
+    {
+      "date": "2026-09-01",
+      "theme": "资本布局与监管并进，实时生成与自进化突破",
+      "generated_at": "2026-09-01T13:56:46.544150+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260901.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260901.html"
+    },
+    {
+      "date": "2026-08-31",
+      "theme": "版权争议与算力探索并行，AI生态加速演进",
+      "generated_at": "2026-08-31T14:30:41.388176+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260831.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260831.html"
+    },
+    {
+      "date": "2026-08-30",
+      "theme": "AI能力跃升与版权争议并存",
+      "generated_at": "2026-08-30T14:08:03.721232+08:00",
+      "total_items": 12,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260830.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260830.html"
+    },
+    {
+      "date": "2026-08-29",
+      "theme": "巨头博弈与开源创新并行",
+      "generated_at": "2026-08-29T15:35:08.843735+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260829.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260829.html"
+    },
+    {
+      "date": "2026-08-28",
+      "theme": "AI安全与AGI争议交织，国产模型创新突破",
+      "generated_at": "2026-08-28T20:25:32.888913+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260828.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260828.html"
+    },
+    {
+      "date": "2026-08-27",
+      "theme": "开源并购与国产模型崛起",
+      "generated_at": "2026-08-27T18:49:22.382900+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260827.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260827.html"
+    },
+    {
+      "date": "2026-08-26",
+      "theme": "算力自主与智能体安全并进",
+      "generated_at": "2026-08-26T10:21:51.168552+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260826.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260826.html"
+    },
+    {
+      "date": "2026-08-25",
+      "theme": "AI基础设施与生态整合加速",
+      "generated_at": "2026-08-25T10:14:54.783611+08:00",
+      "total_items": 13,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260825.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260825.html"
+    },
+    {
+      "date": "2026-08-24",
+      "theme": "AI代理崛起，基础设施与垂直模型并进",
+      "generated_at": "2026-08-24T10:19:31.355806+08:00",
+      "total_items": 12,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260824.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260824.html"
+    },
+    {
+      "date": "2026-08-23",
+      "theme": "安全与性能并重，AI竞争白热化",
+      "generated_at": "2026-08-23T10:20:58.626001+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260823.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260823.html"
+    },
+    {
+      "date": "2026-08-22",
+      "theme": "巨头布局与前沿突破并行，AI生态加速演进",
+      "generated_at": "2026-08-22T10:12:22.491592+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260822.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260822.html"
+    },
+    {
+      "date": "2026-08-21",
+      "theme": "AI商业化加速，智能体与模型能力双突破",
+      "generated_at": "2026-08-21T10:20:19.490073+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260821.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260821.html"
+    },
+    {
+      "date": "2026-08-20",
+      "theme": "竞争加剧，成本承压，中国AI崛起",
+      "generated_at": "2026-08-20T10:13:31.710682+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260820.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260820.html"
+    },
+    {
+      "date": "2026-08-19",
+      "theme": "安全与创新并进，AI商业化与学术突破齐飞",
+      "generated_at": "2026-08-19T10:15:01.532671+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260819.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260819.html"
+    },
+    {
+      "date": "2026-08-18",
+      "theme": "资本涌动，AI基础设施与模型生态加速重构",
+      "generated_at": "2026-08-18T10:11:43.655261+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260818.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260818.html"
+    },
+    {
+      "date": "2026-08-17",
+      "theme": "AI安全与巨额投入并行",
+      "generated_at": "2026-08-17T13:12:07.330325+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260817.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260817.html"
+    },
+    {
+      "date": "2026-08-16",
+      "theme": "",
+      "generated_at": "2026-08-16T10:21:24.365005+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260816.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260816.html"
+    },
+    {
+      "date": "2026-08-15",
+      "theme": "",
+      "generated_at": "2026-08-15T10:14:10.173114+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260815.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260815.html"
+    },
+    {
+      "date": "2026-08-14",
+      "theme": "",
+      "generated_at": "2026-08-14T11:25:29.425956+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260814.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260814.html"
+    },
+    {
+      "date": "2026-08-13",
+      "theme": "",
+      "generated_at": "2026-08-13T11:27:36.312761+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260813.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260813.html"
+    },
+    {
+      "date": "2026-08-12",
+      "theme": "",
+      "generated_at": "2026-08-12T11:23:55.799050+08:00",
+      "total_items": 13,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260812.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260812.html"
+    },
+    {
+      "date": "2026-08-11",
+      "theme": "攻防升级、开源回归、代理安全引热议",
+      "generated_at": "2026-08-11T11:05:05.849706+08:00",
+      "total_items": 12,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260811.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260811.html"
+    },
+    {
+      "date": "2026-08-10",
+      "theme": "AI投资、模型创新与本土生态并行，安全反思引关注",
+      "generated_at": "2026-08-10T11:11:11.958262+08:00",
+      "total_items": 7,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260810.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260810.html"
+    },
+    {
+      "date": "2026-08-09",
+      "theme": "大模型竞赛白热化：巨参、越狱与芯片革新",
+      "generated_at": "2026-08-09T11:01:55.831580+08:00",
+      "total_items": 13,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260809.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260809.html"
+    },
+    {
+      "date": "2026-08-08",
+      "theme": "AI安全与多智能体架构引发关注",
+      "generated_at": "2026-08-08T10:55:07.123597+08:00",
+      "total_items": 12,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260808.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260808.html"
+    },
+    {
+      "date": "2026-08-07",
+      "theme": "AI安全敲响警钟，Agentic能力竞逐白热化",
+      "generated_at": "2026-08-07T11:52:36.911410+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260807.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260807.html"
+    },
+    {
+      "date": "2026-08-06",
+      "theme": "AI 代理接连“越狱”，开源模型与安全治理齐头并进",
+      "generated_at": "2026-08-06T12:06:08.228060+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260806.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260806.html"
+    },
+    {
+      "date": "2026-08-05",
+      "theme": "百亿算力契约与政策变数交织，开源工具与本体智能齐飞",
+      "generated_at": "2026-08-05T12:00:40.332023+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260805.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260805.html"
+    },
+    {
+      "date": "2026-08-04",
+      "theme": "中国开源模型霸榜，监管新规落地",
+      "generated_at": "2026-08-04T12:05:03.806847+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260804.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260804.html"
+    },
+    {
+      "date": "2026-08-03",
+      "theme": "AI Agent迈向生产、自进化与安全治理",
+      "generated_at": "2026-08-03T12:30:17.307398+08:00",
+      "total_items": 11,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260803.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260803.html"
+    },
+    {
+      "date": "2026-08-02",
+      "theme": "",
+      "generated_at": "2026-08-02T12:23:56.200604+08:00",
+      "total_items": 9,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260802.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260802.html"
+    },
+    {
+      "date": "2026-08-01",
+      "theme": "",
+      "generated_at": "2026-08-01T12:23:58.386349+08:00",
+      "total_items": 12,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260801.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260801.html"
+    },
+    {
+      "date": "2026-07-31",
+      "theme": "",
+      "generated_at": "2026-07-31T12:23:07.673369+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260731.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260731.html"
+    },
+    {
+      "date": "2026-07-30",
+      "theme": "",
+      "generated_at": "2026-07-30T11:56:13.575319+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260730.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260730.html"
+    },
+    {
+      "date": "2026-07-29",
+      "theme": "AI代理安全、加密突破与智能体应用拓展",
+      "generated_at": "2026-07-29T12:06:58.233465+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260729.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260729.html"
+    },
+    {
+      "date": "2026-07-28",
+      "theme": "安全联盟与开源生态共演，融资变局与人才流动并行",
+      "generated_at": "2026-07-28T11:59:47.327572+08:00",
+      "total_items": 10,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260728.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260728.html"
+    },
+    {
+      "date": "2026-07-27",
+      "theme": "管制与安全交织，开源模型与 Agent 落地并行。",
+      "generated_at": "2026-07-27T12:35:29.421964+08:00",
+      "total_items": 12,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260727.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260727.html"
+    },
+    {
+      "date": "2026-07-26",
+      "theme": "Claude Opus 5以半价挑战Fable 5，AI性价比与安全性双突破",
+      "generated_at": "2026-07-26T12:24:59.706096+08:00",
+      "total_items": 12,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260726.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260726.html"
+    },
+    {
+      "date": "2026-07-25",
+      "theme": "模型发布与硬件角力齐飞，AI竞赛进入新一轮多维碰撞。",
+      "generated_at": "2026-07-25T12:02:39.776730+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260725.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260725.html"
+    },
+    {
+      "date": "2026-07-24",
+      "theme": "语音升级、AGI 誓言与失控智能体争议",
+      "generated_at": "2026-07-24T12:13:39.215440+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260724.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260724.html"
+    },
+    {
+      "date": "2026-07-23",
+      "theme": "代理崛起与意外失控：AI 进入攻防新篇章",
+      "generated_at": "2026-07-23T12:15:23.560843+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260723.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260723.html"
+    },
+    {
+      "date": "2026-07-22",
+      "theme": "AI安全与商业化并行，中国模型首夺IMO金牌",
+      "generated_at": "2026-07-22T12:15:44.921792+08:00",
+      "total_items": 11,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260722.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260722.html"
+    },
+    {
+      "date": "2026-07-21",
+      "theme": "AI 芯片竞争、版权与多模态创新并行",
+      "generated_at": "2026-07-21T12:14:40.426771+08:00",
+      "total_items": 11,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260721.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260721.html"
+    },
+    {
+      "date": "2026-07-20",
+      "theme": "开源对垒与战略加速，AI竞逐进入多线博弈",
+      "generated_at": "2026-07-20T12:35:05.209016+08:00",
+      "total_items": 10,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260720.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260720.html"
+    },
+    {
+      "date": "2026-07-19",
+      "theme": "地缘博弈、商业变局与技术突破交织",
+      "generated_at": "2026-07-19T12:21:34.356081+08:00",
+      "total_items": 11,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260719.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260719.html"
+    },
+    {
+      "date": "2026-07-18",
+      "theme": "Claude获自动登录能力，Kimi K3成最大开源模型",
+      "generated_at": "2026-07-18T11:54:31.144771+08:00",
+      "total_items": 13,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260718.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260718.html"
+    },
+    {
+      "date": "2026-07-17",
+      "theme": "大模型性能竞赛白热化，商业化与具身智能突破并行。",
+      "generated_at": "2026-07-17T11:59:48.456392+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260717.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260717.html"
+    },
+    {
+      "date": "2026-07-16",
+      "theme": "自动化安全与端侧模型引领AI新落地浪潮",
+      "generated_at": "2026-07-16T12:00:44.173085+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260716.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260716.html"
+    },
+    {
+      "date": "2026-07-15",
+      "theme": "OpenAI硬件亮相，DeepSeek再冲IPO，AI编程爆发",
+      "generated_at": "2026-07-15T11:57:42.252701+08:00",
+      "total_items": 13,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260715.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260715.html"
+    },
+    {
+      "date": "2026-07-14",
+      "theme": "定价战火与开源困局交织，AI生态面临重塑",
+      "generated_at": "2026-07-14T11:55:36.845114+08:00",
+      "total_items": 12,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260714.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260714.html"
+    },
+    {
+      "date": "2026-07-13",
+      "theme": "AI代理进化与模型价格战并进",
+      "generated_at": "2026-07-13T12:31:03.643889+08:00",
+      "total_items": 13,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260713.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260713.html"
+    },
+    {
+      "date": "2026-07-12",
+      "theme": "超级推理突破与算力自主并行，安全治理警钟再响",
+      "generated_at": "2026-07-12T12:25:28.197284+08:00",
+      "total_items": 8,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260712.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260712.html"
+    },
+    {
+      "date": "2026-07-11",
+      "theme": "巨头角力升级：苹果诉OpenAI窃密，腾讯接盘Manus",
+      "generated_at": "2026-07-11T12:09:53.050434+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260711.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260711.html"
+    },
+    {
+      "date": "2026-07-10",
+      "theme": "GPT-5.6 与智能代理引领 AI 范式升级",
+      "generated_at": "2026-07-10T12:48:47.585269+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260710.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260710.html"
+    },
+    {
+      "date": "2026-07-09",
+      "theme": "",
+      "generated_at": "2026-07-09T12:59:01.732821+08:00",
+      "total_items": 12,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260709.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260709.html"
+    },
+    {
+      "date": "2026-07-08",
+      "theme": "自研芯片、出口管制与可解释性突破共振",
+      "generated_at": "2026-07-08T12:14:01.344901+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260708.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260708.html"
+    },
+    {
+      "date": "2026-07-07",
+      "theme": "监管与突破交织，AI社会影响加速显现",
+      "generated_at": "2026-07-07T12:48:40.547434+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260707.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260707.html"
+    },
+    {
+      "date": "2026-07-06",
+      "theme": "政策宽松、平台更迭与理论突破共塑AI新格局",
+      "generated_at": "2026-07-06T13:08:16.523016+08:00",
+      "total_items": 9,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260706.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260706.html"
+    },
+    {
+      "date": "2026-07-05",
+      "theme": "AI安全与自主可控成焦点，开源模型与跨领域突破不断",
+      "generated_at": "2026-07-05T12:54:46.484609+08:00",
+      "total_items": 12,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260705.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260705.html"
+    },
+    {
+      "date": "2026-07-04",
+      "theme": "AI融资与应用竞赛升温，科学发现再提速",
+      "generated_at": "2026-07-04T12:34:38.175294+08:00",
+      "total_items": 12,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260704.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260704.html"
+    },
+    {
+      "date": "2026-07-03",
+      "theme": "AI部署、芯片自研与模型创新多点突破",
+      "generated_at": "2026-07-03T12:41:04.437284+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260703.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260703.html"
+    },
+    {
+      "date": "2026-07-02",
+      "theme": "模型发布意外泄露，政策松绑与资本热潮并行",
+      "generated_at": "2026-07-02T09:45:49.254701+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260702.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260702.html"
+    },
+    {
+      "date": "2026-07-01",
+      "theme": "巨头模型与智能体密集发布，中国展示芯片限制下的韧性",
+      "generated_at": "2026-07-01T09:49:02.631073+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260701.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260701.html"
+    },
+    {
+      "date": "2026-06-30",
+      "theme": "算力合纵与模型壁垒：AI 进入竞合新阶段",
+      "generated_at": "2026-06-30T09:44:14.784629+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260630.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260630.html"
+    },
+    {
+      "date": "2026-06-29",
+      "theme": "",
+      "generated_at": "2026-06-29T09:47:40.773888+08:00",
+      "total_items": 11,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260629.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260629.html"
+    },
+    {
+      "date": "2026-06-28",
+      "theme": "亚洲AI崛起、成本驱动迁移与端侧突破并行",
+      "generated_at": "2026-06-28T09:45:39.452023+08:00",
+      "total_items": 13,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260628.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260628.html"
+    },
+    {
+      "date": "2026-06-27",
+      "theme": "",
+      "generated_at": "2026-06-27T09:42:19.524518+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260627.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260627.html"
+    },
+    {
+      "date": "2026-06-26",
+      "theme": "GPT-5.6 推迟与 Claude 反攻，AI 竞争进入多极博弈",
+      "generated_at": "2026-06-26T09:47:15.574090+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260626.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260626.html"
+    },
+    {
+      "date": "2026-06-25",
+      "theme": "算力芯片、模型能力与商业模式创新并行",
+      "generated_at": "2026-06-25T09:45:02.380319+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260625.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260625.html"
+    },
+    {
+      "date": "2026-06-24",
+      "theme": "AI代理自主与基础设施竞赛白热化",
+      "generated_at": "2026-06-24T09:40:48.718771+08:00",
+      "total_items": 9,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260624.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260624.html"
+    },
+    {
+      "date": "2026-06-23",
+      "theme": "安全、智能体与商业合作共同推动 AI 落地",
+      "generated_at": "2026-06-23T09:42:41.982885+08:00",
+      "total_items": 11,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260623.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260623.html"
+    },
+    {
+      "date": "2026-06-22",
+      "theme": "AI落地加速，资本狂热与功能进化并行",
+      "generated_at": "2026-06-22T09:52:16.201928+08:00",
+      "total_items": 9,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260622.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260622.html"
+    },
+    {
+      "date": "2026-06-21",
+      "theme": "OpenAI巨亏中加速自动化，学术与开源反击",
+      "generated_at": "2026-06-21T09:51:22.935692+08:00",
+      "total_items": 13,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260621.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260621.html"
+    },
+    {
+      "date": "2026-06-20",
+      "theme": "人才争夺、AI短板与机器人突破交织",
+      "generated_at": "2026-06-20T09:45:07.652734+08:00",
+      "total_items": 11,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260620.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260620.html"
+    },
+    {
+      "date": "2026-06-19",
+      "theme": "出口管制、人才流动与小模型突破",
+      "generated_at": "2026-06-19T09:59:36.252635+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260619.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260619.html"
+    },
+    {
+      "date": "2026-06-18",
+      "theme": "开源模型赶超闭源，国产算力与医疗 AI 双突破",
+      "generated_at": "2026-06-18T09:54:03.967631+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260618.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260618.html"
+    },
+    {
+      "date": "2026-06-17",
+      "theme": "天价收购与巨额融资齐飞，AI 迈向具身与世界模型的新战场",
+      "generated_at": "2026-06-17T09:55:07.347775+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260617.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260617.html"
+    },
+    {
+      "date": "2026-06-16",
+      "theme": "开源模型落地与融资热潮迭起，平台AI创新加速。",
+      "generated_at": "2026-06-16T09:57:29.314817+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260616.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260616.html"
+    },
+    {
+      "date": "2026-06-15",
+      "theme": "企业 AI 加速落地，治理与诚信问题凸显",
+      "generated_at": "2026-06-15T09:52:18.852074+08:00",
+      "total_items": 7,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260615.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260615.html"
+    },
+    {
+      "date": "2026-06-14",
+      "theme": "开源模型价格战、职场教育升级与多学科融合并进",
+      "generated_at": "2026-06-14T09:49:52.601449+08:00",
+      "total_items": 10,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260614.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260614.html"
+    },
+    {
+      "date": "2026-06-13",
+      "theme": "融资、基准、预测与安全：AI代理时代全面起航",
+      "generated_at": "2026-06-13T09:46:22.493375+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260613.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260613.html"
+    },
+    {
+      "date": "2026-06-12",
+      "theme": "AI Agent落地提速，安全与创新并行",
+      "generated_at": "2026-06-12T09:52:03.403816+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260612.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260612.html"
+    },
+    {
+      "date": "2026-06-11",
+      "theme": "Claude Fable 5 登场，中国 AI 多线突破",
+      "generated_at": "2026-06-11T09:55:24.428341+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260611.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260611.html"
+    },
+    {
+      "date": "2026-06-10",
+      "theme": "Anthropic发布Claude Fable 5，AI模型迈入Mythos新纪元",
+      "generated_at": "2026-06-10T09:49:06.746733+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260610.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260610.html"
+    },
+    {
+      "date": "2026-06-09",
+      "theme": "",
+      "generated_at": "2026-06-09T09:42:51.289942+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260609.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260609.html"
+    },
+    {
+      "date": "2026-06-08",
+      "theme": "AI代理时代开启，成本与效率双重革命",
+      "generated_at": "2026-06-08T09:50:40.407418+08:00",
+      "total_items": 11,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260608.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260608.html"
+    },
+    {
+      "date": "2026-06-07",
+      "theme": "政策介入与技术商业化并行，AI市场冷热不均",
+      "generated_at": "2026-06-07T09:49:20.023319+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260607.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260607.html"
+    },
+    {
+      "date": "2026-06-06",
+      "theme": "",
+      "generated_at": "2026-06-06T09:44:16.926202+08:00",
+      "total_items": 11,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260606.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260606.html"
+    },
+    {
+      "date": "2026-06-05",
+      "theme": "智能体落地与协作成为AI发展主旋律",
+      "generated_at": "2026-06-05T09:49:36.452880+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260605.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260605.html"
+    },
+    {
+      "date": "2026-06-04",
+      "theme": "多模态模型突破与AI商业井喷",
+      "generated_at": "2026-06-04T09:58:26.325381+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260604.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260604.html"
+    },
+    {
+      "date": "2026-06-03",
+      "theme": "Agent生态加速成熟，多模态与安全控制并行",
+      "generated_at": "2026-06-03T09:58:48.516153+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260603.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260603.html"
+    },
+    {
+      "date": "2026-06-02",
+      "theme": "大模型商业化加速，安全与科学应用齐头并进",
+      "generated_at": "2026-06-02T09:54:43.752129+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260602.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260602.html"
+    },
+    {
+      "date": "2026-06-01",
+      "theme": "AI可信度受拷问，开源创新势头不减",
+      "generated_at": "2026-06-01T09:52:21.245822+08:00",
+      "total_items": 13,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260601.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260601.html"
+    },
+    {
+      "date": "2026-05-31",
+      "theme": "",
+      "generated_at": "2026-05-31T09:47:53.189399+08:00",
+      "total_items": 12,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260531.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260531.html"
+    },
+    {
+      "date": "2026-05-30",
+      "theme": "资本狂潮与技术迭代双轮驱动 AI 新纪元",
+      "generated_at": "2026-05-30T09:42:58.970356+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260530.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260530.html"
+    },
+    {
+      "date": "2026-05-29",
+      "theme": "Anthropic冲击万亿估值，AI安全与创新并进",
+      "generated_at": "2026-05-29T09:47:19.855455+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260529.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260529.html"
+    },
+    {
+      "date": "2026-05-28",
+      "theme": "AI代理狂飙，基础设施与学术框架齐进化",
+      "generated_at": "2026-05-28T09:39:34.394029+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260528.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260528.html"
+    },
+    {
+      "date": "2026-05-27",
+      "theme": "用户反抗Google AI搜索，国产AI在自训练与编程榜上全面冲顶",
+      "generated_at": "2026-05-27T09:48:12.140124+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260527.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260527.html"
+    },
+    {
+      "date": "2026-05-26",
+      "theme": "AI数学突破、人力替代与成本革命并行",
+      "generated_at": "2026-05-26T09:43:32.832001+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260526.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260526.html"
+    },
+    {
+      "date": "2026-05-25",
+      "theme": "AI代理、语音交互与智能体记忆创新齐发",
+      "generated_at": "2026-05-25T09:45:14.172370+08:00",
+      "total_items": 10,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260525.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260525.html"
+    },
+    {
+      "date": "2026-05-24",
+      "theme": "大模型价格战白热化与多模态生成安全争议并行",
+      "generated_at": "2026-05-24T09:42:50.248639+08:00",
+      "total_items": 5,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260524.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260524.html"
+    },
+    {
+      "date": "2026-05-23",
+      "theme": "政策护航、资本押注、技术突破三线并进",
+      "generated_at": "2026-05-23T09:41:22.158283+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260523.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260523.html"
+    },
+    {
+      "date": "2026-05-22",
+      "theme": "AI代理兼容性受检，国防与科研突破并行",
+      "generated_at": "2026-05-22T09:47:28.265011+08:00",
+      "total_items": 12,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260522.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260522.html"
+    },
+    {
+      "date": "2026-05-21",
+      "theme": "",
+      "generated_at": "2026-05-21T09:49:52.774561+08:00",
+      "total_items": 13,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260521.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260521.html"
+    },
+    {
+      "date": "2026-05-20",
+      "theme": "人才流动加速，代理时代开启，中国力量崛起",
+      "generated_at": "2026-05-20T09:47:49.094412+08:00",
+      "total_items": 10,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260520.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260520.html"
+    },
+    {
+      "date": "2026-05-19",
+      "theme": "算力硬件与AI应用齐头并进",
+      "generated_at": "2026-05-19T09:48:35.954666+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260519.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260519.html"
+    },
+    {
+      "date": "2026-05-18",
+      "theme": "AI 自主能力跃进，安全与协作成焦点",
+      "generated_at": "2026-05-18T16:12:40.710415+08:00",
+      "total_items": 12,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260518.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260518.html"
+    },
+    {
+      "date": "2026-05-17",
+      "theme": "全民AI普惠与智能体竞赛加速",
+      "generated_at": "2026-05-17T13:13:38.421224+08:00",
+      "total_items": 8,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260517.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260517.html"
+    },
+    {
+      "date": "2026-05-16",
+      "theme": "",
+      "generated_at": "2026-05-16T09:37:58.153808+08:00",
+      "total_items": 12,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260516.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260516.html"
+    },
+    {
+      "date": "2026-05-15",
+      "theme": "模型大战与AI安全争议",
+      "generated_at": "2026-05-15T18:11:08.144559+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260515.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260515.html"
+    },
+    {
+      "date": "2026-05-14",
+      "theme": "中国AI应用与开源突破，学术决策评测创新",
+      "generated_at": "2026-05-14T20:01:21.875525+08:00",
+      "total_items": 8,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260514.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260514.html"
+    },
+    {
+      "date": "2026-05-13",
+      "theme": "可灵AI百亿估值独立，Agent能力与学术理论双突破",
+      "generated_at": "2026-05-13T09:39:38.009765+08:00",
+      "total_items": 8,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260513.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260513.html"
+    },
+    {
+      "date": "2026-05-12",
+      "theme": "AI落地提速，安全治理与能力突破双线交织",
+      "generated_at": "2026-05-12T10:17:39.946763+08:00",
+      "total_items": 14,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260512.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260512.html"
+    },
+    {
+      "date": "2026-05-11",
+      "theme": "AI争议与突破并存，硬件布局加速",
+      "generated_at": "2026-05-11T11:14:10.995704+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260511.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260511.html"
+    },
+    {
+      "date": "2026-05-10",
+      "theme": "提示工程极限与vibe coding新范例",
+      "generated_at": "2026-05-10T09:37:52.497626+08:00",
+      "total_items": 2,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260510.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260510.html"
+    },
+    {
+      "date": "2026-05-09",
+      "theme": "AI能力跃迁与规则重塑",
+      "generated_at": "2026-05-09T13:13:26.139535+08:00",
+      "total_items": 18,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260509.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260509.html"
+    },
+    {
+      "date": "2026-05-08",
+      "theme": "模型竞赛升级，安全与开源成焦点",
+      "generated_at": "2026-05-08T14:14:08.165382+08:00",
+      "total_items": 21,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20260508.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20260508.html"
+    }
+  ]
+}

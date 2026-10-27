@@ -1,0 +1,306 @@
+{
+  "year": 2026,
+  "month": 7,
+  "label": "2026-07",
+  "slug": "202607",
+  "title": "2026 年 7 月 AI 月度回顾",
+  "tagline": "",
+  "overview": "",
+  "themes": [],
+  "milestones": [],
+  "daily_links": [
+    {
+      "date": "2026-07-01",
+      "weekday_zh": "三",
+      "slug": "20260701",
+      "theme": "巨头模型与智能体密集发布，中国展示芯片限制下的韧性",
+      "total": 14,
+      "hot_count": 1
+    },
+    {
+      "date": "2026-07-02",
+      "weekday_zh": "四",
+      "slug": "20260702",
+      "theme": "模型发布意外泄露，政策松绑与资本热潮并行",
+      "total": 14,
+      "hot_count": 0
+    },
+    {
+      "date": "2026-07-03",
+      "weekday_zh": "五",
+      "slug": "20260703",
+      "theme": "AI部署、芯片自研与模型创新多点突破",
+      "total": 15,
+      "hot_count": 1
+    },
+    {
+      "date": "2026-07-04",
+      "weekday_zh": "六",
+      "slug": "20260704",
+      "theme": "AI融资与应用竞赛升温，科学发现再提速",
+      "total": 12,
+      "hot_count": 1
+    },
+    {
+      "date": "2026-07-05",
+      "weekday_zh": "日",
+      "slug": "20260705",
+      "theme": "AI安全与自主可控成焦点，开源模型与跨领域突破不断",
+      "total": 12,
+      "hot_count": 2
+    },
+    {
+      "date": "2026-07-06",
+      "weekday_zh": "一",
+      "slug": "20260706",
+      "theme": "政策宽松、平台更迭与理论突破共塑AI新格局",
+      "total": 9,
+      "hot_count": 2
+    },
+    {
+      "date": "2026-07-07",
+      "weekday_zh": "二",
+      "slug": "20260707",
+      "theme": "监管与突破交织，AI社会影响加速显现",
+      "total": 14,
+      "hot_count": 3
+    },
+    {
+      "date": "2026-07-08",
+      "weekday_zh": "三",
+      "slug": "20260708",
+      "theme": "自研芯片、出口管制与可解释性突破共振",
+      "total": 14,
+      "hot_count": 1
+    },
+    {
+      "date": "2026-07-09",
+      "weekday_zh": "四",
+      "slug": "20260709",
+      "theme": "",
+      "total": 12,
+      "hot_count": 1
+    },
+    {
+      "date": "2026-07-10",
+      "weekday_zh": "五",
+      "slug": "20260710",
+      "theme": "GPT-5.6 与智能代理引领 AI 范式升级",
+      "total": 15,
+      "hot_count": 2
+    },
+    {
+      "date": "2026-07-11",
+      "weekday_zh": "六",
+      "slug": "20260711",
+      "theme": "巨头角力升级：苹果诉OpenAI窃密，腾讯接盘Manus",
+      "total": 15,
+      "hot_count": 3
+    },
+    {
+      "date": "2026-07-12",
+      "weekday_zh": "日",
+      "slug": "20260712",
+      "theme": "超级推理突破与算力自主并行，安全治理警钟再响",
+      "total": 8,
+      "hot_count": 1
+    },
+    {
+      "date": "2026-07-13",
+      "weekday_zh": "一",
+      "slug": "20260713",
+      "theme": "AI代理进化与模型价格战并进",
+      "total": 13,
+      "hot_count": 1
+    },
+    {
+      "date": "2026-07-14",
+      "weekday_zh": "二",
+      "slug": "20260714",
+      "theme": "定价战火与开源困局交织，AI生态面临重塑",
+      "total": 12,
+      "hot_count": 3
+    },
+    {
+      "date": "2026-07-15",
+      "weekday_zh": "三",
+      "slug": "20260715",
+      "theme": "OpenAI硬件亮相，DeepSeek再冲IPO，AI编程爆发",
+      "total": 13,
+      "hot_count": 3
+    },
+    {
+      "date": "2026-07-16",
+      "weekday_zh": "四",
+      "slug": "20260716",
+      "theme": "自动化安全与端侧模型引领AI新落地浪潮",
+      "total": 15,
+      "hot_count": 2
+    },
+    {
+      "date": "2026-07-17",
+      "weekday_zh": "五",
+      "slug": "20260717",
+      "theme": "大模型性能竞赛白热化，商业化与具身智能突破并行。",
+      "total": 15,
+      "hot_count": 2
+    },
+    {
+      "date": "2026-07-18",
+      "weekday_zh": "六",
+      "slug": "20260718",
+      "theme": "Claude获自动登录能力，Kimi K3成最大开源模型",
+      "total": 13,
+      "hot_count": 1
+    },
+    {
+      "date": "2026-07-19",
+      "weekday_zh": "日",
+      "slug": "20260719",
+      "theme": "地缘博弈、商业变局与技术突破交织",
+      "total": 11,
+      "hot_count": 1
+    },
+    {
+      "date": "2026-07-20",
+      "weekday_zh": "一",
+      "slug": "20260720",
+      "theme": "开源对垒与战略加速，AI竞逐进入多线博弈",
+      "total": 10,
+      "hot_count": 2
+    },
+    {
+      "date": "2026-07-21",
+      "weekday_zh": "二",
+      "slug": "20260721",
+      "theme": "AI 芯片竞争、版权与多模态创新并行",
+      "total": 11,
+      "hot_count": 2
+    },
+    {
+      "date": "2026-07-22",
+      "weekday_zh": "三",
+      "slug": "20260722",
+      "theme": "AI安全与商业化并行，中国模型首夺IMO金牌",
+      "total": 11,
+      "hot_count": 1
+    },
+    {
+      "date": "2026-07-23",
+      "weekday_zh": "四",
+      "slug": "20260723",
+      "theme": "代理崛起与意外失控：AI 进入攻防新篇章",
+      "total": 15,
+      "hot_count": 2
+    },
+    {
+      "date": "2026-07-24",
+      "weekday_zh": "五",
+      "slug": "20260724",
+      "theme": "语音升级、AGI 誓言与失控智能体争议",
+      "total": 16,
+      "hot_count": 2
+    },
+    {
+      "date": "2026-07-25",
+      "weekday_zh": "六",
+      "slug": "20260725",
+      "theme": "模型发布与硬件角力齐飞，AI竞赛进入新一轮多维碰撞。",
+      "total": 16,
+      "hot_count": 1
+    },
+    {
+      "date": "2026-07-26",
+      "weekday_zh": "日",
+      "slug": "20260726",
+      "theme": "Claude Opus 5以半价挑战Fable 5，AI性价比与安全性双突破",
+      "total": 12,
+      "hot_count": 0
+    },
+    {
+      "date": "2026-07-27",
+      "weekday_zh": "一",
+      "slug": "20260727",
+      "theme": "管制与安全交织，开源模型与 Agent 落地并行。",
+      "total": 12,
+      "hot_count": 3
+    },
+    {
+      "date": "2026-07-28",
+      "weekday_zh": "二",
+      "slug": "20260728",
+      "theme": "安全联盟与开源生态共演，融资变局与人才流动并行",
+      "total": 10,
+      "hot_count": 1
+    },
+    {
+      "date": "2026-07-29",
+      "weekday_zh": "三",
+      "slug": "20260729",
+      "theme": "AI代理安全、加密突破与智能体应用拓展",
+      "total": 16,
+      "hot_count": 3
+    },
+    {
+      "date": "2026-07-30",
+      "weekday_zh": "四",
+      "slug": "20260730",
+      "theme": "",
+      "total": 15,
+      "hot_count": 1
+    },
+    {
+      "date": "2026-07-31",
+      "weekday_zh": "五",
+      "slug": "20260731",
+      "theme": "",
+      "total": 15,
+      "hot_count": 1
+    }
+  ],
+  "day_count": 31,
+  "total_items": 534,
+  "top_sources": [
+    [
+      "量子位",
+      94
+    ],
+    [
+      "arXiv",
+      90
+    ],
+    [
+      "Simon Willison",
+      72
+    ],
+    [
+      "The Decoder",
+      41
+    ],
+    [
+      "36氪",
+      41
+    ],
+    [
+      "TechCrunch",
+      39
+    ],
+    [
+      "the_decoder",
+      29
+    ],
+    [
+      "The Verge",
+      25
+    ],
+    [
+      "Latent Space",
+      21
+    ],
+    [
+      "OpenAI",
+      12
+    ]
+  ],
+  "generated_at": "2026-08-01T11:13:09.099510+08:00"
+}

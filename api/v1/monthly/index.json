@@ -1,0 +1,60 @@
+{
+  "updated_at": "2026-10-27T13:50:52.913853+08:00",
+  "total_months": 5,
+  "latest": {
+    "label": "2026-09",
+    "title": "2026 年 9 月 AI 月度回顾",
+    "tagline": "巨头并购、模型军备与安全失控交织的九月",
+    "total_items": 605,
+    "generated_at": "2026-10-01T16:40:29.681989+08:00",
+    "data_url": "https://chdendi.github.io/AInformer/data/monthly/202609.json",
+    "html_url": "https://chdendi.github.io/AInformer/monthly/202609.html"
+  },
+  "months": [
+    {
+      "label": "2026-09",
+      "title": "2026 年 9 月 AI 月度回顾",
+      "tagline": "巨头并购、模型军备与安全失控交织的九月",
+      "total_items": 605,
+      "generated_at": "2026-10-01T16:40:29.681989+08:00",
+      "data_url": "https://chdendi.github.io/AInformer/data/monthly/202609.json",
+      "html_url": "https://chdendi.github.io/AInformer/monthly/202609.html"
+    },
+    {
+      "label": "2026-08",
+      "title": "2026 年 8 月 AI 月度回顾",
+      "tagline": "AI安全警钟长鸣，开源与商业化并进",
+      "total_items": 548,
+      "generated_at": "2026-09-01T15:38:42.516168+08:00",
+      "data_url": "https://chdendi.github.io/AInformer/data/monthly/202608.json",
+      "html_url": "https://chdendi.github.io/AInformer/monthly/202608.html"
+    },
+    {
+      "label": "2026-07",
+      "title": "2026 年 7 月 AI 月度回顾",
+      "tagline": "",
+      "total_items": 534,
+      "generated_at": "2026-08-01T11:13:09.099510+08:00",
+      "data_url": "https://chdendi.github.io/AInformer/data/monthly/202607.json",
+      "html_url": "https://chdendi.github.io/AInformer/monthly/202607.html"
+    },
+    {
+      "label": "2026-06",
+      "title": "2026 年 6 月 AI 月度回顾",
+      "tagline": "大模型激起安全风暴，AI代理重塑生态格局",
+      "total_items": 516,
+      "generated_at": "2026-07-01T11:21:16.409448+08:00",
+      "data_url": "https://chdendi.github.io/AInformer/data/monthly/202606.json",
+      "html_url": "https://chdendi.github.io/AInformer/monthly/202606.html"
+    },
+    {
+      "label": "2026-05",
+      "title": "2026 年 5 月 AI 月度回顾",
+      "tagline": "",
+      "total_items": 398,
+      "generated_at": "2026-06-01T11:25:55.305044+08:00",
+      "data_url": "https://chdendi.github.io/AInformer/data/monthly/202605.json",
+      "html_url": "https://chdendi.github.io/AInformer/monthly/202605.html"
+    }
+  ]
+}
