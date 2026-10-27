@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import unittest
+from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import AsyncMock, patch
 
@@ -121,3 +122,17 @@ class SearchFallbackTests(unittest.IsolatedAsyncioTestCase):
 
         self.assertEqual(result, direct_items)
         direct.assert_awaited_once_with()
+
+
+class SearchConfigTests(unittest.TestCase):
+    def test_search_config_does_not_reference_tavily(self):
+        root = Path(__file__).resolve().parents[1]
+        paths = [root / "README.md", root / ".env.example"]
+        paths += list((root / ".github" / "workflows").glob("*.yml"))
+        paths += list((root / "src").rglob("*.py"))
+        hits = [
+            str(path.relative_to(root))
+            for path in paths
+            if "TAVILY" in path.read_text(encoding="utf-8")
+        ]
+        self.assertEqual(hits, [])

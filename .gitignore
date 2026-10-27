@@ -11,3 +11,8 @@ venv/
 .DS_Store
 *.log
 .claude/
+
+# Generated reports are published to gh-pages. main keeps Pages config only.
+docs/*
+!docs/.nojekyll
+!docs/_headers

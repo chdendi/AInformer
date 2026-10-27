@@ -1,4 +1,4 @@
-"""Direct news source scraping — fallback when search APIs are unavailable.
+"""Direct news source scraping — fallback when DuckDuckGo returns nothing.
 
 Scrapes known news sites for recent articles. Each source has its own parser.
 Returns structured items compatible with the RSS/search item format.
