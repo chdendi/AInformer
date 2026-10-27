@@ -56,7 +56,8 @@ jobs:
           python -m src.main_yearly $ARGS
 
       - name: Publish site to gh-pages
-        run: bash scripts/publish_gh_pages.sh publish docs "chore(yearly): publish yearly summary"
+        run: |
+          bash scripts/publish_gh_pages.sh publish docs "chore(yearly): publish yearly summary"
 
       - name: Trigger Pages deploy
         run: |
