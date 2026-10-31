@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-10-30T14:41:24.562311+08:00",
-  "total_days": 176,
+  "updated_at": "2026-10-31T14:31:52.544547+08:00",
+  "total_days": 177,
   "latest": {
-    "date": "2026-10-30",
-    "theme": "开源与资本双线推进，生态竞争加速",
-    "generated_at": "2026-10-30T14:41:24.425342+08:00",
-    "total_items": 15,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261030.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20261030.html"
+    "date": "2026-10-31",
+    "theme": "开放与风险并进，AI生态规则加速重塑",
+    "generated_at": "2026-10-31T14:31:52.416592+08:00",
+    "total_items": 16,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261031.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20261031.html"
   },
   "dates": [
+    {
+      "date": "2026-10-31",
+      "theme": "开放与风险并进，AI生态规则加速重塑",
+      "generated_at": "2026-10-31T14:31:52.416592+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261031.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261031.html"
+    },
     {
       "date": "2026-10-30",
       "theme": "开源与资本双线推进，生态竞争加速",
