@@ -1,0 +1,120 @@
+name: Generate, archive and deploy reports
+
+on:
+  workflow_call:
+    inputs:
+      report:
+        description: daily, monthly, yearly, or existing (no LLM calls)
+        type: string
+        required: true
+      date:
+        type: string
+        default: ''
+      year:
+        type: string
+        default: ''
+      month:
+        type: string
+        default: ''
+    secrets:
+      DEEPSEEK_API_KEY:
+        required: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Lock restoration, generation, archival and deployment together across callers.
+# queue:max also preserves multiple waiting report types instead of replacing one.
+concurrency:
+  group: publish-gh-pages
+  cancel-in-progress: false
+  queue: max
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      DEEPSEEK_MODEL: ${{ vars.DEEPSEEK_MODEL || 'deepseek-v4-flash' }}
+      DEEPSEEK_THINKING_MODE: ${{ vars.DEEPSEEK_THINKING_MODE || 'disabled' }}
+      DEEPSEEK_BASE_URL: ${{ vars.DEEPSEEK_BASE_URL || 'https://api.deepseek.com/v1' }}
+      SITE_BASE_URL: ${{ vars.SITE_BASE_URL || format('https://{0}.github.io/{1}', github.repository_owner, github.event.repository.name) }}
+      TZ: Asia/Shanghai
+      LOG_LEVEL: INFO
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Restore complete site history
+        run: bash scripts/publish_gh_pages.sh restore
+
+      - name: Generate report and refresh indexes
+        env:
+          REPORT_KIND: ${{ inputs.report }}
+          REPORT_DATE: ${{ inputs.date }}
+          REPORT_YEAR: ${{ inputs.year }}
+          REPORT_MONTH: ${{ inputs.month }}
+        run: |
+          case "$REPORT_KIND" in
+            daily)
+              args=()
+              if [ -n "$REPORT_DATE" ]; then args+=(--date "$REPORT_DATE"); fi
+              python -m src.main_daily "${args[@]}"
+              ;;
+            monthly)
+              args=()
+              if [ -n "$REPORT_YEAR" ] || [ -n "$REPORT_MONTH" ]; then
+                if [ -z "$REPORT_YEAR" ] || [ -z "$REPORT_MONTH" ]; then
+                  echo 'Specify both year and month, or leave both empty' >&2
+                  exit 2
+                fi
+                args+=(--year "$REPORT_YEAR" --month "$REPORT_MONTH")
+              fi
+              python -m src.main_monthly "${args[@]}"
+              ;;
+            yearly)
+              args=()
+              if [ -n "$REPORT_YEAR" ]; then args+=(--year "$REPORT_YEAR"); fi
+              python -m src.main_yearly "${args[@]}"
+              ;;
+            existing)
+              python -m src.build_index
+              ;;
+            *)
+              echo "Unknown report kind: $REPORT_KIND" >&2
+              exit 2
+              ;;
+          esac
+
+      - name: Archive complete site on gh-pages
+        env:
+          REPORT_KIND: ${{ inputs.report }}
+        run: |
+          bash scripts/publish_gh_pages.sh publish docs "chore($REPORT_KIND): update report archive"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload complete site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -24,6 +24,17 @@ _USAGE: dict[str, int] = {"calls": 0, "prompt_tokens": 0, "completion_tokens": 0
 _MAX_JSON_RETRY_TOKENS = 8192
 
 
+async def reset_usage() -> None:
+    """Start a fresh report batch; call before launching any LLM requests.
+
+    Usage is shared by concurrent requests within a batch. Report batches in
+    the same process must run sequentially so one cannot reset another's usage.
+    """
+    async with _USAGE_LOCK:
+        for key in _USAGE:
+            _USAGE[key] = 0
+
+
 @dataclass(frozen=True)
 class _CompletionResult:
     parsed: dict[str, Any]
@@ -56,7 +67,7 @@ async def _record_usage(resp: Any) -> None:
 
 
 def get_usage_summary() -> dict[str, Any]:
-    """Snapshot of LLM token usage so far in this process. Safe to call any time."""
+    """Snapshot of LLM token usage since the last batch reset."""
     pt = _USAGE["prompt_tokens"]
     ct = _USAGE["completion_tokens"]
     return {

@@ -8,7 +8,7 @@ from typing import Any
 from openai import AsyncOpenAI
 
 from ..config import LLMConfig, tz
-from ..llm.client import chat_json
+from ..llm.client import chat_json, reset_usage
 from ..render.summary_pages import write_yearly
 from .aggregator import flatten_items, load_daily_in_range, load_monthly_in_year, top_sources
 
@@ -81,6 +81,7 @@ async def synthesize_yearly(
 
 
 async def build_yearly(year: int, cfg: LLMConfig) -> dict[str, Any]:
+    await reset_usage()
     daily = load_daily_in_range(year, None)
     items = flatten_items(daily)
     monthly = load_monthly_in_year(year)
