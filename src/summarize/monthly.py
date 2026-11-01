@@ -9,7 +9,7 @@ from typing import Any
 from openai import AsyncOpenAI
 
 from ..config import LLMConfig, tz
-from ..llm.client import chat_json
+from ..llm.client import chat_json, reset_usage
 from ..render.daily import WEEKDAY_ZH
 from ..render.summary_pages import write_monthly
 from .aggregator import flatten_items, load_daily_in_range, top_sources
@@ -91,6 +91,7 @@ async def synthesize_monthly(
 
 
 async def build_monthly(year: int, month: int, cfg: LLMConfig) -> dict[str, Any]:
+    await reset_usage()
     daily = load_daily_in_range(year, month)
     items = flatten_items(daily)
     log.info("Monthly %s-%02d: %d daily reports, %d items", year, month, len(daily), len(items))

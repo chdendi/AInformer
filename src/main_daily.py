@@ -12,7 +12,7 @@ from .agents.trending_filter import filter_trending_with_llm
 from .build_api import build_api
 from .config import LLMConfig, ensure_dirs, tz
 from .dedupe import collect_excluded, dedupe_within, filter_new, load_recent_reports, normalize_title
-from .llm.client import get_usage_summary, make_client
+from .llm.client import get_usage_summary, make_client, reset_usage
 from .render.daily import write_daily_html, write_daily_json
 from .render.index_page import write_index
 from .search.github_trending import fetch_trending
@@ -150,6 +150,7 @@ def _parse_args() -> argparse.Namespace:
 
 
 async def main_async(target_date: date, dedupe_days: int, dry: bool) -> None:
+    await reset_usage()
     ensure_dirs()
     cfg = LLMConfig.from_env()
     client = make_client(cfg)
