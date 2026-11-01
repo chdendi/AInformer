@@ -1,9 +1,9 @@
 {
-  "label": "2026-09",
-  "title": "2026 年 9 月 AI 月度回顾",
-  "tagline": "巨头并购、模型军备与安全失控交织的九月",
-  "total_items": 605,
-  "generated_at": "2026-10-01T16:40:29.681989+08:00",
-  "data_url": "https://chdendi.github.io/AInformer/data/monthly/202609.json",
-  "html_url": "https://chdendi.github.io/AInformer/monthly/202609.html"
+  "label": "2026-10",
+  "title": "2026 年 10 月 AI 月度回顾",
+  "tagline": "智能体失控风险与万亿参数开源竞赛并行",
+  "total_items": 623,
+  "generated_at": "2026-11-01T17:00:01.347657+08:00",
+  "data_url": "https://chdendi.github.io/AInformer/data/monthly/202610.json",
+  "html_url": "https://chdendi.github.io/AInformer/monthly/202610.html"
 }
