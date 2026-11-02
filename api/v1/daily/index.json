@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-11-01T17:00:01.453814+08:00",
-  "total_days": 178,
+  "updated_at": "2026-11-02T15:01:51.532396+08:00",
+  "total_days": 179,
   "latest": {
-    "date": "2026-11-01",
-    "theme": "资本降温与安全漏洞并行，智能体架构持续演进",
-    "generated_at": "2026-11-01T15:02:02.287502+08:00",
+    "date": "2026-11-02",
+    "theme": "世界模型升温，开源与计费模式同步转向",
+    "generated_at": "2026-11-02T15:01:51.391264+08:00",
     "total_items": 15,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261101.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20261101.html"
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261102.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20261102.html"
   },
   "dates": [
+    {
+      "date": "2026-11-02",
+      "theme": "世界模型升温，开源与计费模式同步转向",
+      "generated_at": "2026-11-02T15:01:51.391264+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261102.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261102.html"
+    },
     {
       "date": "2026-11-01",
       "theme": "资本降温与安全漏洞并行，智能体架构持续演进",
