@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-11-05T15:37:10.859425+08:00",
-  "total_days": 182,
+  "updated_at": "2026-11-06T15:32:13.158514+08:00",
+  "total_days": 183,
   "latest": {
-    "date": "2026-11-05",
-    "theme": "编码智能体并购潮起，开源与闭源模型同台竞速",
-    "generated_at": "2026-11-05T15:37:10.679468+08:00",
-    "total_items": 16,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261105.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20261105.html"
+    "date": "2026-11-06",
+    "theme": "智能体能力跃升与真实落地鸿沟并存",
+    "generated_at": "2026-11-06T15:32:12.970178+08:00",
+    "total_items": 15,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261106.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20261106.html"
   },
   "dates": [
+    {
+      "date": "2026-11-06",
+      "theme": "智能体能力跃升与真实落地鸿沟并存",
+      "generated_at": "2026-11-06T15:32:12.970178+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261106.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261106.html"
+    },
     {
       "date": "2026-11-05",
       "theme": "编码智能体并购潮起，开源与闭源模型同台竞速",
