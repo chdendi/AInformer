@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-11-06T15:32:13.158514+08:00",
-  "total_days": 183,
+  "updated_at": "2026-11-07T14:45:04.160895+08:00",
+  "total_days": 184,
   "latest": {
-    "date": "2026-11-06",
-    "theme": "智能体能力跃升与真实落地鸿沟并存",
-    "generated_at": "2026-11-06T15:32:12.970178+08:00",
-    "total_items": 15,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261106.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20261106.html"
+    "date": "2026-11-07",
+    "theme": "资本与产品双线加速，AI竞争进入深水区",
+    "generated_at": "2026-11-07T14:45:03.966914+08:00",
+    "total_items": 16,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261107.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20261107.html"
   },
   "dates": [
+    {
+      "date": "2026-11-07",
+      "theme": "资本与产品双线加速，AI竞争进入深水区",
+      "generated_at": "2026-11-07T14:45:03.966914+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261107.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261107.html"
+    },
     {
       "date": "2026-11-06",
       "theme": "智能体能力跃升与真实落地鸿沟并存",
