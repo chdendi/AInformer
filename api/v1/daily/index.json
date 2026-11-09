@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-11-08T14:51:58.027800+08:00",
-  "total_days": 185,
+  "updated_at": "2026-11-09T15:31:23.268942+08:00",
+  "total_days": 186,
   "latest": {
-    "date": "2026-11-08",
-    "theme": "资本竞速与安全监督的张力",
-    "generated_at": "2026-11-08T14:51:57.908313+08:00",
+    "date": "2026-11-09",
+    "theme": "英伟达风波与编码智能体的现实落差",
+    "generated_at": "2026-11-09T15:31:23.145684+08:00",
     "total_items": 16,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261108.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20261108.html"
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261109.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20261109.html"
   },
   "dates": [
+    {
+      "date": "2026-11-09",
+      "theme": "英伟达风波与编码智能体的现实落差",
+      "generated_at": "2026-11-09T15:31:23.145684+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261109.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261109.html"
+    },
     {
       "date": "2026-11-08",
       "theme": "资本竞速与安全监督的张力",
