@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-11-16T15:32:17.437573+08:00",
-  "total_days": 193,
+  "updated_at": "2026-11-17T16:43:21.401797+08:00",
+  "total_days": 194,
   "latest": {
-    "date": "2026-11-16",
-    "theme": "国产大模型与算力突破，海外探索图像与健康新场景",
-    "generated_at": "2026-11-16T15:32:17.293606+08:00",
-    "total_items": 15,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261116.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20261116.html"
+    "date": "2026-11-17",
+    "theme": "AI责任与性价比并进",
+    "generated_at": "2026-11-17T16:43:21.288048+08:00",
+    "total_items": 16,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261117.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20261117.html"
   },
   "dates": [
+    {
+      "date": "2026-11-17",
+      "theme": "AI责任与性价比并进",
+      "generated_at": "2026-11-17T16:43:21.288048+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261117.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261117.html"
+    },
     {
       "date": "2026-11-16",
       "theme": "国产大模型与算力突破，海外探索图像与健康新场景",
