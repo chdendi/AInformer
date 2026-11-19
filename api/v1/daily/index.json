@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-11-18T16:07:04.123314+08:00",
-  "total_days": 195,
+  "updated_at": "2026-11-19T16:15:16.078889+08:00",
+  "total_days": 196,
   "latest": {
-    "date": "2026-11-18",
-    "theme": "模型迭代与生态重构并行，AI落地进入深水区",
-    "generated_at": "2026-11-18T16:07:03.936414+08:00",
+    "date": "2026-11-19",
+    "theme": "巨头竞速与安全隐忧",
+    "generated_at": "2026-11-19T16:15:15.876057+08:00",
     "total_items": 16,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261118.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20261118.html"
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261119.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20261119.html"
   },
   "dates": [
+    {
+      "date": "2026-11-19",
+      "theme": "巨头竞速与安全隐忧",
+      "generated_at": "2026-11-19T16:15:15.876057+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261119.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261119.html"
+    },
     {
       "date": "2026-11-18",
       "theme": "模型迭代与生态重构并行，AI落地进入深水区",
