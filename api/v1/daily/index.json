@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-11-19T16:15:16.078889+08:00",
-  "total_days": 196,
+  "updated_at": "2026-11-20T15:57:01.078017+08:00",
+  "total_days": 197,
   "latest": {
-    "date": "2026-11-19",
-    "theme": "巨头竞速与安全隐忧",
-    "generated_at": "2026-11-19T16:15:15.876057+08:00",
+    "date": "2026-11-20",
+    "theme": "智能体竞逐桌面，资本与产品双线升温",
+    "generated_at": "2026-11-20T15:57:00.883032+08:00",
     "total_items": 16,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261119.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20261119.html"
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261120.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20261120.html"
   },
   "dates": [
+    {
+      "date": "2026-11-20",
+      "theme": "智能体竞逐桌面，资本与产品双线升温",
+      "generated_at": "2026-11-20T15:57:00.883032+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261120.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261120.html"
+    },
     {
       "date": "2026-11-19",
       "theme": "巨头竞速与安全隐忧",
