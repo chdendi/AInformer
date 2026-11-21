@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-11-20T15:57:01.078017+08:00",
-  "total_days": 197,
+  "updated_at": "2026-11-21T15:54:46.762699+08:00",
+  "total_days": 198,
   "latest": {
-    "date": "2026-11-20",
-    "theme": "智能体竞逐桌面，资本与产品双线升温",
-    "generated_at": "2026-11-20T15:57:00.883032+08:00",
+    "date": "2026-11-21",
+    "theme": "黎曼猜想双声明引热议，AI 基础能力与生态并进",
+    "generated_at": "2026-11-21T15:54:46.499417+08:00",
     "total_items": 16,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261120.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20261120.html"
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261121.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20261121.html"
   },
   "dates": [
+    {
+      "date": "2026-11-21",
+      "theme": "黎曼猜想双声明引热议，AI 基础能力与生态并进",
+      "generated_at": "2026-11-21T15:54:46.499417+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261121.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261121.html"
+    },
     {
       "date": "2026-11-20",
       "theme": "智能体竞逐桌面，资本与产品双线升温",
