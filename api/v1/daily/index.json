@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-11-22T15:40:15.298776+08:00",
-  "total_days": 199,
+  "updated_at": "2026-11-23T16:28:49.071763+08:00",
+  "total_days": 200,
   "latest": {
-    "date": "2026-11-22",
-    "theme": "效率优先与安全焦虑并行",
-    "generated_at": "2026-11-22T15:40:15.196517+08:00",
-    "total_items": 13,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261122.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20261122.html"
+    "date": "2026-11-23",
+    "theme": "搜索常驻化与智能体工具链深化",
+    "generated_at": "2026-11-23T16:28:48.893869+08:00",
+    "total_items": 15,
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261123.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20261123.html"
   },
   "dates": [
+    {
+      "date": "2026-11-23",
+      "theme": "搜索常驻化与智能体工具链深化",
+      "generated_at": "2026-11-23T16:28:48.893869+08:00",
+      "total_items": 15,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261123.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261123.html"
+    },
     {
       "date": "2026-11-22",
       "theme": "效率优先与安全焦虑并行",
