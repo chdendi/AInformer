@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-11-24T18:36:28.997379+08:00",
-  "total_days": 201,
+  "updated_at": "2026-11-25T17:26:37.957316+08:00",
+  "total_days": 202,
   "latest": {
-    "date": "2026-11-24",
-    "theme": "智能体接管开发流程，大模型架构与生态双线突破",
-    "generated_at": "2026-11-24T18:36:28.859568+08:00",
+    "date": "2026-11-25",
+    "theme": "生态扩张与估值承压并行，AI落地加速",
+    "generated_at": "2026-11-25T17:26:37.763409+08:00",
     "total_items": 16,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261124.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20261124.html"
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261125.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20261125.html"
   },
   "dates": [
+    {
+      "date": "2026-11-25",
+      "theme": "生态扩张与估值承压并行，AI落地加速",
+      "generated_at": "2026-11-25T17:26:37.763409+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261125.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261125.html"
+    },
     {
       "date": "2026-11-24",
       "theme": "智能体接管开发流程，大模型架构与生态双线突破",
