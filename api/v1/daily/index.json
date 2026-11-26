@@ -1,15 +1,23 @@
 {
-  "updated_at": "2026-11-25T17:26:37.957316+08:00",
-  "total_days": 202,
+  "updated_at": "2026-11-26T17:04:21.939764+08:00",
+  "total_days": 203,
   "latest": {
-    "date": "2026-11-25",
-    "theme": "生态扩张与估值承压并行，AI落地加速",
-    "generated_at": "2026-11-25T17:26:37.763409+08:00",
+    "date": "2026-11-26",
+    "theme": "智能体接管算力，模型效率与科学推理双线突破",
+    "generated_at": "2026-11-26T17:04:21.742614+08:00",
     "total_items": 16,
-    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261125.json",
-    "html_url": "https://chdendi.github.io/AInformer/daily/20261125.html"
+    "data_url": "https://chdendi.github.io/AInformer/data/daily/20261126.json",
+    "html_url": "https://chdendi.github.io/AInformer/daily/20261126.html"
   },
   "dates": [
+    {
+      "date": "2026-11-26",
+      "theme": "智能体接管算力，模型效率与科学推理双线突破",
+      "generated_at": "2026-11-26T17:04:21.742614+08:00",
+      "total_items": 16,
+      "data_url": "https://chdendi.github.io/AInformer/data/daily/20261126.json",
+      "html_url": "https://chdendi.github.io/AInformer/daily/20261126.html"
+    },
     {
       "date": "2026-11-25",
       "theme": "生态扩张与估值承压并行，AI落地加速",
