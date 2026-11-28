@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Daily · 2026-11-28 | AInformer</title>
+<meta name="description" content="巨头博弈与转型阵痛交织，AI竞争进入深水区 · 共 16 条精选">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --surface:#faf8fe;
+  --surface-low:#f4f3f8;
+  --surface-mid:#eeedf3;
+  --surface-high:#e9e7ed;
+  --border:#c7c6ca;
+  --border-soft:#e3e2e7;
+
+  --primary:#030304;
+  --on-surface:#1a1b1f;
+  --secondary:#5d5e60;
+  --tertiary:#77767b;
+  --muted:#9a999d;
+
+  --accent:#ba1a1a;
+  --accent-soft:#fff0ef;
+  --positive:#2e7d32;
+  --positive-soft:#e8f5e9;
+  --highlight:#a05a00;
+  --highlight-soft:#fff5e1;
+  --info:#1f4a82;
+  --info-soft:#eaf0f9;
+
+  --container:1200px;
+  --gutter:24px;
+
+  --font-sans:'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--on-surface);
+  font-family:var(--font-sans);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  font-feature-settings:"ss01","cv11";
+}
+::selection{background:#1a1b1f;color:#fff}
+img{max-width:100%;display:block}
+
+h1,h2,h3,h4,h5{font-family:var(--font-sans);color:var(--primary);font-weight:600;letter-spacing:-0.01em}
+p{margin:0}
+
+a{color:var(--primary);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s ease,color .2s ease,opacity .2s ease}
+a:hover{opacity:.7}
+
+code{
+  background:var(--surface-mid);
+  padding:1px 6px;
+  border-radius:3px;
+  font-family:var(--font-mono);
+  font-size:.86em;
+  color:var(--primary);
+  border:1px solid var(--border-soft);
+}
+pre.code{
+  background:var(--surface-mid);
+  border:1px solid var(--border-soft);
+  border-radius:6px;
+  padding:14px 16px;
+  overflow:auto;
+  margin:10px 0;
+  font-size:.84rem;
+  line-height:1.65;
+  font-family:var(--font-mono);
+}
+pre.code code{background:transparent;padding:0;border:none}
+
+.material-symbols-outlined{
+  font-family:'Material Symbols Outlined';
+  font-weight:400;
+  font-style:normal;
+  font-size:24px;
+  line-height:1;
+  letter-spacing:normal;
+  text-transform:none;
+  display:inline-block;
+  white-space:nowrap;
+  word-wrap:normal;
+  direction:ltr;
+  vertical-align:middle;
+  font-feature-settings:'liga';
+  -webkit-font-feature-settings:'liga';
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{max-width:var(--container);margin:0 auto;padding:0 24px}
+@media(min-width:1024px){.container{padding:0 64px}}
+
+/* ===== Top app bar (sticky nav) ===== */
+.sticky-nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(255,255,255,0.85);
+  -webkit-backdrop-filter:saturate(180%) blur(14px);
+  backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid var(--border-soft);
+}
+.nav-inner{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0 24px;
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+@media(min-width:1024px){.nav-inner{padding:0 64px}}
+.nav-left{display:flex;align-items:center;gap:32px;min-width:0}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-inner .home{
+  font-size:20px;
+  font-weight:800;
+  color:var(--primary);
+  letter-spacing:-0.02em;
+  border:none;
+  white-space:nowrap;
+}
+.nav-inner .home:hover{opacity:1;color:var(--primary)}
+.nav-inner .home .dot{color:var(--accent)}
+.nav-links{display:none;gap:24px;align-items:center}
+@media(min-width:768px){.nav-links{display:flex}}
+.nav-inner a:not(.home):not(.cta){
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:.02em;
+  color:var(--secondary);
+  border:none;
+  padding:6px 0;
+  white-space:nowrap;
+}
+.nav-inner a:not(.home):not(.cta):hover{color:var(--primary);opacity:1}
+.nav-inner .cta{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 14px;
+  background:var(--primary);
+  color:#fff;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.02em;
+  border-radius:6px;
+  border:none;
+  transition:transform .15s ease,opacity .2s ease;
+}
+.nav-inner .cta:hover{opacity:.9;color:#fff}
+.nav-inner .cta:active{transform:scale(.96)}
+
+/* ===== Hero ===== */
+.hero{
+  padding:96px 24px 80px;
+  text-align:center;
+  background:var(--bg);
+}
+@media(min-width:1024px){.hero{padding:120px 64px 96px}}
+.hero .date{
+  display:inline-block;
+  font-size:13px;
+  font-weight:600;
+  font-family:var(--font-mono);
+  letter-spacing:.06em;
+  color:#fff;
+  background:var(--primary);
+  padding:6px 12px;
+  border-radius:4px;
+  margin-bottom:24px;
+}
+.hero h1{
+  font-size:clamp(40px,7vw,72px);
+  line-height:1.05;
+  letter-spacing:-0.035em;
+  font-weight:700;
+  color:var(--primary);
+  margin-bottom:18px;
+}
+.hero .theme{
+  max-width:640px;
+  margin:0 auto;
+  font-size:18px;
+  line-height:1.6;
+  color:var(--secondary);
+  font-weight:400;
+}
+.hero .meta{
+  margin-top:28px;
+  display:inline-flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--tertiary);
+}
+.hero .meta span{
+  padding:5px 10px;
+  border:1px solid var(--border);
+  border-radius:3px;
+  background:transparent;
+}
+
+/* ===== Lede ===== */
+.lede{
+  max-width:780px;
+  margin:0 auto 96px;
+  padding:0;
+  background:transparent;
+  border:none;
+  border-radius:0;
+}
+.lede::before{
+  content:"今日速读 · Editorial";
+  display:flex;
+  align-items:center;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+  border:1px solid var(--accent);
+  padding:4px 10px;
+  border-radius:3px;
+  width:fit-content;
+  margin-bottom:28px;
+}
+.lede{
+  font-size:19px;
+  line-height:1.75;
+  color:var(--primary);
+  font-weight:400;
+}
+.lede::first-letter{
+  font-size:64px;
+  font-weight:700;
+  float:left;
+  line-height:.9;
+  margin:6px 12px 0 0;
+  color:var(--primary);
+  letter-spacing:-0.03em;
+}
+
+/* ===== Section ===== */
+.section{margin:0 0 96px}
+.section-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:40px;
+  padding-bottom:0;
+  border-bottom:none;
+}
+.section-head h2{
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--secondary);
+}
+.section-head .count{
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--tertiary);
+  font-family:var(--font-mono);
+}
+.subhead{
+  margin:32px 0 16px;
+  font-size:18px;
+  font-weight:600;
+  color:var(--secondary);
+  letter-spacing:.02em;
+  display:flex;align-items:baseline;gap:12px;
+}
+.subhead:first-child{margin-top:8px}
+.subhead .subcount{
+  font-size:11px;font-weight:600;letter-spacing:.12em;
+  color:var(--tertiary);font-family:var(--font-mono);
+}
+.quote-card.analyst::before{content:"✎"}
+.section-divider{
+  height:1px;
+  background:var(--border-soft);
+  margin:0 0 96px;
+}
+
+/* ===== Headlines ===== */
+.headlines{display:grid;gap:32px}
+@media(min-width:768px){.headlines{grid-template-columns:1fr 1fr;gap:40px}}
+.headline-card{
+  position:relative;
+  padding:4px 0 4px 24px;
+  border-left:3px solid var(--primary);
+  background:transparent;
+  border-radius:0;
+  transition:border-color .2s ease;
+}
+.headline-card:nth-child(1){border-left-color:var(--accent)}
+.headline-card:hover{border-left-color:var(--accent)}
+.headline-card::before{content:none}
+.headline-card h3{
+  font-size:24px;
+  line-height:1.25;
+  letter-spacing:-0.015em;
+  font-weight:600;
+  color:var(--primary);
+  margin-bottom:14px;
+}
+.headline-card p{
+  font-size:15px;
+  line-height:1.65;
+  color:var(--secondary);
+  margin-bottom:18px;
+}
+.headline-card .meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  font-size:12px;
+  color:var(--tertiary);
+}
+
+/* ===== News cards ===== */
+.cards{display:grid;gap:24px}
+@media(min-width:768px){.cards{grid-template-columns:1fr 1fr}}
+@media(min-width:1280px){.cards.three-col{grid-template-columns:repeat(3,1fr)}}
+.news-card{
+  position:relative;
+  background:var(--bg);
+  border:1px solid var(--border-soft);
+  border-radius:6px;
+  padding:28px 28px 24px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  transition:border-color .2s ease,box-shadow .25s ease,transform .2s ease;
+}
+.news-card::before{content:none}
+.news-card:hover{
+  border-color:var(--border);
+  box-shadow:0 12px 32px rgba(15,15,20,0.05);
+  transform:translateY(-2px);
+}
+.news-card h3{
+  font-size:18px;
+  line-height:1.35;
+  font-weight:600;
+  letter-spacing:-0.005em;
+  color:var(--primary);
+}
+.news-card .summary{
+  font-size:14.5px;
+  line-height:1.65;
+  color:var(--secondary);
+  flex-grow:1;
+}
+.news-card .value{
+  font-size:13px;
+  line-height:1.6;
+  color:var(--primary);
+  background:var(--positive-soft);
+  border-left:none;
+  border-radius:4px;
+  padding:10px 12px;
+  position:relative;
+}
+.news-card .value::before{
+  content:"VALUE";
+  display:block;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.2em;
+  color:var(--positive);
+  margin-bottom:4px;
+}
+.news-card .meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  font-size:12px;
+  color:var(--tertiary);
+  margin-top:auto;
+  padding-top:8px;
+  border-top:1px dashed var(--border-soft);
+}
+
+/* ===== Quote (opinion) ===== */
+.quote-card{
+  position:relative;
+  background:var(--surface-low);
+  border:none;
+  border-left:none;
+  border-radius:8px;
+  padding:48px 40px 36px;
+  transition:background .2s ease;
+}
+.quote-card::before{
+  content:"format_quote";
+  font-family:'Material Symbols Outlined';
+  position:absolute;
+  top:24px;
+  left:32px;
+  font-size:36px;
+  color:var(--primary);
+  opacity:.85;
+  line-height:1;
+  pointer-events:none;
+}
+.quote-card:hover{background:var(--surface-mid)}
+.quote-card .quote-en{
+  font-style:italic;
+  color:var(--tertiary);
+  line-height:1.6;
+  font-size:14px;
+  margin:64px 0 12px;
+}
+.quote-card .quote-zh{
+  font-family:var(--font-sans);
+  color:var(--primary);
+  line-height:1.4;
+  margin:0 0 18px;
+  font-size:24px;
+  font-weight:600;
+  letter-spacing:-0.015em;
+}
+.quote-card .quote-en + .quote-zh{margin-top:0}
+.quote-card:not(:has(.quote-en)) .quote-zh{margin-top:64px}
+.quote-title{
+  font-size:13px;
+  color:var(--tertiary);
+  margin-bottom:12px;
+  letter-spacing:.02em;
+}
+.quote-card .person{
+  font-family:var(--font-sans);
+  color:var(--primary);
+  font-size:14px;
+  font-weight:700;
+  text-align:left;
+  margin-top:20px;
+  letter-spacing:.02em;
+}
+.quote-card .meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  font-size:12px;
+  color:var(--tertiary);
+  margin-top:18px;
+  padding-top:14px;
+  border-top:1px solid var(--border-soft);
+}
+
+/* ===== Tags ===== */
+.tag{
+  display:inline-flex;
+  align-items:center;
+  padding:3px 8px;
+  border-radius:3px;
+  font-size:10.5px;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  border:1px solid transparent;
+  background:transparent;
+}
+.tag-hot{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+.tag-star{color:var(--highlight);border-color:var(--highlight);background:var(--highlight-soft)}
+.tag-pin{color:var(--positive);border-color:var(--positive);background:var(--positive-soft)}
+.tag-industry{color:var(--info);border-color:var(--info);background:var(--info-soft)}
+.tag-opinion{color:var(--primary);border-color:var(--primary);background:var(--surface-mid)}
+.tag-chinese{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+.tag-academic{color:var(--positive);border-color:var(--positive);background:var(--positive-soft)}
+.tag-benchmark{color:var(--highlight);border-color:var(--highlight);background:var(--highlight-soft)}
+.tag-headline{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
+
+/* ===== Link button ===== */
+.link-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  padding:5px 10px;
+  background:transparent;
+  border:1px solid var(--border);
+  border-radius:3px;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.04em;
+  color:var(--primary);
+  transition:background .15s ease,border-color .15s ease,color .15s ease;
+}
+.link-btn:hover{
+  background:var(--primary);
+  border-color:var(--primary);
+  color:#fff;
+  opacity:1;
+}
+
+/* ===== Empty state ===== */
+.empty{
+  padding:32px;
+  text-align:center;
+  color:var(--tertiary);
+  background:var(--surface-low);
+  border:1px dashed var(--border);
+  border-radius:6px;
+  font-size:14px;
+}
+
+/* ===== Footer ===== */
+.footer{
+  margin-top:96px;
+  background:var(--surface-low);
+  color:var(--secondary);
+  border-top:1px solid var(--border-soft);
+}
+.footer .footer-grid{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:80px 24px 32px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:48px;
+}
+@media(min-width:768px){
+  .footer .footer-grid{grid-template-columns:2fr 1fr 1fr 1fr;padding:96px 24px 32px}
+}
+@media(min-width:1024px){.footer .footer-grid{padding:96px 64px 32px}}
+.footer .brand{display:flex;flex-direction:column;gap:12px}
+.footer .brand .name{font-size:20px;font-weight:800;color:var(--primary);letter-spacing:-0.02em}
+.footer .brand p{font-size:14px;line-height:1.6;color:var(--secondary);max-width:320px}
+.footer h4{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--primary);
+  margin-bottom:18px;
+}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.footer ul a,.footer p a{
+  color:var(--secondary);
+  font-size:13px;
+  border:none;
+  transition:color .2s ease;
+}
+.footer ul a:hover,.footer p a:hover{color:var(--primary);opacity:1}
+.footer .footer-bottom{
+  border-top:1px solid var(--border-soft);
+  max-width:var(--container);
+  margin:0 auto;
+  padding:24px;
+  font-size:12px;
+  color:var(--tertiary);
+  text-align:center;
+  line-height:1.7;
+}
+@media(min-width:1024px){.footer .footer-bottom{padding:24px 64px}}
+.footer .footer-bottom p{margin-bottom:6px}
+
+/* ===== Responsive ===== */
+@media(max-width:639px){
+  body{font-size:15px}
+  .hero{padding:64px 20px 56px}
+  .container{padding:0 20px}
+  .lede{margin-bottom:64px;font-size:17px}
+  .lede::first-letter{font-size:52px}
+  .section{margin-bottom:64px}
+  .quote-card{padding:40px 24px 28px}
+  .quote-card::before{top:20px;left:20px;font-size:30px}
+  .quote-card .quote-zh{font-size:20px}
+  .news-card{padding:24px 22px 22px}
+  .headline-card{padding-left:18px}
+  .headline-card h3{font-size:20px}
+}
+
+/* ===== Print ===== */
+@media print{
+  body{background:#fff;color:#000}
+  .sticky-nav,.footer{display:none}
+  .news-card,.headline-card,.quote-card,.lede{
+    break-inside:avoid;
+    background:#fff;
+    border:1px solid #ccc;
+    color:#000;
+    box-shadow:none;
+  }
+  .hero{background:#fff;color:#000;border-bottom:2px solid #000}
+  .hero h1,.hero .date,.hero .theme{color:#000}
+  .hero .date{background:#000;color:#fff}
+  a{color:#000;text-decoration:underline;border-bottom:none}
+}
+
+/* GitHub Trending cards */
+.trending-card{
+  background:var(--bg);
+  border:1px solid var(--border-soft);
+  border-radius:6px;
+  padding:24px 26px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  transition:border-color .2s ease,box-shadow .25s ease,transform .2s ease;
+}
+.trending-card:hover{
+  border-color:var(--border);
+  box-shadow:0 12px 32px rgba(15,15,20,0.05);
+  transform:translateY(-2px);
+}
+.trending-card .repo-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.trending-card .repo-name{
+  font-family:var(--font-mono);
+  font-size:15px;
+  font-weight:600;
+  color:var(--primary);
+  border:none;
+  letter-spacing:0;
+}
+.trending-card .repo-name:hover{color:var(--accent);opacity:1}
+.trending-card .ai-topic{
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:3px 8px;
+  background:var(--positive-soft);
+  border:1px solid var(--positive);
+  color:var(--positive);
+  border-radius:3px;
+  white-space:nowrap;
+}
+.trending-card .desc{
+  color:var(--secondary);
+  font-size:14px;
+  line-height:1.65;
+}
+.trending-card .value{
+  color:var(--primary);
+  font-size:13px;
+  line-height:1.6;
+  padding:10px 12px;
+  background:var(--highlight-soft);
+  border-left:none;
+  border-radius:4px;
+  position:relative;
+}
+.trending-card .value::before{
+  content:"VALUE";
+  display:block;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.2em;
+  color:var(--highlight);
+  margin-bottom:4px;
+}
+.trending-card .meta{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+  font-size:12px;
+  color:var(--tertiary);
+  padding-top:10px;
+  border-top:1px solid var(--border-soft);
+  font-family:var(--font-mono);
+}
+.trending-card .meta .lang::before{content:"●";margin-right:6px;color:var(--info)}
+.trending-card .meta .stars-today{color:var(--highlight);font-weight:700}
+</style>
+</head>
+<body>
+<header class="sticky-nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a class="home" href="https://chdendi.github.io/AInformer/index.html">AInformer<span class="dot">.</span></a>
+      <nav class="nav-links">
+        <a href="#headlines">头条</a>
+<a href="#trending">GitHub</a>        <a href="#industry">行业</a>
+        <a href="#opinion">观点</a>
+        <a href="#chinese">中文</a>
+        <a href="#academic">学术</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <a class="cta" href="https://chdendi.github.io/AInformer/index.html">← 回到首页</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="date">2026-11-28 · 周六</div>
+  <h1>每日 AI 简报</h1>
+  <p class="theme">巨头博弈与转型阵痛交织，AI竞争进入深水区</p>
+  <div class="meta">
+    <span>精选 16 条</span>
+    <span>头条 4 则</span>
+    <span>生成于 2026-11-28 16:37</span>
+  </div>
+</section>
+
+<main class="container">
+
+  <section class="lede">今日AI领域震荡不断：OpenAI一边筹建Athena数据平台以减少智能体猜测，一边反诉苹果窃取商业机密并胁迫共用供应商，巨头博弈骤然升级；SAP宣布至少裁减一万人全面转向AI，传统软件巨头转型代价显现。与此同时，DeepSeek App双端突现聊天账单，引发收费猜测；Meta与AMI Labs三项研究力挺LeCun的JEPA路线，为世界模型之争再添实证。从数据主权到组织重构，AI竞争正进入深水区。</section>
+
+  <section class="section" id="headlines">
+    <div class="section-head"><h2>今日头条</h2><span class="count">5 条</span></div>
+    <div class="headlines">
+      <article class="headline-card">
+        <h3>OpenAI反诉苹果窃取商业机密并胁迫供应商</h3>
+        <p>OpenAI对苹果提起反诉，指控其窃取商业机密，并胁迫双方共用的供应商。此举标志着两家科技巨头在AI领域的法律冲突进一步升级。</p>
+        <div class="meta">
+<span class="tag tag-industry">行业新闻</span><span>The Decoder</span><a class="link-btn" href="https://the-decoder.com/openai-countersues-apple-over-trade-secret-theft-and-alleged-coercion-of-shared-suppliers/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="headline-card">
+        <h3>SAP拟裁员至少一万人，全面转向AI</h3>
+        <p>SAP宣布至少裁减1万个岗位，作为向AI业务转型的组织调整。这一大规模裁员凸显传统企业软件巨头在AI浪潮下的战略重构与成本压力。</p>
+        <div class="meta">
+<span class="tag tag-industry">行业新闻</span><span>The Decoder</span><a class="link-btn" href="https://the-decoder.com/sap-plans-to-cut-at-least-10000-jobs-as-it-pivots-to-ai/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="headline-card">
+        <h3>DeepSeek App双端上线聊天账单，网友猜测将收费</h3>
+        <p>DeepSeek App网页端与移动端突然显示聊天账单，用户猜测是否将转向付费，官方未回应。这一变化引发中文AI社区对免费大模型服务可持续性的广泛讨论。</p>
+        <div class="meta">
+<span class="tag tag-chinese">中文 / 学术</span><span>量子位</span><a class="link-btn" href="https://www.qbitai.com/2026/11/513305.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="headline-card">
+        <h3>Meta与AMI Labs三项研究支持LeCun的JEPA路线</h3>
+        <p>Meta与AMI Labs发布三项研究，为Yann LeCun主张的JEPA世界模型优于大语言模型提供实证支持。这为围绕世界模型与LLM的技术路线之争增添了新证据。</p>
+        <div class="meta">
+<span class="tag tag-industry">行业新闻</span><span>The Decoder</span><a class="link-btn" href="https://the-decoder.com/three-studies-from-meta-and-ami-labs-back-yann-lecuns-bet-on-jepa-world-models-over-large-language-models/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+      <article class="headline-card">
+        <h3>Latent Space揭秘前沿实验室编程数据采购市场</h3>
+        <p>Latent Space的AINews梳理了前沿实验室如何购买训练数据：独家数据可溢价，非独家则打折。报道揭示了数据供应商按独家性分层定价的机制，以及编程数据市场的火爆现状。</p>
+        <div class="meta">
+<span class="tag tag-opinion">观点声音</span><span>Latent Space</span><a class="link-btn" href="https://latent.space/p/ainews-inside-the-exploding-coding-data-market/" target="_blank" rel="noopener noreferrer">原文 ↗</a>        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="trending">
+    <div class="section-head"><h2>GitHub Trending · 今日热门 AI 项目</h2><span class="count">4 个</span></div>
+    <div class="cards">
+      <article class="trending-card">
+        <div class="repo-line">
+          <a class="repo-name" href="https://github.com/elementalsouls/Claude-BugHunter" target="_blank" rel="noopener noreferrer">elementalsouls/Claude-BugHunter</a>
+<span class="ai-topic">Coding Agent 技能集</span>        </div>
+<p class="desc">面向 Claude Code 的漏洞挖掘与外部红队技能包，内含 85 个 skills、16 个 slash commands，覆盖 24 类核心漏洞的 681 条已披露报告模式，并附企业身份与基础设施攻击矩阵。</p><div class="value">把红队方法论沉淀成可复用的 agent 技能，安全团队可直接挂载到 Claude Code 提升渗透测试效率。</div>        <div class="meta">
+<span class="lang">Python</span><span class="stars-today">+1608 ⭐ 今日</span><span>26,507 ⭐ 总计</span>          <a class="link-btn" href="https://github.com/elementalsouls/Claude-BugHunter" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+        </div>
+      </article>
+      <article class="trending-card">
+        <div class="repo-line">
+          <a class="repo-name" href="https://github.com/obra/superpowers" target="_blank" rel="noopener noreferrer">obra/superpowers</a>
+<span class="ai-topic">Agent 框架 / 开发方法论</span>        </div>
+<p class="desc">一套可落地的 agentic skills 框架与软件开发方法论，为 AI 编码代理提供结构化的工作流与技能组织方式。</p><div class="value">解决 agent 能力零散、难以工程化的问题，为构建可维护的 agent 工作流提供参考范式。</div>        <div class="meta">
+<span class="lang">Shell</span><span class="stars-today">+922 ⭐ 今日</span><span>328,570 ⭐ 总计</span>          <a class="link-btn" href="https://github.com/obra/superpowers" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+        </div>
+      </article>
+      <article class="trending-card">
+        <div class="repo-line">
+          <a class="repo-name" href="https://github.com/jingyaogong/minimind" target="_blank" rel="noopener noreferrer">jingyaogong/minimind</a>
+<span class="ai-topic">LLM 训练</span>        </div>
+<p class="desc">从零开始训练 64M 参数小模型的完整教程与代码，两小时内即可跑通一次端到端 LLM 训练。</p><div class="value">极低门槛的 LLM 训练实践入口，适合想亲手理解预训练与微调全流程的开发者。</div>        <div class="meta">
+<span class="lang">Python</span><span class="stars-today">+660 ⭐ 今日</span><span>72,350 ⭐ 总计</span>          <a class="link-btn" href="https://github.com/jingyaogong/minimind" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+        </div>
+      </article>
+      <article class="trending-card">
+        <div class="repo-line">
+          <a class="repo-name" href="https://github.com/openvinotoolkit/openvino" target="_blank" rel="noopener noreferrer">openvinotoolkit/openvino</a>
+<span class="ai-topic">推理框架 / 部署</span>        </div>
+<p class="desc">Intel 开源的 AI 推理优化与部署工具包，支持模型转换、量化与跨 CPU/GPU/NPU 的高性能推理。</p><div class="value">面向生产环境的推理加速基础设施，是边缘与异构硬件上部署 AI 模型的关键一环。</div>        <div class="meta">
+<span class="lang">C++</span><span class="stars-today">+151 ⭐ 今日</span><span>12,984 ⭐ 总计</span>          <a class="link-btn" href="https://github.com/openvinotoolkit/openvino" target="_blank" rel="noopener noreferrer">仓库 ↗</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section class="section" id="industry">
+    <div class="section-head"><h2>AI 行业新闻与产品动态</h2><span class="count">4 条</span></div>
+    <div class="cards">
+<article class="news-card">
+  <h3>OpenAI筹建Athena数据平台，减少智能体猜测</h3>
+<p class="summary">OpenAI正在构建名为Athena的数据平台，为AI智能体提供结构化数据支撑，减少其推理时的猜测行为。</p><p class="value">智能体基础设施从模型层向数据层延伸</p>  <div class="meta">
+<span class="tag tag-hot">🔥 头条</span><span>The Decoder</span><span>· 2026-11-27</span><a class="link-btn" href="https://the-decoder.com/openai-is-building-athena-data-platform-to-cut-down-on-ai-agent-guesswork/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>OpenAI反诉苹果窃取商业机密并胁迫供应商</h3>
+<p class="summary">OpenAI对苹果提起反诉，指控其窃取商业机密，并胁迫双方共用供应商。</p><p class="value">两大巨头法律战升级，牵动供应链关系</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>The Decoder</span><span>· 2026-11-27</span><a class="link-btn" href="https://the-decoder.com/openai-countersues-apple-over-trade-secret-theft-and-alleged-coercion-of-shared-suppliers/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>SAP拟裁员至少一万人，全面转向AI</h3>
+<p class="summary">SAP宣布至少裁减1万个岗位，作为向AI业务转型的组织调整。</p><p class="value">企业软件巨头以裁员换取AI转型空间</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>The Decoder</span><span>· 2026-11-27</span><a class="link-btn" href="https://the-decoder.com/sap-plans-to-cut-at-least-10000-jobs-as-it-pivots-to-ai/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>Meta与AMI Labs三项研究支持LeCun的JEPA路线</h3>
+<p class="summary">Meta与AMI Labs发布三项研究，为Yann LeCun主张的JEPA世界模型优于大语言模型提供实证支持。</p><p class="value">世界模型路线获得更多实验背书</p>  <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>The Decoder</span><span>· 2026-11-27</span><a class="link-btn" href="https://the-decoder.com/three-studies-from-meta-and-ami-labs-back-yann-lecuns-bet-on-jepa-world-models-over-large-language-models/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article>    </div>
+  </section>
+
+  <section class="section" id="opinion">
+    <div class="section-head"><h2>AI 观点与社区声音</h2><span class="count">4 条</span></div>
+      <h3 class="subhead">社区声音 <span class="subcount">4 条</span></h3>
+      <div class="cards">
+        <article class="quote-card analyst">
+<p class="quote-en">A frontier lab can pay more for training data it gets to keep exclusive, or take a discount on data another lab can buy too.</p><p class="quote-zh">前沿实验室可以为独家保留的训练数据支付更高价格，也可以接受其他实验室同样能买到的数据折扣。</p><p class="quote-title">Latent Space 揭秘前沿实验室的编程数据采购市场</p>          <div class="person">— Latent Space · 社区</div>
+          <div class="meta">
+<span class="tag tag-hot">🔥 头条</span><span>揭示训练数据定价与独家性之间的交易结构</span><a class="link-btn" href="https://latent.space/p/ainews-inside-the-exploding-coding-data-market/" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+        <article class="quote-card analyst">
+<p class="quote-en">A frontier lab can pay more for training data it gets to keep exclusive, or take a discount on data another lab can buy too.</p><p class="quote-zh">前沿实验室可以为独家数据付溢价，或为共享数据拿折扣。</p><p class="quote-title">G2i 创始人谈训练数据市场的独家溢价机制</p>          <div class="person">— Gabe Greenberg / Latent Space · 社区</div>
+          <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>一线数据供应商视角下的定价与谈判逻辑</span><a class="link-btn" href="https://latent.space/p/inside_the_ai_training_data_market_gabe_greenberg_g2i/" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+        <article class="quote-card analyst">
+<p class="quote-en">How $1,500 could qualify every company in the world, why customers hate the model selector, and how Clay is building go-to-market infrastructure.</p><p class="quote-zh">1500 美元如何筛遍全球公司，客户为何讨厌模型选择器，以及 Clay 如何搭建 GTM 基础设施。</p><p class="quote-title">Clay 的 AI 负责人谈 GTM 智能体的构建取舍</p>          <div class="person">— Jeff Barg / Latent Space · 社区</div>
+          <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>GTM 智能体落地中的成本与产品设计经验</span><a class="link-btn" href="https://latent.space/p/how-clay-builds-gtm-agents-jeff-barg-head-of-ai/" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+        <article class="quote-card analyst">
+<p class="quote-zh">主流编程语言应当把形式化可验证性作为一等设计目标，而非事后附加的工具链。</p><p class="quote-title">Lobsters 讨论：主流编程语言需要可形式化验证</p>          <div class="person">— Lobsters · 社区</div>
+          <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>形式化验证从学术走向主流语言的路线之争</span><a class="link-btn" href="https://blainehansen.me/post/mainstream-verifiable-language/" target="_blank" rel="noopener noreferrer">原文 ↗</a>          </div>
+        </article>
+      </div>
+  </section>
+
+  <section class="section" id="chinese">
+    <div class="section-head"><h2>中文 AI 生态与学术动态</h2><span class="count">4 条</span></div>
+    <div class="cards">
+<article class="news-card">
+  <h3>DeepSeek App双端上线聊天账单，网友猜测将收费</h3>
+<p class="summary">DeepSeek App网页端与移动端突然显示聊天账单，用户猜测是否将转向付费，官方未回应。</p><p class="value">头部开源模型厂商商业化信号，值得追踪定价动向</p>  <div class="meta">
+<span class="tag tag-hot">🔥 头条</span><span>量子位</span><span>· 2026-11-27</span><a class="link-btn" href="https://www.qbitai.com/2026/11/513305.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>商汤大装置获信通院Token工厂智算能力最高评级</h3>
+<p class="summary">商汤大装置Token工厂通过中国信通院评估，获“全栈服务型·领先级”认证，为全国首批首家。</p><p class="value">国内智算服务标准化起步，Token供给能力获官方背书</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>量子位</span><span>· 2026-11-27</span><a class="link-btn" href="https://www.qbitai.com/2026/11/513346.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>众擎开放人形机器人大小脑，推10亿产业级生态计划</h3>
+<p class="summary">众擎向开发者开放人形机器人“大小脑”能力，并配套10亿元产业级生态支持计划。</p><p class="value">真机验证成果可复用，降低人形机器人二次开发门槛</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>量子位</span><span>· 2026-11-27</span><a class="link-btn" href="https://www.qbitai.com/2026/11/513352.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>支付宝车载助手3.0发布，座舱从对话智能转向行动智能</h3>
+<p class="summary">广州车展期间支付宝发布AI原生车载智能体3.0，打通实时感知、主动服务与跨域可信执行链路。</p><p class="value">Agent落地车载场景，服务从“能聊”走向“能办”</p>  <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>雷峰网</span><span>· 2026-11-27</span><a class="link-btn" href="https://www.leiphone.com/category/industrynews/szJUnXEhChJQgJHZ.html" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article>    </div>
+  </section>
+
+  <section class="section" id="academic">
+    <div class="section-head"><h2>学术与评测</h2><span class="count">4 条</span></div>
+    <div class="cards">
+<article class="news-card">
+  <h3>英伟达暂停向东南亚发货，S&P考虑下调其信用评级</h3>
+<p class="summary">TechCrunch报道英伟达暂停对东南亚的芯片出货；S&P以治理与'关键人'风险为由考虑下调其信用评级。</p><p class="value">供应链与治理风险叠加，或影响AI算力供给预期</p>  <div class="meta">
+<span class="tag tag-hot">🔥 头条</span><span>TechCrunch</span><span>· 2026-11-26</span><a class="link-btn" href="https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>42州总检察长联名阻止Character.AI出售用户聊天记录</h3>
+<p class="summary">42位州总检察长试图阻止Character.AI拍卖用户私密聊天数据，隐私争议升级。</p><p class="value">AI对话数据商业化面临州级监管阻力</p>  <div class="meta">
+<span class="tag tag-star">⭐ 重要</span><span>The Verge</span><a class="link-btn" href="https://www.theverge.com/policy/1042620/character-ai-sale-state-ags-block-selling-users-chats" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>FCC批准SpaceX最多100万颗数据中心卫星计划</h3>
+<p class="summary">FCC放行SpaceX的Starmind计划，允许其部署最多100万颗用于AI空间数据中心的卫星。</p><p class="value">轨道算力基础设施获监管放行，规模空前</p>  <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>The Verge</span><a class="link-btn" href="https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article><article class="news-card">
+  <h3>亚马逊与Meta据称磋商解除Muse AI购物代理封锁</h3>
+<p class="summary">报道称亚马逊与Meta正谈判解除对AI购物代理Muse的封锁，此前双方存在接入限制。</p><p class="value">电商与AI代理的互操作壁垒或松动</p>  <div class="meta">
+<span class="tag tag-pin">📎 关注</span><span>The Verge</span><a class="link-btn" href="https://www.theverge.com/tech/1042071/meta-amazon-muse-ai-shopping-discussions" target="_blank" rel="noopener noreferrer">原文 ↗</a>  </div>
+</article>    </div>
+  </section>
+
+</main>
+<footer class="footer">
+<div class="footer-grid">
+  <div class="brand">
+    <span class="name">AInformer<span style="color:var(--accent)">.</span></span>
+    <p>每日 AI 简报：中文 AI 生态的精选信息流，聚合行业、观点、学术与中文动态。</p>
+  </div>
+  <div>
+    <h4>Navigate</h4>
+    <ul>
+      <li><a href="https://chdendi.github.io/AInformer/index.html">← 回到首页</a></li>
+      <li><a href="https://chdendi.github.io/AInformer/index.html#archive">历史日报归档</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Sources</h4>
+    <ul>
+      <li>OpenAI / Anthropic / DeepMind</li>
+      <li>The Verge · TechCrunch</li>
+      <li>机器之心 · 量子位 · 36kr</li>
+      <li>arXiv · Hacker News</li>
+    </ul>
+  </div>
+  <div>
+    <h4>Data</h4>
+    <ul>
+      <li><a href="https://chdendi.github.io/AInformer/api/v1/manifest.json" target="_blank" rel="noopener">JSON API · Manifest</a></li>
+      <li><a href="https://github.com/chdendi/AInformer" target="_blank" rel="noopener">Source on GitHub</a></li>
+    </ul>
+  </div>
+</div>
+  <div class="footer-bottom">
+    <p>本日报基于公开信息自动搜索整理生成，资讯来源包括 OpenAI / Anthropic / DeepMind 等官方博客、The Verge、TechCrunch、36kr、机器之心、量子位、ArXiv、Hacker News 等公开平台。内容可能存在时效性偏差或不完整，请以原始来源为准。</p>
+    <p>Generated at 2026-11-28 16:37 · Powered by DeepSeek + public sources · <a href="https://chdendi.github.io/AInformer/index.html">AInformer</a> · <a href="https://chdendi.github.io/AInformer/api/v1/manifest.json">JSON API</a></p>
+  </div>
+</footer>
+</body>
+</html>
